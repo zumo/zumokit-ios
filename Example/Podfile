@@ -1,0 +1,14 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'ZumoKit_Example' do
+  pod 'ZumoKit', :path => '../'
+
+  target 'ZumoKit_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+    pod 'Expecta'
+  end
+end
