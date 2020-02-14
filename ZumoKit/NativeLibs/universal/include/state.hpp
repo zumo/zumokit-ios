@@ -4,11 +4,13 @@
 #pragma once
 
 #include "account.hpp"
+#include "fee_rates.hpp"
 #include "stdx/optional.hpp"
 #include "sync_status.hpp"
 #include "transaction.hpp"
 #include "tx_service_connection.hpp"
 #include <string>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 
@@ -21,7 +23,7 @@ struct State final {
     std::experimental::optional<std::string> active_user_id;
     std::string exchange_rates;
     TxServiceConnection tx_service_connection;
-    std::string eth_gas_price;
+    std::unordered_map<std::string, FeeRates> fee_rates;
     SyncStatus sync_status;
 
     friend bool operator==(const State& lhs, const State& rhs);
@@ -33,7 +35,7 @@ struct State final {
           std::experimental::optional<std::string> active_user_id_,
           std::string exchange_rates_,
           TxServiceConnection tx_service_connection_,
-          std::string eth_gas_price_,
+          std::unordered_map<std::string, FeeRates> fee_rates_,
           SyncStatus sync_status_)
     : accounts(std::move(accounts_))
     , transactions(std::move(transactions_))
@@ -41,7 +43,7 @@ struct State final {
     , active_user_id(std::move(active_user_id_))
     , exchange_rates(std::move(exchange_rates_))
     , tx_service_connection(std::move(tx_service_connection_))
-    , eth_gas_price(std::move(eth_gas_price_))
+    , fee_rates(std::move(fee_rates_))
     , sync_status(std::move(sync_status_))
     {}
 };

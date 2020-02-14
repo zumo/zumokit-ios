@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "stdx/optional.hpp"
 #include <memory>
 #include <string>
 #include <vector>
@@ -14,6 +15,8 @@ class MnemonicCallback;
 class TransactionListener;
 class UserListener;
 class WalletCallback;
+enum class AccountType;
+enum class NetworkType;
 struct Account;
 struct Transaction;
 
@@ -29,13 +32,19 @@ public:
 
     virtual void create_wallet(const std::string & mnemonic, const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
 
-    virtual void recover_wallet(const std::string & mnemonic, const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
-
     virtual void unlock_wallet(const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
 
     virtual void reveal_mnemonic(const std::string & password, const std::shared_ptr<MnemonicCallback> & callback) = 0;
 
+    virtual bool is_recovery_mnemonic(const std::string & mnemonic) = 0;
+
+    virtual void recover_wallet(const std::string & mnemonic, const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
+
+    virtual std::experimental::optional<Account> get_account(const std::string & symbol, NetworkType network, AccountType type) = 0;
+
     virtual std::vector<Account> get_accounts() = 0;
+
+    virtual std::vector<Transaction> get_account_transactions(const std::string & account_id) = 0;
 
     virtual std::vector<Transaction> get_transactions() = 0;
 

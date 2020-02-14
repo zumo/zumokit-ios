@@ -29,4 +29,10 @@
     [self revealMnemonic:password callback:[[MnemonicCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
+- (void)recoverWallet:(nonnull NSString *)mnemonic
+            password:(nonnull NSString *)password
+           completion:(_Nonnull WalletCompletionBlock)completionHandler {
+    [self recoverWallet:mnemonic password:password callback:[[WalletCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
 @end

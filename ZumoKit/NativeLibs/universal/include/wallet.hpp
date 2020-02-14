@@ -17,6 +17,12 @@ public:
     virtual ~Wallet() {}
 
     virtual void send_eth_transaction(const std::string & account_id, const std::string & gas_price, const std::string & gas_limit, const std::experimental::optional<std::string> & to, const std::experimental::optional<std::string> & value, const std::experimental::optional<std::string> & data, std::experimental::optional<int64_t> nonce, const std::shared_ptr<SendTransactionCallback> & callback) = 0;
+
+    virtual std::experimental::optional<std::string> max_spendable_eth(const std::string & account_id, const std::string & gas_price, const std::string & gas_limit) = 0;
+
+    virtual void send_btc_transaction(const std::string & account_id, const std::string & change_account_id, const std::string & to, const std::string & value, const std::string & fee_rate, const std::shared_ptr<SendTransactionCallback> & callback) = 0;
+
+    virtual std::experimental::optional<std::string> max_spendable_btc(const std::string & account_id, const std::experimental::optional<std::string> & to, const std::string & fee_rate) = 0;
 };
 
 }  // namespace zumo

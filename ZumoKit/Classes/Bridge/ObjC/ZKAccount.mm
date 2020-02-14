@@ -8,12 +8,14 @@
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                               path:(nonnull NSString *)path
-                            symbol:(nullable NSString *)symbol
+                            symbol:(nonnull NSString *)symbol
                               coin:(nonnull NSString *)coin
                            address:(nonnull NSString *)address
                            balance:(nonnull NSString *)balance
                            chainId:(nullable NSNumber *)chainId
                              nonce:(nullable NSNumber *)nonce
+                           network:(ZKNetworkType)network
+                           version:(int8_t)version
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -24,18 +26,22 @@
         _balance = [balance copy];
         _chainId = chainId;
         _nonce = nonce;
+        _network = network;
+        _version = version;
     }
     return self;
 }
 
 + (nonnull instancetype)accountWithId:(nonnull NSString *)id
                                  path:(nonnull NSString *)path
-                               symbol:(nullable NSString *)symbol
+                               symbol:(nonnull NSString *)symbol
                                  coin:(nonnull NSString *)coin
                               address:(nonnull NSString *)address
                               balance:(nonnull NSString *)balance
                               chainId:(nullable NSNumber *)chainId
                                 nonce:(nullable NSNumber *)nonce
+                              network:(ZKNetworkType)network
+                              version:(int8_t)version
 {
     return [(ZKAccount*)[self alloc] initWithId:id
                                            path:path
@@ -44,7 +50,9 @@
                                         address:address
                                         balance:balance
                                         chainId:chainId
-                                          nonce:nonce];
+                                          nonce:nonce
+                                        network:network
+                                        version:version];
 }
 
 - (BOOL)isEqual:(id)other
@@ -55,12 +63,14 @@
     ZKAccount *typedOther = (ZKAccount *)other;
     return [self.id isEqualToString:typedOther.id] &&
             [self.path isEqualToString:typedOther.path] &&
-            ((self.symbol == nil && typedOther.symbol == nil) || (self.symbol != nil && [self.symbol isEqual:typedOther.symbol])) &&
+            [self.symbol isEqualToString:typedOther.symbol] &&
             [self.coin isEqualToString:typedOther.coin] &&
             [self.address isEqualToString:typedOther.address] &&
             [self.balance isEqualToString:typedOther.balance] &&
             ((self.chainId == nil && typedOther.chainId == nil) || (self.chainId != nil && [self.chainId isEqual:typedOther.chainId])) &&
-            ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce]));
+            ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
+            self.network == typedOther.network &&
+            self.version == typedOther.version;
 }
 
 - (NSUInteger)hash
@@ -73,12 +83,14 @@
             self.address.hash ^
             self.balance.hash ^
             self.chainId.hash ^
-            self.nonce.hash;
+            self.nonce.hash ^
+            (NSUInteger)self.network ^
+            (NSUInteger)self.version;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ path:%@ symbol:%@ coin:%@ address:%@ balance:%@ chainId:%@ nonce:%@>", self.class, (void *)self, self.id, self.path, self.symbol, self.coin, self.address, self.balance, self.chainId, self.nonce];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ path:%@ symbol:%@ coin:%@ address:%@ balance:%@ chainId:%@ nonce:%@ network:%@ version:%@>", self.class, (void *)self, self.id, self.path, self.symbol, self.coin, self.address, self.balance, self.chainId, self.nonce, @(self.network), @(self.version)];
 }
 
 @end

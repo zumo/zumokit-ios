@@ -1,8 +1,4 @@
-# ZumoKit
-
-[![Version](https://img.shields.io/cocoapods/v/ZumoKit.svg?style=flat)](https://cocoapods.org/pods/ZumoKit)
-[![License](https://img.shields.io/cocoapods/l/ZumoKit.svg?style=flat)](https://cocoapods.org/pods/ZumoKit)
-[![Platform](https://img.shields.io/cocoapods/p/ZumoKit.svg?style=flat)](https://cocoapods.org/pods/ZumoKit)
+# ZumoKit iOS SDK
 
 ## Example
 
@@ -10,13 +6,19 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+- Install the following:
+  - [Xcode 11.0](https://developer.apple.com/xcode/) or later
+  - [CocoaPods 1.8.4](https://cocoapods.org) or later
+- Make sure that your app meets the following requirements:
+  - Your project must target iOS 10 or later
+
 ## Installation
 
 ZumoKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :branch => 'release/1.0.3'
+pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :branch => 'release/1.3.0'
 ```
 
 ## Author

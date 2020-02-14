@@ -51,6 +51,44 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
+- (nullable NSString *)maxSpendableEth:(nonnull NSString *)accountId
+                              gasPrice:(nonnull NSString *)gasPrice
+                              gasLimit:(nonnull NSString *)gasLimit {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->max_spendable_eth(::djinni::String::toCpp(accountId),
+                                                                     ::djinni::String::toCpp(gasPrice),
+                                                                     ::djinni::String::toCpp(gasLimit));
+        return ::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)sendBtcTransaction:(nonnull NSString *)accountId
+           changeAccountId:(nonnull NSString *)changeAccountId
+                        to:(nonnull NSString *)to
+                     value:(nonnull NSString *)value
+                   feeRate:(nonnull NSString *)feeRate
+                  callback:(nullable id<ZKSendTransactionCallback>)callback {
+    try {
+        _cppRefHandle.get()->send_btc_transaction(::djinni::String::toCpp(accountId),
+                                                  ::djinni::String::toCpp(changeAccountId),
+                                                  ::djinni::String::toCpp(to),
+                                                  ::djinni::String::toCpp(value),
+                                                  ::djinni::String::toCpp(feeRate),
+                                                  ::djinni_generated::SendTransactionCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nullable NSString *)maxSpendableBtc:(nonnull NSString *)accountId
+                                    to:(nullable NSString *)to
+                               feeRate:(nonnull NSString *)feeRate {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->max_spendable_btc(::djinni::String::toCpp(accountId),
+                                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(to),
+                                                                     ::djinni::String::toCpp(feeRate));
+        return ::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
 namespace djinni_generated {
 
 auto Wallet::toCpp(ObjcType objc) -> CppType

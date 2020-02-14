@@ -28,6 +28,10 @@ typedef void(^MnemonicCompletionBlock)(bool success, NSString * _Nullable errorN
 - (void)revealMnemonic:(nonnull NSString *)password
             completion:(_Nonnull MnemonicCompletionBlock)completionHandler;
 
+- (void)recoverWallet:(nonnull NSString *)mnemonic
+             password:(nonnull NSString *)password
+           completion:(_Nonnull WalletCompletionBlock)completionHandler;
+
 @end
 
 #endif /* ZKUser_CallbackCompletion_h */
