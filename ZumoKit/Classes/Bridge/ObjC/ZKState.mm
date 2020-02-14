@@ -12,7 +12,7 @@
                             activeUserId:(nullable NSString *)activeUserId
                            exchangeRates:(nonnull NSString *)exchangeRates
                      txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
-                             ethGasPrice:(nonnull NSString *)ethGasPrice
+                                feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                               syncStatus:(ZKSyncStatus)syncStatus
 {
     if (self = [super init]) {
@@ -22,7 +22,7 @@
         _activeUserId = [activeUserId copy];
         _exchangeRates = [exchangeRates copy];
         _txServiceConnection = txServiceConnection;
-        _ethGasPrice = [ethGasPrice copy];
+        _feeRates = [feeRates copy];
         _syncStatus = syncStatus;
     }
     return self;
@@ -34,7 +34,7 @@
                              activeUserId:(nullable NSString *)activeUserId
                             exchangeRates:(nonnull NSString *)exchangeRates
                       txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
-                              ethGasPrice:(nonnull NSString *)ethGasPrice
+                                 feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                                syncStatus:(ZKSyncStatus)syncStatus
 {
     return [(ZKState*)[self alloc] initWithAccounts:accounts
@@ -43,7 +43,7 @@
                                        activeUserId:activeUserId
                                       exchangeRates:exchangeRates
                                 txServiceConnection:txServiceConnection
-                                        ethGasPrice:ethGasPrice
+                                           feeRates:feeRates
                                          syncStatus:syncStatus];
 }
 
@@ -59,7 +59,7 @@
             ((self.activeUserId == nil && typedOther.activeUserId == nil) || (self.activeUserId != nil && [self.activeUserId isEqual:typedOther.activeUserId])) &&
             [self.exchangeRates isEqualToString:typedOther.exchangeRates] &&
             [self.txServiceConnection isEqual:typedOther.txServiceConnection] &&
-            [self.ethGasPrice isEqualToString:typedOther.ethGasPrice] &&
+            [self.feeRates isEqualToDictionary:typedOther.feeRates] &&
             self.syncStatus == typedOther.syncStatus;
 }
 
@@ -72,13 +72,13 @@
             self.activeUserId.hash ^
             self.exchangeRates.hash ^
             self.txServiceConnection.hash ^
-            self.ethGasPrice.hash ^
+            self.feeRates.hash ^
             (NSUInteger)self.syncStatus;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p accounts:%@ transactions:%@ token:%@ activeUserId:%@ exchangeRates:%@ txServiceConnection:%@ ethGasPrice:%@ syncStatus:%@>", self.class, (void *)self, self.accounts, self.transactions, self.token, self.activeUserId, self.exchangeRates, self.txServiceConnection, self.ethGasPrice, @(self.syncStatus)];
+    return [NSString stringWithFormat:@"<%@ %p accounts:%@ transactions:%@ token:%@ activeUserId:%@ exchangeRates:%@ txServiceConnection:%@ feeRates:%@ syncStatus:%@>", self.class, (void *)self, self.accounts, self.transactions, self.token, self.activeUserId, self.exchangeRates, self.txServiceConnection, self.feeRates, @(self.syncStatus)];
 }
 
 @end

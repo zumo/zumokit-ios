@@ -6,6 +6,7 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "ZKNetworkType+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -40,6 +41,15 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (BOOL)isValidEthAddress:(nonnull NSString *)address {
     try {
         auto objcpp_result_ = _cppRefHandle.get()->is_valid_eth_address(::djinni::String::toCpp(address));
+        return ::djinni::Bool::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (BOOL)isValidBtcAddress:(nonnull NSString *)address
+                  network:(ZKNetworkType)network {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->is_valid_btc_address(::djinni::String::toCpp(address),
+                                                                        ::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::toCpp(network));
         return ::djinni::Bool::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

@@ -4,6 +4,7 @@
 #import "ZKState+Private.h"
 #import "DJIMarshal+Private.h"
 #import "ZKAccount+Private.h"
+#import "ZKFeeRates+Private.h"
 #import "ZKSyncStatus+Private.h"
 #import "ZKTransaction+Private.h"
 #import "ZKTxServiceConnection+Private.h"
@@ -20,7 +21,7 @@ auto State::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.activeUserId),
             ::djinni::String::toCpp(obj.exchangeRates),
             ::djinni_generated::TxServiceConnection::toCpp(obj.txServiceConnection),
-            ::djinni::String::toCpp(obj.ethGasPrice),
+            ::djinni::Map<::djinni::String, ::djinni_generated::FeeRates>::toCpp(obj.feeRates),
             ::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::toCpp(obj.syncStatus)};
 }
 
@@ -32,7 +33,7 @@ auto State::fromCpp(const CppType& cpp) -> ObjcType
                                 activeUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.active_user_id))
                                exchangeRates:(::djinni::String::fromCpp(cpp.exchange_rates))
                          txServiceConnection:(::djinni_generated::TxServiceConnection::fromCpp(cpp.tx_service_connection))
-                                 ethGasPrice:(::djinni::String::fromCpp(cpp.eth_gas_price))
+                                    feeRates:(::djinni::Map<::djinni::String, ::djinni_generated::FeeRates>::fromCpp(cpp.fee_rates))
                                   syncStatus:(::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::fromCpp(cpp.sync_status))];
 }
 

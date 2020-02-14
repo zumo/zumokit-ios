@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "network_type.hpp"
 #include "stdx/optional.hpp"
 #include <cstdint>
 #include <string>
@@ -13,24 +14,28 @@ namespace zumo {
 struct Account final {
     std::string id;
     std::string path;
-    std::experimental::optional<std::string> symbol;
+    std::string symbol;
     std::string coin;
     std::string address;
     std::string balance;
     std::experimental::optional<int32_t> chain_id;
     std::experimental::optional<int64_t> nonce;
+    NetworkType network;
+    int8_t version;
 
     friend bool operator==(const Account& lhs, const Account& rhs);
     friend bool operator!=(const Account& lhs, const Account& rhs);
 
     Account(std::string id_,
             std::string path_,
-            std::experimental::optional<std::string> symbol_,
+            std::string symbol_,
             std::string coin_,
             std::string address_,
             std::string balance_,
             std::experimental::optional<int32_t> chain_id_,
-            std::experimental::optional<int64_t> nonce_)
+            std::experimental::optional<int64_t> nonce_,
+            NetworkType network_,
+            int8_t version_)
     : id(std::move(id_))
     , path(std::move(path_))
     , symbol(std::move(symbol_))
@@ -39,6 +44,8 @@ struct Account final {
     , balance(std::move(balance_))
     , chain_id(std::move(chain_id_))
     , nonce(std::move(nonce_))
+    , network(std::move(network_))
+    , version(std::move(version_))
     {}
 };
 

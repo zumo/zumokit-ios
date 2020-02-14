@@ -24,6 +24,13 @@ typedef void(^SendTransactionCompletionBlock)(bool success, NSString * _Nullable
                      nonce:(nullable NSNumber *)nonce
                 completion:(_Nonnull SendTransactionCompletionBlock)completionHandler;
 
+- (void)sendBtcTransaction:(nonnull NSString *)accountId
+changeAccountId:(nonnull NSString *)changeAccountId
+             to:(nonnull NSString *)to
+          value:(nonnull NSString *)value
+        feeRate:(nonnull NSString *)feeRate
+       completion:(_Nonnull SendTransactionCompletionBlock)completionHandler;
+
 @end
 
 #endif /* ZKWallet_CallbackCompletion_h */

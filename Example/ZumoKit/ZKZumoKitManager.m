@@ -11,6 +11,8 @@
 @interface ZKZumoKitManager ()
 
 @property (strong, nonatomic) ZumoKit *zumoKit;
+@property (strong, nonatomic) ZKUser *user;
+@property (strong, nonatomic) ZKWallet *wallet;
 
 @end
 
@@ -26,11 +28,11 @@
 }
 
 - (void)update:(nonnull ZKState *)state {
-    for (id object in state.transactions) {
-        ZKTransaction *tx= object;
-        NSLog(@"Transaction: %@", tx.id);
-        NSLog(@"Transaction pound value: %@", tx.fiatValue[@"GBP"]);
-    }
+    // for (id object in state.transactions) {
+    //     ZKTransaction *tx= object;
+    //     NSLog(@"Transaction: %@", tx.id);
+    //     NSLog(@"Transaction pound value: %@", tx.fiatValue[@"GBP"]);
+    // }
 }
 
 - (void)initialize {
@@ -60,39 +62,46 @@
      auth:userToken
      headers: customHeaders
      completion: ^(bool success, short errorCode, NSString * _Nullable errorMessage, ZKUser * _Nullable user) {
+        
+        _user = user;
+        
         if(success) {
-            if ([user hasWallet]) {
-                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"coin == %@", @"Ether"];
-                NSArray *filteredArray = [[user getAccounts] filteredArrayUsingPredicate:predicate];
-                ZKAccount *account = filteredArray.firstObject;
-                NSLog(@"ETH account: %@", account.address);
+            if ([_user hasWallet]) {
+                ZKAccount *ethAccount = [_user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
+                NSLog(@"ETH account: %@", ethAccount.address);
                 
-                [user unlockWallet:userPassword completion:^(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKWallet * _Nullable wallet) {
+                ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
+                NSLog(@"BTC account: %@", btcAccount.address);
+                
+                [_user unlockWallet:userPassword completion:^(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKWallet * _Nullable wallet) {
                        NSLog(@"SUCCESS: %@", success ? @"YES" : @"NO");
                        if(success) {
-                           //[self sendEthTransaction:account wallet:wallet];
+                           _wallet = wallet;
+                           // [self sendEthTransaction:ethAccount];
+                           // [self sendBtcTransaction:btcAccount];
                        } else {
                            NSLog(@"errorName: %@", errorName);
                            NSLog(@"errorMessage: %@", errorMessage);
                        }
                    }];
             } else {
-            NSString *mnemonicPhrase = @"hundred forget actual dose champion earth maximum ordinary breeze moral head mixture";
+                NSString *mnemonicPhrase = [[_zumoKit utils] generateMnemonic:12];
+                //NSString *mnemonicPhrase = @"breeze lady dial claim eyebrow news urban warm scout barrel gorilla prevent";
 
-            [user createWallet: mnemonicPhrase password:userPassword completion:^(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKWallet * _Nullable wallet) {
-                    NSLog(@"SUCCESS: %@", success ? @"YES" : @"NO");
-                    if(success) {
-                        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"coin == %@", @"Ether"];
-                        NSArray *filteredArray = [[user getAccounts] filteredArrayUsingPredicate:predicate];
-                        ZKAccount *account = filteredArray.firstObject;
-                        NSLog(@"ETH account: %@", account.address);
-                        
-                        //[self sendEthTransaction:account wallet:wallet];
-                    } else {
-                        NSLog(@"errorName: %@", errorName);
-                        NSLog(@"errorMessage: %@", errorMessage);
-                    }
-                }];
+                [_user createWallet: mnemonicPhrase password:userPassword completion:^(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKWallet * _Nullable wallet) {
+                        NSLog(@"SUCCESS: %@", success ? @"YES" : @"NO");
+                        if(success) {
+                            ZKAccount *ethAccount = [user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
+                            NSLog(@"ETH account: %@", ethAccount.address);
+                            
+                            ZKAccount *btcAccount = [user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
+                            NSLog(@"BTC account: %@", btcAccount.address);
+                            
+                        } else {
+                            NSLog(@"errorName: %@", errorName);
+                            NSLog(@"errorMessage: %@", errorMessage);
+                        }
+                    }];
             }
         } else {
             NSLog(@"Auth error: %@", errorMessage);
@@ -100,9 +109,19 @@
     }];
 }
 
-- (void)sendEthTransaction:(ZKAccount *) account
-                    wallet:(ZKWallet *) wallet {
-    [wallet sendEthTransaction:account.id gasPrice:@"60" gasLimit:@"21000" to:@"0xD797c81C928a7F4CF7dEB960B5963697fAcFE0eE" value:@"0.00023" data:@"" nonce:[NSNumber numberWithInt:6] completion:^(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKTransaction * _Nullable transaction) {
+- (void)sendEthTransaction:(ZKAccount *) account {
+    [_wallet sendEthTransaction:account.id gasPrice:@"60" gasLimit:@"21000" to:@"0xD797c81C928a7F4CF7dEB960B5963697fAcFE0eE" value:@"0.00023" data:@"" nonce:[NSNumber numberWithInt:6] completion:^(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKTransaction * _Nullable transaction) {
+                if(success) {
+                    NSLog(@"txHash: %@", transaction.txHash);
+                } else {
+                    NSLog(@"errorName: %@", errorName);
+                    NSLog(@"errorMessage: %@", errorMessage);
+                }
+            }];
+}
+
+- (void)sendBtcTransaction:(ZKAccount *) account {
+    [_wallet sendBtcTransaction:account.id changeAccountId:account.id to:@"2N6BfH356AicEzuC1dYt4gYkw6WFWZrfeSY" value:@"0.000055" feeRate:@"20" completion:^(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKTransaction * _Nullable transaction) {
                 if(success) {
                     NSLog(@"txHash: %@", transaction.txHash);
                 } else {

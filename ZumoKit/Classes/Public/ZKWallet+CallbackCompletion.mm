@@ -25,4 +25,17 @@
     
 };
 
+
+- (void)sendBtcTransaction:(nonnull NSString *)accountId
+changeAccountId:(nonnull NSString *)changeAccountId
+             to:(nonnull NSString *)to
+          value:(nonnull NSString *)value
+        feeRate:(nonnull NSString *)feeRate
+                completion:(_Nonnull SendTransactionCompletionBlock)completionHandler {
+    
+    [self sendBtcTransaction:accountId changeAccountId:changeAccountId to:to value:value feeRate:feeRate
+                    callback:[[SendTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
+    
+};
+
 @end

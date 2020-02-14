@@ -8,7 +8,9 @@
 #import "DJIMarshal+Private.h"
 #import "ZKAccount+Private.h"
 #import "ZKAccountListener+Private.h"
+#import "ZKAccountType+Private.h"
 #import "ZKMnemonicCallback+Private.h"
+#import "ZKNetworkType+Private.h"
 #import "ZKTransaction+Private.h"
 #import "ZKTransactionListener+Private.h"
 #import "ZKUserListener+Private.h"
@@ -68,16 +70,6 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)recoverWallet:(nonnull NSString *)mnemonic
-             password:(nonnull NSString *)password
-             callback:(nullable id<ZKWalletCallback>)callback {
-    try {
-        _cppRefHandle.get()->recover_wallet(::djinni::String::toCpp(mnemonic),
-                                            ::djinni::String::toCpp(password),
-                                            ::djinni_generated::WalletCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
 - (void)unlockWallet:(nonnull NSString *)password
             callback:(nullable id<ZKWalletCallback>)callback {
     try {
@@ -94,10 +86,45 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
+- (BOOL)isRecoveryMnemonic:(nonnull NSString *)mnemonic {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->is_recovery_mnemonic(::djinni::String::toCpp(mnemonic));
+        return ::djinni::Bool::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)recoverWallet:(nonnull NSString *)mnemonic
+             password:(nonnull NSString *)password
+             callback:(nullable id<ZKWalletCallback>)callback {
+    try {
+        _cppRefHandle.get()->recover_wallet(::djinni::String::toCpp(mnemonic),
+                                            ::djinni::String::toCpp(password),
+                                            ::djinni_generated::WalletCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nullable ZKAccount *)getAccount:(nonnull NSString *)symbol
+                           network:(ZKNetworkType)network
+                              type:(ZKAccountType)type {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_account(::djinni::String::toCpp(symbol),
+                                                               ::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::toCpp(network),
+                                                               ::djinni::Enum<::zumo::AccountType, ZKAccountType>::toCpp(type));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::Account>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
 - (nonnull NSArray<ZKAccount *> *)getAccounts {
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_accounts();
         return ::djinni::List<::djinni_generated::Account>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nonnull NSArray<ZKTransaction *> *)getAccountTransactions:(nonnull NSString *)accountId {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_account_transactions(::djinni::String::toCpp(accountId));
+        return ::djinni::List<::djinni_generated::Transaction>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
