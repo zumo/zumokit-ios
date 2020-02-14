@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZumoKit'
-  s.version          = 'test-212'
+  s.version          = 'test-215'
   s.summary          = 'ZumoKit is a Wallet as a Service SDK'
   s.homepage         = 'https://developers.zumo.money/docs/installation/ios.html'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
