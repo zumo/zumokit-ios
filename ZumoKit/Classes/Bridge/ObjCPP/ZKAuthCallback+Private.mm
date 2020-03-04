@@ -5,9 +5,9 @@
 #import "ZKAuthCallback.h"
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
-#import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
 #import "ZKUser+Private.h"
+#import "ZKZumoKitError+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -32,11 +32,9 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     return self;
 }
 
-- (void)onError:(int16_t)errorCode
-   errorMessage:(nonnull NSString *)errorMessage {
+- (void)onError:(nonnull ZKZumoKitError *)error {
     try {
-        _cppRefHandle.get()->on_error(::djinni::I16::toCpp(errorCode),
-                                      ::djinni::String::toCpp(errorMessage));
+        _cppRefHandle.get()->on_error(::djinni_generated::ZumoKitError::toCpp(error));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -55,11 +53,10 @@ class AuthCallback::ObjcProxy final
     friend class ::djinni_generated::AuthCallback;
 public:
     using ObjcProxyBase::ObjcProxyBase;
-    void on_error(int16_t c_error_code, const std::string & c_error_message) override
+    void on_error(const ::zumo::ZumoKitError & c_error) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() onError:(::djinni::I16::fromCpp(c_error_code))
-                                                 errorMessage:(::djinni::String::fromCpp(c_error_message))];
+            [djinni_private_get_proxied_objc_object() onError:(::djinni_generated::ZumoKitError::fromCpp(c_error))];
         }
     }
     void on_success(const std::shared_ptr<::zumo::User> & c_user) override

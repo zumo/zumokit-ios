@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^AuthCompletionBlock)(bool success, short errorCode, NSString * _Nullable errorMessage, ZKUser * _Nullable user);
+typedef void(^AuthCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKUser * _Nullable user);
 
 @interface AuthCallback : NSObject <ZKAuthCallback>
 

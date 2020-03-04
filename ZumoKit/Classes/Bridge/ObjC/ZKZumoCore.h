@@ -8,7 +8,6 @@
 @protocol ZKAuthCallback;
 @protocol ZKHttpImpl;
 @protocol ZKStateListener;
-@protocol ZKSyncCallback;
 @protocol ZKWebSocketImpl;
 
 
@@ -26,8 +25,6 @@
 - (void)auth:(nonnull NSString *)token
      headers:(nullable NSDictionary<NSString *, NSString *> *)headers
     callback:(nullable id<ZKAuthCallback>)callback;
-
-- (void)sync:(nullable id<ZKSyncCallback>)callback;
 
 - (nullable ZKUtils *)getUtils;
 

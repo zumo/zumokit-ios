@@ -11,7 +11,7 @@
 #import "ZKWallet.h"
 #import "ZKSendTransactionCallback.h"
 
-typedef void(^SendTransactionCompletionBlock)(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKTransaction * _Nullable transaction);
+typedef void(^SendTransactionCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKTransaction * _Nullable transaction);
 
 @interface ZKWallet (ZKWalletCallbackCompletion)
 

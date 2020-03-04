@@ -7,11 +7,13 @@
 
 namespace zumo {
 
+struct ZumoKitError;
+
 class MnemonicCallback {
 public:
     virtual ~MnemonicCallback() {}
 
-    virtual void on_error(const std::string & error_name, const std::string & error_message) = 0;
+    virtual void on_error(const ZumoKitError & error) = 0;
 
     virtual void on_success(const std::string & mnemonic) = 0;
 };

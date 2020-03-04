@@ -7,6 +7,7 @@
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
 #import "DJIObjcWrapperCache+Private.h"
+#import "ZKZumoKitError+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -31,11 +32,9 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     return self;
 }
 
-- (void)onError:(nonnull NSString *)errorName
-   errorMessage:(nonnull NSString *)errorMessage {
+- (void)onError:(nonnull ZKZumoKitError *)error {
     try {
-        _cppRefHandle.get()->on_error(::djinni::String::toCpp(errorName),
-                                      ::djinni::String::toCpp(errorMessage));
+        _cppRefHandle.get()->on_error(::djinni_generated::ZumoKitError::toCpp(error));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -54,11 +53,10 @@ class MnemonicCallback::ObjcProxy final
     friend class ::djinni_generated::MnemonicCallback;
 public:
     using ObjcProxyBase::ObjcProxyBase;
-    void on_error(const std::string & c_error_name, const std::string & c_error_message) override
+    void on_error(const ::zumo::ZumoKitError & c_error) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() onError:(::djinni::String::fromCpp(c_error_name))
-                                                 errorMessage:(::djinni::String::fromCpp(c_error_message))];
+            [djinni_private_get_proxied_objc_object() onError:(::djinni_generated::ZumoKitError::fromCpp(c_error))];
         }
     }
     void on_success(const std::string & c_mnemonic) override

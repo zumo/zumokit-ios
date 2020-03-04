@@ -3,17 +3,16 @@
 
 #pragma once
 
-#include <string>
-
 namespace zumo {
 
 struct Transaction;
+struct ZumoKitError;
 
 class SendTransactionCallback {
 public:
     virtual ~SendTransactionCallback() {}
 
-    virtual void on_error(const std::string & error_name, const std::string & error_message) = 0;
+    virtual void on_error(const ZumoKitError & error) = 0;
 
     virtual void on_success(const Transaction & transaction) = 0;
 };

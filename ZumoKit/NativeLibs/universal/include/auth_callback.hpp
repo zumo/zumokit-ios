@@ -3,19 +3,18 @@
 
 #pragma once
 
-#include <cstdint>
 #include <memory>
-#include <string>
 
 namespace zumo {
 
 class User;
+struct ZumoKitError;
 
 class AuthCallback {
 public:
     virtual ~AuthCallback() {}
 
-    virtual void on_error(int16_t error_code, const std::string & error_message) = 0;
+    virtual void on_error(const ZumoKitError & error) = 0;
 
     virtual void on_success(const std::shared_ptr<User> & user) = 0;
 };
