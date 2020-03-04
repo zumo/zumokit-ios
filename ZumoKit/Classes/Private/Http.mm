@@ -48,7 +48,7 @@
     {
 
         if(error) {
-            [callback onNetworkError];
+            [callback onNetworkError:[error localizedDescription]];
             return;
         }
 

@@ -10,7 +10,6 @@
 #import "ZKHttpImpl+Private.h"
 #import "ZKState+Private.h"
 #import "ZKStateListener+Private.h"
-#import "ZKSyncCallback+Private.h"
 #import "ZKUtils+Private.h"
 #import "ZKWebSocketImpl+Private.h"
 #include <exception>
@@ -68,12 +67,6 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
         _cppRefHandle.get()->auth(::djinni::String::toCpp(token),
                                   ::djinni::Optional<std::experimental::optional, ::djinni::Map<::djinni::String, ::djinni::String>>::toCpp(headers),
                                   ::djinni_generated::AuthCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)sync:(nullable id<ZKSyncCallback>)callback {
-    try {
-        _cppRefHandle.get()->sync(::djinni_generated::SyncCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

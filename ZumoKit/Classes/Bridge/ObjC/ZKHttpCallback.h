@@ -6,7 +6,7 @@
 
 @interface ZKHttpCallback : NSObject
 
-- (void)onNetworkError;
+- (void)onNetworkError:(nonnull NSString *)message;
 
 - (void)onSuccess:(int16_t)httpCode
              data:(nonnull NSString *)data;

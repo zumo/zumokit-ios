@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^MnemonicCompletionBlock)(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, NSString * _Nullable mnemonic);
+typedef void(^MnemonicCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, NSString * _Nullable mnemonic);
 
 @interface MnemonicCallback : NSObject <ZKMnemonicCallback>
 

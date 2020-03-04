@@ -34,7 +34,7 @@ void throwNSExceptionFromCurrent(const char * /*ctx*/) {
     try {
         throw;
     } catch (const ZumoKitException & e) {
-        NSString *name = [NSString stringWithCString:e.get_name() encoding:NSUTF8StringEncoding];
+        NSString *name = [NSString stringWithCString:e.get_type() encoding:NSUTF8StringEncoding];
         NSString *message = [NSString stringWithCString:e.what() encoding:NSUTF8StringEncoding];
         [NSException raise:name format:@"%@", message];
         __builtin_unreachable();

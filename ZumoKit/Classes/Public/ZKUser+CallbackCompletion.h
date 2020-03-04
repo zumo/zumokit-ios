@@ -12,9 +12,9 @@
 #import "ZKWalletCallback.h"
 #import "ZKMnemonicCallback.h"
 
-typedef void(^WalletCompletionBlock)(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, ZKWallet * _Nullable wallet);
+typedef void(^WalletCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKWallet * _Nullable wallet);
 
-typedef void(^MnemonicCompletionBlock)(bool success, NSString * _Nullable errorName, NSString * _Nullable errorMessage, NSString * _Nullable mnemonic);
+typedef void(^MnemonicCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, NSString * _Nullable mnemonic);
 
 @interface ZKUser (ZKUserCallbackCompletion)
 

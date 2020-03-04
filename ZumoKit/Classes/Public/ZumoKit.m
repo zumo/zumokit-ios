@@ -11,7 +11,6 @@
 #import "Http.h"
 #import "WebSocket.h"
 #import "AuthCallback.h"
-#import "SyncCallback.h"
 #import <objc/runtime.h>
 
 @implementation ZumoKit
@@ -57,10 +56,6 @@ ZKZumoCore *zumoCore;
      headers:(nullable NSDictionary<NSString *, NSString *> *)headers
   completion:(AuthCompletionBlock)completionHandler {
     [zumoCore auth:token headers: headers callback:[[AuthCallback alloc] initWithCompletionHandler: completionHandler]];
-}
-
-- (void)sync:(SyncCompletionBlock)completionHandler {
-    [zumoCore sync:[[SyncCallback alloc] initWithCompletionHandler: completionHandler]];
 }
 
 - (nonnull ZKState *)getState {

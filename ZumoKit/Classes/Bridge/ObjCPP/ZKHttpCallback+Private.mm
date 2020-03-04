@@ -30,9 +30,9 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     return self;
 }
 
-- (void)onNetworkError {
+- (void)onNetworkError:(nonnull NSString *)message {
     try {
-        _cppRefHandle.get()->on_network_error();
+        _cppRefHandle.get()->on_network_error(::djinni::String::toCpp(message));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

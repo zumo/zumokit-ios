@@ -25,8 +25,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKWallet.h"
 #import "ZKWallet+CallbackCompletion.h"
 
-typedef void(^AuthCompletionBlock)(bool success, short errorCode, NSString * _Nullable errorMessage, ZKUser * _Nullable user);
-typedef void(^SyncCompletionBlock)(bool success, short errorCode, NSString * _Nullable errorMessage);
+typedef void(^AuthCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKUser * _Nullable user);
 
 NS_ASSUME_NONNULL_BEGIN
 @interface ZumoKit : NSObject
@@ -43,8 +42,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)auth:(nonnull NSString *)token
      headers:(nullable NSDictionary<NSString *, NSString *> *)headers
   completion:(_Nonnull AuthCompletionBlock)completionHandler;
-
-- (void)sync:(_Nonnull SyncCompletionBlock)completionHandler;
 
 - (nonnull ZKState *)getState;
 
