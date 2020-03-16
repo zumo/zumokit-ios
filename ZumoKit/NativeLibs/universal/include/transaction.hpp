@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "network_type.hpp"
 #include "stdx/optional.hpp"
 #include "transaction_status.hpp"
 #include "transaction_type.hpp"
@@ -20,7 +21,7 @@ struct Transaction final {
     std::string account_id;
     std::experimental::optional<std::string> symbol;
     std::string coin;
-    std::experimental::optional<int32_t> chain_id;
+    NetworkType network;
     std::experimental::optional<int64_t> nonce;
     TransactionStatus status;
     std::string from_address;
@@ -47,7 +48,7 @@ struct Transaction final {
                 std::string account_id_,
                 std::experimental::optional<std::string> symbol_,
                 std::string coin_,
-                std::experimental::optional<int32_t> chain_id_,
+                NetworkType network_,
                 std::experimental::optional<int64_t> nonce_,
                 TransactionStatus status_,
                 std::string from_address_,
@@ -70,7 +71,7 @@ struct Transaction final {
     , account_id(std::move(account_id_))
     , symbol(std::move(symbol_))
     , coin(std::move(coin_))
-    , chain_id(std::move(chain_id_))
+    , network(std::move(network_))
     , nonce(std::move(nonce_))
     , status(std::move(status_))
     , from_address(std::move(from_address_))

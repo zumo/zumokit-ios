@@ -12,9 +12,9 @@
                               coin:(nonnull NSString *)coin
                            address:(nonnull NSString *)address
                            balance:(nonnull NSString *)balance
-                           chainId:(nullable NSNumber *)chainId
                              nonce:(nullable NSNumber *)nonce
                            network:(ZKNetworkType)network
+                              type:(ZKAccountType)type
                            version:(int8_t)version
 {
     if (self = [super init]) {
@@ -24,9 +24,9 @@
         _coin = [coin copy];
         _address = [address copy];
         _balance = [balance copy];
-        _chainId = chainId;
         _nonce = nonce;
         _network = network;
+        _type = type;
         _version = version;
     }
     return self;
@@ -38,9 +38,9 @@
                                  coin:(nonnull NSString *)coin
                               address:(nonnull NSString *)address
                               balance:(nonnull NSString *)balance
-                              chainId:(nullable NSNumber *)chainId
                                 nonce:(nullable NSNumber *)nonce
                               network:(ZKNetworkType)network
+                                 type:(ZKAccountType)type
                               version:(int8_t)version
 {
     return [(ZKAccount*)[self alloc] initWithId:id
@@ -49,9 +49,9 @@
                                            coin:coin
                                         address:address
                                         balance:balance
-                                        chainId:chainId
                                           nonce:nonce
                                         network:network
+                                           type:type
                                         version:version];
 }
 
@@ -67,9 +67,9 @@
             [self.coin isEqualToString:typedOther.coin] &&
             [self.address isEqualToString:typedOther.address] &&
             [self.balance isEqualToString:typedOther.balance] &&
-            ((self.chainId == nil && typedOther.chainId == nil) || (self.chainId != nil && [self.chainId isEqual:typedOther.chainId])) &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
             self.network == typedOther.network &&
+            self.type == typedOther.type &&
             self.version == typedOther.version;
 }
 
@@ -82,15 +82,15 @@
             self.coin.hash ^
             self.address.hash ^
             self.balance.hash ^
-            self.chainId.hash ^
             self.nonce.hash ^
             (NSUInteger)self.network ^
+            (NSUInteger)self.type ^
             (NSUInteger)self.version;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ path:%@ symbol:%@ coin:%@ address:%@ balance:%@ chainId:%@ nonce:%@ network:%@ version:%@>", self.class, (void *)self, self.id, self.path, self.symbol, self.coin, self.address, self.balance, self.chainId, self.nonce, @(self.network), @(self.version)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ path:%@ symbol:%@ coin:%@ address:%@ balance:%@ nonce:%@ network:%@ type:%@ version:%@>", self.class, (void *)self, self.id, self.path, self.symbol, self.coin, self.address, self.balance, self.nonce, @(self.network), @(self.type), @(self.version)];
 }
 
 @end

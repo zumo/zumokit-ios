@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "account_type.hpp"
 #include "network_type.hpp"
 #include "stdx/optional.hpp"
 #include <cstdint>
@@ -18,9 +19,9 @@ struct Account final {
     std::string coin;
     std::string address;
     std::string balance;
-    std::experimental::optional<int32_t> chain_id;
     std::experimental::optional<int64_t> nonce;
     NetworkType network;
+    AccountType type;
     int8_t version;
 
     friend bool operator==(const Account& lhs, const Account& rhs);
@@ -32,9 +33,9 @@ struct Account final {
             std::string coin_,
             std::string address_,
             std::string balance_,
-            std::experimental::optional<int32_t> chain_id_,
             std::experimental::optional<int64_t> nonce_,
             NetworkType network_,
+            AccountType type_,
             int8_t version_)
     : id(std::move(id_))
     , path(std::move(path_))
@@ -42,9 +43,9 @@ struct Account final {
     , coin(std::move(coin_))
     , address(std::move(address_))
     , balance(std::move(balance_))
-    , chain_id(std::move(chain_id_))
     , nonce(std::move(nonce_))
     , network(std::move(network_))
+    , type(std::move(type_))
     , version(std::move(version_))
     {}
 };

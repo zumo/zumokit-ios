@@ -13,6 +13,7 @@ enum class TransactionStatus : int {
     FAILED,
     RESUBMITTED,
     CANCELLED,
+    PAUSED,
 };
 
 }  // namespace zumo
