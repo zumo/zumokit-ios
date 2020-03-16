@@ -10,4 +10,5 @@ typedef NS_ENUM(NSInteger, ZKTransactionStatus)
     ZKTransactionStatusFAILED,
     ZKTransactionStatusRESUBMITTED,
     ZKTransactionStatusCANCELLED,
+    ZKTransactionStatusPAUSED,
 };

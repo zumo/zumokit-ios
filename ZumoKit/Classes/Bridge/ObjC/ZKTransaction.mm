@@ -12,7 +12,7 @@
                          accountId:(nonnull NSString *)accountId
                             symbol:(nullable NSString *)symbol
                               coin:(nonnull NSString *)coin
-                           chainId:(nullable NSNumber *)chainId
+                           network:(ZKNetworkType)network
                              nonce:(nullable NSNumber *)nonce
                             status:(ZKTransactionStatus)status
                        fromAddress:(nonnull NSString *)fromAddress
@@ -37,7 +37,7 @@
         _accountId = [accountId copy];
         _symbol = [symbol copy];
         _coin = [coin copy];
-        _chainId = chainId;
+        _network = network;
         _nonce = nonce;
         _status = status;
         _fromAddress = [fromAddress copy];
@@ -64,7 +64,7 @@
                                 accountId:(nonnull NSString *)accountId
                                    symbol:(nullable NSString *)symbol
                                      coin:(nonnull NSString *)coin
-                                  chainId:(nullable NSNumber *)chainId
+                                  network:(ZKNetworkType)network
                                     nonce:(nullable NSNumber *)nonce
                                    status:(ZKTransactionStatus)status
                               fromAddress:(nonnull NSString *)fromAddress
@@ -88,7 +88,7 @@
                                           accountId:accountId
                                              symbol:symbol
                                                coin:coin
-                                            chainId:chainId
+                                            network:network
                                               nonce:nonce
                                              status:status
                                         fromAddress:fromAddress
@@ -119,7 +119,7 @@
             [self.accountId isEqualToString:typedOther.accountId] &&
             ((self.symbol == nil && typedOther.symbol == nil) || (self.symbol != nil && [self.symbol isEqual:typedOther.symbol])) &&
             [self.coin isEqualToString:typedOther.coin] &&
-            ((self.chainId == nil && typedOther.chainId == nil) || (self.chainId != nil && [self.chainId isEqual:typedOther.chainId])) &&
+            self.network == typedOther.network &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
             self.status == typedOther.status &&
             [self.fromAddress isEqualToString:typedOther.fromAddress] &&
@@ -147,7 +147,7 @@
             self.accountId.hash ^
             self.symbol.hash ^
             self.coin.hash ^
-            self.chainId.hash ^
+            (NSUInteger)self.network ^
             self.nonce.hash ^
             (NSUInteger)self.status ^
             self.fromAddress.hash ^
@@ -168,7 +168,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ txHash:%@ accountId:%@ symbol:%@ coin:%@ chainId:%@ nonce:%@ status:%@ fromAddress:%@ fromUserId:%@ toAddress:%@ toUserId:%@ value:%@ fiatValue:%@ data:%@ gasPrice:%@ gasLimit:%@ cost:%@ fiatCost:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, @(self.type), self.txHash, self.accountId, self.symbol, self.coin, self.chainId, self.nonce, @(self.status), self.fromAddress, self.fromUserId, self.toAddress, self.toUserId, self.value, self.fiatValue, self.data, self.gasPrice, self.gasLimit, self.cost, self.fiatCost, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ txHash:%@ accountId:%@ symbol:%@ coin:%@ network:%@ nonce:%@ status:%@ fromAddress:%@ fromUserId:%@ toAddress:%@ toUserId:%@ value:%@ fiatValue:%@ data:%@ gasPrice:%@ gasLimit:%@ cost:%@ fiatCost:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, @(self.type), self.txHash, self.accountId, self.symbol, self.coin, @(self.network), self.nonce, @(self.status), self.fromAddress, self.fromUserId, self.toAddress, self.toUserId, self.value, self.fiatValue, self.data, self.gasPrice, self.gasLimit, self.cost, self.fiatCost, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

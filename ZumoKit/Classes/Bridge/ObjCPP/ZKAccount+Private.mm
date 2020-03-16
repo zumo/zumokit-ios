@@ -3,6 +3,7 @@
 
 #import "ZKAccount+Private.h"
 #import "DJIMarshal+Private.h"
+#import "ZKAccountType+Private.h"
 #import "ZKNetworkType+Private.h"
 #include <cassert>
 
@@ -17,9 +18,9 @@ auto Account::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.coin),
             ::djinni::String::toCpp(obj.address),
             ::djinni::String::toCpp(obj.balance),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.chainId),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce),
             ::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::toCpp(obj.network),
+            ::djinni::Enum<::zumo::AccountType, ZKAccountType>::toCpp(obj.type),
             ::djinni::I8::toCpp(obj.version)};
 }
 
@@ -31,9 +32,9 @@ auto Account::fromCpp(const CppType& cpp) -> ObjcType
                                     coin:(::djinni::String::fromCpp(cpp.coin))
                                  address:(::djinni::String::fromCpp(cpp.address))
                                  balance:(::djinni::String::fromCpp(cpp.balance))
-                                 chainId:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.chain_id))
                                    nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))
                                  network:(::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::fromCpp(cpp.network))
+                                    type:(::djinni::Enum<::zumo::AccountType, ZKAccountType>::fromCpp(cpp.type))
                                  version:(::djinni::I8::fromCpp(cpp.version))];
 }
 

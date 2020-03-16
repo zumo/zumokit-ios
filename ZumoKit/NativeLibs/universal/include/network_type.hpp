@@ -10,9 +10,10 @@ namespace zumo {
 enum class NetworkType : int {
     MAINNET,
     TESTNET,
-    KOVAN,
-    RINKEBY,
     ROPSTEN,
+    RINKEBY,
+    GOERLI,
+    KOVAN,
 };
 
 }  // namespace zumo

@@ -10,7 +10,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED = @"wallet_limi
 
 NSString * __nonnull const ZKZumoKitErrorCodeNOWALLETTORECOVERFOUND = @"no_wallet_to_recover_found";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDRECOVERYMNEMONIC = @"invalid_recovery_mnemonic";
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE = @"invalid_recovery_phrase";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT = @"invalid_mnemonic_word_count";
 
@@ -18,7 +18,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDPASSWORD = @"invalid_passwor
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDNETWORKTYPE = @"invalid_network_type";
 
-NSString * __nonnull const ZKZumoKitErrorCodeBITCOINOVERFLOW = @"bitcoin_overflow";
+NSString * __nonnull const ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW = @"bitcoin_amount_overflow";
 
 NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR = @"signing_error";
 
@@ -39,6 +39,20 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE = @"invalid_fee_rate
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDADDRESS = @"invalid_address";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDS = @"insufficient_funds";
+
+NSString * __nonnull const ZKZumoKitErrorCodeNONCEOVERFLOW = @"nonce_overflow";
+
+NSString * __nonnull const ZKZumoKitErrorCodeGASTOOLOW = @"gas_too_low";
+
+NSString * __nonnull const ZKZumoKitErrorCodeGASOVERFLOW = @"gas_overflow";
+
+NSString * __nonnull const ZKZumoKitErrorCodeNODESTINATIONADDRESS = @"no_destination_address";
+
+NSString * __nonnull const ZKZumoKitErrorCodeDATAOVERFLOW = @"data_overflow";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES = @"incompatible_network_types";
+
+NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTTYPENOTSUPPORTED = @"account_type_not_supported";
 
 @implementation ZKZumoKitErrorCode
 

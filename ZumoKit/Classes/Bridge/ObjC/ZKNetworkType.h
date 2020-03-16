@@ -7,7 +7,8 @@ typedef NS_ENUM(NSInteger, ZKNetworkType)
 {
     ZKNetworkTypeMAINNET,
     ZKNetworkTypeTESTNET,
-    ZKNetworkTypeKOVAN,
-    ZKNetworkTypeRINKEBY,
     ZKNetworkTypeROPSTEN,
+    ZKNetworkTypeRINKEBY,
+    ZKNetworkTypeGOERLI,
+    ZKNetworkTypeKOVAN,
 };

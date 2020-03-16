@@ -3,6 +3,7 @@
 
 #import "ZKTransaction+Private.h"
 #import "DJIMarshal+Private.h"
+#import "ZKNetworkType+Private.h"
 #import "ZKTransactionStatus+Private.h"
 #import "ZKTransactionType+Private.h"
 #include <cassert>
@@ -18,7 +19,7 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.accountId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.symbol),
             ::djinni::String::toCpp(obj.coin),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.chainId),
+            ::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::toCpp(obj.network),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce),
             ::djinni::Enum<::zumo::TransactionStatus, ZKTransactionStatus>::toCpp(obj.status),
             ::djinni::String::toCpp(obj.fromAddress),
@@ -45,7 +46,7 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
                                    accountId:(::djinni::String::fromCpp(cpp.account_id))
                                       symbol:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.symbol))
                                         coin:(::djinni::String::fromCpp(cpp.coin))
-                                     chainId:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.chain_id))
+                                     network:(::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::fromCpp(cpp.network))
                                        nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))
                                       status:(::djinni::Enum<::zumo::TransactionStatus, ZKTransactionStatus>::fromCpp(cpp.status))
                                  fromAddress:(::djinni::String::fromCpp(cpp.from_address))
