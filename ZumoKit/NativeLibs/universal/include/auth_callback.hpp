@@ -3,18 +3,18 @@
 
 #pragma once
 
+#include "zumo/exceptions.hpp"
 #include <memory>
 
 namespace zumo {
 
 class User;
-struct ZumoKitError;
 
 class AuthCallback {
 public:
     virtual ~AuthCallback() {}
 
-    virtual void on_error(const ZumoKitError & error) = 0;
+    virtual void on_error(const ::zumo::ZumoKitException & e) = 0;
 
     virtual void on_success(const std::shared_ptr<User> & user) = 0;
 };

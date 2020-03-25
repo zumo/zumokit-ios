@@ -3,16 +3,17 @@
 
 #pragma once
 
+#include "zumo/exceptions.hpp"
+
 namespace zumo {
 
 struct Transaction;
-struct ZumoKitError;
 
 class SendTransactionCallback {
 public:
     virtual ~SendTransactionCallback() {}
 
-    virtual void on_error(const ZumoKitError & error) = 0;
+    virtual void on_error(const ::zumo::ZumoKitException & e) = 0;
 
     virtual void on_success(const Transaction & transaction) = 0;
 };

@@ -25,12 +25,12 @@
     return self;
 }
 
-- (void)onError:(nonnull ZKZumoKitError *)error  {
-    _completionHandler(NO, error, NULL);
+- (void)onError:(nonnull NSError *)error  {
+    _completionHandler(nil, error);
 }
 
 - (void)onSuccess:(nonnull ZKTransaction *) transaction {
-    _completionHandler(YES, NULL, transaction);
+    _completionHandler(transaction, nil);
 }
 
 @end

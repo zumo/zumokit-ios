@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^SendTransactionCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKTransaction * _Nullable transaction);
+typedef void(^SendTransactionCompletionBlock)(ZKTransaction * _Nullable transaction, NSError * _Nullable error);
 
 @interface SendTransactionCallback : NSObject <ZKSendTransactionCallback>
 

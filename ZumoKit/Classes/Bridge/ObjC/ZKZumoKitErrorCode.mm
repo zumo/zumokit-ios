@@ -4,6 +4,8 @@
 #import "ZKZumoKitErrorCode.h"
 
 
+NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR = @"unknown_error";
+
 NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED = @"not_authorized";
 
 NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED = @"wallet_limit_exceeded";

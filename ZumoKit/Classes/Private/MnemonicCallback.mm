@@ -27,12 +27,12 @@
     return self;
 }
 
-- (void)onError:(nonnull ZKZumoKitError *)error  {
-    _completionHandler(NO, error, NULL);
+- (void)onError:(nonnull NSError *)error  {
+    _completionHandler(nil, error);
 }
 
 - (void)onSuccess:(NSString *) mnemonic {
-    _completionHandler(YES, NULL, mnemonic);
+    _completionHandler(mnemonic, nil);
 }
 
 @end
