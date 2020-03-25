@@ -10,6 +10,8 @@ namespace zumo {
 
 struct ZumoKitErrorCode final {
 
+    static std::string const UNKNOWN_ERROR;
+
     static std::string const NOT_AUTHORIZED;
 
     static std::string const WALLET_LIMIT_EXCEEDED;

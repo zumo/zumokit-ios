@@ -16,6 +16,7 @@
 
 #include <Foundation/Foundation.h>
 #include "DJIError.h"
+#include "ZKError.h"
 #include <exception>
 #include "exceptions.hpp"
 
@@ -34,13 +35,16 @@ void throwNSExceptionFromCurrent(const char * /*ctx*/) {
     try {
         throw;
     } catch (const ZumoKitException & e) {
-        NSString *name = [NSString stringWithCString:e.get_type() encoding:NSUTF8StringEncoding];
+        NSString *zumoKitErrorType = [NSString stringWithCString:e.get_type() encoding:NSUTF8StringEncoding];
+        NSString *zumoKitErrorCode = [NSString stringWithCString:e.get_code() encoding:NSUTF8StringEncoding];
         NSString *message = [NSString stringWithCString:e.what() encoding:NSUTF8StringEncoding];
-        [NSException raise:name format:@"%@", message];
+        
+        [[NSError errorFromZumoKitException:zumoKitErrorType code:zumoKitErrorCode message:message] throw];
         __builtin_unreachable();
     } catch (const std::exception & e) {
         NSString *message = [NSString stringWithCString:e.what() encoding:NSUTF8StringEncoding];
-        [NSException raise:message format:@"%@", message];
+        
+        [[NSError errorFromZumoKitException:nil code:nil message:message] throw];
         __builtin_unreachable();
     }
 }

@@ -3,46 +3,12 @@
 
 #import "ZKAuthCallback+Private.h"
 #import "ZKAuthCallback.h"
-#import "DJICppWrapperCache+Private.h"
-#import "DJIError.h"
 #import "DJIObjcWrapperCache+Private.h"
+#import "NSError+ZumoKit.h"
 #import "ZKUser+Private.h"
-#import "ZKZumoKitError+Private.h"
-#include <exception>
 #include <stdexcept>
-#include <utility>
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
-
-@interface ZKAuthCallbackCppProxy : NSObject<ZKAuthCallback>
-
-- (id)initWithCpp:(const std::shared_ptr<::zumo::AuthCallback>&)cppRef;
-
-@end
-
-@implementation ZKAuthCallbackCppProxy {
-    ::djinni::CppProxyCache::Handle<std::shared_ptr<::zumo::AuthCallback>> _cppRefHandle;
-}
-
-- (id)initWithCpp:(const std::shared_ptr<::zumo::AuthCallback>&)cppRef
-{
-    if (self = [super init]) {
-        _cppRefHandle.assign(cppRef);
-    }
-    return self;
-}
-
-- (void)onError:(nonnull ZKZumoKitError *)error {
-    try {
-        _cppRefHandle.get()->on_error(::djinni_generated::ZumoKitError::toCpp(error));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)onSuccess:(nullable ZKUser *)user {
-    try {
-        _cppRefHandle.get()->on_success(::djinni_generated::User::toCpp(user));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
 
 namespace djinni_generated {
 
@@ -53,10 +19,10 @@ class AuthCallback::ObjcProxy final
     friend class ::djinni_generated::AuthCallback;
 public:
     using ObjcProxyBase::ObjcProxyBase;
-    void on_error(const ::zumo::ZumoKitError & c_error) override
+    void on_error(const ::zumo::ZumoKitException & c_e) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() onError:(::djinni_generated::ZumoKitError::fromCpp(c_error))];
+            [djinni_private_get_proxied_objc_object() onError:(::zumo::djinni::objc::ZumoKitExceptionConverter::fromCpp(c_e))];
         }
     }
     void on_success(const std::shared_ptr<::zumo::User> & c_user) override
@@ -76,9 +42,6 @@ auto AuthCallback::toCpp(ObjcType objc) -> CppType
     if (!objc) {
         return nullptr;
     }
-    if ([(id)objc isKindOfClass:[ZKAuthCallbackCppProxy class]]) {
-        return ((ZKAuthCallbackCppProxy*)objc)->_cppRefHandle.get();
-    }
     return ::djinni::get_objc_proxy<ObjcProxy>(objc);
 }
 
@@ -87,12 +50,7 @@ auto AuthCallback::fromCppOpt(const CppOptType& cpp) -> ObjcType
     if (!cpp) {
         return nil;
     }
-    if (auto cppPtr = dynamic_cast<ObjcProxy*>(cpp.get())) {
-        return cppPtr->djinni_private_get_proxied_objc_object();
-    }
-    return ::djinni::get_cpp_proxy<ZKAuthCallbackCppProxy>(cpp);
+    return dynamic_cast<ObjcProxy&>(*cpp).djinni_private_get_proxied_objc_object();
 }
 
 }  // namespace djinni_generated
-
-@end

@@ -17,6 +17,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <ZumoKit/PublicHeader.h>
 
 #import <Foundation/Foundation.h>
+#import "ZKError.h"
 #import "ZKState.h"
 #import "ZKStateListener.h"
 #import "ZKUtils.h"
@@ -25,7 +26,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKWallet.h"
 #import "ZKWallet+CallbackCompletion.h"
 
-typedef void(^AuthCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKUser * _Nullable user);
+typedef void(^AuthCompletionBlock)(ZKUser * _Nullable user, NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 @interface ZumoKit : NSObject
