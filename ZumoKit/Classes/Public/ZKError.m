@@ -1,7 +1,7 @@
 #import "ZKError.h"
 #import "ZKZumoKitErrorType.h"
 
-NSString *const ZumoKitDoman = @"money.zumo.zumokit";
+NSString *const ZumoKitDomain = @"money.zumo.zumokit";
 NSString *const ZKZumoKitErrorTypeKey = @"money.zumo.zumokit:ZumoKitErrorTypeKey";
 NSString *const ZKZumoKitErrorCodeKey = @"money.zumo.zumokit:ZumoKitErrorCodeKey";
 
@@ -33,7 +33,7 @@ NSString *const ZKZumoKitErrorCodeKey = @"money.zumo.zumokit:ZumoKitErrorCodeKey
      userInfo[ZKZumoKitErrorCodeKey] = zumoKitErrorCode;
      userInfo[NSLocalizedDescriptionKey] = message;
 
-    return [NSError errorWithDomain:ZKZumoKitErrorTypeKey
+    return [NSError errorWithDomain:ZumoKitDomain
                                code:code
                            userInfo:userInfo];
 }
