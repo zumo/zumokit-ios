@@ -3,12 +3,46 @@
 
 #import "ZKWalletCallback+Private.h"
 #import "ZKWalletCallback.h"
+#import "DJICppWrapperCache+Private.h"
+#import "DJIError.h"
 #import "DJIObjcWrapperCache+Private.h"
-#import "NSError+ZumoKit.h"
 #import "ZKWallet+Private.h"
+#import "ZKZumoKitError+Private.h"
+#include <exception>
 #include <stdexcept>
+#include <utility>
 
 static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for this file");
+
+@interface ZKWalletCallbackCppProxy : NSObject<ZKWalletCallback>
+
+- (id)initWithCpp:(const std::shared_ptr<::zumo::WalletCallback>&)cppRef;
+
+@end
+
+@implementation ZKWalletCallbackCppProxy {
+    ::djinni::CppProxyCache::Handle<std::shared_ptr<::zumo::WalletCallback>> _cppRefHandle;
+}
+
+- (id)initWithCpp:(const std::shared_ptr<::zumo::WalletCallback>&)cppRef
+{
+    if (self = [super init]) {
+        _cppRefHandle.assign(cppRef);
+    }
+    return self;
+}
+
+- (void)onError:(nonnull ZKZumoKitError *)error {
+    try {
+        _cppRefHandle.get()->on_error(::djinni_generated::ZumoKitError::toCpp(error));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)onSuccess:(nullable ZKWallet *)wallet {
+    try {
+        _cppRefHandle.get()->on_success(::djinni_generated::Wallet::toCpp(wallet));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
 
 namespace djinni_generated {
 
@@ -19,10 +53,10 @@ class WalletCallback::ObjcProxy final
     friend class ::djinni_generated::WalletCallback;
 public:
     using ObjcProxyBase::ObjcProxyBase;
-    void on_error(const ::zumo::ZumoKitException & c_e) override
+    void on_error(const ::zumo::ZumoKitError & c_error) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() onError:(::zumo::djinni::objc::ZumoKitExceptionConverter::fromCpp(c_e))];
+            [djinni_private_get_proxied_objc_object() onError:(::djinni_generated::ZumoKitError::fromCpp(c_error))];
         }
     }
     void on_success(const std::shared_ptr<::zumo::Wallet> & c_wallet) override
@@ -42,6 +76,9 @@ auto WalletCallback::toCpp(ObjcType objc) -> CppType
     if (!objc) {
         return nullptr;
     }
+    if ([(id)objc isKindOfClass:[ZKWalletCallbackCppProxy class]]) {
+        return ((ZKWalletCallbackCppProxy*)objc)->_cppRefHandle.get();
+    }
     return ::djinni::get_objc_proxy<ObjcProxy>(objc);
 }
 
@@ -50,7 +87,12 @@ auto WalletCallback::fromCppOpt(const CppOptType& cpp) -> ObjcType
     if (!cpp) {
         return nil;
     }
-    return dynamic_cast<ObjcProxy&>(*cpp).djinni_private_get_proxied_objc_object();
+    if (auto cppPtr = dynamic_cast<ObjcProxy*>(cpp.get())) {
+        return cppPtr->djinni_private_get_proxied_objc_object();
+    }
+    return ::djinni::get_cpp_proxy<ZKWalletCallbackCppProxy>(cpp);
 }
 
 }  // namespace djinni_generated
+
+@end
