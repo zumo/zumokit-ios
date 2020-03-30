@@ -10,8 +10,6 @@ namespace zumo {
 
 struct ZumoKitErrorCode final {
 
-    static std::string const UNKNOWN_ERROR;
-
     static std::string const NOT_AUTHORIZED;
 
     static std::string const WALLET_LIMIT_EXCEEDED;
@@ -34,9 +32,9 @@ struct ZumoKitErrorCode final {
 
     static std::string const INVALID_HD_WALLET_PATH;
 
-    static std::string const CHANGE_ACCOUNT_NOT_FOUND;
+    static std::string const CHANGE_ACCOUNT_DOES_NOT_EXIST;
 
-    static std::string const ACCOUNT_NOT_FOUND;
+    static std::string const ACCOUNT_DOES_NOT_EXIST;
 
     static std::string const KNOWN_TRANSACTION;
 
@@ -60,7 +58,7 @@ struct ZumoKitErrorCode final {
 
     static std::string const INCOMPATIBLE_NETWORK_TYPES;
 
-    static std::string const INVALID_ACCOUNT_TYPE;
+    static std::string const ACCOUNT_TYPE_NOT_SUPPORTED;
 };
 
 }  // namespace zumo

@@ -9,7 +9,6 @@
 
 @end
 
-extern NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR;
 extern NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeNOWALLETTORECOVERFOUND;
@@ -21,8 +20,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW;
 extern NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR;
 extern NSString * __nonnull const ZKZumoKitErrorCodeUTXOSIGNINGERROR;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH;
-extern NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND;
-extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND;
+extern NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTDOESNOTEXIST;
+extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTDOESNOTEXIST;
 extern NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE;
@@ -34,4 +33,4 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeGASOVERFLOW;
 extern NSString * __nonnull const ZKZumoKitErrorCodeNODESTINATIONADDRESS;
 extern NSString * __nonnull const ZKZumoKitErrorCodeDATAOVERFLOW;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES;
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE;
+extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTTYPENOTSUPPORTED;
