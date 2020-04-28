@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void(^WalletCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKWallet * _Nullable wallet);
+typedef void(^WalletCompletionBlock)(ZKWallet * _Nullable wallet, NSError * _Nullable error);
 
 @interface WalletCallback : NSObject <ZKWalletCallback>
 

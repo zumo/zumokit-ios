@@ -9,27 +9,42 @@
 #define ZKWallet_CallbackCompletion_h
 
 #import "ZKWallet.h"
-#import "ZKSendTransactionCallback.h"
+#import "ZKComposedTransaction.h"
+#import "ZKComposedExchange.h"
+#import "ZKTransaction.h"
 
-typedef void(^SendTransactionCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKTransaction * _Nullable transaction);
+typedef void(^ComposeTransactionCompletionBlock)(ZKComposedTransaction * _Nullable composedTransaction, NSError * _Nullable error);
+
+typedef void(^ComposeExchangeCompletionBlock)(ZKComposedExchange * _Nullable composedExchange, NSError * _Nullable error);
+
+typedef void(^SubmitTransactionCompletionBlock)(ZKTransaction * _Nullable transaction, NSError * _Nullable error);
 
 @interface ZKWallet (ZKWalletCallbackCompletion)
 
-- (void)sendEthTransaction:(nonnull NSString *)accountId
-                  gasPrice:(nonnull NSString *)gasPrice
-                  gasLimit:(nonnull NSString *)gasLimit
-                        to:(nullable NSString *)to
-                     value:(nullable NSString *)value
-                      data:(nullable NSString *)data
-                     nonce:(nullable NSNumber *)nonce
-                completion:(_Nonnull SendTransactionCompletionBlock)completionHandler;
+- (void)composeEthTransaction:(nonnull NSString *)accountId
+                     gasPrice:(nonnull NSString *)gasPrice
+                     gasLimit:(nonnull NSString *)gasLimit
+                           to:(nullable NSString *)to
+                        value:(nullable NSString *)value
+                         data:(nullable NSString *)data
+                        nonce:(nullable NSNumber *)nonce
+                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
-- (void)sendBtcTransaction:(nonnull NSString *)accountId
-changeAccountId:(nonnull NSString *)changeAccountId
-             to:(nonnull NSString *)to
-          value:(nonnull NSString *)value
-        feeRate:(nonnull NSString *)feeRate
-       completion:(_Nonnull SendTransactionCompletionBlock)completionHandler;
+- (void)composeBtcTransaction:(nonnull NSString *)accountId
+              changeAccountId:(nonnull NSString *)changeAccountId
+                           to:(nonnull NSString *)to
+                        value:(nonnull NSString *)value
+                      feeRate:(nonnull NSString *)feeRate
+                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+
+- (void)composeExchange:(nonnull NSString *)depositAccountId
+      withdrawAccountId:(nonnull NSString *)withdrawAccountId
+           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+                  value:(nonnull NSString *)value
+             completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler;
+
+- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+               completion:(_Nonnull SubmitTransactionCompletionBlock)completionHandler;
 
 @end
 

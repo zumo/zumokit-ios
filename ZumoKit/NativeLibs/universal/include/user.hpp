@@ -18,6 +18,7 @@ class WalletCallback;
 enum class AccountType;
 enum class NetworkType;
 struct Account;
+struct Exchange;
 struct Transaction;
 
 class User {
@@ -47,6 +48,10 @@ public:
     virtual std::vector<Transaction> get_account_transactions(const std::string & account_id) = 0;
 
     virtual std::vector<Transaction> get_transactions() = 0;
+
+    virtual std::vector<Exchange> get_exchanges() = 0;
+
+    virtual std::experimental::optional<Exchange> get_exchange_by_transaction_id(const std::string & transaction_id) = 0;
 
     virtual void add_listener(const std::shared_ptr<UserListener> & listener) = 0;
 

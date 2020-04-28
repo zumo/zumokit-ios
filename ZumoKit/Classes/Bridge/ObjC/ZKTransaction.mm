@@ -8,6 +8,7 @@
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                               type:(ZKTransactionType)type
+                         direction:(ZKTransactionDirection)direction
                             txHash:(nullable NSString *)txHash
                          accountId:(nonnull NSString *)accountId
                             symbol:(nullable NSString *)symbol
@@ -33,6 +34,7 @@
     if (self = [super init]) {
         _id = [id copy];
         _type = type;
+        _direction = direction;
         _txHash = [txHash copy];
         _accountId = [accountId copy];
         _symbol = [symbol copy];
@@ -60,6 +62,7 @@
 
 + (nonnull instancetype)transactionWithId:(nonnull NSString *)id
                                      type:(ZKTransactionType)type
+                                direction:(ZKTransactionDirection)direction
                                    txHash:(nullable NSString *)txHash
                                 accountId:(nonnull NSString *)accountId
                                    symbol:(nullable NSString *)symbol
@@ -84,6 +87,7 @@
 {
     return [(ZKTransaction*)[self alloc] initWithId:id
                                                type:type
+                                          direction:direction
                                              txHash:txHash
                                           accountId:accountId
                                              symbol:symbol
@@ -115,6 +119,7 @@
     ZKTransaction *typedOther = (ZKTransaction *)other;
     return [self.id isEqualToString:typedOther.id] &&
             self.type == typedOther.type &&
+            self.direction == typedOther.direction &&
             ((self.txHash == nil && typedOther.txHash == nil) || (self.txHash != nil && [self.txHash isEqual:typedOther.txHash])) &&
             [self.accountId isEqualToString:typedOther.accountId] &&
             ((self.symbol == nil && typedOther.symbol == nil) || (self.symbol != nil && [self.symbol isEqual:typedOther.symbol])) &&
@@ -143,6 +148,7 @@
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
             (NSUInteger)self.type ^
+            (NSUInteger)self.direction ^
             self.txHash.hash ^
             self.accountId.hash ^
             self.symbol.hash ^
@@ -168,7 +174,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ txHash:%@ accountId:%@ symbol:%@ coin:%@ network:%@ nonce:%@ status:%@ fromAddress:%@ fromUserId:%@ toAddress:%@ toUserId:%@ value:%@ fiatValue:%@ data:%@ gasPrice:%@ gasLimit:%@ cost:%@ fiatCost:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, @(self.type), self.txHash, self.accountId, self.symbol, self.coin, @(self.network), self.nonce, @(self.status), self.fromAddress, self.fromUserId, self.toAddress, self.toUserId, self.value, self.fiatValue, self.data, self.gasPrice, self.gasLimit, self.cost, self.fiatCost, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ direction:%@ txHash:%@ accountId:%@ symbol:%@ coin:%@ network:%@ nonce:%@ status:%@ fromAddress:%@ fromUserId:%@ toAddress:%@ toUserId:%@ value:%@ fiatValue:%@ data:%@ gasPrice:%@ gasLimit:%@ cost:%@ fiatCost:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, @(self.type), @(self.direction), self.txHash, self.accountId, self.symbol, self.coin, @(self.network), self.nonce, @(self.status), self.fromAddress, self.fromUserId, self.toAddress, self.toUserId, self.value, self.fiatValue, self.data, self.gasPrice, self.gasLimit, self.cost, self.fiatCost, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

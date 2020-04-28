@@ -10,7 +10,7 @@
 #import "ZKZumoCore.h"
 #import "Http.h"
 #import "WebSocket.h"
-#import "AuthCallback.h"
+#import "UserCallback.h"
 #import <objc/runtime.h>
 
 @implementation ZumoKit
@@ -21,10 +21,10 @@ ZKZumoCore *zumoCore;
     return [ZKZumoCore getVersion];
 }
 
-- (instancetype)initWithTxServiceUrl:(NSString *)txServiceUrl
-                              apiKey:(NSString *)apiKey
-                             apiRoot:(NSString *)apiRoot
-                              myRoot:(NSString *)myRoot {
+- (instancetype)initWithApiKey:(NSString *)apiKey
+                       apiRoot:(NSString *)apiRoot
+                  txServiceUrl:(NSString *)txServiceUrl {
+    
     if( self = [super init] ) {
 
         // Init the impls needed for the C++ core
@@ -39,7 +39,6 @@ ZKZumoCore *zumoCore;
                              wsImpl: wsImpl
                              apiKey: apiKey
                             apiRoot: apiRoot
-                             myRoot: myRoot
                       txServiceRoot: txServiceUrl];
 
         _utils = zumoCore.getUtils;
@@ -52,10 +51,9 @@ ZKZumoCore *zumoCore;
     return self;
 }
 
-- (void)auth:(nonnull NSString *)token
-     headers:(nullable NSDictionary<NSString *, NSString *> *)headers
-  completion:(AuthCompletionBlock)completionHandler {
-    [zumoCore auth:token headers: headers callback:[[AuthCallback alloc] initWithCompletionHandler: completionHandler]];
+- (void)getUser:(nonnull NSString *)userToken
+  completion:(UserCompletionBlock)completionHandler {
+    [zumoCore getUser:userToken callback:[[UserCallback alloc] initWithCompletionHandler: completionHandler]];
 }
 
 - (nonnull ZKState *)getState {

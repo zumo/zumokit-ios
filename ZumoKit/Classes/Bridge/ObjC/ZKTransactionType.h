@@ -5,6 +5,6 @@
 
 typedef NS_ENUM(NSInteger, ZKTransactionType)
 {
-    ZKTransactionTypeINCOMING,
-    ZKTransactionTypeOUTGOING,
+    ZKTransactionTypeNORMAL,
+    ZKTransactionTypeEXCHANGE,
 };

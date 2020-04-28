@@ -4,6 +4,8 @@
 #import "ZKZumoKitErrorCode.h"
 
 
+NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR = @"unknown_error";
+
 NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED = @"not_authorized";
 
 NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED = @"wallet_limit_exceeded";
@@ -26,9 +28,9 @@ NSString * __nonnull const ZKZumoKitErrorCodeUTXOSIGNINGERROR = @"utxo_signing_e
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH = @"invalid_hd_wallet_path";
 
-NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTDOESNOTEXIST = @"change_account_does_not_exist";
+NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND = @"change_account_not_found";
 
-NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTDOESNOTEXIST = @"account_does_not_exist";
+NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND = @"account_not_found";
 
 NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION = @"known_transaction";
 
@@ -52,7 +54,11 @@ NSString * __nonnull const ZKZumoKitErrorCodeDATAOVERFLOW = @"data_overflow";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES = @"incompatible_network_types";
 
-NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTTYPENOTSUPPORTED = @"account_type_not_supported";
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE = @"invalid_account_type";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE = @"invalid_exchange_rate";
+
+NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE = @"exchange_return_value_negative";
 
 @implementation ZKZumoKitErrorCode
 

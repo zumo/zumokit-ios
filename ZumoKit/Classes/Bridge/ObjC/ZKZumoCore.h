@@ -5,9 +5,9 @@
 #import <Foundation/Foundation.h>
 @class ZKUtils;
 @class ZKZumoCore;
-@protocol ZKAuthCallback;
 @protocol ZKHttpImpl;
 @protocol ZKStateListener;
+@protocol ZKUserCallback;
 @protocol ZKWebSocketImpl;
 
 
@@ -19,12 +19,10 @@
                        wsImpl:(nullable id<ZKWebSocketImpl>)wsImpl
                        apiKey:(nonnull NSString *)apiKey
                       apiRoot:(nonnull NSString *)apiRoot
-                       myRoot:(nonnull NSString *)myRoot
                 txServiceRoot:(nonnull NSString *)txServiceRoot;
 
-- (void)auth:(nonnull NSString *)token
-     headers:(nullable NSDictionary<NSString *, NSString *> *)headers
-    callback:(nullable id<ZKAuthCallback>)callback;
+- (void)getUser:(nonnull NSString *)userToken
+       callback:(nullable id<ZKUserCallback>)callback;
 
 - (nullable ZKUtils *)getUtils;
 

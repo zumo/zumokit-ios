@@ -5,6 +5,7 @@
 
 #include "network_type.hpp"
 #include "stdx/optional.hpp"
+#include "transaction_direction.hpp"
 #include "transaction_status.hpp"
 #include "transaction_type.hpp"
 #include <cstdint>
@@ -17,6 +18,7 @@ namespace zumo {
 struct Transaction final {
     std::string id;
     TransactionType type;
+    TransactionDirection direction;
     std::experimental::optional<std::string> tx_hash;
     std::string account_id;
     std::experimental::optional<std::string> symbol;
@@ -44,6 +46,7 @@ struct Transaction final {
 
     Transaction(std::string id_,
                 TransactionType type_,
+                TransactionDirection direction_,
                 std::experimental::optional<std::string> tx_hash_,
                 std::string account_id_,
                 std::experimental::optional<std::string> symbol_,
@@ -67,6 +70,7 @@ struct Transaction final {
                 int64_t timestamp_)
     : id(std::move(id_))
     , type(std::move(type_))
+    , direction(std::move(direction_))
     , tx_hash(std::move(tx_hash_))
     , account_id(std::move(account_id_))
     , symbol(std::move(symbol_))
