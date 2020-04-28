@@ -17,6 +17,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <ZumoKit/PublicHeader.h>
 
 #import <Foundation/Foundation.h>
+#import "ZKError.h"
 #import "ZKState.h"
 #import "ZKStateListener.h"
 #import "ZKUtils.h"
@@ -25,7 +26,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKWallet.h"
 #import "ZKWallet+CallbackCompletion.h"
 
-typedef void(^AuthCompletionBlock)(bool success, ZKZumoKitError * _Nullable error, ZKUser * _Nullable user);
+typedef void(^UserCompletionBlock)(ZKUser * _Nullable user, NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 @interface ZumoKit : NSObject
@@ -34,14 +35,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nonnull NSString *)version;
 
-- (instancetype)initWithTxServiceUrl:(NSString *)txServiceUrl
-                              apiKey:(NSString *)apiKey
-                             apiRoot:(NSString *)apiRoot
-                              myRoot:(NSString *)myRoot;
+- (instancetype)initWithApiKey:(NSString *)apiKey
+                       apiRoot:(NSString *)apiRoot
+                  txServiceUrl:(NSString *)txServiceUrl;
 
-- (void)auth:(nonnull NSString *)token
-     headers:(nullable NSDictionary<NSString *, NSString *> *)headers
-  completion:(_Nonnull AuthCompletionBlock)completionHandler;
+- (void)getUser:(nonnull NSString *)userToken
+  completion:(_Nonnull UserCompletionBlock)completionHandler;
 
 - (nonnull ZKState *)getState;
 

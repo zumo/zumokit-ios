@@ -3,16 +3,14 @@
 
 #pragma once
 
-#include "stdx/optional.hpp"
 #include <memory>
 #include <string>
-#include <unordered_map>
 
 namespace zumo {
 
-class AuthCallback;
 class HttpImpl;
 class StateListener;
+class UserCallback;
 class Utils;
 class WebSocketImpl;
 struct State;
@@ -23,9 +21,9 @@ public:
 
     static std::string get_version();
 
-    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpImpl> & http_impl, const std::shared_ptr<WebSocketImpl> & ws_impl, const std::string & api_key, const std::string & api_root, const std::string & my_root, const std::string & tx_service_root);
+    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpImpl> & http_impl, const std::shared_ptr<WebSocketImpl> & ws_impl, const std::string & api_key, const std::string & api_root, const std::string & tx_service_root);
 
-    virtual void auth(const std::string & token, const std::experimental::optional<std::unordered_map<std::string, std::string>> & headers, const std::shared_ptr<AuthCallback> & callback) = 0;
+    virtual void get_user(const std::string & user_token, const std::shared_ptr<UserCallback> & callback) = 0;
 
     virtual std::shared_ptr<Utils> get_utils() = 0;
 

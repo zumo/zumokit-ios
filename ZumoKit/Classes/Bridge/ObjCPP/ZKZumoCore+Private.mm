@@ -6,10 +6,10 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
-#import "ZKAuthCallback+Private.h"
 #import "ZKHttpImpl+Private.h"
 #import "ZKState+Private.h"
 #import "ZKStateListener+Private.h"
+#import "ZKUserCallback+Private.h"
 #import "ZKUtils+Private.h"
 #import "ZKWebSocketImpl+Private.h"
 #include <exception>
@@ -47,26 +47,22 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                        wsImpl:(nullable id<ZKWebSocketImpl>)wsImpl
                        apiKey:(nonnull NSString *)apiKey
                       apiRoot:(nonnull NSString *)apiRoot
-                       myRoot:(nonnull NSString *)myRoot
                 txServiceRoot:(nonnull NSString *)txServiceRoot {
     try {
         auto objcpp_result_ = ::zumo::ZumoCore::init(::djinni_generated::HttpImpl::toCpp(httpImpl),
                                                      ::djinni_generated::WebSocketImpl::toCpp(wsImpl),
                                                      ::djinni::String::toCpp(apiKey),
                                                      ::djinni::String::toCpp(apiRoot),
-                                                     ::djinni::String::toCpp(myRoot),
                                                      ::djinni::String::toCpp(txServiceRoot));
         return ::djinni_generated::ZumoCore::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)auth:(nonnull NSString *)token
-     headers:(nullable NSDictionary<NSString *, NSString *> *)headers
-    callback:(nullable id<ZKAuthCallback>)callback {
+- (void)getUser:(nonnull NSString *)userToken
+       callback:(nullable id<ZKUserCallback>)callback {
     try {
-        _cppRefHandle.get()->auth(::djinni::String::toCpp(token),
-                                  ::djinni::Optional<std::experimental::optional, ::djinni::Map<::djinni::String, ::djinni::String>>::toCpp(headers),
-                                  ::djinni_generated::AuthCallback::toCpp(callback));
+        _cppRefHandle.get()->get_user(::djinni::String::toCpp(userToken),
+                                      ::djinni_generated::UserCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

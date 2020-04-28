@@ -8,8 +8,8 @@
 namespace zumo {
 
 enum class TransactionType : int {
-    INCOMING,
-    OUTGOING,
+    NORMAL,
+    EXCHANGE,
 };
 
 }  // namespace zumo

@@ -4,6 +4,7 @@
 #import "ZKTransaction+Private.h"
 #import "DJIMarshal+Private.h"
 #import "ZKNetworkType+Private.h"
+#import "ZKTransactionDirection+Private.h"
 #import "ZKTransactionStatus+Private.h"
 #import "ZKTransactionType+Private.h"
 #include <cassert>
@@ -15,6 +16,7 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
             ::djinni::Enum<::zumo::TransactionType, ZKTransactionType>::toCpp(obj.type),
+            ::djinni::Enum<::zumo::TransactionDirection, ZKTransactionDirection>::toCpp(obj.direction),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.txHash),
             ::djinni::String::toCpp(obj.accountId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.symbol),
@@ -42,6 +44,7 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKTransaction alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
                                         type:(::djinni::Enum<::zumo::TransactionType, ZKTransactionType>::fromCpp(cpp.type))
+                                   direction:(::djinni::Enum<::zumo::TransactionDirection, ZKTransactionDirection>::fromCpp(cpp.direction))
                                       txHash:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.tx_hash))
                                    accountId:(::djinni::String::fromCpp(cpp.account_id))
                                       symbol:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.symbol))

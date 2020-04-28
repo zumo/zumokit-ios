@@ -9,6 +9,7 @@
 #import "ZKAccount+Private.h"
 #import "ZKAccountListener+Private.h"
 #import "ZKAccountType+Private.h"
+#import "ZKExchange+Private.h"
 #import "ZKMnemonicCallback+Private.h"
 #import "ZKNetworkType+Private.h"
 #import "ZKTransaction+Private.h"
@@ -132,6 +133,20 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_transactions();
         return ::djinni::List<::djinni_generated::Transaction>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nonnull NSArray<ZKExchange *> *)getExchanges {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_exchanges();
+        return ::djinni::List<::djinni_generated::Exchange>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nullable ZKExchange *)getExchangeByTransactionId:(nonnull NSString *)transactionId {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_by_transaction_id(::djinni::String::toCpp(transactionId));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::Exchange>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

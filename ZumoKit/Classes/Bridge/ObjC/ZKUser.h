@@ -3,6 +3,7 @@
 
 #import "ZKAccount.h"
 #import "ZKAccountType.h"
+#import "ZKExchange.h"
 #import "ZKNetworkType.h"
 #import "ZKTransaction.h"
 #import <Foundation/Foundation.h>
@@ -46,6 +47,10 @@
 - (nonnull NSArray<ZKTransaction *> *)getAccountTransactions:(nonnull NSString *)accountId;
 
 - (nonnull NSArray<ZKTransaction *> *)getTransactions;
+
+- (nonnull NSArray<ZKExchange *> *)getExchanges;
+
+- (nullable ZKExchange *)getExchangeByTransactionId:(nonnull NSString *)transactionId;
 
 - (void)addListener:(nullable id<ZKUserListener>)listener;
 
