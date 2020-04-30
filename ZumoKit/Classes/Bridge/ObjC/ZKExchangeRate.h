@@ -7,20 +7,14 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                    depositCurrency:(nonnull NSString *)depositCurrency
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                             value:(nonnull NSString *)value
                            validTo:(int64_t)validTo
-                              rate:(nonnull NSString *)rate
-                           feeRate:(nonnull NSString *)feeRate
-                    depositFeeRate:(nonnull NSString *)depositFeeRate
-                       withdrawFee:(nonnull NSString *)withdrawFee
                          timestamp:(int64_t)timestamp;
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
                            depositCurrency:(nonnull NSString *)depositCurrency
                           withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                                     value:(nonnull NSString *)value
                                    validTo:(int64_t)validTo
-                                      rate:(nonnull NSString *)rate
-                                   feeRate:(nonnull NSString *)feeRate
-                            depositFeeRate:(nonnull NSString *)depositFeeRate
-                               withdrawFee:(nonnull NSString *)withdrawFee
                                  timestamp:(int64_t)timestamp;
 
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -29,15 +23,9 @@
 
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 
+@property (nonatomic, readonly, nonnull) NSString * value;
+
 @property (nonatomic, readonly) int64_t validTo;
-
-@property (nonatomic, readonly, nonnull) NSString * rate;
-
-@property (nonatomic, readonly, nonnull) NSString * feeRate;
-
-@property (nonatomic, readonly, nonnull) NSString * depositFeeRate;
-
-@property (nonatomic, readonly, nonnull) NSString * withdrawFee;
 
 @property (nonatomic, readonly) int64_t timestamp;
 

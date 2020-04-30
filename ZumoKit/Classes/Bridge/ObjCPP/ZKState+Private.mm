@@ -5,7 +5,7 @@
 #import "DJIMarshal+Private.h"
 #import "ZKAccount+Private.h"
 #import "ZKExchange+Private.h"
-#import "ZKExchangeRate+Private.h"
+#import "ZKExchangeFees+Private.h"
 #import "ZKFeeRates+Private.h"
 #import "ZKSyncStatus+Private.h"
 #import "ZKTransaction+Private.h"
@@ -22,10 +22,10 @@ auto State::toCpp(ObjcType obj) -> CppType
             ::djinni::List<::djinni_generated::Exchange>::toCpp(obj.exchanges),
             ::djinni::String::toCpp(obj.token),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.activeUserId),
-            ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRate),
+            ::djinni::String::toCpp(obj.exchangeRates),
+            ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeFees>>::toCpp(obj.exchangeFees),
             ::djinni::String::toCpp(obj.bitcoinDepositAddress),
             ::djinni::String::toCpp(obj.ethereumDepositAddress),
-            ::djinni::String::toCpp(obj.exchangeRates),
             ::djinni_generated::TxServiceConnection::toCpp(obj.txServiceConnection),
             ::djinni::Map<::djinni::String, ::djinni_generated::FeeRates>::toCpp(obj.feeRates),
             ::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::toCpp(obj.syncStatus)};
@@ -38,10 +38,10 @@ auto State::fromCpp(const CppType& cpp) -> ObjcType
                                    exchanges:(::djinni::List<::djinni_generated::Exchange>::fromCpp(cpp.exchanges))
                                        token:(::djinni::String::fromCpp(cpp.token))
                                 activeUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.active_user_id))
-                                exchangeRate:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rate))
+                               exchangeRates:(::djinni::String::fromCpp(cpp.exchange_rates))
+                                exchangeFees:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeFees>>::fromCpp(cpp.exchange_fees))
                        bitcoinDepositAddress:(::djinni::String::fromCpp(cpp.bitcoin_deposit_address))
                       ethereumDepositAddress:(::djinni::String::fromCpp(cpp.ethereum_deposit_address))
-                               exchangeRates:(::djinni::String::fromCpp(cpp.exchange_rates))
                          txServiceConnection:(::djinni_generated::TxServiceConnection::fromCpp(cpp.tx_service_connection))
                                     feeRates:(::djinni::Map<::djinni::String, ::djinni_generated::FeeRates>::fromCpp(cpp.fee_rates))
                                   syncStatus:(::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::fromCpp(cpp.sync_status))];

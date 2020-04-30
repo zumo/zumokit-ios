@@ -15,7 +15,12 @@
                  withdrawAccountId:(nonnull NSString *)withdrawAccountId
              withdrawTransactionId:(nullable NSString *)withdrawTransactionId
                             amount:(nonnull NSString *)amount
+                        depositFee:(nonnull NSString *)depositFee
                       returnAmount:(nonnull NSString *)returnAmount
+                       exchangeFee:(nonnull NSString *)exchangeFee
+                       withdrawFee:(nonnull NSString *)withdrawFee
+                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+                      exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
 {
@@ -29,7 +34,12 @@
         _withdrawAccountId = [withdrawAccountId copy];
         _withdrawTransactionId = [withdrawTransactionId copy];
         _amount = [amount copy];
+        _depositFee = [depositFee copy];
         _returnAmount = [returnAmount copy];
+        _exchangeFee = [exchangeFee copy];
+        _withdrawFee = [withdrawFee copy];
+        _exchangeRate = exchangeRate;
+        _exchangeFees = exchangeFees;
         _submittedAt = submittedAt;
         _confirmedAt = confirmedAt;
     }
@@ -45,7 +55,12 @@
                      withdrawAccountId:(nonnull NSString *)withdrawAccountId
                  withdrawTransactionId:(nullable NSString *)withdrawTransactionId
                                 amount:(nonnull NSString *)amount
+                            depositFee:(nonnull NSString *)depositFee
                           returnAmount:(nonnull NSString *)returnAmount
+                           exchangeFee:(nonnull NSString *)exchangeFee
+                           withdrawFee:(nonnull NSString *)withdrawFee
+                          exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+                          exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
                            submittedAt:(nullable NSNumber *)submittedAt
                            confirmedAt:(nullable NSNumber *)confirmedAt
 {
@@ -58,7 +73,12 @@
                                withdrawAccountId:withdrawAccountId
                            withdrawTransactionId:withdrawTransactionId
                                           amount:amount
+                                      depositFee:depositFee
                                     returnAmount:returnAmount
+                                     exchangeFee:exchangeFee
+                                     withdrawFee:withdrawFee
+                                    exchangeRate:exchangeRate
+                                    exchangeFees:exchangeFees
                                      submittedAt:submittedAt
                                      confirmedAt:confirmedAt];
 }
@@ -78,7 +98,12 @@
             [self.withdrawAccountId isEqualToString:typedOther.withdrawAccountId] &&
             ((self.withdrawTransactionId == nil && typedOther.withdrawTransactionId == nil) || (self.withdrawTransactionId != nil && [self.withdrawTransactionId isEqual:typedOther.withdrawTransactionId])) &&
             [self.amount isEqualToString:typedOther.amount] &&
+            [self.depositFee isEqualToString:typedOther.depositFee] &&
             [self.returnAmount isEqualToString:typedOther.returnAmount] &&
+            [self.exchangeFee isEqualToString:typedOther.exchangeFee] &&
+            [self.withdrawFee isEqualToString:typedOther.withdrawFee] &&
+            [self.exchangeRate isEqual:typedOther.exchangeRate] &&
+            [self.exchangeFees isEqual:typedOther.exchangeFees] &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
             ((self.confirmedAt == nil && typedOther.confirmedAt == nil) || (self.confirmedAt != nil && [self.confirmedAt isEqual:typedOther.confirmedAt]));
 }
@@ -95,14 +120,19 @@
             self.withdrawAccountId.hash ^
             self.withdrawTransactionId.hash ^
             self.amount.hash ^
+            self.depositFee.hash ^
             self.returnAmount.hash ^
+            self.exchangeFee.hash ^
+            self.withdrawFee.hash ^
+            self.exchangeRate.hash ^
+            self.exchangeFees.hash ^
             self.submittedAt.hash ^
             self.confirmedAt.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ depositCurrency:%@ depositAccountId:%@ depositTransactionId:%@ withdrawCurrency:%@ withdrawAccountId:%@ withdrawTransactionId:%@ amount:%@ returnAmount:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, @(self.status), self.depositCurrency, self.depositAccountId, self.depositTransactionId, self.withdrawCurrency, self.withdrawAccountId, self.withdrawTransactionId, self.amount, self.returnAmount, self.submittedAt, self.confirmedAt];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ depositCurrency:%@ depositAccountId:%@ depositTransactionId:%@ withdrawCurrency:%@ withdrawAccountId:%@ withdrawTransactionId:%@ amount:%@ depositFee:%@ returnAmount:%@ exchangeFee:%@ withdrawFee:%@ exchangeRate:%@ exchangeFees:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, @(self.status), self.depositCurrency, self.depositAccountId, self.depositTransactionId, self.withdrawCurrency, self.withdrawAccountId, self.withdrawTransactionId, self.amount, self.depositFee, self.returnAmount, self.exchangeFee, self.withdrawFee, self.exchangeRate, self.exchangeFees, self.submittedAt, self.confirmedAt];
 }
 
 @end

@@ -3,6 +3,8 @@
 
 #import "ZKExchange+Private.h"
 #import "DJIMarshal+Private.h"
+#import "ZKExchangeFees+Private.h"
+#import "ZKExchangeRate+Private.h"
 #import "ZKExchangeStatus+Private.h"
 #include <cassert>
 
@@ -20,7 +22,12 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.withdrawAccountId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.withdrawTransactionId),
             ::djinni::String::toCpp(obj.amount),
+            ::djinni::String::toCpp(obj.depositFee),
             ::djinni::String::toCpp(obj.returnAmount),
+            ::djinni::String::toCpp(obj.exchangeFee),
+            ::djinni::String::toCpp(obj.withdrawFee),
+            ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
+            ::djinni_generated::ExchangeFees::toCpp(obj.exchangeFees),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.confirmedAt)};
 }
@@ -36,7 +43,12 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                         withdrawAccountId:(::djinni::String::fromCpp(cpp.withdraw_account_id))
                     withdrawTransactionId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.withdraw_transaction_id))
                                    amount:(::djinni::String::fromCpp(cpp.amount))
+                               depositFee:(::djinni::String::fromCpp(cpp.deposit_fee))
                              returnAmount:(::djinni::String::fromCpp(cpp.return_amount))
+                              exchangeFee:(::djinni::String::fromCpp(cpp.exchange_fee))
+                              withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))
+                             exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
+                             exchangeFees:(::djinni_generated::ExchangeFees::fromCpp(cpp.exchange_fees))
                               submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
                               confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.confirmed_at))];
 }

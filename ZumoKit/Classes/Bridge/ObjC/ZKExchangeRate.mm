@@ -9,22 +9,16 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                    depositCurrency:(nonnull NSString *)depositCurrency
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                             value:(nonnull NSString *)value
                            validTo:(int64_t)validTo
-                              rate:(nonnull NSString *)rate
-                           feeRate:(nonnull NSString *)feeRate
-                    depositFeeRate:(nonnull NSString *)depositFeeRate
-                       withdrawFee:(nonnull NSString *)withdrawFee
                          timestamp:(int64_t)timestamp
 {
     if (self = [super init]) {
         _id = [id copy];
         _depositCurrency = [depositCurrency copy];
         _withdrawCurrency = [withdrawCurrency copy];
+        _value = [value copy];
         _validTo = validTo;
-        _rate = [rate copy];
-        _feeRate = [feeRate copy];
-        _depositFeeRate = [depositFeeRate copy];
-        _withdrawFee = [withdrawFee copy];
         _timestamp = timestamp;
     }
     return self;
@@ -33,21 +27,15 @@
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
                            depositCurrency:(nonnull NSString *)depositCurrency
                           withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                                     value:(nonnull NSString *)value
                                    validTo:(int64_t)validTo
-                                      rate:(nonnull NSString *)rate
-                                   feeRate:(nonnull NSString *)feeRate
-                            depositFeeRate:(nonnull NSString *)depositFeeRate
-                               withdrawFee:(nonnull NSString *)withdrawFee
                                  timestamp:(int64_t)timestamp
 {
     return [(ZKExchangeRate*)[self alloc] initWithId:id
                                      depositCurrency:depositCurrency
                                     withdrawCurrency:withdrawCurrency
+                                               value:value
                                              validTo:validTo
-                                                rate:rate
-                                             feeRate:feeRate
-                                      depositFeeRate:depositFeeRate
-                                         withdrawFee:withdrawFee
                                            timestamp:timestamp];
 }
 
@@ -60,11 +48,8 @@
     return [self.id isEqualToString:typedOther.id] &&
             [self.depositCurrency isEqualToString:typedOther.depositCurrency] &&
             [self.withdrawCurrency isEqualToString:typedOther.withdrawCurrency] &&
+            [self.value isEqualToString:typedOther.value] &&
             self.validTo == typedOther.validTo &&
-            [self.rate isEqualToString:typedOther.rate] &&
-            [self.feeRate isEqualToString:typedOther.feeRate] &&
-            [self.depositFeeRate isEqualToString:typedOther.depositFeeRate] &&
-            [self.withdrawFee isEqualToString:typedOther.withdrawFee] &&
             self.timestamp == typedOther.timestamp;
 }
 
@@ -74,17 +59,14 @@
             self.id.hash ^
             self.depositCurrency.hash ^
             self.withdrawCurrency.hash ^
+            self.value.hash ^
             (NSUInteger)self.validTo ^
-            self.rate.hash ^
-            self.feeRate.hash ^
-            self.depositFeeRate.hash ^
-            self.withdrawFee.hash ^
             (NSUInteger)self.timestamp;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ depositCurrency:%@ withdrawCurrency:%@ validTo:%@ rate:%@ feeRate:%@ depositFeeRate:%@ withdrawFee:%@ timestamp:%@>", self.class, (void *)self, self.id, self.depositCurrency, self.withdrawCurrency, @(self.validTo), self.rate, self.feeRate, self.depositFeeRate, self.withdrawFee, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ depositCurrency:%@ withdrawCurrency:%@ value:%@ validTo:%@ timestamp:%@>", self.class, (void *)self, self.id, self.depositCurrency, self.withdrawCurrency, self.value, @(self.validTo), @(self.timestamp)];
 }
 
 @end

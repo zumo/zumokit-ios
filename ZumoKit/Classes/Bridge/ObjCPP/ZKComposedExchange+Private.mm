@@ -4,6 +4,7 @@
 #import "ZKComposedExchange+Private.h"
 #import "DJIMarshal+Private.h"
 #import "ZKAccount+Private.h"
+#import "ZKExchangeFees+Private.h"
 #import "ZKExchangeRate+Private.h"
 #include <cassert>
 
@@ -16,6 +17,7 @@ auto ComposedExchange::toCpp(ObjcType obj) -> CppType
             ::djinni_generated::Account::toCpp(obj.depositAccount),
             ::djinni_generated::Account::toCpp(obj.withdrawAccount),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
+            ::djinni_generated::ExchangeFees::toCpp(obj.exchangeFees),
             ::djinni::String::toCpp(obj.exchangeAddress),
             ::djinni::String::toCpp(obj.value),
             ::djinni::String::toCpp(obj.returnValue),
@@ -30,6 +32,7 @@ auto ComposedExchange::fromCpp(const CppType& cpp) -> ObjcType
                                                   depositAccount:(::djinni_generated::Account::fromCpp(cpp.deposit_account))
                                                  withdrawAccount:(::djinni_generated::Account::fromCpp(cpp.withdraw_account))
                                                     exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
+                                                    exchangeFees:(::djinni_generated::ExchangeFees::fromCpp(cpp.exchange_fees))
                                                  exchangeAddress:(::djinni::String::fromCpp(cpp.exchange_address))
                                                            value:(::djinni::String::fromCpp(cpp.value))
                                                      returnValue:(::djinni::String::fromCpp(cpp.return_value))

@@ -64,6 +64,8 @@ struct ZumoKitErrorCode final {
 
     static std::string const INVALID_EXCHANGE_RATE;
 
+    static std::string const INVALID_EXCHANGE_FEES;
+
     static std::string const EXCHANGE_RETURN_VALUE_NEGATIVE;
 };
 

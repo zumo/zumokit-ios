@@ -16,6 +16,7 @@ class SubmitExchangeCallback;
 class SubmitTransactionCallback;
 struct ComposedExchange;
 struct ComposedTransaction;
+struct ExchangeFees;
 struct ExchangeRate;
 
 class Wallet {
@@ -30,7 +31,7 @@ public:
 
     virtual void submit_exchange(const ComposedExchange & composed_exchange, const std::shared_ptr<SubmitExchangeCallback> & callback) = 0;
 
-    virtual void compose_exchange(const std::string & deposit_account_id, const std::string & withdraw_account_id, const ExchangeRate & exchange_rate, const std::string & value, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
+    virtual void compose_exchange(const std::string & deposit_account_id, const std::string & withdraw_account_id, const ExchangeRate & exchange_rate, const ExchangeFees & exchange_fees, const std::string & value, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
 
     virtual std::experimental::optional<std::string> max_spendable_eth(const std::string & account_id, const std::string & gas_price, const std::string & gas_limit) = 0;
 
