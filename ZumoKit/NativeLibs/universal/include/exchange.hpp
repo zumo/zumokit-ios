@@ -3,6 +3,8 @@
 
 #pragma once
 
+#include "exchange_fees.hpp"
+#include "exchange_rate.hpp"
 #include "exchange_status.hpp"
 #include "stdx/optional.hpp"
 #include <cstdint>
@@ -21,7 +23,12 @@ struct Exchange final {
     std::string withdraw_account_id;
     std::experimental::optional<std::string> withdraw_transaction_id;
     std::string amount;
+    std::string deposit_fee;
     std::string return_amount;
+    std::string exchange_fee;
+    std::string withdraw_fee;
+    ExchangeRate exchange_rate;
+    ExchangeFees exchange_fees;
     std::experimental::optional<int64_t> submitted_at;
     std::experimental::optional<int64_t> confirmed_at;
 
@@ -37,7 +44,12 @@ struct Exchange final {
              std::string withdraw_account_id_,
              std::experimental::optional<std::string> withdraw_transaction_id_,
              std::string amount_,
+             std::string deposit_fee_,
              std::string return_amount_,
+             std::string exchange_fee_,
+             std::string withdraw_fee_,
+             ExchangeRate exchange_rate_,
+             ExchangeFees exchange_fees_,
              std::experimental::optional<int64_t> submitted_at_,
              std::experimental::optional<int64_t> confirmed_at_)
     : id(std::move(id_))
@@ -49,7 +61,12 @@ struct Exchange final {
     , withdraw_account_id(std::move(withdraw_account_id_))
     , withdraw_transaction_id(std::move(withdraw_transaction_id_))
     , amount(std::move(amount_))
+    , deposit_fee(std::move(deposit_fee_))
     , return_amount(std::move(return_amount_))
+    , exchange_fee(std::move(exchange_fee_))
+    , withdraw_fee(std::move(withdraw_fee_))
+    , exchange_rate(std::move(exchange_rate_))
+    , exchange_fees(std::move(exchange_fees_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
     {}

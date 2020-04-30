@@ -3,18 +3,20 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZKExchangeRate : NSObject
+@interface ZKExchangeFees : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                    depositCurrency:(nonnull NSString *)depositCurrency
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                             value:(nonnull NSString *)value
-                           validTo:(int64_t)validTo
+                           feeRate:(nonnull NSString *)feeRate
+                    depositFeeRate:(nonnull NSString *)depositFeeRate
+                       withdrawFee:(nonnull NSString *)withdrawFee
                          timestamp:(int64_t)timestamp;
-+ (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
++ (nonnull instancetype)exchangeFeesWithId:(nonnull NSString *)id
                            depositCurrency:(nonnull NSString *)depositCurrency
                           withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                                     value:(nonnull NSString *)value
-                                   validTo:(int64_t)validTo
+                                   feeRate:(nonnull NSString *)feeRate
+                            depositFeeRate:(nonnull NSString *)depositFeeRate
+                               withdrawFee:(nonnull NSString *)withdrawFee
                                  timestamp:(int64_t)timestamp;
 
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -23,9 +25,11 @@
 
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 
-@property (nonatomic, readonly, nonnull) NSString * value;
+@property (nonatomic, readonly, nonnull) NSString * feeRate;
 
-@property (nonatomic, readonly) int64_t validTo;
+@property (nonatomic, readonly, nonnull) NSString * depositFeeRate;
+
+@property (nonatomic, readonly, nonnull) NSString * withdrawFee;
 
 @property (nonatomic, readonly) int64_t timestamp;
 

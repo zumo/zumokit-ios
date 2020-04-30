@@ -36,4 +36,5 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeDATAOVERFLOW;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE;
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEFEES;
 extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE;

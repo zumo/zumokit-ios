@@ -58,6 +58,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE = @"invalid_acco
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE = @"invalid_exchange_rate";
 
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEFEES = @"invalid_exchange_fees";
+
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE = @"exchange_return_value_negative";
 
 @implementation ZKZumoKitErrorCode
