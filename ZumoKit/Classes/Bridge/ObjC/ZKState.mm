@@ -11,7 +11,7 @@
                                exchanges:(nonnull NSArray<ZKExchange *> *)exchanges
                                    token:(nonnull NSString *)token
                             activeUserId:(nullable NSString *)activeUserId
-                           exchangeRates:(nonnull NSString *)exchangeRates
+                           exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                             exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
                    bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
                   ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
@@ -41,7 +41,7 @@
                                 exchanges:(nonnull NSArray<ZKExchange *> *)exchanges
                                     token:(nonnull NSString *)token
                              activeUserId:(nullable NSString *)activeUserId
-                            exchangeRates:(nonnull NSString *)exchangeRates
+                            exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                              exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
                     bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
                    ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
@@ -74,7 +74,7 @@
             [self.exchanges isEqualToArray:typedOther.exchanges] &&
             [self.token isEqualToString:typedOther.token] &&
             ((self.activeUserId == nil && typedOther.activeUserId == nil) || (self.activeUserId != nil && [self.activeUserId isEqual:typedOther.activeUserId])) &&
-            [self.exchangeRates isEqualToString:typedOther.exchangeRates] &&
+            [self.exchangeRates isEqualToDictionary:typedOther.exchangeRates] &&
             [self.exchangeFees isEqualToDictionary:typedOther.exchangeFees] &&
             [self.bitcoinDepositAddress isEqualToString:typedOther.bitcoinDepositAddress] &&
             [self.ethereumDepositAddress isEqualToString:typedOther.ethereumDepositAddress] &&
