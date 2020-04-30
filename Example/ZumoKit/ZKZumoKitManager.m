@@ -76,14 +76,14 @@
                     
                     _wallet = wallet;
                     
-                    [self composeEthTransaction:ethAccount];
-                    [self composeBtcTransaction:btcAccount];
-                
-                    ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRate[@"ETH"][@"BTC"];
-                    ZKExchangeRate *btcEthExchangeRate = [_zumoKit getState].exchangeRate[@"BTC"][@"ETH"];
-                
-                    [self composeExchange:ethAccount widhdrawAccount:btcAccount exchangeRate:ethBtcExchangeRate value:@"0.2"];
-                    [self composeExchange:btcAccount widhdrawAccount:ethAccount exchangeRate:btcEthExchangeRate value:@"0.02"];
+//                    [self composeEthTransaction:ethAccount];
+//                    [self composeBtcTransaction:btcAccount];
+//
+//                    ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];
+//                    ZKExchangeRate *btcEthExchangeRate = [_zumoKit getState].exchangeRates[@"BTC"][@"ETH"];
+//
+//                    [self composeExchange:ethAccount widhdrawAccount:btcAccount exchangeRate:ethBtcExchangeRate value:@"0.2"];
+//                    [self composeExchange:btcAccount widhdrawAccount:ethAccount exchangeRate:btcEthExchangeRate value:@"0.02"];
                }];
         } else {
             NSString *mnemonicPhrase = [[_zumoKit utils] generateMnemonic:12];
@@ -146,11 +146,13 @@
 - (void)composeExchange:(ZKAccount *)depositAccount
         widhdrawAccount:(ZKAccount *)withdrawAccount
            exchangeRate:(ZKExchangeRate *)exchangeRate
+           exchangeFees:(ZKExchangeFees *)exchangeFees
                   value:(NSString *)value
 {
     [_wallet composeExchange:depositAccount.id
            withdrawAccountId:withdrawAccount.id
                 exchangeRate:exchangeRate
+                exchangeFees:exchangeFees
                        value:value
                   completion:^(ZKComposedExchange * _Nullable exchange, NSError * _Nullable error) {
 

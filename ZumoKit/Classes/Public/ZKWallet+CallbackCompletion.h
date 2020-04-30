@@ -40,6 +40,7 @@ typedef void(^SubmitTransactionCompletionBlock)(ZKTransaction * _Nullable transa
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+           exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
                   value:(nonnull NSString *)value
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler;
 
