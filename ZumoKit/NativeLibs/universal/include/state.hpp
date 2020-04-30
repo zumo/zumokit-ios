@@ -6,6 +6,7 @@
 #include "account.hpp"
 #include "exchange.hpp"
 #include "exchange_fees.hpp"
+#include "exchange_rate.hpp"
 #include "fee_rates.hpp"
 #include "stdx/optional.hpp"
 #include "sync_status.hpp"
@@ -24,8 +25,7 @@ struct State final {
     std::vector<Exchange> exchanges;
     std::string token;
     std::experimental::optional<std::string> active_user_id;
-    std::string exchange_rates;
-    /** exchange_rates: map<string, map<string, exchange_rate>>; */
+    std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeFees>> exchange_fees;
     std::string bitcoin_deposit_address;
     /** should be moved to internal state */
@@ -43,7 +43,7 @@ struct State final {
           std::vector<Exchange> exchanges_,
           std::string token_,
           std::experimental::optional<std::string> active_user_id_,
-          std::string exchange_rates_,
+          std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
           std::unordered_map<std::string, std::unordered_map<std::string, ExchangeFees>> exchange_fees_,
           std::string bitcoin_deposit_address_,
           std::string ethereum_deposit_address_,

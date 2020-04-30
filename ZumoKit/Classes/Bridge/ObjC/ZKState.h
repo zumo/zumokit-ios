@@ -4,6 +4,7 @@
 #import "ZKAccount.h"
 #import "ZKExchange.h"
 #import "ZKExchangeFees.h"
+#import "ZKExchangeRate.h"
 #import "ZKFeeRates.h"
 #import "ZKSyncStatus.h"
 #import "ZKTransaction.h"
@@ -16,7 +17,7 @@
                                exchanges:(nonnull NSArray<ZKExchange *> *)exchanges
                                    token:(nonnull NSString *)token
                             activeUserId:(nullable NSString *)activeUserId
-                           exchangeRates:(nonnull NSString *)exchangeRates
+                           exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                             exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
                    bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
                   ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
@@ -28,7 +29,7 @@
                                 exchanges:(nonnull NSArray<ZKExchange *> *)exchanges
                                     token:(nonnull NSString *)token
                              activeUserId:(nullable NSString *)activeUserId
-                            exchangeRates:(nonnull NSString *)exchangeRates
+                            exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                              exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
                     bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
                    ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
@@ -46,9 +47,8 @@
 
 @property (nonatomic, readonly, nullable) NSString * activeUserId;
 
-@property (nonatomic, readonly, nonnull) NSString * exchangeRates;
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * exchangeRates;
 
-/** exchange_rates: map<string, map<string, exchange_rate>>; */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> * exchangeFees;
 
 @property (nonatomic, readonly, nonnull) NSString * bitcoinDepositAddress;
