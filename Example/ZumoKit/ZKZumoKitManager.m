@@ -76,7 +76,7 @@
                     
                     _wallet = wallet;
                     
-//                    [self composeEthTransaction:ethAccount];
+                    [self composeEthTransaction:ethAccount submit:YES];
 //                    [self composeBtcTransaction:btcAccount];
 //
 //                    ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];
@@ -106,7 +106,8 @@
     }];
 }
 
-- (void)composeEthTransaction:(ZKAccount *) account {
+- (void)composeEthTransaction:(ZKAccount *) account
+                       submit:(BOOL) submit {
     [_wallet composeEthTransaction:account.id
                           gasPrice:@"60"
                           gasLimit:@"21000"
@@ -114,14 +115,29 @@
                              value:@"0.00023"
                               data:@""
                              nonce:[NSNumber numberWithInt:6]
-                        completion:^(ZKComposedTransaction * _Nullable transaction, NSError * _Nullable error) {
+                        completion:^(ZKComposedTransaction * _Nullable composedTransaction, NSError * _Nullable error) {
         
         if (error != nil) {
             NSLog(@"error: %@", [error description]);
             return;
         }
     
-        NSLog(@"Tx Fee: %@", transaction.fee);
+        NSLog(@"Tx Fee: %@", composedTransaction.fee);
+        
+        if (!submit) {
+            return;
+        }
+        
+        [_wallet submitTransaction:composedTransaction
+                            completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
+            
+            if (error != nil) {
+                NSLog(@"error: %@", [error description]);
+                return;
+            }
+            
+            NSLog(@"Tx Hash: %@", transaction.txHash);
+        }];
     }];
 }
 

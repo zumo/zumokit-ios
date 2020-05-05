@@ -5,7 +5,6 @@
 #import "DJIMarshal+Private.h"
 #import "ZKExchangeFees+Private.h"
 #import "ZKExchangeRate+Private.h"
-#import "ZKExchangeStatus+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -14,7 +13,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
-            ::djinni::Enum<::zumo::ExchangeStatus, ZKExchangeStatus>::toCpp(obj.status),
+            ::djinni::String::toCpp(obj.status),
             ::djinni::String::toCpp(obj.depositCurrency),
             ::djinni::String::toCpp(obj.depositAccountId),
             ::djinni::String::toCpp(obj.depositTransactionId),
@@ -35,7 +34,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
 auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKExchange alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
-                                   status:(::djinni::Enum<::zumo::ExchangeStatus, ZKExchangeStatus>::fromCpp(cpp.status))
+                                   status:(::djinni::String::fromCpp(cpp.status))
                           depositCurrency:(::djinni::String::fromCpp(cpp.deposit_currency))
                          depositAccountId:(::djinni::String::fromCpp(cpp.deposit_account_id))
                      depositTransactionId:(::djinni::String::fromCpp(cpp.deposit_transaction_id))

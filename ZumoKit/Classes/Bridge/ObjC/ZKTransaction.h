@@ -27,8 +27,8 @@
                               data:(nullable NSString *)data
                           gasPrice:(nullable NSString *)gasPrice
                           gasLimit:(nullable NSString *)gasLimit
-                              cost:(nonnull NSString *)cost
-                          fiatCost:(nonnull NSDictionary<NSString *, NSString *> *)fiatCost
+                               fee:(nullable NSString *)fee
+                           fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
                          timestamp:(int64_t)timestamp;
@@ -51,8 +51,8 @@
                                      data:(nullable NSString *)data
                                  gasPrice:(nullable NSString *)gasPrice
                                  gasLimit:(nullable NSString *)gasLimit
-                                     cost:(nonnull NSString *)cost
-                                 fiatCost:(nonnull NSDictionary<NSString *, NSString *> *)fiatCost
+                                      fee:(nullable NSString *)fee
+                                  fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
                                 timestamp:(int64_t)timestamp;
@@ -95,9 +95,9 @@
 
 @property (nonatomic, readonly, nullable) NSString * gasLimit;
 
-@property (nonatomic, readonly, nonnull) NSString * cost;
+@property (nonatomic, readonly, nullable) NSString * fee;
 
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * fiatCost;
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * fiatFee;
 
 @property (nonatomic, readonly, nullable) NSNumber * submittedAt;
 

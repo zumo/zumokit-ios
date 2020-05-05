@@ -35,8 +35,8 @@ struct Transaction final {
     std::experimental::optional<std::string> data;
     std::experimental::optional<std::string> gas_price;
     std::experimental::optional<std::string> gas_limit;
-    std::string cost;
-    std::unordered_map<std::string, std::string> fiat_cost;
+    std::experimental::optional<std::string> fee;
+    std::unordered_map<std::string, std::string> fiat_fee;
     std::experimental::optional<int64_t> submitted_at;
     std::experimental::optional<int64_t> confirmed_at;
     int64_t timestamp;
@@ -63,8 +63,8 @@ struct Transaction final {
                 std::experimental::optional<std::string> data_,
                 std::experimental::optional<std::string> gas_price_,
                 std::experimental::optional<std::string> gas_limit_,
-                std::string cost_,
-                std::unordered_map<std::string, std::string> fiat_cost_,
+                std::experimental::optional<std::string> fee_,
+                std::unordered_map<std::string, std::string> fiat_fee_,
                 std::experimental::optional<int64_t> submitted_at_,
                 std::experimental::optional<int64_t> confirmed_at_,
                 int64_t timestamp_)
@@ -87,8 +87,8 @@ struct Transaction final {
     , data(std::move(data_))
     , gas_price(std::move(gas_price_))
     , gas_limit(std::move(gas_limit_))
-    , cost(std::move(cost_))
-    , fiat_cost(std::move(fiat_cost_))
+    , fee(std::move(fee_))
+    , fiat_fee(std::move(fiat_fee_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
     , timestamp(std::move(timestamp_))

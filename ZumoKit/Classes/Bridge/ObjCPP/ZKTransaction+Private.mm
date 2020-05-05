@@ -33,8 +33,8 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.data),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.gasPrice),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.gasLimit),
-            ::djinni::String::toCpp(obj.cost),
-            ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(obj.fiatCost),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fee),
+            ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(obj.fiatFee),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.confirmedAt),
             ::djinni::I64::toCpp(obj.timestamp)};
@@ -61,8 +61,8 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
                                         data:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.data))
                                     gasPrice:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.gas_price))
                                     gasLimit:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.gas_limit))
-                                        cost:(::djinni::String::fromCpp(cpp.cost))
-                                    fiatCost:(::djinni::Map<::djinni::String, ::djinni::String>::fromCpp(cpp.fiat_cost))
+                                         fee:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.fee))
+                                     fiatFee:(::djinni::Map<::djinni::String, ::djinni::String>::fromCpp(cpp.fiat_fee))
                                  submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
                                  confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.confirmed_at))
                                    timestamp:(::djinni::I64::fromCpp(cpp.timestamp))];

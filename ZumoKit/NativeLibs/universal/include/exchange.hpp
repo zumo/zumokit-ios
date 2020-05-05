@@ -5,7 +5,6 @@
 
 #include "exchange_fees.hpp"
 #include "exchange_rate.hpp"
-#include "exchange_status.hpp"
 #include "stdx/optional.hpp"
 #include <cstdint>
 #include <string>
@@ -15,7 +14,7 @@ namespace zumo {
 
 struct Exchange final {
     std::string id;
-    ExchangeStatus status;
+    std::string status;
     std::string deposit_currency;
     std::string deposit_account_id;
     std::string deposit_transaction_id;
@@ -36,7 +35,7 @@ struct Exchange final {
     friend bool operator!=(const Exchange& lhs, const Exchange& rhs);
 
     Exchange(std::string id_,
-             ExchangeStatus status_,
+             std::string status_,
              std::string deposit_currency_,
              std::string deposit_account_id_,
              std::string deposit_transaction_id_,

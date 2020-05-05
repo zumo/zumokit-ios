@@ -7,7 +7,7 @@
 @implementation ZKExchange
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                            status:(ZKExchangeStatus)status
+                            status:(nonnull NSString *)status
                    depositCurrency:(nonnull NSString *)depositCurrency
                   depositAccountId:(nonnull NSString *)depositAccountId
               depositTransactionId:(nonnull NSString *)depositTransactionId
@@ -26,7 +26,7 @@
 {
     if (self = [super init]) {
         _id = [id copy];
-        _status = status;
+        _status = [status copy];
         _depositCurrency = [depositCurrency copy];
         _depositAccountId = [depositAccountId copy];
         _depositTransactionId = [depositTransactionId copy];
@@ -47,7 +47,7 @@
 }
 
 + (nonnull instancetype)exchangeWithId:(nonnull NSString *)id
-                                status:(ZKExchangeStatus)status
+                                status:(nonnull NSString *)status
                        depositCurrency:(nonnull NSString *)depositCurrency
                       depositAccountId:(nonnull NSString *)depositAccountId
                   depositTransactionId:(nonnull NSString *)depositTransactionId
@@ -90,7 +90,7 @@
     }
     ZKExchange *typedOther = (ZKExchange *)other;
     return [self.id isEqualToString:typedOther.id] &&
-            self.status == typedOther.status &&
+            [self.status isEqualToString:typedOther.status] &&
             [self.depositCurrency isEqualToString:typedOther.depositCurrency] &&
             [self.depositAccountId isEqualToString:typedOther.depositAccountId] &&
             [self.depositTransactionId isEqualToString:typedOther.depositTransactionId] &&
@@ -112,7 +112,7 @@
 {
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
-            (NSUInteger)self.status ^
+            self.status.hash ^
             self.depositCurrency.hash ^
             self.depositAccountId.hash ^
             self.depositTransactionId.hash ^
@@ -132,7 +132,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ depositCurrency:%@ depositAccountId:%@ depositTransactionId:%@ withdrawCurrency:%@ withdrawAccountId:%@ withdrawTransactionId:%@ amount:%@ depositFee:%@ returnAmount:%@ exchangeFee:%@ withdrawFee:%@ exchangeRate:%@ exchangeFees:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, @(self.status), self.depositCurrency, self.depositAccountId, self.depositTransactionId, self.withdrawCurrency, self.withdrawAccountId, self.withdrawTransactionId, self.amount, self.depositFee, self.returnAmount, self.exchangeFee, self.withdrawFee, self.exchangeRate, self.exchangeFees, self.submittedAt, self.confirmedAt];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ depositCurrency:%@ depositAccountId:%@ depositTransactionId:%@ withdrawCurrency:%@ withdrawAccountId:%@ withdrawTransactionId:%@ amount:%@ depositFee:%@ returnAmount:%@ exchangeFee:%@ withdrawFee:%@ exchangeRate:%@ exchangeFees:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, self.status, self.depositCurrency, self.depositAccountId, self.depositTransactionId, self.withdrawCurrency, self.withdrawAccountId, self.withdrawTransactionId, self.amount, self.depositFee, self.returnAmount, self.exchangeFee, self.withdrawFee, self.exchangeRate, self.exchangeFees, self.submittedAt, self.confirmedAt];
 }
 
 @end
