@@ -25,8 +25,8 @@
                               data:(nullable NSString *)data
                           gasPrice:(nullable NSString *)gasPrice
                           gasLimit:(nullable NSString *)gasLimit
-                              cost:(nonnull NSString *)cost
-                          fiatCost:(nonnull NSDictionary<NSString *, NSString *> *)fiatCost
+                               fee:(nullable NSString *)fee
+                           fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
                          timestamp:(int64_t)timestamp
@@ -51,8 +51,8 @@
         _data = [data copy];
         _gasPrice = [gasPrice copy];
         _gasLimit = [gasLimit copy];
-        _cost = [cost copy];
-        _fiatCost = [fiatCost copy];
+        _fee = [fee copy];
+        _fiatFee = [fiatFee copy];
         _submittedAt = submittedAt;
         _confirmedAt = confirmedAt;
         _timestamp = timestamp;
@@ -79,8 +79,8 @@
                                      data:(nullable NSString *)data
                                  gasPrice:(nullable NSString *)gasPrice
                                  gasLimit:(nullable NSString *)gasLimit
-                                     cost:(nonnull NSString *)cost
-                                 fiatCost:(nonnull NSDictionary<NSString *, NSString *> *)fiatCost
+                                      fee:(nullable NSString *)fee
+                                  fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
                                 timestamp:(int64_t)timestamp
@@ -104,8 +104,8 @@
                                                data:data
                                            gasPrice:gasPrice
                                            gasLimit:gasLimit
-                                               cost:cost
-                                           fiatCost:fiatCost
+                                                fee:fee
+                                            fiatFee:fiatFee
                                         submittedAt:submittedAt
                                         confirmedAt:confirmedAt
                                           timestamp:timestamp];
@@ -136,8 +136,8 @@
             ((self.data == nil && typedOther.data == nil) || (self.data != nil && [self.data isEqual:typedOther.data])) &&
             ((self.gasPrice == nil && typedOther.gasPrice == nil) || (self.gasPrice != nil && [self.gasPrice isEqual:typedOther.gasPrice])) &&
             ((self.gasLimit == nil && typedOther.gasLimit == nil) || (self.gasLimit != nil && [self.gasLimit isEqual:typedOther.gasLimit])) &&
-            [self.cost isEqualToString:typedOther.cost] &&
-            [self.fiatCost isEqualToDictionary:typedOther.fiatCost] &&
+            ((self.fee == nil && typedOther.fee == nil) || (self.fee != nil && [self.fee isEqual:typedOther.fee])) &&
+            [self.fiatFee isEqualToDictionary:typedOther.fiatFee] &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
             ((self.confirmedAt == nil && typedOther.confirmedAt == nil) || (self.confirmedAt != nil && [self.confirmedAt isEqual:typedOther.confirmedAt])) &&
             self.timestamp == typedOther.timestamp;
@@ -165,8 +165,8 @@
             self.data.hash ^
             self.gasPrice.hash ^
             self.gasLimit.hash ^
-            self.cost.hash ^
-            self.fiatCost.hash ^
+            self.fee.hash ^
+            self.fiatFee.hash ^
             self.submittedAt.hash ^
             self.confirmedAt.hash ^
             (NSUInteger)self.timestamp;
@@ -174,7 +174,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ direction:%@ txHash:%@ accountId:%@ symbol:%@ coin:%@ network:%@ nonce:%@ status:%@ fromAddress:%@ fromUserId:%@ toAddress:%@ toUserId:%@ value:%@ fiatValue:%@ data:%@ gasPrice:%@ gasLimit:%@ cost:%@ fiatCost:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, @(self.type), @(self.direction), self.txHash, self.accountId, self.symbol, self.coin, @(self.network), self.nonce, @(self.status), self.fromAddress, self.fromUserId, self.toAddress, self.toUserId, self.value, self.fiatValue, self.data, self.gasPrice, self.gasLimit, self.cost, self.fiatCost, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ direction:%@ txHash:%@ accountId:%@ symbol:%@ coin:%@ network:%@ nonce:%@ status:%@ fromAddress:%@ fromUserId:%@ toAddress:%@ toUserId:%@ value:%@ fiatValue:%@ data:%@ gasPrice:%@ gasLimit:%@ fee:%@ fiatFee:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, @(self.type), @(self.direction), self.txHash, self.accountId, self.symbol, self.coin, @(self.network), self.nonce, @(self.status), self.fromAddress, self.fromUserId, self.toAddress, self.toUserId, self.value, self.fiatValue, self.data, self.gasPrice, self.gasLimit, self.fee, self.fiatFee, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

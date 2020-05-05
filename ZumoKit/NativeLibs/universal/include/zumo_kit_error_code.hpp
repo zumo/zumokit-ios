@@ -12,6 +12,10 @@ struct ZumoKitErrorCode final {
 
     static std::string const UNKNOWN_ERROR;
 
+    static std::string const API_SERVICE_ERROR;
+
+    static std::string const TRANSACTION_SERVICE_ERROR;
+
     static std::string const NOT_AUTHORIZED;
 
     static std::string const WALLET_LIMIT_EXCEEDED;

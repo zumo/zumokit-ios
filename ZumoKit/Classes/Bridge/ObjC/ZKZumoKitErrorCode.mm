@@ -6,6 +6,10 @@
 
 NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR = @"unknown_error";
 
+NSString * __nonnull const ZKZumoKitErrorCodeAPISERVICEERROR = @"api_service_error";
+
+NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR = @"transaction_service_error";
+
 NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED = @"not_authorized";
 
 NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED = @"wallet_limit_exceeded";

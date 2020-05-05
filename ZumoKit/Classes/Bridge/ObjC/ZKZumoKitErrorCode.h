@@ -10,6 +10,8 @@
 @end
 
 extern NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR;
+extern NSString * __nonnull const ZKZumoKitErrorCodeAPISERVICEERROR;
+extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR;
 extern NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeNOWALLETTORECOVERFOUND;

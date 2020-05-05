@@ -3,29 +3,26 @@
 
 #pragma once
 
-#include <functional>
+#include <string>
+#include <utility>
 
 namespace zumo {
 
-enum class ExchangeStatus : int {
-    PENDING_DEPOSIT,
-    PENDING_WITHDRAW,
-    CONFIRMED,
-    FAILED,
-    RESUBMITTED,
-    CANCELLED,
-    PAUSED,
+struct ExchangeStatus final {
+
+    static std::string const PENDING;
+
+    static std::string const DEPOSITED;
+
+    static std::string const CONFIRMED;
+
+    static std::string const FAILED;
+
+    static std::string const RESUBMITTED;
+
+    static std::string const CANCELLED;
+
+    static std::string const PAUSED;
 };
 
 }  // namespace zumo
-
-namespace std {
-
-template <>
-struct hash<::zumo::ExchangeStatus> {
-    size_t operator()(::zumo::ExchangeStatus type) const {
-        return std::hash<int>()(static_cast<int>(type));
-    }
-};
-
-}  // namespace std

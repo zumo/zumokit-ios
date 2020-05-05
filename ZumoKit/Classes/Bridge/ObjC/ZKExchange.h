@@ -3,12 +3,11 @@
 
 #import "ZKExchangeFees.h"
 #import "ZKExchangeRate.h"
-#import "ZKExchangeStatus.h"
 #import <Foundation/Foundation.h>
 
 @interface ZKExchange : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                            status:(ZKExchangeStatus)status
+                            status:(nonnull NSString *)status
                    depositCurrency:(nonnull NSString *)depositCurrency
                   depositAccountId:(nonnull NSString *)depositAccountId
               depositTransactionId:(nonnull NSString *)depositTransactionId
@@ -25,7 +24,7 @@
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt;
 + (nonnull instancetype)exchangeWithId:(nonnull NSString *)id
-                                status:(ZKExchangeStatus)status
+                                status:(nonnull NSString *)status
                        depositCurrency:(nonnull NSString *)depositCurrency
                       depositAccountId:(nonnull NSString *)depositAccountId
                   depositTransactionId:(nonnull NSString *)depositTransactionId
@@ -44,7 +43,7 @@
 
 @property (nonatomic, readonly, nonnull) NSString * id;
 
-@property (nonatomic, readonly) ZKExchangeStatus status;
+@property (nonatomic, readonly, nonnull) NSString * status;
 
 @property (nonatomic, readonly, nonnull) NSString * depositCurrency;
 
