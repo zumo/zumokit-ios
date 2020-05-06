@@ -9,6 +9,6 @@
 
 - (void)onError:(nonnull NSError *)e;
 
-- (void)onSuccess:(nonnull NSDictionary<NSString *, NSArray<NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *> *> *)historicalExchangeRates;
+- (void)onSuccess:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, NSDictionary<NSString *, NSArray<ZKExchangeRate *> *> *> *> *)historicalExchangeRates;
 
 @end

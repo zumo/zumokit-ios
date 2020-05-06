@@ -18,7 +18,7 @@ public:
 
     virtual void on_error(const ::zumo::ZumoKitException & e) = 0;
 
-    virtual void on_success(const std::unordered_map<std::string, std::vector<std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>>>> & historical_exchange_rates) = 0;
+    virtual void on_success(const std::unordered_map<std::string, std::unordered_map<std::string, std::unordered_map<std::string, std::vector<ExchangeRate>>>> & historical_exchange_rates) = 0;
 };
 
 }  // namespace zumo
