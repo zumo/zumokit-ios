@@ -22,7 +22,7 @@ struct Exchange final {
     std::string withdraw_account_id;
     std::experimental::optional<std::string> withdraw_transaction_id;
     std::string amount;
-    std::string deposit_fee;
+    std::experimental::optional<std::string> deposit_fee;
     std::string return_amount;
     std::string exchange_fee;
     std::string withdraw_fee;
@@ -43,7 +43,7 @@ struct Exchange final {
              std::string withdraw_account_id_,
              std::experimental::optional<std::string> withdraw_transaction_id_,
              std::string amount_,
-             std::string deposit_fee_,
+             std::experimental::optional<std::string> deposit_fee_,
              std::string return_amount_,
              std::string exchange_fee_,
              std::string withdraw_fee_,

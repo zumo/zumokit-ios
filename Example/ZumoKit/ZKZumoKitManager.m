@@ -54,6 +54,10 @@
      getUser:userToken
      completion: ^(ZKUser * _Nullable user, NSError * _Nullable error) {
         
+        [_zumoKit getHistoricalExchangeRates:^(HistoricalExchangeRates _Nullable historicalExchangeRates, NSError * _Nullable error) {
+            NSLog(@"Exchange rate 1: %@", historicalExchangeRates[ZKHistoricalExchangeRatesIntervalDAY][0][ZKCurrencyCodeETH][ZKCurrencyCodeBTC]);
+        }];
+        
         _user = user;
         
         if (error != nil) {
@@ -76,7 +80,7 @@
                     
                     _wallet = wallet;
                     
-                    [self composeEthTransaction:ethAccount submit:YES];
+//                    [self composeEthTransaction:ethAccount submit:YES];
 //                    [self composeBtcTransaction:btcAccount];
 //
 //                    ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];

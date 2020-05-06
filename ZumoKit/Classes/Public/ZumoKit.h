@@ -25,8 +25,14 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKUser+CallbackCompletion.h"
 #import "ZKWallet.h"
 #import "ZKWallet+CallbackCompletion.h"
+#import "ZKHistoricalExchangeRatesInterval.h"
+#import "ZKCurrencyCode.h"
 
 typedef void(^UserCompletionBlock)(ZKUser * _Nullable user, NSError * _Nullable error);
+
+typedef NSDictionary<NSString *, NSArray<NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *> *> * HistoricalExchangeRates;
+
+typedef void(^HistoricalExchangeRatesCompletionBlock)(HistoricalExchangeRates _Nullable historicalExchangeRates, NSError * _Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 @interface ZumoKit : NSObject
@@ -41,6 +47,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)getUser:(nonnull NSString *)userToken
   completion:(_Nonnull UserCompletionBlock)completionHandler;
+
+- (void)getHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completionHandler;
 
 - (nonnull ZKState *)getState;
 
