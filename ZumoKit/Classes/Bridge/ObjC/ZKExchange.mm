@@ -15,7 +15,7 @@
                  withdrawAccountId:(nonnull NSString *)withdrawAccountId
              withdrawTransactionId:(nullable NSString *)withdrawTransactionId
                             amount:(nonnull NSString *)amount
-                        depositFee:(nonnull NSString *)depositFee
+                        depositFee:(nullable NSString *)depositFee
                       returnAmount:(nonnull NSString *)returnAmount
                        exchangeFee:(nonnull NSString *)exchangeFee
                        withdrawFee:(nonnull NSString *)withdrawFee
@@ -55,7 +55,7 @@
                      withdrawAccountId:(nonnull NSString *)withdrawAccountId
                  withdrawTransactionId:(nullable NSString *)withdrawTransactionId
                                 amount:(nonnull NSString *)amount
-                            depositFee:(nonnull NSString *)depositFee
+                            depositFee:(nullable NSString *)depositFee
                           returnAmount:(nonnull NSString *)returnAmount
                            exchangeFee:(nonnull NSString *)exchangeFee
                            withdrawFee:(nonnull NSString *)withdrawFee
@@ -98,7 +98,7 @@
             [self.withdrawAccountId isEqualToString:typedOther.withdrawAccountId] &&
             ((self.withdrawTransactionId == nil && typedOther.withdrawTransactionId == nil) || (self.withdrawTransactionId != nil && [self.withdrawTransactionId isEqual:typedOther.withdrawTransactionId])) &&
             [self.amount isEqualToString:typedOther.amount] &&
-            [self.depositFee isEqualToString:typedOther.depositFee] &&
+            ((self.depositFee == nil && typedOther.depositFee == nil) || (self.depositFee != nil && [self.depositFee isEqual:typedOther.depositFee])) &&
             [self.returnAmount isEqualToString:typedOther.returnAmount] &&
             [self.exchangeFee isEqualToString:typedOther.exchangeFee] &&
             [self.withdrawFee isEqualToString:typedOther.withdrawFee] &&

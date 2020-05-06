@@ -21,7 +21,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.withdrawAccountId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.withdrawTransactionId),
             ::djinni::String::toCpp(obj.amount),
-            ::djinni::String::toCpp(obj.depositFee),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.depositFee),
             ::djinni::String::toCpp(obj.returnAmount),
             ::djinni::String::toCpp(obj.exchangeFee),
             ::djinni::String::toCpp(obj.withdrawFee),
@@ -42,7 +42,7 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                         withdrawAccountId:(::djinni::String::fromCpp(cpp.withdraw_account_id))
                     withdrawTransactionId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.withdraw_transaction_id))
                                    amount:(::djinni::String::fromCpp(cpp.amount))
-                               depositFee:(::djinni::String::fromCpp(cpp.deposit_fee))
+                               depositFee:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.deposit_fee))
                              returnAmount:(::djinni::String::fromCpp(cpp.return_amount))
                               exchangeFee:(::djinni::String::fromCpp(cpp.exchange_fee))
                               withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))

@@ -5,6 +5,7 @@
 #import <Foundation/Foundation.h>
 @class ZKUtils;
 @class ZKZumoCore;
+@protocol ZKHistoricalExchangeRatesCallback;
 @protocol ZKHttpImpl;
 @protocol ZKStateListener;
 @protocol ZKUserCallback;
@@ -25,6 +26,8 @@
        callback:(nullable id<ZKUserCallback>)callback;
 
 - (nullable ZKUtils *)getUtils;
+
+- (void)getHistoricalExchangeRates:(nullable id<ZKHistoricalExchangeRatesCallback>)callback;
 
 - (nonnull ZKState *)getState;
 

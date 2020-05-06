@@ -15,7 +15,7 @@
                  withdrawAccountId:(nonnull NSString *)withdrawAccountId
              withdrawTransactionId:(nullable NSString *)withdrawTransactionId
                             amount:(nonnull NSString *)amount
-                        depositFee:(nonnull NSString *)depositFee
+                        depositFee:(nullable NSString *)depositFee
                       returnAmount:(nonnull NSString *)returnAmount
                        exchangeFee:(nonnull NSString *)exchangeFee
                        withdrawFee:(nonnull NSString *)withdrawFee
@@ -32,7 +32,7 @@
                      withdrawAccountId:(nonnull NSString *)withdrawAccountId
                  withdrawTransactionId:(nullable NSString *)withdrawTransactionId
                                 amount:(nonnull NSString *)amount
-                            depositFee:(nonnull NSString *)depositFee
+                            depositFee:(nullable NSString *)depositFee
                           returnAmount:(nonnull NSString *)returnAmount
                            exchangeFee:(nonnull NSString *)exchangeFee
                            withdrawFee:(nonnull NSString *)withdrawFee
@@ -59,7 +59,7 @@
 
 @property (nonatomic, readonly, nonnull) NSString * amount;
 
-@property (nonatomic, readonly, nonnull) NSString * depositFee;
+@property (nonatomic, readonly, nullable) NSString * depositFee;
 
 @property (nonatomic, readonly, nonnull) NSString * returnAmount;
 

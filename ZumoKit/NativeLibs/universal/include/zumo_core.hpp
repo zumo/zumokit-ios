@@ -8,6 +8,7 @@
 
 namespace zumo {
 
+class HistoricalExchangeRatesCallback;
 class HttpImpl;
 class StateListener;
 class UserCallback;
@@ -26,6 +27,8 @@ public:
     virtual void get_user(const std::string & user_token, const std::shared_ptr<UserCallback> & callback) = 0;
 
     virtual std::shared_ptr<Utils> get_utils() = 0;
+
+    virtual void get_historical_exchange_rates(const std::shared_ptr<HistoricalExchangeRatesCallback> & callback) = 0;
 
     virtual State get_state() = 0;
 

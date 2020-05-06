@@ -11,6 +11,7 @@
 #import "Http.h"
 #import "WebSocket.h"
 #import "UserCallback.h"
+#import "HistoricalExchangeRatesCallback.h"
 #import <objc/runtime.h>
 
 @implementation ZumoKit
@@ -54,6 +55,10 @@ ZKZumoCore *zumoCore;
 - (void)getUser:(nonnull NSString *)userToken
   completion:(UserCompletionBlock)completionHandler {
     [zumoCore getUser:userToken callback:[[UserCallback alloc] initWithCompletionHandler: completionHandler]];
+}
+
+- (void)getHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completionHandler {
+    [zumoCore getHistoricalExchangeRates:[[HistoricalExchangeRatesCallback alloc] initWithCompletionHandler: completionHandler]];
 }
 
 - (nonnull ZKState *)getState {

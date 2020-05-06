@@ -6,6 +6,7 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "ZKHistoricalExchangeRatesCallback+Private.h"
 #import "ZKHttpImpl+Private.h"
 #import "ZKState+Private.h"
 #import "ZKStateListener+Private.h"
@@ -70,6 +71,12 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_utils();
         return ::djinni_generated::Utils::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)getHistoricalExchangeRates:(nullable id<ZKHistoricalExchangeRatesCallback>)callback {
+    try {
+        _cppRefHandle.get()->get_historical_exchange_rates(::djinni_generated::HistoricalExchangeRatesCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
