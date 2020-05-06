@@ -26,10 +26,10 @@ public:
             [djinni_private_get_proxied_objc_object() onError:(::zumo::djinni::objc::ZumoKitExceptionConverter::fromCpp(c_e))];
         }
     }
-    void on_success(const std::unordered_map<std::string, std::vector<std::unordered_map<std::string, std::unordered_map<std::string, ::zumo::ExchangeRate>>>> & c_historical_exchange_rates) override
+    void on_success(const std::unordered_map<std::string, std::unordered_map<std::string, std::unordered_map<std::string, std::vector<::zumo::ExchangeRate>>>> & c_historical_exchange_rates) override
     {
         @autoreleasepool {
-            [djinni_private_get_proxied_objc_object() onSuccess:(::djinni::Map<::djinni::String, ::djinni::List<::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>>>::fromCpp(c_historical_exchange_rates))];
+            [djinni_private_get_proxied_objc_object() onSuccess:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni::List<::djinni_generated::ExchangeRate>>>>::fromCpp(c_historical_exchange_rates))];
         }
     }
 };
