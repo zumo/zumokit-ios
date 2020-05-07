@@ -30,7 +30,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 
 typedef void(^UserCompletionBlock)(ZKUser * _Nullable user, NSError * _Nullable error);
 
-typedef NSDictionary<NSString *, NSArray<NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *> *> * HistoricalExchangeRates;
+typedef NSDictionary<NSString *, NSDictionary<NSString *, NSDictionary<NSString *, NSArray<ZKExchangeRate *> *> *> *> * HistoricalExchangeRates;
 
 typedef void(^HistoricalExchangeRatesCompletionBlock)(HistoricalExchangeRates _Nullable historicalExchangeRates, NSError * _Nullable error);
 
