@@ -29,7 +29,7 @@
     _completionHandler(nil, error);
 }
 
-- (void)onSuccess:(nonnull NSDictionary<NSString *, NSArray<NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *> *> *) historicalExchangeRates {
+- (void)onSuccess:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, NSDictionary<NSString *, NSArray<ZKExchangeRate *> *> *> *> *) historicalExchangeRates {
     _completionHandler(historicalExchangeRates, nil);
 }
 

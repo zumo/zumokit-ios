@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSDictionary<NSString *, NSArray<NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *> *> * HistoricalExchangeRates;
+typedef NSDictionary<NSString *, NSDictionary<NSString *, NSDictionary<NSString *, NSArray<ZKExchangeRate *> *> *> *> * HistoricalExchangeRates;
 
 typedef void(^HistoricalExchangeRatesCompletionBlock)(HistoricalExchangeRates _Nullable historicalExchangeRates, NSError * _Nullable error);
 
