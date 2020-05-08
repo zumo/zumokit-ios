@@ -11,6 +11,7 @@
 #import "ComposeTransactionCallback.h"
 #import "ComposeExchangeCallback.h"
 #import "SubmitTransactionCallback.h"
+#import "SubmitExchangeCallback.h"
 
 @implementation ZKWallet (ZKWalletCallbackCompletion)
 
@@ -73,6 +74,12 @@ changeAccountId:(nonnull NSString *)changeAccountId
                completion:(_Nonnull SubmitTransactionCompletionBlock)completionHandler {
     [self submitTransaction:composedTransaction
                    callback:[[SubmitTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+            completion:(_Nonnull SubmitExchangeCompletionBlock)completionHandler {
+    [self submitExchange:composedExchange
+                callback:[[SubmitExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 @end
