@@ -12,12 +12,15 @@
 #import "ZKComposedTransaction.h"
 #import "ZKComposedExchange.h"
 #import "ZKTransaction.h"
+#import "ZKExchange.h"
 
 typedef void(^ComposeTransactionCompletionBlock)(ZKComposedTransaction * _Nullable composedTransaction, NSError * _Nullable error);
 
 typedef void(^ComposeExchangeCompletionBlock)(ZKComposedExchange * _Nullable composedExchange, NSError * _Nullable error);
 
 typedef void(^SubmitTransactionCompletionBlock)(ZKTransaction * _Nullable transaction, NSError * _Nullable error);
+
+typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NSError * _Nullable error);
 
 @interface ZKWallet (ZKWalletCallbackCompletion)
 
@@ -46,6 +49,9 @@ typedef void(^SubmitTransactionCompletionBlock)(ZKTransaction * _Nullable transa
 
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
                completion:(_Nonnull SubmitTransactionCompletionBlock)completionHandler;
+
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+            completion:(_Nonnull SubmitExchangeCompletionBlock)completionHandler;
 
 @end
 
