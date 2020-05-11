@@ -6,6 +6,10 @@
 
 NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR = @"unknown_error";
 
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDAPIRESPONSE = @"invalid_api_response";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE = @"invalid_websocket_response";
+
 NSString * __nonnull const ZKZumoKitErrorCodeAPISERVICEERROR = @"api_service_error";
 
 NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR = @"transaction_service_error";
