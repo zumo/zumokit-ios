@@ -8,6 +8,7 @@
 #include "stdx/optional.hpp"
 #include <cstdint>
 #include <string>
+#include <unordered_map>
 #include <utility>
 
 namespace zumo {
@@ -28,6 +29,7 @@ struct Exchange final {
     std::string withdraw_fee;
     ExchangeRate exchange_rate;
     ExchangeFees exchange_fees;
+    std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
     std::experimental::optional<int64_t> submitted_at;
     std::experimental::optional<int64_t> confirmed_at;
 
@@ -49,6 +51,7 @@ struct Exchange final {
              std::string withdraw_fee_,
              ExchangeRate exchange_rate_,
              ExchangeFees exchange_fees_,
+             std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
              std::experimental::optional<int64_t> submitted_at_,
              std::experimental::optional<int64_t> confirmed_at_)
     : id(std::move(id_))
@@ -66,6 +69,7 @@ struct Exchange final {
     , withdraw_fee(std::move(withdraw_fee_))
     , exchange_rate(std::move(exchange_rate_))
     , exchange_fees(std::move(exchange_fees_))
+    , exchange_rates(std::move(exchange_rates_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
     {}
