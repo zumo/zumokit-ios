@@ -21,6 +21,7 @@
                        withdrawFee:(nonnull NSString *)withdrawFee
                       exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                       exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
+                     exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt;
 + (nonnull instancetype)exchangeWithId:(nonnull NSString *)id
@@ -38,6 +39,7 @@
                            withdrawFee:(nonnull NSString *)withdrawFee
                           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                           exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
+                         exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                            submittedAt:(nullable NSNumber *)submittedAt
                            confirmedAt:(nullable NSNumber *)confirmedAt;
 
@@ -70,6 +72,8 @@
 @property (nonatomic, readonly, nonnull) ZKExchangeRate * exchangeRate;
 
 @property (nonatomic, readonly, nonnull) ZKExchangeFees * exchangeFees;
+
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * exchangeRates;
 
 @property (nonatomic, readonly, nullable) NSNumber * submittedAt;
 

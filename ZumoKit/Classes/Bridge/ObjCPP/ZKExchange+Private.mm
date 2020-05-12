@@ -27,6 +27,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.withdrawFee),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
             ::djinni_generated::ExchangeFees::toCpp(obj.exchangeFees),
+            ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.confirmedAt)};
 }
@@ -48,6 +49,7 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                               withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))
                              exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
                              exchangeFees:(::djinni_generated::ExchangeFees::fromCpp(cpp.exchange_fees))
+                            exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))
                               submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
                               confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.confirmed_at))];
 }
