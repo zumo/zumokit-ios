@@ -18,7 +18,6 @@ auto ComposedExchange::toCpp(ObjcType obj) -> CppType
             ::djinni_generated::Account::toCpp(obj.withdrawAccount),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
             ::djinni_generated::ExchangeSettings::toCpp(obj.exchangeSettings),
-            ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
             ::djinni::String::toCpp(obj.exchangeAddress),
             ::djinni::String::toCpp(obj.value),
             ::djinni::String::toCpp(obj.returnValue),
@@ -34,7 +33,6 @@ auto ComposedExchange::fromCpp(const CppType& cpp) -> ObjcType
                                                  withdrawAccount:(::djinni_generated::Account::fromCpp(cpp.withdraw_account))
                                                     exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
                                                 exchangeSettings:(::djinni_generated::ExchangeSettings::fromCpp(cpp.exchange_settings))
-                                                   exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))
                                                  exchangeAddress:(::djinni::String::fromCpp(cpp.exchange_address))
                                                            value:(::djinni::String::fromCpp(cpp.value))
                                                      returnValue:(::djinni::String::fromCpp(cpp.return_value))

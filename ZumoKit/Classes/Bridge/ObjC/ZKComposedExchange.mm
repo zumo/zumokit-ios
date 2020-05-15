@@ -11,7 +11,6 @@
                                   withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                  exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                                    exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                   exchangeAddress:(nonnull NSString *)exchangeAddress
                                             value:(nonnull NSString *)value
                                       returnValue:(nonnull NSString *)returnValue
@@ -25,7 +24,6 @@
         _withdrawAccount = withdrawAccount;
         _exchangeRate = exchangeRate;
         _exchangeSettings = exchangeSettings;
-        _exchangeRates = [exchangeRates copy];
         _exchangeAddress = [exchangeAddress copy];
         _value = [value copy];
         _returnValue = [returnValue copy];
@@ -41,7 +39,6 @@
                                               withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                              exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                                                exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                               exchangeAddress:(nonnull NSString *)exchangeAddress
                                                         value:(nonnull NSString *)value
                                                   returnValue:(nonnull NSString *)returnValue
@@ -54,7 +51,6 @@
                                                         withdrawAccount:withdrawAccount
                                                            exchangeRate:exchangeRate
                                                        exchangeSettings:exchangeSettings
-                                                          exchangeRates:exchangeRates
                                                         exchangeAddress:exchangeAddress
                                                                   value:value
                                                             returnValue:returnValue
@@ -74,7 +70,6 @@
             [self.withdrawAccount isEqual:typedOther.withdrawAccount] &&
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&
             [self.exchangeSettings isEqual:typedOther.exchangeSettings] &&
-            [self.exchangeRates isEqualToDictionary:typedOther.exchangeRates] &&
             [self.exchangeAddress isEqualToString:typedOther.exchangeAddress] &&
             [self.value isEqualToString:typedOther.value] &&
             [self.returnValue isEqualToString:typedOther.returnValue] &&
@@ -91,7 +86,6 @@
             self.withdrawAccount.hash ^
             self.exchangeRate.hash ^
             self.exchangeSettings.hash ^
-            self.exchangeRates.hash ^
             self.exchangeAddress.hash ^
             self.value.hash ^
             self.returnValue.hash ^
@@ -102,7 +96,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ depositAccount:%@ withdrawAccount:%@ exchangeRate:%@ exchangeSettings:%@ exchangeRates:%@ exchangeAddress:%@ value:%@ returnValue:%@ depositFee:%@ exchangeFee:%@ withdrawFee:%@>", self.class, (void *)self, self.signedTransaction, self.depositAccount, self.withdrawAccount, self.exchangeRate, self.exchangeSettings, self.exchangeRates, self.exchangeAddress, self.value, self.returnValue, self.depositFee, self.exchangeFee, self.withdrawFee];
+    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ depositAccount:%@ withdrawAccount:%@ exchangeRate:%@ exchangeSettings:%@ exchangeAddress:%@ value:%@ returnValue:%@ depositFee:%@ exchangeFee:%@ withdrawFee:%@>", self.class, (void *)self, self.signedTransaction, self.depositAccount, self.withdrawAccount, self.exchangeRate, self.exchangeSettings, self.exchangeAddress, self.value, self.returnValue, self.depositFee, self.exchangeFee, self.withdrawFee];
 }
 
 @end

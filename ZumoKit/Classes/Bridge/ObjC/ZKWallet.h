@@ -4,6 +4,7 @@
 #import "ZKComposedExchange.h"
 #import "ZKComposedTransaction.h"
 #import "ZKExchangeRate.h"
+#import "ZKExchangeSettings.h"
 #import <Foundation/Foundation.h>
 @protocol ZKComposeExchangeCallback;
 @protocol ZKComposeTransactionCallback;
@@ -37,7 +38,8 @@
 
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
-          exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
+           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                   value:(nonnull NSString *)value
                callback:(nullable id<ZKComposeExchangeCallback>)callback;
 
