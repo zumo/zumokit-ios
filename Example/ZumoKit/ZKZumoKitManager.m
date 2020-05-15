@@ -54,7 +54,7 @@
      getUser:userToken
      completion: ^(ZKUser * _Nullable user, NSError * _Nullable error) {
         
-        [_zumoKit getHistoricalExchangeRates:^(HistoricalExchangeRates _Nullable historicalExchangeRates, NSError * _Nullable error) {
+        [_zumoKit getHistoricalExchangeRates:^(ZKHistoricalExchangeRates _Nullable historicalExchangeRates, NSError * _Nullable error) {
             NSLog(@"Exchange rates: %@", historicalExchangeRates[ZKHistoricalExchangeRatesIntervalHOUR][ZKCurrencyCodeBTC][ZKCurrencyCodeETH]);
         }];
         
@@ -80,14 +80,15 @@
                     
                     _wallet = wallet;
                     
-//                    [self composeEthTransaction:ethAccount submit:YES];
-//                    [self composeBtcTransaction:btcAccount];
-//
-//                    ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];
-//                    ZKExchangeRate *btcEthExchangeRate = [_zumoKit getState].exchangeRates[@"BTC"][@"ETH"];
-//
-//                    [self composeExchange:ethAccount widhdrawAccount:btcAccount exchangeRate:ethBtcExchangeRate value:@"0.2"];
-//                    [self composeExchange:btcAccount widhdrawAccount:ethAccount exchangeRate:btcEthExchangeRate value:@"0.02"];
+                      //[self composeEthTransaction:ethAccount submit:YES];
+                      //[self composeBtcTransaction:btcAccount];
+
+                      //ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];
+                      //ZKExchangeRate *btcEthExchangeRate = [_zumoKit getState].exchangeRates[@"BTC"][@"ETH"];
+
+                      ZKExchangeRates exchangeRates = [_zumoKit getState].exchangeRates;
+                      [self composeExchange:ethAccount widhdrawAccount:btcAccount exchangeRates:exchangeRates value:@"0.2"];
+                      //[self composeExchange:btcAccount widhdrawAccount:ethAccount exchangeRate:btcEthExchangeRate value:@"0.02"];
                }];
         } else {
             NSString *mnemonicPhrase = [[_zumoKit utils] generateMnemonic:12];
@@ -165,14 +166,12 @@
 
 - (void)composeExchange:(ZKAccount *)depositAccount
         widhdrawAccount:(ZKAccount *)withdrawAccount
-           exchangeRate:(ZKExchangeRate *)exchangeRate
-           exchangeFees:(ZKExchangeFees *)exchangeFees
+          exchangeRates:(ZKExchangeRates)exchangeRates
                   value:(NSString *)value
 {
     [_wallet composeExchange:depositAccount.id
            withdrawAccountId:withdrawAccount.id
-                exchangeRate:exchangeRate
-                exchangeFees:exchangeFees
+                exchangeRates:exchangeRates
                        value:value
                   completion:^(ZKComposedExchange * _Nullable exchange, NSError * _Nullable error) {
 

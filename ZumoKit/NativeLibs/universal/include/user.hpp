@@ -49,6 +49,8 @@ public:
 
     virtual std::vector<Transaction> get_transactions() = 0;
 
+    virtual std::experimental::optional<Transaction> get_transaction(const std::string & transaction_id) = 0;
+
     virtual std::vector<Exchange> get_exchanges() = 0;
 
     virtual std::experimental::optional<Exchange> get_exchange_by_transaction_id(const std::string & transaction_id) = 0;

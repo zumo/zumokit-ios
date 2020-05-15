@@ -4,9 +4,10 @@
 #pragma once
 
 #include "account.hpp"
-#include "exchange_fees.hpp"
 #include "exchange_rate.hpp"
+#include "exchange_settings.hpp"
 #include <string>
+#include <unordered_map>
 #include <utility>
 
 namespace zumo {
@@ -16,7 +17,8 @@ struct ComposedExchange final {
     Account deposit_account;
     Account withdraw_account;
     ExchangeRate exchange_rate;
-    ExchangeFees exchange_fees;
+    ExchangeSettings exchange_settings;
+    std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
     std::string exchange_address;
     std::string value;
     std::string return_value;
@@ -31,7 +33,8 @@ struct ComposedExchange final {
                      Account deposit_account_,
                      Account withdraw_account_,
                      ExchangeRate exchange_rate_,
-                     ExchangeFees exchange_fees_,
+                     ExchangeSettings exchange_settings_,
+                     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
                      std::string exchange_address_,
                      std::string value_,
                      std::string return_value_,
@@ -42,7 +45,8 @@ struct ComposedExchange final {
     , deposit_account(std::move(deposit_account_))
     , withdraw_account(std::move(withdraw_account_))
     , exchange_rate(std::move(exchange_rate_))
-    , exchange_fees(std::move(exchange_fees_))
+    , exchange_settings(std::move(exchange_settings_))
+    , exchange_rates(std::move(exchange_rates_))
     , exchange_address(std::move(exchange_address_))
     , value(std::move(value_))
     , return_value(std::move(return_value_))

@@ -5,8 +5,8 @@
 
 #include "account.hpp"
 #include "exchange.hpp"
-#include "exchange_fees.hpp"
 #include "exchange_rate.hpp"
+#include "exchange_settings.hpp"
 #include "fee_rates.hpp"
 #include "stdx/optional.hpp"
 #include "sync_status.hpp"
@@ -26,11 +26,7 @@ struct State final {
     std::string token;
     std::experimental::optional<std::string> active_user_id;
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
-    std::unordered_map<std::string, std::unordered_map<std::string, ExchangeFees>> exchange_fees;
-    std::string bitcoin_deposit_address;
-    /** should be moved to internal state */
-    std::string ethereum_deposit_address;
-    /** should be moved to internal state */
+    std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSettings>> exchange_settings;
     TxServiceConnection tx_service_connection;
     std::unordered_map<std::string, FeeRates> fee_rates;
     SyncStatus sync_status;
@@ -44,9 +40,7 @@ struct State final {
           std::string token_,
           std::experimental::optional<std::string> active_user_id_,
           std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
-          std::unordered_map<std::string, std::unordered_map<std::string, ExchangeFees>> exchange_fees_,
-          std::string bitcoin_deposit_address_,
-          std::string ethereum_deposit_address_,
+          std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSettings>> exchange_settings_,
           TxServiceConnection tx_service_connection_,
           std::unordered_map<std::string, FeeRates> fee_rates_,
           SyncStatus sync_status_)
@@ -56,9 +50,7 @@ struct State final {
     , token(std::move(token_))
     , active_user_id(std::move(active_user_id_))
     , exchange_rates(std::move(exchange_rates_))
-    , exchange_fees(std::move(exchange_fees_))
-    , bitcoin_deposit_address(std::move(bitcoin_deposit_address_))
-    , ethereum_deposit_address(std::move(ethereum_deposit_address_))
+    , exchange_settings(std::move(exchange_settings_))
     , tx_service_connection(std::move(tx_service_connection_))
     , fee_rates(std::move(fee_rates_))
     , sync_status(std::move(sync_status_))

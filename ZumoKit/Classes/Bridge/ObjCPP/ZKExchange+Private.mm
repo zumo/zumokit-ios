@@ -3,8 +3,8 @@
 
 #import "ZKExchange+Private.h"
 #import "DJIMarshal+Private.h"
-#import "ZKExchangeFees+Private.h"
 #import "ZKExchangeRate+Private.h"
+#import "ZKExchangeSettings+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -16,7 +16,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.status),
             ::djinni::String::toCpp(obj.depositCurrency),
             ::djinni::String::toCpp(obj.depositAccountId),
-            ::djinni::String::toCpp(obj.depositTransactionId),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.depositTransactionId),
             ::djinni::String::toCpp(obj.withdrawCurrency),
             ::djinni::String::toCpp(obj.withdrawAccountId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.withdrawTransactionId),
@@ -26,7 +26,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.exchangeFee),
             ::djinni::String::toCpp(obj.withdrawFee),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
-            ::djinni_generated::ExchangeFees::toCpp(obj.exchangeFees),
+            ::djinni_generated::ExchangeSettings::toCpp(obj.exchangeSettings),
             ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.confirmedAt)};
@@ -38,7 +38,7 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                                    status:(::djinni::String::fromCpp(cpp.status))
                           depositCurrency:(::djinni::String::fromCpp(cpp.deposit_currency))
                          depositAccountId:(::djinni::String::fromCpp(cpp.deposit_account_id))
-                     depositTransactionId:(::djinni::String::fromCpp(cpp.deposit_transaction_id))
+                     depositTransactionId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.deposit_transaction_id))
                          withdrawCurrency:(::djinni::String::fromCpp(cpp.withdraw_currency))
                         withdrawAccountId:(::djinni::String::fromCpp(cpp.withdraw_account_id))
                     withdrawTransactionId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.withdraw_transaction_id))
@@ -48,7 +48,7 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                               exchangeFee:(::djinni::String::fromCpp(cpp.exchange_fee))
                               withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))
                              exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
-                             exchangeFees:(::djinni_generated::ExchangeFees::fromCpp(cpp.exchange_fees))
+                         exchangeSettings:(::djinni_generated::ExchangeSettings::fromCpp(cpp.exchange_settings))
                             exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))
                               submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
                               confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.confirmed_at))];

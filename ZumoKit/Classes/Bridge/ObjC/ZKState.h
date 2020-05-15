@@ -3,8 +3,8 @@
 
 #import "ZKAccount.h"
 #import "ZKExchange.h"
-#import "ZKExchangeFees.h"
 #import "ZKExchangeRate.h"
+#import "ZKExchangeSettings.h"
 #import "ZKFeeRates.h"
 #import "ZKSyncStatus.h"
 #import "ZKTransaction.h"
@@ -18,9 +18,7 @@
                                    token:(nonnull NSString *)token
                             activeUserId:(nullable NSString *)activeUserId
                            exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
-                            exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
-                   bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
-                  ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
+                        exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
                      txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                 feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                               syncStatus:(ZKSyncStatus)syncStatus;
@@ -30,9 +28,7 @@
                                     token:(nonnull NSString *)token
                              activeUserId:(nullable NSString *)activeUserId
                             exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
-                             exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
-                    bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
-                   ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
+                         exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
                       txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                  feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                                syncStatus:(ZKSyncStatus)syncStatus;
@@ -49,14 +45,8 @@
 
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * exchangeRates;
 
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> * exchangeFees;
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> * exchangeSettings;
 
-@property (nonatomic, readonly, nonnull) NSString * bitcoinDepositAddress;
-
-/** should be moved to internal state */
-@property (nonatomic, readonly, nonnull) NSString * ethereumDepositAddress;
-
-/** should be moved to internal state */
 @property (nonatomic, readonly, nonnull) ZKTxServiceConnection * txServiceConnection;
 
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, ZKFeeRates *> * feeRates;

@@ -12,9 +12,7 @@
                                    token:(nonnull NSString *)token
                             activeUserId:(nullable NSString *)activeUserId
                            exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
-                            exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
-                   bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
-                  ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
+                        exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
                      txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                 feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                               syncStatus:(ZKSyncStatus)syncStatus
@@ -26,9 +24,7 @@
         _token = [token copy];
         _activeUserId = [activeUserId copy];
         _exchangeRates = [exchangeRates copy];
-        _exchangeFees = [exchangeFees copy];
-        _bitcoinDepositAddress = [bitcoinDepositAddress copy];
-        _ethereumDepositAddress = [ethereumDepositAddress copy];
+        _exchangeSettings = [exchangeSettings copy];
         _txServiceConnection = txServiceConnection;
         _feeRates = [feeRates copy];
         _syncStatus = syncStatus;
@@ -42,9 +38,7 @@
                                     token:(nonnull NSString *)token
                              activeUserId:(nullable NSString *)activeUserId
                             exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
-                             exchangeFees:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeFees *> *> *)exchangeFees
-                    bitcoinDepositAddress:(nonnull NSString *)bitcoinDepositAddress
-                   ethereumDepositAddress:(nonnull NSString *)ethereumDepositAddress
+                         exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
                       txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                  feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                                syncStatus:(ZKSyncStatus)syncStatus
@@ -55,9 +49,7 @@
                                               token:token
                                        activeUserId:activeUserId
                                       exchangeRates:exchangeRates
-                                       exchangeFees:exchangeFees
-                              bitcoinDepositAddress:bitcoinDepositAddress
-                             ethereumDepositAddress:ethereumDepositAddress
+                                   exchangeSettings:exchangeSettings
                                 txServiceConnection:txServiceConnection
                                            feeRates:feeRates
                                          syncStatus:syncStatus];
@@ -75,9 +67,7 @@
             [self.token isEqualToString:typedOther.token] &&
             ((self.activeUserId == nil && typedOther.activeUserId == nil) || (self.activeUserId != nil && [self.activeUserId isEqual:typedOther.activeUserId])) &&
             [self.exchangeRates isEqualToDictionary:typedOther.exchangeRates] &&
-            [self.exchangeFees isEqualToDictionary:typedOther.exchangeFees] &&
-            [self.bitcoinDepositAddress isEqualToString:typedOther.bitcoinDepositAddress] &&
-            [self.ethereumDepositAddress isEqualToString:typedOther.ethereumDepositAddress] &&
+            [self.exchangeSettings isEqualToDictionary:typedOther.exchangeSettings] &&
             [self.txServiceConnection isEqual:typedOther.txServiceConnection] &&
             [self.feeRates isEqualToDictionary:typedOther.feeRates] &&
             self.syncStatus == typedOther.syncStatus;
@@ -92,9 +82,7 @@
             self.token.hash ^
             self.activeUserId.hash ^
             self.exchangeRates.hash ^
-            self.exchangeFees.hash ^
-            self.bitcoinDepositAddress.hash ^
-            self.ethereumDepositAddress.hash ^
+            self.exchangeSettings.hash ^
             self.txServiceConnection.hash ^
             self.feeRates.hash ^
             (NSUInteger)self.syncStatus;
@@ -102,7 +90,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p accounts:%@ transactions:%@ exchanges:%@ token:%@ activeUserId:%@ exchangeRates:%@ exchangeFees:%@ bitcoinDepositAddress:%@ ethereumDepositAddress:%@ txServiceConnection:%@ feeRates:%@ syncStatus:%@>", self.class, (void *)self, self.accounts, self.transactions, self.exchanges, self.token, self.activeUserId, self.exchangeRates, self.exchangeFees, self.bitcoinDepositAddress, self.ethereumDepositAddress, self.txServiceConnection, self.feeRates, @(self.syncStatus)];
+    return [NSString stringWithFormat:@"<%@ %p accounts:%@ transactions:%@ exchanges:%@ token:%@ activeUserId:%@ exchangeRates:%@ exchangeSettings:%@ txServiceConnection:%@ feeRates:%@ syncStatus:%@>", self.class, (void *)self, self.accounts, self.transactions, self.exchanges, self.token, self.activeUserId, self.exchangeRates, self.exchangeSettings, self.txServiceConnection, self.feeRates, @(self.syncStatus)];
 }
 
 @end

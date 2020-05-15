@@ -55,18 +55,16 @@ changeAccountId:(nonnull NSString *)changeAccountId
 
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
-           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-           exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
+          exchangeRates:(nonnull ZKExchangeRates)exchangeRates
                   value:(nonnull NSString *)value
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler {
                  
     [self composeExchange:depositAccountId
         withdrawAccountId:withdrawAccountId
-             exchangeRate:exchangeRate
-             exchangeFees:exchangeFees
+            exchangeRates:exchangeRates
                     value:value
                  callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
-                 
+
 };
 
 

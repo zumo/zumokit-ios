@@ -10,7 +10,8 @@
                                    depositAccount:(nonnull ZKAccount *)depositAccount
                                   withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                                     exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
+                                 exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                                    exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                   exchangeAddress:(nonnull NSString *)exchangeAddress
                                             value:(nonnull NSString *)value
                                       returnValue:(nonnull NSString *)returnValue
@@ -23,7 +24,8 @@
         _depositAccount = depositAccount;
         _withdrawAccount = withdrawAccount;
         _exchangeRate = exchangeRate;
-        _exchangeFees = exchangeFees;
+        _exchangeSettings = exchangeSettings;
+        _exchangeRates = [exchangeRates copy];
         _exchangeAddress = [exchangeAddress copy];
         _value = [value copy];
         _returnValue = [returnValue copy];
@@ -38,7 +40,8 @@
                                                depositAccount:(nonnull ZKAccount *)depositAccount
                                               withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                                                 exchangeFees:(nonnull ZKExchangeFees *)exchangeFees
+                                             exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                                                exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                               exchangeAddress:(nonnull NSString *)exchangeAddress
                                                         value:(nonnull NSString *)value
                                                   returnValue:(nonnull NSString *)returnValue
@@ -50,7 +53,8 @@
                                                          depositAccount:depositAccount
                                                         withdrawAccount:withdrawAccount
                                                            exchangeRate:exchangeRate
-                                                           exchangeFees:exchangeFees
+                                                       exchangeSettings:exchangeSettings
+                                                          exchangeRates:exchangeRates
                                                         exchangeAddress:exchangeAddress
                                                                   value:value
                                                             returnValue:returnValue
@@ -69,7 +73,8 @@
             [self.depositAccount isEqual:typedOther.depositAccount] &&
             [self.withdrawAccount isEqual:typedOther.withdrawAccount] &&
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&
-            [self.exchangeFees isEqual:typedOther.exchangeFees] &&
+            [self.exchangeSettings isEqual:typedOther.exchangeSettings] &&
+            [self.exchangeRates isEqualToDictionary:typedOther.exchangeRates] &&
             [self.exchangeAddress isEqualToString:typedOther.exchangeAddress] &&
             [self.value isEqualToString:typedOther.value] &&
             [self.returnValue isEqualToString:typedOther.returnValue] &&
@@ -85,7 +90,8 @@
             self.depositAccount.hash ^
             self.withdrawAccount.hash ^
             self.exchangeRate.hash ^
-            self.exchangeFees.hash ^
+            self.exchangeSettings.hash ^
+            self.exchangeRates.hash ^
             self.exchangeAddress.hash ^
             self.value.hash ^
             self.returnValue.hash ^
@@ -96,7 +102,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ depositAccount:%@ withdrawAccount:%@ exchangeRate:%@ exchangeFees:%@ exchangeAddress:%@ value:%@ returnValue:%@ depositFee:%@ exchangeFee:%@ withdrawFee:%@>", self.class, (void *)self, self.signedTransaction, self.depositAccount, self.withdrawAccount, self.exchangeRate, self.exchangeFees, self.exchangeAddress, self.value, self.returnValue, self.depositFee, self.exchangeFee, self.withdrawFee];
+    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ depositAccount:%@ withdrawAccount:%@ exchangeRate:%@ exchangeSettings:%@ exchangeRates:%@ exchangeAddress:%@ value:%@ returnValue:%@ depositFee:%@ exchangeFee:%@ withdrawFee:%@>", self.class, (void *)self, self.signedTransaction, self.depositAccount, self.withdrawAccount, self.exchangeRate, self.exchangeSettings, self.exchangeRates, self.exchangeAddress, self.value, self.returnValue, self.depositFee, self.exchangeFee, self.withdrawFee];
 }
 
 @end
