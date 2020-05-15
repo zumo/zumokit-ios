@@ -48,6 +48,8 @@
 
 - (nonnull NSArray<ZKTransaction *> *)getTransactions;
 
+- (nullable ZKTransaction *)getTransaction:(nonnull NSString *)transactionId;
+
 - (nonnull NSArray<ZKExchange *> *)getExchanges;
 
 - (nullable ZKExchange *)getExchangeByTransactionId:(nonnull NSString *)transactionId;

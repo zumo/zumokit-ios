@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "exchange_fees.hpp"
 #include "exchange_rate.hpp"
+#include "exchange_settings.hpp"
 #include "stdx/optional.hpp"
 #include <cstdint>
 #include <string>
@@ -18,7 +18,7 @@ struct Exchange final {
     std::string status;
     std::string deposit_currency;
     std::string deposit_account_id;
-    std::string deposit_transaction_id;
+    std::experimental::optional<std::string> deposit_transaction_id;
     std::string withdraw_currency;
     std::string withdraw_account_id;
     std::experimental::optional<std::string> withdraw_transaction_id;
@@ -28,7 +28,7 @@ struct Exchange final {
     std::string exchange_fee;
     std::string withdraw_fee;
     ExchangeRate exchange_rate;
-    ExchangeFees exchange_fees;
+    ExchangeSettings exchange_settings;
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
     std::experimental::optional<int64_t> submitted_at;
     std::experimental::optional<int64_t> confirmed_at;
@@ -40,7 +40,7 @@ struct Exchange final {
              std::string status_,
              std::string deposit_currency_,
              std::string deposit_account_id_,
-             std::string deposit_transaction_id_,
+             std::experimental::optional<std::string> deposit_transaction_id_,
              std::string withdraw_currency_,
              std::string withdraw_account_id_,
              std::experimental::optional<std::string> withdraw_transaction_id_,
@@ -50,7 +50,7 @@ struct Exchange final {
              std::string exchange_fee_,
              std::string withdraw_fee_,
              ExchangeRate exchange_rate_,
-             ExchangeFees exchange_fees_,
+             ExchangeSettings exchange_settings_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
              std::experimental::optional<int64_t> submitted_at_,
              std::experimental::optional<int64_t> confirmed_at_)
@@ -68,7 +68,7 @@ struct Exchange final {
     , exchange_fee(std::move(exchange_fee_))
     , withdraw_fee(std::move(withdraw_fee_))
     , exchange_rate(std::move(exchange_rate_))
-    , exchange_fees(std::move(exchange_fees_))
+    , exchange_settings(std::move(exchange_settings_))
     , exchange_rates(std::move(exchange_rates_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))

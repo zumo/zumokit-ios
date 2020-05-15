@@ -56,6 +56,10 @@ struct ZumoKitErrorCode final {
 
     static std::string const INSUFFICIENT_FUNDS;
 
+    static std::string const INSUFFICIENT_FUNDS_FOR_TRANSACTION;
+
+    static std::string const INSUFFICIENT_FUNDS_FOR_EXCHANGE;
+
     static std::string const NONCE_OVERFLOW;
 
     static std::string const GAS_TOO_LOW;
@@ -72,9 +76,13 @@ struct ZumoKitErrorCode final {
 
     static std::string const INVALID_EXCHANGE_RATE;
 
-    static std::string const INVALID_EXCHANGE_FEES;
+    static std::string const INVALID_EXCHANGE_SETTINGS;
 
     static std::string const EXCHANGE_RETURN_VALUE_NEGATIVE;
+
+    static std::string const INVALID_EXCHANGE_DEPOSIT_ADDRESS;
+
+    static std::string const EXCHANGE_AMOUNT_TOO_LOW;
 };
 
 }  // namespace zumo

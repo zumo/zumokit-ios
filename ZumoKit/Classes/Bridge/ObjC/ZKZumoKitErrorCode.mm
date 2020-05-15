@@ -50,6 +50,10 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDADDRESS = @"invalid_address"
 
 NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDS = @"insufficient_funds";
 
+NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION = @"insufficient_funds_for_transaction";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE = @"insufficient_funds_for_exchange";
+
 NSString * __nonnull const ZKZumoKitErrorCodeNONCEOVERFLOW = @"nonce_overflow";
 
 NSString * __nonnull const ZKZumoKitErrorCodeGASTOOLOW = @"gas_too_low";
@@ -66,9 +70,13 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE = @"invalid_acco
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE = @"invalid_exchange_rate";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEFEES = @"invalid_exchange_fees";
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS = @"invalid_exchange_settings";
 
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE = @"exchange_return_value_negative";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEDEPOSITADDRESS = @"invalid_exchange_deposit_address";
+
+NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW = @"exchange_amount_too_low";
 
 @implementation ZKZumoKitErrorCode
 

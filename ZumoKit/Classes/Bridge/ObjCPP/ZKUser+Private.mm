@@ -136,6 +136,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
+- (nullable ZKTransaction *)getTransaction:(nonnull NSString *)transactionId {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_transaction(::djinni::String::toCpp(transactionId));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::Transaction>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
 - (nonnull NSArray<ZKExchange *> *)getExchanges {
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_exchanges();
