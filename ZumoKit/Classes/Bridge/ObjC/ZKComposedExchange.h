@@ -12,7 +12,6 @@
                                   withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                  exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                                    exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                   exchangeAddress:(nonnull NSString *)exchangeAddress
                                             value:(nonnull NSString *)value
                                       returnValue:(nonnull NSString *)returnValue
@@ -24,7 +23,6 @@
                                               withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                              exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                                                exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                               exchangeAddress:(nonnull NSString *)exchangeAddress
                                                         value:(nonnull NSString *)value
                                                   returnValue:(nonnull NSString *)returnValue
@@ -41,8 +39,6 @@
 @property (nonatomic, readonly, nonnull) ZKExchangeRate * exchangeRate;
 
 @property (nonatomic, readonly, nonnull) ZKExchangeSettings * exchangeSettings;
-
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * exchangeRates;
 
 @property (nonatomic, readonly, nonnull) NSString * exchangeAddress;
 

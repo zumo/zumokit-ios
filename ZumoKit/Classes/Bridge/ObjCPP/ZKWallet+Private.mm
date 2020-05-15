@@ -11,6 +11,7 @@
 #import "ZKComposedExchange+Private.h"
 #import "ZKComposedTransaction+Private.h"
 #import "ZKExchangeRate+Private.h"
+#import "ZKExchangeSettings+Private.h"
 #import "ZKSubmitExchangeCallback+Private.h"
 #import "ZKSubmitTransactionCallback+Private.h"
 #include <exception>
@@ -91,13 +92,15 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
-          exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
+           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                   value:(nonnull NSString *)value
                callback:(nullable id<ZKComposeExchangeCallback>)callback {
     try {
         _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(depositAccountId),
                                               ::djinni::String::toCpp(withdrawAccountId),
-                                              ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(exchangeRates),
+                                              ::djinni_generated::ExchangeRate::toCpp(exchangeRate),
+                                              ::djinni_generated::ExchangeSettings::toCpp(exchangeSettings),
                                               ::djinni::String::toCpp(value),
                                               ::djinni_generated::ComposeExchangeCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()

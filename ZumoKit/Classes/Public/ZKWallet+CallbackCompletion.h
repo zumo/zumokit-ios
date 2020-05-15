@@ -22,8 +22,6 @@ typedef void(^SubmitTransactionCompletionBlock)(ZKTransaction * _Nullable transa
 
 typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NSError * _Nullable error);
 
-typedef NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * ZKExchangeRates;
-
 @interface ZKWallet (ZKWalletCallbackCompletion)
 
 - (void)composeEthTransaction:(nonnull NSString *)accountId
@@ -44,7 +42,8 @@ typedef NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *
 
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
-          exchangeRates:(nonnull ZKExchangeRates)exchangeRates
+           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeFees
                   value:(nonnull NSString *)value
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler;
 
