@@ -8,8 +8,8 @@
 
 #import "ZumoKit.h"
 #import "ZKZumoCore.h"
-#import "Http.h"
-#import "WebSocket.h"
+#import "HttpService.h"
+#import "WebSocketService.h"
 #import "UserCallback.h"
 #import "HistoricalExchangeRatesCallback.h"
 #import <objc/runtime.h>
@@ -29,11 +29,11 @@ ZKZumoCore *zumoCore;
     if( self = [super init] ) {
 
         // Init the impls needed for the C++ core
-        Http *httpImpl = [[Http alloc] init];
+        HttpService *httpImpl = [[HttpService alloc] init];
 
         // Convert the txServiceUrl to an actual NSURL and pass to wsImpl.
         NSURL *txUrl = [[NSURL alloc] initWithString:txServiceUrl];
-        WebSocket *wsImpl = [[WebSocket alloc] initWithURL:txUrl];
+        WebSocketService *wsImpl = [[WebSocketService alloc] initWithURL:txUrl];
 
         // Initialize the C++ core
         zumoCore = [ZKZumoCore init: httpImpl

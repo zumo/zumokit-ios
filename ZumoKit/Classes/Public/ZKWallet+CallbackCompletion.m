@@ -22,6 +22,7 @@
                      value:(nullable NSString *)value
                       data:(nullable NSString *)data
                      nonce:(nullable NSNumber *)nonce
+                   sendMax:(BOOL)sendMax
              completion:(ComposeTransactionCompletionBlock)completionHandler {
     
     [self composeEthTransaction:accountId
@@ -31,23 +32,26 @@
                           value:value
                            data:data
                           nonce:nonce
+                        sendMax:sendMax
                        callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
     
 };
 
 
 - (void)composeBtcTransaction:(nonnull NSString *)accountId
-changeAccountId:(nonnull NSString *)changeAccountId
-             to:(nonnull NSString *)to
-          value:(nonnull NSString *)value
-        feeRate:(nonnull NSString *)feeRate
-                completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+              changeAccountId:(nonnull NSString *)changeAccountId
+                           to:(nonnull NSString *)to
+                        value:(nullable NSString *)value
+                      feeRate:(nonnull NSString *)feeRate
+                      sendMax:sendMax
+                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
     
     [self composeBtcTransaction:accountId
                 changeAccountId:changeAccountId
                              to:to
                           value:value
                         feeRate:feeRate
+                        sendMax:sendMax
                     callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
     
 };
@@ -57,7 +61,8 @@ changeAccountId:(nonnull NSString *)changeAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                  value:(nonnull NSString *)value
+                  value:(nullable NSString *)value
+                sendMax:sendMax
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler {
                  
     [self composeExchange:depositAccountId
@@ -65,6 +70,7 @@ changeAccountId:(nonnull NSString *)changeAccountId
              exchangeRate:exchangeRate
         exchangeSettings:exchangeSettings
                     value:value
+                  sendMax:sendMax
                  callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
 
 };

@@ -31,20 +31,23 @@ typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NS
                         value:(nullable NSString *)value
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
+                      sendMax:(BOOL)sendMax
                    completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
 - (void)composeBtcTransaction:(nonnull NSString *)accountId
               changeAccountId:(nonnull NSString *)changeAccountId
                            to:(nonnull NSString *)to
-                        value:(nonnull NSString *)value
+                        value:(nullable NSString *)value
                       feeRate:(nonnull NSString *)feeRate
+                      sendMax:(BOOL)sendMax
                    completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeFees
-                  value:(nonnull NSString *)value
+                  value:(nullable NSString *)value
+                sendMax:(BOOL)sendMax
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler;
 
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction

@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Http.h"
+#import "HttpService.h"
 
 /**
  Handles all network requests within the iOS version of ZumoKit
  */
-@implementation Http
+@implementation HttpService
 
 /**
  Perform a new HTTP with the parameters provided.

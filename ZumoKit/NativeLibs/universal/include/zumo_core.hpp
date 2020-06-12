@@ -24,7 +24,7 @@ public:
 
     static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpImpl> & http_impl, const std::shared_ptr<WebSocketImpl> & ws_impl, const std::string & api_key, const std::string & api_root, const std::string & tx_service_root);
 
-    virtual void get_user(const std::string & user_token, const std::shared_ptr<UserCallback> & callback) = 0;
+    virtual void get_user(const std::string & user_token_set, const std::shared_ptr<UserCallback> & callback) = 0;
 
     virtual std::shared_ptr<Utils> get_utils() = 0;
 

@@ -15,6 +15,7 @@
                              nonce:(nullable NSNumber *)nonce
                            network:(ZKNetworkType)network
                               type:(ZKAccountType)type
+                          utxoPool:(nullable NSString *)utxoPool
                            version:(int8_t)version;
 + (nonnull instancetype)accountWithId:(nonnull NSString *)id
                                  path:(nonnull NSString *)path
@@ -25,6 +26,7 @@
                                 nonce:(nullable NSNumber *)nonce
                               network:(ZKNetworkType)network
                                  type:(ZKAccountType)type
+                             utxoPool:(nullable NSString *)utxoPool
                               version:(int8_t)version;
 
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -44,6 +46,8 @@
 @property (nonatomic, readonly) ZKNetworkType network;
 
 @property (nonatomic, readonly) ZKAccountType type;
+
+@property (nonatomic, readonly, nullable) NSString * utxoPool;
 
 @property (nonatomic, readonly) int8_t version;
 
