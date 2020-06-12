@@ -22,6 +22,7 @@ struct Account final {
     std::experimental::optional<int64_t> nonce;
     NetworkType network;
     AccountType type;
+    std::experimental::optional<std::string> utxo_pool;
     int8_t version;
 
     friend bool operator==(const Account& lhs, const Account& rhs);
@@ -36,6 +37,7 @@ struct Account final {
             std::experimental::optional<int64_t> nonce_,
             NetworkType network_,
             AccountType type_,
+            std::experimental::optional<std::string> utxo_pool_,
             int8_t version_)
     : id(std::move(id_))
     , path(std::move(path_))
@@ -46,6 +48,7 @@ struct Account final {
     , nonce(std::move(nonce_))
     , network(std::move(network_))
     , type(std::move(type_))
+    , utxo_pool(std::move(utxo_pool_))
     , version(std::move(version_))
     {}
 };

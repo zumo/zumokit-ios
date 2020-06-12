@@ -83,6 +83,22 @@ struct ZumoKitErrorCode final {
     static std::string const INVALID_EXCHANGE_DEPOSIT_ADDRESS;
 
     static std::string const EXCHANGE_AMOUNT_TOO_LOW;
+
+    static std::string const VALUE_PROVIDED_WHEN_SEND_MAX_SET;
+
+    static std::string const DATA_PROVIDED_WHEN_SEND_MAX_SET;
+
+    static std::string const TRANSACTION_TOO_LARGE;
+
+    static std::string const CHANGE_INDEX_OUT_OF_RANGE;
+
+    static std::string const TRANSACTION_AMOUNT_TOO_SMALL;
+
+    static std::string const SEND_MAX_INSUFFICIENT_FUNDS_FOR_FEE;
+
+    static std::string const SEND_MAX_INSUFFICIENT_FUNDS_FOR_TRANSACTION;
+
+    static std::string const AMOUNT_NOT_SET;
 };
 
 }  // namespace zumo

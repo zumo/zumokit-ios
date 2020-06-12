@@ -25,17 +25,13 @@ public:
 
     virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
 
-    virtual void compose_eth_transaction(const std::string & account_id, const std::string & gas_price, const std::string & gas_limit, const std::experimental::optional<std::string> & to, const std::experimental::optional<std::string> & value, const std::experimental::optional<std::string> & data, std::experimental::optional<int64_t> nonce, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+    virtual void compose_eth_transaction(const std::string & account_id, const std::string & gas_price, const std::string & gas_limit, const std::experimental::optional<std::string> & to, const std::experimental::optional<std::string> & value, const std::experimental::optional<std::string> & data, std::experimental::optional<int64_t> nonce, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
-    virtual void compose_btc_transaction(const std::string & account_id, const std::string & change_account_id, const std::string & to, const std::string & value, const std::string & fee_rate, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+    virtual void compose_btc_transaction(const std::string & account_id, const std::string & change_account_id, const std::string & to, const std::experimental::optional<std::string> & value, const std::string & fee_rate, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
     virtual void submit_exchange(const ComposedExchange & composed_exchange, const std::shared_ptr<SubmitExchangeCallback> & callback) = 0;
 
-    virtual void compose_exchange(const std::string & deposit_account_id, const std::string & withdraw_account_id, const ExchangeRate & exchange_rate, const ExchangeSettings & exchange_settings, const std::string & value, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
-
-    virtual std::experimental::optional<std::string> max_spendable_eth(const std::string & account_id, const std::string & gas_price, const std::string & gas_limit) = 0;
-
-    virtual std::experimental::optional<std::string> max_spendable_btc(const std::string & account_id, const std::experimental::optional<std::string> & to, const std::string & fee_rate) = 0;
+    virtual void compose_exchange(const std::string & deposit_account_id, const std::string & withdraw_account_id, const ExchangeRate & exchange_rate, const ExchangeSettings & exchange_settings, const std::experimental::optional<std::string> & value, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
 };
 
 }  // namespace zumo

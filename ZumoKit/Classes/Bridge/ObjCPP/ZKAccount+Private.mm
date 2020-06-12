@@ -21,6 +21,7 @@ auto Account::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce),
             ::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::toCpp(obj.network),
             ::djinni::Enum<::zumo::AccountType, ZKAccountType>::toCpp(obj.type),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.utxoPool),
             ::djinni::I8::toCpp(obj.version)};
 }
 
@@ -35,6 +36,7 @@ auto Account::fromCpp(const CppType& cpp) -> ObjcType
                                    nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))
                                  network:(::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::fromCpp(cpp.network))
                                     type:(::djinni::Enum<::zumo::AccountType, ZKAccountType>::fromCpp(cpp.type))
+                                utxoPool:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.utxo_pool))
                                  version:(::djinni::I8::fromCpp(cpp.version))];
 }
 

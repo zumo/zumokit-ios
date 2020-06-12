@@ -26,6 +26,10 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>CLIENT_HEADERS</key>
+	<string>$(CLIENT_HEADERS)</string>
+	<key>CLIENT_ZUMOKIT_AUTH_ENDPOINT</key>
+	<string>$(CLIENT_ZUMOKIT_AUTH_ENDPOINT)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>TX_SERVICE_URL</key>
@@ -51,9 +55,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>USER_PASSWORD</key>
-	<string>$(USER_PASSWORD)</string>
-	<key>USER_TOKEN</key>
-	<string>$(USER_TOKEN)</string>
+	<key>USER_WALLET_PASSWORD</key>
+	<string>$(USER_WALLET_PASSWORD)</string>
 </dict>
 </plist>

@@ -15,6 +15,7 @@
                              nonce:(nullable NSNumber *)nonce
                            network:(ZKNetworkType)network
                               type:(ZKAccountType)type
+                          utxoPool:(nullable NSString *)utxoPool
                            version:(int8_t)version
 {
     if (self = [super init]) {
@@ -27,6 +28,7 @@
         _nonce = nonce;
         _network = network;
         _type = type;
+        _utxoPool = [utxoPool copy];
         _version = version;
     }
     return self;
@@ -41,6 +43,7 @@
                                 nonce:(nullable NSNumber *)nonce
                               network:(ZKNetworkType)network
                                  type:(ZKAccountType)type
+                             utxoPool:(nullable NSString *)utxoPool
                               version:(int8_t)version
 {
     return [(ZKAccount*)[self alloc] initWithId:id
@@ -52,6 +55,7 @@
                                           nonce:nonce
                                         network:network
                                            type:type
+                                       utxoPool:utxoPool
                                         version:version];
 }
 
@@ -70,6 +74,7 @@
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
             self.network == typedOther.network &&
             self.type == typedOther.type &&
+            ((self.utxoPool == nil && typedOther.utxoPool == nil) || (self.utxoPool != nil && [self.utxoPool isEqual:typedOther.utxoPool])) &&
             self.version == typedOther.version;
 }
 
@@ -85,12 +90,13 @@
             self.nonce.hash ^
             (NSUInteger)self.network ^
             (NSUInteger)self.type ^
+            self.utxoPool.hash ^
             (NSUInteger)self.version;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ path:%@ symbol:%@ coin:%@ address:%@ balance:%@ nonce:%@ network:%@ type:%@ version:%@>", self.class, (void *)self, self.id, self.path, self.symbol, self.coin, self.address, self.balance, self.nonce, @(self.network), @(self.type), @(self.version)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ path:%@ symbol:%@ coin:%@ address:%@ balance:%@ nonce:%@ network:%@ type:%@ utxoPool:%@ version:%@>", self.class, (void *)self, self.id, self.path, self.symbol, self.coin, self.address, self.balance, self.nonce, @(self.network), @(self.type), self.utxoPool, @(self.version)];
 }
 
 @end

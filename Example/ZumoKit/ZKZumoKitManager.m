@@ -40,77 +40,106 @@
     NSString *apiKey = [mainBundle objectForInfoDictionaryKey:@"API_KEY"];
     NSString *apiRoot = [mainBundle objectForInfoDictionaryKey:@"API_URL"];
     NSString *txServiceUrl = [mainBundle objectForInfoDictionaryKey:@"TX_SERVICE_URL"];
-    NSString *userToken = [mainBundle objectForInfoDictionaryKey:@"USER_TOKEN"];;
-    NSString *userPassword = [mainBundle objectForInfoDictionaryKey:@"USER_PASSWORD"];;
+    
+    // Client config
+    NSURL *clientZumoKitAuthEndpoint = [NSURL URLWithString:[mainBundle objectForInfoDictionaryKey:@"CLIENT_ZUMOKIT_AUTH_ENDPOINT"]];
+    NSError *e = nil;
+    NSDictionary *clientHeaders = [NSJSONSerialization JSONObjectWithData:[[mainBundle objectForInfoDictionaryKey:@"CLIENT_HEADERS"] dataUsingEncoding:NSUTF8StringEncoding] options: NSJSONReadingMutableContainers error: &e];
+    NSString *userWalletPassword = [mainBundle objectForInfoDictionaryKey:@"USER_WALLET_PASSWORD"];;
 
+    // Initialize ZumoKit
     _zumoKit =  [[ZumoKit alloc] initWithApiKey:apiKey
                                         apiRoot:apiRoot
-                                   txServiceUrl:txServiceUrl
-                 ];
+                                   txServiceUrl:txServiceUrl];
     
     [_zumoKit addStateListener:self];
 
-    [_zumoKit
-     getUser:userToken
-     completion: ^(ZKUser * _Nullable user, NSError * _Nullable error) {
-        
-        //[_zumoKit getHistoricalExchangeRates:^(ZKHistoricalExchangeRates _Nullable historicalExchangeRates, NSError * _Nullable error) {
-        //    NSLog(@"Exchange rates: %@", historicalExchangeRates[ZKHistoricalExchangeRatesIntervalHOUR][ZKCurrencyCodeBTC][ZKCurrencyCodeETH]);
-        //}];
-        
-        _user = user;
-        
-        if (error != nil) {
-            NSLog(@"Auth error: %@", [error userInfo]);
+    // Get ZumoKit user token
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:clientZumoKitAuthEndpoint];
+    [request setHTTPMethod:@"POST"];
+    [request setAllHTTPHeaderFields:clientHeaders];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+
+    NSURLSessionDataTask *task = [session
+    dataTaskWithRequest:request
+    completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error)
+    {
+        if(error) {
+            NSLog(@"error: %@", [error localizedDescription]);
             return;
         }
 
-        if ([_user hasWallet]) {
-            ZKAccount *ethAccount = [_user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
-            NSLog(@"ETH account: %@", ethAccount.address);
-            
-            ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
-            NSLog(@"BTC account: %@", btcAccount.address);
-            
-            [_user unlockWallet:userPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
-                    if (error != nil) {
-                        NSLog(@"error: %@", [error description]);
-                        return;
-                    }
-                    
-                    _wallet = wallet;
-                    
-                      //[self composeEthTransaction:ethAccount submit:YES];
-                      //[self composeBtcTransaction:btcAccount];
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
 
-                      //ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];
-                      //ZKExchangeRate *btcEthExchangeRate = [_zumoKit getState].exchangeRates[@"BTC"][@"ETH"];
-
-                    [self composeExchange:ethAccount
-                          widhdrawAccount:btcAccount
-                             exchangeRate:[_zumoKit getState].exchangeRates[@"ETH"][@"BTC"]
-                         exchangeSettings:[_zumoKit getState].exchangeSettings[@"ETH"][@"BTC"]
-                                    value:@"0.02"];
-               }];
-        } else {
-            NSString *mnemonicPhrase = [[_zumoKit utils] generateMnemonic:12];
-            //NSString *mnemonicPhrase = @"breeze lady dial claim eyebrow news urban warm scout barrel gorilla prevent";
-
-            [_user createWallet: mnemonicPhrase password:userPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
-                    if (error != nil) {
-                        NSLog(@"error: %@", [error description]);
-                        return;
-                    }
-                    
-                    ZKAccount *ethAccount = [user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
-                    NSLog(@"ETH account: %@", ethAccount.address);
-                    
-                    ZKAccount *btcAccount = [user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
-                    NSLog(@"BTC account: %@", btcAccount.address);
-                    
-                }];
+        short statusCode = (unsigned short) [httpResponse statusCode];
+        if (statusCode != 200) {
+            NSString *error = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"error: %@", error);
+            return;
         }
+
+        NSString *userTokenSet = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [_zumoKit
+            getUser:userTokenSet
+            completion: ^(ZKUser * _Nullable user, NSError * _Nullable error) {
+           
+               _user = user;
+               
+               if (error != nil) {
+                   NSLog(@"Auth error: %@", [error userInfo]);
+                   return;
+               }
+
+               if ([_user hasWallet]) {
+                   ZKAccount *ethAccount = [_user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
+                   NSLog(@"ETH account: %@", ethAccount.address);
+                   
+                   ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
+                   NSLog(@"BTC account: %@", btcAccount.address);
+                   
+                   [_user unlockWallet:userWalletPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
+                           if (error != nil) {
+                               NSLog(@"error: %@", [error description]);
+                               return;
+                           }
+                           
+                           _wallet = wallet;
+                           
+                             [self composeEthTransaction:ethAccount submit:NO];
+                             [self composeBtcTransaction:btcAccount];
+
+                             //ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];
+                             //ZKExchangeRate *btcEthExchangeRate = [_zumoKit getState].exchangeRates[@"BTC"][@"ETH"];
+
+                             [self composeExchange:ethAccount
+                                   widhdrawAccount:btcAccount
+                                      exchangeRate:[_zumoKit getState].exchangeRates[@"ETH"][@"BTC"]
+                                  exchangeSettings:[_zumoKit getState].exchangeSettings[@"ETH"][@"BTC"]
+                                             value:@"0.02"];
+                      }];
+               } else {
+                   NSString *mnemonicPhrase = [[_zumoKit utils] generateMnemonic:12];
+
+                   [_user createWallet: mnemonicPhrase password:userWalletPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
+                           if (error != nil) {
+                               NSLog(@"error: %@", [error description]);
+                               return;
+                           }
+                           
+                           ZKAccount *ethAccount = [user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
+                           NSLog(@"ETH account: %@", ethAccount.address);
+                           
+                           ZKAccount *btcAccount = [user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
+                           NSLog(@"BTC account: %@", btcAccount.address);
+                           
+                       }];
+               }
+           }];
     }];
+
+    NSLog(@"Requesting %@", clientZumoKitAuthEndpoint);
+    [task resume];
 }
 
 - (void)composeEthTransaction:(ZKAccount *) account
@@ -119,16 +148,19 @@
                           gasPrice:@"60"
                           gasLimit:@"21000"
                                 to:@"0xD797c81C928a7F4CF7dEB960B5963697fAcFE0eE"
-                             value:@"0.00023"
-                              data:@""
+                             value:nil
+                              data:nil
                              nonce:[NSNumber numberWithInt:6]
+                           sendMax:YES
                         completion:^(ZKComposedTransaction * _Nullable composedTransaction, NSError * _Nullable error) {
         
         if (error != nil) {
             NSLog(@"error: %@", [error description]);
             return;
         }
-    
+        
+        NSLog(@"Account Balance: %@", composedTransaction.account.balance);
+        NSLog(@"Tx Value: %@", composedTransaction.value);
         NSLog(@"Tx Fee: %@", composedTransaction.fee);
         
         if (!submit) {
@@ -152,8 +184,9 @@
     [_wallet composeBtcTransaction:account.id
                    changeAccountId:account.id
                                 to:@"2N6BfH356AicEzuC1dYt4gYkw6WFWZrfeSY"
-                             value:@"0.000055"
+                             value:nil
                            feeRate:@"20"
+                           sendMax:YES
                         completion:^(ZKComposedTransaction * _Nullable transaction, NSError * _Nullable error) {
         
         if (error != nil) {
@@ -161,6 +194,8 @@
             return;
         }
         
+        NSLog(@"Account Balance: %@", transaction.account.balance);
+        NSLog(@"Tx Value: %@", transaction.value);
         NSLog(@"Tx Fee: %@", transaction.fee);
     }];
 }
@@ -176,7 +211,8 @@
            withdrawAccountId:withdrawAccount.id
                 exchangeRate:exchangeRate
             exchangeSettings:exchangeSettings
-                       value:value
+                       value:nil
+                     sendMax:YES
                   completion:^(ZKComposedExchange * _Nullable exchange, NSError * _Nullable error) {
 
         if (error != nil) {

@@ -13,7 +13,7 @@
 #import "ZKWebSocketListener.h"
 #import <SocketRocket/SRWebSocket.h>
 
-@interface WebSocket : NSObject <ZKWebSocketImpl, SRWebSocketDelegate>
+@interface WebSocketService : NSObject <ZKWebSocketImpl, SRWebSocketDelegate>
 
 @property(strong, nonatomic) NSURL *url;
 @property(strong, nonatomic) SRWebSocket *webSocket;

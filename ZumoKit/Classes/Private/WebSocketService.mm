@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "WebSocket.h"
+#import "WebSocketService.h"
 
-@implementation WebSocket
+@implementation WebSocketService
 
 - (instancetype)initWithURL:(NSURL *)url {
     self = [super init];
@@ -63,7 +63,7 @@
     if(_listener) {
         [_listener onClose:[NSString stringWithFormat:@"closed with exit code %ld additional info: %@", (long) code, reason]];
     }
-    WebSocket * thisWebSocket = self;
+    WebSocketService * thisWebSocket = self;
     double delayInSeconds = 5.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
@@ -82,7 +82,7 @@
     if(_listener) {
         [_listener onError:[error localizedDescription]];
     }
-    WebSocket * thisWebSocket = self;
+    WebSocketService * thisWebSocket = self;
     double delayInSeconds = 5.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){

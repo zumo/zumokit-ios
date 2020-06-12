@@ -12,7 +12,7 @@
 #import "ZKHttpImpl.h"
 #import "ZKHttpCallback.h"
 
-@interface Http : NSObject <ZKHttpImpl>
+@interface HttpService : NSObject <ZKHttpImpl>
 
 @end
 

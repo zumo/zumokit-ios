@@ -78,6 +78,22 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEDEPOSITADDRESS = @"i
 
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW = @"exchange_amount_too_low";
 
+NSString * __nonnull const ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET = @"value_provided_when_send_max_set";
+
+NSString * __nonnull const ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET = @"data_provided_when_send_max_set";
+
+NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONTOOLARGE = @"transaction_too_large";
+
+NSString * __nonnull const ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE = @"change_index_out_of_range";
+
+NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL = @"transaction_amount_too_small";
+
+NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE = @"send_max_insufficient_funds_for_fee";
+
+NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION = @"send_max_insufficient_funds_for_transaction";
+
+NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET = @"amount_not_set";
+
 @implementation ZKZumoKitErrorCode
 
 - (nonnull instancetype)init

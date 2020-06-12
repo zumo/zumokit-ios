@@ -24,13 +24,15 @@
                         value:(nullable NSString *)value
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
+                      sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
 - (void)composeBtcTransaction:(nonnull NSString *)accountId
               changeAccountId:(nonnull NSString *)changeAccountId
                            to:(nonnull NSString *)to
-                        value:(nonnull NSString *)value
+                        value:(nullable NSString *)value
                       feeRate:(nonnull NSString *)feeRate
+                      sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
 - (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
@@ -40,15 +42,8 @@
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                  value:(nonnull NSString *)value
+                  value:(nullable NSString *)value
+                sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback;
-
-- (nullable NSString *)maxSpendableEth:(nonnull NSString *)accountId
-                              gasPrice:(nonnull NSString *)gasPrice
-                              gasLimit:(nonnull NSString *)gasLimit;
-
-- (nullable NSString *)maxSpendableBtc:(nonnull NSString *)accountId
-                                    to:(nullable NSString *)to
-                               feeRate:(nonnull NSString *)feeRate;
 
 @end

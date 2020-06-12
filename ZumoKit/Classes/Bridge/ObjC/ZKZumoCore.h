@@ -22,7 +22,7 @@
                       apiRoot:(nonnull NSString *)apiRoot
                 txServiceRoot:(nonnull NSString *)txServiceRoot;
 
-- (void)getUser:(nonnull NSString *)userToken
+- (void)getUser:(nonnull NSString *)userTokenSet
        callback:(nullable id<ZKUserCallback>)callback;
 
 - (nullable ZKUtils *)getUtils;
