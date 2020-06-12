@@ -43,7 +43,7 @@
                            to:(nonnull NSString *)to
                         value:(nullable NSString *)value
                       feeRate:(nonnull NSString *)feeRate
-                      sendMax:sendMax
+                      sendMax:(BOOL)sendMax
                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
     
     [self composeBtcTransaction:accountId
@@ -62,7 +62,7 @@
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                   value:(nullable NSString *)value
-                sendMax:sendMax
+                sendMax:(BOOL)sendMax
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler {
                  
     [self composeExchange:depositAccountId
