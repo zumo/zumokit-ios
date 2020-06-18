@@ -3,12 +3,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, ZKNetworkType)
-{
-    ZKNetworkTypeMAINNET,
-    ZKNetworkTypeTESTNET,
-    ZKNetworkTypeROPSTEN,
-    ZKNetworkTypeRINKEBY,
-    ZKNetworkTypeGOERLI,
-    ZKNetworkTypeKOVAN,
-};
+@interface ZKNetworkType : NSObject
+- (nonnull instancetype)init;
++ (nonnull instancetype)networkType;
+
+@end
+
+extern NSString * __nonnull const ZKNetworkTypeMAINNET;
+extern NSString * __nonnull const ZKNetworkTypeTESTNET;
+extern NSString * __nonnull const ZKNetworkTypeROPSTEN;
+extern NSString * __nonnull const ZKNetworkTypeRINKEBY;
+extern NSString * __nonnull const ZKNetworkTypeGOERLI;
+extern NSString * __nonnull const ZKNetworkTypeKOVAN;

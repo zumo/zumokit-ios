@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "network_type.hpp"
 #include <cstdint>
 #include <string>
 #include <unordered_map>
@@ -13,7 +12,7 @@ namespace zumo {
 
 struct ExchangeSettings final {
     std::string id;
-    std::unordered_map<NetworkType, std::string> deposit_address;
+    std::unordered_map<std::string, std::string> deposit_address;
     std::string deposit_currency;
     std::string withdraw_currency;
     std::string min_exchange_amount;
@@ -26,7 +25,7 @@ struct ExchangeSettings final {
     friend bool operator!=(const ExchangeSettings& lhs, const ExchangeSettings& rhs);
 
     ExchangeSettings(std::string id_,
-                     std::unordered_map<NetworkType, std::string> deposit_address_,
+                     std::unordered_map<std::string, std::string> deposit_address_,
                      std::string deposit_currency_,
                      std::string withdraw_currency_,
                      std::string min_exchange_amount_,

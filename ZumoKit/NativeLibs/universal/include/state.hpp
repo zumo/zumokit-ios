@@ -30,6 +30,7 @@ struct State final {
     TxServiceConnection tx_service_connection;
     std::unordered_map<std::string, FeeRates> fee_rates;
     SyncStatus sync_status;
+    bool is_modulr_customer;
 
     friend bool operator==(const State& lhs, const State& rhs);
     friend bool operator!=(const State& lhs, const State& rhs);
@@ -43,7 +44,8 @@ struct State final {
           std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSettings>> exchange_settings_,
           TxServiceConnection tx_service_connection_,
           std::unordered_map<std::string, FeeRates> fee_rates_,
-          SyncStatus sync_status_)
+          SyncStatus sync_status_,
+          bool is_modulr_customer_)
     : accounts(std::move(accounts_))
     , transactions(std::move(transactions_))
     , exchanges(std::move(exchanges_))
@@ -54,6 +56,7 @@ struct State final {
     , tx_service_connection(std::move(tx_service_connection_))
     , fee_rates(std::move(fee_rates_))
     , sync_status(std::move(sync_status_))
+    , is_modulr_customer(std::move(is_modulr_customer_))
     {}
 };
 

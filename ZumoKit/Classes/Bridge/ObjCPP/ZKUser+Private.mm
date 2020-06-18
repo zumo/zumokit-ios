@@ -7,11 +7,11 @@
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
 #import "ZKAccount+Private.h"
+#import "ZKAccountCallback+Private.h"
 #import "ZKAccountListener+Private.h"
-#import "ZKAccountType+Private.h"
 #import "ZKExchange+Private.h"
 #import "ZKMnemonicCallback+Private.h"
-#import "ZKNetworkType+Private.h"
+#import "ZKSuccessCallback+Private.h"
 #import "ZKTransaction+Private.h"
 #import "ZKTransactionListener+Private.h"
 #import "ZKUserListener+Private.h"
@@ -61,6 +61,53 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
+- (BOOL)isModulrCustomer:(nonnull NSString *)network {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->is_modulr_customer(::djinni::String::toCpp(network));
+        return ::djinni::Bool::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)makeModulrCustomer:(nonnull NSString *)network
+                 firstName:(nonnull NSString *)firstName
+                middleName:(nullable NSString *)middleName
+                  lastName:(nonnull NSString *)lastName
+               dateOfBirth:(nonnull NSString *)dateOfBirth
+                     email:(nonnull NSString *)email
+                     phone:(nonnull NSString *)phone
+              addressLine1:(nonnull NSString *)addressLine1
+              addressLine2:(nullable NSString *)addressLine2
+                   country:(nonnull NSString *)country
+                  postCode:(nonnull NSString *)postCode
+                  postTown:(nonnull NSString *)postTown
+                  callback:(nullable id<ZKSuccessCallback>)callback {
+    try {
+        _cppRefHandle.get()->make_modulr_customer(::djinni::String::toCpp(network),
+                                                  ::djinni::String::toCpp(firstName),
+                                                  ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(middleName),
+                                                  ::djinni::String::toCpp(lastName),
+                                                  ::djinni::String::toCpp(dateOfBirth),
+                                                  ::djinni::String::toCpp(email),
+                                                  ::djinni::String::toCpp(phone),
+                                                  ::djinni::String::toCpp(addressLine1),
+                                                  ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(addressLine2),
+                                                  ::djinni::String::toCpp(country),
+                                                  ::djinni::String::toCpp(postCode),
+                                                  ::djinni::String::toCpp(postTown),
+                                                  ::djinni_generated::SuccessCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)createFiatAccount:(nonnull NSString *)network
+             currencyCode:(nonnull NSString *)currencyCode
+                 callback:(nullable id<ZKAccountCallback>)callback {
+    try {
+        _cppRefHandle.get()->create_fiat_account(::djinni::String::toCpp(network),
+                                                 ::djinni::String::toCpp(currencyCode),
+                                                 ::djinni_generated::AccountCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
 - (void)createWallet:(nonnull NSString *)mnemonic
             password:(nonnull NSString *)password
             callback:(nullable id<ZKWalletCallback>)callback {
@@ -104,13 +151,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nullable ZKAccount *)getAccount:(nonnull NSString *)symbol
-                           network:(ZKNetworkType)network
-                              type:(ZKAccountType)type {
+- (nullable ZKAccount *)getAccount:(nonnull NSString *)currencyCode
+                           network:(nonnull NSString *)network
+                              type:(nonnull NSString *)type {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_account(::djinni::String::toCpp(symbol),
-                                                               ::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::toCpp(network),
-                                                               ::djinni::Enum<::zumo::AccountType, ZKAccountType>::toCpp(type));
+        auto objcpp_result_ = _cppRefHandle.get()->get_account(::djinni::String::toCpp(currencyCode),
+                                                               ::djinni::String::toCpp(network),
+                                                               ::djinni::String::toCpp(type));
         return ::djinni::Optional<std::experimental::optional, ::djinni_generated::Account>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

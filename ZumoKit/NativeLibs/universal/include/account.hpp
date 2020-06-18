@@ -3,10 +3,9 @@
 
 #pragma once
 
-#include "account_type.hpp"
-#include "network_type.hpp"
+#include "crypto_properties.hpp"
+#include "fiat_properties.hpp"
 #include "stdx/optional.hpp"
-#include <cstdint>
 #include <string>
 #include <utility>
 
@@ -14,42 +13,33 @@ namespace zumo {
 
 struct Account final {
     std::string id;
-    std::string path;
-    std::string symbol;
-    std::string coin;
-    std::string address;
+    std::string currency_type;
+    std::string currency_code;
+    std::string network;
+    std::string type;
     std::string balance;
-    std::experimental::optional<int64_t> nonce;
-    NetworkType network;
-    AccountType type;
-    std::experimental::optional<std::string> utxo_pool;
-    int8_t version;
+    std::experimental::optional<CryptoProperties> crypto_properties;
+    std::experimental::optional<FiatProperties> fiat_properties;
 
     friend bool operator==(const Account& lhs, const Account& rhs);
     friend bool operator!=(const Account& lhs, const Account& rhs);
 
     Account(std::string id_,
-            std::string path_,
-            std::string symbol_,
-            std::string coin_,
-            std::string address_,
+            std::string currency_type_,
+            std::string currency_code_,
+            std::string network_,
+            std::string type_,
             std::string balance_,
-            std::experimental::optional<int64_t> nonce_,
-            NetworkType network_,
-            AccountType type_,
-            std::experimental::optional<std::string> utxo_pool_,
-            int8_t version_)
+            std::experimental::optional<CryptoProperties> crypto_properties_,
+            std::experimental::optional<FiatProperties> fiat_properties_)
     : id(std::move(id_))
-    , path(std::move(path_))
-    , symbol(std::move(symbol_))
-    , coin(std::move(coin_))
-    , address(std::move(address_))
-    , balance(std::move(balance_))
-    , nonce(std::move(nonce_))
+    , currency_type(std::move(currency_type_))
+    , currency_code(std::move(currency_code_))
     , network(std::move(network_))
     , type(std::move(type_))
-    , utxo_pool(std::move(utxo_pool_))
-    , version(std::move(version_))
+    , balance(std::move(balance_))
+    , crypto_properties(std::move(crypto_properties_))
+    , fiat_properties(std::move(fiat_properties_))
     {}
 };
 

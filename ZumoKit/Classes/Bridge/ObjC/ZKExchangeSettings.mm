@@ -7,7 +7,7 @@
 @implementation ZKExchangeSettings
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                    depositAddress:(nonnull NSDictionary<NSNumber *, NSString *> *)depositAddress
+                    depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
                    depositCurrency:(nonnull NSString *)depositCurrency
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
                  minExchangeAmount:(nonnull NSString *)minExchangeAmount
@@ -31,7 +31,7 @@
 }
 
 + (nonnull instancetype)exchangeSettingsWithId:(nonnull NSString *)id
-                                depositAddress:(nonnull NSDictionary<NSNumber *, NSString *> *)depositAddress
+                                depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
                                depositCurrency:(nonnull NSString *)depositCurrency
                               withdrawCurrency:(nonnull NSString *)withdrawCurrency
                              minExchangeAmount:(nonnull NSString *)minExchangeAmount

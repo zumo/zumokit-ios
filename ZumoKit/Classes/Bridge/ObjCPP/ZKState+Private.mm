@@ -27,7 +27,8 @@ auto State::toCpp(ObjcType obj) -> CppType
             ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeSettings>>::toCpp(obj.exchangeSettings),
             ::djinni_generated::TxServiceConnection::toCpp(obj.txServiceConnection),
             ::djinni::Map<::djinni::String, ::djinni_generated::FeeRates>::toCpp(obj.feeRates),
-            ::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::toCpp(obj.syncStatus)};
+            ::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::toCpp(obj.syncStatus),
+            ::djinni::Bool::toCpp(obj.isModulrCustomer)};
 }
 
 auto State::fromCpp(const CppType& cpp) -> ObjcType
@@ -41,7 +42,8 @@ auto State::fromCpp(const CppType& cpp) -> ObjcType
                             exchangeSettings:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeSettings>>::fromCpp(cpp.exchange_settings))
                          txServiceConnection:(::djinni_generated::TxServiceConnection::fromCpp(cpp.tx_service_connection))
                                     feeRates:(::djinni::Map<::djinni::String, ::djinni_generated::FeeRates>::fromCpp(cpp.fee_rates))
-                                  syncStatus:(::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::fromCpp(cpp.sync_status))];
+                                  syncStatus:(::djinni::Enum<::zumo::SyncStatus, ZKSyncStatus>::fromCpp(cpp.sync_status))
+                            isModulrCustomer:(::djinni::Bool::fromCpp(cpp.is_modulr_customer))];
 }
 
 }  // namespace djinni_generated

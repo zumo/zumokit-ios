@@ -10,13 +10,13 @@
 
 namespace zumo {
 
+class AccountCallback;
 class AccountListener;
 class MnemonicCallback;
+class SuccessCallback;
 class TransactionListener;
 class UserListener;
 class WalletCallback;
-enum class AccountType;
-enum class NetworkType;
 struct Account;
 struct Exchange;
 struct Transaction;
@@ -31,6 +31,12 @@ public:
 
     virtual bool is_active_user() = 0;
 
+    virtual bool is_modulr_customer(const std::string & network) = 0;
+
+    virtual void make_modulr_customer(const std::string & network, const std::string & first_name, const std::experimental::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const std::string & address_line_1, const std::experimental::optional<std::string> & address_line_2, const std::string & country, const std::string & post_code, const std::string & post_town, const std::shared_ptr<SuccessCallback> & callback) = 0;
+
+    virtual void create_fiat_account(const std::string & network, const std::string & currency_code, const std::shared_ptr<AccountCallback> & callback) = 0;
+
     virtual void create_wallet(const std::string & mnemonic, const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
 
     virtual void unlock_wallet(const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
@@ -41,7 +47,7 @@ public:
 
     virtual void recover_wallet(const std::string & mnemonic, const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
 
-    virtual std::experimental::optional<Account> get_account(const std::string & symbol, NetworkType network, AccountType type) = 0;
+    virtual std::experimental::optional<Account> get_account(const std::string & currency_code, const std::string & network, const std::string & type) = 0;
 
     virtual std::vector<Account> get_accounts() = 0;
 

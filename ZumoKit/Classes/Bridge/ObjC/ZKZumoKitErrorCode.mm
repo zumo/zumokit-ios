@@ -94,6 +94,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACT
 
 NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET = @"amount_not_set";
 
+NSString * __nonnull const ZKZumoKitErrorCodeALREADYMODULRCUSTOMER = @"already_modulr_customer";
+
 @implementation ZKZumoKitErrorCode
 
 - (nonnull instancetype)init

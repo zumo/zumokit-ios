@@ -21,7 +21,8 @@
                         exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
                      txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                 feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
-                              syncStatus:(ZKSyncStatus)syncStatus;
+                              syncStatus:(ZKSyncStatus)syncStatus
+                        isModulrCustomer:(BOOL)isModulrCustomer;
 + (nonnull instancetype)stateWithAccounts:(nonnull NSArray<ZKAccount *> *)accounts
                              transactions:(nonnull NSArray<ZKTransaction *> *)transactions
                                 exchanges:(nonnull NSArray<ZKExchange *> *)exchanges
@@ -31,7 +32,8 @@
                          exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
                       txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                  feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
-                               syncStatus:(ZKSyncStatus)syncStatus;
+                               syncStatus:(ZKSyncStatus)syncStatus
+                         isModulrCustomer:(BOOL)isModulrCustomer;
 
 @property (nonatomic, readonly, nonnull) NSArray<ZKAccount *> * accounts;
 
@@ -52,5 +54,7 @@
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, ZKFeeRates *> * feeRates;
 
 @property (nonatomic, readonly) ZKSyncStatus syncStatus;
+
+@property (nonatomic, readonly) BOOL isModulrCustomer;
 
 @end

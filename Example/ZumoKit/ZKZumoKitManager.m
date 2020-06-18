@@ -93,10 +93,10 @@
 
                if ([_user hasWallet]) {
                    ZKAccount *ethAccount = [_user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
-                   NSLog(@"ETH account: %@", ethAccount.address);
+                   NSLog(@"ETH account: %@", ethAccount.cryptoProperties.address);
                    
                    ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
-                   NSLog(@"BTC account: %@", btcAccount.address);
+                   NSLog(@"BTC account: %@", btcAccount.cryptoProperties.address);
                    
                    [_user unlockWallet:userWalletPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
                            if (error != nil) {
@@ -106,17 +106,17 @@
                            
                            _wallet = wallet;
                            
-                             [self composeEthTransaction:ethAccount submit:NO];
-                             [self composeBtcTransaction:btcAccount];
+                             //[self composeEthTransaction:ethAccount submit:NO];
+                             //[self composeBtcTransaction:btcAccount];
 
                              //ZKExchangeRate *ethBtcExchangeRate = [_zumoKit getState].exchangeRates[@"ETH"][@"BTC"];
                              //ZKExchangeRate *btcEthExchangeRate = [_zumoKit getState].exchangeRates[@"BTC"][@"ETH"];
 
-                             [self composeExchange:ethAccount
-                                   widhdrawAccount:btcAccount
-                                      exchangeRate:[_zumoKit getState].exchangeRates[@"ETH"][@"BTC"]
-                                  exchangeSettings:[_zumoKit getState].exchangeSettings[@"ETH"][@"BTC"]
-                                             value:@"0.02"];
+                             //[self composeExchange:ethAccount
+                             //      widhdrawAccount:btcAccount
+                             //         exchangeRate:[_zumoKit getState].exchangeRates[@"ETH"][@"BTC"]
+                             //     exchangeSettings:[_zumoKit getState].exchangeSettings[@"ETH"][@"BTC"]
+                             //                value:@"0.02"];
                       }];
                } else {
                    NSString *mnemonicPhrase = [[_zumoKit utils] generateMnemonic:12];
@@ -128,10 +128,10 @@
                            }
                            
                            ZKAccount *ethAccount = [user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
-                           NSLog(@"ETH account: %@", ethAccount.address);
+                           NSLog(@"ETH account: %@", ethAccount.cryptoProperties.address);
                            
                            ZKAccount *btcAccount = [user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
-                           NSLog(@"BTC account: %@", btcAccount.address);
+                           NSLog(@"BTC account: %@", btcAccount.cryptoProperties.address);
                            
                        }];
                }

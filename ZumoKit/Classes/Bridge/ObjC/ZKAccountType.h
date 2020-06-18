@@ -3,9 +3,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, ZKAccountType)
-{
-    ZKAccountTypeSTANDARD,
-    ZKAccountTypeCOMPATIBILITY,
-    ZKAccountTypeSEGWIT,
-};
+@interface ZKAccountType : NSObject
+- (nonnull instancetype)init;
++ (nonnull instancetype)accountType;
+
+@end
+
+extern NSString * __nonnull const ZKAccountTypeSTANDARD;
+extern NSString * __nonnull const ZKAccountTypeCOMPATIBILITY;
+extern NSString * __nonnull const ZKAccountTypeSEGWIT;
