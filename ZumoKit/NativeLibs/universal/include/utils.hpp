@@ -8,8 +8,6 @@
 
 namespace zumo {
 
-enum class NetworkType;
-
 class Utils {
 public:
     virtual ~Utils() {}
@@ -18,7 +16,7 @@ public:
 
     virtual bool is_valid_eth_address(const std::string & address) = 0;
 
-    virtual bool is_valid_btc_address(const std::string & address, NetworkType network) = 0;
+    virtual bool is_valid_btc_address(const std::string & address, const std::string & network) = 0;
 
     virtual std::string wei_to_eth(const std::string & number) = 0;
 

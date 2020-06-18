@@ -10,6 +10,7 @@
 #import "ZKUser+CallbackCompletion.h"
 #import "WalletCallback.h"
 #import "MnemonicCallback.h"
+#import "SuccessCallback.h"
 
 @implementation ZKUser (ZKUserCallbackCompletion)
 
@@ -33,6 +34,28 @@
             password:(nonnull NSString *)password
            completion:(_Nonnull WalletCompletionBlock)completionHandler {
     [self recoverWallet:mnemonic password:password callback:[[WalletCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)makeModulrCustomer:(nonnull NSString *)network
+   firstName:(nonnull NSString *)firstName
+  middleName:(nullable NSString *)middleName
+    lastName:(nonnull NSString *)lastName
+ dateOfBirth:(nonnull NSString *)dateOfBirth
+       email:(nonnull NSString *)email
+       phone:(nonnull NSString *)phone
+addressLine1:(nonnull NSString *)addressLine1
+addressLine2:(nullable NSString *)addressLine2
+     country:(nonnull NSString *)country
+    postCode:(nonnull NSString *)postCode
+    postTown:(nonnull NSString *)postTown
+                completion:(_Nonnull SuccessCompletionBlock)completionHandler {
+    [self makeModulrCustomer:network firstName:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone addressLine1:addressLine1 addressLine2:addressLine2 country:country postCode:postCode postTown:postTown completion:completionHandler];
+};
+
+- (void)createFiatAccount:(nonnull NSString *)network
+             currencyCode:(nonnull NSString *)currencyCode
+               completion:(_Nonnull AccountCompletionBlock)completionHandler {
+    [self createFiatAccount:network currencyCode:currencyCode completion:completionHandler];
 };
 
 @end

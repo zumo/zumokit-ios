@@ -3,7 +3,6 @@
 
 #import "ZKExchangeSettings+Private.h"
 #import "DJIMarshal+Private.h"
-#import "ZKNetworkType+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -12,7 +11,7 @@ auto ExchangeSettings::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
-            ::djinni::Map<::djinni::Enum<::zumo::NetworkType, ZKNetworkType>, ::djinni::String>::toCpp(obj.depositAddress),
+            ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(obj.depositAddress),
             ::djinni::String::toCpp(obj.depositCurrency),
             ::djinni::String::toCpp(obj.withdrawCurrency),
             ::djinni::String::toCpp(obj.minExchangeAmount),
@@ -25,7 +24,7 @@ auto ExchangeSettings::toCpp(ObjcType obj) -> CppType
 auto ExchangeSettings::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKExchangeSettings alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
-                                   depositAddress:(::djinni::Map<::djinni::Enum<::zumo::NetworkType, ZKNetworkType>, ::djinni::String>::fromCpp(cpp.deposit_address))
+                                   depositAddress:(::djinni::Map<::djinni::String, ::djinni::String>::fromCpp(cpp.deposit_address))
                                   depositCurrency:(::djinni::String::fromCpp(cpp.deposit_currency))
                                  withdrawCurrency:(::djinni::String::fromCpp(cpp.withdraw_currency))
                                 minExchangeAmount:(::djinni::String::fromCpp(cpp.min_exchange_amount))

@@ -3,28 +3,24 @@
 
 #pragma once
 
-#include <functional>
+#include <string>
+#include <utility>
 
 namespace zumo {
 
-enum class NetworkType : int {
-    MAINNET,
-    TESTNET,
-    ROPSTEN,
-    RINKEBY,
-    GOERLI,
-    KOVAN,
+struct NetworkType final {
+
+    static std::string const MAINNET;
+
+    static std::string const TESTNET;
+
+    static std::string const ROPSTEN;
+
+    static std::string const RINKEBY;
+
+    static std::string const GOERLI;
+
+    static std::string const KOVAN;
 };
 
 }  // namespace zumo
-
-namespace std {
-
-template <>
-struct hash<::zumo::NetworkType> {
-    size_t operator()(::zumo::NetworkType type) const {
-        return std::hash<int>()(static_cast<int>(type));
-    }
-};
-
-}  // namespace std

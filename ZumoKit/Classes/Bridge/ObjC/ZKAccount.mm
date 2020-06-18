@@ -7,56 +7,44 @@
 @implementation ZKAccount
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                              path:(nonnull NSString *)path
-                            symbol:(nonnull NSString *)symbol
-                              coin:(nonnull NSString *)coin
-                           address:(nonnull NSString *)address
+                      currencyType:(nonnull NSString *)currencyType
+                      currencyCode:(nonnull NSString *)currencyCode
+                           network:(nonnull NSString *)network
+                              type:(nonnull NSString *)type
                            balance:(nonnull NSString *)balance
-                             nonce:(nullable NSNumber *)nonce
-                           network:(ZKNetworkType)network
-                              type:(ZKAccountType)type
-                          utxoPool:(nullable NSString *)utxoPool
-                           version:(int8_t)version
+                  cryptoProperties:(nullable ZKCryptoProperties *)cryptoProperties
+                    fiatProperties:(nullable ZKFiatProperties *)fiatProperties
 {
     if (self = [super init]) {
         _id = [id copy];
-        _path = [path copy];
-        _symbol = [symbol copy];
-        _coin = [coin copy];
-        _address = [address copy];
+        _currencyType = [currencyType copy];
+        _currencyCode = [currencyCode copy];
+        _network = [network copy];
+        _type = [type copy];
         _balance = [balance copy];
-        _nonce = nonce;
-        _network = network;
-        _type = type;
-        _utxoPool = [utxoPool copy];
-        _version = version;
+        _cryptoProperties = cryptoProperties;
+        _fiatProperties = fiatProperties;
     }
     return self;
 }
 
 + (nonnull instancetype)accountWithId:(nonnull NSString *)id
-                                 path:(nonnull NSString *)path
-                               symbol:(nonnull NSString *)symbol
-                                 coin:(nonnull NSString *)coin
-                              address:(nonnull NSString *)address
+                         currencyType:(nonnull NSString *)currencyType
+                         currencyCode:(nonnull NSString *)currencyCode
+                              network:(nonnull NSString *)network
+                                 type:(nonnull NSString *)type
                               balance:(nonnull NSString *)balance
-                                nonce:(nullable NSNumber *)nonce
-                              network:(ZKNetworkType)network
-                                 type:(ZKAccountType)type
-                             utxoPool:(nullable NSString *)utxoPool
-                              version:(int8_t)version
+                     cryptoProperties:(nullable ZKCryptoProperties *)cryptoProperties
+                       fiatProperties:(nullable ZKFiatProperties *)fiatProperties
 {
     return [(ZKAccount*)[self alloc] initWithId:id
-                                           path:path
-                                         symbol:symbol
-                                           coin:coin
-                                        address:address
-                                        balance:balance
-                                          nonce:nonce
+                                   currencyType:currencyType
+                                   currencyCode:currencyCode
                                         network:network
                                            type:type
-                                       utxoPool:utxoPool
-                                        version:version];
+                                        balance:balance
+                               cryptoProperties:cryptoProperties
+                                 fiatProperties:fiatProperties];
 }
 
 - (BOOL)isEqual:(id)other
@@ -66,37 +54,31 @@
     }
     ZKAccount *typedOther = (ZKAccount *)other;
     return [self.id isEqualToString:typedOther.id] &&
-            [self.path isEqualToString:typedOther.path] &&
-            [self.symbol isEqualToString:typedOther.symbol] &&
-            [self.coin isEqualToString:typedOther.coin] &&
-            [self.address isEqualToString:typedOther.address] &&
+            [self.currencyType isEqualToString:typedOther.currencyType] &&
+            [self.currencyCode isEqualToString:typedOther.currencyCode] &&
+            [self.network isEqualToString:typedOther.network] &&
+            [self.type isEqualToString:typedOther.type] &&
             [self.balance isEqualToString:typedOther.balance] &&
-            ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
-            self.network == typedOther.network &&
-            self.type == typedOther.type &&
-            ((self.utxoPool == nil && typedOther.utxoPool == nil) || (self.utxoPool != nil && [self.utxoPool isEqual:typedOther.utxoPool])) &&
-            self.version == typedOther.version;
+            ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
+            ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties]));
 }
 
 - (NSUInteger)hash
 {
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
-            self.path.hash ^
-            self.symbol.hash ^
-            self.coin.hash ^
-            self.address.hash ^
+            self.currencyType.hash ^
+            self.currencyCode.hash ^
+            self.network.hash ^
+            self.type.hash ^
             self.balance.hash ^
-            self.nonce.hash ^
-            (NSUInteger)self.network ^
-            (NSUInteger)self.type ^
-            self.utxoPool.hash ^
-            (NSUInteger)self.version;
+            self.cryptoProperties.hash ^
+            self.fiatProperties.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ path:%@ symbol:%@ coin:%@ address:%@ balance:%@ nonce:%@ network:%@ type:%@ utxoPool:%@ version:%@>", self.class, (void *)self, self.id, self.path, self.symbol, self.coin, self.address, self.balance, self.nonce, @(self.network), @(self.type), self.utxoPool, @(self.version)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ currencyType:%@ currencyCode:%@ network:%@ type:%@ balance:%@ cryptoProperties:%@ fiatProperties:%@>", self.class, (void *)self, self.id, self.currencyType, self.currencyCode, self.network, self.type, self.balance, self.cryptoProperties, self.fiatProperties];
 }
 
 @end

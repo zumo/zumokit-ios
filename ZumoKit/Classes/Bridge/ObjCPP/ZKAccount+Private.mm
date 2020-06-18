@@ -3,8 +3,8 @@
 
 #import "ZKAccount+Private.h"
 #import "DJIMarshal+Private.h"
-#import "ZKAccountType+Private.h"
-#import "ZKNetworkType+Private.h"
+#import "ZKCryptoProperties+Private.h"
+#import "ZKFiatProperties+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -13,31 +13,25 @@ auto Account::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
-            ::djinni::String::toCpp(obj.path),
-            ::djinni::String::toCpp(obj.symbol),
-            ::djinni::String::toCpp(obj.coin),
-            ::djinni::String::toCpp(obj.address),
+            ::djinni::String::toCpp(obj.currencyType),
+            ::djinni::String::toCpp(obj.currencyCode),
+            ::djinni::String::toCpp(obj.network),
+            ::djinni::String::toCpp(obj.type),
             ::djinni::String::toCpp(obj.balance),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce),
-            ::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::toCpp(obj.network),
-            ::djinni::Enum<::zumo::AccountType, ZKAccountType>::toCpp(obj.type),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.utxoPool),
-            ::djinni::I8::toCpp(obj.version)};
+            ::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoProperties>::toCpp(obj.cryptoProperties),
+            ::djinni::Optional<std::experimental::optional, ::djinni_generated::FiatProperties>::toCpp(obj.fiatProperties)};
 }
 
 auto Account::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKAccount alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
-                                    path:(::djinni::String::fromCpp(cpp.path))
-                                  symbol:(::djinni::String::fromCpp(cpp.symbol))
-                                    coin:(::djinni::String::fromCpp(cpp.coin))
-                                 address:(::djinni::String::fromCpp(cpp.address))
+                            currencyType:(::djinni::String::fromCpp(cpp.currency_type))
+                            currencyCode:(::djinni::String::fromCpp(cpp.currency_code))
+                                 network:(::djinni::String::fromCpp(cpp.network))
+                                    type:(::djinni::String::fromCpp(cpp.type))
                                  balance:(::djinni::String::fromCpp(cpp.balance))
-                                   nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))
-                                 network:(::djinni::Enum<::zumo::NetworkType, ZKNetworkType>::fromCpp(cpp.network))
-                                    type:(::djinni::Enum<::zumo::AccountType, ZKAccountType>::fromCpp(cpp.type))
-                                utxoPool:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.utxo_pool))
-                                 version:(::djinni::I8::fromCpp(cpp.version))];
+                        cryptoProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoProperties>::fromCpp(cpp.crypto_properties))
+                          fiatProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::FiatProperties>::fromCpp(cpp.fiat_properties))];
 }
 
 }  // namespace djinni_generated

@@ -99,6 +99,8 @@ struct ZumoKitErrorCode final {
     static std::string const SEND_MAX_INSUFFICIENT_FUNDS_FOR_TRANSACTION;
 
     static std::string const AMOUNT_NOT_SET;
+
+    static std::string const ALREADY_MODULR_CUSTOMER;
 };
 
 }  // namespace zumo

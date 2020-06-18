@@ -3,25 +3,18 @@
 
 #pragma once
 
-#include <functional>
+#include <string>
+#include <utility>
 
 namespace zumo {
 
-enum class AccountType : int {
-    STANDARD,
-    COMPATIBILITY,
-    SEGWIT,
+struct AccountType final {
+
+    static std::string const STANDARD;
+
+    static std::string const COMPATIBILITY;
+
+    static std::string const SEGWIT;
 };
 
 }  // namespace zumo
-
-namespace std {
-
-template <>
-struct hash<::zumo::AccountType> {
-    size_t operator()(::zumo::AccountType type) const {
-        return std::hash<int>()(static_cast<int>(type));
-    }
-};
-
-}  // namespace std

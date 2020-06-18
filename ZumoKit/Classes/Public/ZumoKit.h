@@ -27,6 +27,8 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKWallet+CallbackCompletion.h"
 #import "ZKHistoricalExchangeRatesInterval.h"
 #import "ZKCurrencyCode.h"
+#import "ZKNetworkType.h"
+#import "ZKAccountType.h"
 
 typedef void(^UserCompletionBlock)(ZKUser * _Nullable user, NSError * _Nullable error);
 
