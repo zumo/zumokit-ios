@@ -13,12 +13,12 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
             ::djinni::String::toCpp(obj.type),
-            ::djinni::String::toCpp(obj.accountId),
             ::djinni::String::toCpp(obj.currencyCode),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fromUserId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.toUserId),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fromAccountId),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.toAccountId),
             ::djinni::String::toCpp(obj.network),
-            ::djinni::String::toCpp(obj.direction),
             ::djinni::String::toCpp(obj.status),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.amount),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fee),
@@ -33,12 +33,12 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKTransaction alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
                                         type:(::djinni::String::fromCpp(cpp.type))
-                                   accountId:(::djinni::String::fromCpp(cpp.account_id))
                                 currencyCode:(::djinni::String::fromCpp(cpp.currency_code))
                                   fromUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.from_user_id))
                                     toUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.to_user_id))
+                               fromAccountId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.from_account_id))
+                                 toAccountId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.to_account_id))
                                      network:(::djinni::String::fromCpp(cpp.network))
-                                   direction:(::djinni::String::fromCpp(cpp.direction))
                                       status:(::djinni::String::fromCpp(cpp.status))
                                       amount:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.amount))
                                          fee:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.fee))

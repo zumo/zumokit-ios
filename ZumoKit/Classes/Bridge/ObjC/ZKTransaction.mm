@@ -8,12 +8,12 @@
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                               type:(nonnull NSString *)type
-                         accountId:(nonnull NSString *)accountId
                       currencyCode:(nonnull NSString *)currencyCode
                         fromUserId:(nullable NSString *)fromUserId
                           toUserId:(nullable NSString *)toUserId
+                     fromAccountId:(nullable NSString *)fromAccountId
+                       toAccountId:(nullable NSString *)toAccountId
                            network:(nonnull NSString *)network
-                         direction:(nonnull NSString *)direction
                             status:(nonnull NSString *)status
                             amount:(nullable NSString *)amount
                                fee:(nullable NSString *)fee
@@ -26,12 +26,12 @@
     if (self = [super init]) {
         _id = [id copy];
         _type = [type copy];
-        _accountId = [accountId copy];
         _currencyCode = [currencyCode copy];
         _fromUserId = [fromUserId copy];
         _toUserId = [toUserId copy];
+        _fromAccountId = [fromAccountId copy];
+        _toAccountId = [toAccountId copy];
         _network = [network copy];
-        _direction = [direction copy];
         _status = [status copy];
         _amount = [amount copy];
         _fee = [fee copy];
@@ -46,12 +46,12 @@
 
 + (nonnull instancetype)transactionWithId:(nonnull NSString *)id
                                      type:(nonnull NSString *)type
-                                accountId:(nonnull NSString *)accountId
                              currencyCode:(nonnull NSString *)currencyCode
                                fromUserId:(nullable NSString *)fromUserId
                                  toUserId:(nullable NSString *)toUserId
+                            fromAccountId:(nullable NSString *)fromAccountId
+                              toAccountId:(nullable NSString *)toAccountId
                                   network:(nonnull NSString *)network
-                                direction:(nonnull NSString *)direction
                                    status:(nonnull NSString *)status
                                    amount:(nullable NSString *)amount
                                       fee:(nullable NSString *)fee
@@ -63,12 +63,12 @@
 {
     return [(ZKTransaction*)[self alloc] initWithId:id
                                                type:type
-                                          accountId:accountId
                                        currencyCode:currencyCode
                                          fromUserId:fromUserId
                                            toUserId:toUserId
+                                      fromAccountId:fromAccountId
+                                        toAccountId:toAccountId
                                             network:network
-                                          direction:direction
                                              status:status
                                              amount:amount
                                                 fee:fee
@@ -87,12 +87,12 @@
     ZKTransaction *typedOther = (ZKTransaction *)other;
     return [self.id isEqualToString:typedOther.id] &&
             [self.type isEqualToString:typedOther.type] &&
-            [self.accountId isEqualToString:typedOther.accountId] &&
             [self.currencyCode isEqualToString:typedOther.currencyCode] &&
             ((self.fromUserId == nil && typedOther.fromUserId == nil) || (self.fromUserId != nil && [self.fromUserId isEqual:typedOther.fromUserId])) &&
             ((self.toUserId == nil && typedOther.toUserId == nil) || (self.toUserId != nil && [self.toUserId isEqual:typedOther.toUserId])) &&
+            ((self.fromAccountId == nil && typedOther.fromAccountId == nil) || (self.fromAccountId != nil && [self.fromAccountId isEqual:typedOther.fromAccountId])) &&
+            ((self.toAccountId == nil && typedOther.toAccountId == nil) || (self.toAccountId != nil && [self.toAccountId isEqual:typedOther.toAccountId])) &&
             [self.network isEqualToString:typedOther.network] &&
-            [self.direction isEqualToString:typedOther.direction] &&
             [self.status isEqualToString:typedOther.status] &&
             ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
             ((self.fee == nil && typedOther.fee == nil) || (self.fee != nil && [self.fee isEqual:typedOther.fee])) &&
@@ -108,12 +108,12 @@
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
             self.type.hash ^
-            self.accountId.hash ^
             self.currencyCode.hash ^
             self.fromUserId.hash ^
             self.toUserId.hash ^
+            self.fromAccountId.hash ^
+            self.toAccountId.hash ^
             self.network.hash ^
-            self.direction.hash ^
             self.status.hash ^
             self.amount.hash ^
             self.fee.hash ^
@@ -126,7 +126,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ accountId:%@ currencyCode:%@ fromUserId:%@ toUserId:%@ network:%@ direction:%@ status:%@ amount:%@ fee:%@ cryptoDetails:%@ fiatDetails:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.accountId, self.currencyCode, self.fromUserId, self.toUserId, self.network, self.direction, self.status, self.amount, self.fee, self.cryptoDetails, self.fiatDetails, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ cryptoDetails:%@ fiatDetails:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.cryptoDetails, self.fiatDetails, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

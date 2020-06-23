@@ -8,14 +8,6 @@ NSString * __nonnull const ZKTransactionDirectionINCOMING = @"INCOMING";
 
 NSString * __nonnull const ZKTransactionDirectionOUTGOING = @"OUTGOING";
 
-NSString * __nonnull const ZKTransactionDirectionFAILED = @"FAILED";
-
-NSString * __nonnull const ZKTransactionDirectionRESUBMITTED = @"RESUBMITTED";
-
-NSString * __nonnull const ZKTransactionDirectionCANCELLED = @"CANCELLED";
-
-NSString * __nonnull const ZKTransactionDirectionPAUSED = @"PAUSED";
-
 @implementation ZKTransactionDirection
 
 - (nonnull instancetype)init

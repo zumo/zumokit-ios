@@ -14,12 +14,12 @@ namespace zumo {
 struct Transaction final {
     std::string id;
     std::string type;
-    std::string account_id;
     std::string currency_code;
     std::experimental::optional<std::string> from_user_id;
     std::experimental::optional<std::string> to_user_id;
+    std::experimental::optional<std::string> from_account_id;
+    std::experimental::optional<std::string> to_account_id;
     std::string network;
-    std::string direction;
     std::string status;
     std::experimental::optional<std::string> amount;
     std::experimental::optional<std::string> fee;
@@ -34,12 +34,12 @@ struct Transaction final {
 
     Transaction(std::string id_,
                 std::string type_,
-                std::string account_id_,
                 std::string currency_code_,
                 std::experimental::optional<std::string> from_user_id_,
                 std::experimental::optional<std::string> to_user_id_,
+                std::experimental::optional<std::string> from_account_id_,
+                std::experimental::optional<std::string> to_account_id_,
                 std::string network_,
-                std::string direction_,
                 std::string status_,
                 std::experimental::optional<std::string> amount_,
                 std::experimental::optional<std::string> fee_,
@@ -50,12 +50,12 @@ struct Transaction final {
                 int64_t timestamp_)
     : id(std::move(id_))
     , type(std::move(type_))
-    , account_id(std::move(account_id_))
     , currency_code(std::move(currency_code_))
     , from_user_id(std::move(from_user_id_))
     , to_user_id(std::move(to_user_id_))
+    , from_account_id(std::move(from_account_id_))
+    , to_account_id(std::move(to_account_id_))
     , network(std::move(network_))
-    , direction(std::move(direction_))
     , status(std::move(status_))
     , amount(std::move(amount_))
     , fee(std::move(fee_))
