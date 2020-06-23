@@ -3,12 +3,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, ZKTransactionStatus)
-{
-    ZKTransactionStatusPENDING,
-    ZKTransactionStatusCONFIRMED,
-    ZKTransactionStatusFAILED,
-    ZKTransactionStatusRESUBMITTED,
-    ZKTransactionStatusCANCELLED,
-    ZKTransactionStatusPAUSED,
-};
+@interface ZKTransactionStatus : NSObject
+- (nonnull instancetype)init;
++ (nonnull instancetype)transactionStatus;
+
+@end
+
+extern NSString * __nonnull const ZKTransactionStatusPENDING;
+extern NSString * __nonnull const ZKTransactionStatusCONFIRMED;
+extern NSString * __nonnull const ZKTransactionStatusFAILED;
+extern NSString * __nonnull const ZKTransactionStatusRESUBMITTED;
+extern NSString * __nonnull const ZKTransactionStatusCANCELLED;
+extern NSString * __nonnull const ZKTransactionStatusPAUSED;

@@ -3,39 +3,28 @@
 
 #pragma once
 
+#include "crypto_details.hpp"
 #include "stdx/optional.hpp"
-#include "transaction_direction.hpp"
-#include "transaction_status.hpp"
-#include "transaction_type.hpp"
 #include <cstdint>
 #include <string>
-#include <unordered_map>
 #include <utility>
 
 namespace zumo {
 
 struct Transaction final {
     std::string id;
-    TransactionType type;
-    TransactionDirection direction;
-    std::experimental::optional<std::string> tx_hash;
+    std::string type;
     std::string account_id;
-    std::experimental::optional<std::string> symbol;
-    std::string coin;
-    std::string network;
-    std::experimental::optional<int64_t> nonce;
-    TransactionStatus status;
-    std::string from_address;
+    std::string currency_code;
     std::experimental::optional<std::string> from_user_id;
-    std::string to_address;
     std::experimental::optional<std::string> to_user_id;
-    std::experimental::optional<std::string> value;
-    std::unordered_map<std::string, std::string> fiat_value;
-    std::experimental::optional<std::string> data;
-    std::experimental::optional<std::string> gas_price;
-    std::experimental::optional<std::string> gas_limit;
+    std::string network;
+    std::string direction;
+    std::string status;
+    std::experimental::optional<std::string> amount;
     std::experimental::optional<std::string> fee;
-    std::unordered_map<std::string, std::string> fiat_fee;
+    std::experimental::optional<CryptoDetails> crypto_details;
+    std::experimental::optional<std::string> fiat_details;
     std::experimental::optional<int64_t> submitted_at;
     std::experimental::optional<int64_t> confirmed_at;
     int64_t timestamp;
@@ -44,50 +33,34 @@ struct Transaction final {
     friend bool operator!=(const Transaction& lhs, const Transaction& rhs);
 
     Transaction(std::string id_,
-                TransactionType type_,
-                TransactionDirection direction_,
-                std::experimental::optional<std::string> tx_hash_,
+                std::string type_,
                 std::string account_id_,
-                std::experimental::optional<std::string> symbol_,
-                std::string coin_,
-                std::string network_,
-                std::experimental::optional<int64_t> nonce_,
-                TransactionStatus status_,
-                std::string from_address_,
+                std::string currency_code_,
                 std::experimental::optional<std::string> from_user_id_,
-                std::string to_address_,
                 std::experimental::optional<std::string> to_user_id_,
-                std::experimental::optional<std::string> value_,
-                std::unordered_map<std::string, std::string> fiat_value_,
-                std::experimental::optional<std::string> data_,
-                std::experimental::optional<std::string> gas_price_,
-                std::experimental::optional<std::string> gas_limit_,
+                std::string network_,
+                std::string direction_,
+                std::string status_,
+                std::experimental::optional<std::string> amount_,
                 std::experimental::optional<std::string> fee_,
-                std::unordered_map<std::string, std::string> fiat_fee_,
+                std::experimental::optional<CryptoDetails> crypto_details_,
+                std::experimental::optional<std::string> fiat_details_,
                 std::experimental::optional<int64_t> submitted_at_,
                 std::experimental::optional<int64_t> confirmed_at_,
                 int64_t timestamp_)
     : id(std::move(id_))
     , type(std::move(type_))
-    , direction(std::move(direction_))
-    , tx_hash(std::move(tx_hash_))
     , account_id(std::move(account_id_))
-    , symbol(std::move(symbol_))
-    , coin(std::move(coin_))
-    , network(std::move(network_))
-    , nonce(std::move(nonce_))
-    , status(std::move(status_))
-    , from_address(std::move(from_address_))
+    , currency_code(std::move(currency_code_))
     , from_user_id(std::move(from_user_id_))
-    , to_address(std::move(to_address_))
     , to_user_id(std::move(to_user_id_))
-    , value(std::move(value_))
-    , fiat_value(std::move(fiat_value_))
-    , data(std::move(data_))
-    , gas_price(std::move(gas_price_))
-    , gas_limit(std::move(gas_limit_))
+    , network(std::move(network_))
+    , direction(std::move(direction_))
+    , status(std::move(status_))
+    , amount(std::move(amount_))
     , fee(std::move(fee_))
-    , fiat_fee(std::move(fiat_fee_))
+    , crypto_details(std::move(crypto_details_))
+    , fiat_details(std::move(fiat_details_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
     , timestamp(std::move(timestamp_))

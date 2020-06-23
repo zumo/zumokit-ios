@@ -3,9 +3,7 @@
 
 #import "ZKTransaction+Private.h"
 #import "DJIMarshal+Private.h"
-#import "ZKTransactionDirection+Private.h"
-#import "ZKTransactionStatus+Private.h"
-#import "ZKTransactionType+Private.h"
+#import "ZKCryptoDetails+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -14,26 +12,18 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
-            ::djinni::Enum<::zumo::TransactionType, ZKTransactionType>::toCpp(obj.type),
-            ::djinni::Enum<::zumo::TransactionDirection, ZKTransactionDirection>::toCpp(obj.direction),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.txHash),
+            ::djinni::String::toCpp(obj.type),
             ::djinni::String::toCpp(obj.accountId),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.symbol),
-            ::djinni::String::toCpp(obj.coin),
-            ::djinni::String::toCpp(obj.network),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce),
-            ::djinni::Enum<::zumo::TransactionStatus, ZKTransactionStatus>::toCpp(obj.status),
-            ::djinni::String::toCpp(obj.fromAddress),
+            ::djinni::String::toCpp(obj.currencyCode),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fromUserId),
-            ::djinni::String::toCpp(obj.toAddress),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.toUserId),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.value),
-            ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(obj.fiatValue),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.data),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.gasPrice),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.gasLimit),
+            ::djinni::String::toCpp(obj.network),
+            ::djinni::String::toCpp(obj.direction),
+            ::djinni::String::toCpp(obj.status),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.amount),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fee),
-            ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(obj.fiatFee),
+            ::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoDetails>::toCpp(obj.cryptoDetails),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fiatDetails),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.confirmedAt),
             ::djinni::I64::toCpp(obj.timestamp)};
@@ -42,26 +32,18 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
 auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKTransaction alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
-                                        type:(::djinni::Enum<::zumo::TransactionType, ZKTransactionType>::fromCpp(cpp.type))
-                                   direction:(::djinni::Enum<::zumo::TransactionDirection, ZKTransactionDirection>::fromCpp(cpp.direction))
-                                      txHash:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.tx_hash))
+                                        type:(::djinni::String::fromCpp(cpp.type))
                                    accountId:(::djinni::String::fromCpp(cpp.account_id))
-                                      symbol:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.symbol))
-                                        coin:(::djinni::String::fromCpp(cpp.coin))
-                                     network:(::djinni::String::fromCpp(cpp.network))
-                                       nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))
-                                      status:(::djinni::Enum<::zumo::TransactionStatus, ZKTransactionStatus>::fromCpp(cpp.status))
-                                 fromAddress:(::djinni::String::fromCpp(cpp.from_address))
+                                currencyCode:(::djinni::String::fromCpp(cpp.currency_code))
                                   fromUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.from_user_id))
-                                   toAddress:(::djinni::String::fromCpp(cpp.to_address))
                                     toUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.to_user_id))
-                                       value:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.value))
-                                   fiatValue:(::djinni::Map<::djinni::String, ::djinni::String>::fromCpp(cpp.fiat_value))
-                                        data:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.data))
-                                    gasPrice:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.gas_price))
-                                    gasLimit:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.gas_limit))
+                                     network:(::djinni::String::fromCpp(cpp.network))
+                                   direction:(::djinni::String::fromCpp(cpp.direction))
+                                      status:(::djinni::String::fromCpp(cpp.status))
+                                      amount:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.amount))
                                          fee:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.fee))
-                                     fiatFee:(::djinni::Map<::djinni::String, ::djinni::String>::fromCpp(cpp.fiat_fee))
+                               cryptoDetails:(::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoDetails>::fromCpp(cpp.crypto_details))
+                                 fiatDetails:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.fiat_details))
                                  submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
                                  confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.confirmed_at))
                                    timestamp:(::djinni::I64::fromCpp(cpp.timestamp))];

@@ -3,8 +3,13 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, ZKTransactionType)
-{
-    ZKTransactionTypeNORMAL,
-    ZKTransactionTypeEXCHANGE,
-};
+@interface ZKTransactionType : NSObject
+- (nonnull instancetype)init;
++ (nonnull instancetype)transactionType;
+
+@end
+
+extern NSString * __nonnull const ZKTransactionTypeCRYPTO;
+extern NSString * __nonnull const ZKTransactionTypeEXCHANGE;
+extern NSString * __nonnull const ZKTransactionTypeFIAT;
+extern NSString * __nonnull const ZKTransactionTypeNOMINATED;

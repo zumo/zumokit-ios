@@ -55,3 +55,4 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORF
 extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION;
 extern NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET;
 extern NSString * __nonnull const ZKZumoKitErrorCodeALREADYMODULRCUSTOMER;
+extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED;

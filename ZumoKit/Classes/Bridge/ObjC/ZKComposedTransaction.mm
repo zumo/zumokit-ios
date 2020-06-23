@@ -9,7 +9,7 @@
 - (nonnull instancetype)initWithSignedTransaction:(nonnull NSString *)signedTransaction
                                           account:(nonnull ZKAccount *)account
                                       destination:(nullable NSString *)destination
-                                            value:(nullable NSString *)value
+                                           amount:(nullable NSString *)amount
                                              data:(nullable NSString *)data
                                               fee:(nonnull NSString *)fee
 {
@@ -17,7 +17,7 @@
         _signedTransaction = [signedTransaction copy];
         _account = account;
         _destination = [destination copy];
-        _value = [value copy];
+        _amount = [amount copy];
         _data = [data copy];
         _fee = [fee copy];
     }
@@ -27,14 +27,14 @@
 + (nonnull instancetype)composedTransactionWithSignedTransaction:(nonnull NSString *)signedTransaction
                                                          account:(nonnull ZKAccount *)account
                                                      destination:(nullable NSString *)destination
-                                                           value:(nullable NSString *)value
+                                                          amount:(nullable NSString *)amount
                                                             data:(nullable NSString *)data
                                                              fee:(nonnull NSString *)fee
 {
     return [(ZKComposedTransaction*)[self alloc] initWithSignedTransaction:signedTransaction
                                                                    account:account
                                                                destination:destination
-                                                                     value:value
+                                                                    amount:amount
                                                                       data:data
                                                                        fee:fee];
 }
@@ -48,7 +48,7 @@
     return [self.signedTransaction isEqualToString:typedOther.signedTransaction] &&
             [self.account isEqual:typedOther.account] &&
             ((self.destination == nil && typedOther.destination == nil) || (self.destination != nil && [self.destination isEqual:typedOther.destination])) &&
-            ((self.value == nil && typedOther.value == nil) || (self.value != nil && [self.value isEqual:typedOther.value])) &&
+            ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
             ((self.data == nil && typedOther.data == nil) || (self.data != nil && [self.data isEqual:typedOther.data])) &&
             [self.fee isEqualToString:typedOther.fee];
 }
@@ -59,14 +59,14 @@
             self.signedTransaction.hash ^
             self.account.hash ^
             self.destination.hash ^
-            self.value.hash ^
+            self.amount.hash ^
             self.data.hash ^
             self.fee.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ account:%@ destination:%@ value:%@ data:%@ fee:%@>", self.class, (void *)self, self.signedTransaction, self.account, self.destination, self.value, self.data, self.fee];
+    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ account:%@ destination:%@ amount:%@ data:%@ fee:%@>", self.class, (void *)self, self.signedTransaction, self.account, self.destination, self.amount, self.data, self.fee];
 }
 
 @end

@@ -3,28 +3,24 @@
 
 #pragma once
 
-#include <functional>
+#include <string>
+#include <utility>
 
 namespace zumo {
 
-enum class TransactionStatus : int {
-    PENDING,
-    CONFIRMED,
-    FAILED,
-    RESUBMITTED,
-    CANCELLED,
-    PAUSED,
+struct TransactionStatus final {
+
+    static std::string const PENDING;
+
+    static std::string const CONFIRMED;
+
+    static std::string const FAILED;
+
+    static std::string const RESUBMITTED;
+
+    static std::string const CANCELLED;
+
+    static std::string const PAUSED;
 };
 
 }  // namespace zumo
-
-namespace std {
-
-template <>
-struct hash<::zumo::TransactionStatus> {
-    size_t operator()(::zumo::TransactionStatus type) const {
-        return std::hash<int>()(static_cast<int>(type));
-    }
-};
-
-}  // namespace std

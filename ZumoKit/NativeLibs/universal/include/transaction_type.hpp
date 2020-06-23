@@ -3,24 +3,20 @@
 
 #pragma once
 
-#include <functional>
+#include <string>
+#include <utility>
 
 namespace zumo {
 
-enum class TransactionType : int {
-    NORMAL,
-    EXCHANGE,
+struct TransactionType final {
+
+    static std::string const CRYPTO;
+
+    static std::string const EXCHANGE;
+
+    static std::string const FIAT;
+
+    static std::string const NOMINATED;
 };
 
 }  // namespace zumo
-
-namespace std {
-
-template <>
-struct hash<::zumo::TransactionType> {
-    size_t operator()(::zumo::TransactionType type) const {
-        return std::hash<int>()(static_cast<int>(type));
-    }
-};
-
-}  // namespace std
