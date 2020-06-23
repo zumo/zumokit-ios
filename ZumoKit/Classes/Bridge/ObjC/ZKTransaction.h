@@ -7,12 +7,12 @@
 @interface ZKTransaction : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                               type:(nonnull NSString *)type
-                         accountId:(nonnull NSString *)accountId
                       currencyCode:(nonnull NSString *)currencyCode
                         fromUserId:(nullable NSString *)fromUserId
                           toUserId:(nullable NSString *)toUserId
+                     fromAccountId:(nullable NSString *)fromAccountId
+                       toAccountId:(nullable NSString *)toAccountId
                            network:(nonnull NSString *)network
-                         direction:(nonnull NSString *)direction
                             status:(nonnull NSString *)status
                             amount:(nullable NSString *)amount
                                fee:(nullable NSString *)fee
@@ -23,12 +23,12 @@
                          timestamp:(int64_t)timestamp;
 + (nonnull instancetype)transactionWithId:(nonnull NSString *)id
                                      type:(nonnull NSString *)type
-                                accountId:(nonnull NSString *)accountId
                              currencyCode:(nonnull NSString *)currencyCode
                                fromUserId:(nullable NSString *)fromUserId
                                  toUserId:(nullable NSString *)toUserId
+                            fromAccountId:(nullable NSString *)fromAccountId
+                              toAccountId:(nullable NSString *)toAccountId
                                   network:(nonnull NSString *)network
-                                direction:(nonnull NSString *)direction
                                    status:(nonnull NSString *)status
                                    amount:(nullable NSString *)amount
                                       fee:(nullable NSString *)fee
@@ -42,17 +42,17 @@
 
 @property (nonatomic, readonly, nonnull) NSString * type;
 
-@property (nonatomic, readonly, nonnull) NSString * accountId;
-
 @property (nonatomic, readonly, nonnull) NSString * currencyCode;
 
 @property (nonatomic, readonly, nullable) NSString * fromUserId;
 
 @property (nonatomic, readonly, nullable) NSString * toUserId;
 
-@property (nonatomic, readonly, nonnull) NSString * network;
+@property (nonatomic, readonly, nullable) NSString * fromAccountId;
 
-@property (nonatomic, readonly, nonnull) NSString * direction;
+@property (nonatomic, readonly, nullable) NSString * toAccountId;
+
+@property (nonatomic, readonly, nonnull) NSString * network;
 
 @property (nonatomic, readonly, nonnull) NSString * status;
 

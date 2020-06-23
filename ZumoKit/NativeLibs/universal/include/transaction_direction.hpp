@@ -13,14 +13,6 @@ struct TransactionDirection final {
     static std::string const INCOMING;
 
     static std::string const OUTGOING;
-
-    static std::string const FAILED;
-
-    static std::string const RESUBMITTED;
-
-    static std::string const CANCELLED;
-
-    static std::string const PAUSED;
 };
 
 }  // namespace zumo
