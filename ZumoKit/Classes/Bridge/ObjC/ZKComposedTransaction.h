@@ -8,13 +8,13 @@
 - (nonnull instancetype)initWithSignedTransaction:(nonnull NSString *)signedTransaction
                                           account:(nonnull ZKAccount *)account
                                       destination:(nullable NSString *)destination
-                                            value:(nullable NSString *)value
+                                           amount:(nullable NSString *)amount
                                              data:(nullable NSString *)data
                                               fee:(nonnull NSString *)fee;
 + (nonnull instancetype)composedTransactionWithSignedTransaction:(nonnull NSString *)signedTransaction
                                                          account:(nonnull ZKAccount *)account
                                                      destination:(nullable NSString *)destination
-                                                           value:(nullable NSString *)value
+                                                          amount:(nullable NSString *)amount
                                                             data:(nullable NSString *)data
                                                              fee:(nonnull NSString *)fee;
 
@@ -24,7 +24,7 @@
 
 @property (nonatomic, readonly, nullable) NSString * destination;
 
-@property (nonatomic, readonly, nullable) NSString * value;
+@property (nonatomic, readonly, nullable) NSString * amount;
 
 @property (nonatomic, readonly, nullable) NSString * data;
 

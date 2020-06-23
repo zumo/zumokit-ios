@@ -3,24 +3,24 @@
 
 #pragma once
 
-#include <functional>
+#include <string>
+#include <utility>
 
 namespace zumo {
 
-enum class TransactionDirection : int {
-    INCOMING,
-    OUTGOING,
+struct TransactionDirection final {
+
+    static std::string const INCOMING;
+
+    static std::string const OUTGOING;
+
+    static std::string const FAILED;
+
+    static std::string const RESUBMITTED;
+
+    static std::string const CANCELLED;
+
+    static std::string const PAUSED;
 };
 
 }  // namespace zumo
-
-namespace std {
-
-template <>
-struct hash<::zumo::TransactionDirection> {
-    size_t operator()(::zumo::TransactionDirection type) const {
-        return std::hash<int>()(static_cast<int>(type));
-    }
-};
-
-}  // namespace std

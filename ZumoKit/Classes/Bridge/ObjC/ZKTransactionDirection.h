@@ -3,8 +3,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, ZKTransactionDirection)
-{
-    ZKTransactionDirectionINCOMING,
-    ZKTransactionDirectionOUTGOING,
-};
+@interface ZKTransactionDirection : NSObject
+- (nonnull instancetype)init;
++ (nonnull instancetype)transactionDirection;
+
+@end
+
+extern NSString * __nonnull const ZKTransactionDirectionINCOMING;
+extern NSString * __nonnull const ZKTransactionDirectionOUTGOING;
+extern NSString * __nonnull const ZKTransactionDirectionFAILED;
+extern NSString * __nonnull const ZKTransactionDirectionRESUBMITTED;
+extern NSString * __nonnull const ZKTransactionDirectionCANCELLED;
+extern NSString * __nonnull const ZKTransactionDirectionPAUSED;

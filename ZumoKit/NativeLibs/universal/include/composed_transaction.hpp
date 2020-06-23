@@ -14,7 +14,7 @@ struct ComposedTransaction final {
     std::string signed_transaction;
     Account account;
     std::experimental::optional<std::string> destination;
-    std::experimental::optional<std::string> value;
+    std::experimental::optional<std::string> amount;
     std::experimental::optional<std::string> data;
     std::string fee;
 
@@ -24,13 +24,13 @@ struct ComposedTransaction final {
     ComposedTransaction(std::string signed_transaction_,
                         Account account_,
                         std::experimental::optional<std::string> destination_,
-                        std::experimental::optional<std::string> value_,
+                        std::experimental::optional<std::string> amount_,
                         std::experimental::optional<std::string> data_,
                         std::string fee_)
     : signed_transaction(std::move(signed_transaction_))
     , account(std::move(account_))
     , destination(std::move(destination_))
-    , value(std::move(value_))
+    , amount(std::move(amount_))
     , data(std::move(data_))
     , fee(std::move(fee_))
     {}
