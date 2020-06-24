@@ -13,7 +13,7 @@ namespace djinni_generated {
 auto ComposedExchange::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
-    return {::djinni::String::toCpp(obj.signedTransaction),
+    return {::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.signedTransaction),
             ::djinni_generated::Account::toCpp(obj.depositAccount),
             ::djinni_generated::Account::toCpp(obj.withdrawAccount),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
@@ -28,7 +28,7 @@ auto ComposedExchange::toCpp(ObjcType obj) -> CppType
 
 auto ComposedExchange::fromCpp(const CppType& cpp) -> ObjcType
 {
-    return [[ZKComposedExchange alloc] initWithSignedTransaction:(::djinni::String::fromCpp(cpp.signed_transaction))
+    return [[ZKComposedExchange alloc] initWithSignedTransaction:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.signed_transaction))
                                                   depositAccount:(::djinni_generated::Account::fromCpp(cpp.deposit_account))
                                                  withdrawAccount:(::djinni_generated::Account::fromCpp(cpp.withdraw_account))
                                                     exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))

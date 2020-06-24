@@ -23,6 +23,7 @@ struct Transaction final {
     std::string status;
     std::experimental::optional<std::string> amount;
     std::experimental::optional<std::string> fee;
+    std::experimental::optional<std::string> nonce;
     std::experimental::optional<CryptoDetails> crypto_details;
     std::experimental::optional<std::string> fiat_details;
     std::experimental::optional<int64_t> submitted_at;
@@ -43,6 +44,7 @@ struct Transaction final {
                 std::string status_,
                 std::experimental::optional<std::string> amount_,
                 std::experimental::optional<std::string> fee_,
+                std::experimental::optional<std::string> nonce_,
                 std::experimental::optional<CryptoDetails> crypto_details_,
                 std::experimental::optional<std::string> fiat_details_,
                 std::experimental::optional<int64_t> submitted_at_,
@@ -59,6 +61,7 @@ struct Transaction final {
     , status(std::move(status_))
     , amount(std::move(amount_))
     , fee(std::move(fee_))
+    , nonce(std::move(nonce_))
     , crypto_details(std::move(crypto_details_))
     , fiat_details(std::move(fiat_details_))
     , submitted_at(std::move(submitted_at_))

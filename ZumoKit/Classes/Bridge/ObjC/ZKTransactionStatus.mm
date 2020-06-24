@@ -16,6 +16,8 @@ NSString * __nonnull const ZKTransactionStatusCANCELLED = @"CANCELLED";
 
 NSString * __nonnull const ZKTransactionStatusPAUSED = @"PAUSED";
 
+NSString * __nonnull const ZKTransactionStatusREJECTED = @"REJECTED";
+
 @implementation ZKTransactionStatus
 
 - (nonnull instancetype)init

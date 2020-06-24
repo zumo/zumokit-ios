@@ -17,6 +17,7 @@
                             status:(nonnull NSString *)status
                             amount:(nullable NSString *)amount
                                fee:(nullable NSString *)fee
+                             nonce:(nullable NSString *)nonce
                      cryptoDetails:(nullable ZKCryptoDetails *)cryptoDetails
                        fiatDetails:(nullable NSString *)fiatDetails
                        submittedAt:(nullable NSNumber *)submittedAt
@@ -35,6 +36,7 @@
         _status = [status copy];
         _amount = [amount copy];
         _fee = [fee copy];
+        _nonce = [nonce copy];
         _cryptoDetails = cryptoDetails;
         _fiatDetails = [fiatDetails copy];
         _submittedAt = submittedAt;
@@ -55,6 +57,7 @@
                                    status:(nonnull NSString *)status
                                    amount:(nullable NSString *)amount
                                       fee:(nullable NSString *)fee
+                                    nonce:(nullable NSString *)nonce
                             cryptoDetails:(nullable ZKCryptoDetails *)cryptoDetails
                               fiatDetails:(nullable NSString *)fiatDetails
                               submittedAt:(nullable NSNumber *)submittedAt
@@ -72,6 +75,7 @@
                                              status:status
                                              amount:amount
                                                 fee:fee
+                                              nonce:nonce
                                       cryptoDetails:cryptoDetails
                                         fiatDetails:fiatDetails
                                         submittedAt:submittedAt
@@ -96,6 +100,7 @@
             [self.status isEqualToString:typedOther.status] &&
             ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
             ((self.fee == nil && typedOther.fee == nil) || (self.fee != nil && [self.fee isEqual:typedOther.fee])) &&
+            ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
             ((self.cryptoDetails == nil && typedOther.cryptoDetails == nil) || (self.cryptoDetails != nil && [self.cryptoDetails isEqual:typedOther.cryptoDetails])) &&
             ((self.fiatDetails == nil && typedOther.fiatDetails == nil) || (self.fiatDetails != nil && [self.fiatDetails isEqual:typedOther.fiatDetails])) &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
@@ -117,6 +122,7 @@
             self.status.hash ^
             self.amount.hash ^
             self.fee.hash ^
+            self.nonce.hash ^
             self.cryptoDetails.hash ^
             self.fiatDetails.hash ^
             self.submittedAt.hash ^
@@ -126,7 +132,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ cryptoDetails:%@ fiatDetails:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.cryptoDetails, self.fiatDetails, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoDetails:%@ fiatDetails:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoDetails, self.fiatDetails, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

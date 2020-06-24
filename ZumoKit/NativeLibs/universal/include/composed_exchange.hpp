@@ -6,13 +6,14 @@
 #include "account.hpp"
 #include "exchange_rate.hpp"
 #include "exchange_settings.hpp"
+#include "stdx/optional.hpp"
 #include <string>
 #include <utility>
 
 namespace zumo {
 
 struct ComposedExchange final {
-    std::string signed_transaction;
+    std::experimental::optional<std::string> signed_transaction;
     Account deposit_account;
     Account withdraw_account;
     ExchangeRate exchange_rate;
@@ -27,7 +28,7 @@ struct ComposedExchange final {
     friend bool operator==(const ComposedExchange& lhs, const ComposedExchange& rhs);
     friend bool operator!=(const ComposedExchange& lhs, const ComposedExchange& rhs);
 
-    ComposedExchange(std::string signed_transaction_,
+    ComposedExchange(std::experimental::optional<std::string> signed_transaction_,
                      Account deposit_account_,
                      Account withdraw_account_,
                      ExchangeRate exchange_rate_,

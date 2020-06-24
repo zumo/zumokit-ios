@@ -21,6 +21,8 @@ struct TransactionStatus final {
     static std::string const CANCELLED;
 
     static std::string const PAUSED;
+
+    static std::string const REJECTED;
 };
 
 }  // namespace zumo

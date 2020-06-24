@@ -6,12 +6,13 @@
 
 @implementation ZKComposedTransaction
 
-- (nonnull instancetype)initWithSignedTransaction:(nonnull NSString *)signedTransaction
+- (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
                                           account:(nonnull ZKAccount *)account
                                       destination:(nullable NSString *)destination
                                            amount:(nullable NSString *)amount
                                              data:(nullable NSString *)data
                                               fee:(nonnull NSString *)fee
+                                            nonce:(nonnull NSString *)nonce
 {
     if (self = [super init]) {
         _signedTransaction = [signedTransaction copy];
@@ -20,23 +21,26 @@
         _amount = [amount copy];
         _data = [data copy];
         _fee = [fee copy];
+        _nonce = [nonce copy];
     }
     return self;
 }
 
-+ (nonnull instancetype)composedTransactionWithSignedTransaction:(nonnull NSString *)signedTransaction
++ (nonnull instancetype)composedTransactionWithSignedTransaction:(nullable NSString *)signedTransaction
                                                          account:(nonnull ZKAccount *)account
                                                      destination:(nullable NSString *)destination
                                                           amount:(nullable NSString *)amount
                                                             data:(nullable NSString *)data
                                                              fee:(nonnull NSString *)fee
+                                                           nonce:(nonnull NSString *)nonce
 {
     return [(ZKComposedTransaction*)[self alloc] initWithSignedTransaction:signedTransaction
                                                                    account:account
                                                                destination:destination
                                                                     amount:amount
                                                                       data:data
-                                                                       fee:fee];
+                                                                       fee:fee
+                                                                     nonce:nonce];
 }
 
 - (BOOL)isEqual:(id)other
@@ -45,12 +49,13 @@
         return NO;
     }
     ZKComposedTransaction *typedOther = (ZKComposedTransaction *)other;
-    return [self.signedTransaction isEqualToString:typedOther.signedTransaction] &&
+    return ((self.signedTransaction == nil && typedOther.signedTransaction == nil) || (self.signedTransaction != nil && [self.signedTransaction isEqual:typedOther.signedTransaction])) &&
             [self.account isEqual:typedOther.account] &&
             ((self.destination == nil && typedOther.destination == nil) || (self.destination != nil && [self.destination isEqual:typedOther.destination])) &&
             ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
             ((self.data == nil && typedOther.data == nil) || (self.data != nil && [self.data isEqual:typedOther.data])) &&
-            [self.fee isEqualToString:typedOther.fee];
+            [self.fee isEqualToString:typedOther.fee] &&
+            [self.nonce isEqualToString:typedOther.nonce];
 }
 
 - (NSUInteger)hash
@@ -61,12 +66,13 @@
             self.destination.hash ^
             self.amount.hash ^
             self.data.hash ^
-            self.fee.hash;
+            self.fee.hash ^
+            self.nonce.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ account:%@ destination:%@ amount:%@ data:%@ fee:%@>", self.class, (void *)self, self.signedTransaction, self.account, self.destination, self.amount, self.data, self.fee];
+    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ account:%@ destination:%@ amount:%@ data:%@ fee:%@ nonce:%@>", self.class, (void *)self, self.signedTransaction, self.account, self.destination, self.amount, self.data, self.fee, self.nonce];
 }
 
 @end

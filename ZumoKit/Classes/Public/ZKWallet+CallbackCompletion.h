@@ -24,23 +24,29 @@ typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NS
 
 @interface ZKWallet (ZKWalletCallbackCompletion)
 
-- (void)composeEthTransaction:(nonnull NSString *)accountId
+- (void)composeEthTransaction:(nonnull NSString *)fromAccountId
                      gasPrice:(nonnull NSString *)gasPrice
                      gasLimit:(nonnull NSString *)gasLimit
-                           to:(nullable NSString *)to
-                        value:(nullable NSString *)value
+                  destination:(nullable NSString *)destination
+                       amount:(nullable NSString *)amount
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
                    completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
-- (void)composeBtcTransaction:(nonnull NSString *)accountId
+- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
               changeAccountId:(nonnull NSString *)changeAccountId
-                           to:(nonnull NSString *)to
-                        value:(nullable NSString *)value
+                  destination:(nonnull NSString *)destination
+                       amount:(nullable NSString *)amount
                       feeRate:(nonnull NSString *)feeRate
                       sendMax:(BOOL)sendMax
-                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+
+- (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
+                           toAccountId:(nonnull NSString *)toAccountId
+                                amount:(nullable NSString *)amount
+                               sendMax:(BOOL)sendMax
+                            completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId

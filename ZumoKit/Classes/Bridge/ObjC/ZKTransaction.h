@@ -16,6 +16,7 @@
                             status:(nonnull NSString *)status
                             amount:(nullable NSString *)amount
                                fee:(nullable NSString *)fee
+                             nonce:(nullable NSString *)nonce
                      cryptoDetails:(nullable ZKCryptoDetails *)cryptoDetails
                        fiatDetails:(nullable NSString *)fiatDetails
                        submittedAt:(nullable NSNumber *)submittedAt
@@ -32,6 +33,7 @@
                                    status:(nonnull NSString *)status
                                    amount:(nullable NSString *)amount
                                       fee:(nullable NSString *)fee
+                                    nonce:(nullable NSString *)nonce
                             cryptoDetails:(nullable ZKCryptoDetails *)cryptoDetails
                               fiatDetails:(nullable NSString *)fiatDetails
                               submittedAt:(nullable NSNumber *)submittedAt
@@ -59,6 +61,8 @@
 @property (nonatomic, readonly, nullable) NSString * amount;
 
 @property (nonatomic, readonly, nullable) NSString * fee;
+
+@property (nonatomic, readonly, nullable) NSString * nonce;
 
 @property (nonatomic, readonly, nullable) ZKCryptoDetails * cryptoDetails;
 

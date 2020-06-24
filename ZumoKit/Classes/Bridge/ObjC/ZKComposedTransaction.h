@@ -5,20 +5,22 @@
 #import <Foundation/Foundation.h>
 
 @interface ZKComposedTransaction : NSObject
-- (nonnull instancetype)initWithSignedTransaction:(nonnull NSString *)signedTransaction
+- (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
                                           account:(nonnull ZKAccount *)account
                                       destination:(nullable NSString *)destination
                                            amount:(nullable NSString *)amount
                                              data:(nullable NSString *)data
-                                              fee:(nonnull NSString *)fee;
-+ (nonnull instancetype)composedTransactionWithSignedTransaction:(nonnull NSString *)signedTransaction
+                                              fee:(nonnull NSString *)fee
+                                            nonce:(nonnull NSString *)nonce;
++ (nonnull instancetype)composedTransactionWithSignedTransaction:(nullable NSString *)signedTransaction
                                                          account:(nonnull ZKAccount *)account
                                                      destination:(nullable NSString *)destination
                                                           amount:(nullable NSString *)amount
                                                             data:(nullable NSString *)data
-                                                             fee:(nonnull NSString *)fee;
+                                                             fee:(nonnull NSString *)fee
+                                                           nonce:(nonnull NSString *)nonce;
 
-@property (nonatomic, readonly, nonnull) NSString * signedTransaction;
+@property (nonatomic, readonly, nullable) NSString * signedTransaction;
 
 @property (nonatomic, readonly, nonnull) ZKAccount * account;
 
@@ -29,5 +31,7 @@
 @property (nonatomic, readonly, nullable) NSString * data;
 
 @property (nonatomic, readonly, nonnull) NSString * fee;
+
+@property (nonatomic, readonly, nonnull) NSString * nonce;
 
 @end

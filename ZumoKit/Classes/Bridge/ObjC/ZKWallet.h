@@ -17,23 +17,29 @@
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
                  callback:(nullable id<ZKSubmitTransactionCallback>)callback;
 
-- (void)composeEthTransaction:(nonnull NSString *)accountId
+- (void)composeEthTransaction:(nonnull NSString *)fromAccountId
                      gasPrice:(nonnull NSString *)gasPrice
                      gasLimit:(nonnull NSString *)gasLimit
-                           to:(nullable NSString *)to
-                        value:(nullable NSString *)value
+                  destination:(nullable NSString *)destination
+                       amount:(nullable NSString *)amount
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
-- (void)composeBtcTransaction:(nonnull NSString *)accountId
+- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
               changeAccountId:(nonnull NSString *)changeAccountId
-                           to:(nonnull NSString *)to
-                        value:(nullable NSString *)value
+                  destination:(nonnull NSString *)destination
+                       amount:(nullable NSString *)amount
                       feeRate:(nonnull NSString *)feeRate
                       sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback;
+
+- (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
+                           toAccountId:(nonnull NSString *)toAccountId
+                                amount:(nullable NSString *)amount
+                               sendMax:(BOOL)sendMax
+                              callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
 - (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
               callback:(nullable id<ZKSubmitExchangeCallback>)callback;

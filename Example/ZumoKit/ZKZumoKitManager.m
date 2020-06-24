@@ -147,8 +147,8 @@
     [_wallet composeEthTransaction:account.id
                           gasPrice:@"60"
                           gasLimit:@"21000"
-                                to:@"0xD797c81C928a7F4CF7dEB960B5963697fAcFE0eE"
-                             value:nil
+                       destination:@"0xD797c81C928a7F4CF7dEB960B5963697fAcFE0eE"
+                            amount:nil
                               data:nil
                              nonce:[NSNumber numberWithInt:6]
                            sendMax:YES
@@ -160,7 +160,7 @@
         }
         
         NSLog(@"Account Balance: %@", composedTransaction.account.balance);
-        NSLog(@"Tx Value: %@", composedTransaction.value);
+        NSLog(@"Tx Value: %@", composedTransaction.amount);
         NSLog(@"Tx Fee: %@", composedTransaction.fee);
         
         if (!submit) {
@@ -175,7 +175,7 @@
                 return;
             }
             
-            NSLog(@"Tx Hash: %@", transaction.txHash);
+            NSLog(@"Tx Hash: %@", transaction.cryptoDetails.txHash);
         }];
     }];
 }
@@ -183,8 +183,8 @@
 - (void)composeBtcTransaction:(ZKAccount *) account {
     [_wallet composeBtcTransaction:account.id
                    changeAccountId:account.id
-                                to:@"2N6BfH356AicEzuC1dYt4gYkw6WFWZrfeSY"
-                             value:nil
+                       destination:@"2N6BfH356AicEzuC1dYt4gYkw6WFWZrfeSY"
+                            amount:nil
                            feeRate:@"20"
                            sendMax:YES
                         completion:^(ZKComposedTransaction * _Nullable transaction, NSError * _Nullable error) {
@@ -195,7 +195,7 @@
         }
         
         NSLog(@"Account Balance: %@", transaction.account.balance);
-        NSLog(@"Tx Value: %@", transaction.value);
+        NSLog(@"Tx Value: %@", transaction.amount);
         NSLog(@"Tx Fee: %@", transaction.fee);
     }];
 }

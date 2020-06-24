@@ -22,6 +22,7 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.status),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.amount),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fee),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.nonce),
             ::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoDetails>::toCpp(obj.cryptoDetails),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fiatDetails),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
@@ -42,6 +43,7 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
                                       status:(::djinni::String::fromCpp(cpp.status))
                                       amount:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.amount))
                                          fee:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.fee))
+                                       nonce:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.nonce))
                                cryptoDetails:(::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoDetails>::fromCpp(cpp.crypto_details))
                                  fiatDetails:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.fiat_details))
                                  submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
