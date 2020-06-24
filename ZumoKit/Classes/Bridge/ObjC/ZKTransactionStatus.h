@@ -15,3 +15,4 @@ extern NSString * __nonnull const ZKTransactionStatusFAILED;
 extern NSString * __nonnull const ZKTransactionStatusRESUBMITTED;
 extern NSString * __nonnull const ZKTransactionStatusCANCELLED;
 extern NSString * __nonnull const ZKTransactionStatusPAUSED;
+extern NSString * __nonnull const ZKTransactionStatusREJECTED;

@@ -6,7 +6,7 @@
 
 @implementation ZKComposedExchange
 
-- (nonnull instancetype)initWithSignedTransaction:(nonnull NSString *)signedTransaction
+- (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
                                    depositAccount:(nonnull ZKAccount *)depositAccount
                                   withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
@@ -34,7 +34,7 @@
     return self;
 }
 
-+ (nonnull instancetype)composedExchangeWithSignedTransaction:(nonnull NSString *)signedTransaction
++ (nonnull instancetype)composedExchangeWithSignedTransaction:(nullable NSString *)signedTransaction
                                                depositAccount:(nonnull ZKAccount *)depositAccount
                                               withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
@@ -65,7 +65,7 @@
         return NO;
     }
     ZKComposedExchange *typedOther = (ZKComposedExchange *)other;
-    return [self.signedTransaction isEqualToString:typedOther.signedTransaction] &&
+    return ((self.signedTransaction == nil && typedOther.signedTransaction == nil) || (self.signedTransaction != nil && [self.signedTransaction isEqual:typedOther.signedTransaction])) &&
             [self.depositAccount isEqual:typedOther.depositAccount] &&
             [self.withdrawAccount isEqual:typedOther.withdrawAccount] &&
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&

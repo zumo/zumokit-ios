@@ -15,21 +15,21 @@
 
 @implementation ZKWallet (ZKWalletCallbackCompletion)
 
-- (void)composeEthTransaction:(nonnull NSString *)accountId
-                  gasPrice:(nonnull NSString *)gasPrice
-                  gasLimit:(nonnull NSString *)gasLimit
-                        to:(nullable NSString *)to
-                     value:(nullable NSString *)value
-                      data:(nullable NSString *)data
-                     nonce:(nullable NSNumber *)nonce
-                   sendMax:(BOOL)sendMax
-             completion:(ComposeTransactionCompletionBlock)completionHandler {
+- (void)composeEthTransaction:(nonnull NSString *)fromAccountId
+                     gasPrice:(nonnull NSString *)gasPrice
+                     gasLimit:(nonnull NSString *)gasLimit
+                  destination:(nullable NSString *)destination
+                       amount:(nullable NSString *)amount
+                         data:(nullable NSString *)data
+                        nonce:(nullable NSNumber *)nonce
+                      sendMax:(BOOL)sendMax
+                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
     
-    [self composeEthTransaction:accountId
+    [self composeEthTransaction:fromAccountId
                        gasPrice:gasPrice
                        gasLimit:gasLimit
-                             to:to
-                          value:value
+                    destination:destination
+                         amount:amount
                            data:data
                           nonce:nonce
                         sendMax:sendMax
@@ -38,22 +38,30 @@
 };
 
 
-- (void)composeBtcTransaction:(nonnull NSString *)accountId
+- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
               changeAccountId:(nonnull NSString *)changeAccountId
-                           to:(nonnull NSString *)to
-                        value:(nullable NSString *)value
+                  destination:(nonnull NSString *)destination
+                       amount:(nullable NSString *)amount
                       feeRate:(nonnull NSString *)feeRate
                       sendMax:(BOOL)sendMax
-                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
     
-    [self composeBtcTransaction:accountId
+    [self composeBtcTransaction:fromAccountId
                 changeAccountId:changeAccountId
-                             to:to
-                          value:value
+                    destination:destination
+                         amount:amount
                         feeRate:feeRate
                         sendMax:sendMax
                     callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
     
+};
+
+- (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
+                           toAccountId:(nonnull NSString *)toAccountId
+                                amount:(nullable NSString *)amount
+                               sendMax:(BOOL)sendMax
+                            completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+    [self composeInternalFiatTransaction:fromAccountId toAccountId:toAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 

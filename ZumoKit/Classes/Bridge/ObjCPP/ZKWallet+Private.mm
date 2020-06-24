@@ -46,21 +46,21 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)composeEthTransaction:(nonnull NSString *)accountId
+- (void)composeEthTransaction:(nonnull NSString *)fromAccountId
                      gasPrice:(nonnull NSString *)gasPrice
                      gasLimit:(nonnull NSString *)gasLimit
-                           to:(nullable NSString *)to
-                        value:(nullable NSString *)value
+                  destination:(nullable NSString *)destination
+                       amount:(nullable NSString *)amount
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
-        _cppRefHandle.get()->compose_eth_transaction(::djinni::String::toCpp(accountId),
+        _cppRefHandle.get()->compose_eth_transaction(::djinni::String::toCpp(fromAccountId),
                                                      ::djinni::String::toCpp(gasPrice),
                                                      ::djinni::String::toCpp(gasLimit),
-                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(to),
-                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(value),
+                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(destination),
+                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(data),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(nonce),
                                                      ::djinni::Bool::toCpp(sendMax),
@@ -68,21 +68,35 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)composeBtcTransaction:(nonnull NSString *)accountId
+- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
               changeAccountId:(nonnull NSString *)changeAccountId
-                           to:(nonnull NSString *)to
-                        value:(nullable NSString *)value
+                  destination:(nonnull NSString *)destination
+                       amount:(nullable NSString *)amount
                       feeRate:(nonnull NSString *)feeRate
                       sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
-        _cppRefHandle.get()->compose_btc_transaction(::djinni::String::toCpp(accountId),
+        _cppRefHandle.get()->compose_btc_transaction(::djinni::String::toCpp(fromAccountId),
                                                      ::djinni::String::toCpp(changeAccountId),
-                                                     ::djinni::String::toCpp(to),
-                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(value),
+                                                     ::djinni::String::toCpp(destination),
+                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
                                                      ::djinni::String::toCpp(feeRate),
                                                      ::djinni::Bool::toCpp(sendMax),
                                                      ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
+                           toAccountId:(nonnull NSString *)toAccountId
+                                amount:(nullable NSString *)amount
+                               sendMax:(BOOL)sendMax
+                              callback:(nullable id<ZKComposeTransactionCallback>)callback {
+    try {
+        _cppRefHandle.get()->compose_internal_fiat_transaction(::djinni::String::toCpp(fromAccountId),
+                                                               ::djinni::String::toCpp(toAccountId),
+                                                               ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
+                                                               ::djinni::Bool::toCpp(sendMax),
+                                                               ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

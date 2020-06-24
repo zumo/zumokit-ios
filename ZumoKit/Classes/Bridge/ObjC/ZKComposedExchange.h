@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 
 @interface ZKComposedExchange : NSObject
-- (nonnull instancetype)initWithSignedTransaction:(nonnull NSString *)signedTransaction
+- (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
                                    depositAccount:(nonnull ZKAccount *)depositAccount
                                   withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
@@ -18,7 +18,7 @@
                                        depositFee:(nonnull NSString *)depositFee
                                       exchangeFee:(nonnull NSString *)exchangeFee
                                       withdrawFee:(nonnull NSString *)withdrawFee;
-+ (nonnull instancetype)composedExchangeWithSignedTransaction:(nonnull NSString *)signedTransaction
++ (nonnull instancetype)composedExchangeWithSignedTransaction:(nullable NSString *)signedTransaction
                                                depositAccount:(nonnull ZKAccount *)depositAccount
                                               withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
@@ -30,7 +30,7 @@
                                                   exchangeFee:(nonnull NSString *)exchangeFee
                                                   withdrawFee:(nonnull NSString *)withdrawFee;
 
-@property (nonatomic, readonly, nonnull) NSString * signedTransaction;
+@property (nonatomic, readonly, nullable) NSString * signedTransaction;
 
 @property (nonatomic, readonly, nonnull) ZKAccount * depositAccount;
 
