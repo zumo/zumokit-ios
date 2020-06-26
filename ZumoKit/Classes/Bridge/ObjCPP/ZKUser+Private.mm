@@ -8,6 +8,7 @@
 #import "DJIMarshal+Private.h"
 #import "ZKAccount+Private.h"
 #import "ZKAccountCallback+Private.h"
+#import "ZKAccountFiatPropertiesCallback+Private.h"
 #import "ZKAccountListener+Private.h"
 #import "ZKExchange+Private.h"
 #import "ZKMnemonicCallback+Private.h"
@@ -105,6 +106,14 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
         _cppRefHandle.get()->create_fiat_account(::djinni::String::toCpp(network),
                                                  ::djinni::String::toCpp(currencyCode),
                                                  ::djinni_generated::AccountCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
+                                 callback:(nullable id<ZKAccountFiatPropertiesCallback>)callback {
+    try {
+        _cppRefHandle.get()->get_nominated_account_fiat_properties(::djinni::String::toCpp(accountId),
+                                                                   ::djinni_generated::AccountFiatPropertiesCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

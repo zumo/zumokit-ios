@@ -3,8 +3,9 @@
 
 #pragma once
 
-#include "crypto_details.hpp"
 #include "stdx/optional.hpp"
+#include "transaction_crypto_properties.hpp"
+#include "transaction_fiat_properties.hpp"
 #include <cstdint>
 #include <string>
 #include <utility>
@@ -24,8 +25,8 @@ struct Transaction final {
     std::experimental::optional<std::string> amount;
     std::experimental::optional<std::string> fee;
     std::experimental::optional<std::string> nonce;
-    std::experimental::optional<CryptoDetails> crypto_details;
-    std::experimental::optional<std::string> fiat_details;
+    std::experimental::optional<TransactionCryptoProperties> crypto_properties;
+    std::experimental::optional<TransactionFiatProperties> fiat_properties;
     std::experimental::optional<int64_t> submitted_at;
     std::experimental::optional<int64_t> confirmed_at;
     int64_t timestamp;
@@ -45,8 +46,8 @@ struct Transaction final {
                 std::experimental::optional<std::string> amount_,
                 std::experimental::optional<std::string> fee_,
                 std::experimental::optional<std::string> nonce_,
-                std::experimental::optional<CryptoDetails> crypto_details_,
-                std::experimental::optional<std::string> fiat_details_,
+                std::experimental::optional<TransactionCryptoProperties> crypto_properties_,
+                std::experimental::optional<TransactionFiatProperties> fiat_properties_,
                 std::experimental::optional<int64_t> submitted_at_,
                 std::experimental::optional<int64_t> confirmed_at_,
                 int64_t timestamp_)
@@ -62,8 +63,8 @@ struct Transaction final {
     , amount(std::move(amount_))
     , fee(std::move(fee_))
     , nonce(std::move(nonce_))
-    , crypto_details(std::move(crypto_details_))
-    , fiat_details(std::move(fiat_details_))
+    , crypto_properties(std::move(crypto_properties_))
+    , fiat_properties(std::move(fiat_properties_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
     , timestamp(std::move(timestamp_))

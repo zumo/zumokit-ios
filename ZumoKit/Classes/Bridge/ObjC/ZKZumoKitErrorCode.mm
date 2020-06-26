@@ -98,6 +98,10 @@ NSString * __nonnull const ZKZumoKitErrorCodeALREADYMODULRCUSTOMER = @"already_m
 
 NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED = @"account_limit_exceeded";
 
+NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET = @"destination_provided_when_withdraw_set";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE = @"invalid_transaction_type";
+
 @implementation ZKZumoKitErrorCode
 
 - (nonnull instancetype)init

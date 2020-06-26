@@ -12,6 +12,7 @@
 #import "MnemonicCallback.h"
 #import "SuccessCallback.h"
 #import "AccountCallback.h"
+#import "AccountFiatPropertiesCallback.h"
 
 @implementation ZKUser (ZKUserCallbackCompletion)
 
@@ -57,6 +58,11 @@ addressLine2:(nullable NSString *)addressLine2
              currencyCode:(nonnull NSString *)currencyCode
                completion:(_Nonnull AccountCompletionBlock)completionHandler {
     [self createFiatAccount:network currencyCode:currencyCode callback:[[AccountCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
+                               completion:(_Nonnull AccountFiatPropertiesCompletionBlock)completionHandler {
+    [self getNominatedAccountFiatProperties:accountId callback:[[AccountFiatPropertiesCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 @end

@@ -103,6 +103,10 @@ struct ZumoKitErrorCode final {
     static std::string const ALREADY_MODULR_CUSTOMER;
 
     static std::string const ACCOUNT_LIMIT_EXCEEDED;
+
+    static std::string const DESTINATION_PROVIDED_WHEN_WITHDRAW_SET;
+
+    static std::string const INVALID_TRANSACTION_TYPE;
 };
 
 }  // namespace zumo

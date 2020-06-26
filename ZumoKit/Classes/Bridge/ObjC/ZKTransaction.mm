@@ -18,8 +18,8 @@
                             amount:(nullable NSString *)amount
                                fee:(nullable NSString *)fee
                              nonce:(nullable NSString *)nonce
-                     cryptoDetails:(nullable ZKCryptoDetails *)cryptoDetails
-                       fiatDetails:(nullable NSString *)fiatDetails
+                  cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
+                    fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
                          timestamp:(int64_t)timestamp
@@ -37,8 +37,8 @@
         _amount = [amount copy];
         _fee = [fee copy];
         _nonce = [nonce copy];
-        _cryptoDetails = cryptoDetails;
-        _fiatDetails = [fiatDetails copy];
+        _cryptoProperties = cryptoProperties;
+        _fiatProperties = fiatProperties;
         _submittedAt = submittedAt;
         _confirmedAt = confirmedAt;
         _timestamp = timestamp;
@@ -58,8 +58,8 @@
                                    amount:(nullable NSString *)amount
                                       fee:(nullable NSString *)fee
                                     nonce:(nullable NSString *)nonce
-                            cryptoDetails:(nullable ZKCryptoDetails *)cryptoDetails
-                              fiatDetails:(nullable NSString *)fiatDetails
+                         cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
+                           fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
                                 timestamp:(int64_t)timestamp
@@ -76,8 +76,8 @@
                                              amount:amount
                                                 fee:fee
                                               nonce:nonce
-                                      cryptoDetails:cryptoDetails
-                                        fiatDetails:fiatDetails
+                                   cryptoProperties:cryptoProperties
+                                     fiatProperties:fiatProperties
                                         submittedAt:submittedAt
                                         confirmedAt:confirmedAt
                                           timestamp:timestamp];
@@ -101,8 +101,8 @@
             ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
             ((self.fee == nil && typedOther.fee == nil) || (self.fee != nil && [self.fee isEqual:typedOther.fee])) &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
-            ((self.cryptoDetails == nil && typedOther.cryptoDetails == nil) || (self.cryptoDetails != nil && [self.cryptoDetails isEqual:typedOther.cryptoDetails])) &&
-            ((self.fiatDetails == nil && typedOther.fiatDetails == nil) || (self.fiatDetails != nil && [self.fiatDetails isEqual:typedOther.fiatDetails])) &&
+            ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
+            ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties])) &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
             ((self.confirmedAt == nil && typedOther.confirmedAt == nil) || (self.confirmedAt != nil && [self.confirmedAt isEqual:typedOther.confirmedAt])) &&
             self.timestamp == typedOther.timestamp;
@@ -123,8 +123,8 @@
             self.amount.hash ^
             self.fee.hash ^
             self.nonce.hash ^
-            self.cryptoDetails.hash ^
-            self.fiatDetails.hash ^
+            self.cryptoProperties.hash ^
+            self.fiatProperties.hash ^
             self.submittedAt.hash ^
             self.confirmedAt.hash ^
             (NSUInteger)self.timestamp;
@@ -132,7 +132,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoDetails:%@ fiatDetails:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoDetails, self.fiatDetails, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

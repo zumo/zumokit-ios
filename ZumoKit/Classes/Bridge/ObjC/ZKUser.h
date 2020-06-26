@@ -6,6 +6,7 @@
 #import "ZKTransaction.h"
 #import <Foundation/Foundation.h>
 @protocol ZKAccountCallback;
+@protocol ZKAccountFiatPropertiesCallback;
 @protocol ZKAccountListener;
 @protocol ZKMnemonicCallback;
 @protocol ZKSuccessCallback;
@@ -41,6 +42,9 @@
 - (void)createFiatAccount:(nonnull NSString *)network
              currencyCode:(nonnull NSString *)currencyCode
                  callback:(nullable id<ZKAccountCallback>)callback;
+
+- (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
+                                 callback:(nullable id<ZKAccountFiatPropertiesCallback>)callback;
 
 - (void)createWallet:(nonnull NSString *)mnemonic
             password:(nonnull NSString *)password
