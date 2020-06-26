@@ -100,6 +100,18 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
+- (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
+                                      amount:(nullable NSString *)amount
+                                     sendMax:(BOOL)sendMax
+                                    callback:(nullable id<ZKComposeTransactionCallback>)callback {
+    try {
+        _cppRefHandle.get()->compose_transaction_to_nominated_account(::djinni::String::toCpp(fromAccountId),
+                                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
+                                                                      ::djinni::Bool::toCpp(sendMax),
+                                                                      ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
 - (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
               callback:(nullable id<ZKSubmitExchangeCallback>)callback {
     try {

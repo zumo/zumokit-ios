@@ -3,17 +3,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZKCryptoProperties : NSObject
+@interface ZKAccountCryptoProperties : NSObject
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address
                                    path:(nonnull NSString *)path
                                   nonce:(nullable NSNumber *)nonce
                                utxoPool:(nullable NSString *)utxoPool
                                 version:(int8_t)version;
-+ (nonnull instancetype)cryptoPropertiesWithAddress:(nonnull NSString *)address
-                                               path:(nonnull NSString *)path
-                                              nonce:(nullable NSNumber *)nonce
-                                           utxoPool:(nullable NSString *)utxoPool
-                                            version:(int8_t)version;
++ (nonnull instancetype)accountCryptoPropertiesWithAddress:(nonnull NSString *)address
+                                                      path:(nonnull NSString *)path
+                                                     nonce:(nullable NSNumber *)nonce
+                                                  utxoPool:(nullable NSString *)utxoPool
+                                                   version:(int8_t)version;
 
 @property (nonatomic, readonly, nonnull) NSString * address;
 

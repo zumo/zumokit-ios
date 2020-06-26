@@ -64,6 +64,12 @@
     [self composeInternalFiatTransaction:fromAccountId toAccountId:toAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
+- (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
+                                      amount:(nullable NSString *)amount
+                                     sendMax:(BOOL)sendMax
+                                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+        [self composeTransactionToNominatedAccount:fromAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
+};
 
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId

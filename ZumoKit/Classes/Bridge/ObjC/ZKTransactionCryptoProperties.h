@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZKCryptoDetails : NSObject
+@interface ZKTransactionCryptoProperties : NSObject
 - (nonnull instancetype)initWithTxHash:(nullable NSString *)txHash
                                  nonce:(nullable NSNumber *)nonce
                            fromAddress:(nonnull NSString *)fromAddress
@@ -13,15 +13,15 @@
                               gasLimit:(nullable NSString *)gasLimit
                             fiatAmount:(nonnull NSDictionary<NSString *, NSString *> *)fiatAmount
                                fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee;
-+ (nonnull instancetype)cryptoDetailsWithTxHash:(nullable NSString *)txHash
-                                          nonce:(nullable NSNumber *)nonce
-                                    fromAddress:(nonnull NSString *)fromAddress
-                                      toAddress:(nullable NSString *)toAddress
-                                           data:(nullable NSString *)data
-                                       gasPrice:(nullable NSString *)gasPrice
-                                       gasLimit:(nullable NSString *)gasLimit
-                                     fiatAmount:(nonnull NSDictionary<NSString *, NSString *> *)fiatAmount
-                                        fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee;
++ (nonnull instancetype)transactionCryptoPropertiesWithTxHash:(nullable NSString *)txHash
+                                                        nonce:(nullable NSNumber *)nonce
+                                                  fromAddress:(nonnull NSString *)fromAddress
+                                                    toAddress:(nullable NSString *)toAddress
+                                                         data:(nullable NSString *)data
+                                                     gasPrice:(nullable NSString *)gasPrice
+                                                     gasLimit:(nullable NSString *)gasLimit
+                                                   fiatAmount:(nonnull NSDictionary<NSString *, NSString *> *)fiatAmount
+                                                      fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee;
 
 @property (nonatomic, readonly, nullable) NSString * txHash;
 

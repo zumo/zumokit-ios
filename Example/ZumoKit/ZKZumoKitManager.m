@@ -175,7 +175,7 @@
                 return;
             }
             
-            NSLog(@"Tx Hash: %@", transaction.cryptoDetails.txHash);
+            NSLog(@"Tx Hash: %@", transaction.cryptoProperties.txHash);
         }];
     }];
 }

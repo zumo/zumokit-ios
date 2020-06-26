@@ -11,7 +11,8 @@ namespace djinni_generated {
 auto ComposedTransaction::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
-    return {::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.signedTransaction),
+    return {::djinni::String::toCpp(obj.type),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.signedTransaction),
             ::djinni_generated::Account::toCpp(obj.account),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.destination),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.amount),
@@ -22,13 +23,14 @@ auto ComposedTransaction::toCpp(ObjcType obj) -> CppType
 
 auto ComposedTransaction::fromCpp(const CppType& cpp) -> ObjcType
 {
-    return [[ZKComposedTransaction alloc] initWithSignedTransaction:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.signed_transaction))
-                                                            account:(::djinni_generated::Account::fromCpp(cpp.account))
-                                                        destination:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.destination))
-                                                             amount:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.amount))
-                                                               data:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.data))
-                                                                fee:(::djinni::String::fromCpp(cpp.fee))
-                                                              nonce:(::djinni::String::fromCpp(cpp.nonce))];
+    return [[ZKComposedTransaction alloc] initWithType:(::djinni::String::fromCpp(cpp.type))
+                                     signedTransaction:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.signed_transaction))
+                                               account:(::djinni_generated::Account::fromCpp(cpp.account))
+                                           destination:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.destination))
+                                                amount:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.amount))
+                                                  data:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.data))
+                                                   fee:(::djinni::String::fromCpp(cpp.fee))
+                                                 nonce:(::djinni::String::fromCpp(cpp.nonce))];
 }
 
 }  // namespace djinni_generated

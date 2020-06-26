@@ -11,6 +11,7 @@
 namespace zumo {
 
 class AccountCallback;
+class AccountFiatPropertiesCallback;
 class AccountListener;
 class MnemonicCallback;
 class SuccessCallback;
@@ -36,6 +37,8 @@ public:
     virtual void make_modulr_customer(const std::string & network, const std::string & first_name, const std::experimental::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const std::string & address_line_1, const std::experimental::optional<std::string> & address_line_2, const std::string & country, const std::string & post_code, const std::string & post_town, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     virtual void create_fiat_account(const std::string & network, const std::string & currency_code, const std::shared_ptr<AccountCallback> & callback) = 0;
+
+    virtual void get_nominated_account_fiat_properties(const std::string & account_id, const std::shared_ptr<AccountFiatPropertiesCallback> & callback) = 0;
 
     virtual void create_wallet(const std::string & mnemonic, const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
 

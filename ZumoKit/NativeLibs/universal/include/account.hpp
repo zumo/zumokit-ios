@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "crypto_properties.hpp"
-#include "fiat_properties.hpp"
+#include "account_crypto_properties.hpp"
+#include "account_fiat_properties.hpp"
 #include "stdx/optional.hpp"
 #include <string>
 #include <utility>
@@ -18,8 +18,8 @@ struct Account final {
     std::string network;
     std::string type;
     std::string balance;
-    std::experimental::optional<CryptoProperties> crypto_properties;
-    std::experimental::optional<FiatProperties> fiat_properties;
+    std::experimental::optional<AccountCryptoProperties> crypto_properties;
+    std::experimental::optional<AccountFiatProperties> fiat_properties;
 
     friend bool operator==(const Account& lhs, const Account& rhs);
     friend bool operator!=(const Account& lhs, const Account& rhs);
@@ -30,8 +30,8 @@ struct Account final {
             std::string network_,
             std::string type_,
             std::string balance_,
-            std::experimental::optional<CryptoProperties> crypto_properties_,
-            std::experimental::optional<FiatProperties> fiat_properties_)
+            std::experimental::optional<AccountCryptoProperties> crypto_properties_,
+            std::experimental::optional<AccountFiatProperties> fiat_properties_)
     : id(std::move(id_))
     , currency_type(std::move(currency_type_))
     , currency_code(std::move(currency_code_))

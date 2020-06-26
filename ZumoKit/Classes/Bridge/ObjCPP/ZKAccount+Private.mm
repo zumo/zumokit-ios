@@ -3,8 +3,8 @@
 
 #import "ZKAccount+Private.h"
 #import "DJIMarshal+Private.h"
-#import "ZKCryptoProperties+Private.h"
-#import "ZKFiatProperties+Private.h"
+#import "ZKAccountCryptoProperties+Private.h"
+#import "ZKAccountFiatProperties+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -18,8 +18,8 @@ auto Account::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.network),
             ::djinni::String::toCpp(obj.type),
             ::djinni::String::toCpp(obj.balance),
-            ::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoProperties>::toCpp(obj.cryptoProperties),
-            ::djinni::Optional<std::experimental::optional, ::djinni_generated::FiatProperties>::toCpp(obj.fiatProperties)};
+            ::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountCryptoProperties>::toCpp(obj.cryptoProperties),
+            ::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountFiatProperties>::toCpp(obj.fiatProperties)};
 }
 
 auto Account::fromCpp(const CppType& cpp) -> ObjcType
@@ -30,8 +30,8 @@ auto Account::fromCpp(const CppType& cpp) -> ObjcType
                                  network:(::djinni::String::fromCpp(cpp.network))
                                     type:(::djinni::String::fromCpp(cpp.type))
                                  balance:(::djinni::String::fromCpp(cpp.balance))
-                        cryptoProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::CryptoProperties>::fromCpp(cpp.crypto_properties))
-                          fiatProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::FiatProperties>::fromCpp(cpp.fiat_properties))];
+                        cryptoProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountCryptoProperties>::fromCpp(cpp.crypto_properties))
+                          fiatProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountFiatProperties>::fromCpp(cpp.fiat_properties))];
 }
 
 }  // namespace djinni_generated

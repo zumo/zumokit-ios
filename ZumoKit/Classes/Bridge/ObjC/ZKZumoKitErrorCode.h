@@ -56,3 +56,5 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORT
 extern NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET;
 extern NSString * __nonnull const ZKZumoKitErrorCodeALREADYMODULRCUSTOMER;
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED;
+extern NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET;
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE;

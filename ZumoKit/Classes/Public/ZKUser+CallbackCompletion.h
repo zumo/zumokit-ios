@@ -13,6 +13,7 @@
 #import "ZKMnemonicCallback.h"
 #import "ZKSuccessCallback.h"
 #import "ZKAccountCallback.h"
+#import "ZKAccountFiatPropertiesCallback.h"
 
 typedef void(^WalletCompletionBlock)(ZKWallet * _Nullable wallet, NSError * _Nullable error);
 
@@ -21,6 +22,8 @@ typedef void(^MnemonicCompletionBlock)(NSString * _Nullable mnemonic, NSError * 
 typedef void(^SuccessCompletionBlock)(NSError * _Nullable error);
 
 typedef void(^AccountCompletionBlock)(ZKAccount * _Nullable account, NSError * _Nullable error);
+
+typedef void(^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties * _Nullable accountFiatProperties, NSError * _Nullable error);
 
 @interface ZKUser (ZKUserCallbackCompletion)
 
@@ -55,6 +58,9 @@ typedef void(^AccountCompletionBlock)(ZKAccount * _Nullable account, NSError * _
 - (void)createFiatAccount:(nonnull NSString *)network
              currencyCode:(nonnull NSString *)currencyCode
                completion:(_Nonnull AccountCompletionBlock)completionHandler;
+
+- (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
+                               completion:(_Nonnull AccountFiatPropertiesCompletionBlock)completionHandler;
 
 @end
 

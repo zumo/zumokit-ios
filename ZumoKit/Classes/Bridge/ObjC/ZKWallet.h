@@ -41,6 +41,11 @@
                                sendMax:(BOOL)sendMax
                               callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
+- (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
+                                      amount:(nullable NSString *)amount
+                                     sendMax:(BOOL)sendMax
+                                    callback:(nullable id<ZKComposeTransactionCallback>)callback;
+
 - (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
               callback:(nullable id<ZKSubmitExchangeCallback>)callback;
 

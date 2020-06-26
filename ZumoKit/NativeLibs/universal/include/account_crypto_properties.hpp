@@ -10,21 +10,21 @@
 
 namespace zumo {
 
-struct CryptoProperties final {
+struct AccountCryptoProperties final {
     std::string address;
     std::string path;
     std::experimental::optional<int64_t> nonce;
     std::experimental::optional<std::string> utxo_pool;
     int8_t version;
 
-    friend bool operator==(const CryptoProperties& lhs, const CryptoProperties& rhs);
-    friend bool operator!=(const CryptoProperties& lhs, const CryptoProperties& rhs);
+    friend bool operator==(const AccountCryptoProperties& lhs, const AccountCryptoProperties& rhs);
+    friend bool operator!=(const AccountCryptoProperties& lhs, const AccountCryptoProperties& rhs);
 
-    CryptoProperties(std::string address_,
-                     std::string path_,
-                     std::experimental::optional<int64_t> nonce_,
-                     std::experimental::optional<std::string> utxo_pool_,
-                     int8_t version_)
+    AccountCryptoProperties(std::string address_,
+                            std::string path_,
+                            std::experimental::optional<int64_t> nonce_,
+                            std::experimental::optional<std::string> utxo_pool_,
+                            int8_t version_)
     : address(std::move(address_))
     , path(std::move(path_))
     , nonce(std::move(nonce_))

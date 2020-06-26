@@ -48,6 +48,11 @@ typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NS
                                sendMax:(BOOL)sendMax
                             completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
+- (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
+                                      amount:(nullable NSString *)amount
+                                     sendMax:(BOOL)sendMax
+                                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate

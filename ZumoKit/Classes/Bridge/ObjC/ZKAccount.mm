@@ -12,8 +12,8 @@
                            network:(nonnull NSString *)network
                               type:(nonnull NSString *)type
                            balance:(nonnull NSString *)balance
-                  cryptoProperties:(nullable ZKCryptoProperties *)cryptoProperties
-                    fiatProperties:(nullable ZKFiatProperties *)fiatProperties
+                  cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
+                    fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -34,8 +34,8 @@
                               network:(nonnull NSString *)network
                                  type:(nonnull NSString *)type
                               balance:(nonnull NSString *)balance
-                     cryptoProperties:(nullable ZKCryptoProperties *)cryptoProperties
-                       fiatProperties:(nullable ZKFiatProperties *)fiatProperties
+                     cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
+                       fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
 {
     return [(ZKAccount*)[self alloc] initWithId:id
                                    currencyType:currencyType

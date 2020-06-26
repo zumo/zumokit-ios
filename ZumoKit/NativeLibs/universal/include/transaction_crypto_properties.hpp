@@ -11,7 +11,7 @@
 
 namespace zumo {
 
-struct CryptoDetails final {
+struct TransactionCryptoProperties final {
     std::experimental::optional<std::string> tx_hash;
     std::experimental::optional<int64_t> nonce;
     std::string from_address;
@@ -22,18 +22,18 @@ struct CryptoDetails final {
     std::unordered_map<std::string, std::string> fiat_amount;
     std::unordered_map<std::string, std::string> fiat_fee;
 
-    friend bool operator==(const CryptoDetails& lhs, const CryptoDetails& rhs);
-    friend bool operator!=(const CryptoDetails& lhs, const CryptoDetails& rhs);
+    friend bool operator==(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);
+    friend bool operator!=(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);
 
-    CryptoDetails(std::experimental::optional<std::string> tx_hash_,
-                  std::experimental::optional<int64_t> nonce_,
-                  std::string from_address_,
-                  std::experimental::optional<std::string> to_address_,
-                  std::experimental::optional<std::string> data_,
-                  std::experimental::optional<std::string> gas_price_,
-                  std::experimental::optional<std::string> gas_limit_,
-                  std::unordered_map<std::string, std::string> fiat_amount_,
-                  std::unordered_map<std::string, std::string> fiat_fee_)
+    TransactionCryptoProperties(std::experimental::optional<std::string> tx_hash_,
+                                std::experimental::optional<int64_t> nonce_,
+                                std::string from_address_,
+                                std::experimental::optional<std::string> to_address_,
+                                std::experimental::optional<std::string> data_,
+                                std::experimental::optional<std::string> gas_price_,
+                                std::experimental::optional<std::string> gas_limit_,
+                                std::unordered_map<std::string, std::string> fiat_amount_,
+                                std::unordered_map<std::string, std::string> fiat_fee_)
     : tx_hash(std::move(tx_hash_))
     , nonce(std::move(nonce_))
     , from_address(std::move(from_address_))

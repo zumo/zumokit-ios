@@ -31,6 +31,8 @@ public:
 
     virtual void compose_internal_fiat_transaction(const std::string & from_account_id, const std::string & to_account_id, const std::experimental::optional<std::string> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
+    virtual void compose_transaction_to_nominated_account(const std::string & from_account_id, const std::experimental::optional<std::string> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+
     virtual void submit_exchange(const ComposedExchange & composed_exchange, const std::shared_ptr<SubmitExchangeCallback> & callback) = 0;
 
     virtual void compose_exchange(const std::string & deposit_account_id, const std::string & withdraw_account_id, const ExchangeRate & exchange_rate, const ExchangeSettings & exchange_settings, const std::experimental::optional<std::string> & value, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
