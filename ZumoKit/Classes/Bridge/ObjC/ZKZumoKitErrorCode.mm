@@ -96,6 +96,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET = @"amount_not_set";
 
 NSString * __nonnull const ZKZumoKitErrorCodeALREADYMODULRCUSTOMER = @"already_modulr_customer";
 
+NSString * __nonnull const ZKZumoKitErrorCodeUSERNOTMODULRCUSTOMER = @"user_not_modulr_customer";
+
 NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED = @"account_limit_exceeded";
 
 NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET = @"destination_provided_when_withdraw_set";

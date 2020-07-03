@@ -16,7 +16,7 @@
                      txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                 feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                               syncStatus:(ZKSyncStatus)syncStatus
-                        isModulrCustomer:(BOOL)isModulrCustomer
+                modulrCustomerOnNetworks:(nonnull NSArray<NSString *> *)modulrCustomerOnNetworks
 {
     if (self = [super init]) {
         _accounts = [accounts copy];
@@ -29,7 +29,7 @@
         _txServiceConnection = txServiceConnection;
         _feeRates = [feeRates copy];
         _syncStatus = syncStatus;
-        _isModulrCustomer = isModulrCustomer;
+        _modulrCustomerOnNetworks = [modulrCustomerOnNetworks copy];
     }
     return self;
 }
@@ -44,7 +44,7 @@
                       txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                  feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                                syncStatus:(ZKSyncStatus)syncStatus
-                         isModulrCustomer:(BOOL)isModulrCustomer
+                 modulrCustomerOnNetworks:(nonnull NSArray<NSString *> *)modulrCustomerOnNetworks
 {
     return [(ZKState*)[self alloc] initWithAccounts:accounts
                                        transactions:transactions
@@ -56,7 +56,7 @@
                                 txServiceConnection:txServiceConnection
                                            feeRates:feeRates
                                          syncStatus:syncStatus
-                                   isModulrCustomer:isModulrCustomer];
+                           modulrCustomerOnNetworks:modulrCustomerOnNetworks];
 }
 
 - (BOOL)isEqual:(id)other
@@ -75,7 +75,7 @@
             [self.txServiceConnection isEqual:typedOther.txServiceConnection] &&
             [self.feeRates isEqualToDictionary:typedOther.feeRates] &&
             self.syncStatus == typedOther.syncStatus &&
-            self.isModulrCustomer == typedOther.isModulrCustomer;
+            [self.modulrCustomerOnNetworks isEqualToArray:typedOther.modulrCustomerOnNetworks];
 }
 
 - (NSUInteger)hash
@@ -91,12 +91,12 @@
             self.txServiceConnection.hash ^
             self.feeRates.hash ^
             (NSUInteger)self.syncStatus ^
-            (NSUInteger)self.isModulrCustomer;
+            self.modulrCustomerOnNetworks.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p accounts:%@ transactions:%@ exchanges:%@ token:%@ activeUserId:%@ exchangeRates:%@ exchangeSettings:%@ txServiceConnection:%@ feeRates:%@ syncStatus:%@ isModulrCustomer:%@>", self.class, (void *)self, self.accounts, self.transactions, self.exchanges, self.token, self.activeUserId, self.exchangeRates, self.exchangeSettings, self.txServiceConnection, self.feeRates, @(self.syncStatus), @(self.isModulrCustomer)];
+    return [NSString stringWithFormat:@"<%@ %p accounts:%@ transactions:%@ exchanges:%@ token:%@ activeUserId:%@ exchangeRates:%@ exchangeSettings:%@ txServiceConnection:%@ feeRates:%@ syncStatus:%@ modulrCustomerOnNetworks:%@>", self.class, (void *)self, self.accounts, self.transactions, self.exchanges, self.token, self.activeUserId, self.exchangeRates, self.exchangeSettings, self.txServiceConnection, self.feeRates, @(self.syncStatus), self.modulrCustomerOnNetworks];
 }
 
 @end
