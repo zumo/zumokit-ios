@@ -109,6 +109,8 @@ struct ZumoKitErrorCode final {
     static std::string const DESTINATION_PROVIDED_WHEN_WITHDRAW_SET;
 
     static std::string const INVALID_TRANSACTION_TYPE;
+
+    static std::string const EXCHANGE_CURRENCIES_MUST_BE_DIFFERENT;
 };
 
 }  // namespace zumo

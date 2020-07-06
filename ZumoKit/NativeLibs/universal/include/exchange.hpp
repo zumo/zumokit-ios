@@ -30,6 +30,7 @@ struct Exchange final {
     ExchangeRate exchange_rate;
     ExchangeSettings exchange_settings;
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
+    std::experimental::optional<std::string> nonce;
     std::experimental::optional<int64_t> submitted_at;
     std::experimental::optional<int64_t> confirmed_at;
 
@@ -52,6 +53,7 @@ struct Exchange final {
              ExchangeRate exchange_rate_,
              ExchangeSettings exchange_settings_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
+             std::experimental::optional<std::string> nonce_,
              std::experimental::optional<int64_t> submitted_at_,
              std::experimental::optional<int64_t> confirmed_at_)
     : id(std::move(id_))
@@ -70,6 +72,7 @@ struct Exchange final {
     , exchange_rate(std::move(exchange_rate_))
     , exchange_settings(std::move(exchange_settings_))
     , exchange_rates(std::move(exchange_rates_))
+    , nonce(std::move(nonce_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
     {}

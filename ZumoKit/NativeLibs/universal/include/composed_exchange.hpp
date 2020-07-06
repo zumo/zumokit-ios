@@ -18,12 +18,13 @@ struct ComposedExchange final {
     Account withdraw_account;
     ExchangeRate exchange_rate;
     ExchangeSettings exchange_settings;
-    std::string exchange_address;
+    std::experimental::optional<std::string> exchange_address;
     std::string value;
     std::string return_value;
     std::string deposit_fee;
     std::string exchange_fee;
     std::string withdraw_fee;
+    std::experimental::optional<std::string> nonce;
 
     friend bool operator==(const ComposedExchange& lhs, const ComposedExchange& rhs);
     friend bool operator!=(const ComposedExchange& lhs, const ComposedExchange& rhs);
@@ -33,12 +34,13 @@ struct ComposedExchange final {
                      Account withdraw_account_,
                      ExchangeRate exchange_rate_,
                      ExchangeSettings exchange_settings_,
-                     std::string exchange_address_,
+                     std::experimental::optional<std::string> exchange_address_,
                      std::string value_,
                      std::string return_value_,
                      std::string deposit_fee_,
                      std::string exchange_fee_,
-                     std::string withdraw_fee_)
+                     std::string withdraw_fee_,
+                     std::experimental::optional<std::string> nonce_)
     : signed_transaction(std::move(signed_transaction_))
     , deposit_account(std::move(deposit_account_))
     , withdraw_account(std::move(withdraw_account_))
@@ -50,6 +52,7 @@ struct ComposedExchange final {
     , deposit_fee(std::move(deposit_fee_))
     , exchange_fee(std::move(exchange_fee_))
     , withdraw_fee(std::move(withdraw_fee_))
+    , nonce(std::move(nonce_))
     {}
 };
 
