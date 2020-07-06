@@ -18,12 +18,13 @@ auto ComposedExchange::toCpp(ObjcType obj) -> CppType
             ::djinni_generated::Account::toCpp(obj.withdrawAccount),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
             ::djinni_generated::ExchangeSettings::toCpp(obj.exchangeSettings),
-            ::djinni::String::toCpp(obj.exchangeAddress),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.exchangeAddress),
             ::djinni::String::toCpp(obj.value),
             ::djinni::String::toCpp(obj.returnValue),
             ::djinni::String::toCpp(obj.depositFee),
             ::djinni::String::toCpp(obj.exchangeFee),
-            ::djinni::String::toCpp(obj.withdrawFee)};
+            ::djinni::String::toCpp(obj.withdrawFee),
+            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.nonce)};
 }
 
 auto ComposedExchange::fromCpp(const CppType& cpp) -> ObjcType
@@ -33,12 +34,13 @@ auto ComposedExchange::fromCpp(const CppType& cpp) -> ObjcType
                                                  withdrawAccount:(::djinni_generated::Account::fromCpp(cpp.withdraw_account))
                                                     exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
                                                 exchangeSettings:(::djinni_generated::ExchangeSettings::fromCpp(cpp.exchange_settings))
-                                                 exchangeAddress:(::djinni::String::fromCpp(cpp.exchange_address))
+                                                 exchangeAddress:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.exchange_address))
                                                            value:(::djinni::String::fromCpp(cpp.value))
                                                      returnValue:(::djinni::String::fromCpp(cpp.return_value))
                                                       depositFee:(::djinni::String::fromCpp(cpp.deposit_fee))
                                                      exchangeFee:(::djinni::String::fromCpp(cpp.exchange_fee))
-                                                     withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))];
+                                                     withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))
+                                                           nonce:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.nonce))];
 }
 
 }  // namespace djinni_generated

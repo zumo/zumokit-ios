@@ -22,6 +22,7 @@
                       exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                   exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                      exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
+                             nonce:(nullable NSString *)nonce
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
 {
@@ -42,6 +43,7 @@
         _exchangeRate = exchangeRate;
         _exchangeSettings = exchangeSettings;
         _exchangeRates = [exchangeRates copy];
+        _nonce = [nonce copy];
         _submittedAt = submittedAt;
         _confirmedAt = confirmedAt;
     }
@@ -64,6 +66,7 @@
                           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                          exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
+                                 nonce:(nullable NSString *)nonce
                            submittedAt:(nullable NSNumber *)submittedAt
                            confirmedAt:(nullable NSNumber *)confirmedAt
 {
@@ -83,6 +86,7 @@
                                     exchangeRate:exchangeRate
                                 exchangeSettings:exchangeSettings
                                    exchangeRates:exchangeRates
+                                           nonce:nonce
                                      submittedAt:submittedAt
                                      confirmedAt:confirmedAt];
 }
@@ -109,6 +113,7 @@
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&
             [self.exchangeSettings isEqual:typedOther.exchangeSettings] &&
             [self.exchangeRates isEqualToDictionary:typedOther.exchangeRates] &&
+            ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
             ((self.confirmedAt == nil && typedOther.confirmedAt == nil) || (self.confirmedAt != nil && [self.confirmedAt isEqual:typedOther.confirmedAt]));
 }
@@ -132,13 +137,14 @@
             self.exchangeRate.hash ^
             self.exchangeSettings.hash ^
             self.exchangeRates.hash ^
+            self.nonce.hash ^
             self.submittedAt.hash ^
             self.confirmedAt.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ depositCurrency:%@ depositAccountId:%@ depositTransactionId:%@ withdrawCurrency:%@ withdrawAccountId:%@ withdrawTransactionId:%@ amount:%@ depositFee:%@ returnAmount:%@ exchangeFee:%@ withdrawFee:%@ exchangeRate:%@ exchangeSettings:%@ exchangeRates:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, self.status, self.depositCurrency, self.depositAccountId, self.depositTransactionId, self.withdrawCurrency, self.withdrawAccountId, self.withdrawTransactionId, self.amount, self.depositFee, self.returnAmount, self.exchangeFee, self.withdrawFee, self.exchangeRate, self.exchangeSettings, self.exchangeRates, self.submittedAt, self.confirmedAt];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ depositCurrency:%@ depositAccountId:%@ depositTransactionId:%@ withdrawCurrency:%@ withdrawAccountId:%@ withdrawTransactionId:%@ amount:%@ depositFee:%@ returnAmount:%@ exchangeFee:%@ withdrawFee:%@ exchangeRate:%@ exchangeSettings:%@ exchangeRates:%@ nonce:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, self.status, self.depositCurrency, self.depositAccountId, self.depositTransactionId, self.withdrawCurrency, self.withdrawAccountId, self.withdrawTransactionId, self.amount, self.depositFee, self.returnAmount, self.exchangeFee, self.withdrawFee, self.exchangeRate, self.exchangeSettings, self.exchangeRates, self.nonce, self.submittedAt, self.confirmedAt];
 }
 
 @end

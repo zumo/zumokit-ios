@@ -59,3 +59,4 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeUSERNOTMODULRCUSTOMER;
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE;
+extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGECURRENCIESMUSTBEDIFFERENT;

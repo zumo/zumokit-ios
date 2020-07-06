@@ -104,6 +104,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET 
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE = @"invalid_transaction_type";
 
+NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGECURRENCIESMUSTBEDIFFERENT = @"exchange_currencies_must_be_different";
+
 @implementation ZKZumoKitErrorCode
 
 - (nonnull instancetype)init

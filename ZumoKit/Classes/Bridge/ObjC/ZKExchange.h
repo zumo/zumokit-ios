@@ -22,6 +22,7 @@
                       exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                   exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                      exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
+                             nonce:(nullable NSString *)nonce
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt;
 + (nonnull instancetype)exchangeWithId:(nonnull NSString *)id
@@ -40,6 +41,7 @@
                           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                          exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
+                                 nonce:(nullable NSString *)nonce
                            submittedAt:(nullable NSNumber *)submittedAt
                            confirmedAt:(nullable NSNumber *)confirmedAt;
 
@@ -74,6 +76,8 @@
 @property (nonatomic, readonly, nonnull) ZKExchangeSettings * exchangeSettings;
 
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * exchangeRates;
+
+@property (nonatomic, readonly, nullable) NSString * nonce;
 
 @property (nonatomic, readonly, nullable) NSNumber * submittedAt;
 

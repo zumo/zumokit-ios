@@ -12,23 +12,25 @@
                                   withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                  exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                                  exchangeAddress:(nonnull NSString *)exchangeAddress
+                                  exchangeAddress:(nullable NSString *)exchangeAddress
                                             value:(nonnull NSString *)value
                                       returnValue:(nonnull NSString *)returnValue
                                        depositFee:(nonnull NSString *)depositFee
                                       exchangeFee:(nonnull NSString *)exchangeFee
-                                      withdrawFee:(nonnull NSString *)withdrawFee;
+                                      withdrawFee:(nonnull NSString *)withdrawFee
+                                            nonce:(nullable NSString *)nonce;
 + (nonnull instancetype)composedExchangeWithSignedTransaction:(nullable NSString *)signedTransaction
                                                depositAccount:(nonnull ZKAccount *)depositAccount
                                               withdrawAccount:(nonnull ZKAccount *)withdrawAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                              exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                                              exchangeAddress:(nonnull NSString *)exchangeAddress
+                                              exchangeAddress:(nullable NSString *)exchangeAddress
                                                         value:(nonnull NSString *)value
                                                   returnValue:(nonnull NSString *)returnValue
                                                    depositFee:(nonnull NSString *)depositFee
                                                   exchangeFee:(nonnull NSString *)exchangeFee
-                                                  withdrawFee:(nonnull NSString *)withdrawFee;
+                                                  withdrawFee:(nonnull NSString *)withdrawFee
+                                                        nonce:(nullable NSString *)nonce;
 
 @property (nonatomic, readonly, nullable) NSString * signedTransaction;
 
@@ -40,7 +42,7 @@
 
 @property (nonatomic, readonly, nonnull) ZKExchangeSettings * exchangeSettings;
 
-@property (nonatomic, readonly, nonnull) NSString * exchangeAddress;
+@property (nonatomic, readonly, nullable) NSString * exchangeAddress;
 
 @property (nonatomic, readonly, nonnull) NSString * value;
 
@@ -51,5 +53,7 @@
 @property (nonatomic, readonly, nonnull) NSString * exchangeFee;
 
 @property (nonatomic, readonly, nonnull) NSString * withdrawFee;
+
+@property (nonatomic, readonly, nullable) NSString * nonce;
 
 @end
