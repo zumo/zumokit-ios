@@ -12,6 +12,7 @@
                            network:(nonnull NSString *)network
                               type:(nonnull NSString *)type
                            balance:(nonnull NSString *)balance
+               hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
 {
@@ -22,6 +23,7 @@
         _network = [network copy];
         _type = [type copy];
         _balance = [balance copy];
+        _hasNominatedAccount = hasNominatedAccount;
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
     }
@@ -34,6 +36,7 @@
                               network:(nonnull NSString *)network
                                  type:(nonnull NSString *)type
                               balance:(nonnull NSString *)balance
+                  hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
 {
@@ -43,6 +46,7 @@
                                         network:network
                                            type:type
                                         balance:balance
+                            hasNominatedAccount:hasNominatedAccount
                                cryptoProperties:cryptoProperties
                                  fiatProperties:fiatProperties];
 }
@@ -59,6 +63,7 @@
             [self.network isEqualToString:typedOther.network] &&
             [self.type isEqualToString:typedOther.type] &&
             [self.balance isEqualToString:typedOther.balance] &&
+            self.hasNominatedAccount == typedOther.hasNominatedAccount &&
             ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
             ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties]));
 }
@@ -72,13 +77,14 @@
             self.network.hash ^
             self.type.hash ^
             self.balance.hash ^
+            (NSUInteger)self.hasNominatedAccount ^
             self.cryptoProperties.hash ^
             self.fiatProperties.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ currencyType:%@ currencyCode:%@ network:%@ type:%@ balance:%@ cryptoProperties:%@ fiatProperties:%@>", self.class, (void *)self, self.id, self.currencyType, self.currencyCode, self.network, self.type, self.balance, self.cryptoProperties, self.fiatProperties];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ currencyType:%@ currencyCode:%@ network:%@ type:%@ balance:%@ hasNominatedAccount:%@ cryptoProperties:%@ fiatProperties:%@>", self.class, (void *)self, self.id, self.currencyType, self.currencyCode, self.network, self.type, self.balance, @(self.hasNominatedAccount), self.cryptoProperties, self.fiatProperties];
 }
 
 @end

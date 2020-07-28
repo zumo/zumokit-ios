@@ -18,6 +18,7 @@ struct Account final {
     std::string network;
     std::string type;
     std::string balance;
+    bool has_nominated_account;
     std::experimental::optional<AccountCryptoProperties> crypto_properties;
     std::experimental::optional<AccountFiatProperties> fiat_properties;
 
@@ -30,6 +31,7 @@ struct Account final {
             std::string network_,
             std::string type_,
             std::string balance_,
+            bool has_nominated_account_,
             std::experimental::optional<AccountCryptoProperties> crypto_properties_,
             std::experimental::optional<AccountFiatProperties> fiat_properties_)
     : id(std::move(id_))
@@ -38,6 +40,7 @@ struct Account final {
     , network(std::move(network_))
     , type(std::move(type_))
     , balance(std::move(balance_))
+    , has_nominated_account(std::move(has_nominated_account_))
     , crypto_properties(std::move(crypto_properties_))
     , fiat_properties(std::move(fiat_properties_))
     {}
