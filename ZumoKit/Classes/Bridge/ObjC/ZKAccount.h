@@ -12,6 +12,7 @@
                            network:(nonnull NSString *)network
                               type:(nonnull NSString *)type
                            balance:(nonnull NSString *)balance
+               hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties;
 + (nonnull instancetype)accountWithId:(nonnull NSString *)id
@@ -20,6 +21,7 @@
                               network:(nonnull NSString *)network
                                  type:(nonnull NSString *)type
                               balance:(nonnull NSString *)balance
+                  hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties;
 
@@ -34,6 +36,8 @@
 @property (nonatomic, readonly, nonnull) NSString * type;
 
 @property (nonatomic, readonly, nonnull) NSString * balance;
+
+@property (nonatomic, readonly) BOOL hasNominatedAccount;
 
 @property (nonatomic, readonly, nullable) ZKAccountCryptoProperties * cryptoProperties;
 
