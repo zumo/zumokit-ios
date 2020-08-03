@@ -3,6 +3,7 @@
 
 #import "ZKExchange+Private.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #import "ZKExchangeRate+Private.h"
 #import "ZKExchangeSettings+Private.h"
 #include <cassert>
@@ -20,11 +21,11 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.withdrawCurrency),
             ::djinni::String::toCpp(obj.withdrawAccountId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.withdrawTransactionId),
-            ::djinni::String::toCpp(obj.amount),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.depositFee),
-            ::djinni::String::toCpp(obj.returnAmount),
-            ::djinni::String::toCpp(obj.exchangeFee),
-            ::djinni::String::toCpp(obj.withdrawFee),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.amount),
+            ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.depositFee),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnAmount),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.exchangeFee),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.withdrawFee),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
             ::djinni_generated::ExchangeSettings::toCpp(obj.exchangeSettings),
             ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
@@ -43,11 +44,11 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                          withdrawCurrency:(::djinni::String::fromCpp(cpp.withdraw_currency))
                         withdrawAccountId:(::djinni::String::fromCpp(cpp.withdraw_account_id))
                     withdrawTransactionId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.withdraw_transaction_id))
-                                   amount:(::djinni::String::fromCpp(cpp.amount))
-                               depositFee:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.deposit_fee))
-                             returnAmount:(::djinni::String::fromCpp(cpp.return_amount))
-                              exchangeFee:(::djinni::String::fromCpp(cpp.exchange_fee))
-                              withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))
+                                   amount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.amount))
+                               depositFee:(::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.deposit_fee))
+                             returnAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_amount))
+                              exchangeFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.exchange_fee))
+                              withdrawFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.withdraw_fee))
                              exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
                          exchangeSettings:(::djinni_generated::ExchangeSettings::fromCpp(cpp.exchange_settings))
                             exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))

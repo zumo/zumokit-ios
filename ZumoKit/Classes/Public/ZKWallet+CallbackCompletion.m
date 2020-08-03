@@ -16,10 +16,10 @@
 @implementation ZKWallet (ZKWalletCallbackCompletion)
 
 - (void)composeEthTransaction:(nonnull NSString *)fromAccountId
-                     gasPrice:(nonnull NSString *)gasPrice
-                     gasLimit:(nonnull NSString *)gasLimit
+                     gasPrice:(nonnull NSDecimalNumber *)gasPrice
+                     gasLimit:(nonnull NSDecimalNumber *)gasLimit
                   destination:(nullable NSString *)destination
-                       amount:(nullable NSString *)amount
+                       amount:(nullable NSDecimalNumber *)amount
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
@@ -41,8 +41,8 @@
 - (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
               changeAccountId:(nonnull NSString *)changeAccountId
                   destination:(nonnull NSString *)destination
-                       amount:(nullable NSString *)amount
-                      feeRate:(nonnull NSString *)feeRate
+                       amount:(nullable NSDecimalNumber *)amount
+                      feeRate:(nonnull NSDecimalNumber *)feeRate
                       sendMax:(BOOL)sendMax
                    completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
     
@@ -58,14 +58,14 @@
 
 - (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
                            toAccountId:(nonnull NSString *)toAccountId
-                                amount:(nullable NSString *)amount
+                                amount:(nullable NSDecimalNumber *)amount
                                sendMax:(BOOL)sendMax
                             completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
     [self composeInternalFiatTransaction:fromAccountId toAccountId:toAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
-                                      amount:(nullable NSString *)amount
+                                      amount:(nullable NSDecimalNumber *)amount
                                      sendMax:(BOOL)sendMax
                                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
         [self composeTransactionToNominatedAccount:fromAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
@@ -75,15 +75,15 @@
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                  value:(nullable NSString *)value
+                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler {
                  
     [self composeExchange:depositAccountId
         withdrawAccountId:withdrawAccountId
              exchangeRate:exchangeRate
-        exchangeSettings:exchangeSettings
-                    value:value
+         exchangeSettings:exchangeSettings
+                   amount:amount
                   sendMax:sendMax
                  callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
 

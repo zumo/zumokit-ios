@@ -6,6 +6,7 @@
 #include "stdx/optional.hpp"
 #include "transaction_crypto_properties.hpp"
 #include "transaction_fiat_properties.hpp"
+#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <string>
 #include <utility>
@@ -22,8 +23,8 @@ struct Transaction final {
     std::experimental::optional<std::string> to_account_id;
     std::string network;
     std::string status;
-    std::experimental::optional<std::string> amount;
-    std::experimental::optional<std::string> fee;
+    std::experimental::optional<::zumo::Decimal> amount;
+    std::experimental::optional<::zumo::Decimal> fee;
     std::experimental::optional<std::string> nonce;
     std::experimental::optional<TransactionCryptoProperties> crypto_properties;
     std::experimental::optional<TransactionFiatProperties> fiat_properties;
@@ -43,8 +44,8 @@ struct Transaction final {
                 std::experimental::optional<std::string> to_account_id_,
                 std::string network_,
                 std::string status_,
-                std::experimental::optional<std::string> amount_,
-                std::experimental::optional<std::string> fee_,
+                std::experimental::optional<::zumo::Decimal> amount_,
+                std::experimental::optional<::zumo::Decimal> fee_,
                 std::experimental::optional<std::string> nonce_,
                 std::experimental::optional<TransactionCryptoProperties> crypto_properties_,
                 std::experimental::optional<TransactionFiatProperties> fiat_properties_,

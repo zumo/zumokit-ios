@@ -5,6 +5,7 @@
 
 #include "account.hpp"
 #include "stdx/optional.hpp"
+#include "zumo/decimal.hpp"
 #include <string>
 #include <utility>
 
@@ -15,9 +16,9 @@ struct ComposedTransaction final {
     std::experimental::optional<std::string> signed_transaction;
     Account account;
     std::experimental::optional<std::string> destination;
-    std::experimental::optional<std::string> amount;
+    std::experimental::optional<::zumo::Decimal> amount;
     std::experimental::optional<std::string> data;
-    std::string fee;
+    ::zumo::Decimal fee;
     std::string nonce;
 
     friend bool operator==(const ComposedTransaction& lhs, const ComposedTransaction& rhs);
@@ -27,9 +28,9 @@ struct ComposedTransaction final {
                         std::experimental::optional<std::string> signed_transaction_,
                         Account account_,
                         std::experimental::optional<std::string> destination_,
-                        std::experimental::optional<std::string> amount_,
+                        std::experimental::optional<::zumo::Decimal> amount_,
                         std::experimental::optional<std::string> data_,
-                        std::string fee_,
+                        ::zumo::Decimal fee_,
                         std::string nonce_)
     : type(std::move(type_))
     , signed_transaction(std::move(signed_transaction_))

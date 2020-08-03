@@ -6,6 +6,7 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #import "ZKComposeExchangeCallback+Private.h"
 #import "ZKComposeTransactionCallback+Private.h"
 #import "ZKComposedExchange+Private.h"
@@ -47,20 +48,20 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 }
 
 - (void)composeEthTransaction:(nonnull NSString *)fromAccountId
-                     gasPrice:(nonnull NSString *)gasPrice
-                     gasLimit:(nonnull NSString *)gasLimit
+                     gasPrice:(nonnull NSDecimalNumber *)gasPrice
+                     gasLimit:(nonnull NSDecimalNumber *)gasLimit
                   destination:(nullable NSString *)destination
-                       amount:(nullable NSString *)amount
+                       amount:(nullable NSDecimalNumber *)amount
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
         _cppRefHandle.get()->compose_eth_transaction(::djinni::String::toCpp(fromAccountId),
-                                                     ::djinni::String::toCpp(gasPrice),
-                                                     ::djinni::String::toCpp(gasLimit),
+                                                     ::zumo::djinni::objc::DecimalConverter::toCpp(gasPrice),
+                                                     ::zumo::djinni::objc::DecimalConverter::toCpp(gasLimit),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(destination),
-                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
+                                                     ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(data),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(nonce),
                                                      ::djinni::Bool::toCpp(sendMax),
@@ -71,16 +72,16 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
               changeAccountId:(nonnull NSString *)changeAccountId
                   destination:(nonnull NSString *)destination
-                       amount:(nullable NSString *)amount
-                      feeRate:(nonnull NSString *)feeRate
+                       amount:(nullable NSDecimalNumber *)amount
+                      feeRate:(nonnull NSDecimalNumber *)feeRate
                       sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
         _cppRefHandle.get()->compose_btc_transaction(::djinni::String::toCpp(fromAccountId),
                                                      ::djinni::String::toCpp(changeAccountId),
                                                      ::djinni::String::toCpp(destination),
-                                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
-                                                     ::djinni::String::toCpp(feeRate),
+                                                     ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
+                                                     ::zumo::djinni::objc::DecimalConverter::toCpp(feeRate),
                                                      ::djinni::Bool::toCpp(sendMax),
                                                      ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
@@ -88,25 +89,25 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 
 - (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
                            toAccountId:(nonnull NSString *)toAccountId
-                                amount:(nullable NSString *)amount
+                                amount:(nullable NSDecimalNumber *)amount
                                sendMax:(BOOL)sendMax
                               callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
         _cppRefHandle.get()->compose_internal_fiat_transaction(::djinni::String::toCpp(fromAccountId),
                                                                ::djinni::String::toCpp(toAccountId),
-                                                               ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
+                                                               ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                                                ::djinni::Bool::toCpp(sendMax),
                                                                ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
 - (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
-                                      amount:(nullable NSString *)amount
+                                      amount:(nullable NSDecimalNumber *)amount
                                      sendMax:(BOOL)sendMax
                                     callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
         _cppRefHandle.get()->compose_transaction_to_nominated_account(::djinni::String::toCpp(fromAccountId),
-                                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(amount),
+                                                                      ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                                                       ::djinni::Bool::toCpp(sendMax),
                                                                       ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
@@ -124,7 +125,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                  value:(nullable NSString *)value
+                 amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback {
     try {
@@ -132,7 +133,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                                               ::djinni::String::toCpp(withdrawAccountId),
                                               ::djinni_generated::ExchangeRate::toCpp(exchangeRate),
                                               ::djinni_generated::ExchangeSettings::toCpp(exchangeSettings),
-                                              ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(value),
+                                              ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                               ::djinni::Bool::toCpp(sendMax),
                                               ::djinni_generated::ComposeExchangeCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()

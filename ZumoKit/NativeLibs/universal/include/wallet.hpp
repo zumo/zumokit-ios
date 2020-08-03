@@ -4,6 +4,7 @@
 #pragma once
 
 #include "stdx/optional.hpp"
+#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <memory>
 #include <string>
@@ -25,17 +26,17 @@ public:
 
     virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
 
-    virtual void compose_eth_transaction(const std::string & from_account_id, const std::string & gas_price, const std::string & gas_limit, const std::experimental::optional<std::string> & destination, const std::experimental::optional<std::string> & amount, const std::experimental::optional<std::string> & data, std::experimental::optional<int64_t> nonce, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+    virtual void compose_eth_transaction(const std::string & from_account_id, const ::zumo::Decimal & gas_price, const ::zumo::Decimal & gas_limit, const std::experimental::optional<std::string> & destination, const std::experimental::optional<::zumo::Decimal> & amount, const std::experimental::optional<std::string> & data, std::experimental::optional<int64_t> nonce, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
-    virtual void compose_btc_transaction(const std::string & from_account_id, const std::string & change_account_id, const std::string & destination, const std::experimental::optional<std::string> & amount, const std::string & fee_rate, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+    virtual void compose_btc_transaction(const std::string & from_account_id, const std::string & change_account_id, const std::string & destination, const std::experimental::optional<::zumo::Decimal> & amount, const ::zumo::Decimal & fee_rate, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
-    virtual void compose_internal_fiat_transaction(const std::string & from_account_id, const std::string & to_account_id, const std::experimental::optional<std::string> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+    virtual void compose_internal_fiat_transaction(const std::string & from_account_id, const std::string & to_account_id, const std::experimental::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
-    virtual void compose_transaction_to_nominated_account(const std::string & from_account_id, const std::experimental::optional<std::string> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+    virtual void compose_transaction_to_nominated_account(const std::string & from_account_id, const std::experimental::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
     virtual void submit_exchange(const ComposedExchange & composed_exchange, const std::shared_ptr<SubmitExchangeCallback> & callback) = 0;
 
-    virtual void compose_exchange(const std::string & deposit_account_id, const std::string & withdraw_account_id, const ExchangeRate & exchange_rate, const ExchangeSettings & exchange_settings, const std::experimental::optional<std::string> & value, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
+    virtual void compose_exchange(const std::string & deposit_account_id, const std::string & withdraw_account_id, const ExchangeRate & exchange_rate, const ExchangeSettings & exchange_settings, const std::experimental::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
 };
 
 }  // namespace zumo

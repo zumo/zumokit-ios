@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <string>
 #include <unordered_map>
@@ -15,10 +16,10 @@ struct ExchangeSettings final {
     std::unordered_map<std::string, std::string> deposit_address;
     std::string deposit_currency;
     std::string withdraw_currency;
-    std::string min_exchange_amount;
-    std::string fee_rate;
-    std::string deposit_fee_rate;
-    std::string withdraw_fee;
+    ::zumo::Decimal min_exchange_amount;
+    ::zumo::Decimal fee_rate;
+    ::zumo::Decimal deposit_fee_rate;
+    ::zumo::Decimal withdraw_fee;
     int64_t timestamp;
 
     friend bool operator==(const ExchangeSettings& lhs, const ExchangeSettings& rhs);
@@ -28,10 +29,10 @@ struct ExchangeSettings final {
                      std::unordered_map<std::string, std::string> deposit_address_,
                      std::string deposit_currency_,
                      std::string withdraw_currency_,
-                     std::string min_exchange_amount_,
-                     std::string fee_rate_,
-                     std::string deposit_fee_rate_,
-                     std::string withdraw_fee_,
+                     ::zumo::Decimal min_exchange_amount_,
+                     ::zumo::Decimal fee_rate_,
+                     ::zumo::Decimal deposit_fee_rate_,
+                     ::zumo::Decimal withdraw_fee_,
                      int64_t timestamp_)
     : id(std::move(id_))
     , deposit_address(std::move(deposit_address_))

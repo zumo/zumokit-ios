@@ -10,9 +10,9 @@
                    signedTransaction:(nullable NSString *)signedTransaction
                              account:(nonnull ZKAccount *)account
                          destination:(nullable NSString *)destination
-                              amount:(nullable NSString *)amount
+                              amount:(nullable NSDecimalNumber *)amount
                                 data:(nullable NSString *)data
-                                 fee:(nonnull NSString *)fee
+                                 fee:(nonnull NSDecimalNumber *)fee
                                nonce:(nonnull NSString *)nonce
 {
     if (self = [super init]) {
@@ -20,9 +20,9 @@
         _signedTransaction = [signedTransaction copy];
         _account = account;
         _destination = [destination copy];
-        _amount = [amount copy];
+        _amount = amount;
         _data = [data copy];
-        _fee = [fee copy];
+        _fee = fee;
         _nonce = [nonce copy];
     }
     return self;
@@ -32,9 +32,9 @@
                                   signedTransaction:(nullable NSString *)signedTransaction
                                             account:(nonnull ZKAccount *)account
                                         destination:(nullable NSString *)destination
-                                             amount:(nullable NSString *)amount
+                                             amount:(nullable NSDecimalNumber *)amount
                                                data:(nullable NSString *)data
-                                                fee:(nonnull NSString *)fee
+                                                fee:(nonnull NSDecimalNumber *)fee
                                               nonce:(nonnull NSString *)nonce
 {
     return [(ZKComposedTransaction*)[self alloc] initWithType:type
@@ -59,7 +59,7 @@
             ((self.destination == nil && typedOther.destination == nil) || (self.destination != nil && [self.destination isEqual:typedOther.destination])) &&
             ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
             ((self.data == nil && typedOther.data == nil) || (self.data != nil && [self.data isEqual:typedOther.data])) &&
-            [self.fee isEqualToString:typedOther.fee] &&
+            [self.fee isEqual:typedOther.fee] &&
             [self.nonce isEqualToString:typedOther.nonce];
 }
 
@@ -72,7 +72,7 @@
             self.destination.hash ^
             self.amount.hash ^
             self.data.hash ^
-            self.fee.hash ^
+            ((NSUInteger)self.fee) ^
             self.nonce.hash;
 }
 

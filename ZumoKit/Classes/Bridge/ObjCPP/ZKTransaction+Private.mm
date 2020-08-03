@@ -3,6 +3,7 @@
 
 #import "ZKTransaction+Private.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #import "ZKTransactionCryptoProperties+Private.h"
 #import "ZKTransactionFiatProperties+Private.h"
 #include <cassert>
@@ -21,8 +22,8 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.toAccountId),
             ::djinni::String::toCpp(obj.network),
             ::djinni::String::toCpp(obj.status),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.amount),
-            ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fee),
+            ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.amount),
+            ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.fee),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.nonce),
             ::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionCryptoProperties>::toCpp(obj.cryptoProperties),
             ::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionFiatProperties>::toCpp(obj.fiatProperties),
@@ -42,8 +43,8 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
                                  toAccountId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.to_account_id))
                                      network:(::djinni::String::fromCpp(cpp.network))
                                       status:(::djinni::String::fromCpp(cpp.status))
-                                      amount:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.amount))
-                                         fee:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.fee))
+                                      amount:(::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.amount))
+                                         fee:(::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.fee))
                                        nonce:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.nonce))
                             cryptoProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionCryptoProperties>::fromCpp(cpp.crypto_properties))
                               fiatProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionFiatProperties>::fromCpp(cpp.fiat_properties))

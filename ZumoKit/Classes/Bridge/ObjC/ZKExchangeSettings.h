@@ -8,19 +8,19 @@
                     depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
                    depositCurrency:(nonnull NSString *)depositCurrency
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                 minExchangeAmount:(nonnull NSString *)minExchangeAmount
-                           feeRate:(nonnull NSString *)feeRate
-                    depositFeeRate:(nonnull NSString *)depositFeeRate
-                       withdrawFee:(nonnull NSString *)withdrawFee
+                 minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
+                           feeRate:(nonnull NSDecimalNumber *)feeRate
+                    depositFeeRate:(nonnull NSDecimalNumber *)depositFeeRate
+                       withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
                          timestamp:(int64_t)timestamp;
 + (nonnull instancetype)exchangeSettingsWithId:(nonnull NSString *)id
                                 depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
                                depositCurrency:(nonnull NSString *)depositCurrency
                               withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                             minExchangeAmount:(nonnull NSString *)minExchangeAmount
-                                       feeRate:(nonnull NSString *)feeRate
-                                depositFeeRate:(nonnull NSString *)depositFeeRate
-                                   withdrawFee:(nonnull NSString *)withdrawFee
+                             minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
+                                       feeRate:(nonnull NSDecimalNumber *)feeRate
+                                depositFeeRate:(nonnull NSDecimalNumber *)depositFeeRate
+                                   withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
                                      timestamp:(int64_t)timestamp;
 
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -31,13 +31,13 @@
 
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 
-@property (nonatomic, readonly, nonnull) NSString * minExchangeAmount;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * minExchangeAmount;
 
-@property (nonatomic, readonly, nonnull) NSString * feeRate;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * feeRate;
 
-@property (nonatomic, readonly, nonnull) NSString * depositFeeRate;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * depositFeeRate;
 
-@property (nonatomic, readonly, nonnull) NSString * withdrawFee;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
 
 @property (nonatomic, readonly) int64_t timestamp;
 

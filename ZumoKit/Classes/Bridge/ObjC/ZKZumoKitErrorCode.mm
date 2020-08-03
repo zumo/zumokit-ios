@@ -18,7 +18,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED = @"not_authorized";
 
 NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED = @"wallet_limit_exceeded";
 
-NSString * __nonnull const ZKZumoKitErrorCodeNOWALLETTORECOVERFOUND = @"no_wallet_to_recover_found";
+NSString * __nonnull const ZKZumoKitErrorCodeNOWALLETFOUND = @"no_wallet_found";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE = @"invalid_recovery_phrase";
 
@@ -105,6 +105,10 @@ NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE = @"invalid_transaction_type";
 
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGECURRENCIESMUSTBEDIFFERENT = @"exchange_currencies_must_be_different";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED = @"incorrect_account_selected";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED = @"incorrect_change_account_selected";
 
 @implementation ZKZumoKitErrorCode
 

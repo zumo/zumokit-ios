@@ -3,6 +3,7 @@
 
 #import "ZKFeeRates+Private.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -10,9 +11,9 @@ namespace djinni_generated {
 auto FeeRates::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
-    return {::djinni::String::toCpp(obj.slow),
-            ::djinni::String::toCpp(obj.average),
-            ::djinni::String::toCpp(obj.fast),
+    return {::zumo::djinni::objc::DecimalConverter::toCpp(obj.slow),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.average),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.fast),
             ::djinni::F32::toCpp(obj.slowTime),
             ::djinni::F32::toCpp(obj.averageTime),
             ::djinni::F32::toCpp(obj.fastTime),
@@ -21,9 +22,9 @@ auto FeeRates::toCpp(ObjcType obj) -> CppType
 
 auto FeeRates::fromCpp(const CppType& cpp) -> ObjcType
 {
-    return [[ZKFeeRates alloc] initWithSlow:(::djinni::String::fromCpp(cpp.slow))
-                                    average:(::djinni::String::fromCpp(cpp.average))
-                                       fast:(::djinni::String::fromCpp(cpp.fast))
+    return [[ZKFeeRates alloc] initWithSlow:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.slow))
+                                    average:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.average))
+                                       fast:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.fast))
                                    slowTime:(::djinni::F32::fromCpp(cpp.slow_time))
                                 averageTime:(::djinni::F32::fromCpp(cpp.average_time))
                                    fastTime:(::djinni::F32::fromCpp(cpp.fast_time))

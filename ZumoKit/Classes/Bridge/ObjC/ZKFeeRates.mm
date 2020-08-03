@@ -6,18 +6,18 @@
 
 @implementation ZKFeeRates
 
-- (nonnull instancetype)initWithSlow:(nonnull NSString *)slow
-                             average:(nonnull NSString *)average
-                                fast:(nonnull NSString *)fast
+- (nonnull instancetype)initWithSlow:(nonnull NSDecimalNumber *)slow
+                             average:(nonnull NSDecimalNumber *)average
+                                fast:(nonnull NSDecimalNumber *)fast
                             slowTime:(float)slowTime
                          averageTime:(float)averageTime
                             fastTime:(float)fastTime
                               source:(nonnull NSString *)source
 {
     if (self = [super init]) {
-        _slow = [slow copy];
-        _average = [average copy];
-        _fast = [fast copy];
+        _slow = slow;
+        _average = average;
+        _fast = fast;
         _slowTime = slowTime;
         _averageTime = averageTime;
         _fastTime = fastTime;
@@ -26,9 +26,9 @@
     return self;
 }
 
-+ (nonnull instancetype)feeRatesWithSlow:(nonnull NSString *)slow
-                                 average:(nonnull NSString *)average
-                                    fast:(nonnull NSString *)fast
++ (nonnull instancetype)feeRatesWithSlow:(nonnull NSDecimalNumber *)slow
+                                 average:(nonnull NSDecimalNumber *)average
+                                    fast:(nonnull NSDecimalNumber *)fast
                                 slowTime:(float)slowTime
                              averageTime:(float)averageTime
                                 fastTime:(float)fastTime
@@ -49,9 +49,9 @@
         return NO;
     }
     ZKFeeRates *typedOther = (ZKFeeRates *)other;
-    return [self.slow isEqualToString:typedOther.slow] &&
-            [self.average isEqualToString:typedOther.average] &&
-            [self.fast isEqualToString:typedOther.fast] &&
+    return [self.slow isEqual:typedOther.slow] &&
+            [self.average isEqual:typedOther.average] &&
+            [self.fast isEqual:typedOther.fast] &&
             self.slowTime == typedOther.slowTime &&
             self.averageTime == typedOther.averageTime &&
             self.fastTime == typedOther.fastTime &&
@@ -61,9 +61,9 @@
 - (NSUInteger)hash
 {
     return NSStringFromClass([self class]).hash ^
-            self.slow.hash ^
-            self.average.hash ^
-            self.fast.hash ^
+            ((NSUInteger)self.slow) ^
+            ((NSUInteger)self.average) ^
+            ((NSUInteger)self.fast) ^
             (NSUInteger)self.slowTime ^
             (NSUInteger)self.averageTime ^
             (NSUInteger)self.fastTime ^

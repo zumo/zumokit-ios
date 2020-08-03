@@ -14,11 +14,11 @@
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
                  withdrawAccountId:(nonnull NSString *)withdrawAccountId
              withdrawTransactionId:(nullable NSString *)withdrawTransactionId
-                            amount:(nonnull NSString *)amount
-                        depositFee:(nullable NSString *)depositFee
-                      returnAmount:(nonnull NSString *)returnAmount
-                       exchangeFee:(nonnull NSString *)exchangeFee
-                       withdrawFee:(nonnull NSString *)withdrawFee
+                            amount:(nonnull NSDecimalNumber *)amount
+                        depositFee:(nullable NSDecimalNumber *)depositFee
+                      returnAmount:(nonnull NSDecimalNumber *)returnAmount
+                       exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
+                       withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
                       exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                   exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                      exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
@@ -35,11 +35,11 @@
         _withdrawCurrency = [withdrawCurrency copy];
         _withdrawAccountId = [withdrawAccountId copy];
         _withdrawTransactionId = [withdrawTransactionId copy];
-        _amount = [amount copy];
-        _depositFee = [depositFee copy];
-        _returnAmount = [returnAmount copy];
-        _exchangeFee = [exchangeFee copy];
-        _withdrawFee = [withdrawFee copy];
+        _amount = amount;
+        _depositFee = depositFee;
+        _returnAmount = returnAmount;
+        _exchangeFee = exchangeFee;
+        _withdrawFee = withdrawFee;
         _exchangeRate = exchangeRate;
         _exchangeSettings = exchangeSettings;
         _exchangeRates = [exchangeRates copy];
@@ -58,11 +58,11 @@
                       withdrawCurrency:(nonnull NSString *)withdrawCurrency
                      withdrawAccountId:(nonnull NSString *)withdrawAccountId
                  withdrawTransactionId:(nullable NSString *)withdrawTransactionId
-                                amount:(nonnull NSString *)amount
-                            depositFee:(nullable NSString *)depositFee
-                          returnAmount:(nonnull NSString *)returnAmount
-                           exchangeFee:(nonnull NSString *)exchangeFee
-                           withdrawFee:(nonnull NSString *)withdrawFee
+                                amount:(nonnull NSDecimalNumber *)amount
+                            depositFee:(nullable NSDecimalNumber *)depositFee
+                          returnAmount:(nonnull NSDecimalNumber *)returnAmount
+                           exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
+                           withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
                           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                          exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
@@ -105,11 +105,11 @@
             [self.withdrawCurrency isEqualToString:typedOther.withdrawCurrency] &&
             [self.withdrawAccountId isEqualToString:typedOther.withdrawAccountId] &&
             ((self.withdrawTransactionId == nil && typedOther.withdrawTransactionId == nil) || (self.withdrawTransactionId != nil && [self.withdrawTransactionId isEqual:typedOther.withdrawTransactionId])) &&
-            [self.amount isEqualToString:typedOther.amount] &&
+            [self.amount isEqual:typedOther.amount] &&
             ((self.depositFee == nil && typedOther.depositFee == nil) || (self.depositFee != nil && [self.depositFee isEqual:typedOther.depositFee])) &&
-            [self.returnAmount isEqualToString:typedOther.returnAmount] &&
-            [self.exchangeFee isEqualToString:typedOther.exchangeFee] &&
-            [self.withdrawFee isEqualToString:typedOther.withdrawFee] &&
+            [self.returnAmount isEqual:typedOther.returnAmount] &&
+            [self.exchangeFee isEqual:typedOther.exchangeFee] &&
+            [self.withdrawFee isEqual:typedOther.withdrawFee] &&
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&
             [self.exchangeSettings isEqual:typedOther.exchangeSettings] &&
             [self.exchangeRates isEqualToDictionary:typedOther.exchangeRates] &&
@@ -129,11 +129,11 @@
             self.withdrawCurrency.hash ^
             self.withdrawAccountId.hash ^
             self.withdrawTransactionId.hash ^
-            self.amount.hash ^
+            ((NSUInteger)self.amount) ^
             self.depositFee.hash ^
-            self.returnAmount.hash ^
-            self.exchangeFee.hash ^
-            self.withdrawFee.hash ^
+            ((NSUInteger)self.returnAmount) ^
+            ((NSUInteger)self.exchangeFee) ^
+            ((NSUInteger)self.withdrawFee) ^
             self.exchangeRate.hash ^
             self.exchangeSettings.hash ^
             self.exchangeRates.hash ^

@@ -11,7 +11,7 @@
                       currencyCode:(nonnull NSString *)currencyCode
                            network:(nonnull NSString *)network
                               type:(nonnull NSString *)type
-                           balance:(nonnull NSString *)balance
+                           balance:(nonnull NSDecimalNumber *)balance
                hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
@@ -22,7 +22,7 @@
         _currencyCode = [currencyCode copy];
         _network = [network copy];
         _type = [type copy];
-        _balance = [balance copy];
+        _balance = balance;
         _hasNominatedAccount = hasNominatedAccount;
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
@@ -35,7 +35,7 @@
                          currencyCode:(nonnull NSString *)currencyCode
                               network:(nonnull NSString *)network
                                  type:(nonnull NSString *)type
-                              balance:(nonnull NSString *)balance
+                              balance:(nonnull NSDecimalNumber *)balance
                   hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
@@ -62,7 +62,7 @@
             [self.currencyCode isEqualToString:typedOther.currencyCode] &&
             [self.network isEqualToString:typedOther.network] &&
             [self.type isEqualToString:typedOther.type] &&
-            [self.balance isEqualToString:typedOther.balance] &&
+            [self.balance isEqual:typedOther.balance] &&
             self.hasNominatedAccount == typedOther.hasNominatedAccount &&
             ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
             ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties]));
@@ -76,7 +76,7 @@
             self.currencyCode.hash ^
             self.network.hash ^
             self.type.hash ^
-            self.balance.hash ^
+            ((NSUInteger)self.balance) ^
             (NSUInteger)self.hasNominatedAccount ^
             self.cryptoProperties.hash ^
             self.fiatProperties.hash;
