@@ -11,7 +11,7 @@
                       currencyCode:(nonnull NSString *)currencyCode
                            network:(nonnull NSString *)network
                               type:(nonnull NSString *)type
-                           balance:(nonnull NSString *)balance
+                           balance:(nonnull NSDecimalNumber *)balance
                hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties;
@@ -20,7 +20,7 @@
                          currencyCode:(nonnull NSString *)currencyCode
                               network:(nonnull NSString *)network
                                  type:(nonnull NSString *)type
-                              balance:(nonnull NSString *)balance
+                              balance:(nonnull NSDecimalNumber *)balance
                   hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties;
@@ -35,7 +35,7 @@
 
 @property (nonatomic, readonly, nonnull) NSString * type;
 
-@property (nonatomic, readonly, nonnull) NSString * balance;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * balance;
 
 @property (nonatomic, readonly) BOOL hasNominatedAccount;
 

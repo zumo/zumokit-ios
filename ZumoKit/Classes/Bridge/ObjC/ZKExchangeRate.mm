@@ -9,7 +9,7 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                    depositCurrency:(nonnull NSString *)depositCurrency
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                             value:(nonnull NSString *)value
+                             value:(nonnull NSDecimalNumber *)value
                            validTo:(int64_t)validTo
                          timestamp:(int64_t)timestamp
 {
@@ -17,7 +17,7 @@
         _id = [id copy];
         _depositCurrency = [depositCurrency copy];
         _withdrawCurrency = [withdrawCurrency copy];
-        _value = [value copy];
+        _value = value;
         _validTo = validTo;
         _timestamp = timestamp;
     }
@@ -27,7 +27,7 @@
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
                            depositCurrency:(nonnull NSString *)depositCurrency
                           withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                                     value:(nonnull NSString *)value
+                                     value:(nonnull NSDecimalNumber *)value
                                    validTo:(int64_t)validTo
                                  timestamp:(int64_t)timestamp
 {
@@ -48,7 +48,7 @@
     return [self.id isEqualToString:typedOther.id] &&
             [self.depositCurrency isEqualToString:typedOther.depositCurrency] &&
             [self.withdrawCurrency isEqualToString:typedOther.withdrawCurrency] &&
-            [self.value isEqualToString:typedOther.value] &&
+            [self.value isEqual:typedOther.value] &&
             self.validTo == typedOther.validTo &&
             self.timestamp == typedOther.timestamp;
 }
@@ -59,7 +59,7 @@
             self.id.hash ^
             self.depositCurrency.hash ^
             self.withdrawCurrency.hash ^
-            self.value.hash ^
+            ((NSUInteger)self.value) ^
             (NSUInteger)self.validTo ^
             (NSUInteger)self.timestamp;
 }

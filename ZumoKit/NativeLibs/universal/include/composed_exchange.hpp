@@ -7,6 +7,7 @@
 #include "exchange_rate.hpp"
 #include "exchange_settings.hpp"
 #include "stdx/optional.hpp"
+#include "zumo/decimal.hpp"
 #include <string>
 #include <utility>
 
@@ -19,11 +20,11 @@ struct ComposedExchange final {
     ExchangeRate exchange_rate;
     ExchangeSettings exchange_settings;
     std::experimental::optional<std::string> exchange_address;
-    std::string value;
-    std::string return_value;
-    std::string deposit_fee;
-    std::string exchange_fee;
-    std::string withdraw_fee;
+    ::zumo::Decimal value;
+    ::zumo::Decimal return_value;
+    ::zumo::Decimal deposit_fee;
+    ::zumo::Decimal exchange_fee;
+    ::zumo::Decimal withdraw_fee;
     std::experimental::optional<std::string> nonce;
 
     friend bool operator==(const ComposedExchange& lhs, const ComposedExchange& rhs);
@@ -35,11 +36,11 @@ struct ComposedExchange final {
                      ExchangeRate exchange_rate_,
                      ExchangeSettings exchange_settings_,
                      std::experimental::optional<std::string> exchange_address_,
-                     std::string value_,
-                     std::string return_value_,
-                     std::string deposit_fee_,
-                     std::string exchange_fee_,
-                     std::string withdraw_fee_,
+                     ::zumo::Decimal value_,
+                     ::zumo::Decimal return_value_,
+                     ::zumo::Decimal deposit_fee_,
+                     ::zumo::Decimal exchange_fee_,
+                     ::zumo::Decimal withdraw_fee_,
                      std::experimental::optional<std::string> nonce_)
     : signed_transaction(std::move(signed_transaction_))
     , deposit_account(std::move(deposit_account_))

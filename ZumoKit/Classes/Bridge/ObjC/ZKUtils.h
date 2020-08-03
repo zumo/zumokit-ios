@@ -13,16 +13,16 @@
 - (BOOL)isValidBtcAddress:(nonnull NSString *)address
                   network:(nonnull NSString *)network;
 
-- (nonnull NSString *)weiToEth:(nonnull NSString *)number;
+- (nonnull NSDecimalNumber *)weiToEth:(nonnull NSDecimalNumber *)number;
 
-- (nonnull NSString *)ethToWei:(nonnull NSString *)number;
+- (nonnull NSDecimalNumber *)ethToWei:(nonnull NSDecimalNumber *)number;
 
-- (nonnull NSString *)gweiToEth:(nonnull NSString *)number;
+- (nonnull NSDecimalNumber *)gweiToEth:(nonnull NSDecimalNumber *)number;
 
-- (nonnull NSString *)ethToGwei:(nonnull NSString *)number;
+- (nonnull NSDecimalNumber *)ethToGwei:(nonnull NSDecimalNumber *)number;
 
-- (nonnull NSString *)weiToGwei:(nonnull NSString *)number;
+- (nonnull NSDecimalNumber *)weiToGwei:(nonnull NSDecimalNumber *)number;
 
-- (nonnull NSString *)gweiToWei:(nonnull NSString *)number;
+- (nonnull NSDecimalNumber *)gweiToWei:(nonnull NSDecimalNumber *)number;
 
 @end

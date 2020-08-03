@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <string>
 #include <utility>
@@ -13,7 +14,7 @@ struct ExchangeRate final {
     std::string id;
     std::string deposit_currency;
     std::string withdraw_currency;
-    std::string value;
+    ::zumo::Decimal value;
     int64_t valid_to;
     int64_t timestamp;
 
@@ -23,7 +24,7 @@ struct ExchangeRate final {
     ExchangeRate(std::string id_,
                  std::string deposit_currency_,
                  std::string withdraw_currency_,
-                 std::string value_,
+                 ::zumo::Decimal value_,
                  int64_t valid_to_,
                  int64_t timestamp_)
     : id(std::move(id_))

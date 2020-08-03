@@ -4,26 +4,26 @@
 #import <Foundation/Foundation.h>
 
 @interface ZKFeeRates : NSObject
-- (nonnull instancetype)initWithSlow:(nonnull NSString *)slow
-                             average:(nonnull NSString *)average
-                                fast:(nonnull NSString *)fast
+- (nonnull instancetype)initWithSlow:(nonnull NSDecimalNumber *)slow
+                             average:(nonnull NSDecimalNumber *)average
+                                fast:(nonnull NSDecimalNumber *)fast
                             slowTime:(float)slowTime
                          averageTime:(float)averageTime
                             fastTime:(float)fastTime
                               source:(nonnull NSString *)source;
-+ (nonnull instancetype)feeRatesWithSlow:(nonnull NSString *)slow
-                                 average:(nonnull NSString *)average
-                                    fast:(nonnull NSString *)fast
++ (nonnull instancetype)feeRatesWithSlow:(nonnull NSDecimalNumber *)slow
+                                 average:(nonnull NSDecimalNumber *)average
+                                    fast:(nonnull NSDecimalNumber *)fast
                                 slowTime:(float)slowTime
                              averageTime:(float)averageTime
                                 fastTime:(float)fastTime
                                   source:(nonnull NSString *)source;
 
-@property (nonatomic, readonly, nonnull) NSString * slow;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * slow;
 
-@property (nonatomic, readonly, nonnull) NSString * average;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * average;
 
-@property (nonatomic, readonly, nonnull) NSString * fast;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * fast;
 
 @property (nonatomic, readonly) float slowTime;
 

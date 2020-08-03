@@ -3,23 +3,23 @@
 namespace zumo
 {
 
-class ZumoKitException;
+  class ZumoKitException;
 
-namespace djinni
-{
-namespace objc
-{
+  namespace djinni
+  {
+    namespace objc
+    {
 
-struct ZumoKitExceptionConverter
-{
-  using CppType = ::zumo::ZumoKitException;
-  using ObjcType = NSError *;
+      struct ZumoKitExceptionConverter
+      {
+        using CppType = ::zumo::ZumoKitException;
+        using ObjcType = NSError *;
 
-  using Boxed = NSError;
+        using Boxed = NSError;
 
-  static ObjcType fromCpp(const CppType &cpp);
-};
+        static ObjcType fromCpp(const CppType &cpp);
+      };
 
-} // namespace objc
-} // namespace djinni
+    } // namespace objc
+  }   // namespace djinni
 } // namespace zumo

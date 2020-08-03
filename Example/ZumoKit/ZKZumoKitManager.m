@@ -98,6 +98,9 @@
                    ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
                    NSLog(@"BTC account: %@", btcAccount.cryptoProperties.address);
                    
+                   ZKAccount *fiatAccount = [_user getAccount:@"GBP" network:ZKNetworkTypeTESTNET type:ZKAccountTypeSTANDARD];
+                   NSLog(@"Fiat account ballance: %@", fiatAccount.balance.description);
+                   
                    [_user unlockWallet:userWalletPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
                            if (error != nil) {
                                NSLog(@"error: %@", [error description]);
@@ -145,8 +148,8 @@
 - (void)composeEthTransaction:(ZKAccount *) account
                        submit:(BOOL) submit {
     [_wallet composeEthTransaction:account.id
-                          gasPrice:@"60"
-                          gasLimit:@"21000"
+                          gasPrice:[NSDecimalNumber decimalNumberWithString:@"60"]
+                          gasLimit:[NSDecimalNumber decimalNumberWithString:@"21000"]
                        destination:@"0xD797c81C928a7F4CF7dEB960B5963697fAcFE0eE"
                             amount:nil
                               data:nil
@@ -185,7 +188,7 @@
                    changeAccountId:account.id
                        destination:@"2N6BfH356AicEzuC1dYt4gYkw6WFWZrfeSY"
                             amount:nil
-                           feeRate:@"20"
+                           feeRate:[NSDecimalNumber decimalNumberWithString:@"20"]
                            sendMax:YES
                         completion:^(ZKComposedTransaction * _Nullable transaction, NSError * _Nullable error) {
         
@@ -205,13 +208,13 @@
         widhdrawAccount:(ZKAccount *)withdrawAccount
            exchangeRate:(ZKExchangeRate *)exchangeRate
        exchangeSettings:(ZKExchangeSettings *)exchangeSettings
-                  value:(NSString *)value
+                 amount:(NSDecimalNumber *)amount
 {
     [_wallet composeExchange:depositAccount.id
            withdrawAccountId:withdrawAccount.id
                 exchangeRate:exchangeRate
             exchangeSettings:exchangeSettings
-                       value:nil
+                      amount:nil
                      sendMax:YES
                   completion:^(ZKComposedExchange * _Nullable exchange, NSError * _Nullable error) {
 

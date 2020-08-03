@@ -3,6 +3,7 @@
 
 #import "ZKExchangeSettings+Private.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -14,10 +15,10 @@ auto ExchangeSettings::toCpp(ObjcType obj) -> CppType
             ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(obj.depositAddress),
             ::djinni::String::toCpp(obj.depositCurrency),
             ::djinni::String::toCpp(obj.withdrawCurrency),
-            ::djinni::String::toCpp(obj.minExchangeAmount),
-            ::djinni::String::toCpp(obj.feeRate),
-            ::djinni::String::toCpp(obj.depositFeeRate),
-            ::djinni::String::toCpp(obj.withdrawFee),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.minExchangeAmount),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.feeRate),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.depositFeeRate),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.withdrawFee),
             ::djinni::I64::toCpp(obj.timestamp)};
 }
 
@@ -27,10 +28,10 @@ auto ExchangeSettings::fromCpp(const CppType& cpp) -> ObjcType
                                    depositAddress:(::djinni::Map<::djinni::String, ::djinni::String>::fromCpp(cpp.deposit_address))
                                   depositCurrency:(::djinni::String::fromCpp(cpp.deposit_currency))
                                  withdrawCurrency:(::djinni::String::fromCpp(cpp.withdraw_currency))
-                                minExchangeAmount:(::djinni::String::fromCpp(cpp.min_exchange_amount))
-                                          feeRate:(::djinni::String::fromCpp(cpp.fee_rate))
-                                   depositFeeRate:(::djinni::String::fromCpp(cpp.deposit_fee_rate))
-                                      withdrawFee:(::djinni::String::fromCpp(cpp.withdraw_fee))
+                                minExchangeAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.min_exchange_amount))
+                                          feeRate:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.fee_rate))
+                                   depositFeeRate:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.deposit_fee_rate))
+                                      withdrawFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.withdraw_fee))
                                         timestamp:(::djinni::I64::fromCpp(cpp.timestamp))];
 }
 

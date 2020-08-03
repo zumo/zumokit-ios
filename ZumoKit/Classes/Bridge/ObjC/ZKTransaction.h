@@ -15,8 +15,8 @@
                        toAccountId:(nullable NSString *)toAccountId
                            network:(nonnull NSString *)network
                             status:(nonnull NSString *)status
-                            amount:(nullable NSString *)amount
-                               fee:(nullable NSString *)fee
+                            amount:(nullable NSDecimalNumber *)amount
+                               fee:(nullable NSDecimalNumber *)fee
                              nonce:(nullable NSString *)nonce
                   cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
@@ -32,8 +32,8 @@
                               toAccountId:(nullable NSString *)toAccountId
                                   network:(nonnull NSString *)network
                                    status:(nonnull NSString *)status
-                                   amount:(nullable NSString *)amount
-                                      fee:(nullable NSString *)fee
+                                   amount:(nullable NSDecimalNumber *)amount
+                                      fee:(nullable NSDecimalNumber *)fee
                                     nonce:(nullable NSString *)nonce
                          cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
@@ -59,9 +59,9 @@
 
 @property (nonatomic, readonly, nonnull) NSString * status;
 
-@property (nonatomic, readonly, nullable) NSString * amount;
+@property (nonatomic, readonly, nullable) NSDecimalNumber * amount;
 
-@property (nonatomic, readonly, nullable) NSString * fee;
+@property (nonatomic, readonly, nullable) NSDecimalNumber * fee;
 
 @property (nonatomic, readonly, nullable) NSString * nonce;
 

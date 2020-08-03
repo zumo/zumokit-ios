@@ -15,8 +15,8 @@
                        toAccountId:(nullable NSString *)toAccountId
                            network:(nonnull NSString *)network
                             status:(nonnull NSString *)status
-                            amount:(nullable NSString *)amount
-                               fee:(nullable NSString *)fee
+                            amount:(nullable NSDecimalNumber *)amount
+                               fee:(nullable NSDecimalNumber *)fee
                              nonce:(nullable NSString *)nonce
                   cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
@@ -34,8 +34,8 @@
         _toAccountId = [toAccountId copy];
         _network = [network copy];
         _status = [status copy];
-        _amount = [amount copy];
-        _fee = [fee copy];
+        _amount = amount;
+        _fee = fee;
         _nonce = [nonce copy];
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
@@ -55,8 +55,8 @@
                               toAccountId:(nullable NSString *)toAccountId
                                   network:(nonnull NSString *)network
                                    status:(nonnull NSString *)status
-                                   amount:(nullable NSString *)amount
-                                      fee:(nullable NSString *)fee
+                                   amount:(nullable NSDecimalNumber *)amount
+                                      fee:(nullable NSDecimalNumber *)fee
                                     nonce:(nullable NSString *)nonce
                          cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties

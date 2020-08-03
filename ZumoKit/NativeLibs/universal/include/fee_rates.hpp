@@ -3,15 +3,16 @@
 
 #pragma once
 
+#include "zumo/decimal.hpp"
 #include <string>
 #include <utility>
 
 namespace zumo {
 
 struct FeeRates final {
-    std::string slow;
-    std::string average;
-    std::string fast;
+    ::zumo::Decimal slow;
+    ::zumo::Decimal average;
+    ::zumo::Decimal fast;
     float slow_time;
     float average_time;
     float fast_time;
@@ -20,9 +21,9 @@ struct FeeRates final {
     friend bool operator==(const FeeRates& lhs, const FeeRates& rhs);
     friend bool operator!=(const FeeRates& lhs, const FeeRates& rhs);
 
-    FeeRates(std::string slow_,
-             std::string average_,
-             std::string fast_,
+    FeeRates(::zumo::Decimal slow_,
+             ::zumo::Decimal average_,
+             ::zumo::Decimal fast_,
              float slow_time_,
              float average_time_,
              float fast_time_,

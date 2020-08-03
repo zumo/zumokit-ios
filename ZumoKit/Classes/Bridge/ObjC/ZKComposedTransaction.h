@@ -9,17 +9,17 @@
                    signedTransaction:(nullable NSString *)signedTransaction
                              account:(nonnull ZKAccount *)account
                          destination:(nullable NSString *)destination
-                              amount:(nullable NSString *)amount
+                              amount:(nullable NSDecimalNumber *)amount
                                 data:(nullable NSString *)data
-                                 fee:(nonnull NSString *)fee
+                                 fee:(nonnull NSDecimalNumber *)fee
                                nonce:(nonnull NSString *)nonce;
 + (nonnull instancetype)composedTransactionWithType:(nonnull NSString *)type
                                   signedTransaction:(nullable NSString *)signedTransaction
                                             account:(nonnull ZKAccount *)account
                                         destination:(nullable NSString *)destination
-                                             amount:(nullable NSString *)amount
+                                             amount:(nullable NSDecimalNumber *)amount
                                                data:(nullable NSString *)data
-                                                fee:(nonnull NSString *)fee
+                                                fee:(nonnull NSDecimalNumber *)fee
                                               nonce:(nonnull NSString *)nonce;
 
 @property (nonatomic, readonly, nonnull) NSString * type;
@@ -30,11 +30,11 @@
 
 @property (nonatomic, readonly, nullable) NSString * destination;
 
-@property (nonatomic, readonly, nullable) NSString * amount;
+@property (nonatomic, readonly, nullable) NSDecimalNumber * amount;
 
 @property (nonatomic, readonly, nullable) NSString * data;
 
-@property (nonatomic, readonly, nonnull) NSString * fee;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * fee;
 
 @property (nonatomic, readonly, nonnull) NSString * nonce;
 

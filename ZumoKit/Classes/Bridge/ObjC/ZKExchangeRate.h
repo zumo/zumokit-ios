@@ -7,13 +7,13 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                    depositCurrency:(nonnull NSString *)depositCurrency
                   withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                             value:(nonnull NSString *)value
+                             value:(nonnull NSDecimalNumber *)value
                            validTo:(int64_t)validTo
                          timestamp:(int64_t)timestamp;
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
                            depositCurrency:(nonnull NSString *)depositCurrency
                           withdrawCurrency:(nonnull NSString *)withdrawCurrency
-                                     value:(nonnull NSString *)value
+                                     value:(nonnull NSDecimalNumber *)value
                                    validTo:(int64_t)validTo
                                  timestamp:(int64_t)timestamp;
 
@@ -23,7 +23,7 @@
 
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 
-@property (nonatomic, readonly, nonnull) NSString * value;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * value;
 
 @property (nonatomic, readonly) int64_t validTo;
 

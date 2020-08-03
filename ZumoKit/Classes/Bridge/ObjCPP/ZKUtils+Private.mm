@@ -6,6 +6,7 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -53,45 +54,45 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSString *)weiToEth:(nonnull NSString *)number {
+- (nonnull NSDecimalNumber *)weiToEth:(nonnull NSDecimalNumber *)number {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->wei_to_eth(::djinni::String::toCpp(number));
-        return ::djinni::String::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->wei_to_eth(::zumo::djinni::objc::DecimalConverter::toCpp(number));
+        return ::zumo::djinni::objc::DecimalConverter::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSString *)ethToWei:(nonnull NSString *)number {
+- (nonnull NSDecimalNumber *)ethToWei:(nonnull NSDecimalNumber *)number {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->eth_to_wei(::djinni::String::toCpp(number));
-        return ::djinni::String::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->eth_to_wei(::zumo::djinni::objc::DecimalConverter::toCpp(number));
+        return ::zumo::djinni::objc::DecimalConverter::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSString *)gweiToEth:(nonnull NSString *)number {
+- (nonnull NSDecimalNumber *)gweiToEth:(nonnull NSDecimalNumber *)number {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->gwei_to_eth(::djinni::String::toCpp(number));
-        return ::djinni::String::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->gwei_to_eth(::zumo::djinni::objc::DecimalConverter::toCpp(number));
+        return ::zumo::djinni::objc::DecimalConverter::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSString *)ethToGwei:(nonnull NSString *)number {
+- (nonnull NSDecimalNumber *)ethToGwei:(nonnull NSDecimalNumber *)number {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->eth_to_gwei(::djinni::String::toCpp(number));
-        return ::djinni::String::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->eth_to_gwei(::zumo::djinni::objc::DecimalConverter::toCpp(number));
+        return ::zumo::djinni::objc::DecimalConverter::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSString *)weiToGwei:(nonnull NSString *)number {
+- (nonnull NSDecimalNumber *)weiToGwei:(nonnull NSDecimalNumber *)number {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->wei_to_gwei(::djinni::String::toCpp(number));
-        return ::djinni::String::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->wei_to_gwei(::zumo::djinni::objc::DecimalConverter::toCpp(number));
+        return ::zumo::djinni::objc::DecimalConverter::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSString *)gweiToWei:(nonnull NSString *)number {
+- (nonnull NSDecimalNumber *)gweiToWei:(nonnull NSDecimalNumber *)number {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->gwei_to_wei(::djinni::String::toCpp(number));
-        return ::djinni::String::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->gwei_to_wei(::zumo::djinni::objc::DecimalConverter::toCpp(number));
+        return ::zumo::djinni::objc::DecimalConverter::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

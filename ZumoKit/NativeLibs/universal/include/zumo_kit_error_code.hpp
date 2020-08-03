@@ -24,7 +24,7 @@ struct ZumoKitErrorCode final {
 
     static std::string const WALLET_LIMIT_EXCEEDED;
 
-    static std::string const NO_WALLET_TO_RECOVER_FOUND;
+    static std::string const NO_WALLET_FOUND;
 
     static std::string const INVALID_RECOVERY_PHRASE;
 
@@ -111,6 +111,10 @@ struct ZumoKitErrorCode final {
     static std::string const INVALID_TRANSACTION_TYPE;
 
     static std::string const EXCHANGE_CURRENCIES_MUST_BE_DIFFERENT;
+
+    static std::string const INCORRECT_ACCOUNT_SELECTED;
+
+    static std::string const INCORRECT_CHANGE_ACCOUNT_SELECTED;
 };
 
 }  // namespace zumo

@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <string>
 
@@ -18,17 +19,17 @@ public:
 
     virtual bool is_valid_btc_address(const std::string & address, const std::string & network) = 0;
 
-    virtual std::string wei_to_eth(const std::string & number) = 0;
+    virtual ::zumo::Decimal wei_to_eth(const ::zumo::Decimal & number) = 0;
 
-    virtual std::string eth_to_wei(const std::string & number) = 0;
+    virtual ::zumo::Decimal eth_to_wei(const ::zumo::Decimal & number) = 0;
 
-    virtual std::string gwei_to_eth(const std::string & number) = 0;
+    virtual ::zumo::Decimal gwei_to_eth(const ::zumo::Decimal & number) = 0;
 
-    virtual std::string eth_to_gwei(const std::string & number) = 0;
+    virtual ::zumo::Decimal eth_to_gwei(const ::zumo::Decimal & number) = 0;
 
-    virtual std::string wei_to_gwei(const std::string & number) = 0;
+    virtual ::zumo::Decimal wei_to_gwei(const ::zumo::Decimal & number) = 0;
 
-    virtual std::string gwei_to_wei(const std::string & number) = 0;
+    virtual ::zumo::Decimal gwei_to_wei(const ::zumo::Decimal & number) = 0;
 };
 
 }  // namespace zumo

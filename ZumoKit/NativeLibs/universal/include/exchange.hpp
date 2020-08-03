@@ -6,6 +6,7 @@
 #include "exchange_rate.hpp"
 #include "exchange_settings.hpp"
 #include "stdx/optional.hpp"
+#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <string>
 #include <unordered_map>
@@ -22,11 +23,11 @@ struct Exchange final {
     std::string withdraw_currency;
     std::string withdraw_account_id;
     std::experimental::optional<std::string> withdraw_transaction_id;
-    std::string amount;
-    std::experimental::optional<std::string> deposit_fee;
-    std::string return_amount;
-    std::string exchange_fee;
-    std::string withdraw_fee;
+    ::zumo::Decimal amount;
+    std::experimental::optional<::zumo::Decimal> deposit_fee;
+    ::zumo::Decimal return_amount;
+    ::zumo::Decimal exchange_fee;
+    ::zumo::Decimal withdraw_fee;
     ExchangeRate exchange_rate;
     ExchangeSettings exchange_settings;
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
@@ -45,11 +46,11 @@ struct Exchange final {
              std::string withdraw_currency_,
              std::string withdraw_account_id_,
              std::experimental::optional<std::string> withdraw_transaction_id_,
-             std::string amount_,
-             std::experimental::optional<std::string> deposit_fee_,
-             std::string return_amount_,
-             std::string exchange_fee_,
-             std::string withdraw_fee_,
+             ::zumo::Decimal amount_,
+             std::experimental::optional<::zumo::Decimal> deposit_fee_,
+             ::zumo::Decimal return_amount_,
+             ::zumo::Decimal exchange_fee_,
+             ::zumo::Decimal withdraw_fee_,
              ExchangeRate exchange_rate_,
              ExchangeSettings exchange_settings_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,

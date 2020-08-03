@@ -6,6 +6,7 @@
 #include "account_crypto_properties.hpp"
 #include "account_fiat_properties.hpp"
 #include "stdx/optional.hpp"
+#include "zumo/decimal.hpp"
 #include <string>
 #include <utility>
 
@@ -17,7 +18,7 @@ struct Account final {
     std::string currency_code;
     std::string network;
     std::string type;
-    std::string balance;
+    ::zumo::Decimal balance;
     bool has_nominated_account;
     std::experimental::optional<AccountCryptoProperties> crypto_properties;
     std::experimental::optional<AccountFiatProperties> fiat_properties;
@@ -30,7 +31,7 @@ struct Account final {
             std::string currency_code_,
             std::string network_,
             std::string type_,
-            std::string balance_,
+            ::zumo::Decimal balance_,
             bool has_nominated_account_,
             std::experimental::optional<AccountCryptoProperties> crypto_properties_,
             std::experimental::optional<AccountFiatProperties> fiat_properties_)

@@ -11,10 +11,10 @@
                            fromAddress:(nonnull NSString *)fromAddress
                              toAddress:(nullable NSString *)toAddress
                                   data:(nullable NSString *)data
-                              gasPrice:(nullable NSString *)gasPrice
-                              gasLimit:(nullable NSString *)gasLimit
-                            fiatAmount:(nonnull NSDictionary<NSString *, NSString *> *)fiatAmount
-                               fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee
+                              gasPrice:(nullable NSDecimalNumber *)gasPrice
+                              gasLimit:(nullable NSDecimalNumber *)gasLimit
+                            fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
+                               fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee
 {
     if (self = [super init]) {
         _txHash = [txHash copy];
@@ -22,8 +22,8 @@
         _fromAddress = [fromAddress copy];
         _toAddress = [toAddress copy];
         _data = [data copy];
-        _gasPrice = [gasPrice copy];
-        _gasLimit = [gasLimit copy];
+        _gasPrice = gasPrice;
+        _gasLimit = gasLimit;
         _fiatAmount = [fiatAmount copy];
         _fiatFee = [fiatFee copy];
     }
@@ -35,10 +35,10 @@
                                                   fromAddress:(nonnull NSString *)fromAddress
                                                     toAddress:(nullable NSString *)toAddress
                                                          data:(nullable NSString *)data
-                                                     gasPrice:(nullable NSString *)gasPrice
-                                                     gasLimit:(nullable NSString *)gasLimit
-                                                   fiatAmount:(nonnull NSDictionary<NSString *, NSString *> *)fiatAmount
-                                                      fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee
+                                                     gasPrice:(nullable NSDecimalNumber *)gasPrice
+                                                     gasLimit:(nullable NSDecimalNumber *)gasLimit
+                                                   fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
+                                                      fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee
 {
     return [(ZKTransactionCryptoProperties*)[self alloc] initWithTxHash:txHash
                                                                   nonce:nonce

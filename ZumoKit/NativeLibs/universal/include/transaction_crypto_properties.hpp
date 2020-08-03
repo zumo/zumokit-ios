@@ -4,6 +4,7 @@
 #pragma once
 
 #include "stdx/optional.hpp"
+#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <string>
 #include <unordered_map>
@@ -17,10 +18,10 @@ struct TransactionCryptoProperties final {
     std::string from_address;
     std::experimental::optional<std::string> to_address;
     std::experimental::optional<std::string> data;
-    std::experimental::optional<std::string> gas_price;
-    std::experimental::optional<std::string> gas_limit;
-    std::unordered_map<std::string, std::string> fiat_amount;
-    std::unordered_map<std::string, std::string> fiat_fee;
+    std::experimental::optional<::zumo::Decimal> gas_price;
+    std::experimental::optional<::zumo::Decimal> gas_limit;
+    std::unordered_map<std::string, ::zumo::Decimal> fiat_amount;
+    std::unordered_map<std::string, ::zumo::Decimal> fiat_fee;
 
     friend bool operator==(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);
     friend bool operator!=(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);
@@ -30,10 +31,10 @@ struct TransactionCryptoProperties final {
                                 std::string from_address_,
                                 std::experimental::optional<std::string> to_address_,
                                 std::experimental::optional<std::string> data_,
-                                std::experimental::optional<std::string> gas_price_,
-                                std::experimental::optional<std::string> gas_limit_,
-                                std::unordered_map<std::string, std::string> fiat_amount_,
-                                std::unordered_map<std::string, std::string> fiat_fee_)
+                                std::experimental::optional<::zumo::Decimal> gas_price_,
+                                std::experimental::optional<::zumo::Decimal> gas_limit_,
+                                std::unordered_map<std::string, ::zumo::Decimal> fiat_amount_,
+                                std::unordered_map<std::string, ::zumo::Decimal> fiat_fee_)
     : tx_hash(std::move(tx_hash_))
     , nonce(std::move(nonce_))
     , from_address(std::move(from_address_))

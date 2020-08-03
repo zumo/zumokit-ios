@@ -9,19 +9,19 @@
                            fromAddress:(nonnull NSString *)fromAddress
                              toAddress:(nullable NSString *)toAddress
                                   data:(nullable NSString *)data
-                              gasPrice:(nullable NSString *)gasPrice
-                              gasLimit:(nullable NSString *)gasLimit
-                            fiatAmount:(nonnull NSDictionary<NSString *, NSString *> *)fiatAmount
-                               fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee;
+                              gasPrice:(nullable NSDecimalNumber *)gasPrice
+                              gasLimit:(nullable NSDecimalNumber *)gasLimit
+                            fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
+                               fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee;
 + (nonnull instancetype)transactionCryptoPropertiesWithTxHash:(nullable NSString *)txHash
                                                         nonce:(nullable NSNumber *)nonce
                                                   fromAddress:(nonnull NSString *)fromAddress
                                                     toAddress:(nullable NSString *)toAddress
                                                          data:(nullable NSString *)data
-                                                     gasPrice:(nullable NSString *)gasPrice
-                                                     gasLimit:(nullable NSString *)gasLimit
-                                                   fiatAmount:(nonnull NSDictionary<NSString *, NSString *> *)fiatAmount
-                                                      fiatFee:(nonnull NSDictionary<NSString *, NSString *> *)fiatFee;
+                                                     gasPrice:(nullable NSDecimalNumber *)gasPrice
+                                                     gasLimit:(nullable NSDecimalNumber *)gasLimit
+                                                   fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
+                                                      fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee;
 
 @property (nonatomic, readonly, nullable) NSString * txHash;
 
@@ -33,12 +33,12 @@
 
 @property (nonatomic, readonly, nullable) NSString * data;
 
-@property (nonatomic, readonly, nullable) NSString * gasPrice;
+@property (nonatomic, readonly, nullable) NSDecimalNumber * gasPrice;
 
-@property (nonatomic, readonly, nullable) NSString * gasLimit;
+@property (nonatomic, readonly, nullable) NSDecimalNumber * gasLimit;
 
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * fiatAmount;
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatAmount;
 
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * fiatFee;
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatFee;
 
 @end
