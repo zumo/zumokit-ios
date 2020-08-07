@@ -16,6 +16,7 @@
 
     if (self) {
         _url = url;
+        _backOffGenerator = [[FuzzingBackOffGenerator alloc] initWithInitialBackOff:1 * 1000 maxBackOff:30 * 60 * 1000 randomizationFactor:[NSNumber numberWithFloat:0.5]];
     }
 
     return self;
@@ -54,6 +55,7 @@
 # pragma mark - SRWebSocketDelegate
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket {
+    [_backOffGenerator reset];
     if(_listener) {
         [_listener onOpen:@"new connection opened"];
     }
@@ -64,8 +66,8 @@
         [_listener onClose:[NSString stringWithFormat:@"closed with exit code %ld additional info: %@", (long) code, reason]];
     }
     WebSocketService * thisWebSocket = self;
-    double delayInSeconds = 5.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    int delayInMilliseconds = [_backOffGenerator next];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInMilliseconds * NSEC_PER_MSEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
             NSLog(@"Call reconnect");
             [thisWebSocket connect];
@@ -83,8 +85,8 @@
         [_listener onError:[error localizedDescription]];
     }
     WebSocketService * thisWebSocket = self;
-    double delayInSeconds = 5.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    int delayInMilliseconds = [_backOffGenerator next];
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInMilliseconds * NSEC_PER_MSEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         NSLog(@"Call reconnect");
         [thisWebSocket connect];
