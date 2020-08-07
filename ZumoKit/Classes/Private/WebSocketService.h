@@ -11,6 +11,7 @@
 
 #import "ZKWebSocketImpl.h"
 #import "ZKWebSocketListener.h"
+#import "FuzzingBackOffGenerator.h"
 #import <SocketRocket/SRWebSocket.h>
 
 @interface WebSocketService : NSObject <ZKWebSocketImpl, SRWebSocketDelegate>
@@ -18,6 +19,7 @@
 @property(strong, nonatomic) NSURL *url;
 @property(strong, nonatomic) SRWebSocket *webSocket;
 @property(strong, nonatomic) ZKWebSocketListener *listener;
+@property(strong, nonatomic) FuzzingBackOffGenerator *backOffGenerator;
 
 - (instancetype)init NS_UNAVAILABLE;
 
