@@ -3,7 +3,6 @@
 
 #import <Foundation/Foundation.h>
 
-/** Account type. Only relevant for Bitcoin accounts. All other accounts are STANDARD account type. */
 @interface ZKAccountType : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)accountType;

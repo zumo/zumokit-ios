@@ -6,7 +6,9 @@
 #import "ZKExchangeRate.h"
 #import "ZKExchangeSettings.h"
 #import "ZKFeeRates.h"
+#import "ZKSyncStatus.h"
 #import "ZKTransaction.h"
+#import "ZKTxServiceConnection.h"
 #import <Foundation/Foundation.h>
 
 @interface ZKState : NSObject
@@ -17,7 +19,9 @@
                             activeUserId:(nullable NSString *)activeUserId
                            exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                         exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
+                     txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                 feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
+                              syncStatus:(ZKSyncStatus)syncStatus
                 modulrCustomerOnNetworks:(nonnull NSArray<NSString *> *)modulrCustomerOnNetworks;
 + (nonnull instancetype)stateWithAccounts:(nonnull NSArray<ZKAccount *> *)accounts
                              transactions:(nonnull NSArray<ZKTransaction *> *)transactions
@@ -26,7 +30,9 @@
                              activeUserId:(nullable NSString *)activeUserId
                             exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                          exchangeSettings:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> *)exchangeSettings
+                      txServiceConnection:(nonnull ZKTxServiceConnection *)txServiceConnection
                                  feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
+                               syncStatus:(ZKSyncStatus)syncStatus
                  modulrCustomerOnNetworks:(nonnull NSArray<NSString *> *)modulrCustomerOnNetworks;
 
 @property (nonatomic, readonly, nonnull) NSArray<ZKAccount *> * accounts;
@@ -43,7 +49,11 @@
 
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> * exchangeSettings;
 
+@property (nonatomic, readonly, nonnull) ZKTxServiceConnection * txServiceConnection;
+
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, ZKFeeRates *> * feeRates;
+
+@property (nonatomic, readonly) ZKSyncStatus syncStatus;
 
 @property (nonatomic, readonly, nonnull) NSArray<NSString *> * modulrCustomerOnNetworks;
 

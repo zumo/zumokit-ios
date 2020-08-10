@@ -20,29 +20,10 @@ struct ComposedTransaction;
 struct ExchangeRate;
 struct ExchangeSettings;
 
-/**
- * User wallet
- * So many comments
- */
 class Wallet {
 public:
     virtual ~Wallet() {}
 
-    /**
-     * Returns an Image object that can then be painted on the screen.
-     * The url argument must specify an absolute <a href="#{@link}">{@link URL}</a>. The name
-     * argument is a specifier that is relative to the url argument.
-     * <p>
-     * This method always returns immediately, whether or not the
-     * image exists. When this applet attempts to draw the image on
-     * the screen, the data will be loaded. The graphics primitives
-     * that draw the image will incrementally paint on the screen.
-     *
-     * @param  url  an absolute URL giving the base location of the image
-     * @param  name the location of the image, relative to the url argument
-     * @return      the image at the specified URL
-     * @see         Transaction
-     */
     virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
 
     virtual void compose_eth_transaction(const std::string & from_account_id, const ::zumo::Decimal & gas_price, const ::zumo::Decimal & gas_limit, const std::experimental::optional<std::string> & destination, const std::experimental::optional<::zumo::Decimal> & amount, const std::experimental::optional<std::string> & data, std::experimental::optional<int64_t> nonce, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
