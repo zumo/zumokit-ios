@@ -9,7 +9,9 @@
 #include "exchange_settings.hpp"
 #include "fee_rates.hpp"
 #include "stdx/optional.hpp"
+#include "sync_status.hpp"
 #include "transaction.hpp"
+#include "tx_service_connection.hpp"
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -25,7 +27,9 @@ struct State final {
     std::experimental::optional<std::string> active_user_id;
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSettings>> exchange_settings;
+    TxServiceConnection tx_service_connection;
     std::unordered_map<std::string, FeeRates> fee_rates;
+    SyncStatus sync_status;
     std::vector<std::string> modulr_customer_on_networks;
 
     friend bool operator==(const State& lhs, const State& rhs);
@@ -38,7 +42,9 @@ struct State final {
           std::experimental::optional<std::string> active_user_id_,
           std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
           std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSettings>> exchange_settings_,
+          TxServiceConnection tx_service_connection_,
           std::unordered_map<std::string, FeeRates> fee_rates_,
+          SyncStatus sync_status_,
           std::vector<std::string> modulr_customer_on_networks_)
     : accounts(std::move(accounts_))
     , transactions(std::move(transactions_))
@@ -47,7 +53,9 @@ struct State final {
     , active_user_id(std::move(active_user_id_))
     , exchange_rates(std::move(exchange_rates_))
     , exchange_settings(std::move(exchange_settings_))
+    , tx_service_connection(std::move(tx_service_connection_))
     , fee_rates(std::move(fee_rates_))
+    , sync_status(std::move(sync_status_))
     , modulr_customer_on_networks(std::move(modulr_customer_on_networks_))
     {}
 };

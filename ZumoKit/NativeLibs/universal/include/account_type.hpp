@@ -8,7 +8,6 @@
 
 namespace zumo {
 
-/** Account type. Only relevant for Bitcoin accounts. All other accounts are STANDARD account type. */
 struct AccountType final {
 
     static std::string const STANDARD;
