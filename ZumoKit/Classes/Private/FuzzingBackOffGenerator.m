@@ -16,7 +16,7 @@
                             maxBackOff:(NSInteger)maxBackOff
                    randomizationFactor:(NSNumber *)randomizationFactor {
     self = [super init];
-    
+
     if(self) {
         if (randomizationFactor.doubleValue < 0 || randomizationFactor.doubleValue > 1) {
             @throw [NSException
@@ -38,13 +38,13 @@
         _nextBackOffTime = initialBackOff;
         _backOffTime = 0;
     }
-    
+
     return self;
 };
 
 /* Gets the next back off time. Until maxBackOff is reached. */
 - (int)next {
-    int ret = MIN(_nextBackOffTime, _maxBackOff);
+    int ret = (int) MIN(_nextBackOffTime, _maxBackOff);
     _nextBackOffTime += _backOffTime;
     if (_nextBackOffTime <= 0) {
         _nextBackOffTime = INT_MAX;

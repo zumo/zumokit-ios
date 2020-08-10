@@ -1,0 +1,50 @@
+{
+  "name": "ZumoKit",
+  "version": "1.0",
+  "summary": "ZumoKit is a Wallet as a Service SDK",
+  "homepage": "https://developers.zumo.money/docs/installation/ios.html",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Zumo": "hello@zumo.money"
+  },
+  "source": {
+    "git": "https://github.com/zumo/zumokit-ios.git",
+    "tag": "1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": [
+    "ZumoKit/Classes/**/*",
+    "ZumoKit/NativeLibs/universal/include/**/*"
+  ],
+  "preserve_paths": "ZumoKit/NativeLibs/universal/include/**/*",
+  "public_header_files": [
+    "ZumoKit/Classes/Public/*.h",
+    "ZumoKit/Classes/Bridge/ObjC/**/*.h"
+  ],
+  "private_header_files": [
+    "ZumoKit/Classes/Bridge/ObjC/ZKZumoCore.h",
+    "ZumoKit/Classes/Bridge/ObjC/ZKHttpCallback.h",
+    "ZumoKit/Classes/Bridge/ObjC/ZKHttpImpl.h",
+    "ZumoKit/Classes/Bridge/ObjC/ZKWebSocketImpl.h",
+    "ZumoKit/Classes/Bridge/ObjC/ZKWebSocketListener.h"
+  ],
+  "vendored_libraries": "ZumoKit/NativeLibs/universal/**/*.a",
+  "frameworks": "Foundation",
+  "libraries": "c++",
+  "dependencies": {
+    "SocketRocket": [
+      "~> 0.4.0"
+    ]
+  },
+  "pod_target_xcconfig": {
+    "HEADER_SEARCH_PATHS": "$(inherited) \"$(PODS_ROOT)/ZumoKit/NativeLibs/universal/include\"",
+    "OTHER_CFLAGS": "-fmodules -fcxx-modules",
+    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++14",
+    "CLANG_CXX_LIBRARY": "libc++"
+  }
+}
