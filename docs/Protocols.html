@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          ZumoKit 2.1.0-beta.8 Docs
+          ZumoKit 2.1.0-beta.9 Docs
         </a>
         
       </p>
@@ -194,6 +194,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKExchangeStatusPENDING">ZKExchangeStatusPENDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKExchangeStatusREJECTED">ZKExchangeStatusREJECTED</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
@@ -601,7 +604,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKAccountCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -609,13 +612,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKAccountCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="Classes/ZKAccount.html">ZKAccount</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">account</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKAccountCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -625,7 +622,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccountCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccountCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -643,7 +640,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKAccountFiatPropertiesCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -651,13 +648,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKAccountFiatPropertiesCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">account</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKAccountFiatPropertiesCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -667,7 +658,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatPropertiesCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatPropertiesCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -685,7 +676,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKAccountListener.html" class="slightly-smaller">See more</a>
                       </div>
@@ -693,12 +684,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKAccountListener</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">update</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="Classes/ZKAccount.html">ZKAccount</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">account</span>
-  <span class="nf">transactions</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">transactions</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKAccountListener</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -708,7 +694,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccountListener.h#L9-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccountListener.h#L10-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -726,7 +712,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link wallet class.</p>
 
                         <a href="Protocols/ZKComposeExchangeCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -734,13 +720,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKComposeExchangeCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedExchange</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKComposeExchangeCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -750,7 +730,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKComposeExchangeCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKComposeExchangeCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -768,7 +748,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link wallet class.</p>
 
                         <a href="Protocols/ZKComposeTransactionCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -776,13 +756,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKComposeTransactionCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedTransaction</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKComposeTransactionCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -792,7 +766,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKComposeTransactionCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKComposeTransactionCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -810,7 +784,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link ZumoKit class</p>
 
                         <a href="Protocols/ZKHistoricalExchangeRatesCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -818,13 +792,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKHistoricalExchangeRatesCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*&gt;</span> <span class="o">*&gt;</span> <span class="o">*&gt;</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">historicalExchangeRates</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKHistoricalExchangeRatesCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -834,7 +802,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -852,7 +820,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKMnemonicCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -860,13 +828,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKMnemonicCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">mnemonic</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKMnemonicCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -876,7 +838,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L7-L13">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L8-L14">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -894,7 +856,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link ZumoKit class</p>
 
                         <a href="Protocols/ZKStateListener.html" class="slightly-smaller">See more</a>
                       </div>
@@ -902,11 +864,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKStateListener</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">update</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="Classes/ZKState.html">ZKState</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">state</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKStateListener</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -916,7 +874,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKStateListener.h#L8-L12">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKStateListener.h#L9-L13">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -934,7 +892,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link wallet class.</p>
 
                         <a href="Protocols/ZKSubmitExchangeCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -942,13 +900,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKSubmitExchangeCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="Classes/ZKExchange.html">ZKExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchage</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKSubmitExchangeCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -958,7 +910,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKSubmitExchangeCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKSubmitExchangeCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -976,7 +928,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link wallet class.</p>
 
                         <a href="Protocols/ZKSubmitTransactionCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -984,13 +936,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKSubmitTransactionCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">transaction</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKSubmitTransactionCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1000,7 +946,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKSubmitTransactionCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKSubmitTransactionCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1018,7 +964,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKSuccessCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1026,13 +972,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKSuccessCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onSuccess</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKSuccessCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1042,7 +982,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKSuccessCallback.h#L7-L13">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKSuccessCallback.h#L8-L14">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1060,7 +1000,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKTransactionListener.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1068,11 +1008,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKTransactionListener</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">update</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">transaction</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKTransactionListener</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1082,7 +1018,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKTransactionListener.h#L8-L12">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKTransactionListener.h#L9-L13">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1100,7 +1036,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link ZumoKit class</p>
 
                         <a href="Protocols/ZKUserCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1108,13 +1044,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKUserCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="Classes/ZKUser.html">ZKUser</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKUserCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1124,7 +1054,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKUserCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKUserCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1142,7 +1072,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKUserListener.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1150,12 +1080,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKUserListener</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">update</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="Classes/ZKAccount.html">ZKAccount</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">accounts</span>
-  <span class="nf">transactions</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">transactions</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKUserListener</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1165,7 +1090,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKUserListener.h#L9-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKUserListener.h#L10-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1183,7 +1108,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Callback interface used by methods in @link user class.</p>
 
                         <a href="Protocols/ZKWalletCallback.html" class="slightly-smaller">See more</a>
                       </div>
@@ -1191,13 +1116,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKWalletCallback</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="Classes/ZKWallet.html">ZKWallet</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">wallet</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKWalletCallback</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1207,7 +1126,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h#L8-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h#L9-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1220,7 +1139,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-10)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

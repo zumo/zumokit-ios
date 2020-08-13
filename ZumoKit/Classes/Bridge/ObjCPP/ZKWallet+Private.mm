@@ -39,11 +39,21 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     return self;
 }
 
-- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
-                 callback:(nullable id<ZKSubmitTransactionCallback>)callback {
+- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
+              changeAccountId:(nonnull NSString *)changeAccountId
+                  destination:(nonnull NSString *)destination
+                       amount:(nullable NSDecimalNumber *)amount
+                      feeRate:(nonnull NSDecimalNumber *)feeRate
+                      sendMax:(BOOL)sendMax
+                     callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
-        _cppRefHandle.get()->submit_transaction(::djinni_generated::ComposedTransaction::toCpp(composedTransaction),
-                                                ::djinni_generated::SubmitTransactionCallback::toCpp(callback));
+        _cppRefHandle.get()->compose_btc_transaction(::djinni::String::toCpp(fromAccountId),
+                                                     ::djinni::String::toCpp(changeAccountId),
+                                                     ::djinni::String::toCpp(destination),
+                                                     ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
+                                                     ::zumo::djinni::objc::DecimalConverter::toCpp(feeRate),
+                                                     ::djinni::Bool::toCpp(sendMax),
+                                                     ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -64,24 +74,6 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                                                      ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(data),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(nonce),
-                                                     ::djinni::Bool::toCpp(sendMax),
-                                                     ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
-              changeAccountId:(nonnull NSString *)changeAccountId
-                  destination:(nonnull NSString *)destination
-                       amount:(nullable NSDecimalNumber *)amount
-                      feeRate:(nonnull NSDecimalNumber *)feeRate
-                      sendMax:(BOOL)sendMax
-                     callback:(nullable id<ZKComposeTransactionCallback>)callback {
-    try {
-        _cppRefHandle.get()->compose_btc_transaction(::djinni::String::toCpp(fromAccountId),
-                                                     ::djinni::String::toCpp(changeAccountId),
-                                                     ::djinni::String::toCpp(destination),
-                                                     ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
-                                                     ::zumo::djinni::objc::DecimalConverter::toCpp(feeRate),
                                                      ::djinni::Bool::toCpp(sendMax),
                                                      ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
@@ -113,11 +105,11 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
-              callback:(nullable id<ZKSubmitExchangeCallback>)callback {
+- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 callback:(nullable id<ZKSubmitTransactionCallback>)callback {
     try {
-        _cppRefHandle.get()->submit_exchange(::djinni_generated::ComposedExchange::toCpp(composedExchange),
-                                             ::djinni_generated::SubmitExchangeCallback::toCpp(callback));
+        _cppRefHandle.get()->submit_transaction(::djinni_generated::ComposedTransaction::toCpp(composedTransaction),
+                                                ::djinni_generated::SubmitTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -136,6 +128,14 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                                               ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                               ::djinni::Bool::toCpp(sendMax),
                                               ::djinni_generated::ComposeExchangeCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+              callback:(nullable id<ZKSubmitExchangeCallback>)callback {
+    try {
+        _cppRefHandle.get()->submit_exchange(::djinni_generated::ComposedExchange::toCpp(composedExchange),
+                                             ::djinni_generated::SubmitExchangeCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

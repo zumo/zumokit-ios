@@ -6,6 +6,7 @@
 #import "ZKExchangeSettings.h"
 #import <Foundation/Foundation.h>
 
+/** Result of the compose exchange method on @link wallet object. */
 @interface ZKComposedExchange : NSObject
 - (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
                                    depositAccount:(nonnull ZKAccount *)depositAccount
@@ -32,28 +33,52 @@
                                                   withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
                                                         nonce:(nullable NSString *)nonce;
 
+/** Signed transaction for a crypto transaction, null otherwise. */
 @property (nonatomic, readonly, nullable) NSString * signedTransaction;
 
+/** Source account. */
 @property (nonatomic, readonly, nonnull) ZKAccount * depositAccount;
 
+/** Target account. */
 @property (nonatomic, readonly, nonnull) ZKAccount * withdrawAccount;
 
+/** Exchange rate used composing exchange. */
 @property (nonatomic, readonly, nonnull) ZKExchangeRate * exchangeRate;
 
+/** Exchange settings used composing exchange. */
 @property (nonatomic, readonly, nonnull) ZKExchangeSettings * exchangeSettings;
 
+/**
+ * Zumo Exchange Service wallet address where outgoing crypto funds were deposited,
+ * null for exchanges from fiat currencies.
+ */
 @property (nonatomic, readonly, nullable) NSString * exchangeAddress;
 
+/** Exchange value in source account currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * value;
 
+/**
+ * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - withdrawFee</code>.
+ * @see exchange_settings
+ */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnValue;
 
+/** Outgoing transaction fee. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * depositFee;
 
+/**
+ * Exchange fee, calculated as <code>value X exchangeRate X feeRate</code>.
+ * @see exchange_settings
+ */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFee;
 
+/**
+ * Return transaction fee.
+ * @see exchange_settings
+ */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
 
+/** Unique nonce used to prevent double spend. */
 @property (nonatomic, readonly, nullable) NSString * nonce;
 
 @end

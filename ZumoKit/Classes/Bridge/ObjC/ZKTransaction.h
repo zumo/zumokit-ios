@@ -5,6 +5,7 @@
 #import "ZKTransactionFiatProperties.h"
 #import <Foundation/Foundation.h>
 
+/** Record containing transaction details. */
 @interface ZKTransaction : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                               type:(nonnull NSString *)type
@@ -41,38 +42,67 @@
                               confirmedAt:(nullable NSNumber *)confirmedAt
                                 timestamp:(int64_t)timestamp;
 
+/** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
+/**
+ * Transaction type.
+ * @see transaction_type
+ */
 @property (nonatomic, readonly, nonnull) NSString * type;
 
+/**
+ * Currency code.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSString * currencyCode;
 
+/** Sender integrator user identifier or null if it is external user. */
 @property (nonatomic, readonly, nullable) NSString * fromUserId;
 
+/** Recipient integrator user identifier or null if it is external user. */
 @property (nonatomic, readonly, nullable) NSString * toUserId;
 
+/** Sender account identifier if it is internal transaction or null otherwise. */
 @property (nonatomic, readonly, nullable) NSString * fromAccountId;
 
+/** Recipient account identifier if it is internal transaction or null otherwise. */
 @property (nonatomic, readonly, nullable) NSString * toAccountId;
 
+/**
+ * Network type.
+ * @see network_type
+ */
 @property (nonatomic, readonly, nonnull) NSString * network;
 
+/**
+ * Transaction status.
+ * @see transaction_status
+ */
 @property (nonatomic, readonly, nonnull) NSString * status;
 
+/** Amount in transaction currency or null if transaction is Ethereum contract deploy. */
 @property (nonatomic, readonly, nullable) NSDecimalNumber * amount;
 
+/** Transaction fee in transaction currency or null, if not yet available. */
 @property (nonatomic, readonly, nullable) NSDecimalNumber * fee;
 
+/** Transaction nonce or null. Used to prevent double spend. */
 @property (nonatomic, readonly, nullable) NSString * nonce;
 
+/** Crypto properties if it is crypto transaction, null otherwise. */
 @property (nonatomic, readonly, nullable) ZKTransactionCryptoProperties * cryptoProperties;
 
+/** Fiat properties if it is crypto transaction, null otherwise. */
 @property (nonatomic, readonly, nullable) ZKTransactionFiatProperties * fiatProperties;
 
+/** Epoch timestamp when transaction was submitted or null for incoming transactions from outside of Zumo ecosystem. */
 @property (nonatomic, readonly, nullable) NSNumber * submittedAt;
 
+/** Epoch timestamp when transaction was submitted or null if transaction was not confirmed yet. */
 @property (nonatomic, readonly, nullable) NSNumber * confirmedAt;
 
+/** Epoch timestamp, minimum non-null value between submitted at and confirmed at timestamps. */
 @property (nonatomic, readonly) int64_t timestamp;
 
 @end

@@ -5,6 +5,7 @@
 #import <Foundation/Foundation.h>
 
 
+/** Callback interface used by methods in @link user class. */
 @protocol ZKTransactionListener
 
 - (void)update:(nullable ZKTransaction *)transaction;

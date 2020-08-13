@@ -5,6 +5,7 @@
 #import "ZKAccountFiatProperties.h"
 #import <Foundation/Foundation.h>
 
+/** Record containing account details. */
 @interface ZKAccount : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                       currencyType:(nonnull NSString *)currencyType
@@ -25,22 +26,43 @@
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties;
 
+/** Unique account identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
+/**
+ * Account currency type.
+ * @see currency_type
+ */
 @property (nonatomic, readonly, nonnull) NSString * currencyType;
 
+/**
+ * Account currency code.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSString * currencyCode;
 
+/**
+ * Account network type.
+ * @see network_type
+ */
 @property (nonatomic, readonly, nonnull) NSString * network;
 
+/**
+ * Account type.
+ * @see account_type
+ */
 @property (nonatomic, readonly, nonnull) NSString * type;
 
+/** Account balance. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * balance;
 
+/** Account has associated nominated account. */
 @property (nonatomic, readonly) BOOL hasNominatedAccount;
 
+/** Account crypto properties if account is a crypto account, otherwise null. */
 @property (nonatomic, readonly, nullable) ZKAccountCryptoProperties * cryptoProperties;
 
+/** Account fiat properties if account is a fiat account, otherwise null. */
 @property (nonatomic, readonly, nullable) ZKAccountFiatProperties * fiatProperties;
 
 @end

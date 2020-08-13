@@ -13,20 +13,51 @@
 
 
 /**
- * User wallet
- * So many comments
+ * User wallet provides methods for transfer and exchange of fiat and cryptocurrency funds.
+ * Sending a transaction or making an exchange is a two step process. First a transaction or
+ * exchange has to be composed via one of the compose methods, then @link composed_transaction or
+ * @link composed_exchange can be submitted.
+ * <p>
+ * User wallet instance can be obtained by creating, unlocking or recovering user wallet via @link user instance.
  */
 @interface ZKWallet : NSObject
 
 /**
- * This method always returns immediately, whether or not the
- * image exists. When this applet attempts to draw the image on
- * the screen, the data will be loaded. The graphics primitives
- * that draw the image will incrementally paint on the screen.
+ * Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#bitcoin">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success @link composed_transaction  is returned via callback.
+ *
+ * @param fromAccountId   @link account identifier
+ * @param changeAccountId change @link account identifier, which can be the same as fromAccountId
+ * @param destination       destination wallet address
+ * @param amount            amount in BTC
+ * @param feeRate          fee rate in satoshis/byte
+ * @param sendMax          send maximum possible funds to destination
+ * @param callback          an interface to receive the result or error
  */
-- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
-                 callback:(nullable id<ZKSubmitTransactionCallback>)callback;
+- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
+              changeAccountId:(nonnull NSString *)changeAccountId
+                  destination:(nonnull NSString *)destination
+                       amount:(nullable NSDecimalNumber *)amount
+                      feeRate:(nonnull NSDecimalNumber *)feeRate
+                      sendMax:(BOOL)sendMax
+                     callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
+/**
+ * Compose Ethereum transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success @link composed_transaction is returned via callback.
+ *
+ * @param fromAccountId @link account identifier
+ * @param gasPrice       gas price in gwei
+ * @param gasLimit       gas limit
+ * @param destination     destination wallet address
+ * @param amount          amount in ETH
+ * @param data            data in string format or null
+ * @param nonce           next transaction nonce or null
+ * @param sendMax        send maximum possible funds to destination
+ * @param callback        an interface to receive the result or error
+ */
 - (void)composeEthTransaction:(nonnull NSString *)fromAccountId
                      gasPrice:(nonnull NSDecimalNumber *)gasPrice
                      gasLimit:(nonnull NSDecimalNumber *)gasLimit
@@ -37,28 +68,63 @@
                       sendMax:(BOOL)sendMax
                      callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
-- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
-              changeAccountId:(nonnull NSString *)changeAccountId
-                  destination:(nonnull NSString *)destination
-                       amount:(nullable NSDecimalNumber *)amount
-                      feeRate:(nonnull NSDecimalNumber *)feeRate
-                      sendMax:(BOOL)sendMax
-                     callback:(nullable id<ZKComposeTransactionCallback>)callback;
-
+/**
+ * Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success @link composed_transaction is returned via callback.
+ *
+ * @param fromAccountId @link account identifier
+ * @param toAccountId   @link account identifier
+ * @param amount          amount in source account currency
+ * @param sendMax        send maximum possible funds to destination
+ * @param callback        an interface to receive the result or error
+ */
 - (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
                            toAccountId:(nonnull NSString *)toAccountId
                                 amount:(nullable NSDecimalNumber *)amount
                                sendMax:(BOOL)sendMax
                               callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
+/**
+ * Compose transaction to nominated account asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success @link composed_transaction object is returned via callback.
+ *
+ * @param fromAccountId @link account identifier
+ * @param amount          amount in source account currency
+ * @param sendMax        send maximum possible funds to destination
+ * @param callback        an interface to receive the result or error
+ */
 - (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
                                       amount:(nullable NSDecimalNumber *)amount
                                      sendMax:(BOOL)sendMax
                                     callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
-- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
-              callback:(nullable id<ZKSubmitExchangeCallback>)callback;
+/**
+ * Submit a transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success @link transaction object is returned via callback.
+ *
+ * @param composedTransaction Composed transaction retrieved as a result
+ *                             of one of the compose transaction methods
+ * @param callback An interface to receive the result or error
+ */
+- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 callback:(nullable id<ZKSubmitTransactionCallback>)callback;
 
+/**
+ * Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
+ * <p>
+ * On success @link composed_exchange  is returned via callback.
+ *
+ * @param depositAccountId  @link account identifier
+ * @param withdrawAccountId @link account identifier
+ * @param exchangeRate       Zumo exchange rate obtained from ZumoKit state
+ * @param exchangeSettings   Zumo exchange settings obtained from ZumoKit state
+ * @param amount              amount in deposit account currency
+ * @param sendMax            exchange maximum possible funds
+ * @param callback            an interface to receive the result or error
+ */
 - (void)composeExchange:(nonnull NSString *)depositAccountId
       withdrawAccountId:(nonnull NSString *)withdrawAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
@@ -66,5 +132,17 @@
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback;
+
+/**
+ * Submit an exchange asynchronously. <a href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
+ * <p>
+ * On success @link exchange object is returned via callback.
+ *
+ * @param composedExchange Composed exchange retrieved as the result
+ *                          of <code>composeExchange</code> method
+ * @param callback An interface to receive the result or error
+ */
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+              callback:(nullable id<ZKSubmitExchangeCallback>)callback;
 
 @end

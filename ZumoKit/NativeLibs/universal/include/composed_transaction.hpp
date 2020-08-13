@@ -11,14 +11,29 @@
 
 namespace zumo {
 
+/**
+ * Result of one of the transaction compose methods on @link wallet object.
+ * @see wallet
+ */
 struct ComposedTransaction final {
+    /**
+     * Transaction type, 'FIAT', 'CRYPTO' or 'NOMINATED'.
+     * @see transaction_type
+     */
     std::string type;
+    /** Signed transaction for a crypto transaction, null otherwise. */
     std::experimental::optional<std::string> signed_transaction;
+    /** Account the composed transaction belongs to. */
     Account account;
+    /** Transaction destination, i.e. destination address for crypto transactions or user id for fiat transactions. */
     std::experimental::optional<std::string> destination;
+    /** Transaction amount in account currency. */
     std::experimental::optional<::zumo::Decimal> amount;
+    /** Optional transaction data if available. */
     std::experimental::optional<std::string> data;
+    /** Maximum transaction fee. */
     ::zumo::Decimal fee;
+    /** Transaction nonce to prevent double spend. */
     std::string nonce;
 
     friend bool operator==(const ComposedTransaction& lhs, const ComposedTransaction& rhs);

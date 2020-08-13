@@ -4,6 +4,7 @@
 #import <Foundation/Foundation.h>
 
 
+/** Callback interface used by methods in @link user class. */
 @protocol ZKMnemonicCallback
 
 - (void)onError:(nonnull NSError *)e;

@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Tracation type, 'CRYPTO', 'EXCHANGE', 'FIAT' or 'NOMINATED'. */
 @interface ZKTransactionType : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)transactionType;

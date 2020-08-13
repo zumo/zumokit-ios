@@ -3,6 +3,11 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * The code of error returned. Some errors that could be handled programmatically (e.g., balance too low)
+ * include an error code — a short string with a brief explanation — as a value for code.
+ * See <a href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
+ */
 @interface ZKZumoKitErrorCode : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)zumoKitErrorCode;
@@ -82,8 +87,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE;
 /** Requested private key derivation path is invalid. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH;
 /**
- * Invalid length of mnemonic phrase. Mnemonic phrase should be
- * 12, 15, 18, 21 or 24 words long.
+ * Invalid length of mnemonic phrase.
+ * Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.
  */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT;
 /** Network type not supported by requested operation. */
@@ -92,7 +97,7 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDNETWORKTYPE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDPASSWORD;
 /** "The provided recovery phrase does not correspond to existing wallet." */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE;
-/** Invalid transaction type. Check TransactionType for a list of valid transaction types. */
+/** Invalid transaction type. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE;
 /** Invalid transaction value. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE;
@@ -100,10 +105,7 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE;
 /** Transaction already submitted. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION;
-/**
- * No destination address.
- * In case no transaction data is provided, destination address is obligatory.
- */
+/** No destination address. In case no transaction data is provided, destination address is obligatory. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeNODESTINATIONADDRESS;
 /** No nominated account found. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeNONOMINATEDACCOUNTFOUND;

@@ -12,15 +12,37 @@
 
 namespace zumo {
 
+/**
+ * Record containing transaction's crypto properties.
+ * @see transaction
+ */
 struct TransactionCryptoProperties final {
+    /** Transaction hash or null. */
     std::experimental::optional<std::string> tx_hash;
+    /**
+     * Ethereum transaction nonce if greater than 0 and
+     * it is Ethereum transaction, otherwise returns null.
+     */
     std::experimental::optional<int64_t> nonce;
+    /** Wallet address of sender, */
     std::string from_address;
+    /** Wallet address of receiver or null, if it is Ethereum contract deploy. */
     std::experimental::optional<std::string> to_address;
+    /** Transaction data or null. */
     std::experimental::optional<std::string> data;
+    /** Ethereum gas price if it is Ethereum transaction, otherwise null. */
     std::experimental::optional<::zumo::Decimal> gas_price;
+    /** Ethereum gas limit if it is Ethereum transaction, otherwise null. */
     std::experimental::optional<::zumo::Decimal> gas_limit;
+    /**
+     * Amount in fiat currencies at the time of the transaction submission.
+     * @see currency_code
+     */
     std::unordered_map<std::string, ::zumo::Decimal> fiat_amount;
+    /**
+     * Fee in fiat currencies at the time of the transaction submission.
+     * @see currency_code
+     */
     std::unordered_map<std::string, ::zumo::Decimal> fiat_fee;
 
     friend bool operator==(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);

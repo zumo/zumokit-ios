@@ -10,6 +10,7 @@ namespace zumo {
 
 class Wallet;
 
+/** Callback interface used by methods in @link user class. */
 class WalletCallback {
 public:
     virtual ~WalletCallback() {}

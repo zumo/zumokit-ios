@@ -9,6 +9,7 @@ namespace zumo {
 
 struct Transaction;
 
+/** Callback interface used by methods in @link user class. */
 class TransactionListener {
 public:
     virtual ~TransactionListener() {}

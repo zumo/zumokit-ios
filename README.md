@@ -1,8 +1,10 @@
 # ZumoKit iOS SDK
 
-## Example
+ZumoKit is a state of the art wallet architecture underpinning our flagship product [Zumo](https://www.zumo.money/) that provides secure transfer and exchange of fiat and cryptocurrency funds.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## Docs
+
+Refer to ZumoKit SDK developer [documentation](https://developers.zumo.money/docs/intro/) and [reference](https://zumo.github.io/zumokit-ios/) for usage details.
 
 ## Requirements
 
@@ -18,13 +20,11 @@ ZumoKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :branch => 'release/1.3.0'
+pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :tag => '2.1.0'
 ```
 
-## Author
+## Example
 
-Ivan Romanovski, ivan.romanovski@dlabs.si
+The [example project](https://github.com/zumo/zumokit-ios/tree/master/Example) demonstrates the expected user flow, including authentication process, wallet creation and transaciton submission. Ask your [account manager](mailto:support@zumo.money) to provide you with neccesarry credentials.
 
-## License
-
-ZumoKit is available under the MIT license. See the LICENSE file for more info.
+To run the example project, clone the repo, and run `pod install` from the Example directory first.

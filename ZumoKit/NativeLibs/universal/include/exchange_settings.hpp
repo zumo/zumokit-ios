@@ -11,15 +11,34 @@
 
 namespace zumo {
 
+/** Zumo exchange settings used in making exchanges. */
 struct ExchangeSettings final {
+    /** Identifier. */
     std::string id;
+    /**
+     * Zumo Exchange Service wallet address for each network type.
+     * @see network_type
+     */
     std::unordered_map<std::string, std::string> deposit_address;
+    /**
+     * Currency code of outgoing transaction.
+     * @see currency_code
+     */
     std::string deposit_currency;
+    /**
+     * Currency code of return transaction.
+     * @see currency_code
+     */
     std::string withdraw_currency;
+    /** Minimum amount that can be exchanged in outgoing transaction currency. */
     ::zumo::Decimal min_exchange_amount;
+    /** Exchange fee rate that will be charged once currency is exchanged. */
     ::zumo::Decimal fee_rate;
+    /** Fee rate that will be used for outgoing transaction. */
     ::zumo::Decimal deposit_fee_rate;
+    /** Fee that will charged for return transaction. */
     ::zumo::Decimal withdraw_fee;
+    /** Epoch timestamp when the exchange settings were last updated. */
     int64_t timestamp;
 
     friend bool operator==(const ExchangeSettings& lhs, const ExchangeSettings& rhs);

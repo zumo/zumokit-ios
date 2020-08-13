@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Crypto transactions fee rates. */
 @interface ZKFeeRates : NSObject
 - (nonnull instancetype)initWithSlow:(nonnull NSDecimalNumber *)slow
                              average:(nonnull NSDecimalNumber *)average
@@ -19,18 +20,25 @@
                                 fastTime:(float)fastTime
                                   source:(nonnull NSString *)source;
 
+/** Fee rate resulting in slow confirmation time. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * slow;
 
+/** Fee rate resulting in average confirmation time. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * average;
 
+/** Fee rate resulting in fast confirmation time. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * fast;
 
+/** Slow confirmation time in hours. */
 @property (nonatomic, readonly) float slowTime;
 
+/** Average confirmation time in hours. */
 @property (nonatomic, readonly) float averageTime;
 
+/** Fast confirmation time in hours. */
 @property (nonatomic, readonly) float fastTime;
 
+/** Fee rate information provider. */
 @property (nonatomic, readonly, nonnull) NSString * source;
 
 @end

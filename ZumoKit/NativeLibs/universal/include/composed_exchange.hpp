@@ -13,18 +13,43 @@
 
 namespace zumo {
 
+/** Result of the compose exchange method on @link wallet object. */
 struct ComposedExchange final {
+    /** Signed transaction for a crypto transaction, null otherwise. */
     std::experimental::optional<std::string> signed_transaction;
+    /** Source account. */
     Account deposit_account;
+    /** Target account. */
     Account withdraw_account;
+    /** Exchange rate used composing exchange. */
     ExchangeRate exchange_rate;
+    /** Exchange settings used composing exchange. */
     ExchangeSettings exchange_settings;
+    /**
+     * Zumo Exchange Service wallet address where outgoing crypto funds were deposited,
+     * null for exchanges from fiat currencies.
+     */
     std::experimental::optional<std::string> exchange_address;
+    /** Exchange value in source account currency. */
     ::zumo::Decimal value;
+    /**
+     * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - withdrawFee</code>.
+     * @see exchange_settings
+     */
     ::zumo::Decimal return_value;
+    /** Outgoing transaction fee. */
     ::zumo::Decimal deposit_fee;
+    /**
+     * Exchange fee, calculated as <code>value X exchangeRate X feeRate</code>.
+     * @see exchange_settings
+     */
     ::zumo::Decimal exchange_fee;
+    /**
+     * Return transaction fee.
+     * @see exchange_settings
+     */
     ::zumo::Decimal withdraw_fee;
+    /** Unique nonce used to prevent double spend. */
     std::experimental::optional<std::string> nonce;
 
     friend bool operator==(const ComposedExchange& lhs, const ComposedExchange& rhs);

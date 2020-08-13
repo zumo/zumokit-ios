@@ -9,11 +9,20 @@
 
 namespace zumo {
 
+/**
+ * Account's fiat related properties.
+ * @see account
+ */
 struct AccountFiatProperties final {
+    /** Fiat account number or null. */
     std::experimental::optional<std::string> account_number;
+    /** Fiat account sort code or null. */
     std::experimental::optional<std::string> sort_code;
+    /** Fiat account BIC or null. */
     std::experimental::optional<std::string> bic;
+    /** Fiat account IBAN or null. */
     std::experimental::optional<std::string> iban;
+    /** Customer name or null. */
     std::experimental::optional<std::string> customer_name;
 
     friend bool operator==(const AccountFiatProperties& lhs, const AccountFiatProperties& rhs);

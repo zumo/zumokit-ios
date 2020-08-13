@@ -17,15 +17,25 @@
 
 namespace zumo {
 
+/** ZumuKit state. */
 struct State final {
+    /** Active user's accounts. */
     std::vector<Account> accounts;
+    /** Active user's transactions. */
     std::vector<Transaction> transactions;
+    /** Active user's exchanges. */
     std::vector<Exchange> exchanges;
+    /** Active user's token. */
     std::string token;
+    /** Active user's id. */
     std::experimental::optional<std::string> active_user_id;
+    /** Zumo exchange rates. */
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
+    /** Zumo exchange settings. */
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSettings>> exchange_settings;
+    /** Crypto transactions fee rates. */
     std::unordered_map<std::string, FeeRates> fee_rates;
+    /** List of networks where active user is Modulr customer. */
     std::vector<std::string> modulr_customer_on_networks;
 
     friend bool operator==(const State& lhs, const State& rhs);

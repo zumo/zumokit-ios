@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Currency code, such as 'GBP', 'BTC' or 'ETH'. */
 @interface ZKCurrencyCode : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)currencyCode;

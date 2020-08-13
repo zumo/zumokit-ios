@@ -9,6 +9,7 @@
 #import "ZKTransaction.h"
 #import <Foundation/Foundation.h>
 
+/** ZumuKit state. */
 @interface ZKState : NSObject
 - (nonnull instancetype)initWithAccounts:(nonnull NSArray<ZKAccount *> *)accounts
                             transactions:(nonnull NSArray<ZKTransaction *> *)transactions
@@ -29,22 +30,31 @@
                                  feeRates:(nonnull NSDictionary<NSString *, ZKFeeRates *> *)feeRates
                  modulrCustomerOnNetworks:(nonnull NSArray<NSString *> *)modulrCustomerOnNetworks;
 
+/** Active user's accounts. */
 @property (nonatomic, readonly, nonnull) NSArray<ZKAccount *> * accounts;
 
+/** Active user's transactions. */
 @property (nonatomic, readonly, nonnull) NSArray<ZKTransaction *> * transactions;
 
+/** Active user's exchanges. */
 @property (nonatomic, readonly, nonnull) NSArray<ZKExchange *> * exchanges;
 
+/** Active user's token. */
 @property (nonatomic, readonly, nonnull) NSString * token;
 
+/** Active user's id. */
 @property (nonatomic, readonly, nullable) NSString * activeUserId;
 
+/** Zumo exchange rates. */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * exchangeRates;
 
+/** Zumo exchange settings. */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSettings *> *> * exchangeSettings;
 
+/** Crypto transactions fee rates. */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, ZKFeeRates *> * feeRates;
 
+/** List of networks where active user is Modulr customer. */
 @property (nonatomic, readonly, nonnull) NSArray<NSString *> * modulrCustomerOnNetworks;
 
 @end

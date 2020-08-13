@@ -8,8 +8,14 @@
 
 namespace zumo {
 
+/**
+ * Record containing transaction's fiat properties.
+ * @see transaction
+ */
 struct TransactionFiatProperties final {
+    /** Sender fiat account properties. */
     AccountFiatProperties from_fiat_account;
+    /** Recipient fiat account properties. */
     AccountFiatProperties to_fiat_account;
 
     friend bool operator==(const TransactionFiatProperties& lhs, const TransactionFiatProperties& rhs);

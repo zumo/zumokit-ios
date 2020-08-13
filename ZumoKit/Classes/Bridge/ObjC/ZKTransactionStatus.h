@@ -3,16 +3,34 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Transaction status, such as 'PENDING' and 'CONFIRMED'.
+ * <p>
+ * Once transaction is submitted it has to be confirmed. This might take variable amount of time depending on the selected fee rate.
+ * Once a transaction is confirmed its status will change from pending to confirmed.
+ * <p>
+ * See <a href="https://developers.zumo.money/docs/guides/send-transactions#transaction-statuses">Send Transactions</a> guide for details.
+ */
 @interface ZKTransactionStatus : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)transactionStatus;
 
 @end
 
-extern NSString * __nonnull const ZKTransactionStatusPENDING;
-extern NSString * __nonnull const ZKTransactionStatusCONFIRMED;
-extern NSString * __nonnull const ZKTransactionStatusFAILED;
-extern NSString * __nonnull const ZKTransactionStatusRESUBMITTED;
-extern NSString * __nonnull const ZKTransactionStatusCANCELLED;
+/** Transaction has been paused by Transaction Service before being submitted to blockchain. */
 extern NSString * __nonnull const ZKTransactionStatusPAUSED;
+/** Transaction has been rejected by Transaction Service before being submitted to blockchain. */
 extern NSString * __nonnull const ZKTransactionStatusREJECTED;
+/** Transaction has been submitted to blockchain. */
+extern NSString * __nonnull const ZKTransactionStatusPENDING;
+/** Transacion was confirmed and added to blockchain. */
+extern NSString * __nonnull const ZKTransactionStatusCONFIRMED;
+/** Transaction failed. */
+extern NSString * __nonnull const ZKTransactionStatusFAILED;
+/** Ethereum transaction was overriden by sending the same transaction with higher gas price. */
+extern NSString * __nonnull const ZKTransactionStatusRESUBMITTED;
+/**
+ * Ethereum transaction was overriden by a different transaction with higher gas price than the previously
+ * submitted transaction and with with the same nonce as that previously submitted transaction.
+ */
+extern NSString * __nonnull const ZKTransactionStatusCANCELLED;

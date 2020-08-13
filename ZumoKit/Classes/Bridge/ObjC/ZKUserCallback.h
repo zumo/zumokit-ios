@@ -5,6 +5,7 @@
 @class ZKUser;
 
 
+/** Callback interface used by methods in @link ZumoKit class */
 @protocol ZKUserCallback
 
 - (void)onError:(nonnull NSError *)e;
