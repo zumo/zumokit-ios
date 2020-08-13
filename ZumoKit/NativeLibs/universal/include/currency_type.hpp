@@ -8,6 +8,7 @@
 
 namespace zumo {
 
+/** Curency type, 'FIAT' or 'CRYPTO'. */
 struct CurrencyType final {
 
     static std::string const FIAT;

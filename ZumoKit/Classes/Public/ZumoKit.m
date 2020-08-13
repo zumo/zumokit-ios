@@ -25,7 +25,7 @@ ZKZumoCore *zumoCore;
 - (instancetype)initWithApiKey:(NSString *)apiKey
                        apiRoot:(NSString *)apiRoot
                   txServiceUrl:(NSString *)txServiceUrl {
-    
+
     if( self = [super init] ) {
 
         // Init the impls needed for the C++ core

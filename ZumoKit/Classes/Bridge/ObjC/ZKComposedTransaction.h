@@ -4,6 +4,10 @@
 #import "ZKAccount.h"
 #import <Foundation/Foundation.h>
 
+/**
+ * Result of one of the transaction compose methods on @link wallet object.
+ * @see wallet
+ */
 @interface ZKComposedTransaction : NSObject
 - (nonnull instancetype)initWithType:(nonnull NSString *)type
                    signedTransaction:(nullable NSString *)signedTransaction
@@ -22,20 +26,31 @@
                                                 fee:(nonnull NSDecimalNumber *)fee
                                               nonce:(nonnull NSString *)nonce;
 
+/**
+ * Transaction type, 'FIAT', 'CRYPTO' or 'NOMINATED'.
+ * @see transaction_type
+ */
 @property (nonatomic, readonly, nonnull) NSString * type;
 
+/** Signed transaction for a crypto transaction, null otherwise. */
 @property (nonatomic, readonly, nullable) NSString * signedTransaction;
 
+/** Account the composed transaction belongs to. */
 @property (nonatomic, readonly, nonnull) ZKAccount * account;
 
+/** Transaction destination, i.e. destination address for crypto transactions or user id for fiat transactions. */
 @property (nonatomic, readonly, nullable) NSString * destination;
 
+/** Transaction amount in account currency. */
 @property (nonatomic, readonly, nullable) NSDecimalNumber * amount;
 
+/** Optional transaction data if available. */
 @property (nonatomic, readonly, nullable) NSString * data;
 
+/** Maximum transaction fee. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * fee;
 
+/** Transaction nonce to prevent double spend. */
 @property (nonatomic, readonly, nonnull) NSString * nonce;
 
 @end

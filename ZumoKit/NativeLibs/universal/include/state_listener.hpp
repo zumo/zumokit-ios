@@ -7,6 +7,7 @@ namespace zumo {
 
 struct State;
 
+/** Callback interface used by methods in @link ZumoKit class */
 class StateListener {
 public:
     virtual ~StateListener() {}

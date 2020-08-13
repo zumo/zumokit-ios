@@ -5,6 +5,7 @@
 #import <Foundation/Foundation.h>
 
 
+/** Callback interface used by methods in @link ZumoKit class */
 @protocol ZKStateListener
 
 - (void)update:(nonnull ZKState *)state;

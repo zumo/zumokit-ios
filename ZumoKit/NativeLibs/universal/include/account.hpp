@@ -12,15 +12,37 @@
 
 namespace zumo {
 
+/** Record containing account details. */
 struct Account final {
+    /** Unique account identifier. */
     std::string id;
+    /**
+     * Account currency type.
+     * @see currency_type
+     */
     std::string currency_type;
+    /**
+     * Account currency code.
+     * @see currency_code
+     */
     std::string currency_code;
+    /**
+     * Account network type.
+     * @see network_type
+     */
     std::string network;
+    /**
+     * Account type.
+     * @see account_type
+     */
     std::string type;
+    /** Account balance. */
     ::zumo::Decimal balance;
+    /** Account has associated nominated account. */
     bool has_nominated_account;
+    /** Account crypto properties if account is a crypto account, otherwise null. */
     std::experimental::optional<AccountCryptoProperties> crypto_properties;
+    /** Account fiat properties if account is a fiat account, otherwise null. */
     std::experimental::optional<AccountFiatProperties> fiat_properties;
 
     friend bool operator==(const Account& lhs, const Account& rhs);

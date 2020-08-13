@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Curency type, 'FIAT' or 'CRYPTO'. */
 @interface ZKCurrencyType : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)currencyType;

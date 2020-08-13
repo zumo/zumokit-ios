@@ -12,6 +12,7 @@ namespace zumo {
 
 struct ExchangeRate;
 
+/** Callback interface used by methods in @link ZumoKit class */
 class HistoricalExchangeRatesCallback {
 public:
     virtual ~HistoricalExchangeRatesCallback() {}

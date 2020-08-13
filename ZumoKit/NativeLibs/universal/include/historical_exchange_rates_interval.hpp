@@ -8,6 +8,7 @@
 
 namespace zumo {
 
+/** Historical exchange rate intervals, such as 'hour', 'week' or 'year' */
 struct HistoricalExchangeRatesInterval final {
 
     static std::string const HOUR;

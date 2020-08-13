@@ -6,6 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
+/** Callback interface used by methods in @link user class. */
 @protocol ZKAccountListener
 
 - (void)update:(nullable ZKAccount *)account

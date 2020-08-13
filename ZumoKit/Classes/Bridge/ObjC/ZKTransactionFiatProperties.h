@@ -4,14 +4,20 @@
 #import "ZKAccountFiatProperties.h"
 #import <Foundation/Foundation.h>
 
+/**
+ * Record containing transaction's fiat properties.
+ * @see transaction
+ */
 @interface ZKTransactionFiatProperties : NSObject
 - (nonnull instancetype)initWithFromFiatAccount:(nonnull ZKAccountFiatProperties *)fromFiatAccount
                                   toFiatAccount:(nonnull ZKAccountFiatProperties *)toFiatAccount;
 + (nonnull instancetype)transactionFiatPropertiesWithFromFiatAccount:(nonnull ZKAccountFiatProperties *)fromFiatAccount
                                                        toFiatAccount:(nonnull ZKAccountFiatProperties *)toFiatAccount;
 
+/** Sender fiat account properties. */
 @property (nonatomic, readonly, nonnull) ZKAccountFiatProperties * fromFiatAccount;
 
+/** Recipient fiat account properties. */
 @property (nonatomic, readonly, nonnull) ZKAccountFiatProperties * toFiatAccount;
 
 @end

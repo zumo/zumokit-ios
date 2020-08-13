@@ -8,6 +8,7 @@
 
 namespace zumo {
 
+/** Currency code, such as 'GBP', 'BTC' or 'ETH'. */
 struct CurrencyCode final {
 
     static std::string const GBP;

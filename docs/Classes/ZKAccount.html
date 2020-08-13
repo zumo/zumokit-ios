@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.1.0-beta.8 Docs
+          ZumoKit 2.1.0-beta.9 Docs
         </a>
         
       </p>
@@ -194,6 +194,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusPENDING">ZKExchangeStatusPENDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusREJECTED">ZKExchangeStatusREJECTED</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
@@ -582,45 +585,7 @@
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKAccount</span> <span class="p">:</span> <span class="nc">NSObject</span>
-<span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">id</span>
-                      <span class="nf">currencyType</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyType</span>
-                      <span class="nf">currencyCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyCode</span>
-                           <span class="nf">network</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span>
-                              <span class="nf">type</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
-                           <span class="nf">balance</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">balance</span>
-               <span class="nf">hasNominatedAccount</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">hasNominatedAccount</span>
-                  <span class="nf">cryptoProperties</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">cryptoProperties</span>
-                    <span class="nf">fiatProperties</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">fiatProperties</span><span class="p">;</span>
-<span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">accountWithId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">id</span>
-                         <span class="nf">currencyType</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyType</span>
-                         <span class="nf">currencyCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyCode</span>
-                              <span class="nf">network</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span>
-                                 <span class="nf">type</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
-                              <span class="nf">balance</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">balance</span>
-                  <span class="nf">hasNominatedAccount</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">hasNominatedAccount</span>
-                     <span class="nf">cryptoProperties</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">cryptoProperties</span>
-                       <span class="nf">fiatProperties</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">fiatProperties</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">id</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">currencyType</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">currencyCode</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">network</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">type</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span> <span class="n">balance</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">hasNominatedAccount</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a></span> <span class="o">*</span> <span class="n">cryptoProperties</span><span class="p">;</span>
-
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span> <span class="o">*</span> <span class="n">fiatProperties</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKAccount</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
                 <div class="language">
@@ -629,10 +594,10 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Record containing account details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L8-L46">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L9-L68">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -654,8 +619,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -679,7 +643,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L9-L17">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L10-L18">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -697,8 +661,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -717,7 +680,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L18-L26">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L19-L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -735,14 +698,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Unique account identifier.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">id</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">id</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -752,7 +715,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L30">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -770,14 +733,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account currency type.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    currency_type
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">currencyType</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">currencyType</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -787,7 +755,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -805,14 +773,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account currency code.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    currency_code
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">currencyCode</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">currencyCode</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -822,7 +795,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L42">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -840,14 +813,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account network type.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    network_type
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">network</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">network</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -857,7 +835,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -875,14 +853,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account type.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    account_type
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">type</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -892,7 +875,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L54">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -910,14 +893,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account balance.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span> <span class="n">balance</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">balance</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -927,7 +910,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L57">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -945,14 +928,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account has associated nominated account.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">hasNominatedAccount</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">hasNominatedAccount</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -962,7 +945,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L60">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -980,14 +963,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account crypto properties if account is a crypto account, otherwise null.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a></span> <span class="o">*</span> <span class="n">cryptoProperties</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a></span> <span class="o">*</span><span class="n">cryptoProperties</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -997,7 +980,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L63">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1015,14 +998,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Account fiat properties if account is a fiat account, otherwise null.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span> <span class="o">*</span> <span class="n">fiatProperties</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">readonly</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n"><a href="../Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span> <span class="o">*</span><span class="n">fiatProperties</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -1032,7 +1015,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L66">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1045,7 +1028,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-10)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

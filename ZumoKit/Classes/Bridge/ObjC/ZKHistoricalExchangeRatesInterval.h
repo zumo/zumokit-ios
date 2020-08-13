@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Historical exchange rate intervals, such as 'hour', 'week' or 'year' */
 @interface ZKHistoricalExchangeRatesInterval : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)historicalExchangeRatesInterval;

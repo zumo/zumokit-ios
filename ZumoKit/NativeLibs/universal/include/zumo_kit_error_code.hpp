@@ -8,6 +8,11 @@
 
 namespace zumo {
 
+/**
+ * The code of error returned. Some errors that could be handled programmatically (e.g., balance too low)
+ * include an error code — a short string with a brief explanation — as a value for code.
+ * See <a href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
+ */
 struct ZumoKitErrorCode final {
 
     /** Unknown error has occured. */
@@ -114,8 +119,8 @@ struct ZumoKitErrorCode final {
     static std::string const INVALID_HD_WALLET_PATH;
 
     /**
-     * Invalid length of mnemonic phrase. Mnemonic phrase should be
-     * 12, 15, 18, 21 or 24 words long.
+     * Invalid length of mnemonic phrase.
+     * Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.
      */
     static std::string const INVALID_MNEMONIC_WORD_COUNT;
 
@@ -128,7 +133,7 @@ struct ZumoKitErrorCode final {
     /** "The provided recovery phrase does not correspond to existing wallet." */
     static std::string const INVALID_RECOVERY_PHRASE;
 
-    /** Invalid transaction type. Check TransactionType for a list of valid transaction types. */
+    /** Invalid transaction type. */
     static std::string const INVALID_TRANSACTION_TYPE;
 
     /** Invalid transaction value. */
@@ -140,10 +145,7 @@ struct ZumoKitErrorCode final {
     /** Transaction already submitted. */
     static std::string const KNOWN_TRANSACTION;
 
-    /**
-     * No destination address.
-     * In case no transaction data is provided, destination address is obligatory.
-     */
+    /** No destination address. In case no transaction data is provided, destination address is obligatory. */
     static std::string const NO_DESTINATION_ADDRESS;
 
     /** No nominated account found. */

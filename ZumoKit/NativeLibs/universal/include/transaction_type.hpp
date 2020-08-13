@@ -8,6 +8,7 @@
 
 namespace zumo {
 
+/** Tracation type, 'CRYPTO', 'EXCHANGE', 'FIAT' or 'NOMINATED'. */
 struct TransactionType final {
 
     static std::string const CRYPTO;

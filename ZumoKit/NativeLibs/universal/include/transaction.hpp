@@ -13,23 +13,53 @@
 
 namespace zumo {
 
+/** Record containing transaction details. */
 struct Transaction final {
+    /** Identifier. */
     std::string id;
+    /**
+     * Transaction type.
+     * @see transaction_type
+     */
     std::string type;
+    /**
+     * Currency code.
+     * @see currency_code
+     */
     std::string currency_code;
+    /** Sender integrator user identifier or null if it is external user. */
     std::experimental::optional<std::string> from_user_id;
+    /** Recipient integrator user identifier or null if it is external user. */
     std::experimental::optional<std::string> to_user_id;
+    /** Sender account identifier if it is internal transaction or null otherwise. */
     std::experimental::optional<std::string> from_account_id;
+    /** Recipient account identifier if it is internal transaction or null otherwise. */
     std::experimental::optional<std::string> to_account_id;
+    /**
+     * Network type.
+     * @see network_type
+     */
     std::string network;
+    /**
+     * Transaction status.
+     * @see transaction_status
+     */
     std::string status;
+    /** Amount in transaction currency or null if transaction is Ethereum contract deploy. */
     std::experimental::optional<::zumo::Decimal> amount;
+    /** Transaction fee in transaction currency or null, if not yet available. */
     std::experimental::optional<::zumo::Decimal> fee;
+    /** Transaction nonce or null. Used to prevent double spend. */
     std::experimental::optional<std::string> nonce;
+    /** Crypto properties if it is crypto transaction, null otherwise. */
     std::experimental::optional<TransactionCryptoProperties> crypto_properties;
+    /** Fiat properties if it is crypto transaction, null otherwise. */
     std::experimental::optional<TransactionFiatProperties> fiat_properties;
+    /** Epoch timestamp when transaction was submitted or null for incoming transactions from outside of Zumo ecosystem. */
     std::experimental::optional<int64_t> submitted_at;
+    /** Epoch timestamp when transaction was submitted or null if transaction was not confirmed yet. */
     std::experimental::optional<int64_t> confirmed_at;
+    /** Epoch timestamp, minimum non-null value between submitted at and confirmed at timestamps. */
     int64_t timestamp;
 
     friend bool operator==(const Transaction& lhs, const Transaction& rhs);

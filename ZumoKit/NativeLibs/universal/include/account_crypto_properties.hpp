@@ -10,9 +10,16 @@
 
 namespace zumo {
 
+/**
+ * Account's crypto related properties.
+ * @see account
+ */
 struct AccountCryptoProperties final {
+    /** Account crypto address. */
     std::string address;
+    /** Hierarchical Deterministic (HD) account derivation path. */
     std::string path;
+    /** Ethereum account nonce if greater than 0 or null otherwise. */
     std::experimental::optional<int64_t> nonce;
     std::experimental::optional<std::string> utxo_pool;
     int8_t version;

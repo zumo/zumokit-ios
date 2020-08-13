@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Transaction direction, 'INCOMING' or 'OUTGOING'. */
 @interface ZKTransactionDirection : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)transactionDirection;

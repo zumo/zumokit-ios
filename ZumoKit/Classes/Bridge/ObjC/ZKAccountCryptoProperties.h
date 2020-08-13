@@ -3,6 +3,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Account's crypto related properties.
+ * @see account
+ */
 @interface ZKAccountCryptoProperties : NSObject
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address
                                    path:(nonnull NSString *)path
@@ -15,10 +19,13 @@
                                                   utxoPool:(nullable NSString *)utxoPool
                                                    version:(int8_t)version;
 
+/** Account crypto address. */
 @property (nonatomic, readonly, nonnull) NSString * address;
 
+/** Hierarchical Deterministic (HD) account derivation path. */
 @property (nonatomic, readonly, nonnull) NSString * path;
 
+/** Ethereum account nonce if greater than 0 or null otherwise. */
 @property (nonatomic, readonly, nullable) NSNumber * nonce;
 
 @property (nonatomic, readonly, nullable) NSString * utxoPool;

@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Network type, such as 'MAINNET', 'TESTNET' or 'RINKEBY'. */
 @interface ZKNetworkType : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)networkType;

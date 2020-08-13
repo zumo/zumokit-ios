@@ -3,6 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
+/** Zumo exchange settings used in making exchanges. */
 @interface ZKExchangeSettings : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                     depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
@@ -23,22 +24,40 @@
                                    withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
                                      timestamp:(int64_t)timestamp;
 
+/** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
+/**
+ * Zumo Exchange Service wallet address for each network type.
+ * @see network_type
+ */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * depositAddress;
 
+/**
+ * Currency code of outgoing transaction.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSString * depositCurrency;
 
+/**
+ * Currency code of return transaction.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 
+/** Minimum amount that can be exchanged in outgoing transaction currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * minExchangeAmount;
 
+/** Exchange fee rate that will be charged once currency is exchanged. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * feeRate;
 
+/** Fee rate that will be used for outgoing transaction. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * depositFeeRate;
 
+/** Fee that will charged for return transaction. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
 
+/** Epoch timestamp when the exchange settings were last updated. */
 @property (nonatomic, readonly) int64_t timestamp;
 
 @end

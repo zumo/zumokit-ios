@@ -10,12 +10,28 @@
 
 namespace zumo {
 
+/**
+ * Zumo exchange rates used in making exchanges.
+ * Can also be used to display amounts in local currency to the user.
+ */
 struct ExchangeRate final {
+    /** Identifier. */
     std::string id;
+    /**
+     * Currency from which exchange is being made.
+     * @see currency_code
+     */
     std::string deposit_currency;
+    /**
+     * Currency from which exchange is being made.
+     * @see currency_code
+     */
     std::string withdraw_currency;
+    /** Value of 1 unit of deposit currency in withdraw currency. */
     ::zumo::Decimal value;
+    /** Epoch timestamp representing expiration time of this exchange rate. */
     int64_t valid_to;
+    /** Epoch timestamp when the exchange rate was issued. */
     int64_t timestamp;
 
     friend bool operator==(const ExchangeRate& lhs, const ExchangeRate& rhs);

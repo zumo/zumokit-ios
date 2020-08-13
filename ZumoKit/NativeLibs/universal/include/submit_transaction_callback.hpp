@@ -9,6 +9,7 @@ namespace zumo {
 
 struct Transaction;
 
+/** Callback interface used by methods in @link wallet class. */
 class SubmitTransactionCallback {
 public:
     virtual ~SubmitTransactionCallback() {}

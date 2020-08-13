@@ -3,6 +3,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Record containing transaction's crypto properties.
+ * @see transaction
+ */
 @interface ZKTransactionCryptoProperties : NSObject
 - (nonnull instancetype)initWithTxHash:(nullable NSString *)txHash
                                  nonce:(nullable NSNumber *)nonce
@@ -23,22 +27,40 @@
                                                    fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
                                                       fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee;
 
+/** Transaction hash or null. */
 @property (nonatomic, readonly, nullable) NSString * txHash;
 
+/**
+ * Ethereum transaction nonce if greater than 0 and
+ * it is Ethereum transaction, otherwise returns null.
+ */
 @property (nonatomic, readonly, nullable) NSNumber * nonce;
 
+/** Wallet address of sender, */
 @property (nonatomic, readonly, nonnull) NSString * fromAddress;
 
+/** Wallet address of receiver or null, if it is Ethereum contract deploy. */
 @property (nonatomic, readonly, nullable) NSString * toAddress;
 
+/** Transaction data or null. */
 @property (nonatomic, readonly, nullable) NSString * data;
 
+/** Ethereum gas price if it is Ethereum transaction, otherwise null. */
 @property (nonatomic, readonly, nullable) NSDecimalNumber * gasPrice;
 
+/** Ethereum gas limit if it is Ethereum transaction, otherwise null. */
 @property (nonatomic, readonly, nullable) NSDecimalNumber * gasLimit;
 
+/**
+ * Amount in fiat currencies at the time of the transaction submission.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatAmount;
 
+/**
+ * Fee in fiat currencies at the time of the transaction submission.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatFee;
 
 @end

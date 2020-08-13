@@ -5,6 +5,7 @@
 #import <Foundation/Foundation.h>
 
 
+/** Callback interface used by methods in @link wallet class. */
 @protocol ZKSubmitExchangeCallback
 
 - (void)onError:(nonnull NSError *)e;

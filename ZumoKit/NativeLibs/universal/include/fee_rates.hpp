@@ -9,13 +9,21 @@
 
 namespace zumo {
 
+/** Crypto transactions fee rates. */
 struct FeeRates final {
+    /** Fee rate resulting in slow confirmation time. */
     ::zumo::Decimal slow;
+    /** Fee rate resulting in average confirmation time. */
     ::zumo::Decimal average;
+    /** Fee rate resulting in fast confirmation time. */
     ::zumo::Decimal fast;
+    /** Slow confirmation time in hours. */
     float slow_time;
+    /** Average confirmation time in hours. */
     float average_time;
+    /** Fast confirmation time in hours. */
     float fast_time;
+    /** Fee rate information provider. */
     std::string source;
 
     friend bool operator==(const FeeRates& lhs, const FeeRates& rhs);

@@ -3,6 +3,10 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Account's fiat related properties.
+ * @see account
+ */
 @interface ZKAccountFiatProperties : NSObject
 - (nonnull instancetype)initWithAccountNumber:(nullable NSString *)accountNumber
                                      sortCode:(nullable NSString *)sortCode
@@ -15,14 +19,19 @@
                                                           iban:(nullable NSString *)iban
                                                   customerName:(nullable NSString *)customerName;
 
+/** Fiat account number or null. */
 @property (nonatomic, readonly, nullable) NSString * accountNumber;
 
+/** Fiat account sort code or null. */
 @property (nonatomic, readonly, nullable) NSString * sortCode;
 
+/** Fiat account BIC or null. */
 @property (nonatomic, readonly, nullable) NSString * bic;
 
+/** Fiat account IBAN or null. */
 @property (nonatomic, readonly, nullable) NSString * iban;
 
+/** Customer name or null. */
 @property (nonatomic, readonly, nullable) NSString * customerName;
 
 @end

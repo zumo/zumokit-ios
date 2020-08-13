@@ -9,6 +9,7 @@ namespace zumo {
 
 struct AccountFiatProperties;
 
+/** Callback interface used by methods in @link user class. */
 class AccountFiatPropertiesCallback {
 public:
     virtual ~AccountFiatPropertiesCallback() {}

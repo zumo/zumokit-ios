@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.1.0-beta.8 Docs
+          ZumoKit 2.1.0-beta.9 Docs
         </a>
         
       </p>
@@ -194,6 +194,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusPENDING">ZKExchangeStatusPENDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusREJECTED">ZKExchangeStatusREJECTED</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
@@ -582,28 +585,7 @@
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZumoKit</span> <span class="p">:</span> <span class="nc">NSObject</span>
-
-<span class="k">@property</span><span class="p">(</span><span class="n">strong</span><span class="p">,</span> <span class="n">nonatomic</span><span class="p">)</span> <span class="n"><a href="../Classes/ZKUtils.html">ZKUtils</a></span> <span class="o">*</span><span class="n">utils</span><span class="p">;</span>
-
-<span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="n">version</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithApiKey</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">apiKey</span>
-                       <span class="nf">apiRoot</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">apiRoot</span>
-                  <span class="nf">txServiceUrl</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">txServiceUrl</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">userToken</span>
-  <span class="nf">completion</span><span class="p">:(</span><span class="n">_Nonnull</span> <span class="n"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a></span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getHistoricalExchangeRates</span><span class="p">:(</span><span class="n">_Nonnull</span> <span class="n"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a></span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKState.html">ZKState</a></span> <span class="o">*</span><span class="p">)</span><span class="n">getState</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">addStateListener</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKStateListener.html">ZKStateListener</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">listener</span><span class="p">;</span>
-
-<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">removeStateListener</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKStateListener.html">ZKStateListener</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">listener</span><span class="p">;</span>
-
-<span class="k">@end</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZumoKit</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
                 <div class="language">
@@ -612,10 +594,16 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>Entry point to ZumoKit Android SDK.
+ <p>
+ Once ZumoKit is initialized, this class provides access to user retrieval,
+ ZumoKit state object, crypto utility class and historical exchange rates.
+ State change listeners can be added and removed.
+ <p>
+ See <a href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L40-L61">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L49-L113">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -637,8 +625,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -654,7 +641,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -672,7 +659,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>ZumoKit SDK semantic version tag if exists, commit hash otherwise.</p>
 
                       </div>
                       <div class="declaration">
@@ -689,7 +676,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L54">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -707,16 +694,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializes ZumoKit SDK. Should only be called once.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithApiKey</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">apiKey</span>
-                       <span class="nf">apiRoot</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">apiRoot</span>
-                  <span class="nf">txServiceUrl</span><span class="p">:(</span><span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">txServiceUrl</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithApiKey</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">apiKey</span>
+                               <span class="nf">apiRoot</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">apiRoot</span>
+                          <span class="nf">txServiceUrl</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">txServiceUrl</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
@@ -725,8 +712,55 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>apiKey</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ZumoKit Api-Key</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>apiRoot</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ZumoKit API url</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>txServiceUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>ZumoKit Transaction Service url</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>ZumoKit instance</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L46-L48">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L65-L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -744,25 +778,62 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Get user corresponding to user token set.
+ Refer to <a href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <p><code><a href="../Classes/ZKUser.html">ZKUser</a></code></p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">userToken</span>
-  <span class="nf">completion</span><span class="p">:(</span><span class="n">_Nonnull</span> <span class="n"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a></span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getUser</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">userTokenSet</span>
+     <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completion</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getUser</span><span class="p">(</span><span class="n">_</span> <span class="nv">userTokenSet</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>userTokenSet</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>user token set</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>completion block to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L50-L51">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L78-L79">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -780,24 +851,51 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Fetch historical exchange rates for supported time intervals.
+ On success callback returns historical exchange rates are contained in a mapping between
+  time interval on a top level, from currency on second level, to currency on third level and <code><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></code> objects.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <p><code><a href="../Classes/ZKHistoricalExchangeRatesInterval.html">ZKHistoricalExchangeRatesInterval</a></code></p>
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getHistoricalExchangeRates</span><span class="p">:(</span><span class="n">_Nonnull</span> <span class="n"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a></span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">getHistoricalExchangeRates</span><span class="p">:</span>
+    <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completion</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getHistoricalExchangeRates</span><span class="p">(</span><span class="n">_</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getHistoricalExchangeRates</span><span class="p">(</span><span class="n">_</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L90">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -815,7 +913,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns current ZumoKit state. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state">ZumoKit State</a> guide for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -831,8 +929,12 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>current ZumoKit state</p>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L97">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -850,7 +952,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Listen to all state changes. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state#listen-to-state-changes">ZumoKit State</a> guide for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -866,8 +968,27 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>listener</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>interface to listen to state changes</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -885,7 +1006,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Remove listener to state changes. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state#remove-state-listener">ZumoKit State</a> guide for details.</p>
 
                       </div>
                       <div class="declaration">
@@ -901,8 +1022,27 @@
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>listener</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>interface to listen to state changes</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.8/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZumoKit.h#L111">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -915,7 +1055,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-10)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

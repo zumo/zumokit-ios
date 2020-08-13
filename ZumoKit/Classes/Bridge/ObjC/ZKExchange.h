@@ -5,6 +5,7 @@
 #import "ZKExchangeSettings.h"
 #import <Foundation/Foundation.h>
 
+/** Record containing exchange details. */
 @interface ZKExchange : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                             status:(nonnull NSString *)status
@@ -45,42 +46,82 @@
                            submittedAt:(nullable NSNumber *)submittedAt
                            confirmedAt:(nullable NSNumber *)confirmedAt;
 
+/** Identifier */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
+/**
+ * Exchange status.
+ * @see exchange_status
+ */
 @property (nonatomic, readonly, nonnull) NSString * status;
 
+/**
+ * Currency from which exchange was made.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSString * depositCurrency;
 
+/** Source @link account identifier. */
 @property (nonatomic, readonly, nonnull) NSString * depositAccountId;
 
+/** Outgoing @link transaction identifier. */
 @property (nonatomic, readonly, nullable) NSString * depositTransactionId;
 
+/**
+ * Currency to which exchange was made.
+ * @see currency_code
+ */
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 
+/** Target @link account identifier. */
 @property (nonatomic, readonly, nonnull) NSString * withdrawAccountId;
 
+/** Return @link transaction identifier. */
 @property (nonatomic, readonly, nullable) NSString * withdrawTransactionId;
 
+/** Amount in deposit currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * amount;
 
+/** Deposit transaction fee. */
 @property (nonatomic, readonly, nullable) NSDecimalNumber * depositFee;
 
+/**
+ * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - withdrawFee</code>.
+ * @see exchange_settings
+ */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnAmount;
 
+/**
+ * Exchange fee, calculated as <code>amount X exchangeRate X feeRate</code>.
+ * @see exchange_settings
+ */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFee;
 
+/**
+ * Return transaction fee.
+ * @see exchange_settings
+ */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
 
+/** Exchange rate used. */
 @property (nonatomic, readonly, nonnull) ZKExchangeRate * exchangeRate;
 
+/** Exchange settings used. */
 @property (nonatomic, readonly, nonnull) ZKExchangeSettings * exchangeSettings;
 
+/**
+ * Exchange rates at the time exchange was made.
+ * This can be used to display amounts in local currency to the user.
+ */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> * exchangeRates;
 
+/** Exchange nonce or null. Used to prevent double spend. */
 @property (nonatomic, readonly, nullable) NSString * nonce;
 
+/** Epoch timestamp when transaction was submitted. */
 @property (nonatomic, readonly, nullable) NSNumber * submittedAt;
 
+/** Epoch timestamp when transaction was confirmed or null if not yet confirmed. */
 @property (nonatomic, readonly, nullable) NSNumber * confirmedAt;
 
 @end

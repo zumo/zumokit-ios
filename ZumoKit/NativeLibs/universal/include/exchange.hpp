@@ -14,25 +14,66 @@
 
 namespace zumo {
 
+/** Record containing exchange details. */
 struct Exchange final {
+    /** Identifier */
     std::string id;
+    /**
+     * Exchange status.
+     * @see exchange_status
+     */
     std::string status;
+    /**
+     * Currency from which exchange was made.
+     * @see currency_code
+     */
     std::string deposit_currency;
+    /** Source @link account identifier. */
     std::string deposit_account_id;
+    /** Outgoing @link transaction identifier. */
     std::experimental::optional<std::string> deposit_transaction_id;
+    /**
+     * Currency to which exchange was made.
+     * @see currency_code
+     */
     std::string withdraw_currency;
+    /** Target @link account identifier. */
     std::string withdraw_account_id;
+    /** Return @link transaction identifier. */
     std::experimental::optional<std::string> withdraw_transaction_id;
+    /** Amount in deposit currency. */
     ::zumo::Decimal amount;
+    /** Deposit transaction fee. */
     std::experimental::optional<::zumo::Decimal> deposit_fee;
+    /**
+     * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - withdrawFee</code>.
+     * @see exchange_settings
+     */
     ::zumo::Decimal return_amount;
+    /**
+     * Exchange fee, calculated as <code>amount X exchangeRate X feeRate</code>.
+     * @see exchange_settings
+     */
     ::zumo::Decimal exchange_fee;
+    /**
+     * Return transaction fee.
+     * @see exchange_settings
+     */
     ::zumo::Decimal withdraw_fee;
+    /** Exchange rate used. */
     ExchangeRate exchange_rate;
+    /** Exchange settings used. */
     ExchangeSettings exchange_settings;
+    /**
+     * Exchange rates at the time exchange was made.
+     * This can be used to display amounts in local currency to the user.
+     */
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
+    /** Exchange nonce or null. Used to prevent double spend. */
     std::experimental::optional<std::string> nonce;
+    /** Epoch timestamp when transaction was submitted. */
     std::experimental::optional<int64_t> submitted_at;
+    /** Epoch timestamp when transaction was confirmed or null if not yet confirmed. */
     std::experimental::optional<int64_t> confirmed_at;
 
     friend bool operator==(const Exchange& lhs, const Exchange& rhs);

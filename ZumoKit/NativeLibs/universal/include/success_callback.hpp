@@ -7,6 +7,7 @@
 
 namespace zumo {
 
+/** Callback interface used by methods in @link user class. */
 class SuccessCallback {
 public:
     virtual ~SuccessCallback() {}
