@@ -28,18 +28,18 @@ struct Exchange final {
      * @see CurrencyCode
      */
     std::string deposit_currency;
-    /** Source @link Account identifier. */
+    /** Source Account identifier. */
     std::string deposit_account_id;
-    /** Outgoing @link Transaction identifier. */
+    /** Outgoing Transaction identifier. */
     std::experimental::optional<std::string> deposit_transaction_id;
     /**
      * Currency to which exchange was made.
      * @see CurrencyCode
      */
     std::string withdraw_currency;
-    /** Target @link Account identifier. */
+    /** Target Account identifier. */
     std::string withdraw_account_id;
-    /** Return @link Transaction identifier. */
+    /** Return Transaction identifier. */
     std::experimental::optional<std::string> withdraw_transaction_id;
     /** Amount in deposit currency. */
     ::zumo::Decimal amount;

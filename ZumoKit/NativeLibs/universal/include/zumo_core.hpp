@@ -61,7 +61,7 @@ public:
     /**
      * Fetch historical exchange rates for supported time intervals.
      * On success callback returns historical exchange rates are contained in a mapping between
-     * time interval on a top level, from currency on second level, to currency on third level and @link ExchangeRate objects.
+     * time interval on a top level, from currency on second level, to currency on third level and ExchangeRate objects.
      *
      * @param callback         an interface to receive the result or error
      *

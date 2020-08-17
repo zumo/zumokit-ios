@@ -13,7 +13,7 @@
 
 namespace zumo {
 
-/** Result of the compose exchange method on @link Wallet object. */
+/** Result of the compose exchange method on Wallet object. */
 struct ComposedExchange final {
     /** Signed transaction for a crypto transaction, null otherwise. */
     std::experimental::optional<std::string> signed_transaction;

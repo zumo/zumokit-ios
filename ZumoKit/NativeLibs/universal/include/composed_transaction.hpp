@@ -12,7 +12,7 @@
 namespace zumo {
 
 /**
- * Result of one of the transaction compose methods on @link Wallet object.
+ * Result of one of the transaction compose methods on Wallet object.
  * @see Wallet
  */
 struct ComposedTransaction final {

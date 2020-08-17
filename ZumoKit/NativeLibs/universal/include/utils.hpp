@@ -10,7 +10,7 @@
 namespace zumo {
 
 /**
- * Utility class providing blockchain related utility methods. Accessed from @link ZumoKit class.
+ * Utility class providing blockchain related utility methods. Accessed from ZumoKit class.
  * <p>
  * This class provides mnemonic phrase generation utility, Bitcoin & Ethereum address
  * validation utilities and Ethereum unit conversion methods.

@@ -11,7 +11,7 @@ namespace zumo {
 struct Account;
 struct Transaction;
 
-/** Callback interface used by methods in @link User class. */
+/** Callback interface used by methods in User class. */
 class AccountListener {
 public:
     virtual ~AccountListener() {}
