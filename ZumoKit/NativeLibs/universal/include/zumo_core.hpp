@@ -47,7 +47,7 @@ public:
      * @param user_token_set   user token set
      * @param callback         an interface to receive the result or error
      *
-     * @see user
+     * @see User
      */
     virtual void get_user(const std::string & user_token_set, const std::shared_ptr<UserCallback> & callback) = 0;
 
@@ -61,11 +61,11 @@ public:
     /**
      * Fetch historical exchange rates for supported time intervals.
      * On success callback returns historical exchange rates are contained in a mapping between
-     * time interval on a top level, from currency on second level, to currency on third level and @link exchange_rate objects.
+     * time interval on a top level, from currency on second level, to currency on third level and @link ExchangeRate objects.
      *
      * @param callback         an interface to receive the result or error
      *
-     * @see historical_exchange_rates_interval
+     * @see HistoricalExchangeRatesInterval
      */
     virtual void get_historical_exchange_rates(const std::shared_ptr<HistoricalExchangeRatesCallback> & callback) = 0;
 

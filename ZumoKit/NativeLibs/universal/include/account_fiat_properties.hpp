@@ -11,7 +11,7 @@ namespace zumo {
 
 /**
  * Account's fiat related properties.
- * @see account
+ * @see Account
  */
 struct AccountFiatProperties final {
     /** Fiat account number or null. */

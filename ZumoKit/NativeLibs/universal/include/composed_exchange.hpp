@@ -13,7 +13,7 @@
 
 namespace zumo {
 
-/** Result of the compose exchange method on @link wallet object. */
+/** Result of the compose exchange method on @link Wallet object. */
 struct ComposedExchange final {
     /** Signed transaction for a crypto transaction, null otherwise. */
     std::experimental::optional<std::string> signed_transaction;
@@ -34,19 +34,19 @@ struct ComposedExchange final {
     ::zumo::Decimal value;
     /**
      * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - withdrawFee</code>.
-     * @see exchange_settings
+     * @see ExchangeSettings
      */
     ::zumo::Decimal return_value;
     /** Outgoing transaction fee. */
     ::zumo::Decimal deposit_fee;
     /**
      * Exchange fee, calculated as <code>value X exchangeRate X feeRate</code>.
-     * @see exchange_settings
+     * @see ExchangeSettings
      */
     ::zumo::Decimal exchange_fee;
     /**
      * Return transaction fee.
-     * @see exchange_settings
+     * @see ExchangeSettings
      */
     ::zumo::Decimal withdraw_fee;
     /** Unique nonce used to prevent double spend. */

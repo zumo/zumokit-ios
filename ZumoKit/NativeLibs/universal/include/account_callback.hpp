@@ -9,7 +9,7 @@ namespace zumo {
 
 struct Account;
 
-/** Callback interface used by methods in @link user class. */
+/** Callback interface used by methods in @link User class. */
 class AccountCallback {
 public:
     virtual ~AccountCallback() {}

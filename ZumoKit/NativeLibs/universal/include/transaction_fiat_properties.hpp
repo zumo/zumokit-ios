@@ -10,7 +10,7 @@ namespace zumo {
 
 /**
  * Record containing transaction's fiat properties.
- * @see transaction
+ * @see Transaction
  */
 struct TransactionFiatProperties final {
     /** Sender fiat account properties. */

@@ -51,32 +51,32 @@
 
 /**
  * Exchange status.
- * @see exchange_status
+ * @see `ZKExchangeStatus`
  */
 @property (nonatomic, readonly, nonnull) NSString * status;
 
 /**
  * Currency from which exchange was made.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * depositCurrency;
 
-/** Source @link account identifier. */
+/** Source `ZKAccount` identifier. */
 @property (nonatomic, readonly, nonnull) NSString * depositAccountId;
 
-/** Outgoing @link transaction identifier. */
+/** Outgoing `ZKTransaction` identifier. */
 @property (nonatomic, readonly, nullable) NSString * depositTransactionId;
 
 /**
  * Currency to which exchange was made.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 
-/** Target @link account identifier. */
+/** Target `ZKAccount` identifier. */
 @property (nonatomic, readonly, nonnull) NSString * withdrawAccountId;
 
-/** Return @link transaction identifier. */
+/** Return `ZKTransaction` identifier. */
 @property (nonatomic, readonly, nullable) NSString * withdrawTransactionId;
 
 /** Amount in deposit currency. */
@@ -87,19 +87,19 @@
 
 /**
  * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - withdrawFee</code>.
- * @see exchange_settings
+ * @see `ZKExchangeSettings`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnAmount;
 
 /**
  * Exchange fee, calculated as <code>amount X exchangeRate X feeRate</code>.
- * @see exchange_settings
+ * @see `ZKExchangeSettings`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFee;
 
 /**
  * Return transaction fee.
- * @see exchange_settings
+ * @see `ZKExchangeSettings`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
 

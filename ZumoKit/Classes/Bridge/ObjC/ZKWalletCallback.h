@@ -5,7 +5,7 @@
 @class ZKWallet;
 
 
-/** Callback interface used by methods in @link user class. */
+/** Callback interface used by methods in `ZKUser` class. */
 @protocol ZKWalletCallback
 
 - (void)onError:(nonnull NSError *)e;

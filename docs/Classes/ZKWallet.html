@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.1.0-beta.9 Docs
+          ZumoKit 2.1.0-beta.10 Docs
         </a>
         
       </p>
@@ -596,13 +596,13 @@
               </div>
             <p>User wallet provides methods for transfer and exchange of fiat and cryptocurrency funds.
 Sending a transaction or making an exchange is a two step process. First a transaction or
-exchange has to be composed via one of the compose methods, then @link composed_transaction or
-@link composed_exchange can be submitted.
+exchange has to be composed via one of the compose methods, then <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> or
+<code><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></code> can be submitted.
 <p>
-User wallet instance can be obtained by creating, unlocking or recovering user wallet via @link user instance.</p>
+User wallet instance can be obtained by creating, unlocking or recovering user wallet via <code><a href="../Classes/ZKUser.html">ZKUser</a></code> instance.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L23-L148">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L23-L148">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -626,7 +626,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                       <div class="abstract">
                         <p>Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#bitcoin">Send Transactions</a> guide for usage details.
  <p>
- On success @link composed_transaction  is returned via callback.</p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code>  is returned via callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -644,8 +644,99 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>changeAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>change <code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier, which can be the same as fromAccountId</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destination</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>destination wallet address</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in BTC</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>feeRate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>fee rate in satoshis/byte</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L38-L44">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L38-L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -665,7 +756,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                       <div class="abstract">
                         <p>Compose Ethereum transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
  <p>
- On success @link composed_transaction is returned via callback.</p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -685,8 +776,123 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gasPrice</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>gas price in gwei</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gasLimit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>gas limit</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destination</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>destination wallet address</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in ETH</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>data in string format or null</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>nonce</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>next transaction nonce or null</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L61-L69">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L61-L69">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -706,7 +912,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                       <div class="abstract">
                         <p>Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
  <p>
- On success @link composed_transaction is returned via callback.</p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -723,8 +929,75 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in source account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L82-L86">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L82-L86">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -744,7 +1017,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                       <div class="abstract">
                         <p>Compose transaction to nominated account asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
  <p>
- On success @link composed_transaction object is returned via callback.</p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> object is returned via callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -761,8 +1034,63 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in source account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L98-L101">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L98-L101">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -782,7 +1110,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                       <div class="abstract">
                         <p>Submit a transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
  <p>
- On success @link transaction object is returned via callback.</p>
+ On success <code><a href="../Classes/ZKTransaction.html">ZKTransaction</a></code> object is returned via callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -794,8 +1122,40 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>composedTransaction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Composed transaction retrieved as a result
+                         of one of the compose transaction methods</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L112-L113">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L112-L113">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -815,7 +1175,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                       <div class="abstract">
                         <p>Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
  <p>
- On success @link composed_exchange  is returned via callback.</p>
+ On success <code><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></code>  is returned via callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -832,8 +1192,99 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>depositAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>withdrawAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>exchangeRate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Zumo exchange rate obtained from ZumoKit state</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>exchangeSettings</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Zumo exchange settings obtained from ZumoKit state</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in deposit account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>exchange maximum possible funds</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L128-L134">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L128-L134">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -853,7 +1304,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                       <div class="abstract">
                         <p>Submit an exchange asynchronously. <a href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
  <p>
- On success @link exchange object is returned via callback.</p>
+ On success <code><a href="../Classes/ZKExchange.html">ZKExchange</a></code> object is returned via callback.</p>
 
                       </div>
                       <div class="declaration">
@@ -865,8 +1316,40 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
 
                         </div>
                       </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>composedExchange</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Composed exchange retrieved as the result
+                      of <code>composeExchange</code> method</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L145-L146">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L145-L146">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -928,7 +1411,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L35-L43">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L35-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -975,7 +1458,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L49-L55">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L49-L55">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1021,7 +1504,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L61-L65">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L61-L65">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1067,7 +1550,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L71-L74">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L71-L74">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1114,7 +1597,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L80-L86">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L80-L86">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1156,7 +1639,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L92-L93">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L92-L93">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1198,7 +1681,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.9/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L99-L100">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0-beta.10/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L99-L100">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1211,7 +1694,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-13)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-08-17)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

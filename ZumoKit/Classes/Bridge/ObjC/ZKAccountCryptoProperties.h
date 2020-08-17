@@ -5,7 +5,7 @@
 
 /**
  * Account's crypto related properties.
- * @see account
+ * @see `ZKAccount`
  */
 @interface ZKAccountCryptoProperties : NSObject
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address

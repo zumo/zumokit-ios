@@ -47,13 +47,13 @@
 
 /**
  * Transaction type.
- * @see transaction_type
+ * @see `ZKTransactionType`
  */
 @property (nonatomic, readonly, nonnull) NSString * type;
 
 /**
  * Currency code.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * currencyCode;
 
@@ -71,13 +71,13 @@
 
 /**
  * Network type.
- * @see network_type
+ * @see `ZKNetworkType`
  */
 @property (nonatomic, readonly, nonnull) NSString * network;
 
 /**
  * Transaction status.
- * @see transaction_status
+ * @see `ZKTransactionStatus`
  */
 @property (nonatomic, readonly, nonnull) NSString * status;
 

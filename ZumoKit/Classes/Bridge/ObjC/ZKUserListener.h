@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 
-/** Callback interface used by methods in @link user class. */
+/** Callback interface used by methods in `ZKUser` class. */
 @protocol ZKUserListener
 
 - (void)update:(nonnull NSArray<ZKAccount *> *)accounts

@@ -5,7 +5,7 @@
 
 /**
  * Record containing transaction's crypto properties.
- * @see transaction
+ * @see `ZKTransaction`
  */
 @interface ZKTransactionCryptoProperties : NSObject
 - (nonnull instancetype)initWithTxHash:(nullable NSString *)txHash
@@ -53,13 +53,13 @@
 
 /**
  * Amount in fiat currencies at the time of the transaction submission.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatAmount;
 
 /**
  * Fee in fiat currencies at the time of the transaction submission.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatFee;
 

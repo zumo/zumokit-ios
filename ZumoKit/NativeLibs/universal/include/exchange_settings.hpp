@@ -17,17 +17,17 @@ struct ExchangeSettings final {
     std::string id;
     /**
      * Zumo Exchange Service wallet address for each network type.
-     * @see network_type
+     * @see NetworkType
      */
     std::unordered_map<std::string, std::string> deposit_address;
     /**
      * Currency code of outgoing transaction.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string deposit_currency;
     /**
      * Currency code of return transaction.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string withdraw_currency;
     /** Minimum amount that can be exchanged in outgoing transaction currency. */

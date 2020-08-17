@@ -5,7 +5,7 @@
 
 /**
  * Account's fiat related properties.
- * @see account
+ * @see `ZKAccount`
  */
 @interface ZKAccountFiatProperties : NSObject
 - (nonnull instancetype)initWithAccountNumber:(nullable NSString *)accountNumber

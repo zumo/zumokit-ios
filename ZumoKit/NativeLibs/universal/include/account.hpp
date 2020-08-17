@@ -18,22 +18,22 @@ struct Account final {
     std::string id;
     /**
      * Account currency type.
-     * @see currency_type
+     * @see CurrencyType
      */
     std::string currency_type;
     /**
      * Account currency code.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string currency_code;
     /**
      * Account network type.
-     * @see network_type
+     * @see NetworkType
      */
     std::string network;
     /**
      * Account type.
-     * @see account_type
+     * @see AccountType
      */
     std::string type;
     /** Account balance. */

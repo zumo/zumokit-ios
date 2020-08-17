@@ -26,13 +26,13 @@
 
 /**
  * Currency from which exchange is being made.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * depositCurrency;
 
 /**
  * Currency from which exchange is being made.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 

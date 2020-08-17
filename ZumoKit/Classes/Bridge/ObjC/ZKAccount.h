@@ -31,25 +31,25 @@
 
 /**
  * Account currency type.
- * @see currency_type
+ * @see `ZKCurrencyType`
  */
 @property (nonatomic, readonly, nonnull) NSString * currencyType;
 
 /**
  * Account currency code.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * currencyCode;
 
 /**
  * Account network type.
- * @see network_type
+ * @see `ZKNetworkType`
  */
 @property (nonatomic, readonly, nonnull) NSString * network;
 
 /**
  * Account type.
- * @see account_type
+ * @see `ZKAccountType`
  */
 @property (nonatomic, readonly, nonnull) NSString * type;
 

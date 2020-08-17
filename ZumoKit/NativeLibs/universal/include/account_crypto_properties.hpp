@@ -12,7 +12,7 @@ namespace zumo {
 
 /**
  * Account's crypto related properties.
- * @see account
+ * @see Account
  */
 struct AccountCryptoProperties final {
     /** Account crypto address. */

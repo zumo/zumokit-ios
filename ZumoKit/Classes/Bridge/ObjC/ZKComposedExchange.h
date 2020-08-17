@@ -6,7 +6,7 @@
 #import "ZKExchangeSettings.h"
 #import <Foundation/Foundation.h>
 
-/** Result of the compose exchange method on @link wallet object. */
+/** Result of the compose exchange method on `ZKWallet` object. */
 @interface ZKComposedExchange : NSObject
 - (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
                                    depositAccount:(nonnull ZKAccount *)depositAccount
@@ -59,7 +59,7 @@
 
 /**
  * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - withdrawFee</code>.
- * @see exchange_settings
+ * @see `ZKExchangeSettings`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnValue;
 
@@ -68,13 +68,13 @@
 
 /**
  * Exchange fee, calculated as <code>value X exchangeRate X feeRate</code>.
- * @see exchange_settings
+ * @see `ZKExchangeSettings`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFee;
 
 /**
  * Return transaction fee.
- * @see exchange_settings
+ * @see `ZKExchangeSettings`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
 
