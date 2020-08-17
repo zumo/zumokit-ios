@@ -10,7 +10,7 @@ namespace zumo {
 
 class User;
 
-/** Callback interface used by methods in @link ZumoKit class */
+/** Callback interface used by methods in ZumoKit class */
 class UserCallback {
 public:
     virtual ~UserCallback() {}
