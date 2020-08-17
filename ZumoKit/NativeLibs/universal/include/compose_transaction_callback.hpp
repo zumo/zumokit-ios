@@ -9,7 +9,7 @@ namespace zumo {
 
 struct ComposedTransaction;
 
-/** Callback interface used by methods in @link wallet class. */
+/** Callback interface used by methods in @link Wallet class. */
 class ComposeTransactionCallback {
 public:
     virtual ~ComposeTransactionCallback() {}

@@ -19,12 +19,12 @@ struct Transaction final {
     std::string id;
     /**
      * Transaction type.
-     * @see transaction_type
+     * @see TransactionType
      */
     std::string type;
     /**
      * Currency code.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string currency_code;
     /** Sender integrator user identifier or null if it is external user. */
@@ -37,12 +37,12 @@ struct Transaction final {
     std::experimental::optional<std::string> to_account_id;
     /**
      * Network type.
-     * @see network_type
+     * @see NetworkType
      */
     std::string network;
     /**
      * Transaction status.
-     * @see transaction_status
+     * @see TransactionStatus
      */
     std::string status;
     /** Amount in transaction currency or null if transaction is Ethereum contract deploy. */

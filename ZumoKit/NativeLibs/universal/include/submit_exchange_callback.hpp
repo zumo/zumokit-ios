@@ -9,7 +9,7 @@ namespace zumo {
 
 struct Exchange;
 
-/** Callback interface used by methods in @link wallet class. */
+/** Callback interface used by methods in @link Wallet class. */
 class SubmitExchangeCallback {
 public:
     virtual ~SubmitExchangeCallback() {}

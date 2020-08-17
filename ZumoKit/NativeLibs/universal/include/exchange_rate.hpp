@@ -19,12 +19,12 @@ struct ExchangeRate final {
     std::string id;
     /**
      * Currency from which exchange is being made.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string deposit_currency;
     /**
      * Currency from which exchange is being made.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string withdraw_currency;
     /** Value of 1 unit of deposit currency in withdraw currency. */

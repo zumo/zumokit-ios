@@ -5,7 +5,7 @@
 
 
 /**
- * Utility class providing blockchain related utility methods. Accessed from @link ZumoKit class.
+ * Utility class providing blockchain related utility methods. Accessed from `ZKZumoKit` class.
  * <p>
  * This class provides mnemonic phrase generation utility, Bitcoin & Ethereum address
  * validation utilities and Ethereum unit conversion methods.
@@ -30,7 +30,7 @@
  * @param address Bitcoin address
  * @param network network type, either 'MAINNET' or 'TESTNET'
  * @return true if Bitcoin address is valid on a given network
- * @see network_type
+ * @see `ZKNetworkType`
  */
 - (BOOL)isValidBtcAddress:(nonnull NSString *)address
                   network:(nonnull NSString *)network;

@@ -45,7 +45,7 @@
  * @param userTokenSet   user token set
  * @param callback         an interface to receive the result or error
  *
- * @see user
+ * @see `ZKUser`
  */
 - (void)getUser:(nonnull NSString *)userTokenSet
        callback:(nullable id<ZKUserCallback>)callback;
@@ -60,11 +60,11 @@
 /**
  * Fetch historical exchange rates for supported time intervals.
  * On success callback returns historical exchange rates are contained in a mapping between
- * time interval on a top level, from currency on second level, to currency on third level and @link exchange_rate objects.
+ * time interval on a top level, from currency on second level, to currency on third level and `ZKExchangeRate` objects.
  *
  * @param callback         an interface to receive the result or error
  *
- * @see historical_exchange_rates_interval
+ * @see `ZKHistoricalExchangeRatesInterval`
  */
 - (void)getHistoricalExchangeRates:(nullable id<ZKHistoricalExchangeRatesCallback>)callback;
 

@@ -5,8 +5,8 @@
 #import <Foundation/Foundation.h>
 
 /**
- * Result of one of the transaction compose methods on @link wallet object.
- * @see wallet
+ * Result of one of the transaction compose methods on `ZKWallet` object.
+ * @see `ZKWallet`
  */
 @interface ZKComposedTransaction : NSObject
 - (nonnull instancetype)initWithType:(nonnull NSString *)type
@@ -28,7 +28,7 @@
 
 /**
  * Transaction type, 'FIAT', 'CRYPTO' or 'NOMINATED'.
- * @see transaction_type
+ * @see `ZKTransactionType`
  */
 @property (nonatomic, readonly, nonnull) NSString * type;
 

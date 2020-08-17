@@ -23,10 +23,10 @@ struct ExchangeSettings;
 /**
  * User wallet provides methods for transfer and exchange of fiat and cryptocurrency funds.
  * Sending a transaction or making an exchange is a two step process. First a transaction or
- * exchange has to be composed via one of the compose methods, then @link composed_transaction or
- * @link composed_exchange can be submitted.
+ * exchange has to be composed via one of the compose methods, then @link ComposedTransaction or
+ * @link ComposedExchange can be submitted.
  * <p>
- * User wallet instance can be obtained by creating, unlocking or recovering user wallet via @link user instance.
+ * User wallet instance can be obtained by creating, unlocking or recovering user wallet via @link User instance.
  */
 class Wallet {
 public:
@@ -35,10 +35,10 @@ public:
     /**
      * Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#bitcoin">Send Transactions</a> guide for usage details.
      * <p>
-     * On success @link composed_transaction  is returned via callback.
+     * On success @link ComposedTransaction  is returned via callback.
      *
-     * @param from_account_id   @link account identifier
-     * @param change_account_id change @link account identifier, which can be the same as from_account_id
+     * @param from_account_id   @link Account identifier
+     * @param change_account_id change @link Account identifier, which can be the same as from_account_id
      * @param destination       destination wallet address
      * @param amount            amount in BTC
      * @param fee_rate          fee rate in satoshis/byte
@@ -50,9 +50,9 @@ public:
     /**
      * Compose Ethereum transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
      * <p>
-     * On success @link composed_transaction is returned via callback.
+     * On success @link ComposedTransaction is returned via callback.
      *
-     * @param from_account_id @link account identifier
+     * @param from_account_id @link Account identifier
      * @param gas_price       gas price in gwei
      * @param gas_limit       gas limit
      * @param destination     destination wallet address
@@ -67,10 +67,10 @@ public:
     /**
      * Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
      * <p>
-     * On success @link composed_transaction is returned via callback.
+     * On success @link ComposedTransaction is returned via callback.
      *
-     * @param from_account_id @link account identifier
-     * @param to_account_id   @link account identifier
+     * @param from_account_id @link Account identifier
+     * @param to_account_id   @link Account identifier
      * @param amount          amount in source account currency
      * @param send_max        send maximum possible funds to destination
      * @param callback        an interface to receive the result or error
@@ -80,9 +80,9 @@ public:
     /**
      * Compose transaction to nominated account asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
      * <p>
-     * On success @link composed_transaction object is returned via callback.
+     * On success @link ComposedTransaction object is returned via callback.
      *
-     * @param from_account_id @link account identifier
+     * @param from_account_id @link Account identifier
      * @param amount          amount in source account currency
      * @param send_max        send maximum possible funds to destination
      * @param callback        an interface to receive the result or error
@@ -92,7 +92,7 @@ public:
     /**
      * Submit a transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
      * <p>
-     * On success @link transaction object is returned via callback.
+     * On success @link Transaction object is returned via callback.
      *
      * @param composed_transaction Composed transaction retrieved as a result
      *                             of one of the compose transaction methods
@@ -103,10 +103,10 @@ public:
     /**
      * Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
      * <p>
-     * On success @link composed_exchange  is returned via callback.
+     * On success @link ComposedExchange  is returned via callback.
      *
-     * @param deposit_account_id  @link account identifier
-     * @param withdraw_account_id @link account identifier
+     * @param deposit_account_id  @link Account identifier
+     * @param withdraw_account_id @link Account identifier
      * @param exchange_rate       Zumo exchange rate obtained from ZumoKit state
      * @param exchange_settings   Zumo exchange settings obtained from ZumoKit state
      * @param amount              amount in deposit account currency
@@ -118,7 +118,7 @@ public:
     /**
      * Submit an exchange asynchronously. <a href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
      * <p>
-     * On success @link exchange object is returned via callback.
+     * On success @link Exchange object is returned via callback.
      *
      * @param composed_exchange Composed exchange retrieved as the result
      *                          of <code>composeExchange</code> method

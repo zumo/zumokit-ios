@@ -14,7 +14,7 @@ namespace zumo {
 
 /**
  * Record containing transaction's crypto properties.
- * @see transaction
+ * @see Transaction
  */
 struct TransactionCryptoProperties final {
     /** Transaction hash or null. */
@@ -36,12 +36,12 @@ struct TransactionCryptoProperties final {
     std::experimental::optional<::zumo::Decimal> gas_limit;
     /**
      * Amount in fiat currencies at the time of the transaction submission.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::unordered_map<std::string, ::zumo::Decimal> fiat_amount;
     /**
      * Fee in fiat currencies at the time of the transaction submission.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::unordered_map<std::string, ::zumo::Decimal> fiat_fee;
 

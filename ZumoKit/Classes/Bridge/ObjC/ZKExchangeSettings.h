@@ -29,19 +29,19 @@
 
 /**
  * Zumo Exchange Service wallet address for each network type.
- * @see network_type
+ * @see `ZKNetworkType`
  */
 @property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * depositAddress;
 
 /**
  * Currency code of outgoing transaction.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * depositCurrency;
 
 /**
  * Currency code of return transaction.
- * @see currency_code
+ * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
 

@@ -6,7 +6,7 @@
 
 /**
  * Record containing transaction's fiat properties.
- * @see transaction
+ * @see `ZKTransaction`
  */
 @interface ZKTransactionFiatProperties : NSObject
 - (nonnull instancetype)initWithFromFiatAccount:(nonnull ZKAccountFiatProperties *)fromFiatAccount

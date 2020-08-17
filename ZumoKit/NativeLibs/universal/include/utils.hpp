@@ -37,7 +37,7 @@ public:
      * @param address Bitcoin address
      * @param network network type, either 'MAINNET' or 'TESTNET'
      * @return true if Bitcoin address is valid on a given network
-     * @see network_type
+     * @see NetworkType
      */
     virtual bool is_valid_btc_address(const std::string & address, const std::string & network) = 0;
 

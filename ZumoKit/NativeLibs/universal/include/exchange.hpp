@@ -20,26 +20,26 @@ struct Exchange final {
     std::string id;
     /**
      * Exchange status.
-     * @see exchange_status
+     * @see ExchangeStatus
      */
     std::string status;
     /**
      * Currency from which exchange was made.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string deposit_currency;
-    /** Source @link account identifier. */
+    /** Source @link Account identifier. */
     std::string deposit_account_id;
-    /** Outgoing @link transaction identifier. */
+    /** Outgoing @link Transaction identifier. */
     std::experimental::optional<std::string> deposit_transaction_id;
     /**
      * Currency to which exchange was made.
-     * @see currency_code
+     * @see CurrencyCode
      */
     std::string withdraw_currency;
-    /** Target @link account identifier. */
+    /** Target @link Account identifier. */
     std::string withdraw_account_id;
-    /** Return @link transaction identifier. */
+    /** Return @link Transaction identifier. */
     std::experimental::optional<std::string> withdraw_transaction_id;
     /** Amount in deposit currency. */
     ::zumo::Decimal amount;
@@ -47,17 +47,17 @@ struct Exchange final {
     std::experimental::optional<::zumo::Decimal> deposit_fee;
     /**
      * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - withdrawFee</code>.
-     * @see exchange_settings
+     * @see ExchangeSettings
      */
     ::zumo::Decimal return_amount;
     /**
      * Exchange fee, calculated as <code>amount X exchangeRate X feeRate</code>.
-     * @see exchange_settings
+     * @see ExchangeSettings
      */
     ::zumo::Decimal exchange_fee;
     /**
      * Return transaction fee.
-     * @see exchange_settings
+     * @see ExchangeSettings
      */
     ::zumo::Decimal withdraw_fee;
     /** Exchange rate used. */
