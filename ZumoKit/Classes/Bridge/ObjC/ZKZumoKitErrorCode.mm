@@ -16,8 +16,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET = @"amount_not_set";
 
 NSString * __nonnull const ZKZumoKitErrorCodeAPISERVICEERROR = @"api_service_error";
 
-NSString * __nonnull const ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW = @"bitcoin_amount_overflow";
-
 NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND = @"change_account_not_found";
 
 NSString * __nonnull const ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE = @"change_index_out_of_range";
@@ -49,6 +47,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDS = @"insufficient_
 NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE = @"insufficient_funds_for_exchange";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION = @"insufficient_funds_for_transaction";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINT64OVERFLOW = @"int64_overflow";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE = @"invalid_account_type";
 
@@ -97,6 +97,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE = @"
 NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION = @"send_max_insufficient_funds_for_transaction";
 
 NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR = @"signing_error";
+
+NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW = @"transaction_amount_overflow";
 
 NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL = @"transaction_amount_too_small";
 

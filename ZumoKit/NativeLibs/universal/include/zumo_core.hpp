@@ -42,7 +42,7 @@ public:
 
     /**
      * Get user corresponding to user token set.
-     * Refer to <a href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
+     * Refer to <a target="_top" href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
      *
      * @param user_token_set   user token set
      * @param callback         an interface to receive the result or error
@@ -70,21 +70,21 @@ public:
     virtual void get_historical_exchange_rates(const std::shared_ptr<HistoricalExchangeRatesCallback> & callback) = 0;
 
     /**
-     * Returns current ZumoKit state. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state">ZumoKit State</a> guide for details.
+     * Returns current ZumoKit state. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state">ZumoKit State</a> guide for details.
      *
      * @return current ZumoKit state
      */
     virtual State get_state() = 0;
 
     /**
-     * Listen to all state changes. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state#listen-to-state-changes">ZumoKit State</a> guide for details.
+     * Listen to all state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#listen-to-state-changes">ZumoKit State</a> guide for details.
      *
      * @param listener interface to listen to state changes
      */
     virtual void add_state_listener(const std::shared_ptr<StateListener> & listener) = 0;
 
     /**
-     * Remove listener to state changes. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state#remove-state-listener">ZumoKit State</a> guide for details.
+     * Remove listener to state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#remove-state-listener">ZumoKit State</a> guide for details.
      *
      * @param listener interface to listen to state changes
      */

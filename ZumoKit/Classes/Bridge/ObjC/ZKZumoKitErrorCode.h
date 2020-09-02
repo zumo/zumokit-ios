@@ -6,7 +6,7 @@
 /**
  * The code of error returned. Some errors that could be handled programmatically (e.g., balance too low)
  * include an error code — a short string with a brief explanation — as a value for code.
- * See <a href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
+ * See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
  */
 @interface ZKZumoKitErrorCode : NSObject
 - (nonnull instancetype)init;
@@ -26,8 +26,6 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND;
 extern NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET;
 /** Invalid response received from ZumoKit API. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeAPISERVICEERROR;
-/** Bitcoin amount exceeds maximum 63 bit precision. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW;
 /** Requested change account not found. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND;
 /** Change output index out of range. */
@@ -70,6 +68,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDS;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE;
 /** Insufficient funds for transaction value. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION;
+/** Value exceeds maximum 63 bit precision. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeINT64OVERFLOW;
 /** Account type not supported by the operation. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE;
 /** Destination address is invalid. */
@@ -121,6 +121,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORF
 extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION;
 /** Something went wrong signing transaction. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR;
+/** Transaction amount exceeds maximum precision. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW;
 /** Transaction amount too small to send. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL;
 /** Invalid response received from ZumoKit Transaction Service API. */
