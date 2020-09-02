@@ -44,7 +44,7 @@ NS_ASSUME_NONNULL_BEGIN
  * ZumoKit state object, crypto utility class and historical exchange rates.
  * State change listeners can be added and removed.
  * <p>
- * See <a href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.
+ * See <a target="_top" href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.
  * */
 @interface ZumoKit : NSObject
 
@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
 * Get user corresponding to user token set.
-* Refer to <a href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
+* Refer to <a target="_top" href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
 *
 * @param userTokenSet   user token set
 * @param completion       completion block to receive the result or error
@@ -90,21 +90,21 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completion;
 
 /**
-* Returns current ZumoKit state. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state">ZumoKit State</a> guide for details.
+* Returns current ZumoKit state. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state">ZumoKit State</a> guide for details.
 *
 * @return current ZumoKit state
 */
 - (nonnull ZKState *)getState;
 
 /**
-* Listen to all state changes. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state#listen-to-state-changes">ZumoKit State</a> guide for details.
+* Listen to all state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#listen-to-state-changes">ZumoKit State</a> guide for details.
 *
 * @param listener interface to listen to state changes
 */
 - (void)addStateListener:(nullable id<ZKStateListener>)listener;
 
 /**
-* Remove listener to state changes. Refer to <a href="https://developers.zumo.money/docs/guides/zumokit-state#remove-state-listener">ZumoKit State</a> guide for details.
+* Remove listener to state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#remove-state-listener">ZumoKit State</a> guide for details.
 *
 * @param listener interface to listen to state changes
 */
