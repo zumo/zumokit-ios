@@ -9,7 +9,7 @@
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address
                                    path:(nonnull NSString *)path
                                   nonce:(nullable NSNumber *)nonce
-                               utxoPool:(nullable NSString *)utxoPool
+                               utxoPool:(nonnull NSArray<ZKUnspentOutput *> *)utxoPool
                                 version:(int8_t)version
 {
     if (self = [super init]) {
@@ -25,7 +25,7 @@
 + (nonnull instancetype)accountCryptoPropertiesWithAddress:(nonnull NSString *)address
                                                       path:(nonnull NSString *)path
                                                      nonce:(nullable NSNumber *)nonce
-                                                  utxoPool:(nullable NSString *)utxoPool
+                                                  utxoPool:(nonnull NSArray<ZKUnspentOutput *> *)utxoPool
                                                    version:(int8_t)version
 {
     return [(ZKAccountCryptoProperties*)[self alloc] initWithAddress:address
@@ -44,7 +44,7 @@
     return [self.address isEqualToString:typedOther.address] &&
             [self.path isEqualToString:typedOther.path] &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
-            ((self.utxoPool == nil && typedOther.utxoPool == nil) || (self.utxoPool != nil && [self.utxoPool isEqual:typedOther.utxoPool])) &&
+            [self.utxoPool isEqualToArray:typedOther.utxoPool] &&
             self.version == typedOther.version;
 }
 

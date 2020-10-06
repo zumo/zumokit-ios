@@ -46,6 +46,7 @@
 #import "ZKTransactionFiatProperties.h"
 #import "ZKTransactionStatus.h"
 #import "ZKTransactionType.h"
+#import "ZKUnspentOutput.h"
 #import "ZKUser.h"
 #import "ZKUserCallback.h"
 #import "ZKUtils.h"

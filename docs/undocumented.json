@@ -2,14 +2,14 @@
   "warnings": [
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 57,
+      "line": 58,
       "symbol": "ZumoKitVersionNumber",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 58,
+      "line": 59,
       "symbol": "ZumoKitVersionString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -44,28 +44,28 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 11,
+      "line": 12,
       "symbol": "ZKAccountCryptoProperties.-initWithAddress:path:nonce:utxoPool:version:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 16,
+      "line": 17,
       "symbol": "ZKAccountCryptoProperties.+accountCryptoPropertiesWithAddress:path:nonce:utxoPool:version:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 31,
+      "line": 32,
       "symbol": "ZKAccountCryptoProperties.utxoPool",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 33,
+      "line": 34,
       "symbol": "ZKAccountCryptoProperties.version",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
@@ -221,6 +221,13 @@
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
       "line": 15,
       "symbol": "ZKCurrencyCodeBTC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 16,
+      "symbol": "ZKCurrencyCodeBSV",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
@@ -628,6 +635,55 @@
       "line": 16,
       "symbol": "ZKTransactionTypeNOMINATED",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h",
+      "line": 6,
+      "symbol": "ZKUnspentOutput",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h",
+      "line": 7,
+      "symbol": "ZKUnspentOutput.-initWithTxHash:txOutputN:value:script:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h",
+      "line": 11,
+      "symbol": "ZKUnspentOutput.+unspentOutputWithTxHash:txOutputN:value:script:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h",
+      "line": 16,
+      "symbol": "ZKUnspentOutput.txHash",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h",
+      "line": 18,
+      "symbol": "ZKUnspentOutput.txOutputN",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h",
+      "line": 20,
+      "symbol": "ZKUnspentOutput.value",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h",
+      "line": 22,
+      "symbol": "ZKUnspentOutput.script",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {

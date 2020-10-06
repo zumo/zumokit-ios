@@ -38,20 +38,20 @@
 };
 
 
-- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
-              changeAccountId:(nonnull NSString *)changeAccountId
-                  destination:(nonnull NSString *)destination
-                       amount:(nullable NSDecimalNumber *)amount
-                      feeRate:(nonnull NSDecimalNumber *)feeRate
-                      sendMax:(BOOL)sendMax
-                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+           changeAccountId:(nonnull NSString *)changeAccountId
+               destination:(nonnull NSString *)destination
+                    amount:(nullable NSDecimalNumber *)amount
+                  feeRate:(nonnull NSDecimalNumber *)feeRate
+                  sendMax:(BOOL)sendMax
+               completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
     
-    [self composeBtcTransaction:fromAccountId
-                changeAccountId:changeAccountId
-                    destination:destination
-                         amount:amount
-                        feeRate:feeRate
-                        sendMax:sendMax
+    [self composeTransaction:fromAccountId
+             changeAccountId:changeAccountId
+                 destination:destination
+                      amount:amount
+                     feeRate:feeRate
+                     sendMax:sendMax
                     callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
     
 };
