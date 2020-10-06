@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Entry point to ZumoKit iOS SDK.
  * <p>
- * See <a href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.
+ * See <a target="_top" href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.
  * */
 @interface ZumoKit : NSObject
 

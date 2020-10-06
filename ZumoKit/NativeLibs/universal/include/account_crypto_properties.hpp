@@ -4,9 +4,11 @@
 #pragma once
 
 #include "stdx/optional.hpp"
+#include "unspent_output.hpp"
 #include <cstdint>
 #include <string>
 #include <utility>
+#include <vector>
 
 namespace zumo {
 
@@ -21,7 +23,7 @@ struct AccountCryptoProperties final {
     std::string path;
     /** Ethereum account nonce if greater than 0 or null otherwise. */
     std::experimental::optional<int64_t> nonce;
-    std::experimental::optional<std::string> utxo_pool;
+    std::vector<UnspentOutput> utxo_pool;
     int8_t version;
 
     friend bool operator==(const AccountCryptoProperties& lhs, const AccountCryptoProperties& rhs);
@@ -30,7 +32,7 @@ struct AccountCryptoProperties final {
     AccountCryptoProperties(std::string address_,
                             std::string path_,
                             std::experimental::optional<int64_t> nonce_,
-                            std::experimental::optional<std::string> utxo_pool_,
+                            std::vector<UnspentOutput> utxo_pool_,
                             int8_t version_)
     : address(std::move(address_))
     , path(std::move(path_))

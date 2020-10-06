@@ -178,13 +178,13 @@
 }
 
 - (void)composeBtcTransaction:(ZKAccount *) account {
-    [_wallet composeBtcTransaction:account.id
-                   changeAccountId:account.id
-                       destination:@"2N6BfH356AicEzuC1dYt4gYkw6WFWZrfeSY"
-                            amount:nil
-                           feeRate:[NSDecimalNumber decimalNumberWithString:@"20"]
-                           sendMax:YES
-                        completion:^(ZKComposedTransaction * _Nullable transaction, NSError * _Nullable error) {
+    [_wallet composeTransaction:account.id
+                changeAccountId:account.id
+                    destination:@"2N6BfH356AicEzuC1dYt4gYkw6WFWZrfeSY"
+                         amount:nil
+                        feeRate:[NSDecimalNumber decimalNumberWithString:@"20"]
+                        sendMax:YES
+                     completion:^(ZKComposedTransaction * _Nullable transaction, NSError * _Nullable error) {
         
         if (error != nil) {
             NSLog(@"error: %@", [error description]);

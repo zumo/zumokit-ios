@@ -39,21 +39,21 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     return self;
 }
 
-- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
-              changeAccountId:(nonnull NSString *)changeAccountId
-                  destination:(nonnull NSString *)destination
-                       amount:(nullable NSDecimalNumber *)amount
-                      feeRate:(nonnull NSDecimalNumber *)feeRate
-                      sendMax:(BOOL)sendMax
-                     callback:(nullable id<ZKComposeTransactionCallback>)callback {
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+           changeAccountId:(nonnull NSString *)changeAccountId
+               destination:(nonnull NSString *)destination
+                    amount:(nullable NSDecimalNumber *)amount
+                   feeRate:(nonnull NSDecimalNumber *)feeRate
+                   sendMax:(BOOL)sendMax
+                  callback:(nullable id<ZKComposeTransactionCallback>)callback {
     try {
-        _cppRefHandle.get()->compose_btc_transaction(::djinni::String::toCpp(fromAccountId),
-                                                     ::djinni::String::toCpp(changeAccountId),
-                                                     ::djinni::String::toCpp(destination),
-                                                     ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
-                                                     ::zumo::djinni::objc::DecimalConverter::toCpp(feeRate),
-                                                     ::djinni::Bool::toCpp(sendMax),
-                                                     ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
+        _cppRefHandle.get()->compose_transaction(::djinni::String::toCpp(fromAccountId),
+                                                 ::djinni::String::toCpp(changeAccountId),
+                                                 ::djinni::String::toCpp(destination),
+                                                 ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
+                                                 ::zumo::djinni::objc::DecimalConverter::toCpp(feeRate),
+                                                 ::djinni::Bool::toCpp(sendMax),
+                                                 ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

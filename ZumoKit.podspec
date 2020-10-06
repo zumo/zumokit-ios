@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ZumoKit'
-  s.version          = 'v2.3.0-alpha.26'
+  s.version          = '2.3.0-alpha.27'
   s.summary          = 'ZumoKit is a Wallet as a Service SDK'
   s.homepage         = 'https://developers.zumo.money/docs/installation/ios.html'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -32,6 +32,7 @@ Pod::Spec.new do |s|
     'HEADER_SEARCH_PATHS' => '$(inherited) "$(PODS_ROOT)/ZumoKit/NativeLibs/universal/include"',
     'OTHER_CFLAGS' => '-fmodules -fcxx-modules',
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
-    'CLANG_CXX_LIBRARY' => 'libc++'
+    'CLANG_CXX_LIBRARY' => 'libc++',
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }
 end

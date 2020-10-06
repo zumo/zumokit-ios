@@ -23,28 +23,28 @@
 @interface ZKWallet : NSObject
 
 /**
- * Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#bitcoin">Send Transactions</a> guide for usage details.
+ * Compose BTC or BSV transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#crypto">Send Transactions</a> guide for usage details.
  * <p>
  * On success `ZKComposedTransaction`  is returned via callback.
  *
  * @param fromAccountId   `ZKAccount` identifier
  * @param changeAccountId change `ZKAccount` identifier, which can be the same as fromAccountId
  * @param destination       destination wallet address
- * @param amount            amount in BTC
+ * @param amount            amount in BTC or BSV
  * @param feeRate          fee rate in satoshis/byte
  * @param sendMax          send maximum possible funds to destination
  * @param callback          an interface to receive the result or error
  */
-- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
-              changeAccountId:(nonnull NSString *)changeAccountId
-                  destination:(nonnull NSString *)destination
-                       amount:(nullable NSDecimalNumber *)amount
-                      feeRate:(nonnull NSDecimalNumber *)feeRate
-                      sendMax:(BOOL)sendMax
-                     callback:(nullable id<ZKComposeTransactionCallback>)callback;
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+           changeAccountId:(nonnull NSString *)changeAccountId
+               destination:(nonnull NSString *)destination
+                    amount:(nullable NSDecimalNumber *)amount
+                   feeRate:(nonnull NSDecimalNumber *)feeRate
+                   sendMax:(BOOL)sendMax
+                  callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
 /**
- * Compose Ethereum transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
+ * Compose Ethereum transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
  * <p>
  * On success `ZKComposedTransaction` is returned via callback.
  *
@@ -69,7 +69,7 @@
                      callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
 /**
- * Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
+ * Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
  * <p>
  * On success `ZKComposedTransaction` is returned via callback.
  *
@@ -86,7 +86,7 @@
                               callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
 /**
- * Compose transaction to nominated account asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
+ * Compose transaction to nominated account asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
  * <p>
  * On success `ZKComposedTransaction` object is returned via callback.
  *
@@ -101,7 +101,7 @@
                                     callback:(nullable id<ZKComposeTransactionCallback>)callback;
 
 /**
- * Submit a transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
+ * Submit a transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
  * <p>
  * On success `ZKTransaction` object is returned via callback.
  *
@@ -113,7 +113,7 @@
                  callback:(nullable id<ZKSubmitTransactionCallback>)callback;
 
 /**
- * Compose Bitcoin transaction asynchronously. Refer to <a href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
+ * Compose Bitcoin transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
  * <p>
  * On success `ZKComposedExchange`  is returned via callback.
  *
@@ -134,7 +134,7 @@
                callback:(nullable id<ZKComposeExchangeCallback>)callback;
 
 /**
- * Submit an exchange asynchronously. <a href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
+ * Submit an exchange asynchronously. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
  * <p>
  * On success `ZKExchange` object is returned via callback.
  *

@@ -43,16 +43,16 @@ typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NS
                    completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
 /**
-<code>composeBtcTransaction</code> completion handler extension.
-@see `-[ZKWallet composeBtcTransaction:changeAccountId:destination:amount:feeRate:sendMax:callback:]`
+<code>composeTransaction</code> completion handler extension.
+@see `-[ZKWallet composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:callback:]`
 */
-- (void)composeBtcTransaction:(nonnull NSString *)fromAccountId
-              changeAccountId:(nonnull NSString *)changeAccountId
-                  destination:(nonnull NSString *)destination
-                       amount:(nullable NSDecimalNumber *)amount
-                      feeRate:(nonnull NSDecimalNumber *)feeRate
-                      sendMax:(BOOL)sendMax
-                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+           changeAccountId:(nonnull NSString *)changeAccountId
+               destination:(nonnull NSString *)destination
+                    amount:(nullable NSDecimalNumber *)amount
+                   feeRate:(nonnull NSDecimalNumber *)feeRate
+                   sendMax:(BOOL)sendMax
+                completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
 
 /**
 <code>composeInternalFiatTransaction</code> completion handler extension.
