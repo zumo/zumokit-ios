@@ -23,7 +23,7 @@ ZKZumoCore *zumoCore;
 }
 
 - (instancetype)initWithApiKey:(NSString *)apiKey
-                       apiRoot:(NSString *)apiRoot
+                        apiUrl:(NSString *)apiUrl
                   txServiceUrl:(NSString *)txServiceUrl {
 
     if( self = [super init] ) {
@@ -32,17 +32,17 @@ ZKZumoCore *zumoCore;
         HttpService *httpImpl = [[HttpService alloc] init];
 
         // Convert the txServiceUrl to an actual NSURL and pass to wsImpl.
-        NSURL *txUrl = [[NSURL alloc] initWithString:txServiceUrl];
-        WebSocketService *wsImpl = [[WebSocketService alloc] initWithURL:txUrl];
+        NSURL *txWssUrl = [[NSURL alloc] initWithString:[txServiceUrl
+                                                      stringByReplacingOccurrencesOfString:@"https"
+                                                      withString:@"wss"]];
+        WebSocketService *wsImpl = [[WebSocketService alloc] initWithURL:txWssUrl];
 
         // Initialize the C++ core
         zumoCore = [ZKZumoCore init: httpImpl
                              wsImpl: wsImpl
                              apiKey: apiKey
-                            apiRoot: apiRoot
-                      txServiceRoot: txServiceUrl];
-
-        _utils = zumoCore.getUtils;
+                             apiUrl: apiUrl
+                       txServiceUrl: txServiceUrl];
 
         // Connect to the websocket
         [wsImpl connect];
@@ -52,26 +52,36 @@ ZKZumoCore *zumoCore;
     return self;
 }
 
-- (void)getUser:(nonnull NSString *)userToken
-  completion:(UserCompletionBlock)completionHandler {
-    [zumoCore getUser:userToken callback:[[UserCallback alloc] initWithCompletionHandler: completionHandler]];
+- (void)authUser:(nonnull NSString *)userToken
+      completion:(UserCompletionBlock)completionHandler {
+    [zumoCore authUser:userToken callback:[[UserCallback alloc] initWithCompletionHandler: completionHandler]];
 }
 
-- (void)getHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completionHandler {
-    [zumoCore getHistoricalExchangeRates:[[HistoricalExchangeRatesCallback alloc] initWithCompletionHandler: completionHandler]];
+- (nullable ZKUser *)getActiveUser {
+    return [zumoCore getActiveUser];
+};
+
+- (nonnull ZKUtils *)getUtils {
+    return [zumoCore getUtils];
+};
+
+- (nullable ZKExchangeRate *)getExchangeRate:(nonnull NSString *)fromCurrency
+                                  toCurrency:(nonnull NSString *)toCurrency {
+    return [zumoCore getExchangeRate:fromCurrency toCurrency:toCurrency];
+};
+
+- (nullable ZKExchangeSettings *)getExchangeSettings:(nonnull NSString *)fromCurrency
+                                          toCurrency:(nonnull NSString *)toCurrency {
+    return [zumoCore getExchangeSettings:fromCurrency toCurrency:toCurrency];
+};
+
+- (nullable ZKFeeRates *)getFeeRates:(nonnull NSString *)currency {
+    return [zumoCore getFeeRates:currency];
+};
+
+- (void)fetchHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completionHandler {
+    [zumoCore fetchHistoricalExchangeRates:[[HistoricalExchangeRatesCallback alloc] initWithCompletionHandler: completionHandler]];
 }
-
-- (nonnull ZKState *)getState {
-    return [zumoCore getState];
-};
-
-- (void)addStateListener:(nullable id<ZKStateListener>)listener {
-    [zumoCore addStateListener:listener];
-};
-
-- (void)removeStateListener:(nullable id<ZKStateListener>)listener {
-    [zumoCore removeStateListener:listener];
-};
 
 
 @end

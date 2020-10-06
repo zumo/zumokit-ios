@@ -8,23 +8,24 @@ namespace zumo {
 
 class Decimal {
   public:
-    // decimal is represented as sign*mantissa*10^(-scale)
-    Decimal(const BigInt &mantissa, uint64_t scale = 0, bool is_negative = false);
-
     Decimal(const std::string &decimal);
 
     Decimal(const char *decimal) : Decimal(std::string(decimal)) {}
 
+    // decimal is represented as sign*mantissa*10^(-scale)
     Decimal(int n) : mantissa_(abs(n)), scale_(0), is_negative_(n < 0) {}
+
+    Decimal(const BigInt &mantissa, uint64_t scale = 0, bool is_negative = false)
+        : mantissa_(std::move(mantissa)), scale_(std::move(scale)),
+          is_negative_(std::move(is_negative))
+    {
+    }
 
     Decimal scale_by_power_of_ten(int n) const;
 
+    operator std::string() const;
     std::string to_string() const;
-
     std::string to_unsigned_string() const;
-
-    bool is_big_int() const;
-
     BigInt to_big_int() const;
 
     friend Decimal operator*(const Decimal &a, const Decimal &b);

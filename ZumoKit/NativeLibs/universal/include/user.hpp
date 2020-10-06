@@ -11,25 +11,21 @@
 namespace zumo {
 
 class AccountCallback;
+class AccountDataListener;
 class AccountFiatPropertiesCallback;
-class AccountListener;
 class MnemonicCallback;
 class SuccessCallback;
-class TransactionListener;
-class UserListener;
 class WalletCallback;
 struct Account;
-struct Exchange;
-struct Transaction;
 
 /**
  * User class provides methods for managing user wallet and accounts.
  * <p>
  * User instance can be obtained via <code>getUser</code> method on ZumoKit instance.
  * <p>
- * See <a target="_top" href="https://developers.zumo.money/docs/guides/manage-user-wallet">Manage User Wallet</a>,
- * <a target="_top" href="https://developers.zumo.money/docs/guides/create-fiat-account">Create Fiat Account</a> and
- * <a target="_top" href="https://developers.zumo.money/docs/guides/view-user-data">View User Data</a>
+ * See <a href="https://developers.zumo.money/docs/guides/manage-user-wallet">Manage User Wallet</a>,
+ * <a href="https://developers.zumo.money/docs/guides/create-fiat-account">Create Fiat Account</a> and
+ * <a href="https://developers.zumo.money/docs/guides/view-user-data">View User Data</a>
  * guides for usage details.
  */
 class User {
@@ -93,7 +89,7 @@ public:
     /**
      * Get nominated account details for specified account if it exists.
      * Refer to
-     * <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#bitcoin">Create Fiat Account</a>
+     * <a href="https://developers.zumo.money/docs/guides/send-transactions#bitcoin">Create Fiat Account</a>
      * for explanation about nominated account.
      * @param  account_id     Account id
      * @param  callback       an interface to receive the result or error
@@ -163,74 +159,16 @@ public:
     virtual std::vector<Account> get_accounts() = 0;
 
     /**
-     * Get account transactions for specified account.
-     * @param account_id Account identifier
-     * @return all transactions corresponding to specified account
-     */
-    virtual std::vector<Transaction> get_account_transactions(const std::string & account_id) = 0;
-
-    /**
-     * Get all user transactions.
-     * @return all user transactions
-     */
-    virtual std::vector<Transaction> get_transactions() = 0;
-
-    /**
-     * Get transaction with specific transaction identifier if such transaction exists.
-     * @param transaction_id Transaction identifier
-     * @return transaction with specified identifier if exists, null otherwise
-     */
-    virtual std::experimental::optional<Transaction> get_transaction(const std::string & transaction_id) = 0;
-
-    /**
-     * Get all user exchanges.
-     * @return all user exchanges
-     */
-    virtual std::vector<Exchange> get_exchanges() = 0;
-
-    /**
-     * Get exchange associated with selected transaction if such exchange exists.
-     * @return exchange associated with selected transaction if such exchange exists
-     */
-    virtual std::experimental::optional<Exchange> get_exchange_by_transaction_id(const std::string & transaction_id) = 0;
-
-    /**
-     * Listen to all user changes.
+     * Listen to all account data changes.
      * @param listener interface to listen to user changes
      */
-    virtual void add_listener(const std::shared_ptr<UserListener> & listener) = 0;
+    virtual void add_account_data_listener(const std::shared_ptr<AccountDataListener> & listener) = 0;
 
     /**
-     * Remove listener to user changes.
+     * Remove listener to account data changes.
      * @param listener interface to listen to user changes
      */
-    virtual void remove_listener(const std::shared_ptr<UserListener> & listener) = 0;
-
-    /**
-     * Listen to all account changes for specific account.
-     * @param account_id Account identifier
-     * @param listener   interface to listen to account changes
-     */
-    virtual void add_account_listener(const std::string & account_id, const std::shared_ptr<AccountListener> & listener) = 0;
-
-    /**
-     * Remove listener to account changes.
-     * @param listener interface to listen to user changes
-     */
-    virtual void remove_account_listener(const std::shared_ptr<AccountListener> & listener) = 0;
-
-    /**
-     * Listen to all transaction changes for specific transaction.
-     * @param transaction_id Transaction identifier
-     * @param listener       interface to listen to transaction changes
-     */
-    virtual void add_transaction_listener(const std::string & transaction_id, const std::shared_ptr<TransactionListener> & listener) = 0;
-
-    /**
-     * Remove listener to transaction changes.
-     * @param listener interface to listen to transaction changes
-     */
-    virtual void remove_transaction_listener(const std::shared_ptr<TransactionListener> & listener) = 0;
+    virtual void remove_account_data_listener(const std::shared_ptr<AccountDataListener> & listener) = 0;
 };
 
 }  // namespace zumo

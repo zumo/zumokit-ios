@@ -6,10 +6,12 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "ZKExchangeRate+Private.h"
+#import "ZKExchangeSettings+Private.h"
+#import "ZKFeeRates+Private.h"
 #import "ZKHistoricalExchangeRatesCallback+Private.h"
 #import "ZKHttpImpl+Private.h"
-#import "ZKState+Private.h"
-#import "ZKStateListener+Private.h"
+#import "ZKUser+Private.h"
 #import "ZKUserCallback+Private.h"
 #import "ZKUtils+Private.h"
 #import "ZKWebSocketImpl+Private.h"
@@ -47,23 +49,30 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 + (nullable ZKZumoCore *)init:(nullable id<ZKHttpImpl>)httpImpl
                        wsImpl:(nullable id<ZKWebSocketImpl>)wsImpl
                        apiKey:(nonnull NSString *)apiKey
-                      apiRoot:(nonnull NSString *)apiRoot
-                txServiceRoot:(nonnull NSString *)txServiceRoot {
+                       apiUrl:(nonnull NSString *)apiUrl
+                 txServiceUrl:(nonnull NSString *)txServiceUrl {
     try {
         auto objcpp_result_ = ::zumo::ZumoCore::init(::djinni_generated::HttpImpl::toCpp(httpImpl),
                                                      ::djinni_generated::WebSocketImpl::toCpp(wsImpl),
                                                      ::djinni::String::toCpp(apiKey),
-                                                     ::djinni::String::toCpp(apiRoot),
-                                                     ::djinni::String::toCpp(txServiceRoot));
+                                                     ::djinni::String::toCpp(apiUrl),
+                                                     ::djinni::String::toCpp(txServiceUrl));
         return ::djinni_generated::ZumoCore::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)getUser:(nonnull NSString *)userTokenSet
-       callback:(nullable id<ZKUserCallback>)callback {
+- (void)authUser:(nonnull NSString *)userTokenSet
+        callback:(nullable id<ZKUserCallback>)callback {
     try {
-        _cppRefHandle.get()->get_user(::djinni::String::toCpp(userTokenSet),
-                                      ::djinni_generated::UserCallback::toCpp(callback));
+        _cppRefHandle.get()->auth_user(::djinni::String::toCpp(userTokenSet),
+                                       ::djinni_generated::UserCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nullable ZKUser *)getActiveUser {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_active_user();
+        return ::djinni_generated::User::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -74,28 +83,34 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)getHistoricalExchangeRates:(nullable id<ZKHistoricalExchangeRatesCallback>)callback {
+- (nullable ZKExchangeRate *)getExchangeRate:(nonnull NSString *)fromCurrency
+                                  toCurrency:(nonnull NSString *)toCurrency {
     try {
-        _cppRefHandle.get()->get_historical_exchange_rates(::djinni_generated::HistoricalExchangeRatesCallback::toCpp(callback));
+        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_rate(::djinni::String::toCpp(fromCurrency),
+                                                                     ::djinni::String::toCpp(toCurrency));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::ExchangeRate>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull ZKState *)getState {
+- (nullable ZKExchangeSettings *)getExchangeSettings:(nonnull NSString *)fromCurrency
+                                          toCurrency:(nonnull NSString *)toCurrency {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_state();
-        return ::djinni_generated::State::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_settings(::djinni::String::toCpp(fromCurrency),
+                                                                         ::djinni::String::toCpp(toCurrency));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::ExchangeSettings>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)addStateListener:(nullable id<ZKStateListener>)listener {
+- (nullable ZKFeeRates *)getFeeRates:(nonnull NSString *)currency {
     try {
-        _cppRefHandle.get()->add_state_listener(::djinni_generated::StateListener::toCpp(listener));
+        auto objcpp_result_ = _cppRefHandle.get()->get_fee_rates(::djinni::String::toCpp(currency));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::FeeRates>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)removeStateListener:(nullable id<ZKStateListener>)listener {
+- (void)fetchHistoricalExchangeRates:(nullable id<ZKHistoricalExchangeRatesCallback>)callback {
     try {
-        _cppRefHandle.get()->remove_state_listener(::djinni_generated::StateListener::toCpp(listener));
+        _cppRefHandle.get()->fetch_historical_exchange_rates(::djinni_generated::HistoricalExchangeRatesCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

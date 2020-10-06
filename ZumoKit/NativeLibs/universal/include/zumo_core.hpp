@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "stdx/optional.hpp"
 #include <memory>
 #include <string>
 
@@ -10,11 +11,13 @@ namespace zumo {
 
 class HistoricalExchangeRatesCallback;
 class HttpImpl;
-class StateListener;
+class User;
 class UserCallback;
 class Utils;
 class WebSocketImpl;
-struct State;
+struct ExchangeRate;
+struct ExchangeSettings;
+struct FeeRates;
 
 /** Entry point to ZumoKit C++ SDK */
 class ZumoCore {
@@ -33,23 +36,30 @@ public:
      * @param http_impl        HTTP implementation
      * @param ws_impl          WebSocet implementation
      * @param api_key          ZumoKit Api-Key
-     * @param api_root         ZumoKit API url
-     * @param tx_service_root  ZumoKit Transaction Service url
+     * @param api_url         ZumoKit API url
+     * @param tx_service_url  ZumoKit Transaction Service url
      *
      * @return ZumoKit instance
      */
-    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpImpl> & http_impl, const std::shared_ptr<WebSocketImpl> & ws_impl, const std::string & api_key, const std::string & api_root, const std::string & tx_service_root);
+    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpImpl> & http_impl, const std::shared_ptr<WebSocketImpl> & ws_impl, const std::string & api_key, const std::string & api_url, const std::string & tx_service_url);
 
     /**
-     * Get user corresponding to user token set.
-     * Refer to <a target="_top" href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
+     * Authenticates user token set and returns corresponding user. On success user is set as active user.
+     * Refer to <a href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
      *
      * @param user_token_set   user token set
      * @param callback         an interface to receive the result or error
      *
      * @see User
      */
-    virtual void get_user(const std::string & user_token_set, const std::shared_ptr<UserCallback> & callback) = 0;
+    virtual void auth_user(const std::string & user_token_set, const std::shared_ptr<UserCallback> & callback) = 0;
+
+    /**
+     * Get active user if exists.
+     *
+     * @return active user or null
+     */
+    virtual std::shared_ptr<User> get_active_user() = 0;
 
     /**
      * Get crypto utils class.
@@ -57,6 +67,35 @@ public:
      * @return crypto utils
      */
     virtual std::shared_ptr<Utils> get_utils() = 0;
+
+    /**
+     * Get exchange rate for selected currency pair.
+     *
+     * @param from_currency   currency code
+     * @param to_currency     currency code
+     *
+     * @return exchange rate or null
+     */
+    virtual std::experimental::optional<ExchangeRate> get_exchange_rate(const std::string & from_currency, const std::string & to_currency) = 0;
+
+    /**
+     * Get exchange settings for selected currency pair.
+     *
+     * @param from_currency   currency code
+     * @param to_currency     currency code
+     *
+     * @return exchange settings or null
+     */
+    virtual std::experimental::optional<ExchangeSettings> get_exchange_settings(const std::string & from_currency, const std::string & to_currency) = 0;
+
+    /**
+     * Get crypto currency fee rates for selected currency.
+     *
+     * @param currency   currency code
+     *
+     * @return exchange settings or null
+     */
+    virtual std::experimental::optional<FeeRates> get_fee_rates(const std::string & currency) = 0;
 
     /**
      * Fetch historical exchange rates for supported time intervals.
@@ -67,28 +106,7 @@ public:
      *
      * @see HistoricalExchangeRatesInterval
      */
-    virtual void get_historical_exchange_rates(const std::shared_ptr<HistoricalExchangeRatesCallback> & callback) = 0;
-
-    /**
-     * Returns current ZumoKit state. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state">ZumoKit State</a> guide for details.
-     *
-     * @return current ZumoKit state
-     */
-    virtual State get_state() = 0;
-
-    /**
-     * Listen to all state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#listen-to-state-changes">ZumoKit State</a> guide for details.
-     *
-     * @param listener interface to listen to state changes
-     */
-    virtual void add_state_listener(const std::shared_ptr<StateListener> & listener) = 0;
-
-    /**
-     * Remove listener to state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#remove-state-listener">ZumoKit State</a> guide for details.
-     *
-     * @param listener interface to listen to state changes
-     */
-    virtual void remove_state_listener(const std::shared_ptr<StateListener> & listener) = 0;
+    virtual void fetch_historical_exchange_rates(const std::shared_ptr<HistoricalExchangeRatesCallback> & callback) = 0;
 };
 
 }  // namespace zumo

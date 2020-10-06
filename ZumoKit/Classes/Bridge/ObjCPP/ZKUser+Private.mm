@@ -8,14 +8,10 @@
 #import "DJIMarshal+Private.h"
 #import "ZKAccount+Private.h"
 #import "ZKAccountCallback+Private.h"
+#import "ZKAccountDataListener+Private.h"
 #import "ZKAccountFiatPropertiesCallback+Private.h"
-#import "ZKAccountListener+Private.h"
-#import "ZKExchange+Private.h"
 #import "ZKMnemonicCallback+Private.h"
 #import "ZKSuccessCallback+Private.h"
-#import "ZKTransaction+Private.h"
-#import "ZKTransactionListener+Private.h"
-#import "ZKUserListener+Private.h"
 #import "ZKWalletCallback+Private.h"
 #include <exception>
 #include <stdexcept>
@@ -178,78 +174,15 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSArray<ZKTransaction *> *)getAccountTransactions:(nonnull NSString *)accountId {
+- (void)addAccountDataListener:(nullable id<ZKAccountDataListener>)listener {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_account_transactions(::djinni::String::toCpp(accountId));
-        return ::djinni::List<::djinni_generated::Transaction>::fromCpp(objcpp_result_);
+        _cppRefHandle.get()->add_account_data_listener(::djinni_generated::AccountDataListener::toCpp(listener));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nonnull NSArray<ZKTransaction *> *)getTransactions {
+- (void)removeAccountDataListener:(nullable id<ZKAccountDataListener>)listener {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_transactions();
-        return ::djinni::List<::djinni_generated::Transaction>::fromCpp(objcpp_result_);
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (nullable ZKTransaction *)getTransaction:(nonnull NSString *)transactionId {
-    try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_transaction(::djinni::String::toCpp(transactionId));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::Transaction>::fromCpp(objcpp_result_);
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (nonnull NSArray<ZKExchange *> *)getExchanges {
-    try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_exchanges();
-        return ::djinni::List<::djinni_generated::Exchange>::fromCpp(objcpp_result_);
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (nullable ZKExchange *)getExchangeByTransactionId:(nonnull NSString *)transactionId {
-    try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_by_transaction_id(::djinni::String::toCpp(transactionId));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::Exchange>::fromCpp(objcpp_result_);
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)addListener:(nullable id<ZKUserListener>)listener {
-    try {
-        _cppRefHandle.get()->add_listener(::djinni_generated::UserListener::toCpp(listener));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)removeListener:(nullable id<ZKUserListener>)listener {
-    try {
-        _cppRefHandle.get()->remove_listener(::djinni_generated::UserListener::toCpp(listener));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)addAccountListener:(nonnull NSString *)accountId
-                  listener:(nullable id<ZKAccountListener>)listener {
-    try {
-        _cppRefHandle.get()->add_account_listener(::djinni::String::toCpp(accountId),
-                                                  ::djinni_generated::AccountListener::toCpp(listener));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)removeAccountListener:(nullable id<ZKAccountListener>)listener {
-    try {
-        _cppRefHandle.get()->remove_account_listener(::djinni_generated::AccountListener::toCpp(listener));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)addTransactionListener:(nonnull NSString *)transactionId
-                      listener:(nullable id<ZKTransactionListener>)listener {
-    try {
-        _cppRefHandle.get()->add_transaction_listener(::djinni::String::toCpp(transactionId),
-                                                      ::djinni_generated::TransactionListener::toCpp(listener));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)removeTransactionListener:(nullable id<ZKTransactionListener>)listener {
-    try {
-        _cppRefHandle.get()->remove_transaction_listener(::djinni_generated::TransactionListener::toCpp(listener));
+        _cppRefHandle.get()->remove_account_data_listener(::djinni_generated::AccountDataListener::toCpp(listener));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

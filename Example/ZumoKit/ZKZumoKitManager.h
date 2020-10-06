@@ -8,15 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <ZumoKit/ZumoKit.h>
-#import <ZumoKit/ZKStateListener.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZKZumoKitManager : NSObject<ZKStateListener>
+@interface ZKZumoKitManager : NSObject
 
 + (ZKZumoKitManager *)sharedManager;
-
-- (void)update:(nonnull ZKState *)state;
 
 - (void)initialize;
 
