@@ -27,10 +27,6 @@
     return manager;
 }
 
-- (void)update:(nonnull ZKState *)state {
-    // Do something with state
-}
-
 - (void)initialize {
     NSLog(@"ZumoKit SDK version: %@", [ZumoKit version]);
     
@@ -38,7 +34,7 @@
     
     // ZumoKit config
     NSString *apiKey = [mainBundle objectForInfoDictionaryKey:@"API_KEY"];
-    NSString *apiRoot = [mainBundle objectForInfoDictionaryKey:@"API_URL"];
+    NSString *apiUrl = [mainBundle objectForInfoDictionaryKey:@"API_URL"];
     NSString *txServiceUrl = [mainBundle objectForInfoDictionaryKey:@"TX_SERVICE_URL"];
     
     // Client config
@@ -49,10 +45,8 @@
 
     // Initialize ZumoKit
     _zumoKit =  [[ZumoKit alloc] initWithApiKey:apiKey
-                                        apiRoot:apiRoot
+                                         apiUrl:apiUrl
                                    txServiceUrl:txServiceUrl];
-    
-    [_zumoKit addStateListener:self];
 
     // Get ZumoKit user token
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:clientZumoKitAuthEndpoint];
@@ -81,7 +75,7 @@
 
         NSString *userTokenSet = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         [_zumoKit
-            getUser:userTokenSet
+            authUser:userTokenSet
             completion: ^(ZKUser * _Nullable user, NSError * _Nullable error) {
            
                _user = user;
@@ -122,7 +116,7 @@
                              //                value:@"0.02"];
                       }];
                } else {
-                   NSString *mnemonicPhrase = [[_zumoKit utils] generateMnemonic:12];
+                   NSString *mnemonicPhrase = [[_zumoKit getUtils] generateMnemonic:12];
 
                    [_user createWallet: mnemonicPhrase password:userWalletPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
                            if (error != nil) {

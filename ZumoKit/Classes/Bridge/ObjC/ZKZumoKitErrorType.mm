@@ -4,6 +4,8 @@
 #import "ZKZumoKitErrorType.h"
 
 
+NSString * __nonnull const ZKZumoKitErrorTypeZUMOKITERROR = @"zumo_kit_error";
+
 NSString * __nonnull const ZKZumoKitErrorTypeAPICONNECTIONERROR = @"api_connection_error";
 
 NSString * __nonnull const ZKZumoKitErrorTypeAPIERROR = @"api_error";

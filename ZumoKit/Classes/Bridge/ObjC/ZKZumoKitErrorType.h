@@ -5,7 +5,7 @@
 
 /**
  * The type of error returned. In case of wallet errors, these errors can be safely displayed to the end users.
- * See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
+ * See <a href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
  */
 @interface ZKZumoKitErrorType : NSObject
 - (nonnull instancetype)init;
@@ -13,6 +13,8 @@
 
 @end
 
+/** Base ZumoKit error. */
+extern NSString * __nonnull const ZKZumoKitErrorTypeZUMOKITERROR;
 /** Failure to connect to ZumoKit’s API. */
 extern NSString * __nonnull const ZKZumoKitErrorTypeAPICONNECTIONERROR;
 /** Default error if something goes wrong on our side. */

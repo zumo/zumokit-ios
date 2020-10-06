@@ -6,40 +6,40 @@ FOUNDATION_EXPORT NSString *__nonnull const ZumoKitDomain;
  Possible error code values for NSError's with the `ZumoKitDomain` domain
  */
 typedef NS_ENUM(NSInteger, ZKErrorCode) {
-   /**
+  /**
      Trouble connecting to ZumoKit API.
      */
-   ZKAPIConnectionError,
+  ZKAPIConnectionError,
 
-   /**
+  /**
      General-purpose API error.
      */
-   ZKAPIError,
+  ZKAPIError,
 
-   /**
+  /**
      Authentication with ZumoKit's API failed
      */
-   ZKAuthenticationError,
+  ZKAuthenticationError,
 
-   /**
+  /**
      Something was wrong with the given wallet operation.
      */
-   ZKWalletError,
+  ZKWalletError,
 
-   /**
+  /**
     API call was invalid for some reason.
      */
-   ZKInvalidRequestError,
+  ZKInvalidRequestError,
 
-   /**
+  /**
      Rate limit exceeded.
      */
-   ZKRateLimitError,
+  ZKRateLimitError,
 
-   /**
+  /**
      Something went wrong validating arguments.
      */
-   ZKInvalidArgumentError
+  ZKInvalidArgumentError
 
 };
 
@@ -61,7 +61,7 @@ FOUNDATION_EXPORT NSString *__nonnull const ZKZumoKitErrorCodeKey;
 
 /**
  * NSError extension with error type and error code and message.
- * Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a>
+ * Refer to <a href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a>
  * guide for details on handling errors.
  */
 @interface NSError (ZumoKit)

@@ -3,7 +3,6 @@
 
 #pragma once
 
-#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <string>
 
@@ -12,8 +11,8 @@ namespace zumo {
 /**
  * Utility class providing blockchain related utility methods. Accessed from ZumoKit class.
  * <p>
- * This class provides mnemonic phrase generation utility, Bitcoin & Ethereum address
- * validation utilities and Ethereum unit conversion methods.
+ * This class provides mnemonic phrase generation utility and
+ *  Bitcoin & Ethereum address validation utilities.
  */
 class Utils {
 public:
@@ -40,48 +39,6 @@ public:
      * @see NetworkType
      */
     virtual bool is_valid_btc_address(const std::string & address, const std::string & network) = 0;
-
-    /**
-     * Converts wei value to ETH.
-     * @param number wei value to be converted
-     * @return ETH value
-     */
-    virtual ::zumo::Decimal wei_to_eth(const ::zumo::Decimal & number) = 0;
-
-    /**
-     * Converts ETH value to wei.
-     * @param number ETH value to be converted
-     * @return wei value
-     */
-    virtual ::zumo::Decimal eth_to_wei(const ::zumo::Decimal & number) = 0;
-
-    /**
-     * Converts gwei value to ETH.
-     * @param number gwei value to be converted
-     * @return ETH value
-     */
-    virtual ::zumo::Decimal gwei_to_eth(const ::zumo::Decimal & number) = 0;
-
-    /**
-     * Converts ETH value to gwei.
-     * @param number ETH value to be converted
-     * @return gwei value
-     */
-    virtual ::zumo::Decimal eth_to_gwei(const ::zumo::Decimal & number) = 0;
-
-    /**
-     * Converts wei value to gwei.
-     * @param number wei value to be converted
-     * @return gwei value
-     */
-    virtual ::zumo::Decimal wei_to_gwei(const ::zumo::Decimal & number) = 0;
-
-    /**
-     * Converts gwei value to wei.
-     * @param number gwei value to be converted
-     * @return wei value
-     */
-    virtual ::zumo::Decimal gwei_to_wei(const ::zumo::Decimal & number) = 0;
 };
 
 }  // namespace zumo

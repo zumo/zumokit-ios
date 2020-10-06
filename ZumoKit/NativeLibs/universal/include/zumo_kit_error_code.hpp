@@ -11,7 +11,7 @@ namespace zumo {
 /**
  * The code of error returned. Some errors that could be handled programmatically (e.g., balance too low)
  * include an error code — a short string with a brief explanation — as a value for code.
- * See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
+ * See <a href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
  */
 struct ZumoKitErrorCode final {
 
@@ -32,6 +32,9 @@ struct ZumoKitErrorCode final {
 
     /** Invalid response received from ZumoKit API. */
     static std::string const API_SERVICE_ERROR;
+
+    /** Bitcoin amount exceeds maximum 63 bit precision. */
+    static std::string const BITCOIN_AMOUNT_OVERFLOW;
 
     /** Requested change account not found. */
     static std::string const CHANGE_ACCOUNT_NOT_FOUND;
@@ -90,9 +93,6 @@ struct ZumoKitErrorCode final {
 
     /** Insufficient funds for transaction value. */
     static std::string const INSUFFICIENT_FUNDS_FOR_TRANSACTION;
-
-    /** Value exceeds maximum 63 bit precision. */
-    static std::string const INT64_OVERFLOW;
 
     /** Account type not supported by the operation. */
     static std::string const INVALID_ACCOUNT_TYPE;
@@ -169,9 +169,6 @@ struct ZumoKitErrorCode final {
     /** Something went wrong signing transaction. */
     static std::string const SIGNING_ERROR;
 
-    /** Transaction amount exceeds maximum precision. */
-    static std::string const TRANSACTION_AMOUNT_OVERFLOW;
-
     /** Transaction amount too small to send. */
     static std::string const TRANSACTION_AMOUNT_TOO_SMALL;
 
@@ -187,11 +184,14 @@ struct ZumoKitErrorCode final {
     /** Unspent transaction output could not be signed. */
     static std::string const UTXO_SIGNING_ERROR;
 
-    /** Cannot set value when send max enabled. */
-    static std::string const VALUE_PROVIDED_WHEN_SEND_MAX_SET;
+    /** Cannot set amount when send max enabled. Set amount to null if trying t send maximum funds. */
+    static std::string const AMOUNT_PROVIDED_WHEN_SEND_MAX_SET;
 
     /** Wallet could not be created. Wallet already exists. */
     static std::string const WALLET_LIMIT_EXCEEDED;
+
+    /** Invalid user token set. User token set should be a valid stringified JSON with accessToken, refreshToken and expiresIn properties. */
+    static std::string const INVALID_USER_TOKEN_SET;
 };
 
 }  // namespace zumo

@@ -7,8 +7,8 @@
 /**
  * Utility class providing blockchain related utility methods. Accessed from `ZKZumoKit` class.
  * <p>
- * This class provides mnemonic phrase generation utility, Bitcoin & Ethereum address
- * validation utilities and Ethereum unit conversion methods.
+ * This class provides mnemonic phrase generation utility and
+ *  Bitcoin & Ethereum address validation utilities.
  */
 @interface ZKUtils : NSObject
 
@@ -34,47 +34,5 @@
  */
 - (BOOL)isValidBtcAddress:(nonnull NSString *)address
                   network:(nonnull NSString *)network;
-
-/**
- * Converts wei value to ETH.
- * @param number wei value to be converted
- * @return ETH value
- */
-- (nonnull NSDecimalNumber *)weiToEth:(nonnull NSDecimalNumber *)number;
-
-/**
- * Converts ETH value to wei.
- * @param number ETH value to be converted
- * @return wei value
- */
-- (nonnull NSDecimalNumber *)ethToWei:(nonnull NSDecimalNumber *)number;
-
-/**
- * Converts gwei value to ETH.
- * @param number gwei value to be converted
- * @return ETH value
- */
-- (nonnull NSDecimalNumber *)gweiToEth:(nonnull NSDecimalNumber *)number;
-
-/**
- * Converts ETH value to gwei.
- * @param number ETH value to be converted
- * @return gwei value
- */
-- (nonnull NSDecimalNumber *)ethToGwei:(nonnull NSDecimalNumber *)number;
-
-/**
- * Converts wei value to gwei.
- * @param number wei value to be converted
- * @return gwei value
- */
-- (nonnull NSDecimalNumber *)weiToGwei:(nonnull NSDecimalNumber *)number;
-
-/**
- * Converts gwei value to wei.
- * @param number gwei value to be converted
- * @return wei value
- */
-- (nonnull NSDecimalNumber *)gweiToWei:(nonnull NSDecimalNumber *)number;
 
 @end

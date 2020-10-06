@@ -18,8 +18,6 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 
 #import <Foundation/Foundation.h>
 #import "ZKError.h"
-#import "ZKState.h"
-#import "ZKStateListener.h"
 #import "ZKUtils.h"
 #import "ZKUser.h"
 #import "ZKUser+CallbackCompletion.h"
@@ -29,6 +27,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKCurrencyCode.h"
 #import "ZKNetworkType.h"
 #import "ZKAccountType.h"
+#import "ZKFeeRates.h"
 
 typedef void (^UserCompletionBlock)(ZKUser *_Nullable user, NSError *_Nullable error);
 
@@ -38,17 +37,11 @@ typedef void (^HistoricalExchangeRatesCompletionBlock)(ZKHistoricalExchangeRates
 
 NS_ASSUME_NONNULL_BEGIN
 /**
- * Entry point to ZumoKit Android SDK.
+ * Entry point to ZumoKit iOS SDK.
  * <p>
- * Once ZumoKit is initialized, this class provides access to user retrieval,
- * ZumoKit state object, crypto utility class and historical exchange rates.
- * State change listeners can be added and removed.
- * <p>
- * See <a target="_top" href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.
+ * See <a href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.
  * */
 @interface ZumoKit : NSObject
-
-@property(strong, nonatomic) ZKUtils *utils;
 
 /** ZumoKit SDK semantic version tag if exists, commit hash otherwise.*/
 + (nonnull NSString *)version;
@@ -56,27 +49,66 @@ NS_ASSUME_NONNULL_BEGIN
 /**
 * Initializes ZumoKit SDK. Should only be called once.
 *
-* @param apiKey           ZumoKit Api-Key
-* @param apiRoot         ZumoKit API url
+* @param apiKey          ZumoKit Api-Key
+* @param apiUrl            ZumoKit API url
 * @param txServiceUrl  ZumoKit Transaction Service url
 *
 * @return ZumoKit instance
 */
 - (instancetype)initWithApiKey:(NSString *)apiKey
-                       apiRoot:(NSString *)apiRoot
+                        apiUrl:(NSString *)apiUrl
                   txServiceUrl:(NSString *)txServiceUrl;
 
 /**
-* Get user corresponding to user token set.
-* Refer to <a target="_top" href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
+* Authenticates user token set and returns corresponding user. On success user is set as active user.
+* Refer to <a href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
 *
 * @param userTokenSet   user token set
 * @param completion       completion block to receive the result or error
 *
 * @see `ZKUser`
 */
-- (void)getUser:(nonnull NSString *)userTokenSet
-     completion:(_Nonnull UserCompletionBlock)completion;
+- (void)authUser:(nonnull NSString *)userTokenSet
+      completion:(_Nonnull UserCompletionBlock)completion;
+
+/**
+* Get active user if exists.
+*
+* @return active user or null
+*/
+- (nullable ZKUser *)getActiveUser;
+
+/**
+* Get crypto utils.
+*
+* @return crypto utils
+*/
+- (nonnull ZKUtils *)getUtils;
+
+/**
+* Get exchange rate for selected currency pair.
+*
+* @param fromCurrency  currency code
+* @param toCurrency       currency code
+*/
+- (nullable ZKExchangeRate *)getExchangeRate:(nonnull NSString *)fromCurrency
+                                  toCurrency:(nonnull NSString *)toCurrency;
+
+/**
+* Get exchange settings for selected currency pair.
+*
+* @param fromCurrency  currency code
+* @param toCurrency       currency code
+*/
+- (nullable ZKExchangeSettings *)getExchangeSettings:(nonnull NSString *)fromCurrency
+                                          toCurrency:(nonnull NSString *)toCurrency;
+
+/**
+* Get fee rates for selected crypto currency.
+*
+* @param currency  currency code
+*/
+- (nullable ZKFeeRates *)getFeeRates:(nonnull NSString *)currency;
 
 /**
 * Fetch historical exchange rates for supported time intervals.
@@ -87,28 +119,7 @@ NS_ASSUME_NONNULL_BEGIN
 *
 * @see `ZKHistoricalExchangeRatesInterval`
 */
-- (void)getHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completion;
-
-/**
-* Returns current ZumoKit state. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state">ZumoKit State</a> guide for details.
-*
-* @return current ZumoKit state
-*/
-- (nonnull ZKState *)getState;
-
-/**
-* Listen to all state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#listen-to-state-changes">ZumoKit State</a> guide for details.
-*
-* @param listener interface to listen to state changes
-*/
-- (void)addStateListener:(nullable id<ZKStateListener>)listener;
-
-/**
-* Remove listener to state changes. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/zumokit-state#remove-state-listener">ZumoKit State</a> guide for details.
-*
-* @param listener interface to listen to state changes
-*/
-- (void)removeStateListener:(nullable id<ZKStateListener>)listener;
+- (void)fetchHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completion;
 
 @end
 NS_ASSUME_NONNULL_END

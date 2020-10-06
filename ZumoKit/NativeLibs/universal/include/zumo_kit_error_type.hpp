@@ -10,9 +10,12 @@ namespace zumo {
 
 /**
  * The type of error returned. In case of wallet errors, these errors can be safely displayed to the end users.
- * See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
+ * See <a href="https://developers.zumo.money/docs/guides/handling-errors">Handling Errors</a> for details.
  */
 struct ZumoKitErrorType final {
+
+    /** Base ZumoKit error. */
+    static std::string const ZUMO_KIT_ERROR;
 
     /** Failure to connect to ZumoKit’s API. */
     static std::string const API_CONNECTION_ERROR;
