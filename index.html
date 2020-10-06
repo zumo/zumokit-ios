@@ -20,7 +20,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          ZumoKit 2.1.0 Docs
+          ZumoKit v2.3.0-alpha.26 Docs
         </a>
         
       </p>
@@ -67,6 +67,9 @@
                 <a class="nav-group-task-link" href="Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ZKAccountDataSnapshot.html">ZKAccountDataSnapshot</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a>
               </li>
               <li class="nav-group-task">
@@ -100,13 +103,10 @@
                 <a class="nav-group-task-link" href="Classes/ZKFeeRates.html">ZKFeeRates</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKHistoricalExchangeRatesInterval.html">ZKHistoricalExchangeRatesInterval</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKNetworkType.html">ZKNetworkType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKState.html">ZKState</a>
+                <a class="nav-group-task-link" href="Classes/ZKTimeInterval.html">ZKTimeInterval</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKTransaction.html">ZKTransaction</a>
@@ -168,9 +168,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKCurrencyCodeGBP">ZKCurrencyCodeGBP</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKCurrencyCodeUSD">ZKCurrencyCodeUSD</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKCurrencyTypeCRYPTO">ZKCurrencyTypeCRYPTO</a>
               </li>
               <li class="nav-group-task">
@@ -201,24 +198,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalDAY">ZKHistoricalExchangeRatesIntervalDAY</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalHOUR">ZKHistoricalExchangeRatesIntervalHOUR</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalMONTH">ZKHistoricalExchangeRatesIntervalMONTH</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalQUARTER">ZKHistoricalExchangeRatesIntervalQUARTER</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalWEEK">ZKHistoricalExchangeRatesIntervalWEEK</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalYEAR">ZKHistoricalExchangeRatesIntervalYEAR</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKNetworkTypeGOERLI">ZKNetworkTypeGOERLI</a>
               </li>
               <li class="nav-group-task">
@@ -235,6 +214,24 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKNetworkTypeTESTNET">ZKNetworkTypeTESTNET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalDAY">ZKTimeIntervalDAY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalHOUR">ZKTimeIntervalHOUR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalMONTH">ZKTimeIntervalMONTH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalQUARTER">ZKTimeIntervalQUARTER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalWEEK">ZKTimeIntervalWEEK</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalYEAR">ZKTimeIntervalYEAR</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKTransactionDirectionINCOMING">ZKTransactionDirectionINCOMING</a>
@@ -288,7 +285,13 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeAPISERVICEERROR">ZKZumoKitErrorCodeAPISERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW">ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND">ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND</a>
@@ -339,9 +342,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION">ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINT64OVERFLOW">ZKZumoKitErrorCodeINT64OVERFLOW</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDACCOUNTTYPE">ZKZumoKitErrorCodeINVALIDACCOUNTTYPE</a>
               </li>
               <li class="nav-group-task">
@@ -384,6 +384,9 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE">ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDUSERTOKENSET">ZKZumoKitErrorCodeINVALIDUSERTOKENSET</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE">ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE</a>
               </li>
               <li class="nav-group-task">
@@ -417,9 +420,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeSIGNINGERROR">ZKZumoKitErrorCodeSIGNINGERROR</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW">ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL">ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL</a>
               </li>
               <li class="nav-group-task">
@@ -436,9 +436,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeWALLETLIMITEXCEEDED">ZKZumoKitErrorCodeWALLETLIMITEXCEEDED</a>
@@ -468,6 +465,9 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorTypeWALLETERROR">ZKZumoKitErrorTypeWALLETERROR</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorTypeZUMOKITERROR">ZKZumoKitErrorTypeZUMOKITERROR</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZumoKitDomain">ZumoKitDomain</a>
               </li>
               <li class="nav-group-task">
@@ -493,10 +493,10 @@
                 <a class="nav-group-task-link" href="Protocols/ZKAccountCallback.html">ZKAccountCallback</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
+                <a class="nav-group-task-link" href="Protocols/ZKAccountDataListener.html">ZKAccountDataListener</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKAccountListener.html">ZKAccountListener</a>
+                <a class="nav-group-task-link" href="Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a>
@@ -511,9 +511,6 @@
                 <a class="nav-group-task-link" href="Protocols/ZKMnemonicCallback.html">ZKMnemonicCallback</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKStateListener.html">ZKStateListener</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKSubmitExchangeCallback.html">ZKSubmitExchangeCallback</a>
               </li>
               <li class="nav-group-task">
@@ -523,13 +520,7 @@
                 <a class="nav-group-task-link" href="Protocols/ZKSuccessCallback.html">ZKSuccessCallback</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKTransactionListener.html">ZKTransactionListener</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKUserCallback.html">ZKUserCallback</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKUserListener.html">ZKUserListener</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKWalletCallback.html">ZKWalletCallback</a>
@@ -589,7 +580,7 @@
 <p>ZumoKit is a state of the art wallet architecture underpinning our flagship product <a href="https://www.zumo.money/">Zumo</a> that provides secure transfer and exchange of fiat and cryptocurrency funds.</p>
 <h2 id='docs' class='heading'>Docs</h2>
 
-<p>Refer to ZumoKit SDK developer <a href="https://developers.zumo.money/docs/">documentation</a> and <a href="https://zumo.github.io/zumokit-ios/">reference</a> for usage details.</p>
+<p>Refer to ZumoKit SDK developer <a href="https://developers.zumo.money/docs/intro/">documentation</a> and <a href="https://zumo.github.io/zumokit-ios/">reference</a> for usage details.</p>
 <h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
@@ -624,7 +615,7 @@ it, simply add the following line to your Podfile:</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-09-03)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

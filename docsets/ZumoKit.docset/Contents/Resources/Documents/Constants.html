@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          ZumoKit 2.1.0 Docs
+          ZumoKit v2.3.0-alpha.26 Docs
         </a>
         
       </p>
@@ -68,6 +68,9 @@
                 <a class="nav-group-task-link" href="Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ZKAccountDataSnapshot.html">ZKAccountDataSnapshot</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a>
               </li>
               <li class="nav-group-task">
@@ -101,13 +104,10 @@
                 <a class="nav-group-task-link" href="Classes/ZKFeeRates.html">ZKFeeRates</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKHistoricalExchangeRatesInterval.html">ZKHistoricalExchangeRatesInterval</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKNetworkType.html">ZKNetworkType</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKState.html">ZKState</a>
+                <a class="nav-group-task-link" href="Classes/ZKTimeInterval.html">ZKTimeInterval</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKTransaction.html">ZKTransaction</a>
@@ -169,9 +169,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKCurrencyCodeGBP">ZKCurrencyCodeGBP</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKCurrencyCodeUSD">ZKCurrencyCodeUSD</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKCurrencyTypeCRYPTO">ZKCurrencyTypeCRYPTO</a>
               </li>
               <li class="nav-group-task">
@@ -202,24 +199,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalDAY">ZKHistoricalExchangeRatesIntervalDAY</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalHOUR">ZKHistoricalExchangeRatesIntervalHOUR</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalMONTH">ZKHistoricalExchangeRatesIntervalMONTH</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalQUARTER">ZKHistoricalExchangeRatesIntervalQUARTER</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalWEEK">ZKHistoricalExchangeRatesIntervalWEEK</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKHistoricalExchangeRatesIntervalYEAR">ZKHistoricalExchangeRatesIntervalYEAR</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKNetworkTypeGOERLI">ZKNetworkTypeGOERLI</a>
               </li>
               <li class="nav-group-task">
@@ -236,6 +215,24 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKNetworkTypeTESTNET">ZKNetworkTypeTESTNET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalDAY">ZKTimeIntervalDAY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalHOUR">ZKTimeIntervalHOUR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalMONTH">ZKTimeIntervalMONTH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalQUARTER">ZKTimeIntervalQUARTER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalWEEK">ZKTimeIntervalWEEK</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKTimeIntervalYEAR">ZKTimeIntervalYEAR</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKTransactionDirectionINCOMING">ZKTransactionDirectionINCOMING</a>
@@ -289,7 +286,13 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeAPISERVICEERROR">ZKZumoKitErrorCodeAPISERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW">ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND">ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND</a>
@@ -340,9 +343,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION">ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINT64OVERFLOW">ZKZumoKitErrorCodeINT64OVERFLOW</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDACCOUNTTYPE">ZKZumoKitErrorCodeINVALIDACCOUNTTYPE</a>
               </li>
               <li class="nav-group-task">
@@ -385,6 +385,9 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE">ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDUSERTOKENSET">ZKZumoKitErrorCodeINVALIDUSERTOKENSET</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE">ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE</a>
               </li>
               <li class="nav-group-task">
@@ -418,9 +421,6 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeSIGNINGERROR">ZKZumoKitErrorCodeSIGNINGERROR</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW">ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL">ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL</a>
               </li>
               <li class="nav-group-task">
@@ -437,9 +437,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeWALLETLIMITEXCEEDED">ZKZumoKitErrorCodeWALLETLIMITEXCEEDED</a>
@@ -469,6 +466,9 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorTypeWALLETERROR">ZKZumoKitErrorTypeWALLETERROR</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorTypeZUMOKITERROR">ZKZumoKitErrorTypeZUMOKITERROR</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZumoKitDomain">ZumoKitDomain</a>
               </li>
               <li class="nav-group-task">
@@ -494,10 +494,10 @@
                 <a class="nav-group-task-link" href="Protocols/ZKAccountCallback.html">ZKAccountCallback</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
+                <a class="nav-group-task-link" href="Protocols/ZKAccountDataListener.html">ZKAccountDataListener</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKAccountListener.html">ZKAccountListener</a>
+                <a class="nav-group-task-link" href="Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a>
@@ -512,9 +512,6 @@
                 <a class="nav-group-task-link" href="Protocols/ZKMnemonicCallback.html">ZKMnemonicCallback</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKStateListener.html">ZKStateListener</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKSubmitExchangeCallback.html">ZKSubmitExchangeCallback</a>
               </li>
               <li class="nav-group-task">
@@ -524,13 +521,7 @@
                 <a class="nav-group-task-link" href="Protocols/ZKSuccessCallback.html">ZKSuccessCallback</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKTransactionListener.html">ZKTransactionListener</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKUserCallback.html">ZKUserCallback</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Protocols/ZKUserListener.html">ZKUserListener</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKWalletCallback.html">ZKWalletCallback</a>
@@ -623,7 +614,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -652,7 +643,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -670,7 +661,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Corresponds to standard Ethereum account type and Bitcoin non-segwit account type <a target="_top" href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">P2PKH</a>.
+                        <p>Corresponds to standard Ethereum account type and Bitcoin non-segwit account type <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">P2PKH</a>.
 <p>
 Standard Bitcoin addresses always begin with 1 on Bitcoin Mainnet and m or n on Bitcoin Testnet.</p>
 
@@ -689,7 +680,7 @@ Standard Bitcoin addresses always begin with 1 on Bitcoin Mainnet and m or n on 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L22">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -707,7 +698,7 @@ Standard Bitcoin addresses always begin with 1 on Bitcoin Mainnet and m or n on 
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Corresponds to compatibilty Bitcoin account <a target="_top" href="https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki">P2WPKH-nested-in-P2SH</a>.
+                        <p>Corresponds to compatibilty Bitcoin account <a href="https://github.com/bitcoin/bips/blob/master/bip-0049.mediawiki">P2WPKH-nested-in-P2SH</a>.
 <p>
 These addresses always begin with 3 on Bitcoin Mainnet and 2 on Bitcoin Testnet.</p>
 
@@ -726,7 +717,7 @@ These addresses always begin with 3 on Bitcoin Mainnet and 2 on Bitcoin Testnet.
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L28">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L28">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -744,7 +735,7 @@ These addresses always begin with 3 on Bitcoin Mainnet and 2 on Bitcoin Testnet.
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Corresponds to Segregated Witness Bitcoin account type <a target="_top" href="https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki">P2WPKH</a> and are also reffered to as bech32 addresses.
+                        <p>Corresponds to Segregated Witness Bitcoin account type <a href="https://github.com/bitcoin/bips/blob/master/bip-0084.mediawiki">P2WPKH</a> and are also reffered to as bech32 addresses.
 <p>
 These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Testnet.</p>
 
@@ -763,7 +754,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L34">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -797,41 +788,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKCurrencyCodeUSD"></a>
-                    <a name="//apple_ref/objc/Constant/ZKCurrencyCodeUSD" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKCurrencyCodeUSD">ZKCurrencyCodeUSD</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKCurrencyCodeUSD</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKCurrencyCodeUSD</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -865,7 +822,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -899,7 +856,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -933,7 +890,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -967,7 +924,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1002,7 +959,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L20">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1037,7 +994,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L22">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1072,7 +1029,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L24">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1107,7 +1064,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L26">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L26">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1142,7 +1099,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L28">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L28">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1177,7 +1134,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L30">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L30">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1212,7 +1169,7 @@ These addresses always begin with bc1 on Bitcoin Mainnet and tb1 on Bitcoin Test
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L32">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L32">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1248,211 +1205,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L37">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKHistoricalExchangeRatesIntervalHOUR"></a>
-                    <a name="//apple_ref/objc/Constant/ZKHistoricalExchangeRatesIntervalHOUR" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKHistoricalExchangeRatesIntervalHOUR">ZKHistoricalExchangeRatesIntervalHOUR</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKHistoricalExchangeRatesIntervalHOUR</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKHistoricalExchangeRatesIntervalHOUR</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesInterval.h#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKHistoricalExchangeRatesIntervalDAY"></a>
-                    <a name="//apple_ref/objc/Constant/ZKHistoricalExchangeRatesIntervalDAY" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKHistoricalExchangeRatesIntervalDAY">ZKHistoricalExchangeRatesIntervalDAY</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKHistoricalExchangeRatesIntervalDAY</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKHistoricalExchangeRatesIntervalDAY</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesInterval.h#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKHistoricalExchangeRatesIntervalWEEK"></a>
-                    <a name="//apple_ref/objc/Constant/ZKHistoricalExchangeRatesIntervalWEEK" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKHistoricalExchangeRatesIntervalWEEK">ZKHistoricalExchangeRatesIntervalWEEK</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKHistoricalExchangeRatesIntervalWEEK</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKHistoricalExchangeRatesIntervalWEEK</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesInterval.h#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKHistoricalExchangeRatesIntervalMONTH"></a>
-                    <a name="//apple_ref/objc/Constant/ZKHistoricalExchangeRatesIntervalMONTH" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKHistoricalExchangeRatesIntervalMONTH">ZKHistoricalExchangeRatesIntervalMONTH</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKHistoricalExchangeRatesIntervalMONTH</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKHistoricalExchangeRatesIntervalMONTH</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesInterval.h#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKHistoricalExchangeRatesIntervalQUARTER"></a>
-                    <a name="//apple_ref/objc/Constant/ZKHistoricalExchangeRatesIntervalQUARTER" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKHistoricalExchangeRatesIntervalQUARTER">ZKHistoricalExchangeRatesIntervalQUARTER</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKHistoricalExchangeRatesIntervalQUARTER</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKHistoricalExchangeRatesIntervalQUARTER</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesInterval.h#L">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKHistoricalExchangeRatesIntervalYEAR"></a>
-                    <a name="//apple_ref/objc/Constant/ZKHistoricalExchangeRatesIntervalYEAR" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKHistoricalExchangeRatesIntervalYEAR">ZKHistoricalExchangeRatesIntervalYEAR</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKHistoricalExchangeRatesIntervalYEAR</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKHistoricalExchangeRatesIntervalYEAR</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesInterval.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1486,7 +1239,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1520,7 +1273,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1554,7 +1307,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1588,7 +1341,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1622,7 +1375,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1656,7 +1409,211 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKTimeIntervalHOUR"></a>
+                    <a name="//apple_ref/objc/Constant/ZKTimeIntervalHOUR" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKTimeIntervalHOUR">ZKTimeIntervalHOUR</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKTimeIntervalHOUR</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKTimeIntervalHOUR</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKTimeIntervalDAY"></a>
+                    <a name="//apple_ref/objc/Constant/ZKTimeIntervalDAY" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKTimeIntervalDAY">ZKTimeIntervalDAY</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKTimeIntervalDAY</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKTimeIntervalDAY</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKTimeIntervalWEEK"></a>
+                    <a name="//apple_ref/objc/Constant/ZKTimeIntervalWEEK" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKTimeIntervalWEEK">ZKTimeIntervalWEEK</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKTimeIntervalWEEK</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKTimeIntervalWEEK</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKTimeIntervalMONTH"></a>
+                    <a name="//apple_ref/objc/Constant/ZKTimeIntervalMONTH" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKTimeIntervalMONTH">ZKTimeIntervalMONTH</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKTimeIntervalMONTH</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKTimeIntervalMONTH</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKTimeIntervalQUARTER"></a>
+                    <a name="//apple_ref/objc/Constant/ZKTimeIntervalQUARTER" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKTimeIntervalQUARTER">ZKTimeIntervalQUARTER</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKTimeIntervalQUARTER</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKTimeIntervalQUARTER</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKTimeIntervalYEAR"></a>
+                    <a name="//apple_ref/objc/Constant/ZKTimeIntervalYEAR" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKTimeIntervalYEAR">ZKTimeIntervalYEAR</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span> <span class="n">__nonnull</span> <span class="k">const</span> <span class="n">ZKTimeIntervalYEAR</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKTimeIntervalYEAR</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1690,7 +1647,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1724,7 +1681,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1759,7 +1716,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L21">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1794,7 +1751,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L23">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1829,7 +1786,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L25">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L25">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1864,7 +1821,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L27">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1899,7 +1856,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L29">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1934,7 +1891,7 @@ the previously submitted transaction and with with the same nonce as that previo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L31">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L31">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1970,7 +1927,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L36">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2004,7 +1961,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2038,7 +1995,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2072,7 +2029,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2106,7 +2063,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2141,7 +2098,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L18">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L18">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2176,7 +2133,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L20">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L20">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2211,7 +2168,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L22">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2246,7 +2203,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L24">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2281,7 +2238,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L26">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L26">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2316,7 +2273,42 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L28">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L28">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW"></a>
+                    <a name="//apple_ref/objc/Constant/ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW">ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bitcoin amount exceeds maximum 63 bit precision.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span><span class="k">const</span> <span class="n">_Nonnull</span> <span class="n">ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKZumoKitErrorCodeBITCOINAMOUNTOVERFLOW</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L30">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2351,7 +2343,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L30">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L32">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2386,7 +2378,7 @@ submitted transaction and with with the same nonce as that previously submitted 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L32">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2422,7 +2414,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L37">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2457,7 +2449,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L39">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L41">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2493,7 +2485,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L41">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2528,7 +2520,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L43">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L45">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2564,7 +2556,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L45">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L47">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2599,7 +2591,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L47">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L49">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2634,7 +2626,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L49">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L51">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2669,7 +2661,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L51">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L53">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2704,7 +2696,7 @@ Maximum data size supported by RLP encoding exceeds 16000000 bytes.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L53">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L55">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2741,7 +2733,7 @@ Account currency does not match the requeirements of requested operation.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L59">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L61">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2777,7 +2769,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L64">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L66">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2812,7 +2804,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L66">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L68">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2847,7 +2839,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L68">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L70">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2883,42 +2875,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L70">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKZumoKitErrorCodeINT64OVERFLOW"></a>
-                    <a name="//apple_ref/objc/Constant/ZKZumoKitErrorCodeINT64OVERFLOW" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKZumoKitErrorCodeINT64OVERFLOW">ZKZumoKitErrorCodeINT64OVERFLOW</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Value exceeds maximum 63 bit precision.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span><span class="k">const</span> <span class="n">_Nonnull</span> <span class="n">ZKZumoKitErrorCodeINT64OVERFLOW</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKZumoKitErrorCodeINT64OVERFLOW</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L72">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L72">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2953,7 +2910,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L74">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L74">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2988,7 +2945,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L76">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L76">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3023,7 +2980,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L78">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L78">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3058,7 +3015,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L80">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3093,7 +3050,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L82">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L82">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3128,7 +3085,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L84">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L84">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3163,7 +3120,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L86">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L86">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3198,7 +3155,7 @@ Change account should be Bitcoin account on the same network as source account</
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L88">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L88">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3234,7 +3191,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L93">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L93">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3269,7 +3226,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L95">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L95">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3304,7 +3261,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L97">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L97">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3339,7 +3296,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L99">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L99">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3374,7 +3331,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L101">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L101">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3409,7 +3366,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L103">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L103">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3444,7 +3401,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L105">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L105">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3479,7 +3436,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L107">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3514,7 +3471,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L109">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L109">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3549,7 +3506,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L111">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L111">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3584,7 +3541,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L113">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L113">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3619,7 +3576,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L115">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L115">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3654,7 +3611,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L117">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L117">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3689,7 +3646,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L119">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L119">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3725,7 +3682,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L121">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L121">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3760,42 +3717,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L123">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW"></a>
-                    <a name="//apple_ref/objc/Constant/ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW">ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Transaction amount exceeds maximum precision.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span><span class="k">const</span> <span class="n">_Nonnull</span> <span class="n">ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW</span><span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L125">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L123">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3830,7 +3752,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L127">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L125">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3865,7 +3787,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L129">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L127">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3900,7 +3822,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L131">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L129">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3935,7 +3857,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L133">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L131">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3970,7 +3892,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L135">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L133">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -3978,9 +3900,9 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET"></a>
-                    <a name="//apple_ref/objc/Constant/ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET</a>
+                    <a name="/c:@ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET"></a>
+                    <a name="//apple_ref/objc/Constant/ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -3988,24 +3910,24 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Cannot set value when send max enabled.</p>
+                        <p>Cannot set amount when send max enabled. Set amount to null if trying t send maximum funds.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span><span class="k">const</span> <span class="n">_Nonnull</span> <span class="n">ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span><span class="k">const</span> <span class="n">_Nonnull</span> <span class="n">ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKZumoKitErrorCodeVALUEPROVIDEDWHENSENDMAXSET</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L137">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L135">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4040,7 +3962,77 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L139">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L137">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKZumoKitErrorCodeINVALIDUSERTOKENSET"></a>
+                    <a name="//apple_ref/objc/Constant/ZKZumoKitErrorCodeINVALIDUSERTOKENSET" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKZumoKitErrorCodeINVALIDUSERTOKENSET">ZKZumoKitErrorCodeINVALIDUSERTOKENSET</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Invalid user token set. User token set should be a valid stringified JSON with accessToken, refreshToken and expiresIn properties.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span><span class="k">const</span> <span class="n">_Nonnull</span> <span class="n">ZKZumoKitErrorCodeINVALIDUSERTOKENSET</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKZumoKitErrorCodeINVALIDUSERTOKENSET</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L139">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@ZKZumoKitErrorTypeZUMOKITERROR"></a>
+                    <a name="//apple_ref/objc/Constant/ZKZumoKitErrorTypeZUMOKITERROR" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@ZKZumoKitErrorTypeZUMOKITERROR">ZKZumoKitErrorTypeZUMOKITERROR</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Base ZumoKit error.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">extern</span> <span class="n">NSString</span> <span class="o">*</span><span class="k">const</span> <span class="n">_Nonnull</span> <span class="n">ZKZumoKitErrorTypeZUMOKITERROR</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">ZKZumoKitErrorTypeZUMOKITERROR</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4075,7 +4067,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L17">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4110,7 +4102,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L19">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4145,7 +4137,7 @@ Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L21">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4182,7 +4174,7 @@ invalid wallet password are such errors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L27">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L29">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4217,7 +4209,7 @@ invalid wallet password are such errors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L29">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L31">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4252,7 +4244,7 @@ invalid wallet password are such errors.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L31">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L33">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4288,7 +4280,7 @@ e.g. when a destination address is invalid.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L36">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L38">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4322,7 +4314,7 @@ e.g. when a destination address is invalid.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Public/ZKError.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Public/ZKError.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4375,7 +4367,7 @@ e.g. when a destination address is invalid.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Public/ZKError.h#L53">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Public/ZKError.h#L53">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4415,7 +4407,7 @@ e.g. when a destination address is invalid.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.1.0/ZumoKit/Classes/Public/ZKError.h#L60">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/v2.3.0-alpha.26/ZumoKit/Classes/Public/ZKError.h#L60">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -4428,7 +4420,7 @@ e.g. when a destination address is invalid.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-09-03)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
