@@ -23,7 +23,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKUser+CallbackCompletion.h"
 #import "ZKWallet.h"
 #import "ZKWallet+CallbackCompletion.h"
-#import "ZKHistoricalExchangeRatesInterval.h"
+#import "ZKTimeInterval.h"
 #import "ZKCurrencyCode.h"
 #import "ZKNetworkType.h"
 #import "ZKAccountType.h"
