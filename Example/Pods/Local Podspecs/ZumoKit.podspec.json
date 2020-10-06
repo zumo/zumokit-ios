@@ -38,7 +38,7 @@
   "libraries": "c++",
   "dependencies": {
     "SocketRocket": [
-      "~> 0.4.0"
+      "~> 0.5.1"
     ]
   },
   "pod_target_xcconfig": {
