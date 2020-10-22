@@ -15,16 +15,16 @@
 #import "ZKExchange.h"
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void(^ComposeTransactionCompletionBlock)(ZKComposedTransaction * _Nullable composedTransaction, NSError * _Nullable error);
+typedef void (^ComposeTransactionCompletionBlock)(ZKComposedTransaction *_Nullable composedTransaction, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void(^ComposeExchangeCompletionBlock)(ZKComposedExchange * _Nullable composedExchange, NSError * _Nullable error);
+typedef void (^ComposeExchangeCompletionBlock)(ZKComposedExchange *_Nullable composedExchange, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void(^SubmitTransactionCompletionBlock)(ZKTransaction * _Nullable transaction, NSError * _Nullable error);
+typedef void (^SubmitTransactionCompletionBlock)(ZKTransaction *_Nullable transaction, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NSError * _Nullable error);
+typedef void (^SubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NSError *_Nullable error);
 
 @interface ZKWallet (ZKWalletCallbackCompletion)
 
@@ -77,8 +77,8 @@ typedef void(^SubmitExchangeCompletionBlock)(ZKExchange * _Nullable exchange, NS
 <code>composeTransactionToNominatedAccount</code> completion handler extension.
 @see `-[ZKWallet composeTransactionToNominatedAccount:amount:sendMax:callback:]`
 */
-- (void)composeExchange:(nonnull NSString *)depositAccountId
-      withdrawAccountId:(nonnull NSString *)withdrawAccountId
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeFees
                  amount:(nullable NSDecimalNumber *)amount

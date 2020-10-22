@@ -103,13 +103,13 @@ struct ZumoKitErrorCode final {
     /** Invalid response received from API. */
     static std::string const INVALID_API_RESPONSE;
 
-    /** Invalid or missing exchange deposit address. */
-    static std::string const INVALID_EXCHANGE_DEPOSIT_ADDRESS;
+    /** Invalid or missing Zumo Exchange Service address. */
+    static std::string const INVALID_EXCHANGE_ADDRESS;
 
-    /** Mismatch between exchange rate and selected deposit/withdraw accounts. */
+    /** Mismatch between exchange rate and selected accounts. */
     static std::string const INVALID_EXCHANGE_RATE;
 
-    /** Mismatch between exchange settings and selected deposit/withdraw accounts. */
+    /** Mismatch between exchange settings and selected accounts. */
     static std::string const INVALID_EXCHANGE_SETTINGS;
 
     /** Invalid fee rate. Fee rate should be an integer value. */

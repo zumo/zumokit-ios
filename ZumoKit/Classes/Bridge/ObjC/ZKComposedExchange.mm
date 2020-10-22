@@ -7,59 +7,59 @@
 @implementation ZKComposedExchange
 
 - (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
-                                   depositAccount:(nonnull ZKAccount *)depositAccount
-                                  withdrawAccount:(nonnull ZKAccount *)withdrawAccount
+                                      fromAccount:(nonnull ZKAccount *)fromAccount
+                                        toAccount:(nonnull ZKAccount *)toAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                  exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                                   exchangeAddress:(nullable NSString *)exchangeAddress
-                                            value:(nonnull NSDecimalNumber *)value
-                                      returnValue:(nonnull NSDecimalNumber *)returnValue
-                                       depositFee:(nonnull NSDecimalNumber *)depositFee
+                                           amount:(nonnull NSDecimalNumber *)amount
+                                     returnAmount:(nonnull NSDecimalNumber *)returnAmount
+                           outgoingTransactionFee:(nonnull NSDecimalNumber *)outgoingTransactionFee
                                       exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
-                                      withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                             returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                                             nonce:(nonnull NSString *)nonce
 {
     if (self = [super init]) {
         _signedTransaction = [signedTransaction copy];
-        _depositAccount = depositAccount;
-        _withdrawAccount = withdrawAccount;
+        _fromAccount = fromAccount;
+        _toAccount = toAccount;
         _exchangeRate = exchangeRate;
         _exchangeSettings = exchangeSettings;
         _exchangeAddress = [exchangeAddress copy];
-        _value = value;
-        _returnValue = returnValue;
-        _depositFee = depositFee;
+        _amount = amount;
+        _returnAmount = returnAmount;
+        _outgoingTransactionFee = outgoingTransactionFee;
         _exchangeFee = exchangeFee;
-        _withdrawFee = withdrawFee;
+        _returnTransactionFee = returnTransactionFee;
         _nonce = [nonce copy];
     }
     return self;
 }
 
 + (nonnull instancetype)composedExchangeWithSignedTransaction:(nullable NSString *)signedTransaction
-                                               depositAccount:(nonnull ZKAccount *)depositAccount
-                                              withdrawAccount:(nonnull ZKAccount *)withdrawAccount
+                                                  fromAccount:(nonnull ZKAccount *)fromAccount
+                                                    toAccount:(nonnull ZKAccount *)toAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                              exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                                               exchangeAddress:(nullable NSString *)exchangeAddress
-                                                        value:(nonnull NSDecimalNumber *)value
-                                                  returnValue:(nonnull NSDecimalNumber *)returnValue
-                                                   depositFee:(nonnull NSDecimalNumber *)depositFee
+                                                       amount:(nonnull NSDecimalNumber *)amount
+                                                 returnAmount:(nonnull NSDecimalNumber *)returnAmount
+                                       outgoingTransactionFee:(nonnull NSDecimalNumber *)outgoingTransactionFee
                                                   exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
-                                                  withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                                         returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                                                         nonce:(nonnull NSString *)nonce
 {
     return [(ZKComposedExchange*)[self alloc] initWithSignedTransaction:signedTransaction
-                                                         depositAccount:depositAccount
-                                                        withdrawAccount:withdrawAccount
+                                                            fromAccount:fromAccount
+                                                              toAccount:toAccount
                                                            exchangeRate:exchangeRate
                                                        exchangeSettings:exchangeSettings
                                                         exchangeAddress:exchangeAddress
-                                                                  value:value
-                                                            returnValue:returnValue
-                                                             depositFee:depositFee
+                                                                 amount:amount
+                                                           returnAmount:returnAmount
+                                                 outgoingTransactionFee:outgoingTransactionFee
                                                             exchangeFee:exchangeFee
-                                                            withdrawFee:withdrawFee
+                                                   returnTransactionFee:returnTransactionFee
                                                                   nonce:nonce];
 }
 
@@ -70,16 +70,16 @@
     }
     ZKComposedExchange *typedOther = (ZKComposedExchange *)other;
     return ((self.signedTransaction == nil && typedOther.signedTransaction == nil) || (self.signedTransaction != nil && [self.signedTransaction isEqual:typedOther.signedTransaction])) &&
-            [self.depositAccount isEqual:typedOther.depositAccount] &&
-            [self.withdrawAccount isEqual:typedOther.withdrawAccount] &&
+            [self.fromAccount isEqual:typedOther.fromAccount] &&
+            [self.toAccount isEqual:typedOther.toAccount] &&
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&
             [self.exchangeSettings isEqual:typedOther.exchangeSettings] &&
             ((self.exchangeAddress == nil && typedOther.exchangeAddress == nil) || (self.exchangeAddress != nil && [self.exchangeAddress isEqual:typedOther.exchangeAddress])) &&
-            [self.value isEqual:typedOther.value] &&
-            [self.returnValue isEqual:typedOther.returnValue] &&
-            [self.depositFee isEqual:typedOther.depositFee] &&
+            [self.amount isEqual:typedOther.amount] &&
+            [self.returnAmount isEqual:typedOther.returnAmount] &&
+            [self.outgoingTransactionFee isEqual:typedOther.outgoingTransactionFee] &&
             [self.exchangeFee isEqual:typedOther.exchangeFee] &&
-            [self.withdrawFee isEqual:typedOther.withdrawFee] &&
+            [self.returnTransactionFee isEqual:typedOther.returnTransactionFee] &&
             [self.nonce isEqualToString:typedOther.nonce];
 }
 
@@ -87,22 +87,22 @@
 {
     return NSStringFromClass([self class]).hash ^
             self.signedTransaction.hash ^
-            self.depositAccount.hash ^
-            self.withdrawAccount.hash ^
+            self.fromAccount.hash ^
+            self.toAccount.hash ^
             self.exchangeRate.hash ^
             self.exchangeSettings.hash ^
             self.exchangeAddress.hash ^
-            ((NSUInteger)self.value) ^
-            ((NSUInteger)self.returnValue) ^
-            ((NSUInteger)self.depositFee) ^
+            ((NSUInteger)self.amount) ^
+            ((NSUInteger)self.returnAmount) ^
+            ((NSUInteger)self.outgoingTransactionFee) ^
             ((NSUInteger)self.exchangeFee) ^
-            ((NSUInteger)self.withdrawFee) ^
+            ((NSUInteger)self.returnTransactionFee) ^
             self.nonce.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ depositAccount:%@ withdrawAccount:%@ exchangeRate:%@ exchangeSettings:%@ exchangeAddress:%@ value:%@ returnValue:%@ depositFee:%@ exchangeFee:%@ withdrawFee:%@ nonce:%@>", self.class, (void *)self, self.signedTransaction, self.depositAccount, self.withdrawAccount, self.exchangeRate, self.exchangeSettings, self.exchangeAddress, self.value, self.returnValue, self.depositFee, self.exchangeFee, self.withdrawFee, self.nonce];
+    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ fromAccount:%@ toAccount:%@ exchangeRate:%@ exchangeSettings:%@ exchangeAddress:%@ amount:%@ returnAmount:%@ outgoingTransactionFee:%@ exchangeFee:%@ returnTransactionFee:%@ nonce:%@>", self.class, (void *)self, self.signedTransaction, self.fromAccount, self.toAccount, self.exchangeRate, self.exchangeSettings, self.exchangeAddress, self.amount, self.returnAmount, self.outgoingTransactionFee, self.exchangeFee, self.returnTransactionFee, self.nonce];
 }
 
 @end

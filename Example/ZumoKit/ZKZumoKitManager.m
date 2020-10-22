@@ -29,14 +29,14 @@
 
 - (void)initialize {
     NSLog(@"ZumoKit SDK version: %@", [ZumoKit version]);
-    
+
     NSBundle* mainBundle = [NSBundle mainBundle];
-    
+
     // ZumoKit config
     NSString *apiKey = [mainBundle objectForInfoDictionaryKey:@"API_KEY"];
     NSString *apiUrl = [mainBundle objectForInfoDictionaryKey:@"API_URL"];
     NSString *txServiceUrl = [mainBundle objectForInfoDictionaryKey:@"TX_SERVICE_URL"];
-    
+
     // Client config
     NSURL *clientZumoKitAuthEndpoint = [NSURL URLWithString:[mainBundle objectForInfoDictionaryKey:@"CLIENT_ZUMOKIT_AUTH_ENDPOINT"]];
     NSError *e = nil;
@@ -77,9 +77,9 @@
         [_zumoKit
             authUser:userTokenSet
             completion: ^(ZKUser * _Nullable user, NSError * _Nullable error) {
-           
+
                _user = user;
-               
+
                if (error != nil) {
                    NSLog(@"Auth error: %@", [error userInfo]);
                    return;
@@ -88,21 +88,21 @@
                if ([_user hasWallet]) {
                    ZKAccount *ethAccount = [_user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
                    NSLog(@"ETH account: %@", ethAccount.cryptoProperties.address);
-                   
+
                    ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
                    NSLog(@"BTC account: %@", btcAccount.cryptoProperties.address);
-                   
+
                    ZKAccount *fiatAccount = [_user getAccount:@"GBP" network:ZKNetworkTypeTESTNET type:ZKAccountTypeSTANDARD];
                    NSLog(@"Fiat account ballance: %@", fiatAccount.balance.description);
-                   
+
                    [_user unlockWallet:userWalletPassword completion:^(ZKWallet * _Nullable wallet, NSError * _Nullable error) {
                            if (error != nil) {
                                NSLog(@"error: %@", [error description]);
                                return;
                            }
-                           
+
                            _wallet = wallet;
-                           
+
                              //[self composeEthTransaction:ethAccount submit:NO];
                              //[self composeBtcTransaction:btcAccount];
 
@@ -123,13 +123,13 @@
                                NSLog(@"error: %@", [error description]);
                                return;
                            }
-                           
+
                            ZKAccount *ethAccount = [user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
                            NSLog(@"ETH account: %@", ethAccount.cryptoProperties.address);
-                           
+
                            ZKAccount *btcAccount = [user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
                            NSLog(@"BTC account: %@", btcAccount.cryptoProperties.address);
-                           
+
                        }];
                }
            }];
@@ -150,28 +150,28 @@
                              nonce:[NSNumber numberWithInt:6]
                            sendMax:YES
                         completion:^(ZKComposedTransaction * _Nullable composedTransaction, NSError * _Nullable error) {
-        
+
         if (error != nil) {
             NSLog(@"error: %@", [error description]);
             return;
         }
-        
+
         NSLog(@"Account Balance: %@", composedTransaction.account.balance);
         NSLog(@"Tx Value: %@", composedTransaction.amount);
         NSLog(@"Tx Fee: %@", composedTransaction.fee);
-        
+
         if (!submit) {
             return;
         }
-        
+
         [_wallet submitTransaction:composedTransaction
                             completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
-            
+
             if (error != nil) {
                 NSLog(@"error: %@", [error description]);
                 return;
             }
-            
+
             NSLog(@"Tx Hash: %@", transaction.cryptoProperties.txHash);
         }];
     }];
@@ -185,12 +185,12 @@
                         feeRate:[NSDecimalNumber decimalNumberWithString:@"20"]
                         sendMax:YES
                      completion:^(ZKComposedTransaction * _Nullable transaction, NSError * _Nullable error) {
-        
+
         if (error != nil) {
             NSLog(@"error: %@", [error description]);
             return;
         }
-        
+
         NSLog(@"Account Balance: %@", transaction.account.balance);
         NSLog(@"Tx Value: %@", transaction.amount);
         NSLog(@"Tx Fee: %@", transaction.fee);
@@ -198,14 +198,14 @@
 }
 
 
-- (void)composeExchange:(ZKAccount *)depositAccount
-        widhdrawAccount:(ZKAccount *)withdrawAccount
+- (void)composeExchange:(ZKAccount *)fromAccount
+              toAccount:(ZKAccount *)toAccount
            exchangeRate:(ZKExchangeRate *)exchangeRate
        exchangeSettings:(ZKExchangeSettings *)exchangeSettings
                  amount:(NSDecimalNumber *)amount
 {
-    [_wallet composeExchange:depositAccount.id
-           withdrawAccountId:withdrawAccount.id
+    [_wallet composeExchange:fromAccount.id
+                 toAccountId:toAccount.id
                 exchangeRate:exchangeRate
             exchangeSettings:exchangeSettings
                       amount:nil
@@ -216,8 +216,8 @@
             NSLog(@"error: %@", [error description]);
             return;
         }
-        
-        NSLog(@"Return Value: %@", exchange.returnValue);
+
+        NSLog(@"Return Amount: %@", exchange.returnAmount);
         NSLog(@"Exchange Fee: %@", exchange.exchangeFee);
     }];
 }

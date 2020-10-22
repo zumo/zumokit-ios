@@ -27,31 +27,31 @@ struct Exchange final {
      * Currency from which exchange was made.
      * @see CurrencyCode
      */
-    std::string deposit_currency;
+    std::string from_currency;
     /** Source Account identifier. */
-    std::string deposit_account_id;
+    std::string from_account_id;
     /** Outgoing Transaction identifier. */
-    std::experimental::optional<std::string> deposit_transaction_id;
+    std::experimental::optional<std::string> outgoing_transaction_id;
     /**
      * Currency to which exchange was made.
      * @see CurrencyCode
      */
-    std::string withdraw_currency;
+    std::string to_currency;
     /** Target Account identifier. */
-    std::string withdraw_account_id;
+    std::string to_account_id;
     /** Return Transaction identifier. */
-    std::experimental::optional<std::string> withdraw_transaction_id;
+    std::experimental::optional<std::string> return_transaction_id;
     /** Amount in deposit currency. */
     ::zumo::Decimal amount;
-    /** Deposit transaction fee. */
-    std::experimental::optional<::zumo::Decimal> deposit_fee;
+    /** Outgoing transaction fee. */
+    std::experimental::optional<::zumo::Decimal> outgoing_transaction_fee;
     /**
-     * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - withdrawFee</code>.
+     * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
      * @see ExchangeSettings
      */
     ::zumo::Decimal return_amount;
     /**
-     * Exchange fee, calculated as <code>amount X exchangeRate X feeRate</code>.
+     * Exchange fee, calculated as <code>amount X exchangeRate X exchangeFeeRate</code>.
      * @see ExchangeSettings
      */
     ::zumo::Decimal exchange_fee;
@@ -59,7 +59,7 @@ struct Exchange final {
      * Return transaction fee.
      * @see ExchangeSettings
      */
-    ::zumo::Decimal withdraw_fee;
+    ::zumo::Decimal return_transaction_fee;
     /** Exchange rate used. */
     ExchangeRate exchange_rate;
     /** Exchange settings used. */
@@ -81,17 +81,17 @@ struct Exchange final {
 
     Exchange(std::string id_,
              std::string status_,
-             std::string deposit_currency_,
-             std::string deposit_account_id_,
-             std::experimental::optional<std::string> deposit_transaction_id_,
-             std::string withdraw_currency_,
-             std::string withdraw_account_id_,
-             std::experimental::optional<std::string> withdraw_transaction_id_,
+             std::string from_currency_,
+             std::string from_account_id_,
+             std::experimental::optional<std::string> outgoing_transaction_id_,
+             std::string to_currency_,
+             std::string to_account_id_,
+             std::experimental::optional<std::string> return_transaction_id_,
              ::zumo::Decimal amount_,
-             std::experimental::optional<::zumo::Decimal> deposit_fee_,
+             std::experimental::optional<::zumo::Decimal> outgoing_transaction_fee_,
              ::zumo::Decimal return_amount_,
              ::zumo::Decimal exchange_fee_,
-             ::zumo::Decimal withdraw_fee_,
+             ::zumo::Decimal return_transaction_fee_,
              ExchangeRate exchange_rate_,
              ExchangeSettings exchange_settings_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
@@ -100,17 +100,17 @@ struct Exchange final {
              std::experimental::optional<int64_t> confirmed_at_)
     : id(std::move(id_))
     , status(std::move(status_))
-    , deposit_currency(std::move(deposit_currency_))
-    , deposit_account_id(std::move(deposit_account_id_))
-    , deposit_transaction_id(std::move(deposit_transaction_id_))
-    , withdraw_currency(std::move(withdraw_currency_))
-    , withdraw_account_id(std::move(withdraw_account_id_))
-    , withdraw_transaction_id(std::move(withdraw_transaction_id_))
+    , from_currency(std::move(from_currency_))
+    , from_account_id(std::move(from_account_id_))
+    , outgoing_transaction_id(std::move(outgoing_transaction_id_))
+    , to_currency(std::move(to_currency_))
+    , to_account_id(std::move(to_account_id_))
+    , return_transaction_id(std::move(return_transaction_id_))
     , amount(std::move(amount_))
-    , deposit_fee(std::move(deposit_fee_))
+    , outgoing_transaction_fee(std::move(outgoing_transaction_fee_))
     , return_amount(std::move(return_amount_))
     , exchange_fee(std::move(exchange_fee_))
-    , withdraw_fee(std::move(withdraw_fee_))
+    , return_transaction_fee(std::move(return_transaction_fee_))
     , exchange_rate(std::move(exchange_rate_))
     , exchange_settings(std::move(exchange_settings_))
     , exchange_rates(std::move(exchange_rates_))

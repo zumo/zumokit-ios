@@ -113,16 +113,16 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)composeExchange:(nonnull NSString *)depositAccountId
-      withdrawAccountId:(nonnull NSString *)withdrawAccountId
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback {
     try {
-        _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(depositAccountId),
-                                              ::djinni::String::toCpp(withdrawAccountId),
+        _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(fromAccountId),
+                                              ::djinni::String::toCpp(toAccountId),
                                               ::djinni_generated::ExchangeRate::toCpp(exchangeRate),
                                               ::djinni_generated::ExchangeSettings::toCpp(exchangeSettings),
                                               ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),

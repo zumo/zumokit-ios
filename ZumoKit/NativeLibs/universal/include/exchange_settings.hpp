@@ -16,28 +16,28 @@ struct ExchangeSettings final {
     /** Identifier. */
     std::string id;
     /**
-     * Zumo Exchange Service wallet address for each network type.
+     * Mapping between networks and Zumo Exchange addresses.
      * @see NetworkType
      */
-    std::unordered_map<std::string, std::string> deposit_address;
+    std::unordered_map<std::string, std::string> exchange_address;
     /**
      * Currency code of outgoing transaction.
      * @see CurrencyCode
      */
-    std::string deposit_currency;
+    std::string from_currency;
     /**
      * Currency code of return transaction.
      * @see CurrencyCode
      */
-    std::string withdraw_currency;
+    std::string to_currency;
     /** Minimum amount that can be exchanged in outgoing transaction currency. */
     ::zumo::Decimal min_exchange_amount;
     /** Exchange fee rate that will be charged once currency is exchanged. */
-    ::zumo::Decimal fee_rate;
+    ::zumo::Decimal exchange_fee_rate;
     /** Fee rate that will be used for outgoing transaction. */
-    ::zumo::Decimal deposit_fee_rate;
+    ::zumo::Decimal outgoing_transaction_fee_rate;
     /** Fee that will charged for return transaction. */
-    ::zumo::Decimal withdraw_fee;
+    ::zumo::Decimal return_transaction_fee;
     /** Epoch timestamp when the exchange settings were last updated. */
     int64_t timestamp;
 
@@ -45,22 +45,22 @@ struct ExchangeSettings final {
     friend bool operator!=(const ExchangeSettings& lhs, const ExchangeSettings& rhs);
 
     ExchangeSettings(std::string id_,
-                     std::unordered_map<std::string, std::string> deposit_address_,
-                     std::string deposit_currency_,
-                     std::string withdraw_currency_,
+                     std::unordered_map<std::string, std::string> exchange_address_,
+                     std::string from_currency_,
+                     std::string to_currency_,
                      ::zumo::Decimal min_exchange_amount_,
-                     ::zumo::Decimal fee_rate_,
-                     ::zumo::Decimal deposit_fee_rate_,
-                     ::zumo::Decimal withdraw_fee_,
+                     ::zumo::Decimal exchange_fee_rate_,
+                     ::zumo::Decimal outgoing_transaction_fee_rate_,
+                     ::zumo::Decimal return_transaction_fee_,
                      int64_t timestamp_)
     : id(std::move(id_))
-    , deposit_address(std::move(deposit_address_))
-    , deposit_currency(std::move(deposit_currency_))
-    , withdraw_currency(std::move(withdraw_currency_))
+    , exchange_address(std::move(exchange_address_))
+    , from_currency(std::move(from_currency_))
+    , to_currency(std::move(to_currency_))
     , min_exchange_amount(std::move(min_exchange_amount_))
-    , fee_rate(std::move(fee_rate_))
-    , deposit_fee_rate(std::move(deposit_fee_rate_))
-    , withdraw_fee(std::move(withdraw_fee_))
+    , exchange_fee_rate(std::move(exchange_fee_rate_))
+    , outgoing_transaction_fee_rate(std::move(outgoing_transaction_fee_rate_))
+    , return_transaction_fee(std::move(return_transaction_fee_))
     , timestamp(std::move(timestamp_))
     {}
 };

@@ -9,15 +9,11 @@
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address
                                    path:(nonnull NSString *)path
                                   nonce:(nullable NSNumber *)nonce
-                               utxoPool:(nonnull NSArray<ZKUnspentOutput *> *)utxoPool
-                                version:(int8_t)version
 {
     if (self = [super init]) {
         _address = [address copy];
         _path = [path copy];
         _nonce = nonce;
-        _utxoPool = [utxoPool copy];
-        _version = version;
     }
     return self;
 }
@@ -25,14 +21,10 @@
 + (nonnull instancetype)accountCryptoPropertiesWithAddress:(nonnull NSString *)address
                                                       path:(nonnull NSString *)path
                                                      nonce:(nullable NSNumber *)nonce
-                                                  utxoPool:(nonnull NSArray<ZKUnspentOutput *> *)utxoPool
-                                                   version:(int8_t)version
 {
     return [(ZKAccountCryptoProperties*)[self alloc] initWithAddress:address
                                                                 path:path
-                                                               nonce:nonce
-                                                            utxoPool:utxoPool
-                                                             version:version];
+                                                               nonce:nonce];
 }
 
 - (BOOL)isEqual:(id)other
@@ -43,9 +35,7 @@
     ZKAccountCryptoProperties *typedOther = (ZKAccountCryptoProperties *)other;
     return [self.address isEqualToString:typedOther.address] &&
             [self.path isEqualToString:typedOther.path] &&
-            ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
-            [self.utxoPool isEqualToArray:typedOther.utxoPool] &&
-            self.version == typedOther.version;
+            ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce]));
 }
 
 - (NSUInteger)hash
@@ -53,14 +43,12 @@
     return NSStringFromClass([self class]).hash ^
             self.address.hash ^
             self.path.hash ^
-            self.nonce.hash ^
-            self.utxoPool.hash ^
-            (NSUInteger)self.version;
+            self.nonce.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p address:%@ path:%@ nonce:%@ utxoPool:%@ version:%@>", self.class, (void *)self, self.address, self.path, self.nonce, self.utxoPool, @(self.version)];
+    return [NSString stringWithFormat:@"<%@ %p address:%@ path:%@ nonce:%@>", self.class, (void *)self, self.address, self.path, self.nonce];
 }
 
 @end
