@@ -76,11 +76,11 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDADDRESS;
 /** Invalid response received from API. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDAPIRESPONSE;
-/** Invalid or missing exchange deposit address. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEDEPOSITADDRESS;
-/** Mismatch between exchange rate and selected deposit/withdraw accounts. */
+/** Invalid or missing Zumo Exchange Service address. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS;
+/** Mismatch between exchange rate and selected accounts. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE;
-/** Mismatch between exchange settings and selected deposit/withdraw accounts. */
+/** Mismatch between exchange settings and selected accounts. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS;
 /** Invalid fee rate. Fee rate should be an integer value. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE;

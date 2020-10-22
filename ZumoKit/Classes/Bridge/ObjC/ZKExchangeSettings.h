@@ -6,56 +6,56 @@
 /** Record containing Zumo exchange settings used in making exchanges. */
 @interface ZKExchangeSettings : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                    depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
-                   depositCurrency:(nonnull NSString *)depositCurrency
-                  withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                   exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
+                      fromCurrency:(nonnull NSString *)fromCurrency
+                        toCurrency:(nonnull NSString *)toCurrency
                  minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
-                           feeRate:(nonnull NSDecimalNumber *)feeRate
-                    depositFeeRate:(nonnull NSDecimalNumber *)depositFeeRate
-                       withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                   exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
+        outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
+              returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                          timestamp:(int64_t)timestamp;
 + (nonnull instancetype)exchangeSettingsWithId:(nonnull NSString *)id
-                                depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
-                               depositCurrency:(nonnull NSString *)depositCurrency
-                              withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                               exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
+                                  fromCurrency:(nonnull NSString *)fromCurrency
+                                    toCurrency:(nonnull NSString *)toCurrency
                              minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
-                                       feeRate:(nonnull NSDecimalNumber *)feeRate
-                                depositFeeRate:(nonnull NSDecimalNumber *)depositFeeRate
-                                   withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                               exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
+                    outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
+                          returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                                      timestamp:(int64_t)timestamp;
 
 /** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
 /**
- * Zumo Exchange Service wallet address for each network type.
+ * Mapping between networks and Zumo Exchange addresses.
  * @see `ZKNetworkType`
  */
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * depositAddress;
+@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSString *> * exchangeAddress;
 
 /**
  * Currency code of outgoing transaction.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSString * depositCurrency;
+@property (nonatomic, readonly, nonnull) NSString * fromCurrency;
 
 /**
  * Currency code of return transaction.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
+@property (nonatomic, readonly, nonnull) NSString * toCurrency;
 
 /** Minimum amount that can be exchanged in outgoing transaction currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * minExchangeAmount;
 
 /** Exchange fee rate that will be charged once currency is exchanged. */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * feeRate;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFeeRate;
 
 /** Fee rate that will be used for outgoing transaction. */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * depositFeeRate;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * outgoingTransactionFeeRate;
 
 /** Fee that will charged for return transaction. */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * returnTransactionFee;
 
 /** Epoch timestamp when the exchange settings were last updated. */
 @property (nonatomic, readonly) int64_t timestamp;

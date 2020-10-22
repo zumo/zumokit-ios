@@ -24,7 +24,7 @@
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
                    completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
-    
+
     [self composeEthTransaction:fromAccountId
                        gasPrice:gasPrice
                        gasLimit:gasLimit
@@ -34,7 +34,7 @@
                           nonce:nonce
                         sendMax:sendMax
                        callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
-    
+
 };
 
 
@@ -45,7 +45,7 @@
                   feeRate:(nonnull NSDecimalNumber *)feeRate
                   sendMax:(BOOL)sendMax
                completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
-    
+
     [self composeTransaction:fromAccountId
              changeAccountId:changeAccountId
                  destination:destination
@@ -53,7 +53,7 @@
                      feeRate:feeRate
                      sendMax:sendMax
                     callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
-    
+
 };
 
 - (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
@@ -71,16 +71,16 @@
         [self composeTransactionToNominatedAccount:fromAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
-- (void)composeExchange:(nonnull NSString *)depositAccountId
-      withdrawAccountId:(nonnull NSString *)withdrawAccountId
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                   amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
              completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler {
-                 
-    [self composeExchange:depositAccountId
-        withdrawAccountId:withdrawAccountId
+
+    [self composeExchange:fromAccountId
+              toAccountId:toAccountId
              exchangeRate:exchangeRate
          exchangeSettings:exchangeSettings
                    amount:amount

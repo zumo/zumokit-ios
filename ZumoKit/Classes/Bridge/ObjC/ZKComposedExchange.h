@@ -9,38 +9,38 @@
 /** Record containing result of the compose exchange method on `ZKWallet` object. */
 @interface ZKComposedExchange : NSObject
 - (nonnull instancetype)initWithSignedTransaction:(nullable NSString *)signedTransaction
-                                   depositAccount:(nonnull ZKAccount *)depositAccount
-                                  withdrawAccount:(nonnull ZKAccount *)withdrawAccount
+                                      fromAccount:(nonnull ZKAccount *)fromAccount
+                                        toAccount:(nonnull ZKAccount *)toAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                  exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                                   exchangeAddress:(nullable NSString *)exchangeAddress
-                                            value:(nonnull NSDecimalNumber *)value
-                                      returnValue:(nonnull NSDecimalNumber *)returnValue
-                                       depositFee:(nonnull NSDecimalNumber *)depositFee
+                                           amount:(nonnull NSDecimalNumber *)amount
+                                     returnAmount:(nonnull NSDecimalNumber *)returnAmount
+                           outgoingTransactionFee:(nonnull NSDecimalNumber *)outgoingTransactionFee
                                       exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
-                                      withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                             returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                                             nonce:(nonnull NSString *)nonce;
 + (nonnull instancetype)composedExchangeWithSignedTransaction:(nullable NSString *)signedTransaction
-                                               depositAccount:(nonnull ZKAccount *)depositAccount
-                                              withdrawAccount:(nonnull ZKAccount *)withdrawAccount
+                                                  fromAccount:(nonnull ZKAccount *)fromAccount
+                                                    toAccount:(nonnull ZKAccount *)toAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
                                              exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                                               exchangeAddress:(nullable NSString *)exchangeAddress
-                                                        value:(nonnull NSDecimalNumber *)value
-                                                  returnValue:(nonnull NSDecimalNumber *)returnValue
-                                                   depositFee:(nonnull NSDecimalNumber *)depositFee
+                                                       amount:(nonnull NSDecimalNumber *)amount
+                                                 returnAmount:(nonnull NSDecimalNumber *)returnAmount
+                                       outgoingTransactionFee:(nonnull NSDecimalNumber *)outgoingTransactionFee
                                                   exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
-                                                  withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                                         returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                                                         nonce:(nonnull NSString *)nonce;
 
 /** Signed transaction for a crypto transaction, null otherwise. */
 @property (nonatomic, readonly, nullable) NSString * signedTransaction;
 
 /** Source account. */
-@property (nonatomic, readonly, nonnull) ZKAccount * depositAccount;
+@property (nonatomic, readonly, nonnull) ZKAccount * fromAccount;
 
 /** Target account. */
-@property (nonatomic, readonly, nonnull) ZKAccount * withdrawAccount;
+@property (nonatomic, readonly, nonnull) ZKAccount * toAccount;
 
 /** Exchange rate used composing exchange. */
 @property (nonatomic, readonly, nonnull) ZKExchangeRate * exchangeRate;
@@ -54,20 +54,20 @@
  */
 @property (nonatomic, readonly, nullable) NSString * exchangeAddress;
 
-/** Exchange value in source account currency. */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * value;
+/** Exchange amount in source account currency. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * amount;
 
 /**
- * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - withdrawFee</code>.
+ * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
  * @see `ZKExchangeSettings`
  */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * returnValue;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * returnAmount;
 
 /** Outgoing transaction fee. */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * depositFee;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * outgoingTransactionFee;
 
 /**
- * Exchange fee, calculated as <code>value X exchangeRate X feeRate</code>.
+ * Exchange fee, calculated as <code>value X exchangeRate X exchangeFeeRate</code>.
  * @see `ZKExchangeSettings`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFee;
@@ -76,7 +76,7 @@
  * Return transaction fee.
  * @see `ZKExchangeSettings`
  */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * withdrawFee;
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * returnTransactionFee;
 
 /** Unique nonce used to prevent double spend. */
 @property (nonatomic, readonly, nonnull) NSString * nonce;

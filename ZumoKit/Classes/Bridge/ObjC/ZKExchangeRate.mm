@@ -7,16 +7,16 @@
 @implementation ZKExchangeRate
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                   depositCurrency:(nonnull NSString *)depositCurrency
-                  withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                      fromCurrency:(nonnull NSString *)fromCurrency
+                        toCurrency:(nonnull NSString *)toCurrency
                              value:(nonnull NSDecimalNumber *)value
                            validTo:(int64_t)validTo
                          timestamp:(int64_t)timestamp
 {
     if (self = [super init]) {
         _id = [id copy];
-        _depositCurrency = [depositCurrency copy];
-        _withdrawCurrency = [withdrawCurrency copy];
+        _fromCurrency = [fromCurrency copy];
+        _toCurrency = [toCurrency copy];
         _value = value;
         _validTo = validTo;
         _timestamp = timestamp;
@@ -25,15 +25,15 @@
 }
 
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
-                           depositCurrency:(nonnull NSString *)depositCurrency
-                          withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                              fromCurrency:(nonnull NSString *)fromCurrency
+                                toCurrency:(nonnull NSString *)toCurrency
                                      value:(nonnull NSDecimalNumber *)value
                                    validTo:(int64_t)validTo
                                  timestamp:(int64_t)timestamp
 {
     return [(ZKExchangeRate*)[self alloc] initWithId:id
-                                     depositCurrency:depositCurrency
-                                    withdrawCurrency:withdrawCurrency
+                                        fromCurrency:fromCurrency
+                                          toCurrency:toCurrency
                                                value:value
                                              validTo:validTo
                                            timestamp:timestamp];
@@ -46,8 +46,8 @@
     }
     ZKExchangeRate *typedOther = (ZKExchangeRate *)other;
     return [self.id isEqualToString:typedOther.id] &&
-            [self.depositCurrency isEqualToString:typedOther.depositCurrency] &&
-            [self.withdrawCurrency isEqualToString:typedOther.withdrawCurrency] &&
+            [self.fromCurrency isEqualToString:typedOther.fromCurrency] &&
+            [self.toCurrency isEqualToString:typedOther.toCurrency] &&
             [self.value isEqual:typedOther.value] &&
             self.validTo == typedOther.validTo &&
             self.timestamp == typedOther.timestamp;
@@ -57,8 +57,8 @@
 {
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
-            self.depositCurrency.hash ^
-            self.withdrawCurrency.hash ^
+            self.fromCurrency.hash ^
+            self.toCurrency.hash ^
             ((NSUInteger)self.value) ^
             (NSUInteger)self.validTo ^
             (NSUInteger)self.timestamp;
@@ -66,7 +66,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ depositCurrency:%@ withdrawCurrency:%@ value:%@ validTo:%@ timestamp:%@>", self.class, (void *)self, self.id, self.depositCurrency, self.withdrawCurrency, self.value, @(self.validTo), @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ fromCurrency:%@ toCurrency:%@ value:%@ validTo:%@ timestamp:%@>", self.class, (void *)self, self.id, self.fromCurrency, self.toCurrency, self.value, @(self.validTo), @(self.timestamp)];
 }
 
 @end

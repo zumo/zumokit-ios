@@ -9,14 +9,14 @@
  */
 @interface ZKExchangeRate : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                   depositCurrency:(nonnull NSString *)depositCurrency
-                  withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                      fromCurrency:(nonnull NSString *)fromCurrency
+                        toCurrency:(nonnull NSString *)toCurrency
                              value:(nonnull NSDecimalNumber *)value
                            validTo:(int64_t)validTo
                          timestamp:(int64_t)timestamp;
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
-                           depositCurrency:(nonnull NSString *)depositCurrency
-                          withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                              fromCurrency:(nonnull NSString *)fromCurrency
+                                toCurrency:(nonnull NSString *)toCurrency
                                      value:(nonnull NSDecimalNumber *)value
                                    validTo:(int64_t)validTo
                                  timestamp:(int64_t)timestamp;
@@ -28,15 +28,15 @@
  * Currency from which exchange is being made.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSString * depositCurrency;
+@property (nonatomic, readonly, nonnull) NSString * fromCurrency;
 
 /**
  * Currency from which exchange is being made.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSString * withdrawCurrency;
+@property (nonatomic, readonly, nonnull) NSString * toCurrency;
 
-/** Value of 1 unit of deposit currency in withdraw currency. */
+/** Value of 1 unit of deposit currency in target currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * value;
 
 /** Epoch timestamp representing expiration time of this exchange rate. */

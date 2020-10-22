@@ -12,8 +12,8 @@ auto ExchangeRate::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
-            ::djinni::String::toCpp(obj.depositCurrency),
-            ::djinni::String::toCpp(obj.withdrawCurrency),
+            ::djinni::String::toCpp(obj.fromCurrency),
+            ::djinni::String::toCpp(obj.toCurrency),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.value),
             ::djinni::I64::toCpp(obj.validTo),
             ::djinni::I64::toCpp(obj.timestamp)};
@@ -22,8 +22,8 @@ auto ExchangeRate::toCpp(ObjcType obj) -> CppType
 auto ExchangeRate::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKExchangeRate alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
-                              depositCurrency:(::djinni::String::fromCpp(cpp.deposit_currency))
-                             withdrawCurrency:(::djinni::String::fromCpp(cpp.withdraw_currency))
+                                 fromCurrency:(::djinni::String::fromCpp(cpp.from_currency))
+                                   toCurrency:(::djinni::String::fromCpp(cpp.to_currency))
                                         value:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.value))
                                       validTo:(::djinni::I64::fromCpp(cpp.valid_to))
                                     timestamp:(::djinni::I64::fromCpp(cpp.timestamp))];

@@ -44,30 +44,16 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 12,
-      "symbol": "ZKAccountCryptoProperties.-initWithAddress:path:nonce:utxoPool:version:",
+      "line": 11,
+      "symbol": "ZKAccountCryptoProperties.-initWithAddress:path:nonce:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 17,
-      "symbol": "ZKAccountCryptoProperties.+accountCryptoPropertiesWithAddress:path:nonce:utxoPool:version:",
+      "line": 14,
+      "symbol": "ZKAccountCryptoProperties.+accountCryptoPropertiesWithAddress:path:nonce:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 32,
-      "symbol": "ZKAccountCryptoProperties.utxoPool",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 34,
-      "symbol": "ZKAccountCryptoProperties.version",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
       "warning": "undocumented"
     },
     {
@@ -164,14 +150,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h",
       "line": 11,
-      "symbol": "ZKComposedExchange.-initWithSignedTransaction:depositAccount:withdrawAccount:exchangeRate:exchangeSettings:exchangeAddress:value:returnValue:depositFee:exchangeFee:withdrawFee:nonce:",
+      "symbol": "ZKComposedExchange.-initWithSignedTransaction:fromAccount:toAccount:exchangeRate:exchangeSettings:exchangeAddress:amount:returnAmount:outgoingTransactionFee:exchangeFee:returnTransactionFee:nonce:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h",
       "line": 23,
-      "symbol": "ZKComposedExchange.+composedExchangeWithSignedTransaction:depositAccount:withdrawAccount:exchangeRate:exchangeSettings:exchangeAddress:value:returnValue:depositFee:exchangeFee:withdrawFee:nonce:",
+      "symbol": "ZKComposedExchange.+composedExchangeWithSignedTransaction:fromAccount:toAccount:exchangeRate:exchangeSettings:exchangeAddress:amount:returnAmount:outgoingTransactionFee:exchangeFee:returnTransactionFee:nonce:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
@@ -262,42 +248,42 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h",
       "line": 10,
-      "symbol": "ZKExchange.-initWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:",
+      "symbol": "ZKExchange.-initWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h",
       "line": 29,
-      "symbol": "ZKExchange.+exchangeWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:",
+      "symbol": "ZKExchange.+exchangeWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeRate.h",
       "line": 11,
-      "symbol": "ZKExchangeRate.-initWithId:depositCurrency:withdrawCurrency:value:validTo:timestamp:",
+      "symbol": "ZKExchangeRate.-initWithId:fromCurrency:toCurrency:value:validTo:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeRate.h",
       "line": 17,
-      "symbol": "ZKExchangeRate.+exchangeRateWithId:depositCurrency:withdrawCurrency:value:validTo:timestamp:",
+      "symbol": "ZKExchangeRate.+exchangeRateWithId:fromCurrency:toCurrency:value:validTo:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSettings.h",
       "line": 8,
-      "symbol": "ZKExchangeSettings.-initWithId:depositAddress:depositCurrency:withdrawCurrency:minExchangeAmount:feeRate:depositFeeRate:withdrawFee:timestamp:",
+      "symbol": "ZKExchangeSettings.-initWithId:exchangeAddress:fromCurrency:toCurrency:minExchangeAmount:exchangeFeeRate:outgoingTransactionFeeRate:returnTransactionFee:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSettings.h",
       "line": 17,
-      "symbol": "ZKExchangeSettings.+exchangeSettingsWithId:depositAddress:depositCurrency:withdrawCurrency:minExchangeAmount:feeRate:depositFeeRate:withdrawFee:timestamp:",
+      "symbol": "ZKExchangeSettings.+exchangeSettingsWithId:exchangeAddress:fromCurrency:toCurrency:minExchangeAmount:exchangeFeeRate:outgoingTransactionFeeRate:returnTransactionFee:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },

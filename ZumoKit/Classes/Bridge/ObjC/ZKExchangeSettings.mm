@@ -7,47 +7,47 @@
 @implementation ZKExchangeSettings
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                    depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
-                   depositCurrency:(nonnull NSString *)depositCurrency
-                  withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                   exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
+                      fromCurrency:(nonnull NSString *)fromCurrency
+                        toCurrency:(nonnull NSString *)toCurrency
                  minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
-                           feeRate:(nonnull NSDecimalNumber *)feeRate
-                    depositFeeRate:(nonnull NSDecimalNumber *)depositFeeRate
-                       withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                   exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
+        outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
+              returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                          timestamp:(int64_t)timestamp
 {
     if (self = [super init]) {
         _id = [id copy];
-        _depositAddress = [depositAddress copy];
-        _depositCurrency = [depositCurrency copy];
-        _withdrawCurrency = [withdrawCurrency copy];
+        _exchangeAddress = [exchangeAddress copy];
+        _fromCurrency = [fromCurrency copy];
+        _toCurrency = [toCurrency copy];
         _minExchangeAmount = minExchangeAmount;
-        _feeRate = feeRate;
-        _depositFeeRate = depositFeeRate;
-        _withdrawFee = withdrawFee;
+        _exchangeFeeRate = exchangeFeeRate;
+        _outgoingTransactionFeeRate = outgoingTransactionFeeRate;
+        _returnTransactionFee = returnTransactionFee;
         _timestamp = timestamp;
     }
     return self;
 }
 
 + (nonnull instancetype)exchangeSettingsWithId:(nonnull NSString *)id
-                                depositAddress:(nonnull NSDictionary<NSString *, NSString *> *)depositAddress
-                               depositCurrency:(nonnull NSString *)depositCurrency
-                              withdrawCurrency:(nonnull NSString *)withdrawCurrency
+                               exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
+                                  fromCurrency:(nonnull NSString *)fromCurrency
+                                    toCurrency:(nonnull NSString *)toCurrency
                              minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
-                                       feeRate:(nonnull NSDecimalNumber *)feeRate
-                                depositFeeRate:(nonnull NSDecimalNumber *)depositFeeRate
-                                   withdrawFee:(nonnull NSDecimalNumber *)withdrawFee
+                               exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
+                    outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
+                          returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                                      timestamp:(int64_t)timestamp
 {
     return [(ZKExchangeSettings*)[self alloc] initWithId:id
-                                          depositAddress:depositAddress
-                                         depositCurrency:depositCurrency
-                                        withdrawCurrency:withdrawCurrency
+                                         exchangeAddress:exchangeAddress
+                                            fromCurrency:fromCurrency
+                                              toCurrency:toCurrency
                                        minExchangeAmount:minExchangeAmount
-                                                 feeRate:feeRate
-                                          depositFeeRate:depositFeeRate
-                                             withdrawFee:withdrawFee
+                                         exchangeFeeRate:exchangeFeeRate
+                              outgoingTransactionFeeRate:outgoingTransactionFeeRate
+                                    returnTransactionFee:returnTransactionFee
                                                timestamp:timestamp];
 }
 
@@ -58,13 +58,13 @@
     }
     ZKExchangeSettings *typedOther = (ZKExchangeSettings *)other;
     return [self.id isEqualToString:typedOther.id] &&
-            [self.depositAddress isEqualToDictionary:typedOther.depositAddress] &&
-            [self.depositCurrency isEqualToString:typedOther.depositCurrency] &&
-            [self.withdrawCurrency isEqualToString:typedOther.withdrawCurrency] &&
+            [self.exchangeAddress isEqualToDictionary:typedOther.exchangeAddress] &&
+            [self.fromCurrency isEqualToString:typedOther.fromCurrency] &&
+            [self.toCurrency isEqualToString:typedOther.toCurrency] &&
             [self.minExchangeAmount isEqual:typedOther.minExchangeAmount] &&
-            [self.feeRate isEqual:typedOther.feeRate] &&
-            [self.depositFeeRate isEqual:typedOther.depositFeeRate] &&
-            [self.withdrawFee isEqual:typedOther.withdrawFee] &&
+            [self.exchangeFeeRate isEqual:typedOther.exchangeFeeRate] &&
+            [self.outgoingTransactionFeeRate isEqual:typedOther.outgoingTransactionFeeRate] &&
+            [self.returnTransactionFee isEqual:typedOther.returnTransactionFee] &&
             self.timestamp == typedOther.timestamp;
 }
 
@@ -72,19 +72,19 @@
 {
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
-            self.depositAddress.hash ^
-            self.depositCurrency.hash ^
-            self.withdrawCurrency.hash ^
+            self.exchangeAddress.hash ^
+            self.fromCurrency.hash ^
+            self.toCurrency.hash ^
             ((NSUInteger)self.minExchangeAmount) ^
-            ((NSUInteger)self.feeRate) ^
-            ((NSUInteger)self.depositFeeRate) ^
-            ((NSUInteger)self.withdrawFee) ^
+            ((NSUInteger)self.exchangeFeeRate) ^
+            ((NSUInteger)self.outgoingTransactionFeeRate) ^
+            ((NSUInteger)self.returnTransactionFee) ^
             (NSUInteger)self.timestamp;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ depositAddress:%@ depositCurrency:%@ withdrawCurrency:%@ minExchangeAmount:%@ feeRate:%@ depositFeeRate:%@ withdrawFee:%@ timestamp:%@>", self.class, (void *)self, self.id, self.depositAddress, self.depositCurrency, self.withdrawCurrency, self.minExchangeAmount, self.feeRate, self.depositFeeRate, self.withdrawFee, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ exchangeAddress:%@ fromCurrency:%@ toCurrency:%@ minExchangeAmount:%@ exchangeFeeRate:%@ outgoingTransactionFeeRate:%@ returnTransactionFee:%@ timestamp:%@>", self.class, (void *)self, self.id, self.exchangeAddress, self.fromCurrency, self.toCurrency, self.minExchangeAmount, self.exchangeFeeRate, self.outgoingTransactionFeeRate, self.returnTransactionFee, @(self.timestamp)];
 }
 
 @end

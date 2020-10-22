@@ -117,16 +117,16 @@
  * <p>
  * On success `ZKComposedExchange`  is returned via callback.
  *
- * @param depositAccountId  `ZKAccount` identifier
- * @param withdrawAccountId `ZKAccount` identifier
+ * @param fromAccountId     `ZKAccount` identifier
+ * @param toAccountId       `ZKAccount` identifier
  * @param exchangeRate       Zumo exchange rate obtained from ZumoKit state
  * @param exchangeSettings   Zumo exchange settings obtained from ZumoKit state
  * @param amount              amount in deposit account currency
  * @param sendMax            exchange maximum possible funds
  * @param callback            an interface to receive the result or error
  */
-- (void)composeExchange:(nonnull NSString *)depositAccountId
-      withdrawAccountId:(nonnull NSString *)withdrawAccountId
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
        exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
                  amount:(nullable NSDecimalNumber *)amount

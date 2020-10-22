@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.3.0-beta.1 Docs
+          ZumoKit 2.3.0-alpha.35 Docs
         </a>
         
       </p>
@@ -358,7 +358,7 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDAPIRESPONSE">ZKZumoKitErrorCodeINVALIDAPIRESPONSE</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGEDEPOSITADDRESS">ZKZumoKitErrorCodeINVALIDEXCHANGEDEPOSITADDRESS</a>
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS">ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGERATE">ZKZumoKitErrorCodeINVALIDEXCHANGERATE</a>
@@ -600,7 +600,7 @@
             <p>Record containing exchange details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L9-L127">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L9-L127">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -612,9 +612,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(im)initWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(im)initWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:">-initWithId:<wbr>status:<wbr>depositCurrency:<wbr>depositAccountId:<wbr>depositTransactionId:<wbr>withdrawCurrency:<wbr>withdrawAccountId:<wbr>withdrawTransactionId:<wbr>amount:<wbr>depositFee:<wbr>returnAmount:<wbr>exchangeFee:<wbr>withdrawFee:<wbr>exchangeRate:<wbr>exchangeSettings:<wbr>exchangeRates:<wbr>nonce:<wbr>submittedAt:<wbr>confirmedAt:<wbr></a>
+                    <a name="/c:objc(cs)ZKExchange(im)initWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(im)initWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:">-initWithId:<wbr>status:<wbr>fromCurrency:<wbr>fromAccountId:<wbr>outgoingTransactionId:<wbr>toCurrency:<wbr>toAccountId:<wbr>returnTransactionId:<wbr>amount:<wbr>outgoingTransactionFee:<wbr>returnAmount:<wbr>exchangeFee:<wbr>returnTransactionFee:<wbr>exchangeRate:<wbr>exchangeSettings:<wbr>exchangeRates:<wbr>nonce:<wbr>submittedAt:<wbr>confirmedAt:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -630,17 +630,17 @@
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">id</span>
                             <span class="nf">status</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">status</span>
-                   <span class="nf">depositCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositCurrency</span>
-                  <span class="nf">depositAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositAccountId</span>
-              <span class="nf">depositTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositTransactionId</span>
-                  <span class="nf">withdrawCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawCurrency</span>
-                 <span class="nf">withdrawAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawAccountId</span>
-             <span class="nf">withdrawTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawTransactionId</span>
+                      <span class="nf">fromCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromCurrency</span>
+                     <span class="nf">fromAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+             <span class="nf">outgoingTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">outgoingTransactionId</span>
+                        <span class="nf">toCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toCurrency</span>
+                       <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+               <span class="nf">returnTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">returnTransactionId</span>
                             <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                        <span class="nf">depositFee</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositFee</span>
+            <span class="nf">outgoingTransactionFee</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">outgoingTransactionFee</span>
                       <span class="nf">returnAmount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">returnAmount</span>
                        <span class="nf">exchangeFee</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeFee</span>
-                       <span class="nf">withdrawFee</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawFee</span>
+              <span class="nf">returnTransactionFee</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">returnTransactionFee</span>
                       <span class="nf">exchangeRate</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeRate</span>
                   <span class="nf">exchangeSettings</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeSettings.html">ZKExchangeSettings</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeSettings</span>
                      <span class="nf">exchangeRates</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*&gt;</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeRates</span>
@@ -651,12 +651,12 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">depositCurrency</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">depositAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">depositTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">withdrawCurrency</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">withdrawAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">withdrawTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">depositFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">returnAmount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">exchangeFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">withdrawFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">exchangeRate</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span><span class="p">,</span> <span class="nv">exchangeSettings</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeSettings.html">ZKExchangeSettings</a></span><span class="p">,</span> <span class="nv">exchangeRates</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span><span class="p">]],</span> <span class="nv">nonce</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">submittedAt</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">confirmedAt</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">fromCurrency</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">outgoingTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toCurrency</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">returnTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">outgoingTransactionFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">returnAmount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">exchangeFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">returnTransactionFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">exchangeRate</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span><span class="p">,</span> <span class="nv">exchangeSettings</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeSettings.html">ZKExchangeSettings</a></span><span class="p">,</span> <span class="nv">exchangeRates</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span><span class="p">]],</span> <span class="nv">nonce</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">submittedAt</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">confirmedAt</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L10-L28">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L10-L28">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -664,9 +664,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(cm)exchangeWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:"></a>
-                    <a name="//apple_ref/objc/Method/+exchangeWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(cm)exchangeWithId:status:depositCurrency:depositAccountId:depositTransactionId:withdrawCurrency:withdrawAccountId:withdrawTransactionId:amount:depositFee:returnAmount:exchangeFee:withdrawFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:">+exchangeWithId:<wbr>status:<wbr>depositCurrency:<wbr>depositAccountId:<wbr>depositTransactionId:<wbr>withdrawCurrency:<wbr>withdrawAccountId:<wbr>withdrawTransactionId:<wbr>amount:<wbr>depositFee:<wbr>returnAmount:<wbr>exchangeFee:<wbr>withdrawFee:<wbr>exchangeRate:<wbr>exchangeSettings:<wbr>exchangeRates:<wbr>nonce:<wbr>submittedAt:<wbr>confirmedAt:<wbr></a>
+                    <a name="/c:objc(cs)ZKExchange(cm)exchangeWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:"></a>
+                    <a name="//apple_ref/objc/Method/+exchangeWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(cm)exchangeWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSettings:exchangeRates:nonce:submittedAt:confirmedAt:">+exchangeWithId:<wbr>status:<wbr>fromCurrency:<wbr>fromAccountId:<wbr>outgoingTransactionId:<wbr>toCurrency:<wbr>toAccountId:<wbr>returnTransactionId:<wbr>amount:<wbr>outgoingTransactionFee:<wbr>returnAmount:<wbr>exchangeFee:<wbr>returnTransactionFee:<wbr>exchangeRate:<wbr>exchangeSettings:<wbr>exchangeRates:<wbr>nonce:<wbr>submittedAt:<wbr>confirmedAt:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -682,17 +682,17 @@
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">exchangeWithId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">id</span>
                                 <span class="nf">status</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">status</span>
-                       <span class="nf">depositCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositCurrency</span>
-                      <span class="nf">depositAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositAccountId</span>
-                  <span class="nf">depositTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositTransactionId</span>
-                      <span class="nf">withdrawCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawCurrency</span>
-                     <span class="nf">withdrawAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawAccountId</span>
-                 <span class="nf">withdrawTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawTransactionId</span>
+                          <span class="nf">fromCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromCurrency</span>
+                         <span class="nf">fromAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                 <span class="nf">outgoingTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">outgoingTransactionId</span>
+                            <span class="nf">toCurrency</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toCurrency</span>
+                           <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                   <span class="nf">returnTransactionId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">returnTransactionId</span>
                                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                            <span class="nf">depositFee</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">depositFee</span>
+                <span class="nf">outgoingTransactionFee</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">outgoingTransactionFee</span>
                           <span class="nf">returnAmount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">returnAmount</span>
                            <span class="nf">exchangeFee</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeFee</span>
-                           <span class="nf">withdrawFee</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">withdrawFee</span>
+                  <span class="nf">returnTransactionFee</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">returnTransactionFee</span>
                           <span class="nf">exchangeRate</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeRate</span>
                       <span class="nf">exchangeSettings</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeSettings.html">ZKExchangeSettings</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeSettings</span>
                          <span class="nf">exchangeRates</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*&gt;</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeRates</span>
@@ -703,7 +703,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L29-L47">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L29-L47">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -738,7 +738,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L50">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L50">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -778,7 +778,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L56">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L56">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -786,9 +786,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)depositCurrency"></a>
-                    <a name="//apple_ref/objc/Property/depositCurrency" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)depositCurrency">depositCurrency</a>
+                    <a name="/c:objc(cs)ZKExchange(py)fromCurrency"></a>
+                    <a name="//apple_ref/objc/Property/fromCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)fromCurrency">fromCurrency</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -808,17 +808,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">depositCurrency</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromCurrency</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">depositCurrency</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromCurrency</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L62">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -826,9 +826,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)depositAccountId"></a>
-                    <a name="//apple_ref/objc/Property/depositAccountId" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)depositAccountId">depositAccountId</a>
+                    <a name="/c:objc(cs)ZKExchange(py)fromAccountId"></a>
+                    <a name="//apple_ref/objc/Property/fromAccountId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)fromAccountId">fromAccountId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -843,17 +843,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">depositAccountId</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromAccountId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">depositAccountId</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L65">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L65">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -861,9 +861,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)depositTransactionId"></a>
-                    <a name="//apple_ref/objc/Property/depositTransactionId" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)depositTransactionId">depositTransactionId</a>
+                    <a name="/c:objc(cs)ZKExchange(py)outgoingTransactionId"></a>
+                    <a name="//apple_ref/objc/Property/outgoingTransactionId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)outgoingTransactionId">outgoingTransactionId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -878,17 +878,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">depositTransactionId</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">outgoingTransactionId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">depositTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">outgoingTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L68">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L68">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -896,9 +896,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)withdrawCurrency"></a>
-                    <a name="//apple_ref/objc/Property/withdrawCurrency" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)withdrawCurrency">withdrawCurrency</a>
+                    <a name="/c:objc(cs)ZKExchange(py)toCurrency"></a>
+                    <a name="//apple_ref/objc/Property/toCurrency" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)toCurrency">toCurrency</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -918,17 +918,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">withdrawCurrency</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toCurrency</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">withdrawCurrency</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toCurrency</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L74">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L74">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -936,9 +936,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)withdrawAccountId"></a>
-                    <a name="//apple_ref/objc/Property/withdrawAccountId" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)withdrawAccountId">withdrawAccountId</a>
+                    <a name="/c:objc(cs)ZKExchange(py)toAccountId"></a>
+                    <a name="//apple_ref/objc/Property/toAccountId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)toAccountId">toAccountId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -953,17 +953,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">withdrawAccountId</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toAccountId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">withdrawAccountId</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L77">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L77">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -971,9 +971,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)withdrawTransactionId"></a>
-                    <a name="//apple_ref/objc/Property/withdrawTransactionId" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)withdrawTransactionId">withdrawTransactionId</a>
+                    <a name="/c:objc(cs)ZKExchange(py)returnTransactionId"></a>
+                    <a name="//apple_ref/objc/Property/returnTransactionId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)returnTransactionId">returnTransactionId</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -988,17 +988,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">withdrawTransactionId</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">returnTransactionId</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">withdrawTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">returnTransactionId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L80">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1033,7 +1033,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L83">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L83">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1041,9 +1041,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)depositFee"></a>
-                    <a name="//apple_ref/objc/Property/depositFee" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)depositFee">depositFee</a>
+                    <a name="/c:objc(cs)ZKExchange(py)outgoingTransactionFee"></a>
+                    <a name="//apple_ref/objc/Property/outgoingTransactionFee" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)outgoingTransactionFee">outgoingTransactionFee</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1051,24 +1051,24 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Deposit transaction fee.</p>
+                        <p>Outgoing transaction fee.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">depositFee</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">outgoingTransactionFee</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">depositFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">outgoingTransactionFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L86">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L86">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1086,7 +1086,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - withdrawFee</code>.</p>
+                        <p>Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
     <code><a href="../Classes/ZKExchangeSettings.html">ZKExchangeSettings</a></code>
@@ -1108,7 +1108,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L92">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L92">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1126,7 +1126,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Exchange fee, calculated as <code>amount X exchangeRate X feeRate</code>.</p>
+                        <p>Exchange fee, calculated as <code>amount X exchangeRate X exchangeFeeRate</code>.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
     <code><a href="../Classes/ZKExchangeSettings.html">ZKExchangeSettings</a></code>
@@ -1148,7 +1148,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L98">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L98">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1156,9 +1156,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchange(py)withdrawFee"></a>
-                    <a name="//apple_ref/objc/Property/withdrawFee" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchange(py)withdrawFee">withdrawFee</a>
+                    <a name="/c:objc(cs)ZKExchange(py)returnTransactionFee"></a>
+                    <a name="//apple_ref/objc/Property/returnTransactionFee" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchange(py)returnTransactionFee">returnTransactionFee</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1178,17 +1178,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">withdrawFee</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">returnTransactionFee</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">withdrawFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">returnTransactionFee</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L104">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L104">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1223,7 +1223,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L107">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L107">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1258,7 +1258,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L110">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L110">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1294,7 +1294,7 @@ This can be used to display amounts in local currency to the user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L116">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L116">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1329,7 +1329,7 @@ This can be used to display amounts in local currency to the user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L119">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L119">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1364,7 +1364,7 @@ This can be used to display amounts in local currency to the user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L122">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L122">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1399,7 +1399,7 @@ This can be used to display amounts in local currency to the user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L125">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.35/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L125">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1412,7 +1412,7 @@ This can be used to display amounts in local currency to the user.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-07)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-22)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

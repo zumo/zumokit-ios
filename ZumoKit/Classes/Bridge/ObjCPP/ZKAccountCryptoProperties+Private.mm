@@ -3,7 +3,6 @@
 
 #import "ZKAccountCryptoProperties+Private.h"
 #import "DJIMarshal+Private.h"
-#import "ZKUnspentOutput+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -13,18 +12,14 @@ auto AccountCryptoProperties::toCpp(ObjcType obj) -> CppType
     assert(obj);
     return {::djinni::String::toCpp(obj.address),
             ::djinni::String::toCpp(obj.path),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce),
-            ::djinni::List<::djinni_generated::UnspentOutput>::toCpp(obj.utxoPool),
-            ::djinni::I8::toCpp(obj.version)};
+            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce)};
 }
 
 auto AccountCryptoProperties::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKAccountCryptoProperties alloc] initWithAddress:(::djinni::String::fromCpp(cpp.address))
                                                          path:(::djinni::String::fromCpp(cpp.path))
-                                                        nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))
-                                                     utxoPool:(::djinni::List<::djinni_generated::UnspentOutput>::fromCpp(cpp.utxo_pool))
-                                                      version:(::djinni::I8::fromCpp(cpp.version))];
+                                                        nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))];
 }
 
 }  // namespace djinni_generated
