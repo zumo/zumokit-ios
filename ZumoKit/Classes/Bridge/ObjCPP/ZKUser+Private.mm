@@ -58,40 +58,40 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (BOOL)isModulrCustomer:(nonnull NSString *)network {
+- (BOOL)isFiatCustomer:(nonnull NSString *)network {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->is_modulr_customer(::djinni::String::toCpp(network));
+        auto objcpp_result_ = _cppRefHandle.get()->is_fiat_customer(::djinni::String::toCpp(network));
         return ::djinni::Bool::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)makeModulrCustomer:(nonnull NSString *)network
-                 firstName:(nonnull NSString *)firstName
-                middleName:(nullable NSString *)middleName
-                  lastName:(nonnull NSString *)lastName
-               dateOfBirth:(nonnull NSString *)dateOfBirth
-                     email:(nonnull NSString *)email
-                     phone:(nonnull NSString *)phone
-              addressLine1:(nonnull NSString *)addressLine1
-              addressLine2:(nullable NSString *)addressLine2
-                   country:(nonnull NSString *)country
-                  postCode:(nonnull NSString *)postCode
-                  postTown:(nonnull NSString *)postTown
-                  callback:(nullable id<ZKSuccessCallback>)callback {
+- (void)makeFiatCustomer:(nonnull NSString *)network
+               firstName:(nonnull NSString *)firstName
+              middleName:(nullable NSString *)middleName
+                lastName:(nonnull NSString *)lastName
+             dateOfBirth:(nonnull NSString *)dateOfBirth
+                   email:(nonnull NSString *)email
+                   phone:(nonnull NSString *)phone
+            addressLine1:(nonnull NSString *)addressLine1
+            addressLine2:(nullable NSString *)addressLine2
+                 country:(nonnull NSString *)country
+                postCode:(nonnull NSString *)postCode
+                postTown:(nonnull NSString *)postTown
+                callback:(nullable id<ZKSuccessCallback>)callback {
     try {
-        _cppRefHandle.get()->make_modulr_customer(::djinni::String::toCpp(network),
-                                                  ::djinni::String::toCpp(firstName),
-                                                  ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(middleName),
-                                                  ::djinni::String::toCpp(lastName),
-                                                  ::djinni::String::toCpp(dateOfBirth),
-                                                  ::djinni::String::toCpp(email),
-                                                  ::djinni::String::toCpp(phone),
-                                                  ::djinni::String::toCpp(addressLine1),
-                                                  ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(addressLine2),
-                                                  ::djinni::String::toCpp(country),
-                                                  ::djinni::String::toCpp(postCode),
-                                                  ::djinni::String::toCpp(postTown),
-                                                  ::djinni_generated::SuccessCallback::toCpp(callback));
+        _cppRefHandle.get()->make_fiat_customer(::djinni::String::toCpp(network),
+                                                ::djinni::String::toCpp(firstName),
+                                                ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(middleName),
+                                                ::djinni::String::toCpp(lastName),
+                                                ::djinni::String::toCpp(dateOfBirth),
+                                                ::djinni::String::toCpp(email),
+                                                ::djinni::String::toCpp(phone),
+                                                ::djinni::String::toCpp(addressLine1),
+                                                ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(addressLine2),
+                                                ::djinni::String::toCpp(country),
+                                                ::djinni::String::toCpp(postCode),
+                                                ::djinni::String::toCpp(postTown),
+                                                ::djinni_generated::SuccessCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

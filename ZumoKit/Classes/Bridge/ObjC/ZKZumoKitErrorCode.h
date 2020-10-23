@@ -18,8 +18,8 @@
 extern NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR;
 /** New account could not be created. Account already exists. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED;
-/** Could not make user Modulr customer. User is already Modulr customer. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeALREADYMODULRCUSTOMER;
+/** Could not make user fiat customer. User is already fiat customer. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeALREADYFIATCUSTOMER;
 /** Requested account not found. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND;
 /** Amount not set. Either send max has to be enabled or send max set. */
@@ -129,8 +129,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL;
 extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR;
 /** Resulting transaction is too large. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONTOOLARGE;
-/** Fiat account could no be created. User is not yet a Modulr customer on selected network. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeUSERNOTMODULRCUSTOMER;
+/** Fiat account could no be created. User is not yet a fiat customer on selected network. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER;
 /** Unspent transaction output could not be signed. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeUTXOSIGNINGERROR;
 /** Cannot set amount when send max enabled. Set amount to null if trying t send maximum funds. */

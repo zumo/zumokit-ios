@@ -51,15 +51,15 @@ public:
     virtual bool is_active_user() = 0;
 
     /**
-     * Check if user is a Modulr customer on 'MAINNET' or 'TESTNET' network.
+     * Check if user is a fiat customer on 'MAINNET' or 'TESTNET' network.
      * @param  network 'MAINNET' or 'TESTNET'
      * @return true if user is currenly active user.
      * @see    NetworkType
      */
-    virtual bool is_modulr_customer(const std::string & network) = 0;
+    virtual bool is_fiat_customer(const std::string & network) = 0;
 
     /**
-     * Make user Modulr customer on specified network by providing user's personal details.
+     * Make user fiat customer on specified network by providing user's personal details.
      * @param  network        'MAINNET' or 'TESTNET'
      * @param  first_name     first name
      * @param  middle_name    middle name or null
@@ -74,10 +74,10 @@ public:
      * @param callback        an interface to receive the result or error
      * @see    NetworkType
      */
-    virtual void make_modulr_customer(const std::string & network, const std::string & first_name, const std::experimental::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const std::string & address_line_1, const std::experimental::optional<std::string> & address_line_2, const std::string & country, const std::string & post_code, const std::string & post_town, const std::shared_ptr<SuccessCallback> & callback) = 0;
+    virtual void make_fiat_customer(const std::string & network, const std::string & first_name, const std::experimental::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const std::string & address_line_1, const std::experimental::optional<std::string> & address_line_2, const std::string & country, const std::string & post_code, const std::string & post_town, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     /**
-     * Create fiat account on specified network and currency code. User must already be Modulr customer on specified network.
+     * Create fiat account on specified network and currency code. User must already be fiat customer on specified network.
      * @param  network        'MAINNET' or 'TESTNET'
      * @param  currency_code  country code in ISO 4217 format, e.g. 'GBP'
      * @param  callback       an interface to receive the result or error

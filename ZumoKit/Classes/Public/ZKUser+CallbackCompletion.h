@@ -16,20 +16,19 @@
 #import "ZKAccountFiatPropertiesCallback.h"
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void(^WalletCompletionBlock)(ZKWallet * _Nullable wallet, NSError * _Nullable error);
+typedef void (^WalletCompletionBlock)(ZKWallet *_Nullable wallet, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void(^MnemonicCompletionBlock)(NSString * _Nullable mnemonic, NSError * _Nullable error);
+typedef void (^MnemonicCompletionBlock)(NSString *_Nullable mnemonic, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void(^SuccessCompletionBlock)(NSError * _Nullable error);
+typedef void (^SuccessCompletionBlock)(NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void(^AccountCompletionBlock)(ZKAccount * _Nullable account, NSError * _Nullable error);
+typedef void (^AccountCompletionBlock)(ZKAccount *_Nullable account, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void(^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties * _Nullable accountFiatProperties, NSError * _Nullable error);
-
+typedef void (^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_Nullable accountFiatProperties, NSError *_Nullable error);
 
 @interface ZKUser (ZKUserCallbackCompletion)
 
@@ -39,7 +38,7 @@ typedef void(^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties * _N
 */
 - (void)createWallet:(nonnull NSString *)mnemonic
             password:(nonnull NSString *)password
-           completion:(_Nonnull WalletCompletionBlock)completionHandler;
+          completion:(_Nonnull WalletCompletionBlock)completionHandler;
 
 /**
 <code>unlockWallet</code> completion handler extension.
@@ -64,22 +63,22 @@ typedef void(^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties * _N
            completion:(_Nonnull WalletCompletionBlock)completionHandler;
 
 /**
-<code>makeModulrCustomer</code> completion handler extension.
-@see `-[ZKUser makeModulrCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:addressLine1:addressLine2:country:postCode:postTown:callback:]`
+<code>makeFiatCustomer</code> completion handler extension.
+@see `-[ZKUser makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:addressLine1:addressLine2:country:postCode:postTown:callback:]`
 */
-- (void)makeModulrCustomer:(nonnull NSString *)network
-                 firstName:(nonnull NSString *)firstName
-                middleName:(nullable NSString *)middleName
-                  lastName:(nonnull NSString *)lastName
-               dateOfBirth:(nonnull NSString *)dateOfBirth
-                     email:(nonnull NSString *)email
-                     phone:(nonnull NSString *)phone
-              addressLine1:(nonnull NSString *)addressLine1
-              addressLine2:(nullable NSString *)addressLine2
-                   country:(nonnull NSString *)country
-                  postCode:(nonnull NSString *)postCode
-                  postTown:(nonnull NSString *)postTown
-                completion:(_Nonnull SuccessCompletionBlock)completionHandler;
+- (void)makeFiatCustomer:(nonnull NSString *)network
+               firstName:(nonnull NSString *)firstName
+              middleName:(nullable NSString *)middleName
+                lastName:(nonnull NSString *)lastName
+             dateOfBirth:(nonnull NSString *)dateOfBirth
+                   email:(nonnull NSString *)email
+                   phone:(nonnull NSString *)phone
+            addressLine1:(nonnull NSString *)addressLine1
+            addressLine2:(nullable NSString *)addressLine2
+                 country:(nonnull NSString *)country
+                postCode:(nonnull NSString *)postCode
+                postTown:(nonnull NSString *)postTown
+              completion:(_Nonnull SuccessCompletionBlock)completionHandler;
 
 /**
 <code>createFiatAccount</code> completion handler extension.

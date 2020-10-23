@@ -8,7 +8,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR = @"unknown_error";
 
 NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED = @"account_limit_exceeded";
 
-NSString * __nonnull const ZKZumoKitErrorCodeALREADYMODULRCUSTOMER = @"already_modulr_customer";
+NSString * __nonnull const ZKZumoKitErrorCodeALREADYFIATCUSTOMER = @"already_fiat_customer";
 
 NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND = @"account_not_found";
 
@@ -106,7 +106,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR = @"transac
 
 NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONTOOLARGE = @"transaction_too_large";
 
-NSString * __nonnull const ZKZumoKitErrorCodeUSERNOTMODULRCUSTOMER = @"user_not_modulr_customer";
+NSString * __nonnull const ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER = @"user_not_fiat_customer";
 
 NSString * __nonnull const ZKZumoKitErrorCodeUTXOSIGNINGERROR = @"utxo_signing_error";
 
