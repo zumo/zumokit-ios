@@ -42,15 +42,15 @@
 - (BOOL)isActiveUser;
 
 /**
- * Check if user is a Modulr customer on 'MAINNET' or 'TESTNET' network.
+ * Check if user is a fiat customer on 'MAINNET' or 'TESTNET' network.
  * @param  network 'MAINNET' or 'TESTNET'
  * @return true if user is currenly active user.
  * @see    `ZKNetworkType`
  */
-- (BOOL)isModulrCustomer:(nonnull NSString *)network;
+- (BOOL)isFiatCustomer:(nonnull NSString *)network;
 
 /**
- * Make user Modulr customer on specified network by providing user's personal details.
+ * Make user fiat customer on specified network by providing user's personal details.
  * @param  network        'MAINNET' or 'TESTNET'
  * @param  firstName     first name
  * @param  middleName    middle name or null
@@ -65,22 +65,22 @@
  * @param callback        an interface to receive the result or error
  * @see    `ZKNetworkType`
  */
-- (void)makeModulrCustomer:(nonnull NSString *)network
-                 firstName:(nonnull NSString *)firstName
-                middleName:(nullable NSString *)middleName
-                  lastName:(nonnull NSString *)lastName
-               dateOfBirth:(nonnull NSString *)dateOfBirth
-                     email:(nonnull NSString *)email
-                     phone:(nonnull NSString *)phone
-              addressLine1:(nonnull NSString *)addressLine1
-              addressLine2:(nullable NSString *)addressLine2
-                   country:(nonnull NSString *)country
-                  postCode:(nonnull NSString *)postCode
-                  postTown:(nonnull NSString *)postTown
-                  callback:(nullable id<ZKSuccessCallback>)callback;
+- (void)makeFiatCustomer:(nonnull NSString *)network
+               firstName:(nonnull NSString *)firstName
+              middleName:(nullable NSString *)middleName
+                lastName:(nonnull NSString *)lastName
+             dateOfBirth:(nonnull NSString *)dateOfBirth
+                   email:(nonnull NSString *)email
+                   phone:(nonnull NSString *)phone
+            addressLine1:(nonnull NSString *)addressLine1
+            addressLine2:(nullable NSString *)addressLine2
+                 country:(nonnull NSString *)country
+                postCode:(nonnull NSString *)postCode
+                postTown:(nonnull NSString *)postTown
+                callback:(nullable id<ZKSuccessCallback>)callback;
 
 /**
- * Create fiat account on specified network and currency code. User must already be Modulr customer on specified network.
+ * Create fiat account on specified network and currency code. User must already be fiat customer on specified network.
  * @param  network        'MAINNET' or 'TESTNET'
  * @param  currencyCode  country code in ISO 4217 format, e.g. 'GBP'
  * @param  callback       an interface to receive the result or error

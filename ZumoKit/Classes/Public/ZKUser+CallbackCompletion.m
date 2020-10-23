@@ -38,7 +38,7 @@
     [self recoverWallet:mnemonic password:password callback:[[WalletCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
-- (void)makeModulrCustomer:(nonnull NSString *)network
+- (void)makeFiatCustomer:(nonnull NSString *)network
    firstName:(nonnull NSString *)firstName
   middleName:(nullable NSString *)middleName
     lastName:(nonnull NSString *)lastName
@@ -51,7 +51,7 @@ addressLine2:(nullable NSString *)addressLine2
     postCode:(nonnull NSString *)postCode
     postTown:(nonnull NSString *)postTown
                 completion:(_Nonnull SuccessCompletionBlock)completionHandler {
-    [self makeModulrCustomer:network firstName:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone addressLine1:addressLine1 addressLine2:addressLine2 country:country postCode:postCode postTown:postTown callback:[[SuccessCallback alloc] initWithCompletionHandler: completionHandler]];
+    [self makeFiatCustomer:network firstName:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone addressLine1:addressLine1 addressLine2:addressLine2 country:country postCode:postCode postTown:postTown callback:[[SuccessCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)createFiatAccount:(nonnull NSString *)network

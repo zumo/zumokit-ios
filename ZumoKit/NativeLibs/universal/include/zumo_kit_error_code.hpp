@@ -21,8 +21,8 @@ struct ZumoKitErrorCode final {
     /** New account could not be created. Account already exists. */
     static std::string const ACCOUNT_LIMIT_EXCEEDED;
 
-    /** Could not make user Modulr customer. User is already Modulr customer. */
-    static std::string const ALREADY_MODULR_CUSTOMER;
+    /** Could not make user fiat customer. User is already fiat customer. */
+    static std::string const ALREADY_FIAT_CUSTOMER;
 
     /** Requested account not found. */
     static std::string const ACCOUNT_NOT_FOUND;
@@ -181,8 +181,8 @@ struct ZumoKitErrorCode final {
     /** Resulting transaction is too large. */
     static std::string const TRANSACTION_TOO_LARGE;
 
-    /** Fiat account could no be created. User is not yet a Modulr customer on selected network. */
-    static std::string const USER_NOT_MODULR_CUSTOMER;
+    /** Fiat account could no be created. User is not yet a fiat customer on selected network. */
+    static std::string const USER_NOT_FIAT_CUSTOMER;
 
     /** Unspent transaction output could not be signed. */
     static std::string const UTXO_SIGNING_ERROR;
