@@ -3,8 +3,8 @@
 
 #import <Foundation/Foundation.h>
 
-/** Record containing crypto transactions fee rates. */
-@interface ZKFeeRates : NSObject
+/** Record containing crypto transaction fee rate */
+@interface ZKTransactionFeeRate : NSObject
 - (nonnull instancetype)initWithSlow:(nonnull NSDecimalNumber *)slow
                              average:(nonnull NSDecimalNumber *)average
                                 fast:(nonnull NSDecimalNumber *)fast
@@ -12,13 +12,13 @@
                          averageTime:(float)averageTime
                             fastTime:(float)fastTime
                               source:(nonnull NSString *)source;
-+ (nonnull instancetype)feeRatesWithSlow:(nonnull NSDecimalNumber *)slow
-                                 average:(nonnull NSDecimalNumber *)average
-                                    fast:(nonnull NSDecimalNumber *)fast
-                                slowTime:(float)slowTime
-                             averageTime:(float)averageTime
-                                fastTime:(float)fastTime
-                                  source:(nonnull NSString *)source;
++ (nonnull instancetype)transactionFeeRateWithSlow:(nonnull NSDecimalNumber *)slow
+                                           average:(nonnull NSDecimalNumber *)average
+                                              fast:(nonnull NSDecimalNumber *)fast
+                                          slowTime:(float)slowTime
+                                       averageTime:(float)averageTime
+                                          fastTime:(float)fastTime
+                                            source:(nonnull NSString *)source;
 
 /** Fee rate resulting in slow confirmation time. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * slow;

@@ -9,8 +9,8 @@
 
 namespace zumo {
 
-/** Record containing crypto transactions fee rates. */
-struct FeeRates final {
+/** Record containing crypto transaction fee rate */
+struct TransactionFeeRate final {
     /** Fee rate resulting in slow confirmation time. */
     ::zumo::Decimal slow;
     /** Fee rate resulting in average confirmation time. */
@@ -26,16 +26,16 @@ struct FeeRates final {
     /** Fee rate information provider. */
     std::string source;
 
-    friend bool operator==(const FeeRates& lhs, const FeeRates& rhs);
-    friend bool operator!=(const FeeRates& lhs, const FeeRates& rhs);
+    friend bool operator==(const TransactionFeeRate& lhs, const TransactionFeeRate& rhs);
+    friend bool operator!=(const TransactionFeeRate& lhs, const TransactionFeeRate& rhs);
 
-    FeeRates(::zumo::Decimal slow_,
-             ::zumo::Decimal average_,
-             ::zumo::Decimal fast_,
-             float slow_time_,
-             float average_time_,
-             float fast_time_,
-             std::string source_)
+    TransactionFeeRate(::zumo::Decimal slow_,
+                       ::zumo::Decimal average_,
+                       ::zumo::Decimal fast_,
+                       float slow_time_,
+                       float average_time_,
+                       float fast_time_,
+                       std::string source_)
     : slow(std::move(slow_))
     , average(std::move(average_))
     , fast(std::move(fast_))

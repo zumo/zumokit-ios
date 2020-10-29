@@ -18,6 +18,8 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 
 #import <Foundation/Foundation.h>
 #import "ZKError.h"
+#import "ZKZumoKitErrorCode.h"
+#import "ZKZumoKitErrorType.h"
 #import "ZKUtils.h"
 #import "ZKUser.h"
 #import "ZKUser+CallbackCompletion.h"
@@ -27,13 +29,21 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKCurrencyCode.h"
 #import "ZKNetworkType.h"
 #import "ZKAccountType.h"
-#import "ZKFeeRates.h"
+#import "ZKTransactionFeeRate.h"
+#import "ZKChangeListener.h"
+#import "ZKAccountDataSnapshot.h"
 
-typedef void (^UserCompletionBlock)(ZKUser *_Nullable user, NSError *_Nullable error);
+typedef void (^ZKUserCompletionBlock)(ZKUser *_Nullable user, NSError *_Nullable error);
+
+typedef NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *ZKExchangeRates;
+
+typedef NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSetting *> *> *ZKExchangeSettings;
+
+typedef NSDictionary<NSString *, ZKTransactionFeeRate *> *ZKTransactionFeeRates;
 
 typedef NSDictionary<NSString *, NSDictionary<NSString *, NSDictionary<NSString *, NSArray<ZKExchangeRate *> *> *> *> *ZKHistoricalExchangeRates;
 
-typedef void (^HistoricalExchangeRatesCompletionBlock)(ZKHistoricalExchangeRates _Nullable historicalExchangeRates, NSError *_Nullable error);
+typedef void (^ZKHistoricalExchangeRatesCompletionBlock)(ZKHistoricalExchangeRates _Nullable historicalExchangeRates, NSError *_Nullable error);
 
 NS_ASSUME_NONNULL_BEGIN
 /**
@@ -69,7 +79,7 @@ NS_ASSUME_NONNULL_BEGIN
 * @see `ZKUser`
 */
 - (void)authUser:(nonnull NSString *)userTokenSet
-      completion:(_Nonnull UserCompletionBlock)completion;
+      completion:(_Nonnull ZKUserCompletionBlock)completion;
 
 /**
 * Get active user if exists.
@@ -95,20 +105,41 @@ NS_ASSUME_NONNULL_BEGIN
                                   toCurrency:(nonnull NSString *)toCurrency;
 
 /**
+ * Get all available exchange rates.
+ *
+ * @return mapping between currency pairs and exchange rates
+ */
+- (nonnull ZKExchangeRates)getExchangeRates;
+
+/**
 * Get exchange settings for selected currency pair.
 *
 * @param fromCurrency  currency code
 * @param toCurrency       currency code
 */
-- (nullable ZKExchangeSettings *)getExchangeSettings:(nonnull NSString *)fromCurrency
-                                          toCurrency:(nonnull NSString *)toCurrency;
+- (nullable ZKExchangeSetting *)getExchangeSetting:(nonnull NSString *)fromCurrency
+                                        toCurrency:(nonnull NSString *)toCurrency;
 
 /**
-* Get fee rates for selected crypto currency.
+ * Get all available exchange settings.
+ *
+ * @return mapping between currency pairs and exchange settings
+ */
+- (nonnull ZKExchangeSettings)getExchangeSettings;
+
+/**
+* Get transasction fee rate for selected crypto currency.
 *
 * @param currency  currency code
 */
-- (nullable ZKFeeRates *)getFeeRates:(nonnull NSString *)currency;
+- (nullable ZKTransactionFeeRate *)getTransactionFeeRate:(nonnull NSString *)currency;
+
+/**
+ * Get all available crypto transaction fee rates.
+ *
+ * @return mapping between cryptocurrencies and transaction fee rate
+ */
+- (nonnull ZKTransactionFeeRates)getTransactionFeeRates;
 
 /**
 * Fetch historical exchange rates for supported time intervals.
@@ -117,9 +148,21 @@ NS_ASSUME_NONNULL_BEGIN
 *
 * @param completion an interface to receive the result or error
 *
-* @see `ZKHistoricalExchangeRatesInterval`
+* @see `ZKTimeInterval`
 */
-- (void)fetchHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completion;
+- (void)fetchHistoricalExchangeRates:(_Nonnull ZKHistoricalExchangeRatesCompletionBlock)completion;
+
+/**
+ * Listen to changes in exchange rates, exchange settings or transaction fee rates.
+ * @param listener interface to listen to changes
+ */
+- (void)addChangeListener:(nullable id<ZKChangeListener>)listener;
+
+/**
+ * Remove change listener.
+ * @param listener interface to listen to changes
+ */
+- (void)removeChangeListener:(nullable id<ZKChangeListener>)listener;
 
 @end
 NS_ASSUME_NONNULL_END

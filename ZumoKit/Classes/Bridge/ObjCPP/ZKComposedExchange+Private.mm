@@ -6,7 +6,7 @@
 #import "NSDecimalNumber+ZumoKit.h"
 #import "ZKAccount+Private.h"
 #import "ZKExchangeRate+Private.h"
-#import "ZKExchangeSettings+Private.h"
+#import "ZKExchangeSetting+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -18,7 +18,7 @@ auto ComposedExchange::toCpp(ObjcType obj) -> CppType
             ::djinni_generated::Account::toCpp(obj.fromAccount),
             ::djinni_generated::Account::toCpp(obj.toAccount),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
-            ::djinni_generated::ExchangeSettings::toCpp(obj.exchangeSettings),
+            ::djinni_generated::ExchangeSetting::toCpp(obj.exchangeSetting),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.exchangeAddress),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.amount),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnAmount),
@@ -34,7 +34,7 @@ auto ComposedExchange::fromCpp(const CppType& cpp) -> ObjcType
                                                      fromAccount:(::djinni_generated::Account::fromCpp(cpp.from_account))
                                                        toAccount:(::djinni_generated::Account::fromCpp(cpp.to_account))
                                                     exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
-                                                exchangeSettings:(::djinni_generated::ExchangeSettings::fromCpp(cpp.exchange_settings))
+                                                 exchangeSetting:(::djinni_generated::ExchangeSetting::fromCpp(cpp.exchange_setting))
                                                  exchangeAddress:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.exchange_address))
                                                           amount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.amount))
                                                     returnAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_amount))

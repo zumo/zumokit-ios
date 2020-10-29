@@ -5,7 +5,7 @@
 
 #include "account.hpp"
 #include "exchange_rate.hpp"
-#include "exchange_settings.hpp"
+#include "exchange_setting.hpp"
 #include "stdx/optional.hpp"
 #include "zumo/decimal.hpp"
 #include <string>
@@ -23,8 +23,8 @@ struct ComposedExchange final {
     Account to_account;
     /** Exchange rate used composing exchange. */
     ExchangeRate exchange_rate;
-    /** Exchange settings used composing exchange. */
-    ExchangeSettings exchange_settings;
+    /** Exchange setting used composing exchange. */
+    ExchangeSetting exchange_setting;
     /**
      * Zumo Exchange Service wallet address where outgoing crypto funds were deposited,
      * null for exchanges from fiat currencies.
@@ -34,19 +34,19 @@ struct ComposedExchange final {
     ::zumo::Decimal amount;
     /**
      * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
-     * @see ExchangeSettings
+     * @see ExchangeSetting
      */
     ::zumo::Decimal return_amount;
     /** Outgoing transaction fee. */
     ::zumo::Decimal outgoing_transaction_fee;
     /**
      * Exchange fee, calculated as <code>value X exchangeRate X exchangeFeeRate</code>.
-     * @see ExchangeSettings
+     * @see ExchangeSetting
      */
     ::zumo::Decimal exchange_fee;
     /**
      * Return transaction fee.
-     * @see ExchangeSettings
+     * @see ExchangeSetting
      */
     ::zumo::Decimal return_transaction_fee;
     /** Unique nonce used to prevent double spend. */
@@ -59,7 +59,7 @@ struct ComposedExchange final {
                      Account from_account_,
                      Account to_account_,
                      ExchangeRate exchange_rate_,
-                     ExchangeSettings exchange_settings_,
+                     ExchangeSetting exchange_setting_,
                      std::experimental::optional<std::string> exchange_address_,
                      ::zumo::Decimal amount_,
                      ::zumo::Decimal return_amount_,
@@ -71,7 +71,7 @@ struct ComposedExchange final {
     , from_account(std::move(from_account_))
     , to_account(std::move(to_account_))
     , exchange_rate(std::move(exchange_rate_))
-    , exchange_settings(std::move(exchange_settings_))
+    , exchange_setting(std::move(exchange_setting_))
     , exchange_address(std::move(exchange_address_))
     , amount(std::move(amount_))
     , return_amount(std::move(return_amount_))

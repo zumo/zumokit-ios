@@ -18,7 +18,7 @@ class SubmitTransactionCallback;
 struct ComposedExchange;
 struct ComposedTransaction;
 struct ExchangeRate;
-struct ExchangeSettings;
+struct ExchangeSetting;
 
 /**
  * User wallet provides methods for transfer and exchange of fiat and cryptocurrency funds.
@@ -107,13 +107,13 @@ public:
      *
      * @param from_account_id     Account identifier
      * @param to_account_id       Account identifier
-     * @param exchange_rate       Zumo exchange rate obtained from ZumoKit state
-     * @param exchange_settings   Zumo exchange settings obtained from ZumoKit state
+     * @param exchange_rate       Zumo exchange rate obtained from ZumoKit instance
+     * @param exchange_setting    Zumo exchange setting obtained from ZumoKit instance
      * @param amount              amount in deposit account currency
      * @param send_max            exchange maximum possible funds
      * @param callback            an interface to receive the result or error
      */
-    virtual void compose_exchange(const std::string & from_account_id, const std::string & to_account_id, const ExchangeRate & exchange_rate, const ExchangeSettings & exchange_settings, const std::experimental::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
+    virtual void compose_exchange(const std::string & from_account_id, const std::string & to_account_id, const ExchangeRate & exchange_rate, const ExchangeSetting & exchange_setting, const std::experimental::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
 
     /**
      * Submit an exchange asynchronously. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.

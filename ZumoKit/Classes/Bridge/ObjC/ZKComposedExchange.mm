@@ -10,7 +10,7 @@
                                       fromAccount:(nonnull ZKAccount *)fromAccount
                                         toAccount:(nonnull ZKAccount *)toAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                                 exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                                  exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                                   exchangeAddress:(nullable NSString *)exchangeAddress
                                            amount:(nonnull NSDecimalNumber *)amount
                                      returnAmount:(nonnull NSDecimalNumber *)returnAmount
@@ -24,7 +24,7 @@
         _fromAccount = fromAccount;
         _toAccount = toAccount;
         _exchangeRate = exchangeRate;
-        _exchangeSettings = exchangeSettings;
+        _exchangeSetting = exchangeSetting;
         _exchangeAddress = [exchangeAddress copy];
         _amount = amount;
         _returnAmount = returnAmount;
@@ -40,7 +40,7 @@
                                                   fromAccount:(nonnull ZKAccount *)fromAccount
                                                     toAccount:(nonnull ZKAccount *)toAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                                             exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                                              exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                                               exchangeAddress:(nullable NSString *)exchangeAddress
                                                        amount:(nonnull NSDecimalNumber *)amount
                                                  returnAmount:(nonnull NSDecimalNumber *)returnAmount
@@ -53,7 +53,7 @@
                                                             fromAccount:fromAccount
                                                               toAccount:toAccount
                                                            exchangeRate:exchangeRate
-                                                       exchangeSettings:exchangeSettings
+                                                        exchangeSetting:exchangeSetting
                                                         exchangeAddress:exchangeAddress
                                                                  amount:amount
                                                            returnAmount:returnAmount
@@ -73,7 +73,7 @@
             [self.fromAccount isEqual:typedOther.fromAccount] &&
             [self.toAccount isEqual:typedOther.toAccount] &&
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&
-            [self.exchangeSettings isEqual:typedOther.exchangeSettings] &&
+            [self.exchangeSetting isEqual:typedOther.exchangeSetting] &&
             ((self.exchangeAddress == nil && typedOther.exchangeAddress == nil) || (self.exchangeAddress != nil && [self.exchangeAddress isEqual:typedOther.exchangeAddress])) &&
             [self.amount isEqual:typedOther.amount] &&
             [self.returnAmount isEqual:typedOther.returnAmount] &&
@@ -90,7 +90,7 @@
             self.fromAccount.hash ^
             self.toAccount.hash ^
             self.exchangeRate.hash ^
-            self.exchangeSettings.hash ^
+            self.exchangeSetting.hash ^
             self.exchangeAddress.hash ^
             ((NSUInteger)self.amount) ^
             ((NSUInteger)self.returnAmount) ^
@@ -102,7 +102,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ fromAccount:%@ toAccount:%@ exchangeRate:%@ exchangeSettings:%@ exchangeAddress:%@ amount:%@ returnAmount:%@ outgoingTransactionFee:%@ exchangeFee:%@ returnTransactionFee:%@ nonce:%@>", self.class, (void *)self, self.signedTransaction, self.fromAccount, self.toAccount, self.exchangeRate, self.exchangeSettings, self.exchangeAddress, self.amount, self.returnAmount, self.outgoingTransactionFee, self.exchangeFee, self.returnTransactionFee, self.nonce];
+    return [NSString stringWithFormat:@"<%@ %p signedTransaction:%@ fromAccount:%@ toAccount:%@ exchangeRate:%@ exchangeSetting:%@ exchangeAddress:%@ amount:%@ returnAmount:%@ outgoingTransactionFee:%@ exchangeFee:%@ returnTransactionFee:%@ nonce:%@>", self.class, (void *)self, self.signedTransaction, self.fromAccount, self.toAccount, self.exchangeRate, self.exchangeSetting, self.exchangeAddress, self.amount, self.returnAmount, self.outgoingTransactionFee, self.exchangeFee, self.returnTransactionFee, self.nonce];
 }
 
 @end

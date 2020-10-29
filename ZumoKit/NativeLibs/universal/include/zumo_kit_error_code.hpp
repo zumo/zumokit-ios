@@ -109,8 +109,8 @@ struct ZumoKitErrorCode final {
     /** Mismatch between exchange rate and selected accounts. */
     static std::string const INVALID_EXCHANGE_RATE;
 
-    /** Mismatch between exchange settings and selected accounts. */
-    static std::string const INVALID_EXCHANGE_SETTINGS;
+    /** Mismatch between exchange setting and selected accounts. */
+    static std::string const INVALID_EXCHANGE_SETTING;
 
     /** Invalid fee rate. Fee rate should be an integer value. */
     static std::string const INVALID_FEE_RATE;

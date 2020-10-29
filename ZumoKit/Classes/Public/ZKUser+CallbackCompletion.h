@@ -16,19 +16,19 @@
 #import "ZKAccountFiatPropertiesCallback.h"
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void (^WalletCompletionBlock)(ZKWallet *_Nullable wallet, NSError *_Nullable error);
+typedef void (^ZKWalletCompletionBlock)(ZKWallet *_Nullable wallet, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void (^MnemonicCompletionBlock)(NSString *_Nullable mnemonic, NSError *_Nullable error);
+typedef void (^ZKMnemonicCompletionBlock)(NSString *_Nullable mnemonic, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void (^SuccessCompletionBlock)(NSError *_Nullable error);
+typedef void (^ZKSuccessCompletionBlock)(NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void (^AccountCompletionBlock)(ZKAccount *_Nullable account, NSError *_Nullable error);
+typedef void (^ZKAccountCompletionBlock)(ZKAccount *_Nullable account, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
-typedef void (^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_Nullable accountFiatProperties, NSError *_Nullable error);
+typedef void (^ZKAccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_Nullable accountFiatProperties, NSError *_Nullable error);
 
 @interface ZKUser (ZKUserCallbackCompletion)
 
@@ -38,21 +38,21 @@ typedef void (^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_N
 */
 - (void)createWallet:(nonnull NSString *)mnemonic
             password:(nonnull NSString *)password
-          completion:(_Nonnull WalletCompletionBlock)completionHandler;
+          completion:(_Nonnull ZKWalletCompletionBlock)completionHandler;
 
 /**
 <code>unlockWallet</code> completion handler extension.
 @see `-[ZKUser unlockWallet:callback:]`
 */
 - (void)unlockWallet:(nonnull NSString *)password
-          completion:(_Nonnull WalletCompletionBlock)completionHandler;
+          completion:(_Nonnull ZKWalletCompletionBlock)completionHandler;
 
 /**
 <code>revealMnemonic</code> completion handler extension.
 @see `-[ZKUser revealMnemonic:callback:]`
 */
 - (void)revealMnemonic:(nonnull NSString *)password
-            completion:(_Nonnull MnemonicCompletionBlock)completionHandler;
+            completion:(_Nonnull ZKMnemonicCompletionBlock)completionHandler;
 
 /**
 <code>recoverWallet</code> completion handler extension.
@@ -60,7 +60,7 @@ typedef void (^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_N
 */
 - (void)recoverWallet:(nonnull NSString *)mnemonic
              password:(nonnull NSString *)password
-           completion:(_Nonnull WalletCompletionBlock)completionHandler;
+           completion:(_Nonnull ZKWalletCompletionBlock)completionHandler;
 
 /**
 <code>makeFiatCustomer</code> completion handler extension.
@@ -78,7 +78,7 @@ typedef void (^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_N
                  country:(nonnull NSString *)country
                 postCode:(nonnull NSString *)postCode
                 postTown:(nonnull NSString *)postTown
-              completion:(_Nonnull SuccessCompletionBlock)completionHandler;
+              completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
 
 /**
 <code>createFiatAccount</code> completion handler extension.
@@ -86,14 +86,14 @@ typedef void (^AccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_N
 */
 - (void)createFiatAccount:(nonnull NSString *)network
              currencyCode:(nonnull NSString *)currencyCode
-               completion:(_Nonnull AccountCompletionBlock)completionHandler;
+               completion:(_Nonnull ZKAccountCompletionBlock)completionHandler;
 
 /**
 <code>getNominatedAccountFiatProperties</code> completion handler extension.
 @see `-[ZKUser getNominatedAccountFiatProperties:callback:]`
 */
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
-                               completion:(_Nonnull AccountFiatPropertiesCompletionBlock)completionHandler;
+                               completion:(_Nonnull ZKAccountFiatPropertiesCompletionBlock)completionHandler;
 
 @end
 

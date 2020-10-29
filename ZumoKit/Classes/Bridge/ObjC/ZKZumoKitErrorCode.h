@@ -80,8 +80,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDAPIRESPONSE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS;
 /** Mismatch between exchange rate and selected accounts. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE;
-/** Mismatch between exchange settings and selected accounts. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS;
+/** Mismatch between exchange setting and selected accounts. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTING;
 /** Invalid fee rate. Fee rate should be an integer value. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE;
 /** Requested private key derivation path is invalid. */

@@ -3,8 +3,8 @@
 
 #import <Foundation/Foundation.h>
 
-/** Record containing Zumo exchange settings used in making exchanges. */
-@interface ZKExchangeSettings : NSObject
+/** Record containing Zumo exchange setting used in making exchanges. */
+@interface ZKExchangeSetting : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                    exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
                       fromCurrency:(nonnull NSString *)fromCurrency
@@ -14,15 +14,15 @@
         outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
               returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                          timestamp:(int64_t)timestamp;
-+ (nonnull instancetype)exchangeSettingsWithId:(nonnull NSString *)id
-                               exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
-                                  fromCurrency:(nonnull NSString *)fromCurrency
-                                    toCurrency:(nonnull NSString *)toCurrency
-                             minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
-                               exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
-                    outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
-                          returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                                     timestamp:(int64_t)timestamp;
++ (nonnull instancetype)exchangeSettingWithId:(nonnull NSString *)id
+                              exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
+                                 fromCurrency:(nonnull NSString *)fromCurrency
+                                   toCurrency:(nonnull NSString *)toCurrency
+                            minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
+                              exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
+                   outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
+                         returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
+                                    timestamp:(int64_t)timestamp;
 
 /** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -57,7 +57,7 @@
 /** Fee that will charged for return transaction. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnTransactionFee;
 
-/** Epoch timestamp when the exchange settings were last updated. */
+/** Epoch timestamp when the exchange setting were last updated. */
 @property (nonatomic, readonly) int64_t timestamp;
 
 @end

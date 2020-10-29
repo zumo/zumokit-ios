@@ -11,8 +11,8 @@
 
 namespace zumo {
 
-/** Record containing Zumo exchange settings used in making exchanges. */
-struct ExchangeSettings final {
+/** Record containing Zumo exchange setting used in making exchanges. */
+struct ExchangeSetting final {
     /** Identifier. */
     std::string id;
     /**
@@ -38,21 +38,21 @@ struct ExchangeSettings final {
     ::zumo::Decimal outgoing_transaction_fee_rate;
     /** Fee that will charged for return transaction. */
     ::zumo::Decimal return_transaction_fee;
-    /** Epoch timestamp when the exchange settings were last updated. */
+    /** Epoch timestamp when the exchange setting were last updated. */
     int64_t timestamp;
 
-    friend bool operator==(const ExchangeSettings& lhs, const ExchangeSettings& rhs);
-    friend bool operator!=(const ExchangeSettings& lhs, const ExchangeSettings& rhs);
+    friend bool operator==(const ExchangeSetting& lhs, const ExchangeSetting& rhs);
+    friend bool operator!=(const ExchangeSetting& lhs, const ExchangeSetting& rhs);
 
-    ExchangeSettings(std::string id_,
-                     std::unordered_map<std::string, std::string> exchange_address_,
-                     std::string from_currency_,
-                     std::string to_currency_,
-                     ::zumo::Decimal min_exchange_amount_,
-                     ::zumo::Decimal exchange_fee_rate_,
-                     ::zumo::Decimal outgoing_transaction_fee_rate_,
-                     ::zumo::Decimal return_transaction_fee_,
-                     int64_t timestamp_)
+    ExchangeSetting(std::string id_,
+                    std::unordered_map<std::string, std::string> exchange_address_,
+                    std::string from_currency_,
+                    std::string to_currency_,
+                    ::zumo::Decimal min_exchange_amount_,
+                    ::zumo::Decimal exchange_fee_rate_,
+                    ::zumo::Decimal outgoing_transaction_fee_rate_,
+                    ::zumo::Decimal return_transaction_fee_,
+                    int64_t timestamp_)
     : id(std::move(id_))
     , exchange_address(std::move(exchange_address_))
     , from_currency(std::move(from_currency_))

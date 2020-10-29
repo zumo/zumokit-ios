@@ -5,7 +5,7 @@
 #import <Foundation/Foundation.h>
 
 
-/** Callback interface used by methods in `ZKUser` class. */
+/** Callback interface used to listen for account data changes in `ZKUser` class. */
 @protocol ZKAccountDataListener
 
 - (void)onDataChange:(nonnull NSArray<ZKAccountDataSnapshot *> *)snapshots;

@@ -9,7 +9,7 @@ namespace zumo {
 
 struct AccountDataSnapshot;
 
-/** Callback interface used by methods in User class. */
+/** Callback interface used to listen for account data changes in User class. */
 class AccountDataListener {
 public:
     virtual ~AccountDataListener() {}

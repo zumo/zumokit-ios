@@ -4,7 +4,7 @@
 #import "ZKComposedExchange.h"
 #import "ZKComposedTransaction.h"
 #import "ZKExchangeRate.h"
-#import "ZKExchangeSettings.h"
+#import "ZKExchangeSetting.h"
 #import <Foundation/Foundation.h>
 @protocol ZKComposeExchangeCallback;
 @protocol ZKComposeTransactionCallback;
@@ -119,8 +119,8 @@
  *
  * @param fromAccountId     `ZKAccount` identifier
  * @param toAccountId       `ZKAccount` identifier
- * @param exchangeRate       Zumo exchange rate obtained from ZumoKit state
- * @param exchangeSettings   Zumo exchange settings obtained from ZumoKit state
+ * @param exchangeRate       Zumo exchange rate obtained from `ZKZumoKit` instance
+ * @param exchangeSetting    Zumo exchange setting obtained from `ZKZumoKit` instance
  * @param amount              amount in deposit account currency
  * @param sendMax            exchange maximum possible funds
  * @param callback            an interface to receive the result or error
@@ -128,7 +128,7 @@
 - (void)composeExchange:(nonnull NSString *)fromAccountId
             toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+        exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback;

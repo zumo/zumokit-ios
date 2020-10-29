@@ -12,7 +12,7 @@
 #import "ZKComposedExchange+Private.h"
 #import "ZKComposedTransaction+Private.h"
 #import "ZKExchangeRate+Private.h"
-#import "ZKExchangeSettings+Private.h"
+#import "ZKExchangeSetting+Private.h"
 #import "ZKSubmitExchangeCallback+Private.h"
 #import "ZKSubmitTransactionCallback+Private.h"
 #include <exception>
@@ -116,7 +116,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)composeExchange:(nonnull NSString *)fromAccountId
             toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+        exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback {
@@ -124,7 +124,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
         _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(fromAccountId),
                                               ::djinni::String::toCpp(toAccountId),
                                               ::djinni_generated::ExchangeRate::toCpp(exchangeRate),
-                                              ::djinni_generated::ExchangeSettings::toCpp(exchangeSettings),
+                                              ::djinni_generated::ExchangeSetting::toCpp(exchangeSetting),
                                               ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                               ::djinni::Bool::toCpp(sendMax),
                                               ::djinni_generated::ComposeExchangeCallback::toCpp(callback));

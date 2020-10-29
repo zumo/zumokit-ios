@@ -4,7 +4,7 @@
 #pragma once
 
 #include "exchange_rate.hpp"
-#include "exchange_settings.hpp"
+#include "exchange_setting.hpp"
 #include "stdx/optional.hpp"
 #include "zumo/decimal.hpp"
 #include <cstdint>
@@ -47,23 +47,23 @@ struct Exchange final {
     std::experimental::optional<::zumo::Decimal> outgoing_transaction_fee;
     /**
      * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
-     * @see ExchangeSettings
+     * @see ExchangeSetting
      */
     ::zumo::Decimal return_amount;
     /**
      * Exchange fee, calculated as <code>amount X exchangeRate X exchangeFeeRate</code>.
-     * @see ExchangeSettings
+     * @see ExchangeSetting
      */
     ::zumo::Decimal exchange_fee;
     /**
      * Return transaction fee.
-     * @see ExchangeSettings
+     * @see ExchangeSetting
      */
     ::zumo::Decimal return_transaction_fee;
     /** Exchange rate used. */
     ExchangeRate exchange_rate;
-    /** Exchange settings used. */
-    ExchangeSettings exchange_settings;
+    /** Exchange setting used. */
+    ExchangeSetting exchange_setting;
     /**
      * Exchange rates at the time exchange was made.
      * This can be used to display amounts in local currency to the user.
@@ -93,7 +93,7 @@ struct Exchange final {
              ::zumo::Decimal exchange_fee_,
              ::zumo::Decimal return_transaction_fee_,
              ExchangeRate exchange_rate_,
-             ExchangeSettings exchange_settings_,
+             ExchangeSetting exchange_setting_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
              std::experimental::optional<std::string> nonce_,
              std::experimental::optional<int64_t> submitted_at_,
@@ -112,7 +112,7 @@ struct Exchange final {
     , exchange_fee(std::move(exchange_fee_))
     , return_transaction_fee(std::move(return_transaction_fee_))
     , exchange_rate(std::move(exchange_rate_))
-    , exchange_settings(std::move(exchange_settings_))
+    , exchange_setting(std::move(exchange_setting_))
     , exchange_rates(std::move(exchange_rates_))
     , nonce(std::move(nonce_))
     , submitted_at(std::move(submitted_at_))
