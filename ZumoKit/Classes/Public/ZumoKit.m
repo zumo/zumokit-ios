@@ -53,7 +53,7 @@ ZKZumoCore *zumoCore;
 }
 
 - (void)authUser:(nonnull NSString *)userToken
-      completion:(UserCompletionBlock)completionHandler {
+      completion:(ZKUserCompletionBlock)completionHandler {
     [zumoCore authUser:userToken callback:[[UserCallback alloc] initWithCompletionHandler: completionHandler]];
 }
 
@@ -70,18 +70,37 @@ ZKZumoCore *zumoCore;
     return [zumoCore getExchangeRate:fromCurrency toCurrency:toCurrency];
 };
 
-- (nullable ZKExchangeSettings *)getExchangeSettings:(nonnull NSString *)fromCurrency
-                                          toCurrency:(nonnull NSString *)toCurrency {
-    return [zumoCore getExchangeSettings:fromCurrency toCurrency:toCurrency];
+- (nonnull ZKExchangeRates)getExchangeRates {
+    return [zumoCore getExchangeRates];
 };
 
-- (nullable ZKFeeRates *)getFeeRates:(nonnull NSString *)currency {
-    return [zumoCore getFeeRates:currency];
+- (nullable ZKExchangeSetting *)getExchangeSetting:(nonnull NSString *)fromCurrency
+                                        toCurrency:(nonnull NSString *)toCurrency {
+    return [zumoCore getExchangeSetting:fromCurrency toCurrency:toCurrency];
 };
 
-- (void)fetchHistoricalExchangeRates:(_Nonnull HistoricalExchangeRatesCompletionBlock)completionHandler {
+- (nonnull ZKExchangeSettings)getExchangeSettings {
+    return [zumoCore getExchangeSettings];
+};
+
+- (nullable ZKTransactionFeeRate *)getTransactionFeeRate:(nonnull NSString *)currency {
+    return [zumoCore getTransactionFeeRate:currency];
+};
+
+- (nonnull ZKTransactionFeeRates)getTransactionFeeRates {
+    return [zumoCore getTransactionFeeRates];
+};
+
+- (void)fetchHistoricalExchangeRates:(_Nonnull ZKHistoricalExchangeRatesCompletionBlock)completionHandler {
     [zumoCore fetchHistoricalExchangeRates:[[HistoricalExchangeRatesCallback alloc] initWithCompletionHandler: completionHandler]];
 }
 
+- (void)addChangeListener:(nullable id<ZKChangeListener>)listener {
+    [zumoCore addChangeListener:listener];
+};
+
+- (void)removeChangeListener:(nullable id<ZKChangeListener>)listener {
+    [zumoCore removeChangeListener:listener];
+};
 
 @end

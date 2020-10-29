@@ -20,7 +20,7 @@
                        exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
               returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                       exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                  exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                   exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                      exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                              nonce:(nullable NSString *)nonce
                        submittedAt:(nullable NSNumber *)submittedAt
@@ -41,7 +41,7 @@
         _exchangeFee = exchangeFee;
         _returnTransactionFee = returnTransactionFee;
         _exchangeRate = exchangeRate;
-        _exchangeSettings = exchangeSettings;
+        _exchangeSetting = exchangeSetting;
         _exchangeRates = [exchangeRates copy];
         _nonce = [nonce copy];
         _submittedAt = submittedAt;
@@ -64,7 +64,7 @@
                            exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
                   returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
                           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                      exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                       exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                          exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                  nonce:(nullable NSString *)nonce
                            submittedAt:(nullable NSNumber *)submittedAt
@@ -84,7 +84,7 @@
                                      exchangeFee:exchangeFee
                             returnTransactionFee:returnTransactionFee
                                     exchangeRate:exchangeRate
-                                exchangeSettings:exchangeSettings
+                                 exchangeSetting:exchangeSetting
                                    exchangeRates:exchangeRates
                                            nonce:nonce
                                      submittedAt:submittedAt
@@ -111,7 +111,7 @@
             [self.exchangeFee isEqual:typedOther.exchangeFee] &&
             [self.returnTransactionFee isEqual:typedOther.returnTransactionFee] &&
             [self.exchangeRate isEqual:typedOther.exchangeRate] &&
-            [self.exchangeSettings isEqual:typedOther.exchangeSettings] &&
+            [self.exchangeSetting isEqual:typedOther.exchangeSetting] &&
             [self.exchangeRates isEqualToDictionary:typedOther.exchangeRates] &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
@@ -135,7 +135,7 @@
             ((NSUInteger)self.exchangeFee) ^
             ((NSUInteger)self.returnTransactionFee) ^
             self.exchangeRate.hash ^
-            self.exchangeSettings.hash ^
+            self.exchangeSetting.hash ^
             self.exchangeRates.hash ^
             self.nonce.hash ^
             self.submittedAt.hash ^
@@ -144,7 +144,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ fromCurrency:%@ fromAccountId:%@ outgoingTransactionId:%@ toCurrency:%@ toAccountId:%@ returnTransactionId:%@ amount:%@ outgoingTransactionFee:%@ returnAmount:%@ exchangeFee:%@ returnTransactionFee:%@ exchangeRate:%@ exchangeSettings:%@ exchangeRates:%@ nonce:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, self.status, self.fromCurrency, self.fromAccountId, self.outgoingTransactionId, self.toCurrency, self.toAccountId, self.returnTransactionId, self.amount, self.outgoingTransactionFee, self.returnAmount, self.exchangeFee, self.returnTransactionFee, self.exchangeRate, self.exchangeSettings, self.exchangeRates, self.nonce, self.submittedAt, self.confirmedAt];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ status:%@ fromCurrency:%@ fromAccountId:%@ outgoingTransactionId:%@ toCurrency:%@ toAccountId:%@ returnTransactionId:%@ amount:%@ outgoingTransactionFee:%@ returnAmount:%@ exchangeFee:%@ returnTransactionFee:%@ exchangeRate:%@ exchangeSetting:%@ exchangeRates:%@ nonce:%@ submittedAt:%@ confirmedAt:%@>", self.class, (void *)self, self.id, self.status, self.fromCurrency, self.fromAccountId, self.outgoingTransactionId, self.toCurrency, self.toAccountId, self.returnTransactionId, self.amount, self.outgoingTransactionFee, self.returnAmount, self.exchangeFee, self.returnTransactionFee, self.exchangeRate, self.exchangeSetting, self.exchangeRates, self.nonce, self.submittedAt, self.confirmedAt];
 }
 
 @end

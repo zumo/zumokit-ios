@@ -7,6 +7,7 @@
 //
 
 #import "ZKZumoKitManager.h"
+#import <ZumoKit/ZumoKit.h>
 
 @interface ZKZumoKitManager ()
 
@@ -201,13 +202,13 @@
 - (void)composeExchange:(ZKAccount *)fromAccount
               toAccount:(ZKAccount *)toAccount
            exchangeRate:(ZKExchangeRate *)exchangeRate
-       exchangeSettings:(ZKExchangeSettings *)exchangeSettings
+        exchangeSetting:(ZKExchangeSetting *)exchangeSetting
                  amount:(NSDecimalNumber *)amount
 {
     [_wallet composeExchange:fromAccount.id
                  toAccountId:toAccount.id
                 exchangeRate:exchangeRate
-            exchangeSettings:exchangeSettings
+             exchangeSetting:exchangeSetting
                       amount:nil
                      sendMax:YES
                   completion:^(ZKComposedExchange * _Nullable exchange, NSError * _Nullable error) {

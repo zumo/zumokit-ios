@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          ZumoKit 2.3.0-beta.2 Docs
+          ZumoKit 2.3.0-beta.3 Docs
         </a>
         
       </p>
@@ -95,13 +95,10 @@
                 <a class="nav-group-task-link" href="Classes/ZKExchangeRate.html">ZKExchangeRate</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKExchangeSettings.html">ZKExchangeSettings</a>
+                <a class="nav-group-task-link" href="Classes/ZKExchangeSetting.html">ZKExchangeSetting</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKExchangeStatus.html">ZKExchangeStatus</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKFeeRates.html">ZKFeeRates</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKNetworkType.html">ZKNetworkType</a>
@@ -117,6 +114,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKTransactionDirection.html">ZKTransactionDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ZKTransactionFeeRate.html">ZKTransactionFeeRate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKTransactionFiatProperties.html">ZKTransactionFiatProperties</a>
@@ -364,7 +364,7 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGERATE">ZKZumoKitErrorCodeINVALIDEXCHANGERATE</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS">ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS</a>
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTING">ZKZumoKitErrorCodeINVALIDEXCHANGESETTING</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDFEERATE">ZKZumoKitErrorCodeINVALIDFEERATE</a>
@@ -509,6 +509,9 @@
                 <a class="nav-group-task-link" href="Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/ZKChangeListener.html">ZKChangeListener</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a>
               </li>
               <li class="nav-group-task">
@@ -541,40 +544,49 @@
             <a class="nav-group-name-link" href="Type%20Definitions.html">Type Definitions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@AccountCompletionBlock">AccountCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@AccountFiatPropertiesCompletionBlock">AccountFiatPropertiesCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountFiatPropertiesCompletionBlock">ZKAccountFiatPropertiesCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ComposeExchangeCompletionBlock">ComposeExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ComposeTransactionCompletionBlock">ComposeTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@MnemonicCompletionBlock">MnemonicCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@SubmitExchangeCompletionBlock">SubmitExchangeCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@SubmitTransactionCompletionBlock">SubmitTransactionCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@SuccessCompletionBlock">SuccessCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@WalletCompletionBlock">WalletCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeSettings">ZKExchangeSettings</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRates">ZKHistoricalExchangeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRatesCompletionBlock">ZKHistoricalExchangeRatesCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKMnemonicCompletionBlock">ZKMnemonicCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKTransactionFeeRates">ZKTransactionFeeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKUserCompletionBlock">ZKUserCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKWalletCompletionBlock">ZKWalletCompletionBlock</a>
               </li>
             </ul>
           </li>
@@ -625,7 +637,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L9-L68">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h#L9-L68">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -666,7 +678,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h#L10-L27">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h#L10-L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -702,7 +714,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKAccountDataSnapshot.h#L9-L21">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccountDataSnapshot.h#L9-L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -743,7 +755,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatProperties.h#L10-L37">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatProperties.h#L10-L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -781,7 +793,7 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L11-L15">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L11-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -817,7 +829,7 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h#L10-L84">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h#L10-L84">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -858,7 +870,7 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKComposedTransaction.h#L11-L56">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKComposedTransaction.h#L11-L56">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -894,7 +906,7 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L7-L11">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h#L7-L11">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -930,7 +942,7 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h#L7-L11">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h#L7-L11">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -966,7 +978,7 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L9-L127">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h#L9-L127">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1003,7 +1015,7 @@ Can also be used to display amounts in local currency to the user.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKExchangeRate.h#L10-L48">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKExchangeRate.h#L10-L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1011,9 +1023,9 @@ Can also be used to display amounts in local currency to the user.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKExchangeSettings"></a>
-                    <a name="//apple_ref/objc/Class/ZKExchangeSettings" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKExchangeSettings">ZKExchangeSettings</a>
+                    <a name="/c:objc(cs)ZKExchangeSetting"></a>
+                    <a name="//apple_ref/objc/Class/ZKExchangeSetting" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKExchangeSetting">ZKExchangeSetting</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1021,25 +1033,25 @@ Can also be used to display amounts in local currency to the user.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Record containing Zumo exchange settings used in making exchanges.</p>
+                        <p>Record containing Zumo exchange setting used in making exchanges.</p>
 
-                        <a href="Classes/ZKExchangeSettings.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/ZKExchangeSetting.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKExchangeSettings</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKExchangeSetting</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKExchangeSettings</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKExchangeSetting</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSettings.h#L7-L63">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSetting.h#L7-L63">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1079,43 +1091,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchan
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L13-L17">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates"></a>
-                    <a name="//apple_ref/objc/Class/ZKFeeRates" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates">ZKFeeRates</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Record containing crypto transactions fee rates.</p>
-
-                        <a href="Classes/ZKFeeRates.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKFeeRates</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKFeeRates</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L7-L44">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h#L13-L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1151,7 +1127,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchan
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L7-L11">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h#L7-L11">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1187,7 +1163,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchan
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L7-L11">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h#L7-L11">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1223,7 +1199,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchan
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h#L10-L123">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h#L10-L123">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1264,7 +1240,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchan
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKTransactionCryptoProperties.h#L10-L66">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTransactionCryptoProperties.h#L10-L66">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1300,7 +1276,43 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchan
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h#L7-L11">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h#L7-L11">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionFeeRate"></a>
+                    <a name="//apple_ref/objc/Class/ZKTransactionFeeRate" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionFeeRate">ZKTransactionFeeRate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Record containing crypto transaction fee rate</p>
+
+                        <a href="Classes/ZKTransactionFeeRate.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKTransactionFeeRate</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKTransactionFeeRate</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTransactionFeeRate.h#L7-L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1341,7 +1353,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchan
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKTransactionFiatProperties.h#L11-L23">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTransactionFiatProperties.h#L11-L23">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1382,7 +1394,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/send-transa
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L14-L18">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h#L14-L18">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1418,7 +1430,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/send-transa
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L7-L11">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h#L7-L11">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1471,7 +1483,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/send-transa
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h#L6-L24">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKUnspentOutput.h#L6-L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1514,7 +1526,7 @@ guides for usage details.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L24-L187">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L24-L187">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1553,7 +1565,7 @@ This class provides mnemonic phrase generation utility and
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKUtils.h#L13-L38">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKUtils.h#L13-L38">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1594,7 +1606,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L23-L148">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L23-L148">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1632,7 +1644,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-er
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L11-L15">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h#L11-L15">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1669,7 +1681,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-er
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L10-L14">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h#L10-L14">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1707,7 +1719,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-er
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZumoKit.h#L44-L124">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZumoKit.h#L54-L167">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1720,7 +1732,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/handling-er
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-23)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

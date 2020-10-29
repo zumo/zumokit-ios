@@ -5,7 +5,7 @@
 #import "DJIMarshal+Private.h"
 #import "NSDecimalNumber+ZumoKit.h"
 #import "ZKExchangeRate+Private.h"
-#import "ZKExchangeSettings+Private.h"
+#import "ZKExchangeSetting+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -27,7 +27,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.exchangeFee),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnTransactionFee),
             ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
-            ::djinni_generated::ExchangeSettings::toCpp(obj.exchangeSettings),
+            ::djinni_generated::ExchangeSetting::toCpp(obj.exchangeSetting),
             ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.nonce),
             ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
@@ -50,7 +50,7 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                               exchangeFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.exchange_fee))
                      returnTransactionFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_transaction_fee))
                              exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
-                         exchangeSettings:(::djinni_generated::ExchangeSettings::fromCpp(cpp.exchange_settings))
+                          exchangeSetting:(::djinni_generated::ExchangeSetting::fromCpp(cpp.exchange_setting))
                             exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))
                                     nonce:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.nonce))
                               submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))

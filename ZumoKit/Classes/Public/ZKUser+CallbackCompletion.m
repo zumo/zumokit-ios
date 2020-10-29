@@ -18,23 +18,23 @@
 
 - (void)createWallet:(nonnull NSString *)mnemonic
             password:(nonnull NSString *)password
-           completion:(_Nonnull WalletCompletionBlock)completionHandler {
+           completion:(_Nonnull ZKWalletCompletionBlock)completionHandler {
     [self createWallet:mnemonic password:password callback:[[WalletCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)unlockWallet:(nonnull NSString *)password
-          completion:(_Nonnull WalletCompletionBlock)completionHandler {
+          completion:(_Nonnull ZKWalletCompletionBlock)completionHandler {
     [self unlockWallet:password callback:[[WalletCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)revealMnemonic:(nonnull NSString *)password
-            completion:(_Nonnull MnemonicCompletionBlock)completionHandler {
+            completion:(_Nonnull ZKMnemonicCompletionBlock)completionHandler {
     [self revealMnemonic:password callback:[[MnemonicCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)recoverWallet:(nonnull NSString *)mnemonic
             password:(nonnull NSString *)password
-           completion:(_Nonnull WalletCompletionBlock)completionHandler {
+           completion:(_Nonnull ZKWalletCompletionBlock)completionHandler {
     [self recoverWallet:mnemonic password:password callback:[[WalletCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
@@ -50,18 +50,18 @@ addressLine2:(nullable NSString *)addressLine2
      country:(nonnull NSString *)country
     postCode:(nonnull NSString *)postCode
     postTown:(nonnull NSString *)postTown
-                completion:(_Nonnull SuccessCompletionBlock)completionHandler {
+                completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
     [self makeFiatCustomer:network firstName:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone addressLine1:addressLine1 addressLine2:addressLine2 country:country postCode:postCode postTown:postTown callback:[[SuccessCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)createFiatAccount:(nonnull NSString *)network
              currencyCode:(nonnull NSString *)currencyCode
-               completion:(_Nonnull AccountCompletionBlock)completionHandler {
+               completion:(_Nonnull ZKAccountCompletionBlock)completionHandler {
     [self createFiatAccount:network currencyCode:currencyCode callback:[[AccountCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
-                               completion:(_Nonnull AccountFiatPropertiesCompletionBlock)completionHandler {
+                               completion:(_Nonnull ZKAccountFiatPropertiesCompletionBlock)completionHandler {
     [self getNominatedAccountFiatProperties:accountId callback:[[AccountFiatPropertiesCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 

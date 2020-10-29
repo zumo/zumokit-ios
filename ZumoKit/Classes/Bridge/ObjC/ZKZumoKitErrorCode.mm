@@ -60,7 +60,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS = @"invalid_
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE = @"invalid_exchange_rate";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS = @"invalid_exchange_settings";
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTING = @"invalid_exchange_setting";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE = @"invalid_fee_rate";
 

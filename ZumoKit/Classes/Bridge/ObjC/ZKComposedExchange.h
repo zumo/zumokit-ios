@@ -3,7 +3,7 @@
 
 #import "ZKAccount.h"
 #import "ZKExchangeRate.h"
-#import "ZKExchangeSettings.h"
+#import "ZKExchangeSetting.h"
 #import <Foundation/Foundation.h>
 
 /** Record containing result of the compose exchange method on `ZKWallet` object. */
@@ -12,7 +12,7 @@
                                       fromAccount:(nonnull ZKAccount *)fromAccount
                                         toAccount:(nonnull ZKAccount *)toAccount
                                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                                 exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                                  exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                                   exchangeAddress:(nullable NSString *)exchangeAddress
                                            amount:(nonnull NSDecimalNumber *)amount
                                      returnAmount:(nonnull NSDecimalNumber *)returnAmount
@@ -24,7 +24,7 @@
                                                   fromAccount:(nonnull ZKAccount *)fromAccount
                                                     toAccount:(nonnull ZKAccount *)toAccount
                                                  exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-                                             exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
+                                              exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                                               exchangeAddress:(nullable NSString *)exchangeAddress
                                                        amount:(nonnull NSDecimalNumber *)amount
                                                  returnAmount:(nonnull NSDecimalNumber *)returnAmount
@@ -45,8 +45,8 @@
 /** Exchange rate used composing exchange. */
 @property (nonatomic, readonly, nonnull) ZKExchangeRate * exchangeRate;
 
-/** Exchange settings used composing exchange. */
-@property (nonatomic, readonly, nonnull) ZKExchangeSettings * exchangeSettings;
+/** Exchange setting used composing exchange. */
+@property (nonatomic, readonly, nonnull) ZKExchangeSetting * exchangeSetting;
 
 /**
  * Zumo Exchange Service wallet address where outgoing crypto funds were deposited,
@@ -59,7 +59,7 @@
 
 /**
  * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
- * @see `ZKExchangeSettings`
+ * @see `ZKExchangeSetting`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnAmount;
 
@@ -68,13 +68,13 @@
 
 /**
  * Exchange fee, calculated as <code>value X exchangeRate X exchangeFeeRate</code>.
- * @see `ZKExchangeSettings`
+ * @see `ZKExchangeSetting`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFee;
 
 /**
  * Return transaction fee.
- * @see `ZKExchangeSettings`
+ * @see `ZKExchangeSetting`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnTransactionFee;
 

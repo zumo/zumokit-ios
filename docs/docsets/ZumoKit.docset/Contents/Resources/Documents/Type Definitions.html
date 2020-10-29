@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          ZumoKit 2.3.0-beta.2 Docs
+          ZumoKit 2.3.0-beta.3 Docs
         </a>
         
       </p>
@@ -95,13 +95,10 @@
                 <a class="nav-group-task-link" href="Classes/ZKExchangeRate.html">ZKExchangeRate</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKExchangeSettings.html">ZKExchangeSettings</a>
+                <a class="nav-group-task-link" href="Classes/ZKExchangeSetting.html">ZKExchangeSetting</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKExchangeStatus.html">ZKExchangeStatus</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ZKFeeRates.html">ZKFeeRates</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKNetworkType.html">ZKNetworkType</a>
@@ -117,6 +114,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKTransactionDirection.html">ZKTransactionDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/ZKTransactionFeeRate.html">ZKTransactionFeeRate</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ZKTransactionFiatProperties.html">ZKTransactionFiatProperties</a>
@@ -364,7 +364,7 @@
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGERATE">ZKZumoKitErrorCodeINVALIDEXCHANGERATE</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS">ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS</a>
+                <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTING">ZKZumoKitErrorCodeINVALIDEXCHANGESETTING</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Constants.html#/c:@ZKZumoKitErrorCodeINVALIDFEERATE">ZKZumoKitErrorCodeINVALIDFEERATE</a>
@@ -509,6 +509,9 @@
                 <a class="nav-group-task-link" href="Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/ZKChangeListener.html">ZKChangeListener</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a>
               </li>
               <li class="nav-group-task">
@@ -541,40 +544,49 @@
             <a class="nav-group-name-link" href="Type%20Definitions.html">Type Definitions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@AccountCompletionBlock">AccountCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@AccountFiatPropertiesCompletionBlock">AccountFiatPropertiesCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountFiatPropertiesCompletionBlock">ZKAccountFiatPropertiesCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ComposeExchangeCompletionBlock">ComposeExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ComposeTransactionCompletionBlock">ComposeTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@MnemonicCompletionBlock">MnemonicCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@SubmitExchangeCompletionBlock">SubmitExchangeCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@SubmitTransactionCompletionBlock">SubmitTransactionCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@SuccessCompletionBlock">SuccessCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@WalletCompletionBlock">WalletCompletionBlock</a>
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeSettings">ZKExchangeSettings</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRates">ZKHistoricalExchangeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRatesCompletionBlock">ZKHistoricalExchangeRatesCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKMnemonicCompletionBlock">ZKMnemonicCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKTransactionFeeRates">ZKTransactionFeeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKUserCompletionBlock">ZKUserCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKWalletCompletionBlock">ZKWalletCompletionBlock</a>
               </li>
             </ul>
           </li>
@@ -597,9 +609,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKUser+CallbackCompletion.h@T@WalletCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/WalletCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@WalletCompletionBlock">WalletCompletionBlock</a>
+                    <a name="/c:ZKUser+CallbackCompletion.h@T@ZKWalletCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKWalletCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@ZKWalletCompletionBlock">ZKWalletCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -614,17 +626,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">WalletCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKWallet.html">ZKWallet</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKWalletCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKWallet.html">ZKWallet</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">WalletCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKWallet.html">ZKWallet</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKWalletCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKWallet.html">ZKWallet</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L19">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -632,9 +644,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKUser+CallbackCompletion.h@T@MnemonicCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/MnemonicCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@MnemonicCompletionBlock">MnemonicCompletionBlock</a>
+                    <a name="/c:ZKUser+CallbackCompletion.h@T@ZKMnemonicCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKMnemonicCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@ZKMnemonicCompletionBlock">ZKMnemonicCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -649,17 +661,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">MnemonicCompletionBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKMnemonicCompletionBlock</span><span class="p">)(</span><span class="n">NSString</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
+                                          <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">MnemonicCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">String</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKMnemonicCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">String</span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L22">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -667,9 +680,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKUser+CallbackCompletion.h@T@SuccessCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/SuccessCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@SuccessCompletionBlock">SuccessCompletionBlock</a>
+                    <a name="/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKSuccessCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -684,17 +697,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SuccessCompletionBlock</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKSuccessCompletionBlock</span><span class="p">)(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">SuccessCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKSuccessCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L25">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L25">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -702,9 +715,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKUser+CallbackCompletion.h@T@AccountCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/AccountCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@AccountCompletionBlock">AccountCompletionBlock</a>
+                    <a name="/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKAccountCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -719,17 +732,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">AccountCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKAccount.html">ZKAccount</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKAccountCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKAccount.html">ZKAccount</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
+                                         <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">AccountCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKAccount.html">ZKAccount</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKAccountCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKAccount.html">ZKAccount</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L28">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L28">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -737,9 +751,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKUser+CallbackCompletion.h@T@AccountFiatPropertiesCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/AccountFiatPropertiesCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@AccountFiatPropertiesCompletionBlock">AccountFiatPropertiesCompletionBlock</a>
+                    <a name="/c:ZKUser+CallbackCompletion.h@T@ZKAccountFiatPropertiesCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKAccountFiatPropertiesCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKUser+CallbackCompletion.h@T@ZKAccountFiatPropertiesCompletionBlock">ZKAccountFiatPropertiesCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -754,18 +768,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">AccountFiatPropertiesCompletionBlock</span><span class="p">)(</span>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKAccountFiatPropertiesCompletionBlock</span><span class="p">)(</span>
     <span class="n"><a href="Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">AccountFiatPropertiesCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKAccountFiatPropertiesCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L31">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L31">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -773,9 +787,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKWallet+CallbackCompletion.h@T@ComposeTransactionCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/ComposeTransactionCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@ComposeTransactionCompletionBlock">ComposeTransactionCompletionBlock</a>
+                    <a name="/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKComposeTransactionCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -790,18 +804,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ComposeTransactionCompletionBlock</span><span class="p">)(</span>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKComposeTransactionCompletionBlock</span><span class="p">)(</span>
     <span class="n"><a href="Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ComposeTransactionCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKComposeTransactionCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L18">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L18">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -809,9 +823,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKWallet+CallbackCompletion.h@T@ComposeExchangeCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/ComposeExchangeCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@ComposeExchangeCompletionBlock">ComposeExchangeCompletionBlock</a>
+                    <a name="/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKComposeExchangeCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -826,54 +840,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ComposeExchangeCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
-                                               <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ComposeExchangeCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKComposedExchange.html">ZKComposedExchange</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L21">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:ZKWallet+CallbackCompletion.h@T@SubmitTransactionCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/SubmitTransactionCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@SubmitTransactionCompletionBlock">SubmitTransactionCompletionBlock</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Completion block used by methods in <code><a href="Classes/ZKWallet.html">ZKWallet</a></code> class.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SubmitTransactionCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKComposeExchangeCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
                                                  <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">SubmitTransactionCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKComposeExchangeCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKComposedExchange.html">ZKComposedExchange</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L24">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L21">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -881,9 +859,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZKWallet+CallbackCompletion.h@T@SubmitExchangeCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/SubmitExchangeCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@SubmitExchangeCompletionBlock">SubmitExchangeCompletionBlock</a>
+                    <a name="/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKSubmitTransactionCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -898,18 +876,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">SubmitExchangeCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKExchange.html">ZKExchange</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
-                                              <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKSubmitTransactionCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
+                                                   <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">SubmitExchangeCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKExchange.html">ZKExchange</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKSubmitTransactionCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKTransaction.html">ZKTransaction</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L27">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -917,9 +895,45 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZumoKit.h@T@UserCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/UserCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a>
+                    <a name="/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKSubmitExchangeCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Completion block used by methods in <code><a href="Classes/ZKWallet.html">ZKWallet</a></code> class.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKSubmitExchangeCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKExchange.html">ZKExchange</a></span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">,</span>
+                                                <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span><span class="p">)</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKSubmitExchangeCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKExchange.html">ZKExchange</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L27">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:ZumoKit.h@T@ZKUserCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKUserCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZumoKit.h@T@ZKUserCompletionBlock">ZKUserCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -933,17 +947,119 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">UserCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKUser.html">ZKUser</a></span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">user</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKUserCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Classes/ZKUser.html">ZKUser</a></span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">user</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">UserCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKUser.html">ZKUser</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKUserCompletionBlock</span> <span class="o">=</span> <span class="p">(</span><span class="kt"><a href="Classes/ZKUser.html">ZKUser</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:ZumoKit.h@T@ZKExchangeRates"></a>
+                    <a name="//apple_ref/objc/Type/ZKExchangeRates" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*&gt;</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">ZKExchangeRates</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKExchangeRates</span> <span class="o">=</span> <span class="kt">NSDictionary</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:ZumoKit.h@T@ZKExchangeSettings"></a>
+                    <a name="//apple_ref/objc/Type/ZKExchangeSettings" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZumoKit.h@T@ZKExchangeSettings">ZKExchangeSettings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="Classes/ZKExchangeSetting.html">ZKExchangeSetting</a></span> <span class="o">*&gt;</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">ZKExchangeSettings</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKExchangeSettings</span> <span class="o">=</span> <span class="kt">NSDictionary</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:ZumoKit.h@T@ZKTransactionFeeRates"></a>
+                    <a name="//apple_ref/objc/Type/ZKTransactionFeeRates" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZumoKit.h@T@ZKTransactionFeeRates">ZKTransactionFeeRates</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n"><a href="Classes/ZKTransactionFeeRate.html">ZKTransactionFeeRate</a></span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">ZKTransactionFeeRates</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKTransactionFeeRates</span> <span class="o">=</span> <span class="kt">NSDictionary</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -977,7 +1093,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -985,9 +1101,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock"></a>
-                    <a name="//apple_ref/objc/Type/HistoricalExchangeRatesCompletionBlock" class="dashAnchor"></a>
-                    <a class="token" href="#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a>
+                    <a name="/c:ZumoKit.h@T@ZKHistoricalExchangeRatesCompletionBlock"></a>
+                    <a name="//apple_ref/objc/Type/ZKHistoricalExchangeRatesCompletionBlock" class="dashAnchor"></a>
+                    <a class="token" href="#/c:ZumoKit.h@T@ZKHistoricalExchangeRatesCompletionBlock">ZKHistoricalExchangeRatesCompletionBlock</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1001,17 +1117,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">HistoricalExchangeRatesCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRates">ZKHistoricalExchangeRates</a></span> <span class="n">_Nullable</span> <span class="n">historicalExchangeRates</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">typedef</span> <span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="n">ZKHistoricalExchangeRatesCompletionBlock</span><span class="p">)(</span><span class="n"><a href="Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRates">ZKHistoricalExchangeRates</a></span> <span class="n">_Nullable</span> <span class="n">historicalExchangeRates</span><span class="p">,</span> <span class="n">NSError</span> <span class="o">*</span><span class="n">_Nullable</span> <span class="n">error</span><span class="p">)</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">HistoricalExchangeRatesCompletionBlock</span> <span class="o">=</span> <span class="p">([</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt"><a href="Classes/ZKExchangeRate.html">ZKExchangeRate</a></span><span class="p">]]]]?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">typealias</span> <span class="kt">ZKHistoricalExchangeRatesCompletionBlock</span> <span class="o">=</span> <span class="p">([</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="p">[</span><span class="kt"><a href="Classes/ZKExchangeRate.html">ZKExchangeRate</a></span><span class="p">]]]]?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.2/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.3/ZumoKit/Classes/Public/ZumoKit.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1024,7 +1140,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-23)</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -15,16 +15,16 @@
 #import "ZKExchange.h"
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void (^ComposeTransactionCompletionBlock)(ZKComposedTransaction *_Nullable composedTransaction, NSError *_Nullable error);
+typedef void (^ZKComposeTransactionCompletionBlock)(ZKComposedTransaction *_Nullable composedTransaction, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void (^ComposeExchangeCompletionBlock)(ZKComposedExchange *_Nullable composedExchange, NSError *_Nullable error);
+typedef void (^ZKComposeExchangeCompletionBlock)(ZKComposedExchange *_Nullable composedExchange, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void (^SubmitTransactionCompletionBlock)(ZKTransaction *_Nullable transaction, NSError *_Nullable error);
+typedef void (^ZKSubmitTransactionCompletionBlock)(ZKTransaction *_Nullable transaction, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKWallet` class. */
-typedef void (^SubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NSError *_Nullable error);
+typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NSError *_Nullable error);
 
 @interface ZKWallet (ZKWalletCallbackCompletion)
 
@@ -40,7 +40,7 @@ typedef void (^SubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NS
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
-                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+                   completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
 
 /**
 <code>composeTransaction</code> completion handler extension.
@@ -52,7 +52,7 @@ typedef void (^SubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NS
                     amount:(nullable NSDecimalNumber *)amount
                    feeRate:(nonnull NSDecimalNumber *)feeRate
                    sendMax:(BOOL)sendMax
-                completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+                completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
 
 /**
 <code>composeInternalFiatTransaction</code> completion handler extension.
@@ -62,7 +62,7 @@ typedef void (^SubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NS
                            toAccountId:(nonnull NSString *)toAccountId
                                 amount:(nullable NSDecimalNumber *)amount
                                sendMax:(BOOL)sendMax
-                            completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+                            completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
 
 /**
 <code>composeInternalFiatTransaction</code> completion handler extension.
@@ -71,7 +71,7 @@ typedef void (^SubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NS
 - (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
                                       amount:(nullable NSDecimalNumber *)amount
                                      sendMax:(BOOL)sendMax
-                                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler;
+                                  completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
 
 /**
 <code>composeTransactionToNominatedAccount</code> completion handler extension.
@@ -80,24 +80,24 @@ typedef void (^SubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NS
 - (void)composeExchange:(nonnull NSString *)fromAccountId
             toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeFees
+        exchangeSetting:(nonnull ZKExchangeSetting *)exchangeFees
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
-             completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler;
+             completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler;
 
 /**
 <code>submitTransaction</code> completion handler extension.
 @see `-[ZKWallet submitTransaction:callback:]`
 */
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
-               completion:(_Nonnull SubmitTransactionCompletionBlock)completionHandler;
+               completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler;
 
 /**
 <code>submitExchange</code> completion handler extension.
 @see `-[ZKWallet submitExchange:callback:]`
 */
 - (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
-            completion:(_Nonnull SubmitExchangeCompletionBlock)completionHandler;
+            completion:(_Nonnull ZKSubmitExchangeCompletionBlock)completionHandler;
 
 @end
 

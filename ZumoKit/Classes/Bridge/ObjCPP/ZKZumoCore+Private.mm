@@ -6,11 +6,12 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "ZKChangeListener+Private.h"
 #import "ZKExchangeRate+Private.h"
-#import "ZKExchangeSettings+Private.h"
-#import "ZKFeeRates+Private.h"
+#import "ZKExchangeSetting+Private.h"
 #import "ZKHistoricalExchangeRatesCallback+Private.h"
 #import "ZKHttpImpl+Private.h"
+#import "ZKTransactionFeeRate+Private.h"
 #import "ZKUser+Private.h"
 #import "ZKUserCallback+Private.h"
 #import "ZKUtils+Private.h"
@@ -92,25 +93,58 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nullable ZKExchangeSettings *)getExchangeSettings:(nonnull NSString *)fromCurrency
-                                          toCurrency:(nonnull NSString *)toCurrency {
+- (nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)getExchangeRates {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_settings(::djinni::String::toCpp(fromCurrency),
-                                                                         ::djinni::String::toCpp(toCurrency));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::ExchangeSettings>::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_rates();
+        return ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nullable ZKFeeRates *)getFeeRates:(nonnull NSString *)currency {
+- (nullable ZKExchangeSetting *)getExchangeSetting:(nonnull NSString *)fromCurrency
+                                        toCurrency:(nonnull NSString *)toCurrency {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_fee_rates(::djinni::String::toCpp(currency));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::FeeRates>::fromCpp(objcpp_result_);
+        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_setting(::djinni::String::toCpp(fromCurrency),
+                                                                        ::djinni::String::toCpp(toCurrency));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::ExchangeSetting>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSetting *> *> *)getExchangeSettings {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_exchange_settings();
+        return ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeSetting>>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nullable ZKTransactionFeeRate *)getTransactionFeeRate:(nonnull NSString *)currency {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_transaction_fee_rate(::djinni::String::toCpp(currency));
+        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionFeeRate>::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nonnull NSDictionary<NSString *, ZKTransactionFeeRate *> *)getTransactionFeeRates {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_transaction_fee_rates();
+        return ::djinni::Map<::djinni::String, ::djinni_generated::TransactionFeeRate>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
 - (void)fetchHistoricalExchangeRates:(nullable id<ZKHistoricalExchangeRatesCallback>)callback {
     try {
         _cppRefHandle.get()->fetch_historical_exchange_rates(::djinni_generated::HistoricalExchangeRatesCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)addChangeListener:(nullable id<ZKChangeListener>)listener {
+    try {
+        _cppRefHandle.get()->add_change_listener(::djinni_generated::ChangeListener::toCpp(listener));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)removeChangeListener:(nullable id<ZKChangeListener>)listener {
+    try {
+        _cppRefHandle.get()->remove_change_listener(::djinni_generated::ChangeListener::toCpp(listener));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

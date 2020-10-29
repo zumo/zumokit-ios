@@ -23,7 +23,7 @@
                          data:(nullable NSString *)data
                         nonce:(nullable NSNumber *)nonce
                       sendMax:(BOOL)sendMax
-                   completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+                   completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
 
     [self composeEthTransaction:fromAccountId
                        gasPrice:gasPrice
@@ -44,7 +44,7 @@
                     amount:(nullable NSDecimalNumber *)amount
                   feeRate:(nonnull NSDecimalNumber *)feeRate
                   sendMax:(BOOL)sendMax
-               completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+               completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
 
     [self composeTransaction:fromAccountId
              changeAccountId:changeAccountId
@@ -60,29 +60,29 @@
                            toAccountId:(nonnull NSString *)toAccountId
                                 amount:(nullable NSDecimalNumber *)amount
                                sendMax:(BOOL)sendMax
-                            completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+                            completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
     [self composeInternalFiatTransaction:fromAccountId toAccountId:toAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
                                       amount:(nullable NSDecimalNumber *)amount
                                      sendMax:(BOOL)sendMax
-                                  completion:(_Nonnull ComposeTransactionCompletionBlock)completionHandler {
+                                  completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
         [self composeTransactionToNominatedAccount:fromAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)composeExchange:(nonnull NSString *)fromAccountId
             toAccountId:(nonnull NSString *)toAccountId
            exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-       exchangeSettings:(nonnull ZKExchangeSettings *)exchangeSettings
-                  amount:(nullable NSDecimalNumber *)amount
+        exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
+                 amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
-             completion:(_Nonnull ComposeExchangeCompletionBlock)completionHandler {
+             completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler {
 
     [self composeExchange:fromAccountId
               toAccountId:toAccountId
              exchangeRate:exchangeRate
-         exchangeSettings:exchangeSettings
+          exchangeSetting:exchangeSetting
                    amount:amount
                   sendMax:sendMax
                  callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
@@ -91,13 +91,13 @@
 
 
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
-               completion:(_Nonnull SubmitTransactionCompletionBlock)completionHandler {
+               completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler {
     [self submitTransaction:composedTransaction
                    callback:[[SubmitTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
-            completion:(_Nonnull SubmitExchangeCompletionBlock)completionHandler {
+            completion:(_Nonnull ZKSubmitExchangeCompletionBlock)completionHandler {
     [self submitExchange:composedExchange
                 callback:[[SubmitExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
 };

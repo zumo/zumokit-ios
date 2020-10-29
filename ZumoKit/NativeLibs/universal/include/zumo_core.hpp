@@ -6,9 +6,11 @@
 #include "stdx/optional.hpp"
 #include <memory>
 #include <string>
+#include <unordered_map>
 
 namespace zumo {
 
+class ChangeListener;
 class HistoricalExchangeRatesCallback;
 class HttpImpl;
 class User;
@@ -16,8 +18,8 @@ class UserCallback;
 class Utils;
 class WebSocketImpl;
 struct ExchangeRate;
-struct ExchangeSettings;
-struct FeeRates;
+struct ExchangeSetting;
+struct TransactionFeeRate;
 
 /** Entry point to ZumoKit C++ SDK */
 class ZumoCore {
@@ -79,23 +81,44 @@ public:
     virtual std::experimental::optional<ExchangeRate> get_exchange_rate(const std::string & from_currency, const std::string & to_currency) = 0;
 
     /**
-     * Get exchange settings for selected currency pair.
+     * Get all available exchange rates.
+     *
+     * @return mapping between currency pairs and exchange rates
+     */
+    virtual std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> get_exchange_rates() = 0;
+
+    /**
+     * Get exchange setting for selected currency pair.
      *
      * @param from_currency   currency code
      * @param to_currency     currency code
      *
-     * @return exchange settings or null
+     * @return exchange setting or null
      */
-    virtual std::experimental::optional<ExchangeSettings> get_exchange_settings(const std::string & from_currency, const std::string & to_currency) = 0;
+    virtual std::experimental::optional<ExchangeSetting> get_exchange_setting(const std::string & from_currency, const std::string & to_currency) = 0;
 
     /**
-     * Get crypto currency fee rates for selected currency.
+     * Get all available exchange settings.
      *
-     * @param currency   currency code
-     *
-     * @return exchange settings or null
+     * @return mapping between currency pairs and exchange settings
      */
-    virtual std::experimental::optional<FeeRates> get_fee_rates(const std::string & currency) = 0;
+    virtual std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSetting>> get_exchange_settings() = 0;
+
+    /**
+     * Get transaction fee rates for selected crypto currency.
+     *
+     * @param currency currency code
+     *
+     * @return transaction fee rate or null
+     */
+    virtual std::experimental::optional<TransactionFeeRate> get_transaction_fee_rate(const std::string & currency) = 0;
+
+    /**
+     * Get all available crypto transaction fee rates.
+     *
+     * @return mapping between cryptocurrencies and transaction fee rate
+     */
+    virtual std::unordered_map<std::string, TransactionFeeRate> get_transaction_fee_rates() = 0;
 
     /**
      * Fetch historical exchange rates for supported time intervals.
@@ -104,9 +127,21 @@ public:
      *
      * @param callback         an interface to receive the result or error
      *
-     * @see HistoricalExchangeRatesInterval
+     * @see TimeInterval
      */
     virtual void fetch_historical_exchange_rates(const std::shared_ptr<HistoricalExchangeRatesCallback> & callback) = 0;
+
+    /**
+     * Listen to changes in exchange rates, exchange settings or transaction fee rates.
+     * @param listener interface to listen to changes
+     */
+    virtual void add_change_listener(const std::shared_ptr<ChangeListener> & listener) = 0;
+
+    /**
+     * Remove change listener.
+     * @param listener interface to listen to changes
+     */
+    virtual void remove_change_listener(const std::shared_ptr<ChangeListener> & listener) = 0;
 };
 
 }  // namespace zumo
