@@ -132,7 +132,7 @@ public:
     virtual void fetch_historical_exchange_rates(const std::shared_ptr<HistoricalExchangeRatesCallback> & callback) = 0;
 
     /**
-     * Listen to changes in exchange rates, exchange settings or transaction fee rates.
+     * Listen to changes in current user’s sign in state, exchange settings and transaction fee rates.
      * @param listener interface to listen to changes
      */
     virtual void add_change_listener(const std::shared_ptr<ChangeListener> & listener) = 0;
