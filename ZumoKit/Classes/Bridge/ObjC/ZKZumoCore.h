@@ -131,7 +131,7 @@
 - (void)fetchHistoricalExchangeRates:(nullable id<ZKHistoricalExchangeRatesCallback>)callback;
 
 /**
- * Listen to changes in exchange rates, exchange settings or transaction fee rates.
+ * Listen to changes in current user’s sign in state, exchange settings and transaction fee rates.
  * @param listener interface to listen to changes
  */
 - (void)addChangeListener:(nullable id<ZKChangeListener>)listener;
