@@ -46,7 +46,7 @@ public:
     static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpImpl> & http_impl, const std::shared_ptr<WebSocketImpl> & ws_impl, const std::string & api_key, const std::string & api_url, const std::string & tx_service_url);
 
     /**
-     * Authenticates user token set and returns corresponding user. On success user is set as active user.
+     * Signs in user corresponding to user token set. Sets current user to the newly signed in user.
      * Refer to <a href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
      *
      * @param user_token_set   user token set
@@ -54,14 +54,17 @@ public:
      *
      * @see User
      */
-    virtual void auth_user(const std::string & user_token_set, const std::shared_ptr<UserCallback> & callback) = 0;
+    virtual void sign_in(const std::string & user_token_set, const std::shared_ptr<UserCallback> & callback) = 0;
+
+    /** Signs out current user. */
+    virtual void sign_out() = 0;
 
     /**
-     * Get active user if exists.
+     * Get currently signed-in user or null.
      *
-     * @return active user or null
+     * @return current user or null
      */
-    virtual std::shared_ptr<User> get_active_user() = 0;
+    virtual std::shared_ptr<User> get_current_user() = 0;
 
     /**
      * Get crypto utils class.

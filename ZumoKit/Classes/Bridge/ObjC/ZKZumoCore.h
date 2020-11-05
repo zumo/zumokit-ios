@@ -42,7 +42,7 @@
                  txServiceUrl:(nonnull NSString *)txServiceUrl;
 
 /**
- * Authenticates user token set and returns corresponding user. On success user is set as active user.
+ * Signs in user corresponding to user token set. Sets current user to the newly signed in user.
  * Refer to <a href="https://developers.zumo.money/docs/setup/server#get-zumokit-user-token">Server</a> guide for details on how to get user token set.
  *
  * @param userTokenSet   user token set
@@ -50,15 +50,18 @@
  *
  * @see `ZKUser`
  */
-- (void)authUser:(nonnull NSString *)userTokenSet
-        callback:(nullable id<ZKUserCallback>)callback;
+- (void)signIn:(nonnull NSString *)userTokenSet
+      callback:(nullable id<ZKUserCallback>)callback;
+
+/** Signs out current user. */
+- (void)signOut;
 
 /**
- * Get active user if exists.
+ * Get currently signed-in user or null.
  *
- * @return active user or null
+ * @return current user or null
  */
-- (nullable ZKUser *)getActiveUser;
+- (nullable ZKUser *)getCurrentUser;
 
 /**
  * Get crypto utils class.

@@ -62,17 +62,23 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)authUser:(nonnull NSString *)userTokenSet
-        callback:(nullable id<ZKUserCallback>)callback {
+- (void)signIn:(nonnull NSString *)userTokenSet
+      callback:(nullable id<ZKUserCallback>)callback {
     try {
-        _cppRefHandle.get()->auth_user(::djinni::String::toCpp(userTokenSet),
-                                       ::djinni_generated::UserCallback::toCpp(callback));
+        _cppRefHandle.get()->sign_in(::djinni::String::toCpp(userTokenSet),
+                                     ::djinni_generated::UserCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (nullable ZKUser *)getActiveUser {
+- (void)signOut {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->get_active_user();
+        _cppRefHandle.get()->sign_out();
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (nullable ZKUser *)getCurrentUser {
+    try {
+        auto objcpp_result_ = _cppRefHandle.get()->get_current_user();
         return ::djinni_generated::User::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

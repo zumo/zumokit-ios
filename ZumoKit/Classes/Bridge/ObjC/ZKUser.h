@@ -36,12 +36,6 @@
 - (BOOL)hasWallet;
 
 /**
- * Check if user is currenly active user. Only one user can be active at a time.
- * @return true if user is currenly active user
- */
-- (BOOL)isActiveUser;
-
-/**
  * Check if user is a fiat customer on 'MAINNET' or 'TESTNET' network.
  * @param  network 'MAINNET' or 'TESTNET'
  * @return true if user is currenly active user.

@@ -52,13 +52,17 @@ ZKZumoCore *zumoCore;
     return self;
 }
 
-- (void)authUser:(nonnull NSString *)userToken
-      completion:(ZKUserCompletionBlock)completionHandler {
-    [zumoCore authUser:userToken callback:[[UserCallback alloc] initWithCompletionHandler: completionHandler]];
+- (void)signIn:(nonnull NSString *)userTokenSet
+    completion:(ZKUserCompletionBlock)completionHandler {
+    [zumoCore signIn:userTokenSet callback:[[UserCallback alloc] initWithCompletionHandler: completionHandler]];
 }
 
-- (nullable ZKUser *)getActiveUser {
-    return [zumoCore getActiveUser];
+- (void)signOut {
+    [zumoCore signOut];
+}
+
+- (nullable ZKUser *)getCurrentUser {
+    return [zumoCore getCurrentUser];
 };
 
 - (nonnull ZKUtils *)getUtils {

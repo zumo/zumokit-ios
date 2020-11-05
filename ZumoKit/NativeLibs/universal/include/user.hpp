@@ -45,12 +45,6 @@ public:
     virtual bool has_wallet() = 0;
 
     /**
-     * Check if user is currenly active user. Only one user can be active at a time.
-     * @return true if user is currenly active user
-     */
-    virtual bool is_active_user() = 0;
-
-    /**
      * Check if user is a fiat customer on 'MAINNET' or 'TESTNET' network.
      * @param  network 'MAINNET' or 'TESTNET'
      * @return true if user is currenly active user.
