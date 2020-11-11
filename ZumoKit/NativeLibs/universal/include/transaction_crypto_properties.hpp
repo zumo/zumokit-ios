@@ -23,7 +23,7 @@ struct TransactionCryptoProperties final {
      * Ethereum transaction nonce if greater than 0 and
      * it is Ethereum transaction, otherwise returns null.
      */
-    std::experimental::optional<int64_t> nonce;
+    std::experimental::optional<int32_t> nonce;
     /** Wallet address of sender, */
     std::string from_address;
     /** Wallet address of receiver or null, if it is Ethereum contract deploy. */
@@ -33,7 +33,7 @@ struct TransactionCryptoProperties final {
     /** Ethereum gas price if it is Ethereum transaction, otherwise null. */
     std::experimental::optional<::zumo::Decimal> gas_price;
     /** Ethereum gas limit if it is Ethereum transaction, otherwise null. */
-    std::experimental::optional<::zumo::Decimal> gas_limit;
+    std::experimental::optional<int32_t> gas_limit;
     /**
      * Amount in fiat currencies at the time of the transaction submission.
      * @see CurrencyCode
@@ -49,12 +49,12 @@ struct TransactionCryptoProperties final {
     friend bool operator!=(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);
 
     TransactionCryptoProperties(std::experimental::optional<std::string> tx_hash_,
-                                std::experimental::optional<int64_t> nonce_,
+                                std::experimental::optional<int32_t> nonce_,
                                 std::string from_address_,
                                 std::experimental::optional<std::string> to_address_,
                                 std::experimental::optional<std::string> data_,
                                 std::experimental::optional<::zumo::Decimal> gas_price_,
-                                std::experimental::optional<::zumo::Decimal> gas_limit_,
+                                std::experimental::optional<int32_t> gas_limit_,
                                 std::unordered_map<std::string, ::zumo::Decimal> fiat_amount_,
                                 std::unordered_map<std::string, ::zumo::Decimal> fiat_fee_)
     : tx_hash(std::move(tx_hash_))

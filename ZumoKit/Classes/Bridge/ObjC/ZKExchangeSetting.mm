@@ -14,7 +14,7 @@
                    exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
         outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
               returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                         timestamp:(int64_t)timestamp
+                         timestamp:(int32_t)timestamp
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -38,7 +38,7 @@
                               exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
                    outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
                          returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                                    timestamp:(int64_t)timestamp
+                                    timestamp:(int32_t)timestamp
 {
     return [(ZKExchangeSetting*)[self alloc] initWithId:id
                                         exchangeAddress:exchangeAddress

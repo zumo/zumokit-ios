@@ -30,9 +30,9 @@ struct ExchangeRate final {
     /** Value of 1 unit of deposit currency in target currency. */
     ::zumo::Decimal value;
     /** Epoch timestamp representing expiration time of this exchange rate. */
-    int64_t valid_to;
+    int32_t valid_to;
     /** Epoch timestamp when the exchange rate was issued. */
-    int64_t timestamp;
+    int32_t timestamp;
 
     friend bool operator==(const ExchangeRate& lhs, const ExchangeRate& rhs);
     friend bool operator!=(const ExchangeRate& lhs, const ExchangeRate& rhs);
@@ -41,8 +41,8 @@ struct ExchangeRate final {
                  std::string from_currency_,
                  std::string to_currency_,
                  ::zumo::Decimal value_,
-                 int64_t valid_to_,
-                 int64_t timestamp_)
+                 int32_t valid_to_,
+                 int32_t timestamp_)
     : id(std::move(id_))
     , from_currency(std::move(from_currency_))
     , to_currency(std::move(to_currency_))

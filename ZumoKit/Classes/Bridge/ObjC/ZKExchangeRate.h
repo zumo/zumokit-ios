@@ -12,14 +12,14 @@
                       fromCurrency:(nonnull NSString *)fromCurrency
                         toCurrency:(nonnull NSString *)toCurrency
                              value:(nonnull NSDecimalNumber *)value
-                           validTo:(int64_t)validTo
-                         timestamp:(int64_t)timestamp;
+                           validTo:(int32_t)validTo
+                         timestamp:(int32_t)timestamp;
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
                               fromCurrency:(nonnull NSString *)fromCurrency
                                 toCurrency:(nonnull NSString *)toCurrency
                                      value:(nonnull NSDecimalNumber *)value
-                                   validTo:(int64_t)validTo
-                                 timestamp:(int64_t)timestamp;
+                                   validTo:(int32_t)validTo
+                                 timestamp:(int32_t)timestamp;
 
 /** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -40,9 +40,9 @@
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * value;
 
 /** Epoch timestamp representing expiration time of this exchange rate. */
-@property (nonatomic, readonly) int64_t validTo;
+@property (nonatomic, readonly) int32_t validTo;
 
 /** Epoch timestamp when the exchange rate was issued. */
-@property (nonatomic, readonly) int64_t timestamp;
+@property (nonatomic, readonly) int32_t timestamp;
 
 @end

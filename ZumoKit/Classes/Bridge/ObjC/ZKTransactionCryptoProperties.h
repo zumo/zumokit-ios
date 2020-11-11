@@ -14,7 +14,7 @@
                              toAddress:(nullable NSString *)toAddress
                                   data:(nullable NSString *)data
                               gasPrice:(nullable NSDecimalNumber *)gasPrice
-                              gasLimit:(nullable NSDecimalNumber *)gasLimit
+                              gasLimit:(nullable NSNumber *)gasLimit
                             fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
                                fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee;
 + (nonnull instancetype)transactionCryptoPropertiesWithTxHash:(nullable NSString *)txHash
@@ -23,7 +23,7 @@
                                                     toAddress:(nullable NSString *)toAddress
                                                          data:(nullable NSString *)data
                                                      gasPrice:(nullable NSDecimalNumber *)gasPrice
-                                                     gasLimit:(nullable NSDecimalNumber *)gasLimit
+                                                     gasLimit:(nullable NSNumber *)gasLimit
                                                    fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
                                                       fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee;
 
@@ -49,7 +49,7 @@
 @property (nonatomic, readonly, nullable) NSDecimalNumber * gasPrice;
 
 /** Ethereum gas limit if it is Ethereum transaction, otherwise null. */
-@property (nonatomic, readonly, nullable) NSDecimalNumber * gasLimit;
+@property (nonatomic, readonly, nullable) NSNumber * gasLimit;
 
 /**
  * Amount in fiat currencies at the time of the transaction submission.

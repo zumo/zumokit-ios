@@ -39,7 +39,7 @@ struct ExchangeSetting final {
     /** Fee that will charged for return transaction. */
     ::zumo::Decimal return_transaction_fee;
     /** Epoch timestamp when the exchange setting were last updated. */
-    int64_t timestamp;
+    int32_t timestamp;
 
     friend bool operator==(const ExchangeSetting& lhs, const ExchangeSetting& rhs);
     friend bool operator!=(const ExchangeSetting& lhs, const ExchangeSetting& rhs);
@@ -52,7 +52,7 @@ struct ExchangeSetting final {
                     ::zumo::Decimal exchange_fee_rate_,
                     ::zumo::Decimal outgoing_transaction_fee_rate_,
                     ::zumo::Decimal return_transaction_fee_,
-                    int64_t timestamp_)
+                    int32_t timestamp_)
     : id(std::move(id_))
     , exchange_address(std::move(exchange_address_))
     , from_currency(std::move(from_currency_))

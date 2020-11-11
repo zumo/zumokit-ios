@@ -150,7 +150,7 @@
                        submit:(BOOL)submit {
     [_wallet composeEthTransaction:account.id
                           gasPrice:[NSDecimalNumber decimalNumberWithString:@"60"]
-                          gasLimit:[NSDecimalNumber decimalNumberWithString:@"21000"]
+                          gasLimit:21000
                        destination:@"0xD797c81C928a7F4CF7dEB960B5963697fAcFE0eE"
                             amount:[NSDecimalNumber decimalNumberWithString:@"0.01"]
                               data:nil
