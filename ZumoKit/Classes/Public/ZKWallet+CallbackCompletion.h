@@ -34,7 +34,7 @@ typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, 
 */
 - (void)composeEthTransaction:(nonnull NSString *)fromAccountId
                      gasPrice:(nonnull NSDecimalNumber *)gasPrice
-                     gasLimit:(nonnull NSDecimalNumber *)gasLimit
+                     gasLimit:(int32_t)gasLimit
                   destination:(nullable NSString *)destination
                        amount:(nullable NSDecimalNumber *)amount
                          data:(nullable NSString *)data

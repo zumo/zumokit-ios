@@ -15,8 +15,8 @@ auto ExchangeRate::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.fromCurrency),
             ::djinni::String::toCpp(obj.toCurrency),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.value),
-            ::djinni::I64::toCpp(obj.validTo),
-            ::djinni::I64::toCpp(obj.timestamp)};
+            ::djinni::I32::toCpp(obj.validTo),
+            ::djinni::I32::toCpp(obj.timestamp)};
 }
 
 auto ExchangeRate::fromCpp(const CppType& cpp) -> ObjcType
@@ -25,8 +25,8 @@ auto ExchangeRate::fromCpp(const CppType& cpp) -> ObjcType
                                  fromCurrency:(::djinni::String::fromCpp(cpp.from_currency))
                                    toCurrency:(::djinni::String::fromCpp(cpp.to_currency))
                                         value:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.value))
-                                      validTo:(::djinni::I64::fromCpp(cpp.valid_to))
-                                    timestamp:(::djinni::I64::fromCpp(cpp.timestamp))];
+                                      validTo:(::djinni::I32::fromCpp(cpp.valid_to))
+                                    timestamp:(::djinni::I32::fromCpp(cpp.timestamp))];
 }
 
 }  // namespace djinni_generated

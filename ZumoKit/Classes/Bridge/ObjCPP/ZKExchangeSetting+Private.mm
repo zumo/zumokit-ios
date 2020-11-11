@@ -19,7 +19,7 @@ auto ExchangeSetting::toCpp(ObjcType obj) -> CppType
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.exchangeFeeRate),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.outgoingTransactionFeeRate),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnTransactionFee),
-            ::djinni::I64::toCpp(obj.timestamp)};
+            ::djinni::I32::toCpp(obj.timestamp)};
 }
 
 auto ExchangeSetting::fromCpp(const CppType& cpp) -> ObjcType
@@ -32,7 +32,7 @@ auto ExchangeSetting::fromCpp(const CppType& cpp) -> ObjcType
                                  exchangeFeeRate:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.exchange_fee_rate))
                       outgoingTransactionFeeRate:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.outgoing_transaction_fee_rate))
                             returnTransactionFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_transaction_fee))
-                                       timestamp:(::djinni::I64::fromCpp(cpp.timestamp))];
+                                       timestamp:(::djinni::I32::fromCpp(cpp.timestamp))];
 }
 
 }  // namespace djinni_generated

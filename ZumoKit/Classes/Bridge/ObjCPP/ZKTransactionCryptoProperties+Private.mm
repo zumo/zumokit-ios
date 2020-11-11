@@ -12,12 +12,12 @@ auto TransactionCryptoProperties::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.txHash),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.nonce),
+            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.nonce),
             ::djinni::String::toCpp(obj.fromAddress),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.toAddress),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.data),
             ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.gasPrice),
-            ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.gasLimit),
+            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.gasLimit),
             ::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.fiatAmount),
             ::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.fiatFee)};
 }
@@ -25,12 +25,12 @@ auto TransactionCryptoProperties::toCpp(ObjcType obj) -> CppType
 auto TransactionCryptoProperties::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKTransactionCryptoProperties alloc] initWithTxHash:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.tx_hash))
-                                                           nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.nonce))
+                                                           nonce:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.nonce))
                                                      fromAddress:(::djinni::String::fromCpp(cpp.from_address))
                                                        toAddress:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.to_address))
                                                             data:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.data))
                                                         gasPrice:(::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.gas_price))
-                                                        gasLimit:(::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.gas_limit))
+                                                        gasLimit:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.gas_limit))
                                                       fiatAmount:(::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.fiat_amount))
                                                          fiatFee:(::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.fiat_fee))];
 }

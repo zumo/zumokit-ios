@@ -72,9 +72,9 @@ struct Exchange final {
     /** Exchange nonce or null. Used to prevent double spend. */
     std::experimental::optional<std::string> nonce;
     /** Epoch timestamp when transaction was submitted. */
-    std::experimental::optional<int64_t> submitted_at;
+    std::experimental::optional<int32_t> submitted_at;
     /** Epoch timestamp when transaction was confirmed or null if not yet confirmed. */
-    std::experimental::optional<int64_t> confirmed_at;
+    std::experimental::optional<int32_t> confirmed_at;
 
     friend bool operator==(const Exchange& lhs, const Exchange& rhs);
     friend bool operator!=(const Exchange& lhs, const Exchange& rhs);
@@ -96,8 +96,8 @@ struct Exchange final {
              ExchangeSetting exchange_setting_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
              std::experimental::optional<std::string> nonce_,
-             std::experimental::optional<int64_t> submitted_at_,
-             std::experimental::optional<int64_t> confirmed_at_)
+             std::experimental::optional<int32_t> submitted_at_,
+             std::experimental::optional<int32_t> confirmed_at_)
     : id(std::move(id_))
     , status(std::move(status_))
     , from_currency(std::move(from_currency_))

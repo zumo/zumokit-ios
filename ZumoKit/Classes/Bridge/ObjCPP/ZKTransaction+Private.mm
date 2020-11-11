@@ -29,9 +29,9 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionCryptoProperties>::toCpp(obj.cryptoProperties),
             ::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionFiatProperties>::toCpp(obj.fiatProperties),
             ::djinni::Optional<std::experimental::optional, ::djinni_generated::Exchange>::toCpp(obj.exchange),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.confirmedAt),
-            ::djinni::I64::toCpp(obj.timestamp)};
+            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.submittedAt),
+            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.confirmedAt),
+            ::djinni::I32::toCpp(obj.timestamp)};
 }
 
 auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
@@ -51,9 +51,9 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
                             cryptoProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionCryptoProperties>::fromCpp(cpp.crypto_properties))
                               fiatProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionFiatProperties>::fromCpp(cpp.fiat_properties))
                                     exchange:(::djinni::Optional<std::experimental::optional, ::djinni_generated::Exchange>::fromCpp(cpp.exchange))
-                                 submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
-                                 confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.confirmed_at))
-                                   timestamp:(::djinni::I64::fromCpp(cpp.timestamp))];
+                                 submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.submitted_at))
+                                 confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.confirmed_at))
+                                   timestamp:(::djinni::I32::fromCpp(cpp.timestamp))];
 }
 
 }  // namespace djinni_generated

@@ -59,7 +59,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 
 - (void)composeEthTransaction:(nonnull NSString *)fromAccountId
                      gasPrice:(nonnull NSDecimalNumber *)gasPrice
-                     gasLimit:(nonnull NSDecimalNumber *)gasLimit
+                     gasLimit:(int32_t)gasLimit
                   destination:(nullable NSString *)destination
                        amount:(nullable NSDecimalNumber *)amount
                          data:(nullable NSString *)data
@@ -69,11 +69,11 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         _cppRefHandle.get()->compose_eth_transaction(::djinni::String::toCpp(fromAccountId),
                                                      ::zumo::djinni::objc::DecimalConverter::toCpp(gasPrice),
-                                                     ::zumo::djinni::objc::DecimalConverter::toCpp(gasLimit),
+                                                     ::djinni::I32::toCpp(gasLimit),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(destination),
                                                      ::djinni::Optional<std::experimental::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                                      ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(data),
-                                                     ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(nonce),
+                                                     ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(nonce),
                                                      ::djinni::Bool::toCpp(sendMax),
                                                      ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()

@@ -68,11 +68,11 @@ struct Transaction final {
      */
     std::experimental::optional<Exchange> exchange;
     /** Epoch timestamp when transaction was submitted or null for incoming transactions from outside of Zumo ecosystem. */
-    std::experimental::optional<int64_t> submitted_at;
+    std::experimental::optional<int32_t> submitted_at;
     /** Epoch timestamp when transaction was submitted or null if transaction was not confirmed yet. */
-    std::experimental::optional<int64_t> confirmed_at;
+    std::experimental::optional<int32_t> confirmed_at;
     /** Epoch timestamp, minimum non-null value between submitted at and confirmed at timestamps. */
-    int64_t timestamp;
+    int32_t timestamp;
 
     friend bool operator==(const Transaction& lhs, const Transaction& rhs);
     friend bool operator!=(const Transaction& lhs, const Transaction& rhs);
@@ -92,9 +92,9 @@ struct Transaction final {
                 std::experimental::optional<TransactionCryptoProperties> crypto_properties_,
                 std::experimental::optional<TransactionFiatProperties> fiat_properties_,
                 std::experimental::optional<Exchange> exchange_,
-                std::experimental::optional<int64_t> submitted_at_,
-                std::experimental::optional<int64_t> confirmed_at_,
-                int64_t timestamp_)
+                std::experimental::optional<int32_t> submitted_at_,
+                std::experimental::optional<int32_t> confirmed_at_,
+                int32_t timestamp_)
     : id(std::move(id_))
     , type(std::move(type_))
     , currency_code(std::move(currency_code_))

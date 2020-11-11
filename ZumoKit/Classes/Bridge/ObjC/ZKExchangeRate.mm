@@ -10,8 +10,8 @@
                       fromCurrency:(nonnull NSString *)fromCurrency
                         toCurrency:(nonnull NSString *)toCurrency
                              value:(nonnull NSDecimalNumber *)value
-                           validTo:(int64_t)validTo
-                         timestamp:(int64_t)timestamp
+                           validTo:(int32_t)validTo
+                         timestamp:(int32_t)timestamp
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -28,8 +28,8 @@
                               fromCurrency:(nonnull NSString *)fromCurrency
                                 toCurrency:(nonnull NSString *)toCurrency
                                      value:(nonnull NSDecimalNumber *)value
-                                   validTo:(int64_t)validTo
-                                 timestamp:(int64_t)timestamp
+                                   validTo:(int32_t)validTo
+                                 timestamp:(int32_t)timestamp
 {
     return [(ZKExchangeRate*)[self alloc] initWithId:id
                                         fromCurrency:fromCurrency

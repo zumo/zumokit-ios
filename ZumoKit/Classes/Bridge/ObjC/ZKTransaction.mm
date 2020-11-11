@@ -23,7 +23,7 @@
                           exchange:(nullable ZKExchange *)exchange
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
-                         timestamp:(int64_t)timestamp
+                         timestamp:(int32_t)timestamp
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -65,7 +65,7 @@
                                  exchange:(nullable ZKExchange *)exchange
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
-                                timestamp:(int64_t)timestamp
+                                timestamp:(int32_t)timestamp
 {
     return [(ZKTransaction*)[self alloc] initWithId:id
                                                type:type

@@ -30,8 +30,8 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::djinni_generated::ExchangeSetting::toCpp(obj.exchangeSetting),
             ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.nonce),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.submittedAt),
-            ::djinni::Optional<std::experimental::optional, ::djinni::I64>::toCpp(obj.confirmedAt)};
+            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.submittedAt),
+            ::djinni::Optional<std::experimental::optional, ::djinni::I32>::toCpp(obj.confirmedAt)};
 }
 
 auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
@@ -53,8 +53,8 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                           exchangeSetting:(::djinni_generated::ExchangeSetting::fromCpp(cpp.exchange_setting))
                             exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))
                                     nonce:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.nonce))
-                              submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.submitted_at))
-                              confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I64>::fromCpp(cpp.confirmed_at))];
+                              submittedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.submitted_at))
+                              confirmedAt:(::djinni::Optional<std::experimental::optional, ::djinni::I32>::fromCpp(cpp.confirmed_at))];
 }
 
 }  // namespace djinni_generated

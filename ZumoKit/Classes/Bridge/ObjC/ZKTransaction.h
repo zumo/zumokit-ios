@@ -25,7 +25,7 @@
                           exchange:(nullable ZKExchange *)exchange
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
-                         timestamp:(int64_t)timestamp;
+                         timestamp:(int32_t)timestamp;
 + (nonnull instancetype)transactionWithId:(nonnull NSString *)id
                                      type:(nonnull NSString *)type
                              currencyCode:(nonnull NSString *)currencyCode
@@ -43,7 +43,7 @@
                                  exchange:(nullable ZKExchange *)exchange
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
-                                timestamp:(int64_t)timestamp;
+                                timestamp:(int32_t)timestamp;
 
 /** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -118,6 +118,6 @@
 @property (nonatomic, readonly, nullable) NSNumber * confirmedAt;
 
 /** Epoch timestamp, minimum non-null value between submitted at and confirmed at timestamps. */
-@property (nonatomic, readonly) int64_t timestamp;
+@property (nonatomic, readonly) int32_t timestamp;
 
 @end

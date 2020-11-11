@@ -62,7 +62,7 @@ public:
      * @param send_max        send maximum possible funds to destination
      * @param callback        an interface to receive the result or error
      */
-    virtual void compose_eth_transaction(const std::string & from_account_id, const ::zumo::Decimal & gas_price, const ::zumo::Decimal & gas_limit, const std::experimental::optional<std::string> & destination, const std::experimental::optional<::zumo::Decimal> & amount, const std::experimental::optional<std::string> & data, std::experimental::optional<int64_t> nonce, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+    virtual void compose_eth_transaction(const std::string & from_account_id, const ::zumo::Decimal & gas_price, int32_t gas_limit, const std::experimental::optional<std::string> & destination, const std::experimental::optional<::zumo::Decimal> & amount, const std::experimental::optional<std::string> & data, std::experimental::optional<int32_t> nonce, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
     /**
      * Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
