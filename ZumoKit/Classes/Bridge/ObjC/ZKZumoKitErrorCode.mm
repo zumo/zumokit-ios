@@ -42,8 +42,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED = @"incorr
 
 NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED = @"incorrect_change_account_selected";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDS = @"insufficient_funds";
-
 NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE = @"insufficient_funds_for_exchange";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION = @"insufficient_funds_for_transaction";

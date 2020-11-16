@@ -82,13 +82,10 @@ struct ZumoKitErrorCode final {
      */
     static std::string const INCORRECT_CHANGE_ACCOUNT_SELECTED;
 
-    /** Insufficient funds for transaction value and fee. */
-    static std::string const INSUFFICIENT_FUNDS;
-
-    /** Insufficient funds for exchange value. */
+    /** Insufficient funds for exchange value and network fees. */
     static std::string const INSUFFICIENT_FUNDS_FOR_EXCHANGE;
 
-    /** Insufficient funds for transaction value. */
+    /** Insufficient funds for transaction value and network fees. */
     static std::string const INSUFFICIENT_FUNDS_FOR_TRANSACTION;
 
     /** Value exceeds maximum 63 bit precision. */

@@ -62,11 +62,9 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED;
  * Change account should be Bitcoin account on the same network as source account
  */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED;
-/** Insufficient funds for transaction value and fee. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDS;
-/** Insufficient funds for exchange value. */
+/** Insufficient funds for exchange value and network fees. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE;
-/** Insufficient funds for transaction value. */
+/** Insufficient funds for transaction value and network fees. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION;
 /** Value exceeds maximum 63 bit precision. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINT64OVERFLOW;
