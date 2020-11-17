@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ZKFeeRates Class Reference</title>
+    <title>ZKChangeListener Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,14 +14,14 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Class/ZKFeeRates" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Protocol/ZKChangeListener" class="dashAnchor"></a>
 
-    <a title="ZKFeeRates Class Reference"></a>
+    <a title="ZKChangeListener Protocol Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.3.0-alpha.41 Docs
+          ZumoKit 2.2.0 Docs
         </a>
         
       </p>
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
       <img class="carat" src="../img/carat.png" />
-      ZKFeeRates Class Reference
+      ZKChangeListener Protocol Reference
     </p>
 
     <div class="content-wrapper">
@@ -95,13 +95,10 @@
                 <a class="nav-group-task-link" href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ZKExchangeSettings.html">ZKExchangeSettings</a>
+                <a class="nav-group-task-link" href="../Classes/ZKExchangeSetting.html">ZKExchangeSetting</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKExchangeStatus.html">ZKExchangeStatus</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ZKFeeRates.html">ZKFeeRates</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKNetworkType.html">ZKNetworkType</a>
@@ -119,6 +116,9 @@
                 <a class="nav-group-task-link" href="../Classes/ZKTransactionDirection.html">ZKTransactionDirection</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionFeeRate.html">ZKTransactionFeeRate</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKTransactionFiatProperties.html">ZKTransactionFiatProperties</a>
               </li>
               <li class="nav-group-task">
@@ -126,9 +126,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKTransactionType.html">ZKTransactionType</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ZKUnspentOutput.html">ZKUnspentOutput</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKUser.html">ZKUser</a>
@@ -286,7 +283,7 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTNOTFOUND">ZKZumoKitErrorCodeACCOUNTNOTFOUND</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeALREADYMODULRCUSTOMER">ZKZumoKitErrorCodeALREADYMODULRCUSTOMER</a>
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeALREADYFIATCUSTOMER">ZKZumoKitErrorCodeALREADYFIATCUSTOMER</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
@@ -337,9 +334,6 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED">ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDS">ZKZumoKitErrorCodeINSUFFICIENTFUNDS</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE">ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE</a>
               </li>
               <li class="nav-group-task">
@@ -364,7 +358,7 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGERATE">ZKZumoKitErrorCodeINVALIDEXCHANGERATE</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS">ZKZumoKitErrorCodeINVALIDEXCHANGESETTINGS</a>
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTING">ZKZumoKitErrorCodeINVALIDEXCHANGESETTING</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDFEERATE">ZKZumoKitErrorCodeINVALIDFEERATE</a>
@@ -442,7 +436,7 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUNKNOWNERROR">ZKZumoKitErrorCodeUNKNOWNERROR</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUSERNOTMODULRCUSTOMER">ZKZumoKitErrorCodeUSERNOTMODULRCUSTOMER</a>
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER">ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
@@ -509,6 +503,9 @@
                 <a class="nav-group-task-link" href="../Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKChangeListener.html">ZKChangeListener</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a>
               </li>
               <li class="nav-group-task">
@@ -541,40 +538,49 @@
             <a class="nav-group-name-link" href="../Type%20Definitions.html">Type Definitions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@AccountCompletionBlock">AccountCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@AccountFiatPropertiesCompletionBlock">AccountFiatPropertiesCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountFiatPropertiesCompletionBlock">ZKAccountFiatPropertiesCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ComposeExchangeCompletionBlock">ComposeExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ComposeTransactionCompletionBlock">ComposeTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@HistoricalExchangeRatesCompletionBlock">HistoricalExchangeRatesCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@MnemonicCompletionBlock">MnemonicCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@SubmitExchangeCompletionBlock">SubmitExchangeCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@SubmitTransactionCompletionBlock">SubmitTransactionCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@SuccessCompletionBlock">SuccessCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@UserCompletionBlock">UserCompletionBlock</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@WalletCompletionBlock">WalletCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeSettings">ZKExchangeSettings</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRates">ZKHistoricalExchangeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRatesCompletionBlock">ZKHistoricalExchangeRatesCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKMnemonicCompletionBlock">ZKMnemonicCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKTransactionFeeRates">ZKTransactionFeeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKUserCompletionBlock">ZKUserCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKWalletCompletionBlock">ZKWalletCompletionBlock</a>
               </li>
             </ul>
           </li>
@@ -584,23 +590,23 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>ZKFeeRates</h1>
+            <h1>ZKChangeListener</h1>
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKFeeRates</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKChangeListener</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKFeeRates</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">ZKChangeListener</span></code></pre>
 
                 </div>
               </div>
-            <p>Record containing crypto transactions fee rates.</p>
+            <p>Callback interface used to listen for changes in <code>ZKZumoKit</code> class.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L7-L44">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.2.0/ZumoKit/Classes/Bridge/ObjC/ZKChangeListener.h#L8-L12">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -612,9 +618,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKFeeRates(im)initWithSlow:average:fast:slowTime:averageTime:fastTime:source:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithSlow:average:fast:slowTime:averageTime:fastTime:source:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(im)initWithSlow:average:fast:slowTime:averageTime:fastTime:source:">-initWithSlow:<wbr>average:<wbr>fast:<wbr>slowTime:<wbr>averageTime:<wbr>fastTime:<wbr>source:<wbr></a>
+                    <a name="/c:objc(pl)ZKChangeListener(im)onChange"></a>
+                    <a name="//apple_ref/objc/Method/-onChange" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)ZKChangeListener(im)onChange">-onChange</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -628,303 +634,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithSlow</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">slow</span>
-                             <span class="nf">average</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">average</span>
-                                <span class="nf">fast</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">fast</span>
-                            <span class="nf">slowTime</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">slowTime</span>
-                         <span class="nf">averageTime</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">averageTime</span>
-                            <span class="nf">fastTime</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">fastTime</span>
-                              <span class="nf">source</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">source</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">onChange</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">slow</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">average</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">fast</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">slowTime</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">averageTime</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">fastTime</span><span class="p">:</span> <span class="kt">Float</span><span class="p">,</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onChange</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L8-L14">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(cm)feeRatesWithSlow:average:fast:slowTime:averageTime:fastTime:source:"></a>
-                    <a name="//apple_ref/objc/Method/+feeRatesWithSlow:average:fast:slowTime:averageTime:fastTime:source:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(cm)feeRatesWithSlow:average:fast:slowTime:averageTime:fastTime:source:">+feeRatesWithSlow:<wbr>average:<wbr>fast:<wbr>slowTime:<wbr>averageTime:<wbr>fastTime:<wbr>source:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">feeRatesWithSlow</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">slow</span>
-                                 <span class="nf">average</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">average</span>
-                                    <span class="nf">fast</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">fast</span>
-                                <span class="nf">slowTime</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">slowTime</span>
-                             <span class="nf">averageTime</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">averageTime</span>
-                                <span class="nf">fastTime</span><span class="p">:(</span><span class="kt">float</span><span class="p">)</span><span class="nv">fastTime</span>
-                                  <span class="nf">source</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">source</span><span class="p">;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L15-L21">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(py)slow"></a>
-                    <a name="//apple_ref/objc/Property/slow" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(py)slow">slow</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Fee rate resulting in slow confirmation time.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">slow</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">slow</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L24">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(py)average"></a>
-                    <a name="//apple_ref/objc/Property/average" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(py)average">average</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Fee rate resulting in average confirmation time.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">average</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">average</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L27">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(py)fast"></a>
-                    <a name="//apple_ref/objc/Property/fast" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(py)fast">fast</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Fee rate resulting in fast confirmation time.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">fast</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fast</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L30">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(py)slowTime"></a>
-                    <a name="//apple_ref/objc/Property/slowTime" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(py)slowTime">slowTime</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Slow confirmation time in hours.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="kt">float</span> <span class="n">slowTime</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">slowTime</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L33">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(py)averageTime"></a>
-                    <a name="//apple_ref/objc/Property/averageTime" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(py)averageTime">averageTime</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Average confirmation time in hours.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="kt">float</span> <span class="n">averageTime</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">averageTime</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L36">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(py)fastTime"></a>
-                    <a name="//apple_ref/objc/Property/fastTime" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(py)fastTime">fastTime</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Fast confirmation time in hours.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="kt">float</span> <span class="n">fastTime</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fastTime</span><span class="p">:</span> <span class="kt">Float</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L39">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKFeeRates(py)source"></a>
-                    <a name="//apple_ref/objc/Property/source" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKFeeRates(py)source">source</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Fee rate information provider.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">source</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">source</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-alpha.41/ZumoKit/Classes/Bridge/ObjC/ZKFeeRates.h#L42">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.2.0/ZumoKit/Classes/Bridge/ObjC/ZKChangeListener.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -937,8 +657,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-10-23)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2020-11-17)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
