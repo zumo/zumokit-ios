@@ -491,6 +491,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 19,
+      "symbol": "ZKTimeIntervalMAX",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
       "line": 11,
       "symbol": "ZKTransaction.-initWithId:type:currencyCode:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:exchange:submittedAt:confirmedAt:timestamp:",
