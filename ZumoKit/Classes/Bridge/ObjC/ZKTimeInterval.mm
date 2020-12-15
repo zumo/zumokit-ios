@@ -16,6 +16,8 @@ NSString * __nonnull const ZKTimeIntervalQUARTER = @"quarter";
 
 NSString * __nonnull const ZKTimeIntervalYEAR = @"year";
 
+NSString * __nonnull const ZKTimeIntervalMAX = @"max";
+
 @implementation ZKTimeInterval
 
 - (nonnull instancetype)init

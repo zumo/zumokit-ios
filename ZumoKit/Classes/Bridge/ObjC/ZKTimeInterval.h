@@ -16,3 +16,4 @@ extern NSString * __nonnull const ZKTimeIntervalWEEK;
 extern NSString * __nonnull const ZKTimeIntervalMONTH;
 extern NSString * __nonnull const ZKTimeIntervalQUARTER;
 extern NSString * __nonnull const ZKTimeIntervalYEAR;
+extern NSString * __nonnull const ZKTimeIntervalMAX;

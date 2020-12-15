@@ -22,6 +22,8 @@ struct TimeInterval final {
     static std::string const QUARTER;
 
     static std::string const YEAR;
+
+    static std::string const MAX;
 };
 
 }  // namespace zumo
