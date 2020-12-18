@@ -28,6 +28,11 @@ struct Transaction final {
      * @see CurrencyCode
      */
     std::string currency_code;
+    /**
+     * Transaction direction relative to AccountSnapshot.
+     * @see TransactionDirection
+     */
+    std::string direction;
     /** Sender integrator user identifier or null if it is external user. */
     std::experimental::optional<std::string> from_user_id;
     /** Recipient integrator user identifier or null if it is external user. */
@@ -80,6 +85,7 @@ struct Transaction final {
     Transaction(std::string id_,
                 std::string type_,
                 std::string currency_code_,
+                std::string direction_,
                 std::experimental::optional<std::string> from_user_id_,
                 std::experimental::optional<std::string> to_user_id_,
                 std::experimental::optional<std::string> from_account_id_,
@@ -98,6 +104,7 @@ struct Transaction final {
     : id(std::move(id_))
     , type(std::move(type_))
     , currency_code(std::move(currency_code_))
+    , direction(std::move(direction_))
     , from_user_id(std::move(from_user_id_))
     , to_user_id(std::move(to_user_id_))
     , from_account_id(std::move(from_account_id_))

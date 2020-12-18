@@ -17,6 +17,7 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
     return {::djinni::String::toCpp(obj.id),
             ::djinni::String::toCpp(obj.type),
             ::djinni::String::toCpp(obj.currencyCode),
+            ::djinni::String::toCpp(obj.direction),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fromUserId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.toUserId),
             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(obj.fromAccountId),
@@ -39,6 +40,7 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
     return [[ZKTransaction alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
                                         type:(::djinni::String::fromCpp(cpp.type))
                                 currencyCode:(::djinni::String::fromCpp(cpp.currency_code))
+                                   direction:(::djinni::String::fromCpp(cpp.direction))
                                   fromUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.from_user_id))
                                     toUserId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.to_user_id))
                                fromAccountId:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(cpp.from_account_id))

@@ -9,6 +9,7 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                               type:(nonnull NSString *)type
                       currencyCode:(nonnull NSString *)currencyCode
+                         direction:(nonnull NSString *)direction
                         fromUserId:(nullable NSString *)fromUserId
                           toUserId:(nullable NSString *)toUserId
                      fromAccountId:(nullable NSString *)fromAccountId
@@ -29,6 +30,7 @@
         _id = [id copy];
         _type = [type copy];
         _currencyCode = [currencyCode copy];
+        _direction = [direction copy];
         _fromUserId = [fromUserId copy];
         _toUserId = [toUserId copy];
         _fromAccountId = [fromAccountId copy];
@@ -51,6 +53,7 @@
 + (nonnull instancetype)transactionWithId:(nonnull NSString *)id
                                      type:(nonnull NSString *)type
                              currencyCode:(nonnull NSString *)currencyCode
+                                direction:(nonnull NSString *)direction
                                fromUserId:(nullable NSString *)fromUserId
                                  toUserId:(nullable NSString *)toUserId
                             fromAccountId:(nullable NSString *)fromAccountId
@@ -70,6 +73,7 @@
     return [(ZKTransaction*)[self alloc] initWithId:id
                                                type:type
                                        currencyCode:currencyCode
+                                          direction:direction
                                          fromUserId:fromUserId
                                            toUserId:toUserId
                                       fromAccountId:fromAccountId
@@ -96,6 +100,7 @@
     return [self.id isEqualToString:typedOther.id] &&
             [self.type isEqualToString:typedOther.type] &&
             [self.currencyCode isEqualToString:typedOther.currencyCode] &&
+            [self.direction isEqualToString:typedOther.direction] &&
             ((self.fromUserId == nil && typedOther.fromUserId == nil) || (self.fromUserId != nil && [self.fromUserId isEqual:typedOther.fromUserId])) &&
             ((self.toUserId == nil && typedOther.toUserId == nil) || (self.toUserId != nil && [self.toUserId isEqual:typedOther.toUserId])) &&
             ((self.fromAccountId == nil && typedOther.fromAccountId == nil) || (self.fromAccountId != nil && [self.fromAccountId isEqual:typedOther.fromAccountId])) &&
@@ -119,6 +124,7 @@
             self.id.hash ^
             self.type.hash ^
             self.currencyCode.hash ^
+            self.direction.hash ^
             self.fromUserId.hash ^
             self.toUserId.hash ^
             self.fromAccountId.hash ^
@@ -138,7 +144,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ exchange:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.exchange, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ exchange:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.exchange, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

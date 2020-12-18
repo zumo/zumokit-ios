@@ -11,6 +11,7 @@
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                               type:(nonnull NSString *)type
                       currencyCode:(nonnull NSString *)currencyCode
+                         direction:(nonnull NSString *)direction
                         fromUserId:(nullable NSString *)fromUserId
                           toUserId:(nullable NSString *)toUserId
                      fromAccountId:(nullable NSString *)fromAccountId
@@ -29,6 +30,7 @@
 + (nonnull instancetype)transactionWithId:(nonnull NSString *)id
                                      type:(nonnull NSString *)type
                              currencyCode:(nonnull NSString *)currencyCode
+                                direction:(nonnull NSString *)direction
                                fromUserId:(nullable NSString *)fromUserId
                                  toUserId:(nullable NSString *)toUserId
                             fromAccountId:(nullable NSString *)fromAccountId
@@ -59,6 +61,12 @@
  * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * currencyCode;
+
+/**
+ * Transaction direction relative to `ZKAccountSnapshot.`
+ * @see `ZKTransactionDirection`
+ */
+@property (nonatomic, readonly, nonnull) NSString * direction;
 
 /** Sender integrator user identifier or null if it is external user. */
 @property (nonatomic, readonly, nullable) NSString * fromUserId;
