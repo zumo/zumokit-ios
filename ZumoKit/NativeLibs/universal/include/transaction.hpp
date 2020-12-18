@@ -29,7 +29,7 @@ struct Transaction final {
      */
     std::string currency_code;
     /**
-     * Transaction direction relative to AccountSnapshot.
+     * Transaction direction relative to AccountDataSnapshot .
      * @see TransactionDirection
      */
     std::string direction;
