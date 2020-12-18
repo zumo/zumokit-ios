@@ -500,14 +500,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
       "line": 11,
-      "symbol": "ZKTransaction.-initWithId:type:currencyCode:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:exchange:submittedAt:confirmedAt:timestamp:",
+      "symbol": "ZKTransaction.-initWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:exchange:submittedAt:confirmedAt:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
-      "line": 29,
-      "symbol": "ZKTransaction.+transactionWithId:type:currencyCode:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:exchange:submittedAt:confirmedAt:timestamp:",
+      "line": 30,
+      "symbol": "ZKTransaction.+transactionWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:exchange:submittedAt:confirmedAt:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
