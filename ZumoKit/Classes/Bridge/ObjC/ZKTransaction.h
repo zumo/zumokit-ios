@@ -63,7 +63,7 @@
 @property (nonatomic, readonly, nonnull) NSString * currencyCode;
 
 /**
- * Transaction direction relative to `ZKAccountSnapshot.`
+ * Transaction direction relative to `ZKAccountDataSnapshot` .
  * @see `ZKTransactionDirection`
  */
 @property (nonatomic, readonly, nonnull) NSString * direction;
