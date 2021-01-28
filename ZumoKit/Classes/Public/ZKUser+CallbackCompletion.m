@@ -13,6 +13,9 @@
 #import "SuccessCallback.h"
 #import "AccountCallback.h"
 #import "AccountFiatPropertiesCallback.h"
+#import "CardCallback.h"
+#import "CardDetailsCallback.h"
+#import "PinCallback.h"
 
 @implementation ZKUser (ZKUserCallbackCompletion)
 
@@ -39,19 +42,15 @@
 };
 
 - (void)makeFiatCustomer:(nonnull NSString *)network
-   firstName:(nonnull NSString *)firstName
-  middleName:(nullable NSString *)middleName
-    lastName:(nonnull NSString *)lastName
- dateOfBirth:(nonnull NSString *)dateOfBirth
-       email:(nonnull NSString *)email
-       phone:(nonnull NSString *)phone
-addressLine1:(nonnull NSString *)addressLine1
-addressLine2:(nullable NSString *)addressLine2
-     country:(nonnull NSString *)country
-    postCode:(nonnull NSString *)postCode
-    postTown:(nonnull NSString *)postTown
-                completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
-    [self makeFiatCustomer:network firstName:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone addressLine1:addressLine1 addressLine2:addressLine2 country:country postCode:postCode postTown:postTown callback:[[SuccessCallback alloc] initWithCompletionHandler: completionHandler]];
+               firstName:(nonnull NSString *)firstName
+              middleName:(nullable NSString *)middleName
+                lastName:(nonnull NSString *)lastName
+             dateOfBirth:(nonnull NSString *)dateOfBirth
+                   email:(nonnull NSString *)email
+                   phone:(nonnull NSString *)phone
+                 address:(nonnull ZKAddress *)address
+              completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
+    [self makeFiatCustomer:network firstName:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone address:address callback:[[SuccessCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)createFiatAccount:(nonnull NSString *)network
@@ -63,6 +62,41 @@ addressLine2:(nullable NSString *)addressLine2
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
                                completion:(_Nonnull ZKAccountFiatPropertiesCompletionBlock)completionHandler {
     [self getNominatedAccountFiatProperties:accountId callback:[[AccountFiatPropertiesCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)createCard:(nonnull NSString *)fiatAccountId
+          cardType:(nonnull NSString *)cardType
+         firstName:(nonnull NSString *)firstName
+          lastName:(nonnull NSString *)lastName
+             title:(nullable NSString *)title
+       dateOfBirth:(nonnull NSString *)dateOfBirth
+      mobileNumber:(nonnull NSString *)mobileNumber
+           address:(nonnull ZKAddress *)address
+        completion:(_Nonnull ZKCardCompletionBlock)completionHandler {
+    [self createCard:fiatAccountId cardType:cardType firstName:firstName lastName:lastName title:title dateOfBirth:dateOfBirth mobileNumber:mobileNumber address:address callback:[[CardCallback alloc] initWithCompletionHandler:completionHandler]];
+};
+
+- (void)setCardStatus:(nonnull NSString *)cardId
+           cardStatus:(nonnull NSString *)cardStatus
+                  pan:(nullable NSString *)pan
+                 cvv2:(nullable NSString *)cvv2
+           completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
+    [self setCardStatus:cardId cardStatus:cardStatus pan:pan cvv2:cvv2 callback:[[SuccessCallback alloc] initWithCompletionHandler:completionHandler]];
+};
+
+- (void)revealCardDetails:(nonnull NSString *)cardId
+               completion:(_Nonnull ZKCardDetailsCompletionBlock)completionHandler {
+    [self revealCardDetails:cardId callback:[[CardDetailsCallback alloc] initWithCompletionHandler:completionHandler]];
+};
+
+- (void)revealPin:(nonnull NSString *)cardId
+       completion:(_Nonnull ZKPinCompletionBlock)completionHandler {
+    [self revealPin:cardId callback:[[PinCallback alloc] initWithCompletionHandler:completionHandler]];
+};
+
+- (void)unblockPin:(nonnull NSString *)cardId
+        completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
+    [self unblockPin:cardId callback:[[SuccessCallback alloc] initWithCompletionHandler:completionHandler]];
 };
 
 @end

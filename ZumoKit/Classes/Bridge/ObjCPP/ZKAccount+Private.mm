@@ -6,6 +6,7 @@
 #import "NSDecimalNumber+ZumoKit.h"
 #import "ZKAccountCryptoProperties+Private.h"
 #import "ZKAccountFiatProperties+Private.h"
+#import "ZKCard+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -21,7 +22,8 @@ auto Account::toCpp(ObjcType obj) -> CppType
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.balance),
             ::djinni::Bool::toCpp(obj.hasNominatedAccount),
             ::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountCryptoProperties>::toCpp(obj.cryptoProperties),
-            ::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountFiatProperties>::toCpp(obj.fiatProperties)};
+            ::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountFiatProperties>::toCpp(obj.fiatProperties),
+            ::djinni::List<::djinni_generated::Card>::toCpp(obj.cards)};
 }
 
 auto Account::fromCpp(const CppType& cpp) -> ObjcType
@@ -34,7 +36,8 @@ auto Account::fromCpp(const CppType& cpp) -> ObjcType
                                  balance:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.balance))
                      hasNominatedAccount:(::djinni::Bool::fromCpp(cpp.has_nominated_account))
                         cryptoProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountCryptoProperties>::fromCpp(cpp.crypto_properties))
-                          fiatProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountFiatProperties>::fromCpp(cpp.fiat_properties))];
+                          fiatProperties:(::djinni::Optional<std::experimental::optional, ::djinni_generated::AccountFiatProperties>::fromCpp(cpp.fiat_properties))
+                                   cards:(::djinni::List<::djinni_generated::Card>::fromCpp(cpp.cards))];
 }
 
 }  // namespace djinni_generated

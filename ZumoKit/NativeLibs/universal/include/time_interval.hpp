@@ -8,7 +8,7 @@
 
 namespace zumo {
 
-/** Time intervals, such as 'hour', 'week' or 'year' */
+/** Time intervals, for example 'hour'. */
 struct TimeInterval final {
 
     static std::string const HOUR;

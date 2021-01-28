@@ -15,6 +15,7 @@
                hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
+                             cards:(nonnull NSArray<ZKCard *> *)cards
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -26,6 +27,7 @@
         _hasNominatedAccount = hasNominatedAccount;
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
+        _cards = [cards copy];
     }
     return self;
 }
@@ -39,6 +41,7 @@
                   hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
+                                cards:(nonnull NSArray<ZKCard *> *)cards
 {
     return [(ZKAccount*)[self alloc] initWithId:id
                                    currencyType:currencyType
@@ -48,7 +51,8 @@
                                         balance:balance
                             hasNominatedAccount:hasNominatedAccount
                                cryptoProperties:cryptoProperties
-                                 fiatProperties:fiatProperties];
+                                 fiatProperties:fiatProperties
+                                          cards:cards];
 }
 
 - (BOOL)isEqual:(id)other
@@ -65,7 +69,8 @@
             [self.balance isEqual:typedOther.balance] &&
             self.hasNominatedAccount == typedOther.hasNominatedAccount &&
             ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
-            ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties]));
+            ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties])) &&
+            [self.cards isEqualToArray:typedOther.cards];
 }
 
 - (NSUInteger)hash
@@ -79,12 +84,13 @@
             ((NSUInteger)self.balance) ^
             (NSUInteger)self.hasNominatedAccount ^
             self.cryptoProperties.hash ^
-            self.fiatProperties.hash;
+            self.fiatProperties.hash ^
+            self.cards.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ currencyType:%@ currencyCode:%@ network:%@ type:%@ balance:%@ hasNominatedAccount:%@ cryptoProperties:%@ fiatProperties:%@>", self.class, (void *)self, self.id, self.currencyType, self.currencyCode, self.network, self.type, self.balance, @(self.hasNominatedAccount), self.cryptoProperties, self.fiatProperties];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ currencyType:%@ currencyCode:%@ network:%@ type:%@ balance:%@ hasNominatedAccount:%@ cryptoProperties:%@ fiatProperties:%@ cards:%@>", self.class, (void *)self, self.id, self.currencyType, self.currencyCode, self.network, self.type, self.balance, @(self.hasNominatedAccount), self.cryptoProperties, self.fiatProperties, self.cards];
 }
 
 @end

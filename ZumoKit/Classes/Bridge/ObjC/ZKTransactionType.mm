@@ -12,6 +12,8 @@ NSString * __nonnull const ZKTransactionTypeFIAT = @"FIAT";
 
 NSString * __nonnull const ZKTransactionTypeNOMINATED = @"NOMINATED";
 
+NSString * __nonnull const ZKTransactionTypeCARD = @"CARD";
+
 @implementation ZKTransactionType
 
 - (nonnull instancetype)init

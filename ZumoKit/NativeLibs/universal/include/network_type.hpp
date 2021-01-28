@@ -8,7 +8,7 @@
 
 namespace zumo {
 
-/** Network type, such as 'MAINNET', 'TESTNET' or 'RINKEBY'. */
+/** Network type, for example 'MAINNET'. */
 struct NetworkType final {
 
     static std::string const MAINNET;

@@ -12,11 +12,11 @@ namespace zumo {
 
 class ChangeListener;
 class HistoricalExchangeRatesCallback;
-class HttpImpl;
+class HttpProvider;
 class User;
 class UserCallback;
 class Utils;
-class WebSocketImpl;
+class WebSocketFactory;
 struct ExchangeRate;
 struct ExchangeSetting;
 struct TransactionFeeRate;
@@ -35,15 +35,16 @@ public:
     /**
      * Initializes ZumoKit SDK. Should only be called once.
      *
-     * @param http_impl        HTTP implementation
-     * @param ws_impl          WebSocet implementation
-     * @param api_key          ZumoKit Api-Key
-     * @param api_url         ZumoKit API url
-     * @param tx_service_url  ZumoKit Transaction Service url
+     * @param http_provider           HTTP provider
+     * @param web_socket_factory      WebSocket factory
+     * @param api_key                 ZumoKit API Key
+     * @param api_url                 ZumoKit API URL
+     * @param transaction_service_url ZumoKit Transaction Service URL
+     * @param card_service_url        ZumoKit Card Service URL
      *
      * @return ZumoKit instance
      */
-    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpImpl> & http_impl, const std::shared_ptr<WebSocketImpl> & ws_impl, const std::string & api_key, const std::string & api_url, const std::string & tx_service_url);
+    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpProvider> & http_provider, const std::shared_ptr<WebSocketFactory> & web_socket_factory, const std::string & api_key, const std::string & api_url, const std::string & transaction_service_url, const std::string & card_service_url);
 
     /**
      * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

@@ -33,6 +33,12 @@ struct ZumoKitErrorCode final {
     /** Invalid response received from ZumoKit API. */
     static std::string const API_SERVICE_ERROR;
 
+    /** Requested card not found. */
+    static std::string const CARD_NOT_FOUND;
+
+    /** Invalid response received from ZumoKit Card Service API. */
+    static std::string const CARD_SERVICE_ERROR;
+
     /** Requested change account not found. */
     static std::string const CHANGE_ACCOUNT_NOT_FOUND;
 
@@ -59,6 +65,9 @@ struct ZumoKitErrorCode final {
 
     /** Exchange amount too low. Fees exceed return value. */
     static std::string const EXCHANGE_RETURN_VALUE_NEGATIVE;
+
+    /** Invalid account provided. Fiat accounted expected. */
+    static std::string const FIAT_ACCOUNT_EXPECTED;
 
     /** Gas too long. Cumulative gas limit and gas price should not exceed 30 bytes. */
     static std::string const GAS_OVERFLOW;
@@ -136,6 +145,9 @@ struct ZumoKitErrorCode final {
     /** Invalid transaction value. */
     static std::string const INVALID_TRANSACTION_VALUE;
 
+    /** Invalid user token set. User token set should be a valid stringified JSON with accessToken, refreshToken and expiresIn properties. */
+    static std::string const INVALID_USER_TOKEN_SET;
+
     /** Invalid response received from WebSocket. */
     static std::string const INVALID_WEBSOCKET_RESPONSE;
 
@@ -189,9 +201,6 @@ struct ZumoKitErrorCode final {
 
     /** Wallet could not be created. Wallet already exists. */
     static std::string const WALLET_LIMIT_EXCEEDED;
-
-    /** Invalid user token set. User token set should be a valid stringified JSON with accessToken, refreshToken and expiresIn properties. */
-    static std::string const INVALID_USER_TOKEN_SET;
 };
 
 }  // namespace zumo

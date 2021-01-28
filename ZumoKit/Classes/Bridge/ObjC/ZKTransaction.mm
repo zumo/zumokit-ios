@@ -21,6 +21,7 @@
                              nonce:(nullable NSString *)nonce
                   cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
+                    cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
                           exchange:(nullable ZKExchange *)exchange
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
@@ -42,6 +43,7 @@
         _nonce = [nonce copy];
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
+        _cardProperties = cardProperties;
         _exchange = exchange;
         _submittedAt = submittedAt;
         _confirmedAt = confirmedAt;
@@ -65,6 +67,7 @@
                                     nonce:(nullable NSString *)nonce
                          cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
+                           cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
                                  exchange:(nullable ZKExchange *)exchange
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
@@ -85,6 +88,7 @@
                                               nonce:nonce
                                    cryptoProperties:cryptoProperties
                                      fiatProperties:fiatProperties
+                                     cardProperties:cardProperties
                                            exchange:exchange
                                         submittedAt:submittedAt
                                         confirmedAt:confirmedAt
@@ -112,6 +116,7 @@
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
             ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
             ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties])) &&
+            ((self.cardProperties == nil && typedOther.cardProperties == nil) || (self.cardProperties != nil && [self.cardProperties isEqual:typedOther.cardProperties])) &&
             ((self.exchange == nil && typedOther.exchange == nil) || (self.exchange != nil && [self.exchange isEqual:typedOther.exchange])) &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
             ((self.confirmedAt == nil && typedOther.confirmedAt == nil) || (self.confirmedAt != nil && [self.confirmedAt isEqual:typedOther.confirmedAt])) &&
@@ -136,6 +141,7 @@
             self.nonce.hash ^
             self.cryptoProperties.hash ^
             self.fiatProperties.hash ^
+            self.cardProperties.hash ^
             self.exchange.hash ^
             self.submittedAt.hash ^
             self.confirmedAt.hash ^
@@ -144,7 +150,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ exchange:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.exchange, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ cardProperties:%@ exchange:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.cardProperties, self.exchange, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

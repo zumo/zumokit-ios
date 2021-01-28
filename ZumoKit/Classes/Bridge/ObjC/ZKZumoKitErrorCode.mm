@@ -16,6 +16,10 @@ NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET = @"amount_not_set";
 
 NSString * __nonnull const ZKZumoKitErrorCodeAPISERVICEERROR = @"api_service_error";
 
+NSString * __nonnull const ZKZumoKitErrorCodeCARDNOTFOUND = @"card_not_found";
+
+NSString * __nonnull const ZKZumoKitErrorCodeCARDSERVICEERROR = @"card_service_error";
+
 NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND = @"change_account_not_found";
 
 NSString * __nonnull const ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE = @"change_index_out_of_range";
@@ -31,6 +35,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW = @"exchange_a
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGECURRENCIESMUSTBEDIFFERENT = @"exchange_currencies_must_be_different";
 
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE = @"exchange_return_value_negative";
+
+NSString * __nonnull const ZKZumoKitErrorCodeFIATACCOUNTEXPECTED = @"fiat_account_expected";
 
 NSString * __nonnull const ZKZumoKitErrorCodeGASOVERFLOW = @"gas_overflow";
 
@@ -76,6 +82,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE = @"invalid_
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE = @"invalid_transaction_value";
 
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET = @"invalid_user_token_set";
+
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE = @"invalid_websocket_response";
 
 NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION = @"known_transaction";
@@ -111,8 +119,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeUTXOSIGNINGERROR = @"utxo_signing_e
 NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET = @"amount_provided_when_send_max_set";
 
 NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED = @"wallet_limit_exceeded";
-
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET = @"invalid_user_token_set";
 
 @implementation ZKZumoKitErrorCode
 

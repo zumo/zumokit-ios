@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-/** Time intervals, such as 'hour', 'week' or 'year' */
+/** Time intervals, for example 'hour'. */
 @interface ZKTimeInterval : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)timeInterval;

@@ -59,15 +59,17 @@ NS_ASSUME_NONNULL_BEGIN
 /**
 * Initializes ZumoKit SDK. Should only be called once.
 *
-* @param apiKey          ZumoKit Api-Key
-* @param apiUrl            ZumoKit API url
-* @param txServiceUrl  ZumoKit Transaction Service url
+* @param apiKey                         ZumoKit API Key
+* @param apiUrl                           ZumoKit API URL
+* @param transactionServiceUrl  ZumoKit Transaction Service URL
+* @param cardServiceUrl             ZumoKit Card Service URL
 *
 * @return ZumoKit instance
 */
 - (instancetype)initWithApiKey:(NSString *)apiKey
                         apiUrl:(NSString *)apiUrl
-                  txServiceUrl:(NSString *)txServiceUrl;
+         transactionServiceUrl:(NSString *)transactionServiceUrl
+                cardServiceUrl:(NSString *)cardServiceUrl;
 
 /**
 * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

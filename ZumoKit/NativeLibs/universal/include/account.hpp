@@ -5,10 +5,12 @@
 
 #include "account_crypto_properties.hpp"
 #include "account_fiat_properties.hpp"
+#include "card.hpp"
 #include "stdx/optional.hpp"
 #include "zumo/decimal.hpp"
 #include <string>
 #include <utility>
+#include <vector>
 
 namespace zumo {
 
@@ -44,6 +46,8 @@ struct Account final {
     std::experimental::optional<AccountCryptoProperties> crypto_properties;
     /** Account fiat properties if account is a fiat account, otherwise null. */
     std::experimental::optional<AccountFiatProperties> fiat_properties;
+    /** Cards associated with this account. */
+    std::vector<Card> cards;
 
     friend bool operator==(const Account& lhs, const Account& rhs);
     friend bool operator!=(const Account& lhs, const Account& rhs);
@@ -56,7 +60,8 @@ struct Account final {
             ::zumo::Decimal balance_,
             bool has_nominated_account_,
             std::experimental::optional<AccountCryptoProperties> crypto_properties_,
-            std::experimental::optional<AccountFiatProperties> fiat_properties_)
+            std::experimental::optional<AccountFiatProperties> fiat_properties_,
+            std::vector<Card> cards_)
     : id(std::move(id_))
     , currency_type(std::move(currency_type_))
     , currency_code(std::move(currency_code_))
@@ -66,6 +71,7 @@ struct Account final {
     , has_nominated_account(std::move(has_nominated_account_))
     , crypto_properties(std::move(crypto_properties_))
     , fiat_properties(std::move(fiat_properties_))
+    , cards(std::move(cards_))
     {}
 };
 

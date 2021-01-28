@@ -10,7 +10,11 @@
 #import "ZKAccountCallback+Private.h"
 #import "ZKAccountDataListener+Private.h"
 #import "ZKAccountFiatPropertiesCallback+Private.h"
+#import "ZKAddress+Private.h"
+#import "ZKCardCallback+Private.h"
+#import "ZKCardDetailsCallback+Private.h"
 #import "ZKMnemonicCallback+Private.h"
+#import "ZKPinCallback+Private.h"
 #import "ZKSuccessCallback+Private.h"
 #import "ZKWalletCallback+Private.h"
 #include <exception>
@@ -65,11 +69,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
              dateOfBirth:(nonnull NSString *)dateOfBirth
                    email:(nonnull NSString *)email
                    phone:(nonnull NSString *)phone
-            addressLine1:(nonnull NSString *)addressLine1
-            addressLine2:(nullable NSString *)addressLine2
-                 country:(nonnull NSString *)country
-                postCode:(nonnull NSString *)postCode
-                postTown:(nonnull NSString *)postTown
+                 address:(nonnull ZKAddress *)address
                 callback:(nullable id<ZKSuccessCallback>)callback {
     try {
         _cppRefHandle.get()->make_fiat_customer(::djinni::String::toCpp(network),
@@ -79,11 +79,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                                                 ::djinni::String::toCpp(dateOfBirth),
                                                 ::djinni::String::toCpp(email),
                                                 ::djinni::String::toCpp(phone),
-                                                ::djinni::String::toCpp(addressLine1),
-                                                ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(addressLine2),
-                                                ::djinni::String::toCpp(country),
-                                                ::djinni::String::toCpp(postCode),
-                                                ::djinni::String::toCpp(postTown),
+                                                ::djinni_generated::Address::toCpp(address),
                                                 ::djinni_generated::SuccessCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
@@ -103,6 +99,66 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         _cppRefHandle.get()->get_nominated_account_fiat_properties(::djinni::String::toCpp(accountId),
                                                                    ::djinni_generated::AccountFiatPropertiesCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)createCard:(nonnull NSString *)fiatAccountId
+          cardType:(nonnull NSString *)cardType
+         firstName:(nonnull NSString *)firstName
+          lastName:(nonnull NSString *)lastName
+             title:(nullable NSString *)title
+       dateOfBirth:(nonnull NSString *)dateOfBirth
+      mobileNumber:(nonnull NSString *)mobileNumber
+           address:(nonnull ZKAddress *)address
+          callback:(nullable id<ZKCardCallback>)callback {
+    try {
+        _cppRefHandle.get()->create_card(::djinni::String::toCpp(fiatAccountId),
+                                         ::djinni::String::toCpp(cardType),
+                                         ::djinni::String::toCpp(firstName),
+                                         ::djinni::String::toCpp(lastName),
+                                         ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(title),
+                                         ::djinni::String::toCpp(dateOfBirth),
+                                         ::djinni::String::toCpp(mobileNumber),
+                                         ::djinni_generated::Address::toCpp(address),
+                                         ::djinni_generated::CardCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)setCardStatus:(nonnull NSString *)cardId
+           cardStatus:(nonnull NSString *)cardStatus
+                  pan:(nullable NSString *)pan
+                 cvv2:(nullable NSString *)cvv2
+             callback:(nullable id<ZKSuccessCallback>)callback {
+    try {
+        _cppRefHandle.get()->set_card_status(::djinni::String::toCpp(cardId),
+                                             ::djinni::String::toCpp(cardStatus),
+                                             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(pan),
+                                             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(cvv2),
+                                             ::djinni_generated::SuccessCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)revealCardDetails:(nonnull NSString *)cardId
+                 callback:(nullable id<ZKCardDetailsCallback>)callback {
+    try {
+        _cppRefHandle.get()->reveal_card_details(::djinni::String::toCpp(cardId),
+                                                 ::djinni_generated::CardDetailsCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)revealPin:(nonnull NSString *)cardId
+         callback:(nullable id<ZKPinCallback>)callback {
+    try {
+        _cppRefHandle.get()->reveal_pin(::djinni::String::toCpp(cardId),
+                                        ::djinni_generated::PinCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)unblockPin:(nonnull NSString *)cardId
+          callback:(nullable id<ZKSuccessCallback>)callback {
+    try {
+        _cppRefHandle.get()->unblock_pin(::djinni::String::toCpp(cardId),
+                                         ::djinni_generated::SuccessCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
