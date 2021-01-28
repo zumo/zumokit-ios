@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 
 /**
- * Transaction status, such as 'PENDING' and 'CONFIRMED'.
+ * Transaction status, for example 'PENDING'.
  * <p>
  * Once transaction is submitted it has to be confirmed. This might take variable amount of time depending on the selected fee rate.
  * Once a transaction is confirmed its status will change from pending to confirmed.
@@ -34,3 +34,5 @@ extern NSString * __nonnull const ZKTransactionStatusRESUBMITTED;
  * submitted transaction and with with the same nonce as that previously submitted transaction.
  */
 extern NSString * __nonnull const ZKTransactionStatusCANCELLED;
+/** Card transaction was reversed. */
+extern NSString * __nonnull const ZKTransactionStatusREVERSED;

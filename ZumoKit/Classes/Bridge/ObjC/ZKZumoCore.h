@@ -10,9 +10,9 @@
 @class ZKZumoCore;
 @protocol ZKChangeListener;
 @protocol ZKHistoricalExchangeRatesCallback;
-@protocol ZKHttpImpl;
+@protocol ZKHttpProvider;
 @protocol ZKUserCallback;
-@protocol ZKWebSocketImpl;
+@protocol ZKWebSocketFactory;
 
 
 /** Entry point to ZumoKit C++ SDK */
@@ -27,19 +27,21 @@
 /**
  * Initializes ZumoKit SDK. Should only be called once.
  *
- * @param httpImpl        HTTP implementation
- * @param wsImpl          WebSocet implementation
- * @param apiKey          ZumoKit Api-Key
- * @param apiUrl         ZumoKit API url
- * @param txServiceUrl  ZumoKit Transaction Service url
+ * @param httpProvider           HTTP provider
+ * @param webSocketFactory      WebSocket factory
+ * @param apiKey                 ZumoKit API Key
+ * @param apiUrl                 ZumoKit API URL
+ * @param transactionServiceUrl ZumoKit Transaction Service URL
+ * @param cardServiceUrl        ZumoKit Card Service URL
  *
  * @return ZumoKit instance
  */
-+ (nullable ZKZumoCore *)init:(nullable id<ZKHttpImpl>)httpImpl
-                       wsImpl:(nullable id<ZKWebSocketImpl>)wsImpl
++ (nullable ZKZumoCore *)init:(nullable id<ZKHttpProvider>)httpProvider
+             webSocketFactory:(nullable id<ZKWebSocketFactory>)webSocketFactory
                        apiKey:(nonnull NSString *)apiKey
                        apiUrl:(nonnull NSString *)apiUrl
-                 txServiceUrl:(nonnull NSString *)txServiceUrl;
+        transactionServiceUrl:(nonnull NSString *)transactionServiceUrl
+               cardServiceUrl:(nonnull NSString *)cardServiceUrl;
 
 /**
  * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

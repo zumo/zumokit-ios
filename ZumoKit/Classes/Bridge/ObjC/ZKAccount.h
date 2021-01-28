@@ -3,6 +3,7 @@
 
 #import "ZKAccountCryptoProperties.h"
 #import "ZKAccountFiatProperties.h"
+#import "ZKCard.h"
 #import <Foundation/Foundation.h>
 
 /** Record containing account details. */
@@ -15,7 +16,8 @@
                            balance:(nonnull NSDecimalNumber *)balance
                hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
-                    fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties;
+                    fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
+                             cards:(nonnull NSArray<ZKCard *> *)cards;
 + (nonnull instancetype)accountWithId:(nonnull NSString *)id
                          currencyType:(nonnull NSString *)currencyType
                          currencyCode:(nonnull NSString *)currencyCode
@@ -24,7 +26,8 @@
                               balance:(nonnull NSDecimalNumber *)balance
                   hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
-                       fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties;
+                       fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
+                                cards:(nonnull NSArray<ZKCard *> *)cards;
 
 /** Unique account identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -64,5 +67,8 @@
 
 /** Account fiat properties if account is a fiat account, otherwise null. */
 @property (nonatomic, readonly, nullable) ZKAccountFiatProperties * fiatProperties;
+
+/** Cards associated with this account. */
+@property (nonatomic, readonly, nonnull) NSArray<ZKCard *> * cards;
 
 @end

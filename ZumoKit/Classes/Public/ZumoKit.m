@@ -8,8 +8,8 @@
 
 #import "ZumoKit.h"
 #import "ZKZumoCore.h"
-#import "HttpService.h"
-#import "WebSocketService.h"
+#import "HttpProvider.h"
+#import "WebSocketFactory.h"
 #import "UserCallback.h"
 #import "HistoricalExchangeRatesCallback.h"
 #import <objc/runtime.h>
@@ -24,29 +24,21 @@ ZKZumoCore *zumoCore;
 
 - (instancetype)initWithApiKey:(NSString *)apiKey
                         apiUrl:(NSString *)apiUrl
-                  txServiceUrl:(NSString *)txServiceUrl {
+         transactionServiceUrl:(NSString *)transactionServiceUrl
+                cardServiceUrl:(NSString *)cardServiceUrl {
 
     if( self = [super init] ) {
-
-        // Init the impls needed for the C++ core
-        HttpService *httpImpl = [[HttpService alloc] init];
-
-        // Convert the txServiceUrl to an actual NSURL and pass to wsImpl.
-        NSURL *txWssUrl = [[NSURL alloc] initWithString:[txServiceUrl
-                                                      stringByReplacingOccurrencesOfString:@"https"
-                                                      withString:@"wss"]];
-        WebSocketService *wsImpl = [[WebSocketService alloc] initWithURL:txWssUrl];
+        // Init the providers needed for the C++ core
+        HttpProvider *httpProvider = [[HttpProvider alloc] init];
+        WebSocketFactory *wsFactory = [[WebSocketFactory alloc] init];
 
         // Initialize the C++ core
-        zumoCore = [ZKZumoCore init: httpImpl
-                             wsImpl: wsImpl
+        zumoCore = [ZKZumoCore init: httpProvider
+                   webSocketFactory: wsFactory
                              apiKey: apiKey
                              apiUrl: apiUrl
-                       txServiceUrl: txServiceUrl];
-
-        // Connect to the websocket
-        [wsImpl connect];
-
+              transactionServiceUrl: transactionServiceUrl
+                     cardServiceUrl: cardServiceUrl];
     }
 
     return self;

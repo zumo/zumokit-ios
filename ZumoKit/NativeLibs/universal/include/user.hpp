@@ -13,10 +13,14 @@ namespace zumo {
 class AccountCallback;
 class AccountDataListener;
 class AccountFiatPropertiesCallback;
+class CardCallback;
+class CardDetailsCallback;
 class MnemonicCallback;
+class PinCallback;
 class SuccessCallback;
 class WalletCallback;
 struct Account;
+struct Address;
 
 /**
  * User class provides methods for managing user wallet and accounts.
@@ -59,16 +63,13 @@ public:
      * @param  middle_name    middle name or null
      * @param  last_name      last name
      * @param  date_of_birth  date of birth in ISO 8601 format, e.g '2020-08-12'
+     * @param  email          email
      * @param  phone          phone number
-     * @param  address_line_1 address line 1
-     * @param  address_line_2 adress line 2 or null
-     * @param  country        country code in ISO 3166-1 Alpha-2 format, e.g. 'GB'
-     * @param  post_code      post code
-     * @param  post_town      post town
-     * @param callback        an interface to receive the result or error
+     * @param  address        home address
+     * @param  callback       an interface to receive the result or error
      * @see    NetworkType
      */
-    virtual void make_fiat_customer(const std::string & network, const std::string & first_name, const std::experimental::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const std::string & address_line_1, const std::experimental::optional<std::string> & address_line_2, const std::string & country, const std::string & post_code, const std::string & post_town, const std::shared_ptr<SuccessCallback> & callback) = 0;
+    virtual void make_fiat_customer(const std::string & network, const std::string & first_name, const std::experimental::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const Address & address, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     /**
      * Create fiat account on specified network and currency code. User must already be fiat customer on specified network.
@@ -90,6 +91,59 @@ public:
      * @see AccountFiatProperties
      */
     virtual void get_nominated_account_fiat_properties(const std::string & account_id, const std::shared_ptr<AccountFiatPropertiesCallback> & callback) = 0;
+
+    /**
+     * Create card for a fiat account.
+     * @param  fiat_account_id fiat account id
+     * @param  card_type       'VIRTUAL' or 'PHYSICAL'
+     * @param  first_name      card holder first name
+     * @param  last_name       card holder last name
+     * @param  title           card holder title or null
+     * @param  date_of_birth   card holder date of birth in ISO 8601 format, e.g '2020-08-12'
+     * @param  mobile_number   card holder mobile number, starting with a '+', followed by the country code and then the mobile number
+     * @param  address         card holder address
+     * @param  callback        an interface to receive the result or error
+     * @see    Card
+     * @see    CardType
+     */
+    virtual void create_card(const std::string & fiat_account_id, const std::string & card_type, const std::string & first_name, const std::string & last_name, const std::experimental::optional<std::string> & title, const std::string & date_of_birth, const std::string & mobile_number, const Address & address, const std::shared_ptr<CardCallback> & callback) = 0;
+
+    /**
+     * Set card status to 'ACTIVE', 'BLOCKED' or 'CANCELLED'. 
+     * - To block card, set card status to 'BLOCKED'. 
+     * - To activate a physical card, set card status to 'ACTIVE' and provide PAN and CVV2 fields.
+     * - To cancel a card, set card status to 'CANCELLED'.
+     * - To unblock a card, set card status to 'ACTIVE.'. 
+     * @param  card_id         card id
+     * @param  card_status     new card status
+     * @param  pan             PAN when activating a physical card, null otherwise
+     * @param  cvv2            CVV2 when activating a physical card, null otherwise
+     * @param  callback        an interface to receive the result or error
+     * @see    CardStatus
+     */
+    virtual void set_card_status(const std::string & card_id, const std::string & card_status, const std::experimental::optional<std::string> & pan, const std::experimental::optional<std::string> & cvv2, const std::shared_ptr<SuccessCallback> & callback) = 0;
+
+    /**
+     * Reveals sensitive card details.
+     * @param  card_id         card id
+     * @param  callback        an interface to receive the result or error
+     * @see    CardDetails
+     */
+    virtual void reveal_card_details(const std::string & card_id, const std::shared_ptr<CardDetailsCallback> & callback) = 0;
+
+    /**
+     * Reveal card PIN.
+     * @param  card_id         card id
+     * @param  callback        an interface to receive the result or error
+     */
+    virtual void reveal_pin(const std::string & card_id, const std::shared_ptr<PinCallback> & callback) = 0;
+
+    /**
+     * Unblock card PIN.
+     * @param  card_id         card id
+     * @param  callback        an interface to receive the result or error
+     */
+    virtual void unblock_pin(const std::string & card_id, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     /**
      * Create user wallet seeded by provided mnemonic and encrypted with user's password.

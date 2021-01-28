@@ -26,6 +26,10 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND;
 extern NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET;
 /** Invalid response received from ZumoKit API. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeAPISERVICEERROR;
+/** Requested card not found. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeCARDNOTFOUND;
+/** Invalid response received from ZumoKit Card Service API. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeCARDSERVICEERROR;
 /** Requested change account not found. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND;
 /** Change output index out of range. */
@@ -45,6 +49,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW;
 extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGECURRENCIESMUSTBEDIFFERENT;
 /** Exchange amount too low. Fees exceed return value. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE;
+/** Invalid account provided. Fiat accounted expected. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeFIATACCOUNTEXPECTED;
 /** Gas too long. Cumulative gas limit and gas price should not exceed 30 bytes. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeGASOVERFLOW;
 /** Gas too low. Gas price and gas limit should be higher than 0. */
@@ -99,6 +105,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE;
 /** Invalid transaction value. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE;
+/** Invalid user token set. User token set should be a valid stringified JSON with accessToken, refreshToken and expiresIn properties. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET;
 /** Invalid response received from WebSocket. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE;
 /** Transaction already submitted. */
@@ -135,5 +143,3 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeUTXOSIGNINGERROR;
 extern NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET;
 /** Wallet could not be created. Wallet already exists. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeWALLETLIMITEXCEEDED;
-/** Invalid user token set. User token set should be a valid stringified JSON with accessToken, refreshToken and expiresIn properties. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET;

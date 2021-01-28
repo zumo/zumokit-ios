@@ -9,7 +9,7 @@
 namespace zumo {
 
 /**
- * Exchange status, such as 'PENDING', 'DEPOSITED' and 'CONFIRMED'.
+ * Exchange status, for example 'PENDING'.
  * <p>
  * Once exchange is submitted it has to be confirmed. Once exchange is confirmed its status will change from pending to confirmed.
  * <p>

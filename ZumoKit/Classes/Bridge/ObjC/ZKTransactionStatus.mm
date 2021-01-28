@@ -18,6 +18,8 @@ NSString * __nonnull const ZKTransactionStatusRESUBMITTED = @"RESUBMITTED";
 
 NSString * __nonnull const ZKTransactionStatusCANCELLED = @"CANCELLED";
 
+NSString * __nonnull const ZKTransactionStatusREVERSED = @"REVERSED";
+
 @implementation ZKTransactionStatus
 
 - (nonnull instancetype)init

@@ -14,6 +14,9 @@
 #import "ZKSuccessCallback.h"
 #import "ZKAccountCallback.h"
 #import "ZKAccountFiatPropertiesCallback.h"
+#import "ZKCardCallback.h"
+#import "ZKCardDetailsCallback.h"
+#import "ZKPinCallback.h"
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKWalletCompletionBlock)(ZKWallet *_Nullable wallet, NSError *_Nullable error);
@@ -29,6 +32,15 @@ typedef void (^ZKAccountCompletionBlock)(ZKAccount *_Nullable account, NSError *
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKAccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_Nullable accountFiatProperties, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser class. */
+typedef void (^ZKCardCompletionBlock)(ZKCard *_Nullable card, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser class. */
+typedef void (^ZKCardDetailsCompletionBlock)(ZKCardDetails *_Nullable card, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser class. */
+typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
 
 @interface ZKUser (ZKUserCallbackCompletion)
 
@@ -64,7 +76,7 @@ typedef void (^ZKAccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *
 
 /**
 <code>makeFiatCustomer</code> completion handler extension.
-@see `-[ZKUser makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:addressLine1:addressLine2:country:postCode:postTown:callback:]`
+@see `-[ZKUser makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:]`
 */
 - (void)makeFiatCustomer:(nonnull NSString *)network
                firstName:(nonnull NSString *)firstName
@@ -73,11 +85,7 @@ typedef void (^ZKAccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *
              dateOfBirth:(nonnull NSString *)dateOfBirth
                    email:(nonnull NSString *)email
                    phone:(nonnull NSString *)phone
-            addressLine1:(nonnull NSString *)addressLine1
-            addressLine2:(nullable NSString *)addressLine2
-                 country:(nonnull NSString *)country
-                postCode:(nonnull NSString *)postCode
-                postTown:(nonnull NSString *)postTown
+                 address:(nonnull ZKAddress *)address
               completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
 
 /**
@@ -94,6 +102,51 @@ typedef void (^ZKAccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *
 */
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
                                completion:(_Nonnull ZKAccountFiatPropertiesCompletionBlock)completionHandler;
+
+/**
+<code>createCard</code> completion handler extension.
+@see `-[ZKUser createCard:cardType:firstName:lastName:title:dateOfBirth:mobileNumber:address:callback:]`
+*/
+- (void)createCard:(nonnull NSString *)fiatAccountId
+          cardType:(nonnull NSString *)cardType
+         firstName:(nonnull NSString *)firstName
+          lastName:(nonnull NSString *)lastName
+             title:(nullable NSString *)title
+       dateOfBirth:(nonnull NSString *)dateOfBirth
+      mobileNumber:(nonnull NSString *)mobileNumber
+           address:(nonnull ZKAddress *)address
+        completion:(_Nonnull ZKCardCompletionBlock)completionHandler;
+
+/**
+<code>setCardStatus</code> completion handler extension.
+@see `-[ZKUser setCardStatus:pan:cvv2:callback:]`
+*/
+- (void)setCardStatus:(nonnull NSString *)cardId
+           cardStatus:(nonnull NSString *)cardStatus
+                  pan:(nullable NSString *)pan
+                 cvv2:(nullable NSString *)cvv2
+           completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
+
+/**
+<code>revealCardDetails</code> completion handler extension.
+@see `-[ZKUser revealCardDetails:callback:]`
+*/
+- (void)revealCardDetails:(nonnull NSString *)cardId
+               completion:(_Nonnull ZKCardDetailsCompletionBlock)completionHandler;
+
+/**
+<code>revealPin</code> completion handler extension.
+@see `-[ZKUser revealPin:callback:]`
+*/
+- (void)revealPin:(nonnull NSString *)cardId
+       completion:(_Nonnull ZKPinCompletionBlock)completionHandler;
+
+/**
+<code>unblockPin</code> completion handler extension.
+@see `-[ZKUser unblockPin:callback:]`
+*/
+- (void)unblockPin:(nonnull NSString *)cardId
+       completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
 
 @end
 

@@ -42,7 +42,8 @@
     // ZumoKit config
     NSString *apiKey = [mainBundle objectForInfoDictionaryKey:@"API_KEY"];
     NSString *apiUrl = [mainBundle objectForInfoDictionaryKey:@"API_URL"];
-    NSString *txServiceUrl = [mainBundle objectForInfoDictionaryKey:@"TX_SERVICE_URL"];
+    NSString *transactionServiceUrl = [mainBundle objectForInfoDictionaryKey:@"TRANSACTION_SERVICE_URL"];
+    NSString *cardServiceUrl = [mainBundle objectForInfoDictionaryKey:@"CARD_SERVICE_URL"];
     
     // Client config
     NSURL *clientZumoKitAuthEndpoint = [NSURL URLWithString:[mainBundle objectForInfoDictionaryKey:@"CLIENT_ZUMOKIT_AUTH_ENDPOINT"]];
@@ -53,7 +54,8 @@
     // Initialize ZumoKit
     _zumoKit =  [[ZumoKit alloc] initWithApiKey:apiKey
                                          apiUrl:apiUrl
-                                   txServiceUrl:txServiceUrl];
+                          transactionServiceUrl:transactionServiceUrl
+                                 cardServiceUrl:cardServiceUrl];
     
     // Get ZumoKit user token
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:clientZumoKitAuthEndpoint];

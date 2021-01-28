@@ -10,12 +10,12 @@
 #import "ZKExchangeRate+Private.h"
 #import "ZKExchangeSetting+Private.h"
 #import "ZKHistoricalExchangeRatesCallback+Private.h"
-#import "ZKHttpImpl+Private.h"
+#import "ZKHttpProvider+Private.h"
 #import "ZKTransactionFeeRate+Private.h"
 #import "ZKUser+Private.h"
 #import "ZKUserCallback+Private.h"
 #import "ZKUtils+Private.h"
-#import "ZKWebSocketImpl+Private.h"
+#import "ZKWebSocketFactory+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -47,17 +47,19 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-+ (nullable ZKZumoCore *)init:(nullable id<ZKHttpImpl>)httpImpl
-                       wsImpl:(nullable id<ZKWebSocketImpl>)wsImpl
++ (nullable ZKZumoCore *)init:(nullable id<ZKHttpProvider>)httpProvider
+             webSocketFactory:(nullable id<ZKWebSocketFactory>)webSocketFactory
                        apiKey:(nonnull NSString *)apiKey
                        apiUrl:(nonnull NSString *)apiUrl
-                 txServiceUrl:(nonnull NSString *)txServiceUrl {
+        transactionServiceUrl:(nonnull NSString *)transactionServiceUrl
+               cardServiceUrl:(nonnull NSString *)cardServiceUrl {
     try {
-        auto objcpp_result_ = ::zumo::ZumoCore::init(::djinni_generated::HttpImpl::toCpp(httpImpl),
-                                                     ::djinni_generated::WebSocketImpl::toCpp(wsImpl),
+        auto objcpp_result_ = ::zumo::ZumoCore::init(::djinni_generated::HttpProvider::toCpp(httpProvider),
+                                                     ::djinni_generated::WebSocketFactory::toCpp(webSocketFactory),
                                                      ::djinni::String::toCpp(apiKey),
                                                      ::djinni::String::toCpp(apiUrl),
-                                                     ::djinni::String::toCpp(txServiceUrl));
+                                                     ::djinni::String::toCpp(transactionServiceUrl),
+                                                     ::djinni::String::toCpp(cardServiceUrl));
         return ::djinni_generated::ZumoCore::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

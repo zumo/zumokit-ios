@@ -5,6 +5,7 @@
 
 #include "exchange.hpp"
 #include "stdx/optional.hpp"
+#include "transaction_card_properties.hpp"
 #include "transaction_crypto_properties.hpp"
 #include "transaction_fiat_properties.hpp"
 #include "zumo/decimal.hpp"
@@ -68,6 +69,11 @@ struct Transaction final {
      */
     std::experimental::optional<TransactionFiatProperties> fiat_properties;
     /**
+     * Card properties if it is a card transaction, null otherwise.
+     * @see TransactionType
+     */
+    std::experimental::optional<TransactionCardProperties> card_properties;
+    /**
      * Exchange properties if it is a transaction associated with an exchange, null otherwise.
      * @see TransactionType
      */
@@ -97,6 +103,7 @@ struct Transaction final {
                 std::experimental::optional<std::string> nonce_,
                 std::experimental::optional<TransactionCryptoProperties> crypto_properties_,
                 std::experimental::optional<TransactionFiatProperties> fiat_properties_,
+                std::experimental::optional<TransactionCardProperties> card_properties_,
                 std::experimental::optional<Exchange> exchange_,
                 std::experimental::optional<int32_t> submitted_at_,
                 std::experimental::optional<int32_t> confirmed_at_,
@@ -116,6 +123,7 @@ struct Transaction final {
     , nonce(std::move(nonce_))
     , crypto_properties(std::move(crypto_properties_))
     , fiat_properties(std::move(fiat_properties_))
+    , card_properties(std::move(card_properties_))
     , exchange(std::move(exchange_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
