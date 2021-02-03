@@ -6,8 +6,8 @@
 #include "account.hpp"
 #include "exchange_rate.hpp"
 #include "exchange_setting.hpp"
-#include "stdx/optional.hpp"
 #include "zumo/decimal.hpp"
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -16,7 +16,7 @@ namespace zumo {
 /** Record containing result of the compose exchange method on Wallet object. */
 struct ComposedExchange final {
     /** Signed transaction for a crypto transaction, null otherwise. */
-    std::experimental::optional<std::string> signed_transaction;
+    std::optional<std::string> signed_transaction;
     /** Source account. */
     Account from_account;
     /** Target account. */
@@ -29,7 +29,7 @@ struct ComposedExchange final {
      * Zumo Exchange Service wallet address where outgoing crypto funds were deposited,
      * null for exchanges from fiat currencies.
      */
-    std::experimental::optional<std::string> exchange_address;
+    std::optional<std::string> exchange_address;
     /** Exchange amount in source account currency. */
     ::zumo::Decimal amount;
     /**
@@ -55,12 +55,12 @@ struct ComposedExchange final {
     friend bool operator==(const ComposedExchange& lhs, const ComposedExchange& rhs);
     friend bool operator!=(const ComposedExchange& lhs, const ComposedExchange& rhs);
 
-    ComposedExchange(std::experimental::optional<std::string> signed_transaction_,
+    ComposedExchange(std::optional<std::string> signed_transaction_,
                      Account from_account_,
                      Account to_account_,
                      ExchangeRate exchange_rate_,
                      ExchangeSetting exchange_setting_,
-                     std::experimental::optional<std::string> exchange_address_,
+                     std::optional<std::string> exchange_address_,
                      ::zumo::Decimal amount_,
                      ::zumo::Decimal return_amount_,
                      ::zumo::Decimal outgoing_transaction_fee_,

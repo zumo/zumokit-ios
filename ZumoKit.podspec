@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name             = 'ZumoKit'
-  s.version          = '2.3.0-beta.10'
+  s.version          = '2.3.0-beta.11'
   s.summary          = 'ZumoKit is a Wallet as a Service SDK'
   s.homepage         = 'https://developers.zumo.money/docs/installation/ios.html'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = { 'Zumo' => 'hello@zumo.money' }
   s.source           = { :git => 'https://github.com/zumo/zumokit-ios.git', :tag => "#{s.version}" }
   s.platform         = :ios
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
   s.source_files = [
     'ZumoKit/Classes/**/*',
     'ZumoKit/NativeLibs/universal/include/**/*'
@@ -20,8 +20,9 @@ Pod::Spec.new do |s|
   s.private_header_files = [
     'ZumoKit/Classes/Bridge/ObjC/ZKZumoCore.h',
     'ZumoKit/Classes/Bridge/ObjC/ZKHttpCallback.h',
-    'ZumoKit/Classes/Bridge/ObjC/ZKHttpImpl.h',
-    'ZumoKit/Classes/Bridge/ObjC/ZKWebSocketImpl.h',
+    'ZumoKit/Classes/Bridge/ObjC/ZKHttpProvider.h',
+    'ZumoKit/Classes/Bridge/ObjC/ZKWebSocket.h',
+    'ZumoKit/Classes/Bridge/ObjC/ZKWebSocketFactory.h',
     'ZumoKit/Classes/Bridge/ObjC/ZKWebSocketListener.h'
   ]
   s.vendored_libraries = 'ZumoKit/NativeLibs/universal/**/*.a'
@@ -31,7 +32,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'HEADER_SEARCH_PATHS' => '$(inherited) "$(PODS_ROOT)/ZumoKit/NativeLibs/universal/include"',
     'OTHER_CFLAGS' => '-fmodules -fcxx-modules',
-    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
     'CLANG_CXX_LIBRARY' => 'libc++',
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
   }

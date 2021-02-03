@@ -4,12 +4,12 @@
 #pragma once
 
 #include "exchange.hpp"
-#include "stdx/optional.hpp"
 #include "transaction_card_properties.hpp"
 #include "transaction_crypto_properties.hpp"
 #include "transaction_fiat_properties.hpp"
 #include "zumo/decimal.hpp"
 #include <cstdint>
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -35,13 +35,13 @@ struct Transaction final {
      */
     std::string direction;
     /** Sender integrator user identifier or null if it is external user. */
-    std::experimental::optional<std::string> from_user_id;
+    std::optional<std::string> from_user_id;
     /** Recipient integrator user identifier or null if it is external user. */
-    std::experimental::optional<std::string> to_user_id;
+    std::optional<std::string> to_user_id;
     /** Sender account identifier if it is internal transaction or null otherwise. */
-    std::experimental::optional<std::string> from_account_id;
+    std::optional<std::string> from_account_id;
     /** Recipient account identifier if it is internal transaction or null otherwise. */
-    std::experimental::optional<std::string> to_account_id;
+    std::optional<std::string> to_account_id;
     /**
      * Network type.
      * @see NetworkType
@@ -53,35 +53,35 @@ struct Transaction final {
      */
     std::string status;
     /** Amount in transaction currency or null if transaction is Ethereum contract deploy. */
-    std::experimental::optional<::zumo::Decimal> amount;
+    std::optional<::zumo::Decimal> amount;
     /** Transaction fee in transaction currency or null, if not yet available. */
-    std::experimental::optional<::zumo::Decimal> fee;
+    std::optional<::zumo::Decimal> fee;
     /** Transaction nonce or null. Used to prevent double spend. */
-    std::experimental::optional<std::string> nonce;
+    std::optional<std::string> nonce;
     /**
      * Crypto properties if it is a crypto transaction, null otherwise.
      * @see TransactionType
      */
-    std::experimental::optional<TransactionCryptoProperties> crypto_properties;
+    std::optional<TransactionCryptoProperties> crypto_properties;
     /**
      * Fiat properties if it is a fiat transaction, null otherwise.
      * @see TransactionType
      */
-    std::experimental::optional<TransactionFiatProperties> fiat_properties;
+    std::optional<TransactionFiatProperties> fiat_properties;
     /**
      * Card properties if it is a card transaction, null otherwise.
      * @see TransactionType
      */
-    std::experimental::optional<TransactionCardProperties> card_properties;
+    std::optional<TransactionCardProperties> card_properties;
     /**
      * Exchange properties if it is a transaction associated with an exchange, null otherwise.
      * @see TransactionType
      */
-    std::experimental::optional<Exchange> exchange;
+    std::optional<Exchange> exchange;
     /** Epoch timestamp when transaction was submitted or null for incoming transactions from outside of Zumo ecosystem. */
-    std::experimental::optional<int32_t> submitted_at;
+    std::optional<int32_t> submitted_at;
     /** Epoch timestamp when transaction was submitted or null if transaction was not confirmed yet. */
-    std::experimental::optional<int32_t> confirmed_at;
+    std::optional<int32_t> confirmed_at;
     /** Epoch timestamp, minimum non-null value between submitted at and confirmed at timestamps. */
     int32_t timestamp;
 
@@ -92,21 +92,21 @@ struct Transaction final {
                 std::string type_,
                 std::string currency_code_,
                 std::string direction_,
-                std::experimental::optional<std::string> from_user_id_,
-                std::experimental::optional<std::string> to_user_id_,
-                std::experimental::optional<std::string> from_account_id_,
-                std::experimental::optional<std::string> to_account_id_,
+                std::optional<std::string> from_user_id_,
+                std::optional<std::string> to_user_id_,
+                std::optional<std::string> from_account_id_,
+                std::optional<std::string> to_account_id_,
                 std::string network_,
                 std::string status_,
-                std::experimental::optional<::zumo::Decimal> amount_,
-                std::experimental::optional<::zumo::Decimal> fee_,
-                std::experimental::optional<std::string> nonce_,
-                std::experimental::optional<TransactionCryptoProperties> crypto_properties_,
-                std::experimental::optional<TransactionFiatProperties> fiat_properties_,
-                std::experimental::optional<TransactionCardProperties> card_properties_,
-                std::experimental::optional<Exchange> exchange_,
-                std::experimental::optional<int32_t> submitted_at_,
-                std::experimental::optional<int32_t> confirmed_at_,
+                std::optional<::zumo::Decimal> amount_,
+                std::optional<::zumo::Decimal> fee_,
+                std::optional<std::string> nonce_,
+                std::optional<TransactionCryptoProperties> crypto_properties_,
+                std::optional<TransactionFiatProperties> fiat_properties_,
+                std::optional<TransactionCardProperties> card_properties_,
+                std::optional<Exchange> exchange_,
+                std::optional<int32_t> submitted_at_,
+                std::optional<int32_t> confirmed_at_,
                 int32_t timestamp_)
     : id(std::move(id_))
     , type(std::move(type_))

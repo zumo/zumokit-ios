@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "stdx/optional.hpp"
 #include <memory>
+#include <optional>
 #include <string>
 #include <unordered_map>
 
@@ -82,7 +82,7 @@ public:
      *
      * @return exchange rate or null
      */
-    virtual std::experimental::optional<ExchangeRate> get_exchange_rate(const std::string & from_currency, const std::string & to_currency) = 0;
+    virtual std::optional<ExchangeRate> get_exchange_rate(const std::string & from_currency, const std::string & to_currency) = 0;
 
     /**
      * Get all available exchange rates.
@@ -99,7 +99,7 @@ public:
      *
      * @return exchange setting or null
      */
-    virtual std::experimental::optional<ExchangeSetting> get_exchange_setting(const std::string & from_currency, const std::string & to_currency) = 0;
+    virtual std::optional<ExchangeSetting> get_exchange_setting(const std::string & from_currency, const std::string & to_currency) = 0;
 
     /**
      * Get all available exchange settings.
@@ -115,7 +115,7 @@ public:
      *
      * @return transaction fee rate or null
      */
-    virtual std::experimental::optional<TransactionFeeRate> get_transaction_fee_rate(const std::string & currency) = 0;
+    virtual std::optional<TransactionFeeRate> get_transaction_fee_rate(const std::string & currency) = 0;
 
     /**
      * Get all available crypto transaction fee rates.

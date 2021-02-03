@@ -175,6 +175,9 @@ struct ZumoKitErrorCode final {
     /** Transaction amount is too small to send after the fee has been deducted. */
     static std::string const SEND_MAX_INSUFFICIENT_FUNDS_FOR_TRANSACTION;
 
+    /** Exchange amount is insufficient to make a minimum exchange. */
+    static std::string const SEND_MAX_INSUFFICIENT_FUNDS_FOR_EXCHANGE;
+
     /** Something went wrong signing transaction. */
     static std::string const SIGNING_ERROR;
 

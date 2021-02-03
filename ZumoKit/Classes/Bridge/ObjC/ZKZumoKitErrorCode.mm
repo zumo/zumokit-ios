@@ -102,6 +102,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE = @"
 
 NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION = @"send_max_insufficient_funds_for_transaction";
 
+NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE = @"send_max_insufficient_funds_for_exchange";
+
 NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR = @"signing_error";
 
 NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW = @"transaction_amount_overflow";

@@ -41,7 +41,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
         _cppRefHandle.get()->request(::djinni::String::toCpp(url),
                                      ::djinni::String::toCpp(method),
                                      ::djinni::Map<::djinni::String, ::djinni::String>::toCpp(headers),
-                                     ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(data),
+                                     ::djinni::Optional<std::optional, ::djinni::String>::toCpp(data),
                                      ::djinni_generated::HttpCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
@@ -55,13 +55,13 @@ class HttpProvider::ObjcProxy final
     friend class ::djinni_generated::HttpProvider;
 public:
     using ObjcProxyBase::ObjcProxyBase;
-    void request(const std::string & c_url, const std::string & c_method, const std::unordered_map<std::string, std::string> & c_headers, const std::experimental::optional<std::string> & c_data, const std::shared_ptr<::zumo::HttpCallback> & c_callback) override
+    void request(const std::string & c_url, const std::string & c_method, const std::unordered_map<std::string, std::string> & c_headers, const std::optional<std::string> & c_data, const std::shared_ptr<::zumo::HttpCallback> & c_callback) override
     {
         @autoreleasepool {
             [djinni_private_get_proxied_objc_object() request:(::djinni::String::fromCpp(c_url))
                                                        method:(::djinni::String::fromCpp(c_method))
                                                       headers:(::djinni::Map<::djinni::String, ::djinni::String>::fromCpp(c_headers))
-                                                         data:(::djinni::Optional<std::experimental::optional, ::djinni::String>::fromCpp(c_data))
+                                                         data:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(c_data))
                                                      callback:(::djinni_generated::HttpCallback::fromCpp(c_callback))];
         }
     }

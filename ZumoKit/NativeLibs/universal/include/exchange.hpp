@@ -5,9 +5,9 @@
 
 #include "exchange_rate.hpp"
 #include "exchange_setting.hpp"
-#include "stdx/optional.hpp"
 #include "zumo/decimal.hpp"
 #include <cstdint>
+#include <optional>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -31,7 +31,7 @@ struct Exchange final {
     /** Source Account identifier. */
     std::string from_account_id;
     /** Outgoing Transaction identifier. */
-    std::experimental::optional<std::string> outgoing_transaction_id;
+    std::optional<std::string> outgoing_transaction_id;
     /**
      * Currency to which exchange was made.
      * @see CurrencyCode
@@ -40,11 +40,11 @@ struct Exchange final {
     /** Target Account identifier. */
     std::string to_account_id;
     /** Return Transaction identifier. */
-    std::experimental::optional<std::string> return_transaction_id;
+    std::optional<std::string> return_transaction_id;
     /** Amount in deposit currency. */
     ::zumo::Decimal amount;
     /** Outgoing transaction fee. */
-    std::experimental::optional<::zumo::Decimal> outgoing_transaction_fee;
+    std::optional<::zumo::Decimal> outgoing_transaction_fee;
     /**
      * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
      * @see ExchangeSetting
@@ -70,11 +70,11 @@ struct Exchange final {
      */
     std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
     /** Exchange nonce or null. Used to prevent double spend. */
-    std::experimental::optional<std::string> nonce;
+    std::optional<std::string> nonce;
     /** Epoch timestamp when transaction was submitted. */
-    std::experimental::optional<int32_t> submitted_at;
+    std::optional<int32_t> submitted_at;
     /** Epoch timestamp when transaction was confirmed or null if not yet confirmed. */
-    std::experimental::optional<int32_t> confirmed_at;
+    std::optional<int32_t> confirmed_at;
 
     friend bool operator==(const Exchange& lhs, const Exchange& rhs);
     friend bool operator!=(const Exchange& lhs, const Exchange& rhs);
@@ -83,21 +83,21 @@ struct Exchange final {
              std::string status_,
              std::string from_currency_,
              std::string from_account_id_,
-             std::experimental::optional<std::string> outgoing_transaction_id_,
+             std::optional<std::string> outgoing_transaction_id_,
              std::string to_currency_,
              std::string to_account_id_,
-             std::experimental::optional<std::string> return_transaction_id_,
+             std::optional<std::string> return_transaction_id_,
              ::zumo::Decimal amount_,
-             std::experimental::optional<::zumo::Decimal> outgoing_transaction_fee_,
+             std::optional<::zumo::Decimal> outgoing_transaction_fee_,
              ::zumo::Decimal return_amount_,
              ::zumo::Decimal exchange_fee_,
              ::zumo::Decimal return_transaction_fee_,
              ExchangeRate exchange_rate_,
              ExchangeSetting exchange_setting_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
-             std::experimental::optional<std::string> nonce_,
-             std::experimental::optional<int32_t> submitted_at_,
-             std::experimental::optional<int32_t> confirmed_at_)
+             std::optional<std::string> nonce_,
+             std::optional<int32_t> submitted_at_,
+             std::optional<int32_t> confirmed_at_)
     : id(std::move(id_))
     , status(std::move(status_))
     , from_currency(std::move(from_currency_))

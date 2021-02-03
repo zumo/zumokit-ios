@@ -41,7 +41,6 @@
 #import "ZKExchangeSetting.h"
 #import "ZKExchangeStatus.h"
 #import "ZKHistoricalExchangeRatesCallback.h"
-#import "ZKHttpProvider.h"
 #import "ZKMnemonicCallback.h"
 #import "ZKNetworkType.h"
 #import "ZKPinCallback.h"
@@ -62,8 +61,6 @@
 #import "ZKUtils.h"
 #import "ZKWallet.h"
 #import "ZKWalletCallback.h"
-#import "ZKWebSocket.h"
-#import "ZKWebSocketFactory.h"
 #import "ZKZumoKitErrorCode.h"
 #import "ZKZumoKitErrorType.h"
 
