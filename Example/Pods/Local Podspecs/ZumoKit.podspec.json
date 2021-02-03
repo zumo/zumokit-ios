@@ -15,7 +15,7 @@
     "tag": "1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "11.0"
   },
   "source_files": [
     "ZumoKit/Classes/**/*",
@@ -29,8 +29,9 @@
   "private_header_files": [
     "ZumoKit/Classes/Bridge/ObjC/ZKZumoCore.h",
     "ZumoKit/Classes/Bridge/ObjC/ZKHttpCallback.h",
-    "ZumoKit/Classes/Bridge/ObjC/ZKHttpImpl.h",
-    "ZumoKit/Classes/Bridge/ObjC/ZKWebSocketImpl.h",
+    "ZumoKit/Classes/Bridge/ObjC/ZKHttpProvider.h",
+    "ZumoKit/Classes/Bridge/ObjC/ZKWebSocket.h",
+    "ZumoKit/Classes/Bridge/ObjC/ZKWebSocketFactory.h",
     "ZumoKit/Classes/Bridge/ObjC/ZKWebSocketListener.h"
   ],
   "vendored_libraries": "ZumoKit/NativeLibs/universal/**/*.a",
@@ -44,7 +45,7 @@
   "pod_target_xcconfig": {
     "HEADER_SEARCH_PATHS": "$(inherited) \"$(PODS_ROOT)/ZumoKit/NativeLibs/universal/include\"",
     "OTHER_CFLAGS": "-fmodules -fcxx-modules",
-    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++14",
+    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
     "CLANG_CXX_LIBRARY": "libc++",
     "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
   }

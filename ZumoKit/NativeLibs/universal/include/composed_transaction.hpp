@@ -4,8 +4,8 @@
 #pragma once
 
 #include "account.hpp"
-#include "stdx/optional.hpp"
 #include "zumo/decimal.hpp"
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -22,15 +22,15 @@ struct ComposedTransaction final {
      */
     std::string type;
     /** Signed transaction for a crypto transaction, null otherwise. */
-    std::experimental::optional<std::string> signed_transaction;
+    std::optional<std::string> signed_transaction;
     /** Account the composed transaction belongs to. */
     Account account;
     /** Transaction destination, i.e. destination address for crypto transactions or user id for fiat transactions. */
-    std::experimental::optional<std::string> destination;
+    std::optional<std::string> destination;
     /** Transaction amount in account currency. */
-    std::experimental::optional<::zumo::Decimal> amount;
+    std::optional<::zumo::Decimal> amount;
     /** Optional transaction data if available. */
-    std::experimental::optional<std::string> data;
+    std::optional<std::string> data;
     /** Maximum transaction fee. */
     ::zumo::Decimal fee;
     /** Transaction nonce to prevent double spend. */
@@ -40,11 +40,11 @@ struct ComposedTransaction final {
     friend bool operator!=(const ComposedTransaction& lhs, const ComposedTransaction& rhs);
 
     ComposedTransaction(std::string type_,
-                        std::experimental::optional<std::string> signed_transaction_,
+                        std::optional<std::string> signed_transaction_,
                         Account account_,
-                        std::experimental::optional<std::string> destination_,
-                        std::experimental::optional<::zumo::Decimal> amount_,
-                        std::experimental::optional<std::string> data_,
+                        std::optional<std::string> destination_,
+                        std::optional<::zumo::Decimal> amount_,
+                        std::optional<std::string> data_,
                         ::zumo::Decimal fee_,
                         std::string nonce_)
     : type(std::move(type_))

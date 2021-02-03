@@ -2,14 +2,14 @@
   "warnings": [
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 70,
+      "line": 67,
       "symbol": "ZumoKitVersionNumber",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 71,
+      "line": 68,
       "symbol": "ZumoKitVersionString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -477,20 +477,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKHttpProvider.h",
-      "line": 8,
-      "symbol": "ZKHttpProvider",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKHttpProvider.h",
-      "line": 10,
-      "symbol": "ZKHttpProvider.-request:method:headers:data:callback:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h",
       "line": 10,
       "symbol": "ZKMnemonicCallback.-onError:",
@@ -865,48 +851,6 @@
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h",
       "line": 13,
       "symbol": "ZKWalletCallback.-onSuccess:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWebSocket.h",
-      "line": 8,
-      "symbol": "ZKWebSocket",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWebSocket.h",
-      "line": 10,
-      "symbol": "ZKWebSocket.-connect",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWebSocket.h",
-      "line": 12,
-      "symbol": "ZKWebSocket.-send:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWebSocket.h",
-      "line": 14,
-      "symbol": "ZKWebSocket.-subscribe:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWebSocketFactory.h",
-      "line": 8,
-      "symbol": "ZKWebSocketFactory",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.protocol",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWebSocketFactory.h",
-      "line": 10,
-      "symbol": "ZKWebSocketFactory.-createWebSocket:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },

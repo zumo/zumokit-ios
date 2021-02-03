@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "stdx/optional.hpp"
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -15,24 +15,24 @@ namespace zumo {
  */
 struct AccountFiatProperties final {
     /** Fiat account number or null. */
-    std::experimental::optional<std::string> account_number;
+    std::optional<std::string> account_number;
     /** Fiat account sort code or null. */
-    std::experimental::optional<std::string> sort_code;
+    std::optional<std::string> sort_code;
     /** Fiat account BIC or null. */
-    std::experimental::optional<std::string> bic;
+    std::optional<std::string> bic;
     /** Fiat account IBAN or null. */
-    std::experimental::optional<std::string> iban;
+    std::optional<std::string> iban;
     /** Customer name or null. */
-    std::experimental::optional<std::string> customer_name;
+    std::optional<std::string> customer_name;
 
     friend bool operator==(const AccountFiatProperties& lhs, const AccountFiatProperties& rhs);
     friend bool operator!=(const AccountFiatProperties& lhs, const AccountFiatProperties& rhs);
 
-    AccountFiatProperties(std::experimental::optional<std::string> account_number_,
-                          std::experimental::optional<std::string> sort_code_,
-                          std::experimental::optional<std::string> bic_,
-                          std::experimental::optional<std::string> iban_,
-                          std::experimental::optional<std::string> customer_name_)
+    AccountFiatProperties(std::optional<std::string> account_number_,
+                          std::optional<std::string> sort_code_,
+                          std::optional<std::string> bic_,
+                          std::optional<std::string> iban_,
+                          std::optional<std::string> customer_name_)
     : account_number(std::move(account_number_))
     , sort_code(std::move(sort_code_))
     , bic(std::move(bic_))

@@ -4,6 +4,7 @@
 #include "zumo/address.hpp"
 #include "zumo/card.hpp"
 #include "zumo/card_details.hpp"
+#include "zumo/card_status.hpp"
 #include "zumo/card_type.hpp"
 #include "zumo/composed_exchange.hpp"
 #include "zumo/composed_transaction.hpp"

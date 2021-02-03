@@ -97,7 +97,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_exchange_rate(::djinni::String::toCpp(fromCurrency),
                                                                      ::djinni::String::toCpp(toCurrency));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::ExchangeRate>::fromCpp(objcpp_result_);
+        return ::djinni::Optional<std::optional, ::djinni_generated::ExchangeRate>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -113,7 +113,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_exchange_setting(::djinni::String::toCpp(fromCurrency),
                                                                         ::djinni::String::toCpp(toCurrency));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::ExchangeSetting>::fromCpp(objcpp_result_);
+        return ::djinni::Optional<std::optional, ::djinni_generated::ExchangeSetting>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -127,7 +127,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (nullable ZKTransactionFeeRate *)getTransactionFeeRate:(nonnull NSString *)currency {
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_transaction_fee_rate(::djinni::String::toCpp(currency));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::TransactionFeeRate>::fromCpp(objcpp_result_);
+        return ::djinni::Optional<std::optional, ::djinni_generated::TransactionFeeRate>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

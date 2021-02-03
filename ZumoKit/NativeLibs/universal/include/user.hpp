@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "stdx/optional.hpp"
 #include <memory>
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -69,7 +69,7 @@ public:
      * @param  callback       an interface to receive the result or error
      * @see    NetworkType
      */
-    virtual void make_fiat_customer(const std::string & network, const std::string & first_name, const std::experimental::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const Address & address, const std::shared_ptr<SuccessCallback> & callback) = 0;
+    virtual void make_fiat_customer(const std::string & network, const std::string & first_name, const std::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const Address & address, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     /**
      * Create fiat account on specified network and currency code. User must already be fiat customer on specified network.
@@ -106,7 +106,7 @@ public:
      * @see    Card
      * @see    CardType
      */
-    virtual void create_card(const std::string & fiat_account_id, const std::string & card_type, const std::string & first_name, const std::string & last_name, const std::experimental::optional<std::string> & title, const std::string & date_of_birth, const std::string & mobile_number, const Address & address, const std::shared_ptr<CardCallback> & callback) = 0;
+    virtual void create_card(const std::string & fiat_account_id, const std::string & card_type, const std::string & first_name, const std::string & last_name, const std::optional<std::string> & title, const std::string & date_of_birth, const std::string & mobile_number, const Address & address, const std::shared_ptr<CardCallback> & callback) = 0;
 
     /**
      * Set card status to 'ACTIVE', 'BLOCKED' or 'CANCELLED'. 
@@ -121,7 +121,7 @@ public:
      * @param  callback        an interface to receive the result or error
      * @see    CardStatus
      */
-    virtual void set_card_status(const std::string & card_id, const std::string & card_status, const std::experimental::optional<std::string> & pan, const std::experimental::optional<std::string> & cvv2, const std::shared_ptr<SuccessCallback> & callback) = 0;
+    virtual void set_card_status(const std::string & card_id, const std::string & card_status, const std::optional<std::string> & pan, const std::optional<std::string> & cvv2, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     /**
      * Reveals sensitive card details.
@@ -198,7 +198,7 @@ public:
      * @see NetworkType
      * @see AccountType
      */
-    virtual std::experimental::optional<Account> get_account(const std::string & currency_code, const std::string & network, const std::string & type) = 0;
+    virtual std::optional<Account> get_account(const std::string & currency_code, const std::string & network, const std::string & type) = 0;
 
     /**
      * Get all user accounts.

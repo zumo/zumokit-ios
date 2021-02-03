@@ -125,6 +125,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE;
 /** Transaction amount is too small to send after the fee has been deducted. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION;
+/** Exchange amount is insufficient to make a minimum exchange. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE;
 /** Something went wrong signing transaction. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR;
 /** Transaction amount exceeds maximum precision. */

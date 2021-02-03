@@ -6,8 +6,8 @@
 #include "account_crypto_properties.hpp"
 #include "account_fiat_properties.hpp"
 #include "card.hpp"
-#include "stdx/optional.hpp"
 #include "zumo/decimal.hpp"
+#include <optional>
 #include <string>
 #include <utility>
 #include <vector>
@@ -43,9 +43,9 @@ struct Account final {
     /** Account has associated nominated account. */
     bool has_nominated_account;
     /** Account crypto properties if account is a crypto account, otherwise null. */
-    std::experimental::optional<AccountCryptoProperties> crypto_properties;
+    std::optional<AccountCryptoProperties> crypto_properties;
     /** Account fiat properties if account is a fiat account, otherwise null. */
-    std::experimental::optional<AccountFiatProperties> fiat_properties;
+    std::optional<AccountFiatProperties> fiat_properties;
     /** Cards associated with this account. */
     std::vector<Card> cards;
 
@@ -59,8 +59,8 @@ struct Account final {
             std::string type_,
             ::zumo::Decimal balance_,
             bool has_nominated_account_,
-            std::experimental::optional<AccountCryptoProperties> crypto_properties_,
-            std::experimental::optional<AccountFiatProperties> fiat_properties_,
+            std::optional<AccountCryptoProperties> crypto_properties_,
+            std::optional<AccountFiatProperties> fiat_properties_,
             std::vector<Card> cards_)
     : id(std::move(id_))
     , currency_type(std::move(currency_type_))

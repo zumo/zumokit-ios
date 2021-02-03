@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "stdx/optional.hpp"
 #include <memory>
+#include <optional>
 #include <string>
 #include <unordered_map>
 
@@ -16,7 +16,7 @@ class HttpProvider {
 public:
     virtual ~HttpProvider() {}
 
-    virtual void request(const std::string & url, const std::string & method, const std::unordered_map<std::string, std::string> & headers, const std::experimental::optional<std::string> & data, const std::shared_ptr<HttpCallback> & callback) = 0;
+    virtual void request(const std::string & url, const std::string & method, const std::unordered_map<std::string, std::string> & headers, const std::optional<std::string> & data, const std::shared_ptr<HttpCallback> & callback) = 0;
 };
 
 }  // namespace zumo

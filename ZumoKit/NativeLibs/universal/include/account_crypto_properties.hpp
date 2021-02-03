@@ -3,8 +3,8 @@
 
 #pragma once
 
-#include "stdx/optional.hpp"
 #include <cstdint>
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -20,14 +20,14 @@ struct AccountCryptoProperties final {
     /** Hierarchical Deterministic (HD) account derivation path. */
     std::string path;
     /** Ethereum account nonce if greater than 0 or null otherwise. */
-    std::experimental::optional<int32_t> nonce;
+    std::optional<int32_t> nonce;
 
     friend bool operator==(const AccountCryptoProperties& lhs, const AccountCryptoProperties& rhs);
     friend bool operator!=(const AccountCryptoProperties& lhs, const AccountCryptoProperties& rhs);
 
     AccountCryptoProperties(std::string address_,
                             std::string path_,
-                            std::experimental::optional<int32_t> nonce_)
+                            std::optional<int32_t> nonce_)
     : address(std::move(address_))
     , path(std::move(path_))
     , nonce(std::move(nonce_))

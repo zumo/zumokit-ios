@@ -74,7 +74,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         _cppRefHandle.get()->make_fiat_customer(::djinni::String::toCpp(network),
                                                 ::djinni::String::toCpp(firstName),
-                                                ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(middleName),
+                                                ::djinni::Optional<std::optional, ::djinni::String>::toCpp(middleName),
                                                 ::djinni::String::toCpp(lastName),
                                                 ::djinni::String::toCpp(dateOfBirth),
                                                 ::djinni::String::toCpp(email),
@@ -116,7 +116,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                                          ::djinni::String::toCpp(cardType),
                                          ::djinni::String::toCpp(firstName),
                                          ::djinni::String::toCpp(lastName),
-                                         ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(title),
+                                         ::djinni::Optional<std::optional, ::djinni::String>::toCpp(title),
                                          ::djinni::String::toCpp(dateOfBirth),
                                          ::djinni::String::toCpp(mobileNumber),
                                          ::djinni_generated::Address::toCpp(address),
@@ -132,8 +132,8 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         _cppRefHandle.get()->set_card_status(::djinni::String::toCpp(cardId),
                                              ::djinni::String::toCpp(cardStatus),
-                                             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(pan),
-                                             ::djinni::Optional<std::experimental::optional, ::djinni::String>::toCpp(cvv2),
+                                             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(pan),
+                                             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(cvv2),
                                              ::djinni_generated::SuccessCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
@@ -212,7 +212,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
         auto objcpp_result_ = _cppRefHandle.get()->get_account(::djinni::String::toCpp(currencyCode),
                                                                ::djinni::String::toCpp(network),
                                                                ::djinni::String::toCpp(type));
-        return ::djinni::Optional<std::experimental::optional, ::djinni_generated::Account>::fromCpp(objcpp_result_);
+        return ::djinni::Optional<std::optional, ::djinni_generated::Account>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

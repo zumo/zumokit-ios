@@ -28,6 +28,11 @@ class ZumoKitException : public std::exception {
     friend bool operator==(const ZumoKitException &lhs, const ZumoKitException &rhs);
     friend bool operator!=(const ZumoKitException &lhs, const ZumoKitException &rhs);
 
+    friend std::ostream &operator<<(std::ostream &os, const ZumoKitException &ex)
+    {
+        return os << ex.msg_;
+    }
+
   private:
     const std::string type_;
     const std::string code_;

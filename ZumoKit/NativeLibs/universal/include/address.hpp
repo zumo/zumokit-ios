@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "stdx/optional.hpp"
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -14,7 +14,7 @@ struct Address final {
     /** First line of address. */
     std::string address_line_1;
     /** Second line of address or null. */
-    std::experimental::optional<std::string> address_line_2;
+    std::optional<std::string> address_line_2;
     /** Country code in ISO 3166-1 Alpha-2 format, e.g. 'GB'. */
     std::string country;
     /** Post code. */
@@ -26,7 +26,7 @@ struct Address final {
     friend bool operator!=(const Address& lhs, const Address& rhs);
 
     Address(std::string address_line_1_,
-            std::experimental::optional<std::string> address_line_2_,
+            std::optional<std::string> address_line_2_,
             std::string country_,
             std::string post_code_,
             std::string post_town_)
