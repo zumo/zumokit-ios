@@ -14,18 +14,18 @@
                          billingAmount:(nonnull NSDecimalNumber *)billingAmount
                        billingCurrency:(nonnull NSString *)billingCurrency
                      exchangeRateValue:(nonnull NSDecimalNumber *)exchangeRateValue
-                                   mcc:(nonnull NSString *)mcc
-                          merchantName:(nonnull NSString *)merchantName
-                       merchantCountry:(nonnull NSString *)merchantCountry;
+                                   mcc:(nullable NSString *)mcc
+                          merchantName:(nullable NSString *)merchantName
+                       merchantCountry:(nullable NSString *)merchantCountry;
 + (nonnull instancetype)transactionCardPropertiesWithCardId:(nonnull NSString *)cardId
                                           transactionAmount:(nonnull NSDecimalNumber *)transactionAmount
                                         transactionCurrency:(nonnull NSString *)transactionCurrency
                                               billingAmount:(nonnull NSDecimalNumber *)billingAmount
                                             billingCurrency:(nonnull NSString *)billingCurrency
                                           exchangeRateValue:(nonnull NSDecimalNumber *)exchangeRateValue
-                                                        mcc:(nonnull NSString *)mcc
-                                               merchantName:(nonnull NSString *)merchantName
-                                            merchantCountry:(nonnull NSString *)merchantCountry;
+                                                        mcc:(nullable NSString *)mcc
+                                               merchantName:(nullable NSString *)merchantName
+                                            merchantCountry:(nullable NSString *)merchantCountry;
 
 /**
  * Card identifier.
@@ -54,13 +54,13 @@
 /** Exchange rate applied to any conversion between transaction & billing amount rounded to 6 decimal places. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeRateValue;
 
-/** The Merchant Category Code (MCC) for the card activity in ISO-18245 format. */
-@property (nonatomic, readonly, nonnull) NSString * mcc;
+/** The Merchant Category Code (MCC) for the card activity in ISO-18245 format if available. */
+@property (nonatomic, readonly, nullable) NSString * mcc;
 
-/** The merchant name. */
-@property (nonatomic, readonly, nonnull) NSString * merchantName;
+/** The merchant name if available. */
+@property (nonatomic, readonly, nullable) NSString * merchantName;
 
-/** The 3 letter ISO 3166 merchant country code. */
-@property (nonatomic, readonly, nonnull) NSString * merchantCountry;
+/** The 3 letter ISO 3166 merchant country code if available. */
+@property (nonatomic, readonly, nullable) NSString * merchantCountry;
 
 @end

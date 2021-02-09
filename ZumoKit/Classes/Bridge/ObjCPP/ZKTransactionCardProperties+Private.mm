@@ -17,9 +17,9 @@ auto TransactionCardProperties::toCpp(ObjcType obj) -> CppType
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.billingAmount),
             ::djinni::String::toCpp(obj.billingCurrency),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.exchangeRateValue),
-            ::djinni::String::toCpp(obj.mcc),
-            ::djinni::String::toCpp(obj.merchantName),
-            ::djinni::String::toCpp(obj.merchantCountry)};
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.mcc),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.merchantName),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.merchantCountry)};
 }
 
 auto TransactionCardProperties::fromCpp(const CppType& cpp) -> ObjcType
@@ -30,9 +30,9 @@ auto TransactionCardProperties::fromCpp(const CppType& cpp) -> ObjcType
                                                  billingAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.billing_amount))
                                                billingCurrency:(::djinni::String::fromCpp(cpp.billing_currency))
                                              exchangeRateValue:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.exchange_rate_value))
-                                                           mcc:(::djinni::String::fromCpp(cpp.mcc))
-                                                  merchantName:(::djinni::String::fromCpp(cpp.merchant_name))
-                                               merchantCountry:(::djinni::String::fromCpp(cpp.merchant_country))];
+                                                           mcc:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.mcc))
+                                                  merchantName:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.merchant_name))
+                                               merchantCountry:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.merchant_country))];
 }
 
 }  // namespace djinni_generated

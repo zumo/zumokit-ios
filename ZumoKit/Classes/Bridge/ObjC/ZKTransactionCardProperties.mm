@@ -12,9 +12,9 @@
                          billingAmount:(nonnull NSDecimalNumber *)billingAmount
                        billingCurrency:(nonnull NSString *)billingCurrency
                      exchangeRateValue:(nonnull NSDecimalNumber *)exchangeRateValue
-                                   mcc:(nonnull NSString *)mcc
-                          merchantName:(nonnull NSString *)merchantName
-                       merchantCountry:(nonnull NSString *)merchantCountry
+                                   mcc:(nullable NSString *)mcc
+                          merchantName:(nullable NSString *)merchantName
+                       merchantCountry:(nullable NSString *)merchantCountry
 {
     if (self = [super init]) {
         _cardId = [cardId copy];
@@ -36,9 +36,9 @@
                                               billingAmount:(nonnull NSDecimalNumber *)billingAmount
                                             billingCurrency:(nonnull NSString *)billingCurrency
                                           exchangeRateValue:(nonnull NSDecimalNumber *)exchangeRateValue
-                                                        mcc:(nonnull NSString *)mcc
-                                               merchantName:(nonnull NSString *)merchantName
-                                            merchantCountry:(nonnull NSString *)merchantCountry
+                                                        mcc:(nullable NSString *)mcc
+                                               merchantName:(nullable NSString *)merchantName
+                                            merchantCountry:(nullable NSString *)merchantCountry
 {
     return [(ZKTransactionCardProperties*)[self alloc] initWithCardId:cardId
                                                     transactionAmount:transactionAmount
@@ -63,9 +63,9 @@
             [self.billingAmount isEqual:typedOther.billingAmount] &&
             [self.billingCurrency isEqualToString:typedOther.billingCurrency] &&
             [self.exchangeRateValue isEqual:typedOther.exchangeRateValue] &&
-            [self.mcc isEqualToString:typedOther.mcc] &&
-            [self.merchantName isEqualToString:typedOther.merchantName] &&
-            [self.merchantCountry isEqualToString:typedOther.merchantCountry];
+            ((self.mcc == nil && typedOther.mcc == nil) || (self.mcc != nil && [self.mcc isEqual:typedOther.mcc])) &&
+            ((self.merchantName == nil && typedOther.merchantName == nil) || (self.merchantName != nil && [self.merchantName isEqual:typedOther.merchantName])) &&
+            ((self.merchantCountry == nil && typedOther.merchantCountry == nil) || (self.merchantCountry != nil && [self.merchantCountry isEqual:typedOther.merchantCountry]));
 }
 
 - (NSUInteger)hash
