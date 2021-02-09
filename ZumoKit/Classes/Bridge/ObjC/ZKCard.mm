@@ -12,6 +12,7 @@
                         cardStatus:(nonnull NSString *)cardStatus
                              limit:(int32_t)limit
                          maskedPan:(nonnull NSString *)maskedPan
+                            expiry:(nonnull NSString *)expiry
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -20,6 +21,7 @@
         _cardStatus = [cardStatus copy];
         _limit = limit;
         _maskedPan = [maskedPan copy];
+        _expiry = [expiry copy];
     }
     return self;
 }
@@ -30,13 +32,15 @@
                         cardStatus:(nonnull NSString *)cardStatus
                              limit:(int32_t)limit
                          maskedPan:(nonnull NSString *)maskedPan
+                            expiry:(nonnull NSString *)expiry
 {
     return [(ZKCard*)[self alloc] initWithId:id
                                    accountId:accountId
                                     cardType:cardType
                                   cardStatus:cardStatus
                                        limit:limit
-                                   maskedPan:maskedPan];
+                                   maskedPan:maskedPan
+                                      expiry:expiry];
 }
 
 - (BOOL)isEqual:(id)other
@@ -50,7 +54,8 @@
             [self.cardType isEqualToString:typedOther.cardType] &&
             [self.cardStatus isEqualToString:typedOther.cardStatus] &&
             self.limit == typedOther.limit &&
-            [self.maskedPan isEqualToString:typedOther.maskedPan];
+            [self.maskedPan isEqualToString:typedOther.maskedPan] &&
+            [self.expiry isEqualToString:typedOther.expiry];
 }
 
 - (NSUInteger)hash
@@ -61,12 +66,13 @@
             self.cardType.hash ^
             self.cardStatus.hash ^
             (NSUInteger)self.limit ^
-            self.maskedPan.hash;
+            self.maskedPan.hash ^
+            self.expiry.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ accountId:%@ cardType:%@ cardStatus:%@ limit:%@ maskedPan:%@>", self.class, (void *)self, self.id, self.accountId, self.cardType, self.cardStatus, @(self.limit), self.maskedPan];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ accountId:%@ cardType:%@ cardStatus:%@ limit:%@ maskedPan:%@ expiry:%@>", self.class, (void *)self, self.id, self.accountId, self.cardType, self.cardStatus, @(self.limit), self.maskedPan, self.expiry];
 }
 
 @end

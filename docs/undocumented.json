@@ -136,14 +136,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCard.h",
       "line": 8,
-      "symbol": "ZKCard.-initWithId:accountId:cardType:cardStatus:limit:maskedPan:",
+      "symbol": "ZKCard.-initWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCard.h",
-      "line": 14,
-      "symbol": "ZKCard.+cardWithId:accountId:cardType:cardStatus:limit:maskedPan:",
+      "line": 15,
+      "symbol": "ZKCard.+cardWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
@@ -164,14 +164,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardDetails.h",
       "line": 8,
-      "symbol": "ZKCardDetails.-initWithPan:cvv2:expiry:",
+      "symbol": "ZKCardDetails.-initWithPan:cvv2:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardDetails.h",
-      "line": 11,
-      "symbol": "ZKCardDetails.+cardDetailsWithPan:cvv2:expiry:",
+      "line": 10,
+      "symbol": "ZKCardDetails.+cardDetailsWithPan:cvv2:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
@@ -234,13 +234,20 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
       "line": 17,
-      "symbol": "ZKCardStatusEXPIRED",
+      "symbol": "ZKCardStatusFROZEN",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
       "line": 18,
+      "symbol": "ZKCardStatusEXPIRED",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 19,
       "symbol": "ZKCardStatusCANCELLED",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"

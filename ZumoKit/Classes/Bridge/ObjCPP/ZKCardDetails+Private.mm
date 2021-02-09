@@ -11,15 +11,13 @@ auto CardDetails::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.pan),
-            ::djinni::String::toCpp(obj.cvv2),
-            ::djinni::String::toCpp(obj.expiry)};
+            ::djinni::String::toCpp(obj.cvv2)};
 }
 
 auto CardDetails::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKCardDetails alloc] initWithPan:(::djinni::String::fromCpp(cpp.pan))
-                                         cvv2:(::djinni::String::fromCpp(cpp.cvv2))
-                                       expiry:(::djinni::String::fromCpp(cpp.expiry))];
+                                         cvv2:(::djinni::String::fromCpp(cpp.cvv2))];
 }
 
 }  // namespace djinni_generated

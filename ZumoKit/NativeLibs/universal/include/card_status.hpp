@@ -19,6 +19,8 @@ struct CardStatus final {
 
     static std::string const SUSPENDED;
 
+    static std::string const FROZEN;
+
     static std::string const EXPIRED;
 
     static std::string const CANCELLED;

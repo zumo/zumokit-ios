@@ -4,6 +4,7 @@
 #pragma once
 
 #include "zumo/decimal.hpp"
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -35,12 +36,12 @@ struct TransactionCardProperties final {
     std::string billing_currency;
     /** Exchange rate applied to any conversion between transaction & billing amount rounded to 6 decimal places. */
     ::zumo::Decimal exchange_rate_value;
-    /** The Merchant Category Code (MCC) for the card activity in ISO-18245 format. */
-    std::string mcc;
-    /** The merchant name. */
-    std::string merchant_name;
-    /** The 3 letter ISO 3166 merchant country code. */
-    std::string merchant_country;
+    /** The Merchant Category Code (MCC) for the card activity in ISO-18245 format if available. */
+    std::optional<std::string> mcc;
+    /** The merchant name if available. */
+    std::optional<std::string> merchant_name;
+    /** The 3 letter ISO 3166 merchant country code if available. */
+    std::optional<std::string> merchant_country;
 
     friend bool operator==(const TransactionCardProperties& lhs, const TransactionCardProperties& rhs);
     friend bool operator!=(const TransactionCardProperties& lhs, const TransactionCardProperties& rhs);
@@ -51,9 +52,9 @@ struct TransactionCardProperties final {
                               ::zumo::Decimal billing_amount_,
                               std::string billing_currency_,
                               ::zumo::Decimal exchange_rate_value_,
-                              std::string mcc_,
-                              std::string merchant_name_,
-                              std::string merchant_country_)
+                              std::optional<std::string> mcc_,
+                              std::optional<std::string> merchant_name_,
+                              std::optional<std::string> merchant_country_)
     : card_id(std::move(card_id_))
     , transaction_amount(std::move(transaction_amount_))
     , transaction_currency(std::move(transaction_currency_))

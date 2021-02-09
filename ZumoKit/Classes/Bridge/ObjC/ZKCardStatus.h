@@ -14,5 +14,6 @@ extern NSString * __nonnull const ZKCardStatusCREATED;
 extern NSString * __nonnull const ZKCardStatusACTIVE;
 extern NSString * __nonnull const ZKCardStatusBLOCKED;
 extern NSString * __nonnull const ZKCardStatusSUSPENDED;
+extern NSString * __nonnull const ZKCardStatusFROZEN;
 extern NSString * __nonnull const ZKCardStatusEXPIRED;
 extern NSString * __nonnull const ZKCardStatusCANCELLED;

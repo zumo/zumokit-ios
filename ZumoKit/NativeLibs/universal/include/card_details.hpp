@@ -14,18 +14,14 @@ struct CardDetails final {
     std::string pan;
     /** Card CVV2, e.g. 078. */
     std::string cvv2;
-    /** Card year and month of expiry, e.g. 2024-08. */
-    std::string expiry;
 
     friend bool operator==(const CardDetails& lhs, const CardDetails& rhs);
     friend bool operator!=(const CardDetails& lhs, const CardDetails& rhs);
 
     CardDetails(std::string pan_,
-                std::string cvv2_,
-                std::string expiry_)
+                std::string cvv2_)
     : pan(std::move(pan_))
     , cvv2(std::move(cvv2_))
-    , expiry(std::move(expiry_))
     {}
 };
 

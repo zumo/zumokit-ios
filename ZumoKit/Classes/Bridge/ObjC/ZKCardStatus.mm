@@ -12,6 +12,8 @@ NSString * __nonnull const ZKCardStatusBLOCKED = @"BLOCKED";
 
 NSString * __nonnull const ZKCardStatusSUSPENDED = @"SUSPENDED";
 
+NSString * __nonnull const ZKCardStatusFROZEN = @"FROZEN";
+
 NSString * __nonnull const ZKCardStatusEXPIRED = @"EXPIRED";
 
 NSString * __nonnull const ZKCardStatusCANCELLED = @"CANCELLED";

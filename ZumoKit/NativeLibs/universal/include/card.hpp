@@ -29,6 +29,8 @@ struct Card final {
     int32_t limit;
     /** Card masked pan, e.g **** **** **** 5454. */
     std::string masked_pan;
+    /** Card year and month of expiry, e.g. 2024-08. */
+    std::string expiry;
 
     friend bool operator==(const Card& lhs, const Card& rhs);
     friend bool operator!=(const Card& lhs, const Card& rhs);
@@ -38,13 +40,15 @@ struct Card final {
          std::string card_type_,
          std::string card_status_,
          int32_t limit_,
-         std::string masked_pan_)
+         std::string masked_pan_,
+         std::string expiry_)
     : id(std::move(id_))
     , account_id(std::move(account_id_))
     , card_type(std::move(card_type_))
     , card_status(std::move(card_status_))
     , limit(std::move(limit_))
     , masked_pan(std::move(masked_pan_))
+    , expiry(std::move(expiry_))
     {}
 };
 

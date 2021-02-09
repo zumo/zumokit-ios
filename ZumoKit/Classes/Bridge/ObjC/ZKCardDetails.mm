@@ -8,23 +8,19 @@
 
 - (nonnull instancetype)initWithPan:(nonnull NSString *)pan
                                cvv2:(nonnull NSString *)cvv2
-                             expiry:(nonnull NSString *)expiry
 {
     if (self = [super init]) {
         _pan = [pan copy];
         _cvv2 = [cvv2 copy];
-        _expiry = [expiry copy];
     }
     return self;
 }
 
 + (nonnull instancetype)cardDetailsWithPan:(nonnull NSString *)pan
                                       cvv2:(nonnull NSString *)cvv2
-                                    expiry:(nonnull NSString *)expiry
 {
     return [(ZKCardDetails*)[self alloc] initWithPan:pan
-                                                cvv2:cvv2
-                                              expiry:expiry];
+                                                cvv2:cvv2];
 }
 
 - (BOOL)isEqual:(id)other
@@ -34,21 +30,19 @@
     }
     ZKCardDetails *typedOther = (ZKCardDetails *)other;
     return [self.pan isEqualToString:typedOther.pan] &&
-            [self.cvv2 isEqualToString:typedOther.cvv2] &&
-            [self.expiry isEqualToString:typedOther.expiry];
+            [self.cvv2 isEqualToString:typedOther.cvv2];
 }
 
 - (NSUInteger)hash
 {
     return NSStringFromClass([self class]).hash ^
             self.pan.hash ^
-            self.cvv2.hash ^
-            self.expiry.hash;
+            self.cvv2.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p pan:%@ cvv2:%@ expiry:%@>", self.class, (void *)self, self.pan, self.cvv2, self.expiry];
+    return [NSString stringWithFormat:@"<%@ %p pan:%@ cvv2:%@>", self.class, (void *)self, self.pan, self.cvv2];
 }
 
 @end

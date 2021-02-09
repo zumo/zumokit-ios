@@ -10,13 +10,15 @@
                           cardType:(nonnull NSString *)cardType
                         cardStatus:(nonnull NSString *)cardStatus
                              limit:(int32_t)limit
-                         maskedPan:(nonnull NSString *)maskedPan;
+                         maskedPan:(nonnull NSString *)maskedPan
+                            expiry:(nonnull NSString *)expiry;
 + (nonnull instancetype)cardWithId:(nonnull NSString *)id
                          accountId:(nonnull NSString *)accountId
                           cardType:(nonnull NSString *)cardType
                         cardStatus:(nonnull NSString *)cardStatus
                              limit:(int32_t)limit
-                         maskedPan:(nonnull NSString *)maskedPan;
+                         maskedPan:(nonnull NSString *)maskedPan
+                            expiry:(nonnull NSString *)expiry;
 
 /** Unique card identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -41,5 +43,8 @@
 
 /** Card masked pan, e.g **** **** **** 5454. */
 @property (nonatomic, readonly, nonnull) NSString * maskedPan;
+
+/** Card year and month of expiry, e.g. 2024-08. */
+@property (nonatomic, readonly, nonnull) NSString * expiry;
 
 @end
