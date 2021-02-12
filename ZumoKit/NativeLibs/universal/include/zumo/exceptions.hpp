@@ -1,5 +1,6 @@
 #pragma once
 
+#include "zumo_kit_error.hpp"
 #include <exception>
 #include <string>
 
@@ -18,6 +19,14 @@ class ZumoKitException : public std::exception {
         const std::string code = "",
         const std::string msg = "")
         : type_(type), code_(normalize_code(code)), msg_(normalize_message(code, msg))
+    {
+    }
+
+    ZumoKitException(const ZumoKitError &error)
+        : ZumoKitException(
+              error.type,
+              error.code ? *error.code : "",
+              error.message ? *error.message : "")
     {
     }
 

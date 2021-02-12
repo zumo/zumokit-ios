@@ -13,6 +13,7 @@ namespace zumo {
 class ChangeListener;
 class HistoricalExchangeRatesCallback;
 class HttpProvider;
+class LogListener;
 class User;
 class UserCallback;
 class Utils;
@@ -31,6 +32,25 @@ public:
      * @return semantic version tag if exists, commit hash otherwise
      */
     static std::string get_version();
+
+    /**
+     * Sets log level for current logger.
+     *
+     * @param log_level log level, e.g. 'debug' or 'info'
+     *
+     * @see LogLevel
+     */
+    static void set_log_level(const std::string & log_level);
+
+    /**
+     * Sets log handler for all ZumoKit related logs.
+     *
+     * @param log_listener interface to listen to changes
+     * @param log_level log level, e.g. 'debug' or 'info'
+     *
+     * @see LogLevel
+     */
+    static void on_log(const std::shared_ptr<LogListener> & log_listener, const std::string & log_level);
 
     /**
      * Initializes ZumoKit SDK. Should only be called once.

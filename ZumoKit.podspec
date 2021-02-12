@@ -1,13 +1,13 @@
 Pod::Spec.new do |s|
   s.name             = 'ZumoKit'
-  s.version          = '2.3.0-beta.12'
+  s.version          = '2.3.0-beta.13'
   s.summary          = 'ZumoKit is a Wallet as a Service SDK'
   s.homepage         = 'https://developers.zumo.money/docs/installation/ios.html'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.authors          = { 'Zumo' => 'hello@zumo.money' }
   s.source           = { :git => 'https://github.com/zumo/zumokit-ios.git', :tag => "#{s.version}" }
   s.platform         = :ios
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '12.0'
   s.source_files = [
     'ZumoKit/Classes/**/*',
     'ZumoKit/NativeLibs/universal/include/**/*'

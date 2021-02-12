@@ -41,6 +41,8 @@
 #import "ZKExchangeSetting.h"
 #import "ZKExchangeStatus.h"
 #import "ZKHistoricalExchangeRatesCallback.h"
+#import "ZKLogLevel.h"
+#import "ZKLogListener.h"
 #import "ZKMnemonicCallback.h"
 #import "ZKNetworkType.h"
 #import "ZKPinCallback.h"
