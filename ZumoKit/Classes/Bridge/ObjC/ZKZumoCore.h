@@ -3,6 +3,7 @@
 
 #import "ZKExchangeRate.h"
 #import "ZKExchangeSetting.h"
+#import "ZKLogLevel.h"
 #import "ZKTransactionFeeRate.h"
 #import <Foundation/Foundation.h>
 @class ZKUser;
@@ -28,22 +29,18 @@
 /**
  * Sets log level for current logger.
  *
- * @param logLevel log level, e.g. 'debug' or 'info'
- *
- * @see `ZKLogLevel`
+ * @param logLevel log level, e.g. debug or info
  */
-+ (void)setLogLevel:(nonnull NSString *)logLevel;
++ (void)setLogLevel:(ZKLogLevel)logLevel;
 
 /**
  * Sets log handler for all ZumoKit related logs.
  *
  * @param logListener interface to listen to changes
- * @param logLevel log level, e.g. 'debug' or 'info'
- *
- * @see `ZKLogLevel`
+ * @param logLevel log level, e.g. debug or info
  */
 + (void)onLog:(nullable id<ZKLogListener>)logListener
-     logLevel:(nonnull NSString *)logLevel;
+     logLevel:(ZKLogLevel)logLevel;
 
 /**
  * Initializes ZumoKit SDK. Should only be called once.

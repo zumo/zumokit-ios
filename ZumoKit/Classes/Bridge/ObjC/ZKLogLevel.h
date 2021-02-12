@@ -4,16 +4,13 @@
 #import <Foundation/Foundation.h>
 
 /** Log level, e.g. 'debug' or 'error', */
-@interface ZKLogLevel : NSObject
-- (nonnull instancetype)init;
-+ (nonnull instancetype)logLevel;
-
-@end
-
-extern NSString * __nonnull const ZKLogLevelTRACE;
-extern NSString * __nonnull const ZKLogLevelDEBUG;
-extern NSString * __nonnull const ZKLogLevelINFO;
-extern NSString * __nonnull const ZKLogLevelWARN;
-extern NSString * __nonnull const ZKLogLevelERROR;
-extern NSString * __nonnull const ZKLogLevelCRITICAL;
-extern NSString * __nonnull const ZKLogLevelOFF;
+typedef NS_ENUM(NSInteger, ZKLogLevel)
+{
+    ZKLogLevelTrace,
+    ZKLogLevelDebug,
+    ZKLogLevelInfo,
+    ZKLogLevelWarning,
+    ZKLogLevelError,
+    ZKLogLevelCritical,
+    ZKLogLevelOff,
+};
