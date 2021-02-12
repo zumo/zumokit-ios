@@ -18,7 +18,6 @@ class User;
 class UserCallback;
 class Utils;
 class WebSocketFactory;
-enum class LogLevel;
 struct ExchangeRate;
 struct ExchangeSetting;
 struct TransactionFeeRate;
@@ -37,17 +36,17 @@ public:
     /**
      * Sets log level for current logger.
      *
-     * @param log_level log level, e.g. debug or info
+     * @param log_level log level, 'trace', 'debug', 'info', 'warning', 'error', 'critical' or 'off'
      */
-    static void set_log_level(LogLevel log_level);
+    static void set_log_level(const std::string & log_level);
 
     /**
      * Sets log handler for all ZumoKit related logs.
      *
      * @param log_listener interface to listen to changes
-     * @param log_level log level, e.g. debug or info
+     * @param log_level log level, 'trace', 'debug', 'info', 'warning', 'error', 'critical' or 'off'
      */
-    static void on_log(const std::shared_ptr<LogListener> & log_listener, LogLevel log_level);
+    static void on_log(const std::shared_ptr<LogListener> & log_listener, const std::string & log_level);
 
     /**
      * Initializes ZumoKit SDK. Should only be called once.
