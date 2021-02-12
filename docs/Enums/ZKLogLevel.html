@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ZKLogLevel Class Reference</title>
+    <title>ZKLogLevel Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,14 +14,14 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Class/ZKLogLevel" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Enum/ZKLogLevel" class="dashAnchor"></a>
 
-    <a title="ZKLogLevel Class Reference"></a>
+    <a title="ZKLogLevel Enumeration Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.3.0-beta.13 Docs
+          ZumoKit 2.3.0-beta.14 Docs
         </a>
         
       </p>
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
       <img class="carat" src="../img/carat.png" />
-      ZKLogLevel Class Reference
+      ZKLogLevel Enumeration Reference
     </p>
 
     <div class="content-wrapper">
@@ -114,9 +114,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKExchangeStatus.html">ZKExchangeStatus</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ZKLogLevel.html">ZKLogLevel</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKNetworkType.html">ZKNetworkType</a>
@@ -248,27 +245,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKLogLevelCRITICAL">ZKLogLevelCRITICAL</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKLogLevelDEBUG">ZKLogLevelDEBUG</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKLogLevelERROR">ZKLogLevelERROR</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKLogLevelINFO">ZKLogLevelINFO</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKLogLevelOFF">ZKLogLevelOFF</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKLogLevelTRACE">ZKLogLevelTRACE</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKLogLevelWARN">ZKLogLevelWARN</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeGOERLI">ZKNetworkTypeGOERLI</a>
@@ -578,6 +554,9 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/ZKErrorCode.html">ZKErrorCode</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ZKLogLevel.html">ZKLogLevel</a>
+              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -705,19 +684,19 @@
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKLogLevel</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">enum</span> <span class="n">ZKLogLevel</span> <span class="p">{}</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKLogLevel</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">ZKLogLevel</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                 </div>
               </div>
             <p>Log level, e.g. &lsquo;debug&rsquo; or &lsquo;error&rsquo;,</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.13/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L7-L11">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L7-L16">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -729,9 +708,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKLogLevel(im)init"></a>
-                    <a name="//apple_ref/objc/Method/-init" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKLogLevel(im)init">-init</a>
+                    <a name="/c:@E@ZKLogLevel@ZKLogLevelTrace"></a>
+                    <a name="//apple_ref/objc/Case/ZKLogLevelTrace" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@ZKLogLevel@ZKLogLevelTrace">ZKLogLevelTrace</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -745,17 +724,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">init</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">ZKLogLevelTrace</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">trace</span> <span class="o">=</span> <span class="mi">0</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.13/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -763,9 +742,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKLogLevel(cm)logLevel"></a>
-                    <a name="//apple_ref/objc/Method/+logLevel" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKLogLevel(cm)logLevel">+logLevel</a>
+                    <a name="/c:@E@ZKLogLevel@ZKLogLevelDebug"></a>
+                    <a name="//apple_ref/objc/Case/ZKLogLevelDebug" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@ZKLogLevel@ZKLogLevelDebug">ZKLogLevelDebug</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -779,12 +758,187 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">logLevel</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">ZKLogLevelDebug</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">debug</span> <span class="o">=</span> <span class="mi">1</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.13/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@ZKLogLevel@ZKLogLevelInfo"></a>
+                    <a name="//apple_ref/objc/Case/ZKLogLevelInfo" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@ZKLogLevel@ZKLogLevelInfo">ZKLogLevelInfo</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">ZKLogLevelInfo</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">info</span> <span class="o">=</span> <span class="mi">2</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@ZKLogLevel@ZKLogLevelWarning"></a>
+                    <a name="//apple_ref/objc/Case/ZKLogLevelWarning" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@ZKLogLevel@ZKLogLevelWarning">ZKLogLevelWarning</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">ZKLogLevelWarning</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">warning</span> <span class="o">=</span> <span class="mi">3</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@ZKLogLevel@ZKLogLevelError"></a>
+                    <a name="//apple_ref/objc/Case/ZKLogLevelError" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@ZKLogLevel@ZKLogLevelError">ZKLogLevelError</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">ZKLogLevelError</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">error</span> <span class="o">=</span> <span class="mi">4</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@ZKLogLevel@ZKLogLevelCritical"></a>
+                    <a name="//apple_ref/objc/Case/ZKLogLevelCritical" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@ZKLogLevel@ZKLogLevelCritical">ZKLogLevelCritical</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">ZKLogLevelCritical</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">critical</span> <span class="o">=</span> <span class="mi">5</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@ZKLogLevel@ZKLogLevelOff"></a>
+                    <a name="//apple_ref/objc/Case/ZKLogLevelOff" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@ZKLogLevel@ZKLogLevelOff">ZKLogLevelOff</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">ZKLogLevelOff</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">off</span> <span class="o">=</span> <span class="mi">6</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h#L">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

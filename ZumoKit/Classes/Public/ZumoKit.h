@@ -32,6 +32,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKTransactionFeeRate.h"
 #import "ZKChangeListener.h"
 #import "ZKLogListener.h"
+#import "ZKLogLevel.h"
 #import "ZKAccountDataSnapshot.h"
 
 typedef void (^ZKUserCompletionBlock)(ZKUser *_Nullable user, NSError *_Nullable error);
@@ -60,22 +61,20 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Sets log level for current logger.
  *
- * @param logLevel log level, e.g. 'debug' or 'info'
+ * @param logLevel log level, e.g. debug or info
  *
  * @see `ZKLogLevel`
  */
-+ (void)setLogLevel:(nonnull NSString *)logLevel;
++ (void)setLogLevel:(ZKLogLevel)logLevel;
 
 /**
  * Sets log handler for all ZumoKit related logs.
  *
  * @param logListener interface to listen to changes
- * @param logLevel log level, e.g. 'debug' or 'info'
- *
- * @see `ZKLogLevel`
+ * @param logLevel log level, e.g. debug or info
  */
 + (void)onLog:(nullable id<ZKLogListener>)logListener
-     logLevel:(nonnull NSString *)logLevel;
+     logLevel:(ZKLogLevel)logLevel;
 
 /**
 * Initializes ZumoKit SDK. Should only be called once.

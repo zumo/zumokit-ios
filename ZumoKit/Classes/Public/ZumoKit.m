@@ -22,12 +22,12 @@ ZKZumoCore *zumoCore;
     return [ZKZumoCore getVersion];
 }
 
-+ (void)setLogLevel:(nonnull NSString *)logLevel {
++ (void)setLogLevel:(ZKLogLevel)logLevel {
     [ZKZumoCore setLogLevel:logLevel];
 };
 
 + (void)onLog:(nullable id<ZKLogListener>)logListener
-     logLevel:(nonnull NSString *)logLevel {
+     logLevel:(ZKLogLevel)logLevel {
     [ZKZumoCore onLog:logListener logLevel:logLevel];
 };
 

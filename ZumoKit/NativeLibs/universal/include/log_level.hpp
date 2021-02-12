@@ -3,27 +3,29 @@
 
 #pragma once
 
-#include <string>
-#include <utility>
+#include <functional>
 
 namespace zumo {
 
-/** Log level, e.g. 'debug' or 'error', */
-struct LogLevel final {
-
-    static std::string const TRACE;
-
-    static std::string const DEBUG;
-
-    static std::string const INFO;
-
-    static std::string const WARN;
-
-    static std::string const ERROR;
-
-    static std::string const CRITICAL;
-
-    static std::string const OFF;
+enum class LogLevel : int {
+    TRACE,
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR,
+    CRITICAL,
+    OFF,
 };
 
 }  // namespace zumo
+
+namespace std {
+
+template <>
+struct hash<::zumo::LogLevel> {
+    size_t operator()(::zumo::LogLevel type) const {
+        return std::hash<int>()(static_cast<int>(type));
+    }
+};
+
+}  // namespace std
