@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.3.0-beta.14 Docs
+          ZumoKit 2.3.0-beta.15 Docs
         </a>
         
       </p>
@@ -554,9 +554,6 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/ZKErrorCode.html">ZKErrorCode</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/ZKLogLevel.html">ZKLogLevel</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -698,7 +695,7 @@
  See <a target="_top" href="https://developers.zumo.money/docs/guides/getting-started">Getting Started</a> guide for usage details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L56-L195">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L55-L196">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -737,7 +734,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L59">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L58">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -758,7 +755,7 @@
                         <p>Sets log level for current logger.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
-    <p><code><a href="../Enums/ZKLogLevel.html">ZKLogLevel</a></code></p>
+    <p><code>ZKLogLevel</code></p>
 
 </div>
 
@@ -767,12 +764,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setLogLevel</span><span class="p">:(</span><span class="n"><a href="../Enums/ZKLogLevel.html">ZKLogLevel</a></span><span class="p">)</span><span class="nv">logLevel</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setLogLevel</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">logLevel</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">setLogLevel</span><span class="p">(</span><span class="n">_</span> <span class="nv">logLevel</span><span class="p">:</span> <span class="kt"><a href="../Enums/ZKLogLevel.html">ZKLogLevel</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">setLogLevel</span><span class="p">(</span><span class="n">_</span> <span class="nv">logLevel</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -788,7 +785,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>log level, e.g. debug or info</p>
+                                  <p>log level, e.g. &lsquo;debug&rsquo; or &lsquo;info&rsquo;</p>
                                 </div>
                               </td>
                             </tr>
@@ -796,7 +793,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L68">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L67">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -815,6 +812,11 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Sets log handler for all ZumoKit related logs.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <p><code>ZKLogLevel</code></p>
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -822,12 +824,12 @@
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onLog</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKLogListener.html">ZKLogListener</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">logListener</span>
-     <span class="nf">logLevel</span><span class="p">:(</span><span class="n"><a href="../Enums/ZKLogLevel.html">ZKLogLevel</a></span><span class="p">)</span><span class="nv">logLevel</span><span class="p">;</span></code></pre>
+     <span class="nf">logLevel</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">logLevel</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">onLog</span><span class="p">(</span><span class="n">_</span> <span class="nv">logListener</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ZKLogListener.html">ZKLogListener</a></span><span class="p">?,</span> <span class="nv">logLevel</span><span class="p">:</span> <span class="kt"><a href="../Enums/ZKLogLevel.html">ZKLogLevel</a></span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kd">func</span> <span class="nf">onLog</span><span class="p">(</span><span class="n">_</span> <span class="nv">logListener</span><span class="p">:</span> <span class="kt"><a href="../Protocols/ZKLogListener.html">ZKLogListener</a></span><span class="p">?,</span> <span class="nv">logLevel</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -855,7 +857,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>log level, e.g. debug or info</p>
+                                  <p>log level, e.g. &lsquo;debug&rsquo; or &lsquo;info&rsquo;</p>
                                 </div>
                               </td>
                             </tr>
@@ -863,7 +865,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L76-L77">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L77-L78">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -960,7 +962,7 @@
                         <p>ZumoKit instance</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L89-L92">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L90-L93">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1033,7 +1035,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L103-L104">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L104-L105">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1068,7 +1070,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L107">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L108">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1107,7 +1109,7 @@
                         <p>current user or null</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L114">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L115">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1146,7 +1148,7 @@
                         <p>crypto utils</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L121">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L122">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1213,7 +1215,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L129-L130">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L130-L131">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1252,7 +1254,7 @@
                         <p>mapping between currency pairs and exchange rates</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L137">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L138">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1320,7 +1322,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L145-L146">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L146-L147">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1359,7 +1361,7 @@
                         <p>mapping between currency pairs and exchange settings</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L153">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L154">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1414,7 +1416,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L160">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L161">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1453,7 +1455,7 @@
                         <p>mapping between cryptocurrencies and transaction fee rate</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L167">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L168">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1515,7 +1517,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L178">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L179">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1570,7 +1572,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L186">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L187">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1624,7 +1626,7 @@
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.14/ZumoKit/Classes/Public/ZumoKit.h#L193">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0-beta.15/ZumoKit/Classes/Public/ZumoKit.h#L194">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

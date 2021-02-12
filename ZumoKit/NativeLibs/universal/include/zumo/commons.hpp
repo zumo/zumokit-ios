@@ -1,4 +1,3 @@
-#include "zumo/log_level.hpp"
 #include "zumo/account.hpp"
 #include "zumo/account_data_snapshot.hpp"
 #include "zumo/account_type.hpp"
