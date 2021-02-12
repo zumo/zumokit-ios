@@ -11,6 +11,7 @@
 #import "ZKExchangeSetting+Private.h"
 #import "ZKHistoricalExchangeRatesCallback+Private.h"
 #import "ZKHttpProvider+Private.h"
+#import "ZKLogListener+Private.h"
 #import "ZKTransactionFeeRate+Private.h"
 #import "ZKUser+Private.h"
 #import "ZKUserCallback+Private.h"
@@ -44,6 +45,20 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         auto objcpp_result_ = ::zumo::ZumoCore::get_version();
         return ::djinni::String::fromCpp(objcpp_result_);
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
++ (void)setLogLevel:(nonnull NSString *)logLevel {
+    try {
+        ::zumo::ZumoCore::set_log_level(::djinni::String::toCpp(logLevel));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
++ (void)onLog:(nullable id<ZKLogListener>)logListener
+     logLevel:(nonnull NSString *)logLevel {
+    try {
+        ::zumo::ZumoCore::on_log(::djinni_generated::LogListener::toCpp(logListener),
+                                 ::djinni::String::toCpp(logLevel));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

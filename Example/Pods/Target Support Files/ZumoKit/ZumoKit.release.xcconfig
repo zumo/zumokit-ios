@@ -8,7 +8,7 @@ GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "$(PODS_ROOT)/ZumoKit/NativeLibs/universal/include"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/../../ZumoKit/NativeLibs/universal"
 OTHER_CFLAGS = $(inherited) -fmodules -fcxx-modules
-OTHER_LDFLAGS = $(inherited) -l"bitcoin" -l"c++" -l"secp256k1" -l"trezorcrypto" -l"utf8proc" -l"zumocore" -framework "Foundation"
+OTHER_LDFLAGS = $(inherited) -l"bitcoin" -l"c++" -l"fmt" -l"secp256k1" -l"spdlog" -l"trezorcrypto" -l"utf8proc" -l"zumocore" -framework "Foundation"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}

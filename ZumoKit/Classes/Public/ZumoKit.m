@@ -22,6 +22,15 @@ ZKZumoCore *zumoCore;
     return [ZKZumoCore getVersion];
 }
 
++ (void)setLogLevel:(nonnull NSString *)logLevel {
+    [ZKZumoCore setLogLevel:logLevel];
+};
+
++ (void)onLog:(nullable id<ZKLogListener>)logListener
+     logLevel:(nonnull NSString *)logLevel {
+    [ZKZumoCore onLog:logListener logLevel:logLevel];
+};
+
 - (instancetype)initWithApiKey:(NSString *)apiKey
                         apiUrl:(NSString *)apiUrl
          transactionServiceUrl:(NSString *)transactionServiceUrl

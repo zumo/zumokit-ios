@@ -2,14 +2,14 @@
   "warnings": [
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 67,
+      "line": 69,
       "symbol": "ZumoKitVersionNumber",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 68,
+      "line": 70,
       "symbol": "ZumoKitVersionString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -484,6 +484,76 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 8,
+      "symbol": "ZKLogLevel.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 9,
+      "symbol": "ZKLogLevel.+logLevel",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 13,
+      "symbol": "ZKLogLevelTRACE",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 14,
+      "symbol": "ZKLogLevelDEBUG",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 15,
+      "symbol": "ZKLogLevelINFO",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 16,
+      "symbol": "ZKLogLevelWARN",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 17,
+      "symbol": "ZKLogLevelERROR",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 18,
+      "symbol": "ZKLogLevelCRITICAL",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogLevel.h",
+      "line": 19,
+      "symbol": "ZKLogLevelOFF",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogListener.h",
+      "line": 10,
+      "symbol": "ZKLogListener.-onLog:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h",
       "line": 10,
       "symbol": "ZKMnemonicCallback.-onError:",
@@ -926,42 +996,42 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 36,
+      "line": 37,
       "symbol": "ZKUserCompletionBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 38,
+      "line": 39,
       "symbol": "ZKExchangeRates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 40,
+      "line": 41,
       "symbol": "ZKExchangeSettings",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 42,
+      "line": 43,
       "symbol": "ZKTransactionFeeRates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 44,
+      "line": 45,
       "symbol": "ZKHistoricalExchangeRates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 46,
+      "line": 47,
       "symbol": "ZKHistoricalExchangeRatesCompletionBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"

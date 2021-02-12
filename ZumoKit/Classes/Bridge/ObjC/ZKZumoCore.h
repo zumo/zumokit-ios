@@ -11,6 +11,7 @@
 @protocol ZKChangeListener;
 @protocol ZKHistoricalExchangeRatesCallback;
 @protocol ZKHttpProvider;
+@protocol ZKLogListener;
 @protocol ZKUserCallback;
 @protocol ZKWebSocketFactory;
 
@@ -23,6 +24,26 @@
  * @return semantic version tag if exists, commit hash otherwise
  */
 + (nonnull NSString *)getVersion;
+
+/**
+ * Sets log level for current logger.
+ *
+ * @param logLevel log level, e.g. 'debug' or 'info'
+ *
+ * @see `ZKLogLevel`
+ */
++ (void)setLogLevel:(nonnull NSString *)logLevel;
+
+/**
+ * Sets log handler for all ZumoKit related logs.
+ *
+ * @param logListener interface to listen to changes
+ * @param logLevel log level, e.g. 'debug' or 'info'
+ *
+ * @see `ZKLogLevel`
+ */
++ (void)onLog:(nullable id<ZKLogListener>)logListener
+     logLevel:(nonnull NSString *)logLevel;
 
 /**
  * Initializes ZumoKit SDK. Should only be called once.
