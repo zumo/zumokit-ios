@@ -26,6 +26,7 @@
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                     cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
                           exchange:(nullable ZKExchange *)exchange
+                          metadata:(nullable NSString *)metadata
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
                          timestamp:(int32_t)timestamp;
@@ -46,6 +47,7 @@
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                            cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
                                  exchange:(nullable ZKExchange *)exchange
+                                 metadata:(nullable NSString *)metadata
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
                                 timestamp:(int32_t)timestamp;
@@ -127,6 +129,9 @@
  * @see `ZKTransactionType`
  */
 @property (nonatomic, readonly, nullable) ZKExchange * exchange;
+
+/** Transaction metadata if exists, null otherwise. */
+@property (nonatomic, readonly, nullable) NSString * metadata;
 
 /** Epoch timestamp when transaction was submitted or null for incoming transactions from outside of Zumo ecosystem. */
 @property (nonatomic, readonly, nullable) NSNumber * submittedAt;

@@ -23,6 +23,7 @@
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                     cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
                           exchange:(nullable ZKExchange *)exchange
+                          metadata:(nullable NSString *)metadata
                        submittedAt:(nullable NSNumber *)submittedAt
                        confirmedAt:(nullable NSNumber *)confirmedAt
                          timestamp:(int32_t)timestamp
@@ -45,6 +46,7 @@
         _fiatProperties = fiatProperties;
         _cardProperties = cardProperties;
         _exchange = exchange;
+        _metadata = [metadata copy];
         _submittedAt = submittedAt;
         _confirmedAt = confirmedAt;
         _timestamp = timestamp;
@@ -69,6 +71,7 @@
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                            cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
                                  exchange:(nullable ZKExchange *)exchange
+                                 metadata:(nullable NSString *)metadata
                               submittedAt:(nullable NSNumber *)submittedAt
                               confirmedAt:(nullable NSNumber *)confirmedAt
                                 timestamp:(int32_t)timestamp
@@ -90,6 +93,7 @@
                                      fiatProperties:fiatProperties
                                      cardProperties:cardProperties
                                            exchange:exchange
+                                           metadata:metadata
                                         submittedAt:submittedAt
                                         confirmedAt:confirmedAt
                                           timestamp:timestamp];
@@ -118,6 +122,7 @@
             ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties])) &&
             ((self.cardProperties == nil && typedOther.cardProperties == nil) || (self.cardProperties != nil && [self.cardProperties isEqual:typedOther.cardProperties])) &&
             ((self.exchange == nil && typedOther.exchange == nil) || (self.exchange != nil && [self.exchange isEqual:typedOther.exchange])) &&
+            ((self.metadata == nil && typedOther.metadata == nil) || (self.metadata != nil && [self.metadata isEqual:typedOther.metadata])) &&
             ((self.submittedAt == nil && typedOther.submittedAt == nil) || (self.submittedAt != nil && [self.submittedAt isEqual:typedOther.submittedAt])) &&
             ((self.confirmedAt == nil && typedOther.confirmedAt == nil) || (self.confirmedAt != nil && [self.confirmedAt isEqual:typedOther.confirmedAt])) &&
             self.timestamp == typedOther.timestamp;
@@ -143,6 +148,7 @@
             self.fiatProperties.hash ^
             self.cardProperties.hash ^
             self.exchange.hash ^
+            self.metadata.hash ^
             self.submittedAt.hash ^
             self.confirmedAt.hash ^
             (NSUInteger)self.timestamp;
@@ -150,7 +156,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ cardProperties:%@ exchange:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.cardProperties, self.exchange, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ cardProperties:%@ exchange:%@ metadata:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.cardProperties, self.exchange, self.metadata, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

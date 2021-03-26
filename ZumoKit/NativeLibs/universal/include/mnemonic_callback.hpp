@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "zumo/exceptions.hpp"
+#include "exceptions.hpp"
 #include <string>
 
 namespace zumo {

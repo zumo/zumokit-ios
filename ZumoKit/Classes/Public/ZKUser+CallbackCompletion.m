@@ -66,14 +66,9 @@
 
 - (void)createCard:(nonnull NSString *)fiatAccountId
           cardType:(nonnull NSString *)cardType
-         firstName:(nonnull NSString *)firstName
-          lastName:(nonnull NSString *)lastName
-             title:(nullable NSString *)title
-       dateOfBirth:(nonnull NSString *)dateOfBirth
       mobileNumber:(nonnull NSString *)mobileNumber
-           address:(nonnull ZKAddress *)address
         completion:(_Nonnull ZKCardCompletionBlock)completionHandler {
-    [self createCard:fiatAccountId cardType:cardType firstName:firstName lastName:lastName title:title dateOfBirth:dateOfBirth mobileNumber:mobileNumber address:address callback:[[CardCallback alloc] initWithCompletionHandler:completionHandler]];
+    [self createCard:fiatAccountId cardType:cardType mobileNumber:mobileNumber callback:[[CardCallback alloc] initWithCompletionHandler:completionHandler]];
 };
 
 - (void)setCardStatus:(nonnull NSString *)cardId

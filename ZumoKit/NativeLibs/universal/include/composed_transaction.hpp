@@ -4,7 +4,7 @@
 #pragma once
 
 #include "account.hpp"
-#include "zumo/decimal.hpp"
+#include "decimal.hpp"
 #include <optional>
 #include <string>
 #include <utility>

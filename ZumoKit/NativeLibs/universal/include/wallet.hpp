@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "zumo/decimal.hpp"
+#include "decimal.hpp"
 #include <cstdint>
 #include <memory>
 #include <optional>
@@ -96,9 +96,10 @@ public:
      *
      * @param composed_transaction Composed transaction retrieved as a result
      *                             of one of the compose transaction methods
+     * @param metadata             Optional metadata (stringified JSON) that will be attached to transaction
      * @param callback An interface to receive the result or error
      */
-    virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
+    virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::optional<std::string> & metadata, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
 
     /**
      * Compose Bitcoin transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.

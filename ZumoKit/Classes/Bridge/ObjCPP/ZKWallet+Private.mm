@@ -106,9 +106,11 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 }
 
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
                  callback:(nullable id<ZKSubmitTransactionCallback>)callback {
     try {
         _cppRefHandle.get()->submit_transaction(::djinni_generated::ComposedTransaction::toCpp(composedTransaction),
+                                                ::djinni::Optional<std::optional, ::djinni::String>::toCpp(metadata),
                                                 ::djinni_generated::SubmitTransactionCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

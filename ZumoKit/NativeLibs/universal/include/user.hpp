@@ -96,17 +96,12 @@ public:
      * Create card for a fiat account.
      * @param  fiat_account_id fiat account id
      * @param  card_type       'VIRTUAL' or 'PHYSICAL'
-     * @param  first_name      card holder first name
-     * @param  last_name       card holder last name
-     * @param  title           card holder title or null
-     * @param  date_of_birth   card holder date of birth in ISO 8601 format, e.g '2020-08-12'
      * @param  mobile_number   card holder mobile number, starting with a '+', followed by the country code and then the mobile number
-     * @param  address         card holder address
      * @param  callback        an interface to receive the result or error
      * @see    Card
      * @see    CardType
      */
-    virtual void create_card(const std::string & fiat_account_id, const std::string & card_type, const std::string & first_name, const std::string & last_name, const std::optional<std::string> & title, const std::string & date_of_birth, const std::string & mobile_number, const Address & address, const std::shared_ptr<CardCallback> & callback) = 0;
+    virtual void create_card(const std::string & fiat_account_id, const std::string & card_type, const std::string & mobile_number, const std::shared_ptr<CardCallback> & callback) = 0;
 
     /**
      * Set card status to 'ACTIVE', 'BLOCKED' or 'CANCELLED'. 

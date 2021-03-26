@@ -104,22 +104,12 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 
 - (void)createCard:(nonnull NSString *)fiatAccountId
           cardType:(nonnull NSString *)cardType
-         firstName:(nonnull NSString *)firstName
-          lastName:(nonnull NSString *)lastName
-             title:(nullable NSString *)title
-       dateOfBirth:(nonnull NSString *)dateOfBirth
       mobileNumber:(nonnull NSString *)mobileNumber
-           address:(nonnull ZKAddress *)address
           callback:(nullable id<ZKCardCallback>)callback {
     try {
         _cppRefHandle.get()->create_card(::djinni::String::toCpp(fiatAccountId),
                                          ::djinni::String::toCpp(cardType),
-                                         ::djinni::String::toCpp(firstName),
-                                         ::djinni::String::toCpp(lastName),
-                                         ::djinni::Optional<std::optional, ::djinni::String>::toCpp(title),
-                                         ::djinni::String::toCpp(dateOfBirth),
                                          ::djinni::String::toCpp(mobileNumber),
-                                         ::djinni_generated::Address::toCpp(address),
                                          ::djinni_generated::CardCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

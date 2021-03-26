@@ -107,9 +107,11 @@
  *
  * @param composedTransaction Composed transaction retrieved as a result
  *                             of one of the compose transaction methods
+ * @param metadata             Optional metadata (stringified JSON) that will be attached to transaction
  * @param callback An interface to receive the result or error
  */
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
                  callback:(nullable id<ZKSubmitTransactionCallback>)callback;
 
 /**

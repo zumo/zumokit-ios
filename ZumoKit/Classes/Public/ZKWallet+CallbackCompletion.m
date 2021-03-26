@@ -91,8 +91,10 @@
 
 
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
                completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler {
     [self submitTransaction:composedTransaction
+                   metadata:metadata
                    callback:[[SubmitTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 

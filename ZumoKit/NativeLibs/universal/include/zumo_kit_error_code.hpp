@@ -60,8 +60,8 @@ struct ZumoKitErrorCode final {
     /** Exchange amount too low. */
     static std::string const EXCHANGE_AMOUNT_TOO_LOW;
 
-    /** Exchange currencies must be different. */
-    static std::string const EXCHANGE_CURRENCIES_MUST_BE_DIFFERENT;
+    /** Ethereum transaction data is not supported yet. */
+    static std::string const ETHEREUM_TRANSACTION_DATA_NOT_SUPPORTED;
 
     /** Exchange amount too low. Fees exceed return value. */
     static std::string const EXCHANGE_RETURN_VALUE_NEGATIVE;
@@ -118,11 +118,11 @@ struct ZumoKitErrorCode final {
     /** Mismatch between exchange setting and selected accounts. */
     static std::string const INVALID_EXCHANGE_SETTING;
 
-    /** Invalid fee rate. Fee rate should be an integer value. */
-    static std::string const INVALID_FEE_RATE;
-
     /** Requested private key derivation path is invalid. */
     static std::string const INVALID_HD_WALLET_PATH;
+
+    /** Invalid metadata. Metadata must be a valid JSON. */
+    static std::string const INVALID_METADATA;
 
     /**
      * Invalid length of mnemonic phrase.
@@ -150,6 +150,9 @@ struct ZumoKitErrorCode final {
 
     /** Invalid response received from WebSocket. */
     static std::string const INVALID_WEBSOCKET_RESPONSE;
+
+    /** Exchange already submitted. */
+    static std::string const KNOWN_EXCHANGE;
 
     /** Transaction already submitted. */
     static std::string const KNOWN_TRANSACTION;
