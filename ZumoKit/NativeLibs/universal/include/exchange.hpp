@@ -3,9 +3,9 @@
 
 #pragma once
 
+#include "decimal.hpp"
 #include "exchange_rate.hpp"
 #include "exchange_setting.hpp"
-#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <optional>
 #include <string>

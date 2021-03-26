@@ -6,7 +6,7 @@
 #include "account_crypto_properties.hpp"
 #include "account_fiat_properties.hpp"
 #include "card.hpp"
-#include "zumo/decimal.hpp"
+#include "decimal.hpp"
 #include <optional>
 #include <string>
 #include <utility>

@@ -45,8 +45,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET;
 extern NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET;
 /** Exchange amount too low. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW;
-/** Exchange currencies must be different. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGECURRENCIESMUSTBEDIFFERENT;
+/** Ethereum transaction data is not supported yet. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED;
 /** Exchange amount too low. Fees exceed return value. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE;
 /** Invalid account provided. Fiat accounted expected. */
@@ -86,10 +86,10 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE;
 /** Mismatch between exchange setting and selected accounts. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTING;
-/** Invalid fee rate. Fee rate should be an integer value. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE;
 /** Requested private key derivation path is invalid. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH;
+/** Invalid metadata. Metadata must be a valid JSON. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMETADATA;
 /**
  * Invalid length of mnemonic phrase.
  * Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.
@@ -109,6 +109,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET;
 /** Invalid response received from WebSocket. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE;
+/** Exchange already submitted. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeKNOWNEXCHANGE;
 /** Transaction already submitted. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION;
 /** No destination address. In case no transaction data is provided, destination address is obligatory. */

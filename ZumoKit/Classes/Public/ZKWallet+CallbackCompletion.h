@@ -87,9 +87,10 @@ typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, 
 
 /**
 <code>submitTransaction</code> completion handler extension.
-@see `-[ZKWallet submitTransaction:callback:]`
+@see `-[ZKWallet submitTransaction:metadata:callback:]`
 */
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
                completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler;
 
 /**

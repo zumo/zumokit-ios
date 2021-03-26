@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include "zumo/decimal.hpp"
+#include "decimal.hpp"
 #include <optional>
 #include <string>
 #include <utility>

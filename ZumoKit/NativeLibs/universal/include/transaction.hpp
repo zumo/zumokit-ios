@@ -3,11 +3,11 @@
 
 #pragma once
 
+#include "decimal.hpp"
 #include "exchange.hpp"
 #include "transaction_card_properties.hpp"
 #include "transaction_crypto_properties.hpp"
 #include "transaction_fiat_properties.hpp"
-#include "zumo/decimal.hpp"
 #include <cstdint>
 #include <optional>
 #include <string>
@@ -78,6 +78,8 @@ struct Transaction final {
      * @see TransactionType
      */
     std::optional<Exchange> exchange;
+    /** Transaction metadata if exists, null otherwise. */
+    std::optional<std::string> metadata;
     /** Epoch timestamp when transaction was submitted or null for incoming transactions from outside of Zumo ecosystem. */
     std::optional<int32_t> submitted_at;
     /** Epoch timestamp when transaction was submitted or null if transaction was not confirmed yet. */
@@ -105,6 +107,7 @@ struct Transaction final {
                 std::optional<TransactionFiatProperties> fiat_properties_,
                 std::optional<TransactionCardProperties> card_properties_,
                 std::optional<Exchange> exchange_,
+                std::optional<std::string> metadata_,
                 std::optional<int32_t> submitted_at_,
                 std::optional<int32_t> confirmed_at_,
                 int32_t timestamp_)
@@ -125,6 +128,7 @@ struct Transaction final {
     , fiat_properties(std::move(fiat_properties_))
     , card_properties(std::move(card_properties_))
     , exchange(std::move(exchange_))
+    , metadata(std::move(metadata_))
     , submitted_at(std::move(submitted_at_))
     , confirmed_at(std::move(confirmed_at_))
     , timestamp(std::move(timestamp_))

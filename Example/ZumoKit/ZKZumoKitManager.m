@@ -172,6 +172,7 @@
         }
         
         [_wallet submitTransaction:composedTransaction
+                          metadata:nil
                         completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
             
             if (error != nil) {
@@ -207,6 +208,7 @@
         }
         
         [_wallet submitTransaction:composedTransaction
+                          metadata:nil
                         completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
             
             if (error != nil) {

@@ -3,7 +3,6 @@
 
 #include <optional>
 #include <string>
-#include <utility>
 
 namespace zumo {
 
@@ -12,9 +11,6 @@ struct ZumoKitError final {
     std::string type;
     std::optional<std::string> code;
     std::optional<std::string> message;
-
-    friend bool operator==(const ZumoKitError &lhs, const ZumoKitError &rhs);
-    friend bool operator!=(const ZumoKitError &lhs, const ZumoKitError &rhs);
 
     ZumoKitError(std::string type_, std::string code_);
 
@@ -30,5 +26,10 @@ struct ZumoKitError final {
         : type(std::move(type_)), code(std::move(code_)), message(std::move(message_))
     {
     }
+
+    friend bool operator==(const ZumoKitError &lhs, const ZumoKitError &rhs);
+    friend bool operator!=(const ZumoKitError &lhs, const ZumoKitError &rhs);
+
+    friend std::ostream &operator<<(std::ostream &os, const ZumoKitError &error);
 };
 }

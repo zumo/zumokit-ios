@@ -32,6 +32,7 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::optional, ::djinni_generated::TransactionFiatProperties>::toCpp(obj.fiatProperties),
             ::djinni::Optional<std::optional, ::djinni_generated::TransactionCardProperties>::toCpp(obj.cardProperties),
             ::djinni::Optional<std::optional, ::djinni_generated::Exchange>::toCpp(obj.exchange),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.metadata),
             ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.submittedAt),
             ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.confirmedAt),
             ::djinni::I32::toCpp(obj.timestamp)};
@@ -56,6 +57,7 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
                               fiatProperties:(::djinni::Optional<std::optional, ::djinni_generated::TransactionFiatProperties>::fromCpp(cpp.fiat_properties))
                               cardProperties:(::djinni::Optional<std::optional, ::djinni_generated::TransactionCardProperties>::fromCpp(cpp.card_properties))
                                     exchange:(::djinni::Optional<std::optional, ::djinni_generated::Exchange>::fromCpp(cpp.exchange))
+                                    metadata:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.metadata))
                                  submittedAt:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.submitted_at))
                                  confirmedAt:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.confirmed_at))
                                    timestamp:(::djinni::I32::fromCpp(cpp.timestamp))];

@@ -98,24 +98,14 @@
  * Create card for a fiat account.
  * @param  fiatAccountId fiat account id
  * @param  cardType       'VIRTUAL' or 'PHYSICAL'
- * @param  firstName      card holder first name
- * @param  lastName       card holder last name
- * @param  title           card holder title or null
- * @param  dateOfBirth   card holder date of birth in ISO 8601 format, e.g '2020-08-12'
  * @param  mobileNumber   card holder mobile number, starting with a '+', followed by the country code and then the mobile number
- * @param  address         card holder address
  * @param  callback        an interface to receive the result or error
  * @see    `ZKCard`
  * @see    `ZKCardType`
  */
 - (void)createCard:(nonnull NSString *)fiatAccountId
           cardType:(nonnull NSString *)cardType
-         firstName:(nonnull NSString *)firstName
-          lastName:(nonnull NSString *)lastName
-             title:(nullable NSString *)title
-       dateOfBirth:(nonnull NSString *)dateOfBirth
       mobileNumber:(nonnull NSString *)mobileNumber
-           address:(nonnull ZKAddress *)address
           callback:(nullable id<ZKCardCallback>)callback;
 
 /**

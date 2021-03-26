@@ -682,14 +682,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
       "line": 12,
-      "symbol": "ZKTransaction.-initWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:submittedAt:confirmedAt:timestamp:",
+      "symbol": "ZKTransaction.-initWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
-      "line": 32,
-      "symbol": "ZKTransaction.+transactionWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:submittedAt:confirmedAt:timestamp:",
+      "line": 33,
+      "symbol": "ZKTransaction.+transactionWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },

@@ -32,7 +32,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET 
 
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW = @"exchange_amount_too_low";
 
-NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGECURRENCIESMUSTBEDIFFERENT = @"exchange_currencies_must_be_different";
+NSString * __nonnull const ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED = @"ethereum_transaction_data_not_supported";
 
 NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE = @"exchange_return_value_negative";
 
@@ -66,9 +66,9 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE = @"invalid_exc
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTING = @"invalid_exchange_setting";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDFEERATE = @"invalid_fee_rate";
-
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH = @"invalid_hd_wallet_path";
+
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMETADATA = @"invalid_metadata";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT = @"invalid_mnemonic_word_count";
 
@@ -85,6 +85,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE = @"invalid
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET = @"invalid_user_token_set";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE = @"invalid_websocket_response";
+
+NSString * __nonnull const ZKZumoKitErrorCodeKNOWNEXCHANGE = @"known_exchange";
 
 NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION = @"known_transaction";
 
