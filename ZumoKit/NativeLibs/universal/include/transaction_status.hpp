@@ -42,6 +42,9 @@ struct TransactionStatus final {
      */
     static std::string const CANCELLED;
 
+    /** Card transaction was authorised. */
+    static std::string const AUTHORISED;
+
     /** Card transaction was reversed. */
     static std::string const REVERSED;
 };
