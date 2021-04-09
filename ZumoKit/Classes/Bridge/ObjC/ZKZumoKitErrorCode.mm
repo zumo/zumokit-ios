@@ -70,6 +70,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH = @"invalid_hd_
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMETADATA = @"invalid_metadata";
 
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMNEMONIC = @"invalid_mnemonic";
+
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT = @"invalid_mnemonic_word_count";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDNETWORKTYPE = @"invalid_network_type";

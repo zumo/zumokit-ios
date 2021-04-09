@@ -1,6 +1,7 @@
 #pragma once
 
 #include "zumo_kit_error.hpp"
+
 #include <exception>
 #include <string>
 

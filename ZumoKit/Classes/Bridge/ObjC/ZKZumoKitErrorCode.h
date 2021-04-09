@@ -90,6 +90,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTING;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH;
 /** Invalid metadata. Metadata must be a valid JSON. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMETADATA;
+/** Invalid mnemonic phrase. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDMNEMONIC;
 /**
  * Invalid length of mnemonic phrase.
  * Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.
