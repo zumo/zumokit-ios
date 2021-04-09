@@ -124,6 +124,9 @@ struct ZumoKitErrorCode final {
     /** Invalid metadata. Metadata must be a valid JSON. */
     static std::string const INVALID_METADATA;
 
+    /** Invalid mnemonic phrase. */
+    static std::string const INVALID_MNEMONIC;
+
     /**
      * Invalid length of mnemonic phrase.
      * Mnemonic phrase should be 12, 15, 18, 21 or 24 words long.
