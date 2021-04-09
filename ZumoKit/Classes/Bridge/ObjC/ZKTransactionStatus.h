@@ -34,5 +34,7 @@ extern NSString * __nonnull const ZKTransactionStatusRESUBMITTED;
  * submitted transaction and with with the same nonce as that previously submitted transaction.
  */
 extern NSString * __nonnull const ZKTransactionStatusCANCELLED;
+/** Card transaction was authorised. */
+extern NSString * __nonnull const ZKTransactionStatusAUTHORISED;
 /** Card transaction was reversed. */
 extern NSString * __nonnull const ZKTransactionStatusREVERSED;
