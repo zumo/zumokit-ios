@@ -5,16 +5,21 @@
 
 /** Record describing user address details */
 @interface ZKAddress : NSObject
-- (nonnull instancetype)initWithAddressLine1:(nonnull NSString *)addressLine1
-                                addressLine2:(nullable NSString *)addressLine2
-                                     country:(nonnull NSString *)country
-                                    postCode:(nonnull NSString *)postCode
-                                    postTown:(nonnull NSString *)postTown;
-+ (nonnull instancetype)addressWithAddressLine1:(nonnull NSString *)addressLine1
-                                   addressLine2:(nullable NSString *)addressLine2
-                                        country:(nonnull NSString *)country
-                                       postCode:(nonnull NSString *)postCode
-                                       postTown:(nonnull NSString *)postTown;
+- (nonnull instancetype)initWithHouseNumber:(nonnull NSString *)houseNumber
+                               addressLine1:(nonnull NSString *)addressLine1
+                               addressLine2:(nullable NSString *)addressLine2
+                                    country:(nonnull NSString *)country
+                                   postCode:(nonnull NSString *)postCode
+                                   postTown:(nonnull NSString *)postTown;
++ (nonnull instancetype)addressWithHouseNumber:(nonnull NSString *)houseNumber
+                                  addressLine1:(nonnull NSString *)addressLine1
+                                  addressLine2:(nullable NSString *)addressLine2
+                                       country:(nonnull NSString *)country
+                                      postCode:(nonnull NSString *)postCode
+                                      postTown:(nonnull NSString *)postTown;
+
+/** House number. */
+@property (nonatomic, readonly, nonnull) NSString * houseNumber;
 
 /** First line of address. */
 @property (nonatomic, readonly, nonnull) NSString * addressLine1;

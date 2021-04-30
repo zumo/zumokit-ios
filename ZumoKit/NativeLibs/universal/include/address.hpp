@@ -11,6 +11,8 @@ namespace zumo {
 
 /** Record describing user address details */
 struct Address final {
+    /** House number. */
+    std::string house_number;
     /** First line of address. */
     std::string address_line_1;
     /** Second line of address or null. */
@@ -25,12 +27,14 @@ struct Address final {
     friend bool operator==(const Address& lhs, const Address& rhs);
     friend bool operator!=(const Address& lhs, const Address& rhs);
 
-    Address(std::string address_line_1_,
+    Address(std::string house_number_,
+            std::string address_line_1_,
             std::optional<std::string> address_line_2_,
             std::string country_,
             std::string post_code_,
             std::string post_town_)
-    : address_line_1(std::move(address_line_1_))
+    : house_number(std::move(house_number_))
+    , address_line_1(std::move(address_line_1_))
     , address_line_2(std::move(address_line_2_))
     , country(std::move(country_))
     , post_code(std::move(post_code_))
