@@ -122,14 +122,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h",
       "line": 8,
-      "symbol": "ZKAddress.-initWithAddressLine1:addressLine2:country:postCode:postTown:",
+      "symbol": "ZKAddress.-initWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h",
-      "line": 13,
-      "symbol": "ZKAddress.+addressWithAddressLine1:addressLine2:country:postCode:postTown:",
+      "line": 14,
+      "symbol": "ZKAddress.+addressWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },

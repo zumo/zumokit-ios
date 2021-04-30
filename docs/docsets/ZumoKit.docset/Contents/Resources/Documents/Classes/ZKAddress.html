@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 2.3.0 Docs
+          ZumoKit 2.4.0 Docs
         </a>
         
       </p>
@@ -702,7 +702,7 @@
             <p>Record describing user address details</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L7-L34">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L7-L39">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -714,9 +714,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKAddress(im)initWithAddressLine1:addressLine2:country:postCode:postTown:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithAddressLine1:addressLine2:country:postCode:postTown:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKAddress(im)initWithAddressLine1:addressLine2:country:postCode:postTown:">-initWithAddressLine1:<wbr>addressLine2:<wbr>country:<wbr>postCode:<wbr>postTown:<wbr></a>
+                    <a name="/c:objc(cs)ZKAddress(im)initWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKAddress(im)initWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:">-initWithHouseNumber:<wbr>addressLine1:<wbr>addressLine2:<wbr>country:<wbr>postCode:<wbr>postTown:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -730,21 +730,22 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithAddressLine1</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine1</span>
-                                <span class="nf">addressLine2</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine2</span>
-                                     <span class="nf">country</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">country</span>
-                                    <span class="nf">postCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postCode</span>
-                                    <span class="nf">postTown</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postTown</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithHouseNumber</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">houseNumber</span>
+                               <span class="nf">addressLine1</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine1</span>
+                               <span class="nf">addressLine2</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine2</span>
+                                    <span class="nf">country</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">country</span>
+                                   <span class="nf">postCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postCode</span>
+                                   <span class="nf">postTown</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postTown</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">addressLine1</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">addressLine2</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">country</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">postCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">postTown</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">houseNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">addressLine1</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">addressLine2</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">country</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">postCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">postTown</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L8-L12">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L8-L13">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -752,9 +753,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKAddress(cm)addressWithAddressLine1:addressLine2:country:postCode:postTown:"></a>
-                    <a name="//apple_ref/objc/Method/+addressWithAddressLine1:addressLine2:country:postCode:postTown:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKAddress(cm)addressWithAddressLine1:addressLine2:country:postCode:postTown:">+addressWithAddressLine1:<wbr>addressLine2:<wbr>country:<wbr>postCode:<wbr>postTown:<wbr></a>
+                    <a name="/c:objc(cs)ZKAddress(cm)addressWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:"></a>
+                    <a name="//apple_ref/objc/Method/+addressWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKAddress(cm)addressWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:">+addressWithHouseNumber:<wbr>addressLine1:<wbr>addressLine2:<wbr>country:<wbr>postCode:<wbr>postTown:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -768,16 +769,52 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">addressWithAddressLine1</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine1</span>
-                                   <span class="nf">addressLine2</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine2</span>
-                                        <span class="nf">country</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">country</span>
-                                       <span class="nf">postCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postCode</span>
-                                       <span class="nf">postTown</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postTown</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">addressWithHouseNumber</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">houseNumber</span>
+                                  <span class="nf">addressLine1</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine1</span>
+                                  <span class="nf">addressLine2</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">addressLine2</span>
+                                       <span class="nf">country</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">country</span>
+                                      <span class="nf">postCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postCode</span>
+                                      <span class="nf">postTown</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">postTown</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L13-L17">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L14-L19">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKAddress(py)houseNumber"></a>
+                    <a name="//apple_ref/objc/Property/houseNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKAddress(py)houseNumber">houseNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>House number.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">houseNumber</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">houseNumber</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L22">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -812,7 +849,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L20">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L25">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -847,7 +884,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L23">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L28">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -882,7 +919,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L26">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L31">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -917,7 +954,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L29">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L34">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -952,7 +989,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/2.3.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L32">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.0/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h#L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -965,7 +1002,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2021-04-29)</p>
+      <p>&copy; 2021 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2021-04-30)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
