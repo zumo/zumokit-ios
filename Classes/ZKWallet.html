@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ZKWallet Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/objc/Class/ZKWallet" class="dashAnchor"></a>
+
+    <a title="ZKWallet Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          ZumoKit 2.4.1 Docs
+        </a>
+        
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/zumo/zumokit-ios">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      ZKWallet Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/NSError%28ZumoKit%29.html">NSError(ZumoKit)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccount.html">ZKAccount</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountDataSnapshot.html">ZKAccountDataSnapshot</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountType.html">ZKAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAddress.html">ZKAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCard.html">ZKCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCardDetails.html">ZKCardDetails</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCardStatus.html">ZKCardStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCardType.html">ZKCardType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCurrencyCode.html">ZKCurrencyCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCurrencyType.html">ZKCurrencyType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchange.html">ZKExchange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchangeSetting.html">ZKExchangeSetting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchangeStatus.html">ZKExchangeStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKNetworkType.html">ZKNetworkType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTimeInterval.html">ZKTimeInterval</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransaction.html">ZKTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionCardProperties.html">ZKTransactionCardProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionCryptoProperties.html">ZKTransactionCryptoProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionDirection.html">ZKTransactionDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionFeeRate.html">ZKTransactionFeeRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionFiatProperties.html">ZKTransactionFiatProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionStatus.html">ZKTransactionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionType.html">ZKTransactionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKUser.html">ZKUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKUtils.html">ZKUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKWallet.html">ZKWallet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKZumoKitErrorCode.html">ZKZumoKitErrorCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKZumoKitErrorType.html">ZKZumoKitErrorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZumoKit.html">ZumoKit</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKAccountTypeCOMPATIBILITY">ZKAccountTypeCOMPATIBILITY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKAccountTypeSEGWIT">ZKAccountTypeSEGWIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKAccountTypeSTANDARD">ZKAccountTypeSTANDARD</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusACTIVE">ZKCardStatusACTIVE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusBLOCKED">ZKCardStatusBLOCKED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusCANCELLED">ZKCardStatusCANCELLED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusCREATED">ZKCardStatusCREATED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusEXPIRED">ZKCardStatusEXPIRED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusFROZEN">ZKCardStatusFROZEN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusSUSPENDED">ZKCardStatusSUSPENDED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardTypePHYSICAL">ZKCardTypePHYSICAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardTypeVIRTUAL">ZKCardTypeVIRTUAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeBSV">ZKCurrencyCodeBSV</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeBTC">ZKCurrencyCodeBTC</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeETH">ZKCurrencyCodeETH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeGBP">ZKCurrencyCodeGBP</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyTypeCRYPTO">ZKCurrencyTypeCRYPTO</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyTypeFIAT">ZKCurrencyTypeFIAT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusCANCELLED">ZKExchangeStatusCANCELLED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusCONFIRMED">ZKExchangeStatusCONFIRMED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusDEPOSITED">ZKExchangeStatusDEPOSITED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusFAILED">ZKExchangeStatusFAILED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusPAUSED">ZKExchangeStatusPAUSED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusPENDING">ZKExchangeStatusPENDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusREJECTED">ZKExchangeStatusREJECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeGOERLI">ZKNetworkTypeGOERLI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeKOVAN">ZKNetworkTypeKOVAN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeMAINNET">ZKNetworkTypeMAINNET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeRINKEBY">ZKNetworkTypeRINKEBY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeROPSTEN">ZKNetworkTypeROPSTEN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeTESTNET">ZKNetworkTypeTESTNET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalDAY">ZKTimeIntervalDAY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalHOUR">ZKTimeIntervalHOUR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalMAX">ZKTimeIntervalMAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalMONTH">ZKTimeIntervalMONTH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalQUARTER">ZKTimeIntervalQUARTER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalWEEK">ZKTimeIntervalWEEK</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalYEAR">ZKTimeIntervalYEAR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionDirectionINCOMING">ZKTransactionDirectionINCOMING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionDirectionOUTGOING">ZKTransactionDirectionOUTGOING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusAUTHORISED">ZKTransactionStatusAUTHORISED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusCANCELLED">ZKTransactionStatusCANCELLED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusCONFIRMED">ZKTransactionStatusCONFIRMED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusFAILED">ZKTransactionStatusFAILED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusPAUSED">ZKTransactionStatusPAUSED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusPENDING">ZKTransactionStatusPENDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusREJECTED">ZKTransactionStatusREJECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusRESUBMITTED">ZKTransactionStatusRESUBMITTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusREVERSED">ZKTransactionStatusREVERSED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCARD">ZKTransactionTypeCARD</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCRYPTO">ZKTransactionTypeCRYPTO</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeEXCHANGE">ZKTransactionTypeEXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeFIAT">ZKTransactionTypeFIAT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeNOMINATED">ZKTransactionTypeNOMINATED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED">ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTNOTFOUND">ZKZumoKitErrorCodeACCOUNTNOTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeALREADYFIATCUSTOMER">ZKZumoKitErrorCodeALREADYFIATCUSTOMER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAPISERVICEERROR">ZKZumoKitErrorCodeAPISERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCARDNOTFOUND">ZKZumoKitErrorCodeCARDNOTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCARDSERVICEERROR">ZKZumoKitErrorCodeCARDSERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND">ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE">ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeDATAOVERFLOW">ZKZumoKitErrorCodeDATAOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET">ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED">ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW">ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE">ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeFIATACCOUNTEXPECTED">ZKZumoKitErrorCodeFIATACCOUNTEXPECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeGASOVERFLOW">ZKZumoKitErrorCodeGASOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeGASTOOLOW">ZKZumoKitErrorCodeGASTOOLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES">ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED">ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED">ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE">ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION">ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINT64OVERFLOW">ZKZumoKitErrorCodeINT64OVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDACCOUNTTYPE">ZKZumoKitErrorCodeINVALIDACCOUNTTYPE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDADDRESS">ZKZumoKitErrorCodeINVALIDADDRESS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDAPIRESPONSE">ZKZumoKitErrorCodeINVALIDAPIRESPONSE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS">ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGERATE">ZKZumoKitErrorCodeINVALIDEXCHANGERATE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTING">ZKZumoKitErrorCodeINVALIDEXCHANGESETTING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDHDWALLETPATH">ZKZumoKitErrorCodeINVALIDHDWALLETPATH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDMETADATA">ZKZumoKitErrorCodeINVALIDMETADATA</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDMNEMONIC">ZKZumoKitErrorCodeINVALIDMNEMONIC</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT">ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDNETWORKTYPE">ZKZumoKitErrorCodeINVALIDNETWORKTYPE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDPASSWORD">ZKZumoKitErrorCodeINVALIDPASSWORD</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE">ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE">ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE">ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDUSERTOKENSET">ZKZumoKitErrorCodeINVALIDUSERTOKENSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE">ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeKNOWNEXCHANGE">ZKZumoKitErrorCodeKNOWNEXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeKNOWNTRANSACTION">ZKZumoKitErrorCodeKNOWNTRANSACTION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeKey">ZKZumoKitErrorCodeKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNODESTINATIONADDRESS">ZKZumoKitErrorCodeNODESTINATIONADDRESS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNONCEOVERFLOW">ZKZumoKitErrorCodeNONCEOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNONOMINATEDACCOUNTFOUND">ZKZumoKitErrorCodeNONOMINATEDACCOUNTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNOTAUTHORIZED">ZKZumoKitErrorCodeNOTAUTHORIZED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNOWALLETFOUND">ZKZumoKitErrorCodeNOWALLETFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE">ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE">ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION">ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSIGNINGERROR">ZKZumoKitErrorCodeSIGNINGERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW">ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL">ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR">ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONTOOLARGE">ZKZumoKitErrorCodeTRANSACTIONTOOLARGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUNKNOWNERROR">ZKZumoKitErrorCodeUNKNOWNERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER">ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeWALLETLIMITEXCEEDED">ZKZumoKitErrorCodeWALLETLIMITEXCEEDED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeAPICONNECTIONERROR">ZKZumoKitErrorTypeAPICONNECTIONERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeAPIERROR">ZKZumoKitErrorTypeAPIERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeAUTHENTICATIONERROR">ZKZumoKitErrorTypeAUTHENTICATIONERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeINVALIDARGUMENTERROR">ZKZumoKitErrorTypeINVALIDARGUMENTERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeINVALIDREQUESTERROR">ZKZumoKitErrorTypeINVALIDREQUESTERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeKey">ZKZumoKitErrorTypeKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeRATELIMITERROR">ZKZumoKitErrorTypeRATELIMITERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeWALLETERROR">ZKZumoKitErrorTypeWALLETERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeZUMOKITERROR">ZKZumoKitErrorTypeZUMOKITERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZumoKitDomain">ZumoKitDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZumoKitVersionNumber">ZumoKitVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZumoKitVersionString">ZumoKitVersionString</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ZKErrorCode.html">ZKErrorCode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKAccountCallback.html">ZKAccountCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKAccountDataListener.html">ZKAccountDataListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKCardCallback.html">ZKCardCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKCardDetailsCallback.html">ZKCardDetailsCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKChangeListener.html">ZKChangeListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKHistoricalExchangeRatesCallback.html">ZKHistoricalExchangeRatesCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKLogListener.html">ZKLogListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKMnemonicCallback.html">ZKMnemonicCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKPinCallback.html">ZKPinCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKSubmitExchangeCallback.html">ZKSubmitExchangeCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKSubmitTransactionCallback.html">ZKSubmitTransactionCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKSuccessCallback.html">ZKSuccessCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKUserCallback.html">ZKUserCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKWalletCallback.html">ZKWalletCallback</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type%20Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountFiatPropertiesCompletionBlock">ZKAccountFiatPropertiesCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKCardCompletionBlock">ZKCardCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKCardDetailsCompletionBlock">ZKCardDetailsCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeSettings">ZKExchangeSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRates">ZKHistoricalExchangeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRatesCompletionBlock">ZKHistoricalExchangeRatesCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKMnemonicCompletionBlock">ZKMnemonicCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKPinCompletionBlock">ZKPinCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKTransactionFeeRates">ZKTransactionFeeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKUserCompletionBlock">ZKUserCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKWalletCompletionBlock">ZKWalletCompletionBlock</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>ZKWallet</h1>
+              <div class="declaration">
+                <div class="language">
+                  <p class="aside-title">Objective-C</p>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKWallet</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+
+                </div>
+                <div class="language">
+                  <p class="aside-title">Swift</p>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKWallet</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>User wallet provides methods for transfer and exchange of fiat and cryptocurrency funds.
+Sending a transaction or making an exchange is a two step process. First a transaction or
+exchange has to be composed via one of the compose methods, then <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> or
+<code><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></code> can be submitted.
+<p>
+User wallet instance can be obtained by creating, unlocking or recovering user wallet via <code><a href="../Classes/ZKUser.html">ZKUser</a></code> instance.</p>
+
+              <div class="slightly-smaller">
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L23-L150">Show on GitHub</a>
+              </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:callback:">-composeTransaction:<wbr>changeAccountId:<wbr>destination:<wbr>amount:<wbr>feeRate:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose BTC or BSV transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#crypto">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code>  is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+           <span class="nf">changeAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">changeAccountId</span>
+               <span class="nf">destination</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">destination</span>
+                    <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                   <span class="nf">feeRate</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">feeRate</span>
+                   <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                  <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>changeAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>change <code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier, which can be the same as fromAccountId</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destination</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>destination wallet address</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in BTC or BSV</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>feeRate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>fee rate in satoshis/byte</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L38-L44">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:callback:">-composeEthTransaction:<wbr>gasPrice:<wbr>gasLimit:<wbr>destination:<wbr>amount:<wbr>data:<wbr>nonce:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose Ethereum transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeEthTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                     <span class="nf">gasPrice</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">gasPrice</span>
+                     <span class="nf">gasLimit</span><span class="p">:(</span><span class="kt">int32_t</span><span class="p">)</span><span class="nv">gasLimit</span>
+                  <span class="nf">destination</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">destination</span>
+                       <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                         <span class="nf">data</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span>
+                        <span class="nf">nonce</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">nonce</span>
+                      <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                     <span class="nf">callback</span><span class="p">:</span>
+                         <span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gasPrice</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>gas price in gwei</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>gasLimit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>gas limit</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destination</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>destination wallet address</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in ETH</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>data in string format or null</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>nonce</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>next transaction nonce or null</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L61-L69">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:">-composeInternalFiatTransaction:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeInternalFiatTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                           <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                               <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                              <span class="nf">callback</span><span class="p">:</span>
+                                  <span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span>
+                                      <span class="n">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in source account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L82-L86">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeTransactionToNominatedAccount:amount:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:callback:">-composeTransactionToNominatedAccount:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose transaction to nominated account asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> object is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+    <span class="nf">composeTransactionToNominatedAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                                  <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                                 <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                                <span class="nf">callback</span><span class="p">:</span>
+                                    <span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span>
+                                        <span class="n">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in source account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L98-L101">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)submitTransaction:metadata:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-submitTransaction:metadata:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitTransaction:metadata:callback:">-submitTransaction:<wbr>metadata:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submit a transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKTransaction.html">ZKTransaction</a></code> object is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedTransaction</span>
+                 <span class="nf">metadata</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">metadata</span>
+                 <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKSubmitTransactionCallback.html">ZKSubmitTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>composedTransaction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Composed transaction retrieved as a result
+                         of one of the compose transaction methods</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>metadata</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional metadata (stringified JSON) that will be attached to transaction</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L113-L115">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:exchangeRate:exchangeSetting:amount:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeExchange:toAccountId:exchangeRate:exchangeSetting:amount:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:exchangeRate:exchangeSetting:amount:sendMax:callback:">-composeExchange:<wbr>toAccountId:<wbr>exchangeRate:<wbr>exchangeSetting:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose Bitcoin transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></code>  is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+            <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+           <span class="nf">exchangeRate</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeRate</span>
+        <span class="nf">exchangeSetting</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeSetting.html">ZKExchangeSetting</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeSetting</span>
+                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+               <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>exchangeRate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Zumo exchange rate obtained from <code>ZKZumoKit</code> instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>exchangeSetting</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Zumo exchange setting obtained from <code>ZKZumoKit</code> instance</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in deposit account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>exchange maximum possible funds</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L130-L136">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)submitExchange:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-submitExchange:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitExchange:callback:">-submitExchange:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submit an exchange asynchronously. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKExchange.html">ZKExchange</a></code> object is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedExchange</span>
+              <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKSubmitExchangeCallback.html">ZKSubmitExchangeCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>composedExchange</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Composed exchange retrieved as the result
+                      of <code>composeExchange</code> method</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L147-L148">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ZKWalletCallbackCompletion"></a>
+                <a name="//apple_ref/objc/Section/ZKWalletCallbackCompletion" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/ZKWalletCallbackCompletion"></a>
+                  <h3 class="section-name"><p>ZKWalletCallbackCompletion</p>
+</h3>
+                </div>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:completion:">-composeEthTransaction:<wbr>gasPrice:<wbr>gasLimit:<wbr>destination:<wbr>amount:<wbr>data:<wbr>nonce:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeEthTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:callback:">-[ZKWallet composeEthTransaction:gasPrice:gasLimit:destination:amount:data:nonce:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeEthTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                     <span class="nf">gasPrice</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">gasPrice</span>
+                     <span class="nf">gasLimit</span><span class="p">:(</span><span class="kt">int32_t</span><span class="p">)</span><span class="nv">gasLimit</span>
+                  <span class="nf">destination</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">destination</span>
+                       <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                         <span class="nf">data</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span>
+                        <span class="nf">nonce</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">nonce</span>
+                      <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                   <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                                  <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeEthTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">gasPrice</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">gasLimit</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">nonce</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L35-L43">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:completion:">-composeTransaction:<wbr>changeAccountId:<wbr>destination:<wbr>amount:<wbr>feeRate:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:callback:">-[ZKWallet composeTransaction:changeAccountId:destination:amount:feeRate:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+           <span class="nf">changeAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">changeAccountId</span>
+               <span class="nf">destination</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">destination</span>
+                    <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                   <span class="nf">feeRate</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">feeRate</span>
+                   <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                               <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">changeAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">feeRate</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L49-L55">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeInternalFiatTransaction:toAccountId:amount:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:completion:">-composeInternalFiatTransaction:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeInternalFiatTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:">-[ZKWallet composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeInternalFiatTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                           <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                               <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                            <span class="nf">completion</span><span class="p">:</span>
+                                <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                                    <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeInternalFiatTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L61-L65">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeTransactionToNominatedAccount:amount:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:completion:">-composeTransactionToNominatedAccount:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeInternalFiatTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:callback:">-[ZKWallet composeTransactionToNominatedAccount:amount:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+    <span class="nf">composeTransactionToNominatedAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                                  <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                                 <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                              <span class="nf">completion</span><span class="p">:</span>
+                                  <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                                      <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeTransaction</span><span class="p">(</span><span class="n">toNominatedAccount</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L71-L74">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:exchangeRate:exchangeSetting:amount:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeExchange:toAccountId:exchangeRate:exchangeSetting:amount:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:exchangeRate:exchangeSetting:amount:sendMax:completion:">-composeExchange:<wbr>toAccountId:<wbr>exchangeRate:<wbr>exchangeSetting:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeTransactionToNominatedAccount</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:callback:">-[ZKWallet composeTransactionToNominatedAccount:amount:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+            <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+           <span class="nf">exchangeRate</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeRate</span>
+        <span class="nf">exchangeSetting</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKExchangeSetting.html">ZKExchangeSetting</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">exchangeFees</span>
+                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+             <span class="nf">completion</span><span class="p">:</span>
+                 <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeExchange</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">exchangeRate</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a></span><span class="p">,</span> <span class="n">exchangeSetting</span> <span class="nv">exchangeFees</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKExchangeSetting.html">ZKExchangeSetting</a></span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L80-L86">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)submitTransaction:metadata:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-submitTransaction:metadata:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitTransaction:metadata:completion:">-submitTransaction:<wbr>metadata:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>submitTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)submitTransaction:metadata:callback:">-[ZKWallet submitTransaction:metadata:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedTransaction</span>
+                 <span class="nf">metadata</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">metadata</span>
+               <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                              <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">submitTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">composedTransaction</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span><span class="p">,</span> <span class="nv">metadata</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L92-L94">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKWallet(im)submitExchange:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-submitExchange:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitExchange:completion:">-submitExchange:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>submitExchange</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)submitExchange:callback:">-[ZKWallet submitExchange:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedExchange</span>
+            <span class="nf">completion</span><span class="p">:</span>
+                <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">submitExchange</span><span class="p">(</span><span class="n">_</span> <span class="nv">composedExchange</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span><span class="p">,</span> <span class="n">completion</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L100-L101">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2021 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2021-05-03)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

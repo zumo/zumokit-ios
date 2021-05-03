@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ZKWalletCallback Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/objc/Protocol/ZKWalletCallback" class="dashAnchor"></a>
+
+    <a title="ZKWalletCallback Protocol Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          ZumoKit 2.4.1 Docs
+        </a>
+        
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/zumo/zumokit-ios">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      ZKWalletCallback Protocol Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Categories.html">Categories</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Categories/NSError%28ZumoKit%29.html">NSError(ZumoKit)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccount.html">ZKAccount</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountCryptoProperties.html">ZKAccountCryptoProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountDataSnapshot.html">ZKAccountDataSnapshot</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountFiatProperties.html">ZKAccountFiatProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAccountType.html">ZKAccountType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKAddress.html">ZKAddress</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCard.html">ZKCard</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCardDetails.html">ZKCardDetails</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCardStatus.html">ZKCardStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCardType.html">ZKCardType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCurrencyCode.html">ZKCurrencyCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCurrencyType.html">ZKCurrencyType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchange.html">ZKExchange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchangeRate.html">ZKExchangeRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchangeSetting.html">ZKExchangeSetting</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKExchangeStatus.html">ZKExchangeStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKNetworkType.html">ZKNetworkType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTimeInterval.html">ZKTimeInterval</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransaction.html">ZKTransaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionCardProperties.html">ZKTransactionCardProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionCryptoProperties.html">ZKTransactionCryptoProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionDirection.html">ZKTransactionDirection</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionFeeRate.html">ZKTransactionFeeRate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionFiatProperties.html">ZKTransactionFiatProperties</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionStatus.html">ZKTransactionStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKTransactionType.html">ZKTransactionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKUser.html">ZKUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKUtils.html">ZKUtils</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKWallet.html">ZKWallet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKZumoKitErrorCode.html">ZKZumoKitErrorCode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKZumoKitErrorType.html">ZKZumoKitErrorType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZumoKit.html">ZumoKit</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Constants.html">Constants</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKAccountTypeCOMPATIBILITY">ZKAccountTypeCOMPATIBILITY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKAccountTypeSEGWIT">ZKAccountTypeSEGWIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKAccountTypeSTANDARD">ZKAccountTypeSTANDARD</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusACTIVE">ZKCardStatusACTIVE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusBLOCKED">ZKCardStatusBLOCKED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusCANCELLED">ZKCardStatusCANCELLED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusCREATED">ZKCardStatusCREATED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusEXPIRED">ZKCardStatusEXPIRED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusFROZEN">ZKCardStatusFROZEN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardStatusSUSPENDED">ZKCardStatusSUSPENDED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardTypePHYSICAL">ZKCardTypePHYSICAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCardTypeVIRTUAL">ZKCardTypeVIRTUAL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeBSV">ZKCurrencyCodeBSV</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeBTC">ZKCurrencyCodeBTC</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeETH">ZKCurrencyCodeETH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyCodeGBP">ZKCurrencyCodeGBP</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyTypeCRYPTO">ZKCurrencyTypeCRYPTO</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyTypeFIAT">ZKCurrencyTypeFIAT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusCANCELLED">ZKExchangeStatusCANCELLED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusCONFIRMED">ZKExchangeStatusCONFIRMED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusDEPOSITED">ZKExchangeStatusDEPOSITED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusFAILED">ZKExchangeStatusFAILED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusPAUSED">ZKExchangeStatusPAUSED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusPENDING">ZKExchangeStatusPENDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusREJECTED">ZKExchangeStatusREJECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusRESUBMITTED">ZKExchangeStatusRESUBMITTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeGOERLI">ZKNetworkTypeGOERLI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeKOVAN">ZKNetworkTypeKOVAN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeMAINNET">ZKNetworkTypeMAINNET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeRINKEBY">ZKNetworkTypeRINKEBY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeROPSTEN">ZKNetworkTypeROPSTEN</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKNetworkTypeTESTNET">ZKNetworkTypeTESTNET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalDAY">ZKTimeIntervalDAY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalHOUR">ZKTimeIntervalHOUR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalMAX">ZKTimeIntervalMAX</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalMONTH">ZKTimeIntervalMONTH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalQUARTER">ZKTimeIntervalQUARTER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalWEEK">ZKTimeIntervalWEEK</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTimeIntervalYEAR">ZKTimeIntervalYEAR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionDirectionINCOMING">ZKTransactionDirectionINCOMING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionDirectionOUTGOING">ZKTransactionDirectionOUTGOING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusAUTHORISED">ZKTransactionStatusAUTHORISED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusCANCELLED">ZKTransactionStatusCANCELLED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusCONFIRMED">ZKTransactionStatusCONFIRMED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusFAILED">ZKTransactionStatusFAILED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusPAUSED">ZKTransactionStatusPAUSED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusPENDING">ZKTransactionStatusPENDING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusREJECTED">ZKTransactionStatusREJECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusRESUBMITTED">ZKTransactionStatusRESUBMITTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionStatusREVERSED">ZKTransactionStatusREVERSED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCARD">ZKTransactionTypeCARD</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCRYPTO">ZKTransactionTypeCRYPTO</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeEXCHANGE">ZKTransactionTypeEXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeFIAT">ZKTransactionTypeFIAT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeNOMINATED">ZKTransactionTypeNOMINATED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED">ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTNOTFOUND">ZKZumoKitErrorCodeACCOUNTNOTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeALREADYFIATCUSTOMER">ZKZumoKitErrorCodeALREADYFIATCUSTOMER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeAMOUNTPROVIDEDWHENSENDMAXSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAPISERVICEERROR">ZKZumoKitErrorCodeAPISERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCARDNOTFOUND">ZKZumoKitErrorCodeCARDNOTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCARDSERVICEERROR">ZKZumoKitErrorCodeCARDSERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND">ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE">ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeDATAOVERFLOW">ZKZumoKitErrorCodeDATAOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET">ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET">ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED">ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW">ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE">ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeFIATACCOUNTEXPECTED">ZKZumoKitErrorCodeFIATACCOUNTEXPECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeGASOVERFLOW">ZKZumoKitErrorCodeGASOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeGASTOOLOW">ZKZumoKitErrorCodeGASTOOLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES">ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED">ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED">ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE">ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION">ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINT64OVERFLOW">ZKZumoKitErrorCodeINT64OVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDACCOUNTTYPE">ZKZumoKitErrorCodeINVALIDACCOUNTTYPE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDADDRESS">ZKZumoKitErrorCodeINVALIDADDRESS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDAPIRESPONSE">ZKZumoKitErrorCodeINVALIDAPIRESPONSE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS">ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGERATE">ZKZumoKitErrorCodeINVALIDEXCHANGERATE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDEXCHANGESETTING">ZKZumoKitErrorCodeINVALIDEXCHANGESETTING</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDHDWALLETPATH">ZKZumoKitErrorCodeINVALIDHDWALLETPATH</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDMETADATA">ZKZumoKitErrorCodeINVALIDMETADATA</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDMNEMONIC">ZKZumoKitErrorCodeINVALIDMNEMONIC</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT">ZKZumoKitErrorCodeINVALIDMNEMONICWORDCOUNT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDNETWORKTYPE">ZKZumoKitErrorCodeINVALIDNETWORKTYPE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDPASSWORD">ZKZumoKitErrorCodeINVALIDPASSWORD</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE">ZKZumoKitErrorCodeINVALIDRECOVERYPHRASE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE">ZKZumoKitErrorCodeINVALIDTRANSACTIONTYPE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE">ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDUSERTOKENSET">ZKZumoKitErrorCodeINVALIDUSERTOKENSET</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE">ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeKNOWNEXCHANGE">ZKZumoKitErrorCodeKNOWNEXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeKNOWNTRANSACTION">ZKZumoKitErrorCodeKNOWNTRANSACTION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeKey">ZKZumoKitErrorCodeKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNODESTINATIONADDRESS">ZKZumoKitErrorCodeNODESTINATIONADDRESS</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNONCEOVERFLOW">ZKZumoKitErrorCodeNONCEOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNONOMINATEDACCOUNTFOUND">ZKZumoKitErrorCodeNONOMINATEDACCOUNTFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNOTAUTHORIZED">ZKZumoKitErrorCodeNOTAUTHORIZED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeNOWALLETFOUND">ZKZumoKitErrorCodeNOWALLETFOUND</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE">ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE">ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION">ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeSIGNINGERROR">ZKZumoKitErrorCodeSIGNINGERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW">ZKZumoKitErrorCodeTRANSACTIONAMOUNTOVERFLOW</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL">ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR">ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeTRANSACTIONTOOLARGE">ZKZumoKitErrorCodeTRANSACTIONTOOLARGE</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUNKNOWNERROR">ZKZumoKitErrorCodeUNKNOWNERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER">ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeWALLETLIMITEXCEEDED">ZKZumoKitErrorCodeWALLETLIMITEXCEEDED</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeAPICONNECTIONERROR">ZKZumoKitErrorTypeAPICONNECTIONERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeAPIERROR">ZKZumoKitErrorTypeAPIERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeAUTHENTICATIONERROR">ZKZumoKitErrorTypeAUTHENTICATIONERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeINVALIDARGUMENTERROR">ZKZumoKitErrorTypeINVALIDARGUMENTERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeINVALIDREQUESTERROR">ZKZumoKitErrorTypeINVALIDREQUESTERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeKey">ZKZumoKitErrorTypeKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeRATELIMITERROR">ZKZumoKitErrorTypeRATELIMITERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeWALLETERROR">ZKZumoKitErrorTypeWALLETERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorTypeZUMOKITERROR">ZKZumoKitErrorTypeZUMOKITERROR</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZumoKitDomain">ZumoKitDomain</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZumoKitVersionNumber">ZumoKitVersionNumber</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZumoKitVersionString">ZumoKitVersionString</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/ZKErrorCode.html">ZKErrorCode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKAccountCallback.html">ZKAccountCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKAccountDataListener.html">ZKAccountDataListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKAccountFiatPropertiesCallback.html">ZKAccountFiatPropertiesCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKCardCallback.html">ZKCardCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKCardDetailsCallback.html">ZKCardDetailsCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKChangeListener.html">ZKChangeListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKHistoricalExchangeRatesCallback.html">ZKHistoricalExchangeRatesCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKLogListener.html">ZKLogListener</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKMnemonicCallback.html">ZKMnemonicCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKPinCallback.html">ZKPinCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKSubmitExchangeCallback.html">ZKSubmitExchangeCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKSubmitTransactionCallback.html">ZKSubmitTransactionCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKSuccessCallback.html">ZKSuccessCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKUserCallback.html">ZKUserCallback</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/ZKWalletCallback.html">ZKWalletCallback</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Type%20Definitions.html">Type Definitions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountFiatPropertiesCompletionBlock">ZKAccountFiatPropertiesCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKCardCompletionBlock">ZKCardCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKCardDetailsCompletionBlock">ZKCardDetailsCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeSettings">ZKExchangeSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRates">ZKHistoricalExchangeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKHistoricalExchangeRatesCompletionBlock">ZKHistoricalExchangeRatesCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKMnemonicCompletionBlock">ZKMnemonicCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKPinCompletionBlock">ZKPinCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKTransactionFeeRates">ZKTransactionFeeRates</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKUserCompletionBlock">ZKUserCompletionBlock</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKWalletCompletionBlock">ZKWalletCompletionBlock</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>ZKWalletCallback</h1>
+              <div class="declaration">
+                <div class="language">
+                  <p class="aside-title">Objective-C</p>
+                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKWalletCallback</span></code></pre>
+
+                </div>
+                <div class="language">
+                  <p class="aside-title">Swift</p>
+                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">ZKWalletCallback</span></code></pre>
+
+                </div>
+              </div>
+            <p>Callback interface used by methods in <code><a href="../Classes/ZKUser.html">ZKUser</a></code> class.</p>
+
+              <div class="slightly-smaller">
+                <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h#L9-L15">Show on GitHub</a>
+              </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)ZKWalletCallback(im)onError:"></a>
+                    <a name="//apple_ref/objc/Method/-onError:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)ZKWalletCallback(im)onError:">-onError:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onError</span><span class="p">(</span><span class="n">_</span> <span class="nv">e</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(pl)ZKWalletCallback(im)onSuccess:"></a>
+                    <a name="//apple_ref/objc/Method/-onSuccess:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(pl)ZKWalletCallback(im)onSuccess:">-onSuccess:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/ZKWallet.html">ZKWallet</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">wallet</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="n">_</span> <span class="nv">wallet</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKWallet.html">ZKWallet</a></span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/2.4.1/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2021 <a class="link" href="https://zumo.money" target="_blank" rel="external">Zumo</a>. All rights reserved. (Last updated: 2021-05-03)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

@@ -1,0 +1,978 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
+      "line": 68,
+      "symbol": "ZumoKitVersionNumber",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
+      "line": 69,
+      "symbol": "ZumoKitVersionString",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h",
+      "line": 11,
+      "symbol": "ZKAccount.-initWithId:currencyType:currencyCode:network:type:balance:hasNominatedAccount:cryptoProperties:fiatProperties:cards:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccount.h",
+      "line": 21,
+      "symbol": "ZKAccount.+accountWithId:currencyType:currencyCode:network:type:balance:hasNominatedAccount:cryptoProperties:fiatProperties:cards:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCallback.h",
+      "line": 11,
+      "symbol": "ZKAccountCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCallback.h",
+      "line": 13,
+      "symbol": "ZKAccountCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
+      "line": 11,
+      "symbol": "ZKAccountCryptoProperties.-initWithAddress:path:nonce:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
+      "line": 14,
+      "symbol": "ZKAccountCryptoProperties.+accountCryptoPropertiesWithAddress:path:nonce:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountDataListener.h",
+      "line": 11,
+      "symbol": "ZKAccountDataListener.-onDataChange:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountDataSnapshot.h",
+      "line": 10,
+      "symbol": "ZKAccountDataSnapshot.-initWithAccount:transactions:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountDataSnapshot.h",
+      "line": 12,
+      "symbol": "ZKAccountDataSnapshot.+accountDataSnapshotWithAccount:transactions:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatProperties.h",
+      "line": 11,
+      "symbol": "ZKAccountFiatProperties.-initWithAccountNumber:sortCode:bic:iban:customerName:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatProperties.h",
+      "line": 16,
+      "symbol": "ZKAccountFiatProperties.+accountFiatPropertiesWithAccountNumber:sortCode:bic:iban:customerName:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatPropertiesCallback.h",
+      "line": 11,
+      "symbol": "ZKAccountFiatPropertiesCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatPropertiesCallback.h",
+      "line": 13,
+      "symbol": "ZKAccountFiatPropertiesCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h",
+      "line": 12,
+      "symbol": "ZKAccountType.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h",
+      "line": 13,
+      "symbol": "ZKAccountType.+accountType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h",
+      "line": 8,
+      "symbol": "ZKAddress.-initWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAddress.h",
+      "line": 14,
+      "symbol": "ZKAddress.+addressWithHouseNumber:addressLine1:addressLine2:country:postCode:postTown:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCard.h",
+      "line": 8,
+      "symbol": "ZKCard.-initWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCard.h",
+      "line": 15,
+      "symbol": "ZKCard.+cardWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardCallback.h",
+      "line": 11,
+      "symbol": "ZKCardCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardCallback.h",
+      "line": 13,
+      "symbol": "ZKCardCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardDetails.h",
+      "line": 8,
+      "symbol": "ZKCardDetails.-initWithPan:cvv2:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardDetails.h",
+      "line": 10,
+      "symbol": "ZKCardDetails.+cardDetailsWithPan:cvv2:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardDetailsCallback.h",
+      "line": 11,
+      "symbol": "ZKCardDetailsCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardDetailsCallback.h",
+      "line": 13,
+      "symbol": "ZKCardDetailsCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 8,
+      "symbol": "ZKCardStatus.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 9,
+      "symbol": "ZKCardStatus.+cardStatus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 13,
+      "symbol": "ZKCardStatusCREATED",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 14,
+      "symbol": "ZKCardStatusACTIVE",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 15,
+      "symbol": "ZKCardStatusBLOCKED",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 16,
+      "symbol": "ZKCardStatusSUSPENDED",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 17,
+      "symbol": "ZKCardStatusFROZEN",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 18,
+      "symbol": "ZKCardStatusEXPIRED",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardStatus.h",
+      "line": 19,
+      "symbol": "ZKCardStatusCANCELLED",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardType.h",
+      "line": 8,
+      "symbol": "ZKCardType.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardType.h",
+      "line": 9,
+      "symbol": "ZKCardType.+cardType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardType.h",
+      "line": 13,
+      "symbol": "ZKCardTypeVIRTUAL",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCardType.h",
+      "line": 14,
+      "symbol": "ZKCardTypePHYSICAL",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKChangeListener.h",
+      "line": 10,
+      "symbol": "ZKChangeListener.-onChange",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposeExchangeCallback.h",
+      "line": 11,
+      "symbol": "ZKComposeExchangeCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposeExchangeCallback.h",
+      "line": 13,
+      "symbol": "ZKComposeExchangeCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposeTransactionCallback.h",
+      "line": 11,
+      "symbol": "ZKComposeTransactionCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposeTransactionCallback.h",
+      "line": 13,
+      "symbol": "ZKComposeTransactionCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h",
+      "line": 11,
+      "symbol": "ZKComposedExchange.-initWithSignedTransaction:fromAccount:toAccount:exchangeRate:exchangeSetting:exchangeAddress:amount:returnAmount:outgoingTransactionFee:exchangeFee:returnTransactionFee:nonce:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h",
+      "line": 23,
+      "symbol": "ZKComposedExchange.+composedExchangeWithSignedTransaction:fromAccount:toAccount:exchangeRate:exchangeSetting:exchangeAddress:amount:returnAmount:outgoingTransactionFee:exchangeFee:returnTransactionFee:nonce:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedTransaction.h",
+      "line": 12,
+      "symbol": "ZKComposedTransaction.-initWithType:signedTransaction:account:destination:amount:data:fee:nonce:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedTransaction.h",
+      "line": 20,
+      "symbol": "ZKComposedTransaction.+composedTransactionWithType:signedTransaction:account:destination:amount:data:fee:nonce:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 8,
+      "symbol": "ZKCurrencyCode.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 9,
+      "symbol": "ZKCurrencyCode.+currencyCode",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 13,
+      "symbol": "ZKCurrencyCodeGBP",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 14,
+      "symbol": "ZKCurrencyCodeETH",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 15,
+      "symbol": "ZKCurrencyCodeBTC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 16,
+      "symbol": "ZKCurrencyCodeBSV",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h",
+      "line": 8,
+      "symbol": "ZKCurrencyType.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h",
+      "line": 9,
+      "symbol": "ZKCurrencyType.+currencyType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h",
+      "line": 13,
+      "symbol": "ZKCurrencyTypeFIAT",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyType.h",
+      "line": 14,
+      "symbol": "ZKCurrencyTypeCRYPTO",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h",
+      "line": 10,
+      "symbol": "ZKExchange.-initWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSetting:exchangeRates:nonce:submittedAt:confirmedAt:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h",
+      "line": 29,
+      "symbol": "ZKExchange.+exchangeWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:exchangeRate:exchangeSetting:exchangeRates:nonce:submittedAt:confirmedAt:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeRate.h",
+      "line": 11,
+      "symbol": "ZKExchangeRate.-initWithId:fromCurrency:toCurrency:value:validTo:timestamp:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeRate.h",
+      "line": 17,
+      "symbol": "ZKExchangeRate.+exchangeRateWithId:fromCurrency:toCurrency:value:validTo:timestamp:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSetting.h",
+      "line": 8,
+      "symbol": "ZKExchangeSetting.-initWithId:exchangeAddress:fromCurrency:toCurrency:minExchangeAmount:exchangeFeeRate:outgoingTransactionFeeRate:returnTransactionFee:timestamp:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSetting.h",
+      "line": 17,
+      "symbol": "ZKExchangeSetting.+exchangeSettingWithId:exchangeAddress:fromCurrency:toCurrency:minExchangeAmount:exchangeFeeRate:outgoingTransactionFeeRate:returnTransactionFee:timestamp:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h",
+      "line": 14,
+      "symbol": "ZKExchangeStatus.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeStatus.h",
+      "line": 15,
+      "symbol": "ZKExchangeStatus.+exchangeStatus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesCallback.h",
+      "line": 11,
+      "symbol": "ZKHistoricalExchangeRatesCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKHistoricalExchangeRatesCallback.h",
+      "line": 13,
+      "symbol": "ZKHistoricalExchangeRatesCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKLogListener.h",
+      "line": 10,
+      "symbol": "ZKLogListener.-onLog:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h",
+      "line": 10,
+      "symbol": "ZKMnemonicCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h",
+      "line": 12,
+      "symbol": "ZKMnemonicCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 8,
+      "symbol": "ZKNetworkType.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 9,
+      "symbol": "ZKNetworkType.+networkType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 13,
+      "symbol": "ZKNetworkTypeMAINNET",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 14,
+      "symbol": "ZKNetworkTypeTESTNET",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 15,
+      "symbol": "ZKNetworkTypeROPSTEN",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 16,
+      "symbol": "ZKNetworkTypeRINKEBY",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 17,
+      "symbol": "ZKNetworkTypeGOERLI",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKNetworkType.h",
+      "line": 18,
+      "symbol": "ZKNetworkTypeKOVAN",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKPinCallback.h",
+      "line": 10,
+      "symbol": "ZKPinCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKPinCallback.h",
+      "line": 12,
+      "symbol": "ZKPinCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKSubmitExchangeCallback.h",
+      "line": 11,
+      "symbol": "ZKSubmitExchangeCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKSubmitExchangeCallback.h",
+      "line": 13,
+      "symbol": "ZKSubmitExchangeCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKSubmitTransactionCallback.h",
+      "line": 11,
+      "symbol": "ZKSubmitTransactionCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKSubmitTransactionCallback.h",
+      "line": 13,
+      "symbol": "ZKSubmitTransactionCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKSuccessCallback.h",
+      "line": 10,
+      "symbol": "ZKSuccessCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKSuccessCallback.h",
+      "line": 12,
+      "symbol": "ZKSuccessCallback.-onSuccess",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 8,
+      "symbol": "ZKTimeInterval.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 9,
+      "symbol": "ZKTimeInterval.+timeInterval",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 13,
+      "symbol": "ZKTimeIntervalHOUR",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 14,
+      "symbol": "ZKTimeIntervalDAY",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 15,
+      "symbol": "ZKTimeIntervalWEEK",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 16,
+      "symbol": "ZKTimeIntervalMONTH",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 17,
+      "symbol": "ZKTimeIntervalQUARTER",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 18,
+      "symbol": "ZKTimeIntervalYEAR",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTimeInterval.h",
+      "line": 19,
+      "symbol": "ZKTimeIntervalMAX",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
+      "line": 12,
+      "symbol": "ZKTransaction.-initWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
+      "line": 33,
+      "symbol": "ZKTransaction.+transactionWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionCardProperties.h",
+      "line": 11,
+      "symbol": "ZKTransactionCardProperties.-initWithCardId:transactionAmount:transactionCurrency:billingAmount:billingCurrency:exchangeRateValue:mcc:merchantName:merchantCountry:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionCardProperties.h",
+      "line": 20,
+      "symbol": "ZKTransactionCardProperties.+transactionCardPropertiesWithCardId:transactionAmount:transactionCurrency:billingAmount:billingCurrency:exchangeRateValue:mcc:merchantName:merchantCountry:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionCryptoProperties.h",
+      "line": 11,
+      "symbol": "ZKTransactionCryptoProperties.-initWithTxHash:nonce:fromAddress:toAddress:data:gasPrice:gasLimit:fiatAmount:fiatFee:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionCryptoProperties.h",
+      "line": 20,
+      "symbol": "ZKTransactionCryptoProperties.+transactionCryptoPropertiesWithTxHash:nonce:fromAddress:toAddress:data:gasPrice:gasLimit:fiatAmount:fiatFee:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h",
+      "line": 8,
+      "symbol": "ZKTransactionDirection.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h",
+      "line": 9,
+      "symbol": "ZKTransactionDirection.+transactionDirection",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h",
+      "line": 13,
+      "symbol": "ZKTransactionDirectionINCOMING",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h",
+      "line": 14,
+      "symbol": "ZKTransactionDirectionOUTGOING",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionFeeRate.h",
+      "line": 8,
+      "symbol": "ZKTransactionFeeRate.-initWithSlow:average:fast:slowTime:averageTime:fastTime:source:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionFeeRate.h",
+      "line": 15,
+      "symbol": "ZKTransactionFeeRate.+transactionFeeRateWithSlow:average:fast:slowTime:averageTime:fastTime:source:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionFiatProperties.h",
+      "line": 12,
+      "symbol": "ZKTransactionFiatProperties.-initWithFromFiatAccount:toFiatAccount:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionFiatProperties.h",
+      "line": 14,
+      "symbol": "ZKTransactionFiatProperties.+transactionFiatPropertiesWithFromFiatAccount:toFiatAccount:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h",
+      "line": 15,
+      "symbol": "ZKTransactionStatus.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionStatus.h",
+      "line": 16,
+      "symbol": "ZKTransactionStatus.+transactionStatus",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
+      "line": 8,
+      "symbol": "ZKTransactionType.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
+      "line": 9,
+      "symbol": "ZKTransactionType.+transactionType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
+      "line": 13,
+      "symbol": "ZKTransactionTypeCRYPTO",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
+      "line": 14,
+      "symbol": "ZKTransactionTypeEXCHANGE",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
+      "line": 15,
+      "symbol": "ZKTransactionTypeFIAT",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
+      "line": 16,
+      "symbol": "ZKTransactionTypeNOMINATED",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
+      "line": 17,
+      "symbol": "ZKTransactionTypeCARD",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUserCallback.h",
+      "line": 11,
+      "symbol": "ZKUserCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKUserCallback.h",
+      "line": 13,
+      "symbol": "ZKUserCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h",
+      "line": 11,
+      "symbol": "ZKWalletCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKWalletCallback.h",
+      "line": 13,
+      "symbol": "ZKWalletCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h",
+      "line": 12,
+      "symbol": "ZKZumoKitErrorCode.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorCode.h",
+      "line": 13,
+      "symbol": "ZKZumoKitErrorCode.+zumoKitErrorCode",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h",
+      "line": 11,
+      "symbol": "ZKZumoKitErrorType.-init",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKZumoKitErrorType.h",
+      "line": 12,
+      "symbol": "ZKZumoKitErrorType.+zumoKitErrorType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZKError.h",
+      "line": 3,
+      "symbol": "ZumoKitDomain",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h",
+      "line": 45,
+      "symbol": "ZKUser(ZKUserCallbackCompletion)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h",
+      "line": 29,
+      "symbol": "ZKWallet(ZKWalletCallbackCompletion)",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 12,
+      "symbol": "ZumoKitVersionNumber",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 15,
+      "symbol": "ZumoKitVersionString",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 37,
+      "symbol": "ZKUserCompletionBlock",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 39,
+      "symbol": "ZKExchangeRates",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 41,
+      "symbol": "ZKExchangeSettings",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 43,
+      "symbol": "ZKTransactionFeeRates",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 45,
+      "symbol": "ZKHistoricalExchangeRates",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
+      "line": 47,
+      "symbol": "ZKHistoricalExchangeRatesCompletionBlock",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/distiller/project/ios"
+}
