@@ -9,10 +9,11 @@ Refer to ZumoKit SDK developer [documentation](https://developers.zumo.money/doc
 ## Requirements
 
 - Install the following:
-  - [Xcode 11.0](https://developer.apple.com/xcode/) or later
-  - [CocoaPods 1.8.4](https://cocoapods.org) or later
+  - [Git LFS client](https://git-lfs.github.com/),
+  - [Xcode 11.0](https://developer.apple.com/xcode/) or later,
+  - [CocoaPods 1.8.4](https://cocoapods.org) or later.
 - Make sure that your app meets the following requirements:
-  - Your project must target iOS 10 or later
+  - Your project must target iOS 10 or later.
 
 ## Installation
 
