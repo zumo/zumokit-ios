@@ -34,7 +34,8 @@ ZKZumoCore *zumoCore;
 - (instancetype)initWithApiKey:(NSString *)apiKey
                         apiUrl:(NSString *)apiUrl
          transactionServiceUrl:(NSString *)transactionServiceUrl
-                cardServiceUrl:(NSString *)cardServiceUrl {
+                cardServiceUrl:(NSString *)cardServiceUrl
+        notificationServiceUrl:(NSString *)notificationServiceUrl {
 
     if( self = [super init] ) {
         // Init the providers needed for the C++ core
@@ -47,7 +48,8 @@ ZKZumoCore *zumoCore;
                              apiKey: apiKey
                              apiUrl: apiUrl
               transactionServiceUrl: transactionServiceUrl
-                     cardServiceUrl: cardServiceUrl];
+                     cardServiceUrl: cardServiceUrl
+             notificationServiceUrl: notificationServiceUrl];
     }
 
     return self;

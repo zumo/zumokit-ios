@@ -84,13 +84,15 @@ NS_ASSUME_NONNULL_BEGIN
 * @param apiUrl                           ZumoKit API URL
 * @param transactionServiceUrl  ZumoKit Transaction Service URL
 * @param cardServiceUrl             ZumoKit Card Service URL
+* @param notificationServiceUrl  ZumoKit Notification Service URL
 *
 * @return ZumoKit instance
 */
 - (instancetype)initWithApiKey:(NSString *)apiKey
                         apiUrl:(NSString *)apiUrl
          transactionServiceUrl:(NSString *)transactionServiceUrl
-                cardServiceUrl:(NSString *)cardServiceUrl;
+                cardServiceUrl:(NSString *)cardServiceUrl
+        notificationServiceUrl:(NSString *)notificationServiceUrl;
 
 /**
 * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

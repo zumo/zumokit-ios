@@ -44,12 +44,13 @@
 /**
  * Initializes ZumoKit SDK. Should only be called once.
  *
- * @param httpProvider           HTTP provider
- * @param webSocketFactory      WebSocket factory
- * @param apiKey                 ZumoKit API Key
- * @param apiUrl                 ZumoKit API URL
- * @param transactionServiceUrl ZumoKit Transaction Service URL
- * @param cardServiceUrl        ZumoKit Card Service URL
+ * @param httpProvider            HTTP provider
+ * @param webSocketFactory       WebSocket factory
+ * @param apiKey                  ZumoKit API Key
+ * @param apiUrl                  ZumoKit API URL
+ * @param transactionServiceUrl  ZumoKit Transaction Service URL
+ * @param cardServiceUrl         ZumoKit Card Service URL
+ * @param notificationServiceUrl ZumoKit Notification Service URL
  *
  * @return ZumoKit instance
  */
@@ -58,7 +59,8 @@
                        apiKey:(nonnull NSString *)apiKey
                        apiUrl:(nonnull NSString *)apiUrl
         transactionServiceUrl:(nonnull NSString *)transactionServiceUrl
-               cardServiceUrl:(nonnull NSString *)cardServiceUrl;
+               cardServiceUrl:(nonnull NSString *)cardServiceUrl
+       notificationServiceUrl:(nonnull NSString *)notificationServiceUrl;
 
 /**
  * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

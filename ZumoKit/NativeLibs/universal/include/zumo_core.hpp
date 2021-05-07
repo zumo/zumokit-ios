@@ -51,16 +51,17 @@ public:
     /**
      * Initializes ZumoKit SDK. Should only be called once.
      *
-     * @param http_provider           HTTP provider
-     * @param web_socket_factory      WebSocket factory
-     * @param api_key                 ZumoKit API Key
-     * @param api_url                 ZumoKit API URL
-     * @param transaction_service_url ZumoKit Transaction Service URL
-     * @param card_service_url        ZumoKit Card Service URL
+     * @param http_provider            HTTP provider
+     * @param web_socket_factory       WebSocket factory
+     * @param api_key                  ZumoKit API Key
+     * @param api_url                  ZumoKit API URL
+     * @param transaction_service_url  ZumoKit Transaction Service URL
+     * @param card_service_url         ZumoKit Card Service URL
+     * @param notification_service_url ZumoKit Notification Service URL
      *
      * @return ZumoKit instance
      */
-    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpProvider> & http_provider, const std::shared_ptr<WebSocketFactory> & web_socket_factory, const std::string & api_key, const std::string & api_url, const std::string & transaction_service_url, const std::string & card_service_url);
+    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpProvider> & http_provider, const std::shared_ptr<WebSocketFactory> & web_socket_factory, const std::string & api_key, const std::string & api_url, const std::string & transaction_service_url, const std::string & card_service_url, const std::string & notification_service_url);
 
     /**
      * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

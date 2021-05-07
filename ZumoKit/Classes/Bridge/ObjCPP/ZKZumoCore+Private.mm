@@ -67,14 +67,16 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                        apiKey:(nonnull NSString *)apiKey
                        apiUrl:(nonnull NSString *)apiUrl
         transactionServiceUrl:(nonnull NSString *)transactionServiceUrl
-               cardServiceUrl:(nonnull NSString *)cardServiceUrl {
+               cardServiceUrl:(nonnull NSString *)cardServiceUrl
+       notificationServiceUrl:(nonnull NSString *)notificationServiceUrl {
     try {
         auto objcpp_result_ = ::zumo::ZumoCore::init(::djinni_generated::HttpProvider::toCpp(httpProvider),
                                                      ::djinni_generated::WebSocketFactory::toCpp(webSocketFactory),
                                                      ::djinni::String::toCpp(apiKey),
                                                      ::djinni::String::toCpp(apiUrl),
                                                      ::djinni::String::toCpp(transactionServiceUrl),
-                                                     ::djinni::String::toCpp(cardServiceUrl));
+                                                     ::djinni::String::toCpp(cardServiceUrl),
+                                                     ::djinni::String::toCpp(notificationServiceUrl));
         return ::djinni_generated::ZumoCore::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
