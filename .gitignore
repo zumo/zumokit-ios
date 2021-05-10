@@ -1,5 +1,7 @@
 # Environment config files
-Example/ZumoKit/*.xcconfig
+Example/ZumoKit/Staging.xcconfig
+Example/ZumoKit/Sandbox.xcconfig
+Example/ZumoKit/Production.xcconfig
 
 # OS X
 .DS_Store

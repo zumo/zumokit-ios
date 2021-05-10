@@ -1,0 +1,15 @@
+// Please ask your account manager for the below
+
+// ZumoKit config
+API_KEY =
+API_URL =
+TRANSACTION_SERVICE_URL =
+CARD_SERVICE_URL =
+NOTIFICATION_SERVICE_URL =
+
+// Client config
+CLIENT_ZUMOKIT_AUTH_ENDPOINT =
+CLIENT_HEADERS =
+USER_WALLET_PASSWORD =
+
+#include "Pods/Target Support Files/Pods-ZumoKit_Example/Pods-ZumoKit_Example.release (staging).xcconfig"

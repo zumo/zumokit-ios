@@ -1,0 +1,10 @@
+author: Zumo
+author_url: https://zumo.money
+github_url: https://github.com/zumo/zumokit-ios
+objc: true
+umbrella_header: Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h
+sdk: iphonesimulator
+framework_root: .
+theme: fullwidth
+hide_documentation_coverage: true
+undocumented_text: ""
