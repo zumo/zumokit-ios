@@ -24,6 +24,8 @@ NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND = @"change_ac
 
 NSString * __nonnull const ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE = @"change_index_out_of_range";
 
+NSString * __nonnull const ZKZumoKitErrorCodeCURRENCYNOTSUPPORTED = @"currency_not_supported";
+
 NSString * __nonnull const ZKZumoKitErrorCodeDATAOVERFLOW = @"data_overflow";
 
 NSString * __nonnull const ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET = @"data_provided_when_send_max_set";

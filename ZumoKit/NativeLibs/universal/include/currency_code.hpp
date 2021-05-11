@@ -13,6 +13,10 @@ struct CurrencyCode final {
 
     static std::string const GBP;
 
+    static std::string const EUR;
+
+    static std::string const USD;
+
     static std::string const ETH;
 
     static std::string const BTC;

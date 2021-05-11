@@ -37,18 +37,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (BOOL)isValidEthAddress:(nonnull NSString *)address {
+- (BOOL)isValidAddress:(nonnull NSString *)currencyCode
+               address:(nonnull NSString *)address
+               network:(nonnull NSString *)network {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->is_valid_eth_address(::djinni::String::toCpp(address));
-        return ::djinni::Bool::fromCpp(objcpp_result_);
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (BOOL)isValidBtcAddress:(nonnull NSString *)address
-                  network:(nonnull NSString *)network {
-    try {
-        auto objcpp_result_ = _cppRefHandle.get()->is_valid_btc_address(::djinni::String::toCpp(address),
-                                                                        ::djinni::String::toCpp(network));
+        auto objcpp_result_ = _cppRefHandle.get()->is_valid_address(::djinni::String::toCpp(currencyCode),
+                                                                    ::djinni::String::toCpp(address),
+                                                                    ::djinni::String::toCpp(network));
         return ::djinni::Bool::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

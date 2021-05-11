@@ -19,20 +19,15 @@
 - (nonnull NSString *)generateMnemonic:(int32_t)wordCount;
 
 /**
- * Validates Ethereum address.
- * @param address Ethereum address
- * @return true if Ethereum address is valid
- */
-- (BOOL)isValidEthAddress:(nonnull NSString *)address;
-
-/**
- * Validates Bitcoin address on a given network.
- * @param address Bitcoin address
- * @param network network type, either 'MAINNET' or 'TESTNET'
- * @return true if Bitcoin address is valid on a given network
+ * Validates Ethereum, Bitcoin or Bitcoin SV address.
+ * @param currencyCode 'ETH', 'BTC' or 'BSV'
+ * @param address       blockchain address
+ * @param network       network type
+ * @return true if address is valid on the given network
  * @see `ZKNetworkType`
  */
-- (BOOL)isValidBtcAddress:(nonnull NSString *)address
-                  network:(nonnull NSString *)network;
+- (BOOL)isValidAddress:(nonnull NSString *)currencyCode
+               address:(nonnull NSString *)address
+               network:(nonnull NSString *)network;
 
 @end

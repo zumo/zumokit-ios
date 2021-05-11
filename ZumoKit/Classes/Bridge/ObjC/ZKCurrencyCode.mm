@@ -6,6 +6,10 @@
 
 NSString * __nonnull const ZKCurrencyCodeGBP = @"GBP";
 
+NSString * __nonnull const ZKCurrencyCodeEUR = @"EUR";
+
+NSString * __nonnull const ZKCurrencyCodeUSD = @"USD";
+
 NSString * __nonnull const ZKCurrencyCodeETH = @"ETH";
 
 NSString * __nonnull const ZKCurrencyCodeBTC = @"BTC";

@@ -45,6 +45,9 @@ struct ZumoKitErrorCode final {
     /** Change output index out of range. */
     static std::string const CHANGE_INDEX_OUT_OF_RANGE;
 
+    /** Currency not supported. */
+    static std::string const CURRENCY_NOT_SUPPORTED;
+
     /**
      * Transaction data overflow.
      * Maximum data size supported by RLP encoding exceeds 16000000 bytes.

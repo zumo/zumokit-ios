@@ -25,20 +25,14 @@ public:
     virtual std::string generate_mnemonic(int32_t word_count) = 0;
 
     /**
-     * Validates Ethereum address.
-     * @param address Ethereum address
-     * @return true if Ethereum address is valid
-     */
-    virtual bool is_valid_eth_address(const std::string & address) = 0;
-
-    /**
-     * Validates Bitcoin address on a given network.
-     * @param address Bitcoin address
-     * @param network network type, either 'MAINNET' or 'TESTNET'
-     * @return true if Bitcoin address is valid on a given network
+     * Validates Ethereum, Bitcoin or Bitcoin SV address.
+     * @param currency_code 'ETH', 'BTC' or 'BSV'
+     * @param address       blockchain address
+     * @param network       network type
+     * @return true if address is valid on the given network
      * @see NetworkType
      */
-    virtual bool is_valid_btc_address(const std::string & address, const std::string & network) = 0;
+    virtual bool is_valid_address(const std::string & currency_code, const std::string & address, const std::string & network) = 0;
 };
 
 }  // namespace zumo

@@ -11,6 +11,8 @@
 @end
 
 extern NSString * __nonnull const ZKCurrencyCodeGBP;
+extern NSString * __nonnull const ZKCurrencyCodeEUR;
+extern NSString * __nonnull const ZKCurrencyCodeUSD;
 extern NSString * __nonnull const ZKCurrencyCodeETH;
 extern NSString * __nonnull const ZKCurrencyCodeBTC;
 extern NSString * __nonnull const ZKCurrencyCodeBSV;

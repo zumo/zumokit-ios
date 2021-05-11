@@ -34,6 +34,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeCARDSERVICEERROR;
 extern NSString * __nonnull const ZKZumoKitErrorCodeCHANGEACCOUNTNOTFOUND;
 /** Change output index out of range. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeCHANGEINDEXOUTOFRANGE;
+/** Currency not supported. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeCURRENCYNOTSUPPORTED;
 /**
  * Transaction data overflow.
  * Maximum data size supported by RLP encoding exceeds 16000000 bytes.
