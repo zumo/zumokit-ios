@@ -367,20 +367,34 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
       "line": 14,
-      "symbol": "ZKCurrencyCodeETH",
+      "symbol": "ZKCurrencyCodeEUR",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
       "line": 15,
-      "symbol": "ZKCurrencyCodeBTC",
+      "symbol": "ZKCurrencyCodeUSD",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
       "line": 16,
+      "symbol": "ZKCurrencyCodeETH",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 17,
+      "symbol": "ZKCurrencyCodeBTC",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCurrencyCode.h",
+      "line": 18,
       "symbol": "ZKCurrencyCodeBSV",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
