@@ -8,16 +8,21 @@
  * @see `ZKAccount`
  */
 @interface ZKAccountFiatProperties : NSObject
-- (nonnull instancetype)initWithAccountNumber:(nullable NSString *)accountNumber
-                                     sortCode:(nullable NSString *)sortCode
-                                          bic:(nullable NSString *)bic
-                                         iban:(nullable NSString *)iban
-                                 customerName:(nullable NSString *)customerName;
-+ (nonnull instancetype)accountFiatPropertiesWithAccountNumber:(nullable NSString *)accountNumber
-                                                      sortCode:(nullable NSString *)sortCode
-                                                           bic:(nullable NSString *)bic
-                                                          iban:(nullable NSString *)iban
-                                                  customerName:(nullable NSString *)customerName;
+- (nonnull instancetype)initWithProviderId:(nullable NSString *)providerId
+                             accountNumber:(nullable NSString *)accountNumber
+                                  sortCode:(nullable NSString *)sortCode
+                                       bic:(nullable NSString *)bic
+                                      iban:(nullable NSString *)iban
+                              customerName:(nullable NSString *)customerName;
++ (nonnull instancetype)accountFiatPropertiesWithProviderId:(nullable NSString *)providerId
+                                              accountNumber:(nullable NSString *)accountNumber
+                                                   sortCode:(nullable NSString *)sortCode
+                                                        bic:(nullable NSString *)bic
+                                                       iban:(nullable NSString *)iban
+                                               customerName:(nullable NSString *)customerName;
+
+/** Fiat account provider id. */
+@property (nonatomic, readonly, nullable) NSString * providerId;
 
 /** Fiat account number or null. */
 @property (nonatomic, readonly, nullable) NSString * accountNumber;

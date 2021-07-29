@@ -14,6 +14,8 @@ namespace zumo {
  * @see Account
  */
 struct AccountFiatProperties final {
+    /** Fiat account provider id. */
+    std::optional<std::string> provider_id;
     /** Fiat account number or null. */
     std::optional<std::string> account_number;
     /** Fiat account sort code or null. */
@@ -28,12 +30,14 @@ struct AccountFiatProperties final {
     friend bool operator==(const AccountFiatProperties& lhs, const AccountFiatProperties& rhs);
     friend bool operator!=(const AccountFiatProperties& lhs, const AccountFiatProperties& rhs);
 
-    AccountFiatProperties(std::optional<std::string> account_number_,
+    AccountFiatProperties(std::optional<std::string> provider_id_,
+                          std::optional<std::string> account_number_,
                           std::optional<std::string> sort_code_,
                           std::optional<std::string> bic_,
                           std::optional<std::string> iban_,
                           std::optional<std::string> customer_name_)
-    : account_number(std::move(account_number_))
+    : provider_id(std::move(provider_id_))
+    , account_number(std::move(account_number_))
     , sort_code(std::move(sort_code_))
     , bic(std::move(bic_))
     , iban(std::move(iban_))
