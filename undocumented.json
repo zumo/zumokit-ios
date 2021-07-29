@@ -80,14 +80,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatProperties.h",
       "line": 11,
-      "symbol": "ZKAccountFiatProperties.-initWithAccountNumber:sortCode:bic:iban:customerName:",
+      "symbol": "ZKAccountFiatProperties.-initWithProviderId:accountNumber:sortCode:bic:iban:customerName:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountFiatProperties.h",
-      "line": 16,
-      "symbol": "ZKAccountFiatProperties.+accountFiatPropertiesWithAccountNumber:sortCode:bic:iban:customerName:",
+      "line": 17,
+      "symbol": "ZKAccountFiatProperties.+accountFiatPropertiesWithProviderId:accountNumber:sortCode:bic:iban:customerName:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
