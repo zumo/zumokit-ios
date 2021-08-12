@@ -6,6 +6,7 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #import "ZKAccount+Private.h"
 #import "ZKAccountCallback+Private.h"
 #import "ZKAccountDataListener+Private.h"
@@ -15,6 +16,7 @@
 #import "ZKCardDetailsCallback+Private.h"
 #import "ZKMnemonicCallback+Private.h"
 #import "ZKPinCallback+Private.h"
+#import "ZKQuoteCallback+Private.h"
 #import "ZKSuccessCallback+Private.h"
 #import "ZKWalletCallback+Private.h"
 #include <exception>
@@ -192,6 +194,18 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
         _cppRefHandle.get()->recover_wallet(::djinni::String::toCpp(mnemonic),
                                             ::djinni::String::toCpp(password),
                                             ::djinni_generated::WalletCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)getQuote:(nonnull NSString *)fromCurrency
+      toCurrency:(nonnull NSString *)toCurrency
+   depositAmount:(nonnull NSDecimalNumber *)depositAmount
+        callback:(nullable id<ZKQuoteCallback>)callback {
+    try {
+        _cppRefHandle.get()->get_quote(::djinni::String::toCpp(fromCurrency),
+                                       ::djinni::String::toCpp(toCurrency),
+                                       ::zumo::djinni::objc::DecimalConverter::toCpp(depositAmount),
+                                       ::djinni_generated::QuoteCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "decimal.hpp"
 #include <memory>
 #include <optional>
 #include <string>
@@ -17,6 +18,7 @@ class CardCallback;
 class CardDetailsCallback;
 class MnemonicCallback;
 class PinCallback;
+class QuoteCallback;
 class SuccessCallback;
 class WalletCallback;
 struct Account;
@@ -182,6 +184,17 @@ public:
      * @param  callback       an interface to receive the result or error
      */
     virtual void recover_wallet(const std::string & mnemonic, const std::string & password, const std::shared_ptr<WalletCallback> & callback) = 0;
+
+    /**
+     * Get exchange rate quote.
+     * @param  from_currency  deposit currency code
+     * @param  to_currency    target currency code
+     * @param  deposit_amount deposit amount to be exchanged to target currency
+     * @param  callback       an interface to receive the result or error
+     * @see CurrencyCode
+     * @see Quote
+     */
+    virtual void get_quote(const std::string & from_currency, const std::string & to_currency, const ::zumo::Decimal & deposit_amount, const std::shared_ptr<QuoteCallback> & callback) = 0;
 
     /**
      * Get account in specific currency, on specific network, with specific type.

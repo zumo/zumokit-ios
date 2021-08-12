@@ -13,6 +13,7 @@
 #include "exchange_setting.hpp"
 #include "exchange_settings.hpp"
 #include "historical_exchange_rates.hpp"
+#include "quote.hpp"
 #include "transaction_card_properties.hpp"
 #include "transaction_crypto_properties.hpp"
 #include "transaction_fee_rate.hpp"
@@ -58,6 +59,8 @@ std::ostream &operator<<(std::ostream &os, const TransactionCardProperties &prop
 std::ostream &operator<<(std::ostream &os, const TransactionFiatProperties &properties);
 
 std::ostream &operator<<(std::ostream &os, const TransactionCryptoProperties &properties);
+
+std::ostream &operator<<(std::ostream &os, const Quote &Quote);
 
 std::ostream &operator<<(std::ostream &os, const ComposedExchange &composed_exchange);
 

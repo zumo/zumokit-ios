@@ -45,6 +45,8 @@
 #import "ZKMnemonicCallback.h"
 #import "ZKNetworkType.h"
 #import "ZKPinCallback.h"
+#import "ZKQuote.h"
+#import "ZKQuoteCallback.h"
 #import "ZKSubmitExchangeCallback.h"
 #import "ZKSubmitTransactionCallback.h"
 #import "ZKSuccessCallback.h"

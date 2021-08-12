@@ -11,26 +11,24 @@
 namespace zumo {
 
 /**
- * Record containing Zumo exchange rates used in making exchanges.
- * Can also be used to display amounts in local currency to the user.
+ * Record containing Zumo exchange rates for information purposes only.
+ * Can be used to display amounts in local currency to the user.
  */
 struct ExchangeRate final {
     /** Identifier. */
     std::string id;
     /**
-     * Currency from which exchange is being made.
+     * Deposit currency.
      * @see CurrencyCode
      */
     std::string from_currency;
     /**
-     * Currency from which exchange is being made.
+     * Target currency.
      * @see CurrencyCode
      */
     std::string to_currency;
     /** Value of 1 unit of deposit currency in target currency. */
     ::zumo::Decimal value;
-    /** Epoch timestamp representing expiration time of this exchange rate. */
-    int32_t valid_to;
     /** Epoch timestamp when the exchange rate was issued. */
     int32_t timestamp;
 
@@ -41,13 +39,11 @@ struct ExchangeRate final {
                  std::string from_currency_,
                  std::string to_currency_,
                  ::zumo::Decimal value_,
-                 int32_t valid_to_,
                  int32_t timestamp_)
     : id(std::move(id_))
     , from_currency(std::move(from_currency_))
     , to_currency(std::move(to_currency_))
     , value(std::move(value_))
-    , valid_to(std::move(valid_to_))
     , timestamp(std::move(timestamp_))
     {}
 };

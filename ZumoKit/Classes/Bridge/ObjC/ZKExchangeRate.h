@@ -4,43 +4,38 @@
 #import <Foundation/Foundation.h>
 
 /**
- * Record containing Zumo exchange rates used in making exchanges.
- * Can also be used to display amounts in local currency to the user.
+ * Record containing Zumo exchange rates for information purposes only.
+ * Can be used to display amounts in local currency to the user.
  */
 @interface ZKExchangeRate : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                       fromCurrency:(nonnull NSString *)fromCurrency
                         toCurrency:(nonnull NSString *)toCurrency
                              value:(nonnull NSDecimalNumber *)value
-                           validTo:(int32_t)validTo
                          timestamp:(int32_t)timestamp;
 + (nonnull instancetype)exchangeRateWithId:(nonnull NSString *)id
                               fromCurrency:(nonnull NSString *)fromCurrency
                                 toCurrency:(nonnull NSString *)toCurrency
                                      value:(nonnull NSDecimalNumber *)value
-                                   validTo:(int32_t)validTo
                                  timestamp:(int32_t)timestamp;
 
 /** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
 /**
- * Currency from which exchange is being made.
+ * Deposit currency.
  * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * fromCurrency;
 
 /**
- * Currency from which exchange is being made.
+ * Target currency.
  * @see `ZKCurrencyCode`
  */
 @property (nonatomic, readonly, nonnull) NSString * toCurrency;
 
 /** Value of 1 unit of deposit currency in target currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * value;
-
-/** Epoch timestamp representing expiration time of this exchange rate. */
-@property (nonatomic, readonly) int32_t validTo;
 
 /** Epoch timestamp when the exchange rate was issued. */
 @property (nonatomic, readonly) int32_t timestamp;

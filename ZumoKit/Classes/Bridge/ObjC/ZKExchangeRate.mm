@@ -10,7 +10,6 @@
                       fromCurrency:(nonnull NSString *)fromCurrency
                         toCurrency:(nonnull NSString *)toCurrency
                              value:(nonnull NSDecimalNumber *)value
-                           validTo:(int32_t)validTo
                          timestamp:(int32_t)timestamp
 {
     if (self = [super init]) {
@@ -18,7 +17,6 @@
         _fromCurrency = [fromCurrency copy];
         _toCurrency = [toCurrency copy];
         _value = value;
-        _validTo = validTo;
         _timestamp = timestamp;
     }
     return self;
@@ -28,14 +26,12 @@
                               fromCurrency:(nonnull NSString *)fromCurrency
                                 toCurrency:(nonnull NSString *)toCurrency
                                      value:(nonnull NSDecimalNumber *)value
-                                   validTo:(int32_t)validTo
                                  timestamp:(int32_t)timestamp
 {
     return [(ZKExchangeRate*)[self alloc] initWithId:id
                                         fromCurrency:fromCurrency
                                           toCurrency:toCurrency
                                                value:value
-                                             validTo:validTo
                                            timestamp:timestamp];
 }
 
@@ -49,7 +45,6 @@
             [self.fromCurrency isEqualToString:typedOther.fromCurrency] &&
             [self.toCurrency isEqualToString:typedOther.toCurrency] &&
             [self.value isEqual:typedOther.value] &&
-            self.validTo == typedOther.validTo &&
             self.timestamp == typedOther.timestamp;
 }
 
@@ -60,13 +55,12 @@
             self.fromCurrency.hash ^
             self.toCurrency.hash ^
             ((NSUInteger)self.value) ^
-            (NSUInteger)self.validTo ^
             (NSUInteger)self.timestamp;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ fromCurrency:%@ toCurrency:%@ value:%@ validTo:%@ timestamp:%@>", self.class, (void *)self, self.id, self.fromCurrency, self.toCurrency, self.value, @(self.validTo), @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ fromCurrency:%@ toCurrency:%@ value:%@ timestamp:%@>", self.class, (void *)self, self.id, self.fromCurrency, self.toCurrency, self.value, @(self.timestamp)];
 }
 
 @end
