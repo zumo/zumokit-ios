@@ -6,6 +6,7 @@
 #include "decimal.hpp"
 #include "exchange_rate.hpp"
 #include "exchange_setting.hpp"
+#include "quote.hpp"
 #include <cstdint>
 #include <optional>
 #include <string>
@@ -46,12 +47,12 @@ struct Exchange final {
     /** Outgoing transaction fee. */
     std::optional<::zumo::Decimal> outgoing_transaction_fee;
     /**
-     * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
+     * Amount that user receives, calculated as <code>amount X quote.value X (1 - feeRate) - returnTransactionFee</code>.
      * @see ExchangeSetting
      */
     ::zumo::Decimal return_amount;
     /**
-     * Exchange fee, calculated as <code>amount X exchangeRate X exchangeFeeRate</code>.
+     * Exchange fee, calculated as <code>amount X quote.value X exchangeFeeRate</code>.
      * @see ExchangeSetting
      */
     ::zumo::Decimal exchange_fee;
@@ -60,8 +61,8 @@ struct Exchange final {
      * @see ExchangeSetting
      */
     ::zumo::Decimal return_transaction_fee;
-    /** Exchange rate used. */
-    ExchangeRate exchange_rate;
+    /** Exchange rate quote used. */
+    Quote quote;
     /** Exchange setting used. */
     ExchangeSetting exchange_setting;
     /**
@@ -92,7 +93,7 @@ struct Exchange final {
              ::zumo::Decimal return_amount_,
              ::zumo::Decimal exchange_fee_,
              ::zumo::Decimal return_transaction_fee_,
-             ExchangeRate exchange_rate_,
+             Quote quote_,
              ExchangeSetting exchange_setting_,
              std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
              std::optional<std::string> nonce_,
@@ -111,7 +112,7 @@ struct Exchange final {
     , return_amount(std::move(return_amount_))
     , exchange_fee(std::move(exchange_fee_))
     , return_transaction_fee(std::move(return_transaction_fee_))
-    , exchange_rate(std::move(exchange_rate_))
+    , quote(std::move(quote_))
     , exchange_setting(std::move(exchange_setting_))
     , exchange_rates(std::move(exchange_rates_))
     , nonce(std::move(nonce_))

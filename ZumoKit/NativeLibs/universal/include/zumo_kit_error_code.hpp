@@ -112,14 +112,11 @@ struct ZumoKitErrorCode final {
     /** Invalid response received from API. */
     static std::string const INVALID_API_RESPONSE;
 
-    /** Invalid or missing Zumo Exchange Service address. */
-    static std::string const INVALID_EXCHANGE_ADDRESS;
+    /** Mismatch between exchange rate quote and selected accounts. */
+    static std::string const INVALID_QUOTE;
 
-    /** Mismatch between exchange rate and selected accounts. */
-    static std::string const INVALID_EXCHANGE_RATE;
-
-    /** Mismatch between exchange setting and selected accounts. */
-    static std::string const INVALID_EXCHANGE_SETTING;
+    /** Exchange pair not supported. */
+    static std::string const EXCHANGE_PAIR_NOT_SUPPORTED;
 
     /** Requested private key derivation path is invalid. */
     static std::string const INVALID_HD_WALLET_PATH;

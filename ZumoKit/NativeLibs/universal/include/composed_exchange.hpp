@@ -5,8 +5,8 @@
 
 #include "account.hpp"
 #include "decimal.hpp"
-#include "exchange_rate.hpp"
 #include "exchange_setting.hpp"
+#include "quote.hpp"
 #include <optional>
 #include <string>
 #include <utility>
@@ -21,9 +21,9 @@ struct ComposedExchange final {
     Account from_account;
     /** Target account. */
     Account to_account;
-    /** Exchange rate used composing exchange. */
-    ExchangeRate exchange_rate;
-    /** Exchange setting used composing exchange. */
+    /** Exchange rate quote used when composing exchange. */
+    Quote quote;
+    /** Exchange setting used when composing exchange. */
     ExchangeSetting exchange_setting;
     /**
      * Zumo Exchange Service wallet address where outgoing crypto funds were deposited,
@@ -33,14 +33,14 @@ struct ComposedExchange final {
     /** Exchange amount in source account currency. */
     ::zumo::Decimal amount;
     /**
-     * Amount that user receives, calculated as <code>value X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
+     * Amount that user receives, calculated as <code>value X quote.value X (1 - feeRate) - returnTransactionFee</code>.
      * @see ExchangeSetting
      */
     ::zumo::Decimal return_amount;
     /** Outgoing transaction fee. */
     ::zumo::Decimal outgoing_transaction_fee;
     /**
-     * Exchange fee, calculated as <code>value X exchangeRate X exchangeFeeRate</code>.
+     * Exchange fee, calculated as <code>value X quote.value X exchangeFeeRate</code>.
      * @see ExchangeSetting
      */
     ::zumo::Decimal exchange_fee;
@@ -58,7 +58,7 @@ struct ComposedExchange final {
     ComposedExchange(std::optional<std::string> signed_transaction_,
                      Account from_account_,
                      Account to_account_,
-                     ExchangeRate exchange_rate_,
+                     Quote quote_,
                      ExchangeSetting exchange_setting_,
                      std::optional<std::string> exchange_address_,
                      ::zumo::Decimal amount_,
@@ -70,7 +70,7 @@ struct ComposedExchange final {
     : signed_transaction(std::move(signed_transaction_))
     , from_account(std::move(from_account_))
     , to_account(std::move(to_account_))
-    , exchange_rate(std::move(exchange_rate_))
+    , quote(std::move(quote_))
     , exchange_setting(std::move(exchange_setting_))
     , exchange_address(std::move(exchange_address_))
     , amount(std::move(amount_))

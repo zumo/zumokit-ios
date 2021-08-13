@@ -82,12 +82,10 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDADDRESS;
 /** Invalid response received from API. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDAPIRESPONSE;
-/** Invalid or missing Zumo Exchange Service address. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS;
-/** Mismatch between exchange rate and selected accounts. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE;
-/** Mismatch between exchange setting and selected accounts. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTING;
+/** Mismatch between exchange rate quote and selected accounts. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDQUOTE;
+/** Exchange pair not supported. */
+extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEPAIRNOTSUPPORTED;
 /** Requested private key derivation path is invalid. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH;
 /** Invalid metadata. Metadata must be a valid JSON. */

@@ -121,8 +121,6 @@
                     
                     [self composeExchange:ethAccount
                                 toAccount:btcAccount
-                             exchangeRate:[_zumoKit getExchangeRates][@"ETH"][@"BTC"]
-                          exchangeSetting:[_zumoKit getExchangeSettings][@"ETH"][@"BTC"]
                                    amount:[NSDecimalNumber decimalNumberWithString:@"0.1"]
                                    submit:NO];
                 }];
@@ -226,15 +224,11 @@
 
 - (void)composeExchange:(ZKAccount *)fromAccount
               toAccount:(ZKAccount *)toAccount
-           exchangeRate:(ZKExchangeRate *)exchangeRate
-        exchangeSetting:(ZKExchangeSetting *)exchangeSetting
                  amount:(NSDecimalNumber *)amount
                  submit:(BOOL)submit
 {
     [_wallet composeExchange:fromAccount.id
                  toAccountId:toAccount.id
-                exchangeRate:exchangeRate
-             exchangeSetting:exchangeSetting
                       amount:amount
                      sendMax:NO
                   completion:^(ZKComposedExchange * _Nullable composedExchange, NSError * _Nullable error) {
@@ -244,6 +238,7 @@
             return;
         }
         
+        NSLog(@"Exchange Rate Quote: %@", composedExchange.quote.value);
         NSLog(@"Return Amount: %@", composedExchange.returnAmount);
         NSLog(@"Exchange Fee: %@", composedExchange.exchangeFee);
         

@@ -6,6 +6,7 @@
 #import "NSDecimalNumber+ZumoKit.h"
 #import "ZKExchangeRate+Private.h"
 #import "ZKExchangeSetting+Private.h"
+#import "ZKQuote+Private.h"
 #include <cassert>
 
 namespace djinni_generated {
@@ -26,7 +27,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnAmount),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.exchangeFee),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnTransactionFee),
-            ::djinni_generated::ExchangeRate::toCpp(obj.exchangeRate),
+            ::djinni_generated::Quote::toCpp(obj.quote),
             ::djinni_generated::ExchangeSetting::toCpp(obj.exchangeSetting),
             ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.nonce),
@@ -49,7 +50,7 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                              returnAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_amount))
                               exchangeFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.exchange_fee))
                      returnTransactionFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_transaction_fee))
-                             exchangeRate:(::djinni_generated::ExchangeRate::fromCpp(cpp.exchange_rate))
+                                    quote:(::djinni_generated::Quote::fromCpp(cpp.quote))
                           exchangeSetting:(::djinni_generated::ExchangeSetting::fromCpp(cpp.exchange_setting))
                             exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))
                                     nonce:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.nonce))

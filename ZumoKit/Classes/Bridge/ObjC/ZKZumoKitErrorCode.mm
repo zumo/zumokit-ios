@@ -62,11 +62,9 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDADDRESS = @"invalid_address"
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDAPIRESPONSE = @"invalid_api_response";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGEADDRESS = @"invalid_exchange_address";
+NSString * __nonnull const ZKZumoKitErrorCodeINVALIDQUOTE = @"invalid_quote";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGERATE = @"invalid_exchange_rate";
-
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDEXCHANGESETTING = @"invalid_exchange_setting";
+NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEPAIRNOTSUPPORTED = @"exchange_pair_not_supported";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH = @"invalid_hd_wallet_path";
 

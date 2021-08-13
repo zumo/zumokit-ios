@@ -73,16 +73,12 @@
 
 - (void)composeExchange:(nonnull NSString *)fromAccountId
             toAccountId:(nonnull NSString *)toAccountId
-           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-        exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
              completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler {
 
     [self composeExchange:fromAccountId
               toAccountId:toAccountId
-             exchangeRate:exchangeRate
-          exchangeSetting:exchangeSetting
                    amount:amount
                   sendMax:sendMax
                  callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];

@@ -3,6 +3,7 @@
 
 #import "ZKExchangeRate.h"
 #import "ZKExchangeSetting.h"
+#import "ZKQuote.h"
 #import <Foundation/Foundation.h>
 
 /** Record containing exchange details. */
@@ -20,7 +21,7 @@
                       returnAmount:(nonnull NSDecimalNumber *)returnAmount
                        exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
               returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                      exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+                             quote:(nonnull ZKQuote *)quote
                    exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                      exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                              nonce:(nullable NSString *)nonce
@@ -39,7 +40,7 @@
                           returnAmount:(nonnull NSDecimalNumber *)returnAmount
                            exchangeFee:(nonnull NSDecimalNumber *)exchangeFee
                   returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                          exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
+                                 quote:(nonnull ZKQuote *)quote
                        exchangeSetting:(nonnull ZKExchangeSetting *)exchangeSetting
                          exchangeRates:(nonnull NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *)exchangeRates
                                  nonce:(nullable NSString *)nonce
@@ -86,13 +87,13 @@
 @property (nonatomic, readonly, nullable) NSDecimalNumber * outgoingTransactionFee;
 
 /**
- * Amount that user receives, calculated as <code>amount X exchangeRate X (1 - feeRate) - returnTransactionFee</code>.
+ * Amount that user receives, calculated as <code>amount X quote.value X (1 - feeRate) - returnTransactionFee</code>.
  * @see `ZKExchangeSetting`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnAmount;
 
 /**
- * Exchange fee, calculated as <code>amount X exchangeRate X exchangeFeeRate</code>.
+ * Exchange fee, calculated as <code>amount X quote.value X exchangeFeeRate</code>.
  * @see `ZKExchangeSetting`
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * exchangeFee;
@@ -103,8 +104,8 @@
  */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnTransactionFee;
 
-/** Exchange rate used. */
-@property (nonatomic, readonly, nonnull) ZKExchangeRate * exchangeRate;
+/** Exchange rate quote used. */
+@property (nonatomic, readonly, nonnull) ZKQuote * quote;
 
 /** Exchange setting used. */
 @property (nonatomic, readonly, nonnull) ZKExchangeSetting * exchangeSetting;

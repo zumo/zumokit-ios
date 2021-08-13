@@ -74,13 +74,11 @@ typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, 
                                   completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
 
 /**
-<code>composeTransactionToNominatedAccount</code> completion handler extension.
-@see `-[ZKWallet composeTransactionToNominatedAccount:amount:sendMax:callback:]`
+<code>composeExchange</code> completion handler extension.
+@see `-[ZKWallet composeExchange:toAccountId:amount:sendMax:callback:]`
 */
 - (void)composeExchange:(nonnull NSString *)fromAccountId
             toAccountId:(nonnull NSString *)toAccountId
-           exchangeRate:(nonnull ZKExchangeRate *)exchangeRate
-        exchangeSetting:(nonnull ZKExchangeSetting *)exchangeFees
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
              completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler;
