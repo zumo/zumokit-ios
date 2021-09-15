@@ -7,12 +7,14 @@
 @interface ZKQuote : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                         expireTime:(int32_t)expireTime
+                         expiresIn:(nullable NSNumber *)expiresIn
                       fromCurrency:(nonnull NSString *)fromCurrency
                         toCurrency:(nonnull NSString *)toCurrency
                      depositAmount:(nonnull NSDecimalNumber *)depositAmount
                              value:(nonnull NSDecimalNumber *)value;
 + (nonnull instancetype)quoteWithId:(nonnull NSString *)id
                          expireTime:(int32_t)expireTime
+                          expiresIn:(nullable NSNumber *)expiresIn
                        fromCurrency:(nonnull NSString *)fromCurrency
                          toCurrency:(nonnull NSString *)toCurrency
                       depositAmount:(nonnull NSDecimalNumber *)depositAmount
@@ -23,6 +25,9 @@
 
 /** Epoch timestamp representing expiration time of this quote. */
 @property (nonatomic, readonly) int32_t expireTime;
+
+/** Seconds until expiration time for active quotes, null for historical quotes. */
+@property (nonatomic, readonly, nullable) NSNumber * expiresIn;
 
 /**
  * Deposit currency.

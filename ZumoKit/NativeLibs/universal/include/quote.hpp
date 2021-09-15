@@ -5,6 +5,7 @@
 
 #include "decimal.hpp"
 #include <cstdint>
+#include <optional>
 #include <string>
 #include <utility>
 
@@ -16,6 +17,8 @@ struct Quote final {
     std::string id;
     /** Epoch timestamp representing expiration time of this quote. */
     int32_t expire_time;
+    /** Seconds until expiration time for active quotes, null for historical quotes. */
+    std::optional<int32_t> expires_in;
     /**
      * Deposit currency.
      * @see CurrencyCode
@@ -36,12 +39,14 @@ struct Quote final {
 
     Quote(std::string id_,
           int32_t expire_time_,
+          std::optional<int32_t> expires_in_,
           std::string from_currency_,
           std::string to_currency_,
           ::zumo::Decimal deposit_amount_,
           ::zumo::Decimal value_)
     : id(std::move(id_))
     , expire_time(std::move(expire_time_))
+    , expires_in(std::move(expires_in_))
     , from_currency(std::move(from_currency_))
     , to_currency(std::move(to_currency_))
     , deposit_amount(std::move(deposit_amount_))

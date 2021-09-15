@@ -8,6 +8,7 @@
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
                         expireTime:(int32_t)expireTime
+                         expiresIn:(nullable NSNumber *)expiresIn
                       fromCurrency:(nonnull NSString *)fromCurrency
                         toCurrency:(nonnull NSString *)toCurrency
                      depositAmount:(nonnull NSDecimalNumber *)depositAmount
@@ -16,6 +17,7 @@
     if (self = [super init]) {
         _id = [id copy];
         _expireTime = expireTime;
+        _expiresIn = expiresIn;
         _fromCurrency = [fromCurrency copy];
         _toCurrency = [toCurrency copy];
         _depositAmount = depositAmount;
@@ -26,6 +28,7 @@
 
 + (nonnull instancetype)quoteWithId:(nonnull NSString *)id
                          expireTime:(int32_t)expireTime
+                          expiresIn:(nullable NSNumber *)expiresIn
                        fromCurrency:(nonnull NSString *)fromCurrency
                          toCurrency:(nonnull NSString *)toCurrency
                       depositAmount:(nonnull NSDecimalNumber *)depositAmount
@@ -33,6 +36,7 @@
 {
     return [(ZKQuote*)[self alloc] initWithId:id
                                    expireTime:expireTime
+                                    expiresIn:expiresIn
                                  fromCurrency:fromCurrency
                                    toCurrency:toCurrency
                                 depositAmount:depositAmount
@@ -47,6 +51,7 @@
     ZKQuote *typedOther = (ZKQuote *)other;
     return [self.id isEqualToString:typedOther.id] &&
             self.expireTime == typedOther.expireTime &&
+            ((self.expiresIn == nil && typedOther.expiresIn == nil) || (self.expiresIn != nil && [self.expiresIn isEqual:typedOther.expiresIn])) &&
             [self.fromCurrency isEqualToString:typedOther.fromCurrency] &&
             [self.toCurrency isEqualToString:typedOther.toCurrency] &&
             [self.depositAmount isEqual:typedOther.depositAmount] &&
@@ -58,6 +63,7 @@
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
             (NSUInteger)self.expireTime ^
+            self.expiresIn.hash ^
             self.fromCurrency.hash ^
             self.toCurrency.hash ^
             ((NSUInteger)self.depositAmount) ^
@@ -66,7 +72,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ expireTime:%@ fromCurrency:%@ toCurrency:%@ depositAmount:%@ value:%@>", self.class, (void *)self, self.id, @(self.expireTime), self.fromCurrency, self.toCurrency, self.depositAmount, self.value];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ expireTime:%@ expiresIn:%@ fromCurrency:%@ toCurrency:%@ depositAmount:%@ value:%@>", self.class, (void *)self, self.id, @(self.expireTime), self.expiresIn, self.fromCurrency, self.toCurrency, self.depositAmount, self.value];
 }
 
 @end

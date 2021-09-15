@@ -4,7 +4,6 @@
 #pragma once
 
 #include "decimal.hpp"
-#include <cstdint>
 #include <string>
 #include <unordered_map>
 #include <utility>
@@ -38,8 +37,6 @@ struct ExchangeSetting final {
     ::zumo::Decimal outgoing_transaction_fee_rate;
     /** Fee that will charged for return transaction. */
     ::zumo::Decimal return_transaction_fee;
-    /** Epoch timestamp when the exchange setting were last updated. */
-    int32_t timestamp;
 
     friend bool operator==(const ExchangeSetting& lhs, const ExchangeSetting& rhs);
     friend bool operator!=(const ExchangeSetting& lhs, const ExchangeSetting& rhs);
@@ -51,8 +48,7 @@ struct ExchangeSetting final {
                     ::zumo::Decimal min_exchange_amount_,
                     ::zumo::Decimal exchange_fee_rate_,
                     ::zumo::Decimal outgoing_transaction_fee_rate_,
-                    ::zumo::Decimal return_transaction_fee_,
-                    int32_t timestamp_)
+                    ::zumo::Decimal return_transaction_fee_)
     : id(std::move(id_))
     , exchange_address(std::move(exchange_address_))
     , from_currency(std::move(from_currency_))
@@ -61,7 +57,6 @@ struct ExchangeSetting final {
     , exchange_fee_rate(std::move(exchange_fee_rate_))
     , outgoing_transaction_fee_rate(std::move(outgoing_transaction_fee_rate_))
     , return_transaction_fee(std::move(return_transaction_fee_))
-    , timestamp(std::move(timestamp_))
     {}
 };
 

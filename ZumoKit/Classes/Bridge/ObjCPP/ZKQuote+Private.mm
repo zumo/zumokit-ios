@@ -13,6 +13,7 @@ auto Quote::toCpp(ObjcType obj) -> CppType
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
             ::djinni::I32::toCpp(obj.expireTime),
+            ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.expiresIn),
             ::djinni::String::toCpp(obj.fromCurrency),
             ::djinni::String::toCpp(obj.toCurrency),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.depositAmount),
@@ -23,6 +24,7 @@ auto Quote::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKQuote alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
                             expireTime:(::djinni::I32::fromCpp(cpp.expire_time))
+                             expiresIn:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.expires_in))
                           fromCurrency:(::djinni::String::fromCpp(cpp.from_currency))
                             toCurrency:(::djinni::String::fromCpp(cpp.to_currency))
                          depositAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.deposit_amount))

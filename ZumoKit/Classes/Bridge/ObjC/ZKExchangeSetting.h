@@ -12,8 +12,7 @@
                  minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
                    exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
         outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
-              returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                         timestamp:(int32_t)timestamp;
+              returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee;
 + (nonnull instancetype)exchangeSettingWithId:(nonnull NSString *)id
                               exchangeAddress:(nonnull NSDictionary<NSString *, NSString *> *)exchangeAddress
                                  fromCurrency:(nonnull NSString *)fromCurrency
@@ -21,8 +20,7 @@
                             minExchangeAmount:(nonnull NSDecimalNumber *)minExchangeAmount
                               exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
                    outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
-                         returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                                    timestamp:(int32_t)timestamp;
+                         returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee;
 
 /** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -56,8 +54,5 @@
 
 /** Fee that will charged for return transaction. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * returnTransactionFee;
-
-/** Epoch timestamp when the exchange setting were last updated. */
-@property (nonatomic, readonly) int32_t timestamp;
 
 @end

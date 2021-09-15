@@ -17,7 +17,6 @@
 #import "ZKCardCallback.h"
 #import "ZKCardDetailsCallback.h"
 #import "ZKPinCallback.h"
-#import "ZKQuoteCallback.h"
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKWalletCompletionBlock)(ZKWallet *_Nullable wallet, NSError *_Nullable error);
@@ -42,9 +41,6 @@ typedef void (^ZKCardDetailsCompletionBlock)(ZKCardDetails *_Nullable card, NSEr
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
-
-/** Completion block used by methods in `ZKUser class. */
-typedef void (^ZKQuoteCompletionBlock)(ZKQuote *_Nullable quote, NSError *_Nullable error);
 
 @interface ZKUser (ZKUserCallbackCompletion)
 
@@ -146,15 +142,6 @@ typedef void (^ZKQuoteCompletionBlock)(ZKQuote *_Nullable quote, NSError *_Nulla
 */
 - (void)unblockPin:(nonnull NSString *)cardId
         completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
-
-/**
-<code>getQuote</code> completion handler extension.
-@see `-[ZKUser getQuote:toCurrency:depositAmount:callback:]`
-*/
-- (void)getQuote:(nonnull NSString *)fromCurrency
-      toCurrency:(nonnull NSString *)toCurrency
-   depositAmount:(nonnull NSDecimalNumber *)depositAmount
-      completion:(_Nonnull ZKQuoteCompletionBlock)completionHandler;
 
 @end
 

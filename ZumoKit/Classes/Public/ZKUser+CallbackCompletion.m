@@ -16,7 +16,6 @@
 #import "CardCallback.h"
 #import "CardDetailsCallback.h"
 #import "PinCallback.h"
-#import "QuoteCallback.h"
 
 @implementation ZKUser (ZKUserCallbackCompletion)
 
@@ -93,13 +92,6 @@
 - (void)unblockPin:(nonnull NSString *)cardId
         completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
     [self unblockPin:cardId callback:[[SuccessCallback alloc] initWithCompletionHandler:completionHandler]];
-};
-
-- (void)getQuote:(nonnull NSString *)fromCurrency
-      toCurrency:(nonnull NSString *)toCurrency
-   depositAmount:(nonnull NSDecimalNumber *)depositAmount
-      completion:(_Nonnull ZKQuoteCompletionBlock)completionHandler {
-    [self getQuote:fromCurrency toCurrency:toCurrency depositAmount:depositAmount callback:[[QuoteCallback alloc] initWithCompletionHandler:completionHandler]];
 };
 
 @end

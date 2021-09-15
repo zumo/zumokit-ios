@@ -14,7 +14,6 @@
                    exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
         outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
               returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                         timestamp:(int32_t)timestamp
 {
     if (self = [super init]) {
         _id = [id copy];
@@ -25,7 +24,6 @@
         _exchangeFeeRate = exchangeFeeRate;
         _outgoingTransactionFeeRate = outgoingTransactionFeeRate;
         _returnTransactionFee = returnTransactionFee;
-        _timestamp = timestamp;
     }
     return self;
 }
@@ -38,7 +36,6 @@
                               exchangeFeeRate:(nonnull NSDecimalNumber *)exchangeFeeRate
                    outgoingTransactionFeeRate:(nonnull NSDecimalNumber *)outgoingTransactionFeeRate
                          returnTransactionFee:(nonnull NSDecimalNumber *)returnTransactionFee
-                                    timestamp:(int32_t)timestamp
 {
     return [(ZKExchangeSetting*)[self alloc] initWithId:id
                                         exchangeAddress:exchangeAddress
@@ -47,8 +44,7 @@
                                       minExchangeAmount:minExchangeAmount
                                         exchangeFeeRate:exchangeFeeRate
                              outgoingTransactionFeeRate:outgoingTransactionFeeRate
-                                   returnTransactionFee:returnTransactionFee
-                                              timestamp:timestamp];
+                                   returnTransactionFee:returnTransactionFee];
 }
 
 - (BOOL)isEqual:(id)other
@@ -64,8 +60,7 @@
             [self.minExchangeAmount isEqual:typedOther.minExchangeAmount] &&
             [self.exchangeFeeRate isEqual:typedOther.exchangeFeeRate] &&
             [self.outgoingTransactionFeeRate isEqual:typedOther.outgoingTransactionFeeRate] &&
-            [self.returnTransactionFee isEqual:typedOther.returnTransactionFee] &&
-            self.timestamp == typedOther.timestamp;
+            [self.returnTransactionFee isEqual:typedOther.returnTransactionFee];
 }
 
 - (NSUInteger)hash
@@ -78,13 +73,12 @@
             ((NSUInteger)self.minExchangeAmount) ^
             ((NSUInteger)self.exchangeFeeRate) ^
             ((NSUInteger)self.outgoingTransactionFeeRate) ^
-            ((NSUInteger)self.returnTransactionFee) ^
-            (NSUInteger)self.timestamp;
+            ((NSUInteger)self.returnTransactionFee);
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ exchangeAddress:%@ fromCurrency:%@ toCurrency:%@ minExchangeAmount:%@ exchangeFeeRate:%@ outgoingTransactionFeeRate:%@ returnTransactionFee:%@ timestamp:%@>", self.class, (void *)self, self.id, self.exchangeAddress, self.fromCurrency, self.toCurrency, self.minExchangeAmount, self.exchangeFeeRate, self.outgoingTransactionFeeRate, self.returnTransactionFee, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ exchangeAddress:%@ fromCurrency:%@ toCurrency:%@ minExchangeAmount:%@ exchangeFeeRate:%@ outgoingTransactionFeeRate:%@ returnTransactionFee:%@>", self.class, (void *)self, self.id, self.exchangeAddress, self.fromCurrency, self.toCurrency, self.minExchangeAmount, self.exchangeFeeRate, self.outgoingTransactionFeeRate, self.returnTransactionFee];
 }
 
 @end

@@ -11,7 +11,6 @@
 @protocol ZKCardDetailsCallback;
 @protocol ZKMnemonicCallback;
 @protocol ZKPinCallback;
-@protocol ZKQuoteCallback;
 @protocol ZKSuccessCallback;
 @protocol ZKWalletCallback;
 
@@ -201,20 +200,6 @@
 - (void)recoverWallet:(nonnull NSString *)mnemonic
              password:(nonnull NSString *)password
              callback:(nullable id<ZKWalletCallback>)callback;
-
-/**
- * Get exchange rate quote.
- * @param  fromCurrency  deposit currency code
- * @param  toCurrency    target currency code
- * @param  depositAmount deposit amount to be exchanged to target currency
- * @param  callback       an interface to receive the result or error
- * @see `ZKCurrencyCode`
- * @see `ZKQuote`
- */
-- (void)getQuote:(nonnull NSString *)fromCurrency
-      toCurrency:(nonnull NSString *)toCurrency
-   depositAmount:(nonnull NSDecimalNumber *)depositAmount
-        callback:(nullable id<ZKQuoteCallback>)callback;
 
 /**
  * Get account in specific currency, on specific network, with specific type.
