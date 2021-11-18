@@ -843,27 +843,20 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
       "line": 14,
-      "symbol": "ZKTransactionTypeEXCHANGE",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
-      "line": 15,
       "symbol": "ZKTransactionTypeFIAT",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
-      "line": 16,
+      "line": 15,
       "symbol": "ZKTransactionTypeNOMINATED",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionType.h",
-      "line": 17,
+      "line": 16,
       "symbol": "ZKTransactionTypeCARD",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
