@@ -6,8 +6,6 @@
 
 NSString * __nonnull const ZKTransactionTypeCRYPTO = @"CRYPTO";
 
-NSString * __nonnull const ZKTransactionTypeEXCHANGE = @"EXCHANGE";
-
 NSString * __nonnull const ZKTransactionTypeFIAT = @"FIAT";
 
 NSString * __nonnull const ZKTransactionTypeNOMINATED = @"NOMINATED";

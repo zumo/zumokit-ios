@@ -16,22 +16,11 @@
 
 @end
 
-/** Exchange has been paused by Transaction Service before being submitted to blockchain. */
-extern NSString * __nonnull const ZKExchangeStatusPAUSED;
-/** Exchange has been rejected by Transaction Service before being submitted to blockchain. */
-extern NSString * __nonnull const ZKExchangeStatusREJECTED;
-/** Deposit transaction has been submitted to blockchain. */
+/** Outgoing transaction has been submitted. */
 extern NSString * __nonnull const ZKExchangeStatusPENDING;
-/** Deposit transaction has been mined and exchange has been initiated. */
-extern NSString * __nonnull const ZKExchangeStatusDEPOSITED;
+/** Outgoing transaction has been mined and return transaction has been initiated. */
+extern NSString * __nonnull const ZKExchangeStatusWITHDRAWING;
 /** Exchange was confirmed. */
 extern NSString * __nonnull const ZKExchangeStatusCONFIRMED;
 /** Exchange has failed. */
 extern NSString * __nonnull const ZKExchangeStatusFAILED;
-/** Ethereum deposit transaction was overriden by sending the same transaction with higher gas price. */
-extern NSString * __nonnull const ZKExchangeStatusRESUBMITTED;
-/**
- * Ethereum deposit transaction was overriden by a different transaction with higher gas price than
- * the previously submitted transaction and with with the same nonce as that previously submitted transaction.
- */
-extern NSString * __nonnull const ZKExchangeStatusCANCELLED;
