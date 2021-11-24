@@ -34,7 +34,7 @@
     "ZumoKit/Classes/Bridge/ObjC/ZKWebSocketFactory.h",
     "ZumoKit/Classes/Bridge/ObjC/ZKWebSocketListener.h"
   ],
-  "vendored_libraries": "ZumoKit/NativeLibs/universal/**/*.a",
+  "vendored_libraries": "ZumoKit/NativeLibs/universal/libzumokit.a",
   "frameworks": "Foundation",
   "libraries": "c++",
   "dependencies": {
