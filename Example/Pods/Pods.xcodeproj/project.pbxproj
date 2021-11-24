@@ -583,6 +583,7 @@
 		2E7431AF02E3A1FD5F10ECD2C18AC94B /* ZKUserCallback+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZKUserCallback+Private.h"; sourceTree = "<group>"; };
 		2EA65345A018412D6AF707C1DDC0B91B /* ZKComposedExchange.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = ZKComposedExchange.mm; sourceTree = "<group>"; };
 		2F11EFDA6B9057D35538F447B5D4F763 /* ZKCardCallback+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZKCardCallback+Private.h"; sourceTree = "<group>"; };
+		2F4134CD71C69EB3DFDBE53A4E7F4596 /* libzumokito.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libzumokito.a; path = ZumoKit/NativeLibs/universal/libzumokito.a; sourceTree = "<group>"; };
 		2FB7A76E79F912EBCEC84C4BDEBD398A /* ZKExchangeSetting+Private.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = "ZKExchangeSetting+Private.mm"; sourceTree = "<group>"; };
 		3056B56B086152EC0932A13B8EA8E97F /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
 		306D9B4FF6A5ABA1A5189DEE0CE4648D /* EXPMatchers+endWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+endWith.m"; path = "Expecta/Matchers/EXPMatchers+endWith.m"; sourceTree = "<group>"; };
@@ -855,7 +856,6 @@
 		B875B600B82BC083650942B6CD6C7B82 /* EXPUnsupportedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EXPUnsupportedObject.h; path = Expecta/EXPUnsupportedObject.h; sourceTree = "<group>"; };
 		B8FD3C1D50EC5E2A7A2878808F6DE323 /* ZKUtils+Private.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = "ZKUtils+Private.mm"; sourceTree = "<group>"; };
 		B9DDEED509874E0E9075FECCC5656358 /* SubmitExchangeCallback.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SubmitExchangeCallback.h; sourceTree = "<group>"; };
-		BA174B4DAA7CFC694EF60A4CD6F6455E /* libzumokit.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libzumokit.a; path = ZumoKit/NativeLibs/universal/libzumokit.a; sourceTree = "<group>"; };
 		BB1467BCF1F556D0A72BF1E203E3D378 /* ZKZumoKitErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = ZKZumoKitErrorCode.h; sourceTree = "<group>"; };
 		BB1AC57466B066D00567CAB63ECC78E4 /* ZKAccountFiatProperties.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = ZKAccountFiatProperties.mm; sourceTree = "<group>"; };
 		BB1E2988BBB2D4315215479487C51668 /* ZKNetworkType.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = ZKNetworkType.mm; sourceTree = "<group>"; };
@@ -1072,7 +1072,7 @@
 			isa = PBXGroup;
 			children = (
 				A7CF90831370DEE14C2477B15382BABB /* Classes */,
-				FE7702CF6491B028B5976CE10E4B82D5 /* Frameworks */,
+				9AB9E017BB671AB109F8730EF75C5C14 /* Frameworks */,
 				35CA069C7FC1BBC3AB8963701CD9E664 /* NativeLibs */,
 				593AA27674C0022CE05ABBF25FCC2855 /* Pod */,
 				4E693BF55C88DD512D02ED1DC998DC9F /* Support Files */,
@@ -1350,6 +1350,14 @@
 				64E4259036F71114962CA8D797C11D9B /* Pods-ZumoKit_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9AB9E017BB671AB109F8730EF75C5C14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F4134CD71C69EB3DFDBE53A4E7F4596 /* libzumokito.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A7CF90831370DEE14C2477B15382BABB /* Classes */ = {
@@ -1798,14 +1806,6 @@
 			);
 			name = Bridge;
 			path = Bridge;
-			sourceTree = "<group>";
-		};
-		FE7702CF6491B028B5976CE10E4B82D5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BA174B4DAA7CFC694EF60A4CD6F6455E /* libzumokit.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
