@@ -583,7 +583,6 @@
 		2E7431AF02E3A1FD5F10ECD2C18AC94B /* ZKUserCallback+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZKUserCallback+Private.h"; sourceTree = "<group>"; };
 		2EA65345A018412D6AF707C1DDC0B91B /* ZKComposedExchange.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = ZKComposedExchange.mm; sourceTree = "<group>"; };
 		2F11EFDA6B9057D35538F447B5D4F763 /* ZKCardCallback+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZKCardCallback+Private.h"; sourceTree = "<group>"; };
-		2F4134CD71C69EB3DFDBE53A4E7F4596 /* libzumokito.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libzumokito.a; path = ZumoKit/NativeLibs/universal/libzumokito.a; sourceTree = "<group>"; };
 		2FB7A76E79F912EBCEC84C4BDEBD398A /* ZKExchangeSetting+Private.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = "ZKExchangeSetting+Private.mm"; sourceTree = "<group>"; };
 		3056B56B086152EC0932A13B8EA8E97F /* ExpectaSupport.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ExpectaSupport.m; path = Expecta/ExpectaSupport.m; sourceTree = "<group>"; };
 		306D9B4FF6A5ABA1A5189DEE0CE4648D /* EXPMatchers+endWith.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "EXPMatchers+endWith.m"; path = "Expecta/Matchers/EXPMatchers+endWith.m"; sourceTree = "<group>"; };
@@ -932,6 +931,7 @@
 		E2E124D7E06493EF9A4F558DA95D91F0 /* ZKLogListener+Private.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = "ZKLogListener+Private.mm"; sourceTree = "<group>"; };
 		E32D030E098BABAFCD8D2C13CB945179 /* WebSocketFactory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WebSocketFactory.h; sourceTree = "<group>"; };
 		E3524910847A0364E7C54146E0D7A2BF /* ZKComposeTransactionCallback+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZKComposeTransactionCallback+Private.h"; sourceTree = "<group>"; };
+		E3E8603FA06BADC2D6E2B17F02BDBE3C /* libzumocore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libzumocore.a; path = ZumoKit/NativeLibs/universal/libzumocore.a; sourceTree = "<group>"; };
 		E4233C6DD1D540E779D17742E87E2258 /* ZKComposedTransaction+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZKComposedTransaction+Private.h"; sourceTree = "<group>"; };
 		E43FD2E613EA4A8E63A20EB05FE049C1 /* ZKAccountDataListener+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ZKAccountDataListener+Private.h"; sourceTree = "<group>"; };
 		E55B36D31BBD489F41B2A6C746250400 /* WebSocket.mm */ = {isa = PBXFileReference; includeInIndex = 1; path = WebSocket.mm; sourceTree = "<group>"; };
@@ -1072,7 +1072,7 @@
 			isa = PBXGroup;
 			children = (
 				A7CF90831370DEE14C2477B15382BABB /* Classes */,
-				9AB9E017BB671AB109F8730EF75C5C14 /* Frameworks */,
+				3E1151C8563AD21EF1B688727911A477 /* Frameworks */,
 				35CA069C7FC1BBC3AB8963701CD9E664 /* NativeLibs */,
 				593AA27674C0022CE05ABBF25FCC2855 /* Pod */,
 				4E693BF55C88DD512D02ED1DC998DC9F /* Support Files */,
@@ -1096,6 +1096,14 @@
 			);
 			name = NativeLibs;
 			path = ZumoKit/NativeLibs;
+			sourceTree = "<group>";
+		};
+		3E1151C8563AD21EF1B688727911A477 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8603FA06BADC2D6E2B17F02BDBE3C /* libzumocore.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		4E693BF55C88DD512D02ED1DC998DC9F /* Support Files */ = {
@@ -1350,14 +1358,6 @@
 				64E4259036F71114962CA8D797C11D9B /* Pods-ZumoKit_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		9AB9E017BB671AB109F8730EF75C5C14 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				2F4134CD71C69EB3DFDBE53A4E7F4596 /* libzumokito.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A7CF90831370DEE14C2477B15382BABB /* Classes */ = {
