@@ -16,6 +16,7 @@
 #import "CardCallback.h"
 #import "CardDetailsCallback.h"
 #import "PinCallback.h"
+#import "AuthenticationConfigCallback.h"
 
 @implementation ZKUser (ZKUserCallbackCompletion)
 
@@ -62,6 +63,10 @@
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
                                completion:(_Nonnull ZKAccountFiatPropertiesCompletionBlock)completionHandler {
     [self getNominatedAccountFiatProperties:accountId callback:[[AccountFiatPropertiesCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)fetchAuthenticationConfigWithCompletion:(_Nonnull ZKAuthenticationConfigCompletionBlock)completionHandler {
+    [self fetchAuthenticationConfig:[[AuthenticationConfigCallback alloc] initWithCompletionHandler:completionHandler]];
 };
 
 - (void)createCard:(nonnull NSString *)fiatAccountId

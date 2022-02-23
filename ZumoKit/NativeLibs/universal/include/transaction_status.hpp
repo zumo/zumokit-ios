@@ -47,6 +47,9 @@ struct TransactionStatus final {
 
     /** Card transaction was reversed. */
     static std::string const REVERSED;
+
+    /** Transaction was refunded. */
+    static std::string const REFUNDED;
 };
 
 }  // namespace zumo

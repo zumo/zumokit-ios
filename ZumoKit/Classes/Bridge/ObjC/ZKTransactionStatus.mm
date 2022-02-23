@@ -22,6 +22,8 @@ NSString * __nonnull const ZKTransactionStatusAUTHORISED = @"AUTHORISED";
 
 NSString * __nonnull const ZKTransactionStatusREVERSED = @"REVERSED";
 
+NSString * __nonnull const ZKTransactionStatusREFUNDED = @"REFUNDED";
+
 @implementation ZKTransactionStatus
 
 - (nonnull instancetype)init

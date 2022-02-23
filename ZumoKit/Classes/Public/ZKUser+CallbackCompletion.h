@@ -17,6 +17,7 @@
 #import "ZKCardCallback.h"
 #import "ZKCardDetailsCallback.h"
 #import "ZKPinCallback.h"
+#import "ZKAuthenticationConfigCallback.h"
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKWalletCompletionBlock)(ZKWallet *_Nullable wallet, NSError *_Nullable error);
@@ -32,6 +33,9 @@ typedef void (^ZKAccountCompletionBlock)(ZKAccount *_Nullable account, NSError *
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKAccountFiatPropertiesCompletionBlock)(ZKAccountFiatProperties *_Nullable accountFiatProperties, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser class. */
+typedef void (^ZKAuthenticationConfigCompletionBlock)(ZKAuthenticationConfig *_Nullable authConfig, NSError *_Nullable error);
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKCardCompletionBlock)(ZKCard *_Nullable card, NSError *_Nullable error);
@@ -102,6 +106,12 @@ typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
 */
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
                                completion:(_Nonnull ZKAccountFiatPropertiesCompletionBlock)completionHandler;
+
+/**
+<code>fetchAuthenticationConfig</code> completion handler extension.
+@see `-[ZKUser fetchAuthenticationConfig:callback:]`
+*/
+- (void)fetchAuthenticationConfigWithCompletion:(_Nonnull ZKAuthenticationConfigCompletionBlock)completionHandler;
 
 /**
 <code>createCard</code> completion handler extension.

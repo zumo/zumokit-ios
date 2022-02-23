@@ -11,6 +11,7 @@
 #import "ZKAccountDataListener+Private.h"
 #import "ZKAccountFiatPropertiesCallback+Private.h"
 #import "ZKAddress+Private.h"
+#import "ZKAuthenticationConfigCallback+Private.h"
 #import "ZKCardCallback+Private.h"
 #import "ZKCardDetailsCallback+Private.h"
 #import "ZKMnemonicCallback+Private.h"
@@ -99,6 +100,12 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         _cppRefHandle.get()->get_nominated_account_fiat_properties(::djinni::String::toCpp(accountId),
                                                                    ::djinni_generated::AccountFiatPropertiesCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)fetchAuthenticationConfig:(nullable id<ZKAuthenticationConfigCallback>)callback {
+    try {
+        _cppRefHandle.get()->fetch_authentication_config(::djinni_generated::AuthenticationConfigCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

@@ -38,3 +38,5 @@ extern NSString * __nonnull const ZKTransactionStatusCANCELLED;
 extern NSString * __nonnull const ZKTransactionStatusAUTHORISED;
 /** Card transaction was reversed. */
 extern NSString * __nonnull const ZKTransactionStatusREVERSED;
+/** Transaction was refunded. */
+extern NSString * __nonnull const ZKTransactionStatusREFUNDED;

@@ -13,6 +13,7 @@ namespace zumo {
 class AccountCallback;
 class AccountDataListener;
 class AccountFiatPropertiesCallback;
+class AuthenticationConfigCallback;
 class CardCallback;
 class CardDetailsCallback;
 class MnemonicCallback;
@@ -91,6 +92,13 @@ public:
      * @see AccountFiatProperties
      */
     virtual void get_nominated_account_fiat_properties(const std::string & account_id, const std::shared_ptr<AccountFiatPropertiesCallback> & callback) = 0;
+
+    /**
+     * Fetch Strong Customer Authentication (SCA) config.
+     *
+     * @param callback         an interface to receive the result or error
+     */
+    virtual void fetch_authentication_config(const std::shared_ptr<AuthenticationConfigCallback> & callback) = 0;
 
     /**
      * Create card for a fiat account.

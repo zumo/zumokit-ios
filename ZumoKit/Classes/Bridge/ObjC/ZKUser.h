@@ -7,6 +7,7 @@
 @protocol ZKAccountCallback;
 @protocol ZKAccountDataListener;
 @protocol ZKAccountFiatPropertiesCallback;
+@protocol ZKAuthenticationConfigCallback;
 @protocol ZKCardCallback;
 @protocol ZKCardDetailsCallback;
 @protocol ZKMnemonicCallback;
@@ -93,6 +94,13 @@
  */
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
                                  callback:(nullable id<ZKAccountFiatPropertiesCallback>)callback;
+
+/**
+ * Fetch Strong Customer Authentication (SCA) config.
+ *
+ * @param callback         an interface to receive the result or error
+ */
+- (void)fetchAuthenticationConfig:(nullable id<ZKAuthenticationConfigCallback>)callback;
 
 /**
  * Create card for a fiat account.

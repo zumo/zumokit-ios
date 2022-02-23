@@ -11,14 +11,16 @@
                         cardStatus:(nonnull NSString *)cardStatus
                              limit:(int32_t)limit
                          maskedPan:(nonnull NSString *)maskedPan
-                            expiry:(nonnull NSString *)expiry;
+                            expiry:(nonnull NSString *)expiry
+                               sca:(BOOL)sca;
 + (nonnull instancetype)cardWithId:(nonnull NSString *)id
                          accountId:(nonnull NSString *)accountId
                           cardType:(nonnull NSString *)cardType
                         cardStatus:(nonnull NSString *)cardStatus
                              limit:(int32_t)limit
                          maskedPan:(nonnull NSString *)maskedPan
-                            expiry:(nonnull NSString *)expiry;
+                            expiry:(nonnull NSString *)expiry
+                               sca:(BOOL)sca;
 
 /** Unique card identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
@@ -46,5 +48,8 @@
 
 /** Card year and month of expiry, e.g. 2024-08. */
 @property (nonatomic, readonly, nonnull) NSString * expiry;
+
+/** Boolean indicating if card is SCA compliant. */
+@property (nonatomic, readonly) BOOL sca;
 
 @end

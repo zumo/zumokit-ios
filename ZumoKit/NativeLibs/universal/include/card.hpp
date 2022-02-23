@@ -31,6 +31,8 @@ struct Card final {
     std::string masked_pan;
     /** Card year and month of expiry, e.g. 2024-08. */
     std::string expiry;
+    /** Boolean indicating if card is SCA compliant. */
+    bool sca;
 
     friend bool operator==(const Card& lhs, const Card& rhs);
     friend bool operator!=(const Card& lhs, const Card& rhs);
@@ -41,7 +43,8 @@ struct Card final {
          std::string card_status_,
          int32_t limit_,
          std::string masked_pan_,
-         std::string expiry_)
+         std::string expiry_,
+         bool sca_)
     : id(std::move(id_))
     , account_id(std::move(account_id_))
     , card_type(std::move(card_type_))
@@ -49,6 +52,7 @@ struct Card final {
     , limit(std::move(limit_))
     , masked_pan(std::move(masked_pan_))
     , expiry(std::move(expiry_))
+    , sca(std::move(sca_))
     {}
 };
 

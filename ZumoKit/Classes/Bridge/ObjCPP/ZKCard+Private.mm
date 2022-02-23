@@ -16,7 +16,8 @@ auto Card::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.cardStatus),
             ::djinni::I32::toCpp(obj.limit),
             ::djinni::String::toCpp(obj.maskedPan),
-            ::djinni::String::toCpp(obj.expiry)};
+            ::djinni::String::toCpp(obj.expiry),
+            ::djinni::Bool::toCpp(obj.sca)};
 }
 
 auto Card::fromCpp(const CppType& cpp) -> ObjcType
@@ -27,7 +28,8 @@ auto Card::fromCpp(const CppType& cpp) -> ObjcType
                            cardStatus:(::djinni::String::fromCpp(cpp.card_status))
                                 limit:(::djinni::I32::fromCpp(cpp.limit))
                             maskedPan:(::djinni::String::fromCpp(cpp.masked_pan))
-                               expiry:(::djinni::String::fromCpp(cpp.expiry))];
+                               expiry:(::djinni::String::fromCpp(cpp.expiry))
+                                  sca:(::djinni::Bool::fromCpp(cpp.sca))];
 }
 
 }  // namespace djinni_generated
