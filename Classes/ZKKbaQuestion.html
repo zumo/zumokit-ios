@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ZKPinCallback Protocol Reference</title>
+    <title>ZKKbaQuestion Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Protocol/ZKPinCallback" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/ZKKbaQuestion" class="dashAnchor"></a>
 
-    <a title="ZKPinCallback Protocol Reference"></a>
+    <a title="ZKKbaQuestion Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      ZKPinCallback Protocol Reference
+      ZKKbaQuestion Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -695,23 +695,23 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>ZKPinCallback</h1>
+            <h1>ZKKbaQuestion</h1>
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKPinCallback</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKKbaQuestion</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">ZKPinCallback</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKKbaQuestion</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Callback interface used by methods in <code><a href="../Classes/ZKUser.html">ZKUser</a></code> class.</p>
+            <p>Record containing Knowledge-Based Authentication (KBA) question</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKPinCallback.h#L8-L14">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKKbaQuestion.h#L7-L19">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -723,9 +723,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKPinCallback(im)onError:"></a>
-                    <a name="//apple_ref/objc/Method/-onError:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKPinCallback(im)onError:">-onError:<wbr></a>
+                    <a name="/c:objc(cs)ZKKbaQuestion(im)initWithType:question:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithType:question:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaQuestion(im)initWithType:question:">-initWithType:<wbr>question:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -739,17 +739,18 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithType</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
+                            <span class="nf">question</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">question</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onError</span><span class="p">(</span><span class="n">_</span> <span class="nv">e</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">question</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKPinCallback.h#L10">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKKbaQuestion.h#L8-L9">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -757,9 +758,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKPinCallback(im)onSuccess:"></a>
-                    <a name="//apple_ref/objc/Method/-onSuccess:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKPinCallback(im)onSuccess:">-onSuccess:<wbr></a>
+                    <a name="/c:objc(cs)ZKKbaQuestion(cm)kbaQuestionWithType:question:"></a>
+                    <a name="//apple_ref/objc/Method/+kbaQuestionWithType:question:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaQuestion(cm)kbaQuestionWithType:question:">+kbaQuestionWithType:<wbr>question:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -773,17 +774,83 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="kt">int32_t</span><span class="p">)</span><span class="nv">pin</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="n">_</span> <span class="nv">pin</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">kbaQuestionWithType</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
+                                   <span class="nf">question</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">question</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKPinCallback.h#L12">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKKbaQuestion.h#L10-L11">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKKbaQuestion(py)type"></a>
+                    <a name="//apple_ref/objc/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaQuestion(py)type">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>KBA question type, e.g. &ldquo;FIRST_PET_NAME&rdquo;</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKKbaQuestion.h#L14">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKKbaQuestion(py)question"></a>
+                    <a name="//apple_ref/objc/Property/question" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaQuestion(py)question">question</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>KBA question, e.g. &ldquo;What was your first pet&rsquo;s name?&rdquo;</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">question</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">question</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKKbaQuestion.h#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

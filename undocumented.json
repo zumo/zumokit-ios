@@ -2,14 +2,14 @@
   "warnings": [
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 69,
+      "line": 72,
       "symbol": "ZumoKitVersionNumber",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 70,
+      "line": 73,
       "symbol": "ZumoKitVersionString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -134,16 +134,44 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCard.h",
-      "line": 8,
-      "symbol": "ZKCard.-initWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:",
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAuthenticationConfig.h",
+      "line": 9,
+      "symbol": "ZKAuthenticationConfig.-initWithKnowledgeBase:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAuthenticationConfig.h",
+      "line": 10,
+      "symbol": "ZKAuthenticationConfig.+authenticationConfigWithKnowledgeBase:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAuthenticationConfigCallback.h",
+      "line": 11,
+      "symbol": "ZKAuthenticationConfigCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAuthenticationConfigCallback.h",
+      "line": 13,
+      "symbol": "ZKAuthenticationConfigCallback.-onSuccess:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCard.h",
-      "line": 15,
-      "symbol": "ZKCard.+cardWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:",
+      "line": 8,
+      "symbol": "ZKCard.-initWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:sca:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCard.h",
+      "line": 16,
+      "symbol": "ZKCard.+cardWithId:accountId:cardType:cardStatus:limit:maskedPan:expiry:sca:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
@@ -495,6 +523,20 @@
       "line": 13,
       "symbol": "ZKHistoricalExchangeRatesCallback.-onSuccess:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKKbaQuestion.h",
+      "line": 8,
+      "symbol": "ZKKbaQuestion.-initWithType:question:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKKbaQuestion.h",
+      "line": 10,
+      "symbol": "ZKKbaQuestion.+kbaQuestionWithType:question:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
@@ -926,7 +968,7 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h",
-      "line": 45,
+      "line": 49,
       "symbol": "ZKUser(ZKUserCallbackCompletion)",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
       "warning": "undocumented"
