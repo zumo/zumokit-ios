@@ -2,14 +2,14 @@
   "warnings": [
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 72,
+      "line": 73,
       "symbol": "ZumoKitVersionNumber",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 73,
+      "line": 74,
       "symbol": "ZumoKitVersionString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -523,6 +523,20 @@
       "line": 13,
       "symbol": "ZKHistoricalExchangeRatesCallback.-onSuccess:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h",
+      "line": 8,
+      "symbol": "ZKKbaAnswer.-initWithType:answer:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h",
+      "line": 10,
+      "symbol": "ZKKbaAnswer.+kbaAnswerWithType:answer:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {

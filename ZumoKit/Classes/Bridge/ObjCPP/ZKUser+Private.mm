@@ -14,6 +14,7 @@
 #import "ZKAuthenticationConfigCallback+Private.h"
 #import "ZKCardCallback+Private.h"
 #import "ZKCardDetailsCallback+Private.h"
+#import "ZKKbaAnswer+Private.h"
 #import "ZKMnemonicCallback+Private.h"
 #import "ZKPinCallback+Private.h"
 #import "ZKSuccessCallback+Private.h"
@@ -112,11 +113,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 - (void)createCard:(nonnull NSString *)fiatAccountId
           cardType:(nonnull NSString *)cardType
       mobileNumber:(nonnull NSString *)mobileNumber
+     knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
           callback:(nullable id<ZKCardCallback>)callback {
     try {
         _cppRefHandle.get()->create_card(::djinni::String::toCpp(fiatAccountId),
                                          ::djinni::String::toCpp(cardType),
                                          ::djinni::String::toCpp(mobileNumber),
+                                         ::djinni::List<::djinni_generated::KbaAnswer>::toCpp(knowledgeBase),
                                          ::djinni_generated::CardCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
@@ -156,6 +159,16 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     try {
         _cppRefHandle.get()->unblock_pin(::djinni::String::toCpp(cardId),
                                          ::djinni_generated::SuccessCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)setAuthentication:(nonnull NSString *)cardId
+            knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
+                 callback:(nullable id<ZKSuccessCallback>)callback {
+    try {
+        _cppRefHandle.get()->set_authentication(::djinni::String::toCpp(cardId),
+                                                ::djinni::List<::djinni_generated::KbaAnswer>::toCpp(knowledgeBase),
+                                                ::djinni_generated::SuccessCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

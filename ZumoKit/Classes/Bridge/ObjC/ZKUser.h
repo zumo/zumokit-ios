@@ -3,6 +3,7 @@
 
 #import "ZKAccount.h"
 #import "ZKAddress.h"
+#import "ZKKbaAnswer.h"
 #import <Foundation/Foundation.h>
 @protocol ZKAccountCallback;
 @protocol ZKAccountDataListener;
@@ -104,16 +105,21 @@
 
 /**
  * Create card for a fiat account.
+ * <p>
+ * At least one Knowled-Based Authentication (KBA) answer should be defined, answers are limited to 256 characters and 
+ * cannot be null or empty and only one answer per question type should be provided.
  * @param  fiatAccountId fiat account id
  * @param  cardType       'VIRTUAL' or 'PHYSICAL'
  * @param  mobileNumber   card holder mobile number, starting with a '+', followed by the country code and then the mobile number
  * @param  callback        an interface to receive the result or error
+ * @param  knowledgeBase  list of KBA answers
  * @see    `ZKCard`
  * @see    `ZKCardType`
  */
 - (void)createCard:(nonnull NSString *)fiatAccountId
           cardType:(nonnull NSString *)cardType
       mobileNumber:(nonnull NSString *)mobileNumber
+     knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
           callback:(nullable id<ZKCardCallback>)callback;
 
 /**
@@ -159,6 +165,23 @@
  */
 - (void)unblockPin:(nonnull NSString *)cardId
           callback:(nullable id<ZKSuccessCallback>)callback;
+
+/**
+ * Add KBA answers to a card without SCA.
+ * <p>
+ * This endpoint is used to set Knowledge-Based Authentication (KBA) answers to 
+ * a card without Strong Customer Authentication (SCA). Once it is set SCA flag 
+ * on corresponding card is set to true.
+ * <p>
+ * At least one answer should be defined, answers are limited to 256 characters and 
+ * cannot be null or empty and only one answer per question type should be provided.
+ * @param  cardId         card id
+ * @param  knowledgeBase  list of KBA answers
+ * @param  callback        an interface to receive the result or error
+ */
+- (void)setAuthentication:(nonnull NSString *)cardId
+            knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
+                 callback:(nullable id<ZKSuccessCallback>)callback;
 
 /**
  * Create user wallet seeded by provided mnemonic and encrypted with user's password.

@@ -115,11 +115,12 @@ typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
 
 /**
 <code>createCard</code> completion handler extension.
-@see `-[ZKUser createCard:cardType:mobileNumber:callback:]`
+@see `-[ZKUser createCard:cardType:mobileNumber:knowledgeBase:callback:]`
 */
 - (void)createCard:(nonnull NSString *)fiatAccountId
           cardType:(nonnull NSString *)cardType
       mobileNumber:(nonnull NSString *)mobileNumber
+     knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
         completion:(_Nonnull ZKCardCompletionBlock)completionHandler;
 
 /**
@@ -152,6 +153,14 @@ typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
 */
 - (void)unblockPin:(nonnull NSString *)cardId
         completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
+
+/**
+<code>setAuthentication</code> completion handler extension.
+@see `-[ZKUser setAuthentication:knowledgeBase:callback:]`
+*/
+- (void)setAuthentication:(nonnull NSString *)cardId
+            knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
+               completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
 
 @end
 

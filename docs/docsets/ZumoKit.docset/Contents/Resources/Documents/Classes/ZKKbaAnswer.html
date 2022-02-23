@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ZKAccountType Class Reference</title>
+    <title>ZKKbaAnswer Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Class/ZKAccountType" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/ZKKbaAnswer" class="dashAnchor"></a>
 
-    <a title="ZKAccountType Class Reference"></a>
+    <a title="ZKKbaAnswer Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      ZKAccountType Class Reference
+      ZKKbaAnswer Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -698,25 +698,23 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>ZKAccountType</h1>
+            <h1>ZKKbaAnswer</h1>
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKAccountType</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKKbaAnswer</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKAccountType</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKKbaAnswer</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Account type, &lsquo;STANDARD&rsquo;, &lsquo;COMPATIBILITY&rsquo; or &lsquo;SEGWIT&rsquo;.
-<p>
-Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo; account type.</p>
+            <p>Record containing Knowledge-Based Authentication (KBA) answer.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L11-L15">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h#L7-L19">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -728,9 +726,9 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKAccountType(im)init"></a>
-                    <a name="//apple_ref/objc/Method/-init" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKAccountType(im)init">-init</a>
+                    <a name="/c:objc(cs)ZKKbaAnswer(im)initWithType:answer:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithType:answer:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaAnswer(im)initWithType:answer:">-initWithType:<wbr>answer:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -744,17 +742,18 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">init</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithType</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
+                              <span class="nf">answer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">answer</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">answer</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L12">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h#L8-L9">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -762,9 +761,9 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKAccountType(cm)accountType"></a>
-                    <a name="//apple_ref/objc/Method/+accountType" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKAccountType(cm)accountType">+accountType</a>
+                    <a name="/c:objc(cs)ZKKbaAnswer(cm)kbaAnswerWithType:answer:"></a>
+                    <a name="//apple_ref/objc/Method/+kbaAnswerWithType:answer:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaAnswer(cm)kbaAnswerWithType:answer:">+kbaAnswerWithType:<wbr>answer:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -778,12 +777,83 @@ Only relevant for Bitcoin accounts. All other accounts are &lsquo;STANDARD&rsquo
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">accountType</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">kbaAnswerWithType</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
+                                   <span class="nf">answer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">answer</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKAccountType.h#L13">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h#L10-L11">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKKbaAnswer(py)type"></a>
+                    <a name="//apple_ref/objc/Property/type" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaAnswer(py)type">type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>KBA question type, e.g. &ldquo;FIRST_PET_NAME&rdquo;.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h#L14">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKKbaAnswer(py)answer"></a>
+                    <a name="//apple_ref/objc/Property/answer" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKKbaAnswer(py)answer">answer</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>KBA answer, e.g. &ldquo;Shurik&rdquo;.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">answer</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">answer</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/3.3.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h#L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

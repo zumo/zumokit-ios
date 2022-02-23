@@ -43,6 +43,7 @@
 #import "ZKExchangeSetting.h"
 #import "ZKExchangeStatus.h"
 #import "ZKHistoricalExchangeRatesCallback.h"
+#import "ZKKbaAnswer.h"
 #import "ZKKbaQuestion.h"
 #import "ZKLogListener.h"
 #import "ZKMnemonicCallback.h"

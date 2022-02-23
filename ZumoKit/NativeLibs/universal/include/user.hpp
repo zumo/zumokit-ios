@@ -22,6 +22,7 @@ class SuccessCallback;
 class WalletCallback;
 struct Account;
 struct Address;
+struct KbaAnswer;
 
 /**
  * User class provides methods for managing user wallet and accounts.
@@ -102,14 +103,18 @@ public:
 
     /**
      * Create card for a fiat account.
+     * <p>
+     * At least one Knowled-Based Authentication (KBA) answer should be defined, answers are limited to 256 characters and 
+     * cannot be null or empty and only one answer per question type should be provided.
      * @param  fiat_account_id fiat account id
      * @param  card_type       'VIRTUAL' or 'PHYSICAL'
      * @param  mobile_number   card holder mobile number, starting with a '+', followed by the country code and then the mobile number
      * @param  callback        an interface to receive the result or error
+     * @param  knowledge_base  list of KBA answers
      * @see    Card
      * @see    CardType
      */
-    virtual void create_card(const std::string & fiat_account_id, const std::string & card_type, const std::string & mobile_number, const std::shared_ptr<CardCallback> & callback) = 0;
+    virtual void create_card(const std::string & fiat_account_id, const std::string & card_type, const std::string & mobile_number, const std::vector<KbaAnswer> & knowledge_base, const std::shared_ptr<CardCallback> & callback) = 0;
 
     /**
      * Set card status to 'ACTIVE', 'BLOCKED' or 'CANCELLED'. 
@@ -147,6 +152,21 @@ public:
      * @param  callback        an interface to receive the result or error
      */
     virtual void unblock_pin(const std::string & card_id, const std::shared_ptr<SuccessCallback> & callback) = 0;
+
+    /**
+     * Add KBA answers to a card without SCA.
+     * <p>
+     * This endpoint is used to set Knowledge-Based Authentication (KBA) answers to 
+     * a card without Strong Customer Authentication (SCA). Once it is set SCA flag 
+     * on corresponding card is set to true.
+     * <p>
+     * At least one answer should be defined, answers are limited to 256 characters and 
+     * cannot be null or empty and only one answer per question type should be provided.
+     * @param  card_id         card id
+     * @param  knowledge_base  list of KBA answers
+     * @param  callback        an interface to receive the result or error
+     */
+    virtual void set_authentication(const std::string & card_id, const std::vector<KbaAnswer> & knowledge_base, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     /**
      * Create user wallet seeded by provided mnemonic and encrypted with user's password.

@@ -72,8 +72,9 @@
 - (void)createCard:(nonnull NSString *)fiatAccountId
           cardType:(nonnull NSString *)cardType
       mobileNumber:(nonnull NSString *)mobileNumber
+     knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
         completion:(_Nonnull ZKCardCompletionBlock)completionHandler {
-    [self createCard:fiatAccountId cardType:cardType mobileNumber:mobileNumber callback:[[CardCallback alloc] initWithCompletionHandler:completionHandler]];
+    [self createCard:fiatAccountId cardType:cardType mobileNumber:mobileNumber knowledgeBase:knowledgeBase callback:[[CardCallback alloc] initWithCompletionHandler:completionHandler]];
 };
 
 - (void)setCardStatus:(nonnull NSString *)cardId
@@ -97,6 +98,12 @@
 - (void)unblockPin:(nonnull NSString *)cardId
         completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
     [self unblockPin:cardId callback:[[SuccessCallback alloc] initWithCompletionHandler:completionHandler]];
+};
+
+- (void)setAuthentication:(nonnull NSString *)cardId
+            knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
+               completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
+    [self setAuthentication:cardId knowledgeBase:knowledgeBase callback:[[SuccessCallback alloc] initWithCompletionHandler:completionHandler]];
 };
 
 @end
