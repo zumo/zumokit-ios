@@ -21,11 +21,11 @@ ZumoKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :tag => '2.1.0'
+pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :tag => '3.3.0-beta.5'
 ```
 
 ## Example
 
-The [example project](https://github.com/zumo/zumokit-ios/tree/master/Example) demonstrates the expected user flow, including authentication process, wallet creation and transaction submission. Ask your [account manager](mailto:support@zumo.money) to provide you with neccesarry credentials.
+The [example project](https://github.com/zumo/zumokit-ios/tree/master/Example) demonstrates the expected user flow, including authentication process, wallet creation and transaction submission. Ask your [account manager](mailto:support@zumo.money) to provide you with necessary credentials.
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
