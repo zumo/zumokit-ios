@@ -6,6 +6,8 @@
 
 NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR = @"unknown_error";
 
+NSString * __nonnull const ZKZumoKitErrorCodeNOCONNECTION = @"no_connection";
+
 NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED = @"account_limit_exceeded";
 
 NSString * __nonnull const ZKZumoKitErrorCodeALREADYFIATCUSTOMER = @"already_fiat_customer";

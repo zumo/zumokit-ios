@@ -31,8 +31,6 @@
         [_webSocket close];
     }
 
-    NSLog(@"Connecting to %@", _url.absoluteString);
-
     _webSocket = [[SRWebSocket alloc] initWithURL:_url];
     _webSocket.delegate = self;
 
@@ -44,8 +42,6 @@
  */
 - (void)disconnect {
     if(_webSocket == nil) return;
-
-    NSLog(@"Disconnecting from %@", _url.absoluteString);
 
     _webSocket.delegate = nil;
     [_webSocket close];
@@ -69,7 +65,6 @@
     int delayInMilliseconds = [_backOffGenerator next];
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInMilliseconds * NSEC_PER_MSEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-            NSLog(@"Call reconnect");
             [thisWebSocket connect];
     });
 }
@@ -88,7 +83,6 @@
     int delayInMilliseconds = [_backOffGenerator next];
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInMilliseconds * NSEC_PER_MSEC));
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSLog(@"Call reconnect");
         [thisWebSocket connect];
     });
 }
@@ -102,7 +96,12 @@
  */
 - (void)send:(nonnull NSString *)message {
     if(_webSocket) {
-        [_webSocket send:message];
+        NSError *error;
+        BOOL success = [_webSocket sendString:message error:&error];
+        
+        if (!success && _listener) {
+            [_listener onError:[error localizedDescription]];
+        }
     }
 }
 

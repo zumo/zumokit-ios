@@ -18,6 +18,9 @@ struct ZumoKitErrorCode final {
     /** Unknown error has occured. */
     static std::string const UNKNOWN_ERROR;
 
+    /** No internet connection.  */
+    static std::string const NO_CONNECTION;
+
     /** New account could not be created. Account already exists. */
     static std::string const ACCOUNT_LIMIT_EXCEEDED;
 

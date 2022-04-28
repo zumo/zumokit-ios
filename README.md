@@ -21,7 +21,7 @@ ZumoKit is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :tag => '3.4.0'
+pod 'ZumoKit', :git => 'https://github.com/zumo/zumokit-ios.git', :tag => '3.4.1'
 ```
 
 ## Example

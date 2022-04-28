@@ -16,6 +16,8 @@
 
 /** Unknown error has occured. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR;
+/** No internet connection.  */
+extern NSString * __nonnull const ZKZumoKitErrorCodeNOCONNECTION;
 /** New account could not be created. Account already exists. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED;
 /** Could not make user fiat customer. User is already fiat customer. */
