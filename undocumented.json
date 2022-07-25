@@ -2,14 +2,14 @@
   "warnings": [
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 73,
+      "line": 75,
       "symbol": "ZumoKitVersionNumber",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 74,
+      "line": 76,
       "symbol": "ZumoKitVersionString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -526,6 +526,20 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h",
+      "line": 8,
+      "symbol": "ZKInternalTransaction.-initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h",
+      "line": 17,
+      "symbol": "ZKInternalTransaction.+internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKKbaAnswer.h",
       "line": 8,
       "symbol": "ZKKbaAnswer.-initWithType:answer:",
@@ -765,15 +779,29 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
-      "line": 12,
-      "symbol": "ZKTransaction.-initWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
+      "line": 14,
+      "symbol": "ZKTransaction.-initWithId:type:currencyCode:direction:network:status:amount:fee:nonce:senders:recipients:internalTransactions:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransaction.h",
-      "line": 33,
-      "symbol": "ZKTransaction.+transactionWithId:type:currencyCode:direction:fromUserId:toUserId:fromAccountId:toAccountId:network:status:amount:fee:nonce:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
+      "line": 34,
+      "symbol": "ZKTransaction.+transactionWithId:type:currencyCode:direction:network:status:amount:fee:nonce:senders:recipients:internalTransactions:cryptoProperties:fiatProperties:cardProperties:exchange:metadata:submittedAt:confirmedAt:timestamp:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h",
+      "line": 8,
+      "symbol": "ZKTransactionAmount.-initWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h",
+      "line": 20,
+      "symbol": "ZKTransactionAmount.+transactionAmountWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
@@ -822,14 +850,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h",
       "line": 13,
-      "symbol": "ZKTransactionDirectionINCOMING",
+      "symbol": "ZKTransactionDirectionSENT",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKTransactionDirection.h",
       "line": 14,
-      "symbol": "ZKTransactionDirectionOUTGOING",
+      "symbol": "ZKTransactionDirectionRECEIVED",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },

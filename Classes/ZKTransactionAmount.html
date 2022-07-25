@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ZKMnemonicCallback Protocol Reference</title>
+    <title>ZKTransactionAmount Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Protocol/ZKMnemonicCallback" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/ZKTransactionAmount" class="dashAnchor"></a>
 
-    <a title="ZKMnemonicCallback Protocol Reference"></a>
+    <a title="ZKTransactionAmount Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      ZKMnemonicCallback Protocol Reference
+      ZKTransactionAmount Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -707,23 +707,23 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>ZKMnemonicCallback</h1>
+            <h1>ZKTransactionAmount</h1>
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKMnemonicCallback</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKTransactionAmount</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">ZKMnemonicCallback</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKTransactionAmount</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Callback interface used by methods in <code><a href="../Classes/ZKUser.html">ZKUser</a></code> class.</p>
+            <p>Record containing transaction amount details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L8-L14">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L7-L75">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -735,9 +735,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKMnemonicCallback(im)onError:"></a>
-                    <a name="//apple_ref/objc/Method/-onError:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKMnemonicCallback(im)onError:">-onError:<wbr></a>
+                    <a name="/c:objc(cs)ZKTransactionAmount(im)initWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(im)initWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:">-initWithDirection:<wbr>userId:<wbr>userIntegratorId:<wbr>accountId:<wbr>amount:<wbr>fiatAmount:<wbr>address:<wbr>isChange:<wbr>accountNumber:<wbr>sortCode:<wbr>bic:<wbr>iban:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -751,17 +751,28 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithDirection</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">direction</span>
+                                   <span class="nf">userId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">userId</span>
+                         <span class="nf">userIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">userIntegratorId</span>
+                                <span class="nf">accountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">accountId</span>
+                                   <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                               <span class="nf">fiatAmount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSNumber</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fiatAmount</span>
+                                  <span class="nf">address</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">address</span>
+                                 <span class="nf">isChange</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">isChange</span>
+                            <span class="nf">accountNumber</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">accountNumber</span>
+                                 <span class="nf">sortCode</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">sortCode</span>
+                                      <span class="nf">bic</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">bic</span>
+                                     <span class="nf">iban</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">iban</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onError</span><span class="p">(</span><span class="n">_</span> <span class="nv">e</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">direction</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">userIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">fiatAmount</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">NSNumber</span><span class="p">]?,</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">isChange</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">accountNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">sortCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">bic</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">iban</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L10">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L8-L19">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -769,9 +780,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKMnemonicCallback(im)onSuccess:"></a>
-                    <a name="//apple_ref/objc/Method/-onSuccess:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKMnemonicCallback(im)onSuccess:">-onSuccess:<wbr></a>
+                    <a name="/c:objc(cs)ZKTransactionAmount(cm)transactionAmountWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:"></a>
+                    <a name="//apple_ref/objc/Method/+transactionAmountWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(cm)transactionAmountWithDirection:userId:userIntegratorId:accountId:amount:fiatAmount:address:isChange:accountNumber:sortCode:bic:iban:">+transactionAmountWithDirection:<wbr>userId:<wbr>userIntegratorId:<wbr>accountId:<wbr>amount:<wbr>fiatAmount:<wbr>address:<wbr>isChange:<wbr>accountNumber:<wbr>sortCode:<wbr>bic:<wbr>iban:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -785,17 +796,453 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">mnemonic</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="n">_</span> <span class="nv">mnemonic</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">transactionAmountWithDirection</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">direction</span>
+                                                <span class="nf">userId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">userId</span>
+                                      <span class="nf">userIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">userIntegratorId</span>
+                                             <span class="nf">accountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">accountId</span>
+                                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                                            <span class="nf">fiatAmount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSNumber</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fiatAmount</span>
+                                               <span class="nf">address</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">address</span>
+                                              <span class="nf">isChange</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">isChange</span>
+                                         <span class="nf">accountNumber</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">accountNumber</span>
+                                              <span class="nf">sortCode</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">sortCode</span>
+                                                   <span class="nf">bic</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">bic</span>
+                                                  <span class="nf">iban</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">iban</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L12">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L20-L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)direction"></a>
+                    <a name="//apple_ref/objc/Property/direction" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)direction">direction</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Direction, either &lsquo;SENT&rsquo; or &lsquo;RECEIVED&rsquo;.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKTransactionDirection.html">ZKTransactionDirection</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">direction</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">direction</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L37">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)userId"></a>
+                    <a name="//apple_ref/objc/Property/userId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)userId">userId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>User id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">userId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L40">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)userIntegratorId"></a>
+                    <a name="//apple_ref/objc/Property/userIntegratorId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)userIntegratorId">userIntegratorId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>User integrator id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">userIntegratorId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">userIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L43">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)accountId"></a>
+                    <a name="//apple_ref/objc/Property/accountId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)accountId">accountId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Account id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">accountId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">accountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L46">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)amount"></a>
+                    <a name="//apple_ref/objc/Property/amount" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)amount">amount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount in transaction currency or null if transaction is Ethereum contract deploy.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">amount</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L49">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)fiatAmount"></a>
+                    <a name="//apple_ref/objc/Property/fiatAmount" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)fiatAmount">fiatAmount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Amount in fiat currencies at the time of the transaction submission.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKCurrencyCode.html">ZKCurrencyCode</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSNumber</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">fiatAmount</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fiatAmount</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">NSNumber</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L55">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)address"></a>
+                    <a name="//apple_ref/objc/Property/address" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)address">address</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Blockchain address or null.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">address</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">address</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L58">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)isChange"></a>
+                    <a name="//apple_ref/objc/Property/isChange" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)isChange">isChange</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Indicates if this amount represents change amount.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">)</span> <span class="n">BOOL</span> <span class="n">isChange</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isChange</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L61">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)accountNumber"></a>
+                    <a name="//apple_ref/objc/Property/accountNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)accountNumber">accountNumber</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fiat account number or null.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">accountNumber</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">accountNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L64">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)sortCode"></a>
+                    <a name="//apple_ref/objc/Property/sortCode" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)sortCode">sortCode</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fiat account sort code or null.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">sortCode</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">sortCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L67">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)bic"></a>
+                    <a name="//apple_ref/objc/Property/bic" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)bic">bic</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fiat account BIC or null.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">bic</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">bic</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L70">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKTransactionAmount(py)iban"></a>
+                    <a name="//apple_ref/objc/Property/iban" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKTransactionAmount(py)iban">iban</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fiat account IBAN or null.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">iban</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">iban</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKTransactionAmount.h#L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

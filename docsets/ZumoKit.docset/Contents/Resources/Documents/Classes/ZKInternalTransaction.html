@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ZKMnemonicCallback Protocol Reference</title>
+    <title>ZKInternalTransaction Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Protocol/ZKMnemonicCallback" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/ZKInternalTransaction" class="dashAnchor"></a>
 
-    <a title="ZKMnemonicCallback Protocol Reference"></a>
+    <a title="ZKInternalTransaction Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      ZKMnemonicCallback Protocol Reference
+      ZKInternalTransaction Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -707,23 +707,23 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>ZKMnemonicCallback</h1>
+            <h1>ZKInternalTransaction</h1>
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKMnemonicCallback</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKInternalTransaction</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">ZKMnemonicCallback</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKInternalTransaction</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Callback interface used by methods in <code><a href="../Classes/ZKUser.html">ZKUser</a></code> class.</p>
+            <p>Record containing internal transaction details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L8-L14">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L7-L54">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -735,9 +735,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKMnemonicCallback(im)onError:"></a>
-                    <a name="//apple_ref/objc/Method/-onError:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKMnemonicCallback(im)onError:">-onError:<wbr></a>
+                    <a name="/c:objc(cs)ZKInternalTransaction(im)initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(im)initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:">-initWithFromUserId:<wbr>fromUserIntegratorId:<wbr>fromAccountId:<wbr>fromAddress:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>toAccountId:<wbr>toAddress:<wbr>amount:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -751,17 +751,25 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithFromUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserId</span>
+                      <span class="nf">fromUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserIntegratorId</span>
+                             <span class="nf">fromAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                               <span class="nf">fromAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAddress</span>
+                                  <span class="nf">toUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserId</span>
+                        <span class="nf">toUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserIntegratorId</span>
+                               <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                                 <span class="nf">toAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAddress</span>
+                                    <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onError</span><span class="p">(</span><span class="n">_</span> <span class="nv">e</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">fromUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L10">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L8-L16">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -769,9 +777,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKMnemonicCallback(im)onSuccess:"></a>
-                    <a name="//apple_ref/objc/Method/-onSuccess:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKMnemonicCallback(im)onSuccess:">-onSuccess:<wbr></a>
+                    <a name="/c:objc(cs)ZKInternalTransaction(cm)internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:"></a>
+                    <a name="//apple_ref/objc/Method/+internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(cm)internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:">+internalTransactionWithFromUserId:<wbr>fromUserIntegratorId:<wbr>fromAccountId:<wbr>fromAddress:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>toAccountId:<wbr>toAddress:<wbr>amount:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -785,17 +793,335 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">mnemonic</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="n">_</span> <span class="nv">mnemonic</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="nf">internalTransactionWithFromUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserId</span>
+                                     <span class="nf">fromUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserIntegratorId</span>
+                                            <span class="nf">fromAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                                              <span class="nf">fromAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAddress</span>
+                                                 <span class="nf">toUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserId</span>
+                                       <span class="nf">toUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserIntegratorId</span>
+                                              <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                                                <span class="nf">toAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAddress</span>
+                                                   <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKMnemonicCallback.h#L12">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L17-L25">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)fromUserId"></a>
+                    <a name="//apple_ref/objc/Property/fromUserId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)fromUserId">fromUserId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sender user id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromUserId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L28">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)fromUserIntegratorId"></a>
+                    <a name="//apple_ref/objc/Property/fromUserIntegratorId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)fromUserIntegratorId">fromUserIntegratorId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sender user integrator id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromUserIntegratorId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)fromAccountId"></a>
+                    <a name="//apple_ref/objc/Property/fromAccountId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)fromAccountId">fromAccountId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sender account id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromAccountId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L34">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)fromAddress"></a>
+                    <a name="//apple_ref/objc/Property/fromAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)fromAddress">fromAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Sender address.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromAddress</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromAddress</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L37">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)toUserId"></a>
+                    <a name="//apple_ref/objc/Property/toUserId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)toUserId">toUserId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Recipient user id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toUserId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L40">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)toUserIntegratorId"></a>
+                    <a name="//apple_ref/objc/Property/toUserIntegratorId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)toUserIntegratorId">toUserIntegratorId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Recipient user integrator id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toUserIntegratorId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L43">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)toAccountId"></a>
+                    <a name="//apple_ref/objc/Property/toAccountId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)toAccountId">toAccountId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Recipient account id or null if it is external user.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toAccountId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L46">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)toAddress"></a>
+                    <a name="//apple_ref/objc/Property/toAddress" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)toAddress">toAddress</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Recipient address.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toAddress</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toAddress</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L49">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)amount"></a>
+                    <a name="//apple_ref/objc/Property/amount" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)amount">amount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transaction amount in transaction currency.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nonnull</span><span class="p">)</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="n">amount</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.1/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L52">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
