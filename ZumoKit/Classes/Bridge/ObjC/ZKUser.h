@@ -36,6 +36,12 @@
 - (nonnull NSString *)getId;
 
 /**
+ * Get user integrator id.
+ * @return user integrator id
+ */
+- (nonnull NSString *)getIntegratorId;
+
+/**
  * Check if user has wallet
  * @return true if user has wallet
  */

@@ -18,8 +18,8 @@ auto TransactionCryptoProperties::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.data),
             ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.gasPrice),
             ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.gasLimit),
-            ::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.fiatAmount),
-            ::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.fiatFee)};
+            ::djinni::Optional<std::optional, ::djinni::Map<::djinni::String, ::djinni::F64>>::toCpp(obj.fiatAmount),
+            ::djinni::Optional<std::optional, ::djinni::Map<::djinni::String, ::djinni::F64>>::toCpp(obj.fiatFee)};
 }
 
 auto TransactionCryptoProperties::fromCpp(const CppType& cpp) -> ObjcType
@@ -31,8 +31,8 @@ auto TransactionCryptoProperties::fromCpp(const CppType& cpp) -> ObjcType
                                                             data:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.data))
                                                         gasPrice:(::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.gas_price))
                                                         gasLimit:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.gas_limit))
-                                                      fiatAmount:(::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.fiat_amount))
-                                                         fiatFee:(::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.fiat_fee))];
+                                                      fiatAmount:(::djinni::Optional<std::optional, ::djinni::Map<::djinni::String, ::djinni::F64>>::fromCpp(cpp.fiat_amount))
+                                                         fiatFee:(::djinni::Optional<std::optional, ::djinni::Map<::djinni::String, ::djinni::F64>>::fromCpp(cpp.fiat_fee))];
 }
 
 }  // namespace djinni_generated

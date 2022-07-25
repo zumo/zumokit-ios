@@ -8,12 +8,12 @@
 
 namespace zumo {
 
-/** Transaction direction, 'INCOMING' or 'OUTGOING'. */
+/** Transaction direction, 'SENT' or 'RECEIVED'. */
 struct TransactionDirection final {
 
-    static std::string const INCOMING;
+    static std::string const SENT;
 
-    static std::string const OUTGOING;
+    static std::string const RECEIVED;
 };
 
 }  // namespace zumo

@@ -29,6 +29,8 @@ class Decimal {
 
     int int_value() const;
 
+    double double_value() const;
+
     friend Decimal operator*(const Decimal &a, const Decimal &b);
     friend Decimal operator+(const Decimal &a, const Decimal &b);
     friend Decimal operator-(const Decimal &a, const Decimal &b);

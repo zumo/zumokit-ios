@@ -45,6 +45,12 @@ public:
     virtual std::string get_id() = 0;
 
     /**
+     * Get user integrator id.
+     * @return user integrator id
+     */
+    virtual std::string get_integrator_id() = 0;
+
+    /**
      * Check if user has wallet
      * @return true if user has wallet
      */

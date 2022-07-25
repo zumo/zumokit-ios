@@ -5,6 +5,8 @@
 
 #include "decimal.hpp"
 #include "exchange.hpp"
+#include "internal_transaction.hpp"
+#include "transaction_amount.hpp"
 #include "transaction_card_properties.hpp"
 #include "transaction_crypto_properties.hpp"
 #include "transaction_fiat_properties.hpp"
@@ -12,6 +14,7 @@
 #include <optional>
 #include <string>
 #include <utility>
+#include <vector>
 
 namespace zumo {
 
@@ -34,14 +37,6 @@ struct Transaction final {
      * @see TransactionDirection
      */
     std::string direction;
-    /** Sender integrator user identifier or null if it is external user. */
-    std::optional<std::string> from_user_id;
-    /** Recipient integrator user identifier or null if it is external user. */
-    std::optional<std::string> to_user_id;
-    /** Sender account identifier if it is internal transaction or null otherwise. */
-    std::optional<std::string> from_account_id;
-    /** Recipient account identifier if it is internal transaction or null otherwise. */
-    std::optional<std::string> to_account_id;
     /**
      * Network type.
      * @see NetworkType
@@ -52,12 +47,21 @@ struct Transaction final {
      * @see TransactionStatus
      */
     std::string status;
-    /** Amount in transaction currency or null if transaction is Ethereum contract deploy. */
+    /**
+     * Amount in transaction currency or null if transaction is Ethereum contract deploy.
+     * Amount is calculated as transaction amount sent - transaction amounts received - change.
+     */
     std::optional<::zumo::Decimal> amount;
     /** Transaction fee in transaction currency or null, if not yet available. */
     std::optional<::zumo::Decimal> fee;
     /** Transaction nonce or null. Used to prevent double spend. */
     std::optional<std::string> nonce;
+    /** Transaction senders. */
+    std::vector<TransactionAmount> senders;
+    /** Transaction recipients. */
+    std::vector<TransactionAmount> recipients;
+    /** Internal transactions, e.g. ETH contract interaction side effects. */
+    std::vector<InternalTransaction> internal_transactions;
     /**
      * Crypto properties if it is a crypto transaction, null otherwise.
      * @see TransactionType
@@ -94,15 +98,14 @@ struct Transaction final {
                 std::string type_,
                 std::string currency_code_,
                 std::string direction_,
-                std::optional<std::string> from_user_id_,
-                std::optional<std::string> to_user_id_,
-                std::optional<std::string> from_account_id_,
-                std::optional<std::string> to_account_id_,
                 std::string network_,
                 std::string status_,
                 std::optional<::zumo::Decimal> amount_,
                 std::optional<::zumo::Decimal> fee_,
                 std::optional<std::string> nonce_,
+                std::vector<TransactionAmount> senders_,
+                std::vector<TransactionAmount> recipients_,
+                std::vector<InternalTransaction> internal_transactions_,
                 std::optional<TransactionCryptoProperties> crypto_properties_,
                 std::optional<TransactionFiatProperties> fiat_properties_,
                 std::optional<TransactionCardProperties> card_properties_,
@@ -115,15 +118,14 @@ struct Transaction final {
     , type(std::move(type_))
     , currency_code(std::move(currency_code_))
     , direction(std::move(direction_))
-    , from_user_id(std::move(from_user_id_))
-    , to_user_id(std::move(to_user_id_))
-    , from_account_id(std::move(from_account_id_))
-    , to_account_id(std::move(to_account_id_))
     , network(std::move(network_))
     , status(std::move(status_))
     , amount(std::move(amount_))
     , fee(std::move(fee_))
     , nonce(std::move(nonce_))
+    , senders(std::move(senders_))
+    , recipients(std::move(recipients_))
+    , internal_transactions(std::move(internal_transactions_))
     , crypto_properties(std::move(crypto_properties_))
     , fiat_properties(std::move(fiat_properties_))
     , card_properties(std::move(card_properties_))

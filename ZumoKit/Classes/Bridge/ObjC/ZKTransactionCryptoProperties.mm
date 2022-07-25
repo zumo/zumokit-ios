@@ -13,8 +13,8 @@
                                   data:(nullable NSString *)data
                               gasPrice:(nullable NSDecimalNumber *)gasPrice
                               gasLimit:(nullable NSNumber *)gasLimit
-                            fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
-                               fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee
+                            fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount
+                               fiatFee:(nullable NSDictionary<NSString *, NSNumber *> *)fiatFee
 {
     if (self = [super init]) {
         _txHash = [txHash copy];
@@ -37,8 +37,8 @@
                                                          data:(nullable NSString *)data
                                                      gasPrice:(nullable NSDecimalNumber *)gasPrice
                                                      gasLimit:(nullable NSNumber *)gasLimit
-                                                   fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
-                                                      fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee
+                                                   fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount
+                                                      fiatFee:(nullable NSDictionary<NSString *, NSNumber *> *)fiatFee
 {
     return [(ZKTransactionCryptoProperties*)[self alloc] initWithTxHash:txHash
                                                                   nonce:nonce
@@ -64,8 +64,8 @@
             ((self.data == nil && typedOther.data == nil) || (self.data != nil && [self.data isEqual:typedOther.data])) &&
             ((self.gasPrice == nil && typedOther.gasPrice == nil) || (self.gasPrice != nil && [self.gasPrice isEqual:typedOther.gasPrice])) &&
             ((self.gasLimit == nil && typedOther.gasLimit == nil) || (self.gasLimit != nil && [self.gasLimit isEqual:typedOther.gasLimit])) &&
-            [self.fiatAmount isEqualToDictionary:typedOther.fiatAmount] &&
-            [self.fiatFee isEqualToDictionary:typedOther.fiatFee];
+            ((self.fiatAmount == nil && typedOther.fiatAmount == nil) || (self.fiatAmount != nil && [self.fiatAmount isEqual:typedOther.fiatAmount])) &&
+            ((self.fiatFee == nil && typedOther.fiatFee == nil) || (self.fiatFee != nil && [self.fiatFee isEqual:typedOther.fiatFee]));
 }
 
 - (NSUInteger)hash

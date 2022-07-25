@@ -15,8 +15,8 @@
                                   data:(nullable NSString *)data
                               gasPrice:(nullable NSDecimalNumber *)gasPrice
                               gasLimit:(nullable NSNumber *)gasLimit
-                            fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
-                               fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee;
+                            fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount
+                               fiatFee:(nullable NSDictionary<NSString *, NSNumber *> *)fiatFee;
 + (nonnull instancetype)transactionCryptoPropertiesWithTxHash:(nullable NSString *)txHash
                                                         nonce:(nullable NSNumber *)nonce
                                                   fromAddress:(nonnull NSString *)fromAddress
@@ -24,8 +24,8 @@
                                                          data:(nullable NSString *)data
                                                      gasPrice:(nullable NSDecimalNumber *)gasPrice
                                                      gasLimit:(nullable NSNumber *)gasLimit
-                                                   fiatAmount:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatAmount
-                                                      fiatFee:(nonnull NSDictionary<NSString *, NSDecimalNumber *> *)fiatFee;
+                                                   fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount
+                                                      fiatFee:(nullable NSDictionary<NSString *, NSNumber *> *)fiatFee;
 
 /** Transaction hash or null. */
 @property (nonatomic, readonly, nullable) NSString * txHash;
@@ -36,10 +36,10 @@
  */
 @property (nonatomic, readonly, nullable) NSNumber * nonce;
 
-/** Wallet address of sender, */
+/** Ethereum wallet address of sender. */
 @property (nonatomic, readonly, nonnull) NSString * fromAddress;
 
-/** Wallet address of receiver or null, if it is Ethereum contract deploy. */
+/** Ethereum wallet address of recipient or null, if it is Ethereum contract deploy. */
 @property (nonatomic, readonly, nullable) NSString * toAddress;
 
 /** Transaction data or null. */
@@ -52,15 +52,15 @@
 @property (nonatomic, readonly, nullable) NSNumber * gasLimit;
 
 /**
- * Amount in fiat currencies at the time of the transaction submission.
+ * Value in fiat currencies at the time of the transaction submission.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatAmount;
+@property (nonatomic, readonly, nullable) NSDictionary<NSString *, NSNumber *> * fiatAmount;
 
 /**
  * Fee in fiat currencies at the time of the transaction submission.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSDictionary<NSString *, NSDecimalNumber *> * fiatFee;
+@property (nonatomic, readonly, nullable) NSDictionary<NSString *, NSNumber *> * fiatFee;
 
 @end

@@ -10,15 +10,14 @@
                               type:(nonnull NSString *)type
                       currencyCode:(nonnull NSString *)currencyCode
                          direction:(nonnull NSString *)direction
-                        fromUserId:(nullable NSString *)fromUserId
-                          toUserId:(nullable NSString *)toUserId
-                     fromAccountId:(nullable NSString *)fromAccountId
-                       toAccountId:(nullable NSString *)toAccountId
                            network:(nonnull NSString *)network
                             status:(nonnull NSString *)status
                             amount:(nullable NSDecimalNumber *)amount
                                fee:(nullable NSDecimalNumber *)fee
                              nonce:(nullable NSString *)nonce
+                           senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
+                        recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
+              internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
                   cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                     cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
@@ -33,15 +32,14 @@
         _type = [type copy];
         _currencyCode = [currencyCode copy];
         _direction = [direction copy];
-        _fromUserId = [fromUserId copy];
-        _toUserId = [toUserId copy];
-        _fromAccountId = [fromAccountId copy];
-        _toAccountId = [toAccountId copy];
         _network = [network copy];
         _status = [status copy];
         _amount = amount;
         _fee = fee;
         _nonce = [nonce copy];
+        _senders = [senders copy];
+        _recipients = [recipients copy];
+        _internalTransactions = [internalTransactions copy];
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
         _cardProperties = cardProperties;
@@ -58,15 +56,14 @@
                                      type:(nonnull NSString *)type
                              currencyCode:(nonnull NSString *)currencyCode
                                 direction:(nonnull NSString *)direction
-                               fromUserId:(nullable NSString *)fromUserId
-                                 toUserId:(nullable NSString *)toUserId
-                            fromAccountId:(nullable NSString *)fromAccountId
-                              toAccountId:(nullable NSString *)toAccountId
                                   network:(nonnull NSString *)network
                                    status:(nonnull NSString *)status
                                    amount:(nullable NSDecimalNumber *)amount
                                       fee:(nullable NSDecimalNumber *)fee
                                     nonce:(nullable NSString *)nonce
+                                  senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
+                               recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
+                     internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
                          cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                            cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
@@ -80,15 +77,14 @@
                                                type:type
                                        currencyCode:currencyCode
                                           direction:direction
-                                         fromUserId:fromUserId
-                                           toUserId:toUserId
-                                      fromAccountId:fromAccountId
-                                        toAccountId:toAccountId
                                             network:network
                                              status:status
                                              amount:amount
                                                 fee:fee
                                               nonce:nonce
+                                            senders:senders
+                                         recipients:recipients
+                               internalTransactions:internalTransactions
                                    cryptoProperties:cryptoProperties
                                      fiatProperties:fiatProperties
                                      cardProperties:cardProperties
@@ -109,15 +105,14 @@
             [self.type isEqualToString:typedOther.type] &&
             [self.currencyCode isEqualToString:typedOther.currencyCode] &&
             [self.direction isEqualToString:typedOther.direction] &&
-            ((self.fromUserId == nil && typedOther.fromUserId == nil) || (self.fromUserId != nil && [self.fromUserId isEqual:typedOther.fromUserId])) &&
-            ((self.toUserId == nil && typedOther.toUserId == nil) || (self.toUserId != nil && [self.toUserId isEqual:typedOther.toUserId])) &&
-            ((self.fromAccountId == nil && typedOther.fromAccountId == nil) || (self.fromAccountId != nil && [self.fromAccountId isEqual:typedOther.fromAccountId])) &&
-            ((self.toAccountId == nil && typedOther.toAccountId == nil) || (self.toAccountId != nil && [self.toAccountId isEqual:typedOther.toAccountId])) &&
             [self.network isEqualToString:typedOther.network] &&
             [self.status isEqualToString:typedOther.status] &&
             ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
             ((self.fee == nil && typedOther.fee == nil) || (self.fee != nil && [self.fee isEqual:typedOther.fee])) &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce])) &&
+            [self.senders isEqualToArray:typedOther.senders] &&
+            [self.recipients isEqualToArray:typedOther.recipients] &&
+            [self.internalTransactions isEqualToArray:typedOther.internalTransactions] &&
             ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
             ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties])) &&
             ((self.cardProperties == nil && typedOther.cardProperties == nil) || (self.cardProperties != nil && [self.cardProperties isEqual:typedOther.cardProperties])) &&
@@ -135,15 +130,14 @@
             self.type.hash ^
             self.currencyCode.hash ^
             self.direction.hash ^
-            self.fromUserId.hash ^
-            self.toUserId.hash ^
-            self.fromAccountId.hash ^
-            self.toAccountId.hash ^
             self.network.hash ^
             self.status.hash ^
             self.amount.hash ^
             self.fee.hash ^
             self.nonce.hash ^
+            self.senders.hash ^
+            self.recipients.hash ^
+            self.internalTransactions.hash ^
             self.cryptoProperties.hash ^
             self.fiatProperties.hash ^
             self.cardProperties.hash ^
@@ -156,7 +150,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ fromUserId:%@ toUserId:%@ fromAccountId:%@ toAccountId:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ cryptoProperties:%@ fiatProperties:%@ cardProperties:%@ exchange:%@ metadata:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.fromUserId, self.toUserId, self.fromAccountId, self.toAccountId, self.network, self.status, self.amount, self.fee, self.nonce, self.cryptoProperties, self.fiatProperties, self.cardProperties, self.exchange, self.metadata, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ senders:%@ recipients:%@ internalTransactions:%@ cryptoProperties:%@ fiatProperties:%@ cardProperties:%@ exchange:%@ metadata:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.network, self.status, self.amount, self.fee, self.nonce, self.senders, self.recipients, self.internalTransactions, self.cryptoProperties, self.fiatProperties, self.cardProperties, self.exchange, self.metadata, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end

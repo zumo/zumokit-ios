@@ -24,9 +24,9 @@ struct TransactionCryptoProperties final {
      * it is Ethereum transaction, otherwise returns null.
      */
     std::optional<int32_t> nonce;
-    /** Wallet address of sender, */
+    /** Ethereum wallet address of sender. */
     std::string from_address;
-    /** Wallet address of receiver or null, if it is Ethereum contract deploy. */
+    /** Ethereum wallet address of recipient or null, if it is Ethereum contract deploy. */
     std::optional<std::string> to_address;
     /** Transaction data or null. */
     std::optional<std::string> data;
@@ -35,15 +35,15 @@ struct TransactionCryptoProperties final {
     /** Ethereum gas limit if it is Ethereum transaction, otherwise null. */
     std::optional<int32_t> gas_limit;
     /**
-     * Amount in fiat currencies at the time of the transaction submission.
+     * Value in fiat currencies at the time of the transaction submission.
      * @see CurrencyCode
      */
-    std::unordered_map<std::string, ::zumo::Decimal> fiat_amount;
+    std::optional<std::unordered_map<std::string, double>> fiat_amount;
     /**
      * Fee in fiat currencies at the time of the transaction submission.
      * @see CurrencyCode
      */
-    std::unordered_map<std::string, ::zumo::Decimal> fiat_fee;
+    std::optional<std::unordered_map<std::string, double>> fiat_fee;
 
     friend bool operator==(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);
     friend bool operator!=(const TransactionCryptoProperties& lhs, const TransactionCryptoProperties& rhs);
@@ -55,8 +55,8 @@ struct TransactionCryptoProperties final {
                                 std::optional<std::string> data_,
                                 std::optional<::zumo::Decimal> gas_price_,
                                 std::optional<int32_t> gas_limit_,
-                                std::unordered_map<std::string, ::zumo::Decimal> fiat_amount_,
-                                std::unordered_map<std::string, ::zumo::Decimal> fiat_fee_)
+                                std::optional<std::unordered_map<std::string, double>> fiat_amount_,
+                                std::optional<std::unordered_map<std::string, double>> fiat_fee_)
     : tx_hash(std::move(tx_hash_))
     , nonce(std::move(nonce_))
     , from_address(std::move(from_address_))

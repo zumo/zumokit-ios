@@ -4,9 +4,9 @@
 #import "ZKTransactionDirection.h"
 
 
-NSString * __nonnull const ZKTransactionDirectionINCOMING = @"INCOMING";
+NSString * __nonnull const ZKTransactionDirectionSENT = @"SENT";
 
-NSString * __nonnull const ZKTransactionDirectionOUTGOING = @"OUTGOING";
+NSString * __nonnull const ZKTransactionDirectionRECEIVED = @"RECEIVED";
 
 @implementation ZKTransactionDirection
 
