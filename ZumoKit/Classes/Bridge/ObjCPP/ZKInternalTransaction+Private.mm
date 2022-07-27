@@ -19,7 +19,8 @@ auto InternalTransaction::toCpp(ObjcType obj) -> CppType
             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.toUserIntegratorId),
             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.toAccountId),
             ::djinni::String::toCpp(obj.toAddress),
-            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.amount)};
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.amount),
+            ::djinni::Optional<std::optional, ::djinni::Map<::djinni::String, ::djinni::F64>>::toCpp(obj.fiatAmount)};
 }
 
 auto InternalTransaction::fromCpp(const CppType& cpp) -> ObjcType
@@ -32,7 +33,8 @@ auto InternalTransaction::fromCpp(const CppType& cpp) -> ObjcType
                                           toUserIntegratorId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.to_user_integrator_id))
                                                  toAccountId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.to_account_id))
                                                    toAddress:(::djinni::String::fromCpp(cpp.to_address))
-                                                      amount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.amount))];
+                                                      amount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.amount))
+                                                  fiatAmount:(::djinni::Optional<std::optional, ::djinni::Map<::djinni::String, ::djinni::F64>>::fromCpp(cpp.fiat_amount))];
 }
 
 }  // namespace djinni_generated

@@ -13,7 +13,8 @@
                         toUserIntegratorId:(nullable NSString *)toUserIntegratorId
                                toAccountId:(nullable NSString *)toAccountId
                                  toAddress:(nonnull NSString *)toAddress
-                                    amount:(nonnull NSDecimalNumber *)amount;
+                                    amount:(nonnull NSDecimalNumber *)amount
+                                fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount;
 + (nonnull instancetype)internalTransactionWithFromUserId:(nullable NSString *)fromUserId
                                      fromUserIntegratorId:(nullable NSString *)fromUserIntegratorId
                                             fromAccountId:(nullable NSString *)fromAccountId
@@ -22,7 +23,8 @@
                                        toUserIntegratorId:(nullable NSString *)toUserIntegratorId
                                               toAccountId:(nullable NSString *)toAccountId
                                                 toAddress:(nonnull NSString *)toAddress
-                                                   amount:(nonnull NSDecimalNumber *)amount;
+                                                   amount:(nonnull NSDecimalNumber *)amount
+                                               fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount;
 
 /** Sender user id or null if it is external user. */
 @property (nonatomic, readonly, nullable) NSString * fromUserId;
@@ -50,5 +52,11 @@
 
 /** Transaction amount in transaction currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * amount;
+
+/**
+ * Value in fiat currencies at the time of the transaction submission.
+ * @see `ZKCurrencyCode`
+ */
+@property (nonatomic, readonly, nullable) NSDictionary<NSString *, NSNumber *> * fiatAmount;
 
 @end

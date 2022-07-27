@@ -6,6 +6,7 @@
 #include "decimal.hpp"
 #include <optional>
 #include <string>
+#include <unordered_map>
 #include <utility>
 
 namespace zumo {
@@ -30,6 +31,11 @@ struct InternalTransaction final {
     std::string to_address;
     /** Transaction amount in transaction currency. */
     ::zumo::Decimal amount;
+    /**
+     * Value in fiat currencies at the time of the transaction submission.
+     * @see CurrencyCode
+     */
+    std::optional<std::unordered_map<std::string, double>> fiat_amount;
 
     friend bool operator==(const InternalTransaction& lhs, const InternalTransaction& rhs);
     friend bool operator!=(const InternalTransaction& lhs, const InternalTransaction& rhs);
@@ -42,7 +48,8 @@ struct InternalTransaction final {
                         std::optional<std::string> to_user_integrator_id_,
                         std::optional<std::string> to_account_id_,
                         std::string to_address_,
-                        ::zumo::Decimal amount_)
+                        ::zumo::Decimal amount_,
+                        std::optional<std::unordered_map<std::string, double>> fiat_amount_)
     : from_user_id(std::move(from_user_id_))
     , from_user_integrator_id(std::move(from_user_integrator_id_))
     , from_account_id(std::move(from_account_id_))
@@ -52,6 +59,7 @@ struct InternalTransaction final {
     , to_account_id(std::move(to_account_id_))
     , to_address(std::move(to_address_))
     , amount(std::move(amount_))
+    , fiat_amount(std::move(fiat_amount_))
     {}
 };
 

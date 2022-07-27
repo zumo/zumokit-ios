@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 4.0.0-beta.2 Docs
+          ZumoKit 4.0.0-beta.3 Docs
         </a>
         
       </p>
@@ -723,7 +723,7 @@
             <p>Record containing internal transaction details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L7-L54">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L7-L62">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -735,9 +735,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKInternalTransaction(im)initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(im)initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:">-initWithFromUserId:<wbr>fromUserIntegratorId:<wbr>fromAccountId:<wbr>fromAddress:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>toAccountId:<wbr>toAddress:<wbr>amount:<wbr></a>
+                    <a name="/c:objc(cs)ZKInternalTransaction(im)initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(im)initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:">-initWithFromUserId:<wbr>fromUserIntegratorId:<wbr>fromAccountId:<wbr>fromAddress:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>toAccountId:<wbr>toAddress:<wbr>amount:<wbr>fiatAmount:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -759,17 +759,18 @@
                         <span class="nf">toUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserIntegratorId</span>
                                <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
                                  <span class="nf">toAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAddress</span>
-                                    <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span><span class="p">;</span></code></pre>
+                                    <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                                <span class="nf">fiatAmount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSNumber</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fiatAmount</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">fromUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">fromUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">,</span> <span class="nv">fiatAmount</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">NSNumber</span><span class="p">]?)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L8-L16">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L8-L17">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -777,9 +778,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKInternalTransaction(cm)internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:"></a>
-                    <a name="//apple_ref/objc/Method/+internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(cm)internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:">+internalTransactionWithFromUserId:<wbr>fromUserIntegratorId:<wbr>fromAccountId:<wbr>fromAddress:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>toAccountId:<wbr>toAddress:<wbr>amount:<wbr></a>
+                    <a name="/c:objc(cs)ZKInternalTransaction(cm)internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:"></a>
+                    <a name="//apple_ref/objc/Method/+internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(cm)internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:">+internalTransactionWithFromUserId:<wbr>fromUserIntegratorId:<wbr>fromAccountId:<wbr>fromAddress:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>toAccountId:<wbr>toAddress:<wbr>amount:<wbr>fiatAmount:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -801,12 +802,13 @@
                                        <span class="nf">toUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserIntegratorId</span>
                                               <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
                                                 <span class="nf">toAddress</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAddress</span>
-                                                   <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span><span class="p">;</span></code></pre>
+                                                   <span class="nf">amount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                                               <span class="nf">fiatAmount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSNumber</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fiatAmount</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L17-L25">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L18-L27">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -841,7 +843,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L28">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L30">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -876,7 +878,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L31">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L33">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -911,7 +913,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L34">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L36">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -946,7 +948,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L37">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L39">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -981,7 +983,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L40">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L42">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1016,7 +1018,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L43">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L45">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1051,7 +1053,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L46">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1086,7 +1088,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L49">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L51">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1121,7 +1123,47 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.2/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L52">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L54">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKInternalTransaction(py)fiatAmount"></a>
+                    <a name="//apple_ref/objc/Property/fiatAmount" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKInternalTransaction(py)fiatAmount">fiatAmount</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Value in fiat currencies at the time of the transaction submission.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKCurrencyCode.html">ZKCurrencyCode</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSDictionary</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*</span><span class="p">,</span> <span class="n">NSNumber</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="n">fiatAmount</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fiatAmount</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">NSNumber</span><span class="p">]?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.0-beta.3/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h#L60">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1134,7 +1176,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-07-26)</p>
+      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-07-27)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>

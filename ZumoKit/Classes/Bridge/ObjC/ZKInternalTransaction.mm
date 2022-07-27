@@ -15,6 +15,7 @@
                                toAccountId:(nullable NSString *)toAccountId
                                  toAddress:(nonnull NSString *)toAddress
                                     amount:(nonnull NSDecimalNumber *)amount
+                                fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount
 {
     if (self = [super init]) {
         _fromUserId = [fromUserId copy];
@@ -26,6 +27,7 @@
         _toAccountId = [toAccountId copy];
         _toAddress = [toAddress copy];
         _amount = amount;
+        _fiatAmount = [fiatAmount copy];
     }
     return self;
 }
@@ -39,6 +41,7 @@
                                               toAccountId:(nullable NSString *)toAccountId
                                                 toAddress:(nonnull NSString *)toAddress
                                                    amount:(nonnull NSDecimalNumber *)amount
+                                               fiatAmount:(nullable NSDictionary<NSString *, NSNumber *> *)fiatAmount
 {
     return [(ZKInternalTransaction*)[self alloc] initWithFromUserId:fromUserId
                                                fromUserIntegratorId:fromUserIntegratorId
@@ -48,7 +51,8 @@
                                                  toUserIntegratorId:toUserIntegratorId
                                                         toAccountId:toAccountId
                                                           toAddress:toAddress
-                                                             amount:amount];
+                                                             amount:amount
+                                                         fiatAmount:fiatAmount];
 }
 
 - (BOOL)isEqual:(id)other
@@ -65,7 +69,8 @@
             ((self.toUserIntegratorId == nil && typedOther.toUserIntegratorId == nil) || (self.toUserIntegratorId != nil && [self.toUserIntegratorId isEqual:typedOther.toUserIntegratorId])) &&
             ((self.toAccountId == nil && typedOther.toAccountId == nil) || (self.toAccountId != nil && [self.toAccountId isEqual:typedOther.toAccountId])) &&
             [self.toAddress isEqualToString:typedOther.toAddress] &&
-            [self.amount isEqual:typedOther.amount];
+            [self.amount isEqual:typedOther.amount] &&
+            ((self.fiatAmount == nil && typedOther.fiatAmount == nil) || (self.fiatAmount != nil && [self.fiatAmount isEqual:typedOther.fiatAmount]));
 }
 
 - (NSUInteger)hash
@@ -79,12 +84,13 @@
             self.toUserIntegratorId.hash ^
             self.toAccountId.hash ^
             self.toAddress.hash ^
-            ((NSUInteger)self.amount);
+            ((NSUInteger)self.amount) ^
+            self.fiatAmount.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p fromUserId:%@ fromUserIntegratorId:%@ fromAccountId:%@ fromAddress:%@ toUserId:%@ toUserIntegratorId:%@ toAccountId:%@ toAddress:%@ amount:%@>", self.class, (void *)self, self.fromUserId, self.fromUserIntegratorId, self.fromAccountId, self.fromAddress, self.toUserId, self.toUserIntegratorId, self.toAccountId, self.toAddress, self.amount];
+    return [NSString stringWithFormat:@"<%@ %p fromUserId:%@ fromUserIntegratorId:%@ fromAccountId:%@ fromAddress:%@ toUserId:%@ toUserIntegratorId:%@ toAccountId:%@ toAddress:%@ amount:%@ fiatAmount:%@>", self.class, (void *)self, self.fromUserId, self.fromUserIntegratorId, self.fromAccountId, self.fromAddress, self.toUserId, self.toUserIntegratorId, self.toAccountId, self.toAddress, self.amount, self.fiatAmount];
 }
 
 @end
