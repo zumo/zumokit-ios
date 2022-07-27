@@ -528,14 +528,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h",
       "line": 8,
-      "symbol": "ZKInternalTransaction.-initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:",
+      "symbol": "ZKInternalTransaction.-initWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKInternalTransaction.h",
-      "line": 17,
-      "symbol": "ZKInternalTransaction.+internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:",
+      "line": 18,
+      "symbol": "ZKInternalTransaction.+internalTransactionWithFromUserId:fromUserIntegratorId:fromAccountId:fromAddress:toUserId:toUserIntegratorId:toAccountId:toAddress:amount:fiatAmount:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
