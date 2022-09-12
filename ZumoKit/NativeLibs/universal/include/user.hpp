@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "decimal.hpp"
 #include <memory>
 #include <optional>
 #include <string>
@@ -16,12 +17,18 @@ class AccountFiatPropertiesCallback;
 class AuthenticationConfigCallback;
 class CardCallback;
 class CardDetailsCallback;
+class ComposeExchangeCallback;
+class ComposeTransactionCallback;
 class MnemonicCallback;
 class PinCallback;
+class SubmitExchangeCallback;
+class SubmitTransactionCallback;
 class SuccessCallback;
 class WalletCallback;
 struct Account;
 struct Address;
+struct ComposedExchange;
+struct ComposedTransaction;
 struct KbaAnswer;
 
 /**
@@ -57,16 +64,13 @@ public:
     virtual bool has_wallet() = 0;
 
     /**
-     * Check if user is a fiat customer on 'MAINNET' or 'TESTNET' network.
-     * @param  network 'MAINNET' or 'TESTNET'
-     * @return true if user is currenly active user.
-     * @see    NetworkType
+     * Check if user is a registered fiat customer.
+     * @return true if user is a registered fiat customer.
      */
-    virtual bool is_fiat_customer(const std::string & network) = 0;
+    virtual bool is_fiat_customer() = 0;
 
     /**
-     * Make user fiat customer on specified network by providing user's personal details.
-     * @param  network        'MAINNET' or 'TESTNET'
+     * Make user fiat customer by providing user's personal details.
      * @param  first_name     first name
      * @param  middle_name    middle name or null
      * @param  last_name      last name
@@ -75,19 +79,91 @@ public:
      * @param  phone          phone number
      * @param  address        home address
      * @param  callback       an interface to receive the result or error
-     * @see    NetworkType
      */
-    virtual void make_fiat_customer(const std::string & network, const std::string & first_name, const std::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const Address & address, const std::shared_ptr<SuccessCallback> & callback) = 0;
+    virtual void make_fiat_customer(const std::string & first_name, const std::optional<std::string> & middle_name, const std::string & last_name, const std::string & date_of_birth, const std::string & email, const std::string & phone, const Address & address, const std::shared_ptr<SuccessCallback> & callback) = 0;
 
     /**
-     * Create fiat account on specified network and currency code. User must already be fiat customer on specified network.
-     * @param  network        'MAINNET' or 'TESTNET'
-     * @param  currency_code  country code in ISO 4217 format, e.g. 'GBP'
+     * Create custody or fiat account for specified currency. When creating a fiat account, 
+     * user must already be fiat customer.
+     * @param  currency_code  country code, e.g. 'GBP', 'BTC', 'ETH'
      * @param  callback       an interface to receive the result or error
      * @see    Account
-     * @see    NetworkType
      */
-    virtual void create_fiat_account(const std::string & network, const std::string & currency_code, const std::shared_ptr<AccountCallback> & callback) = 0;
+    virtual void create_account(const std::string & currency_code, const std::shared_ptr<AccountCallback> & callback) = 0;
+
+    /**
+     * Compose transaction between custody or fiat accounts in Zumo ecosystem. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-transaction">Send Transactions</a> guide for usage details.
+     * <p>
+     * On success ComposedTransaction is returned via callback.
+     *
+     * @param from_account_id custody or fiat Account identifier
+     * @param to_account_id   custody or fiat Account identifier 
+     * @param amount          amount in source account currency
+     * @param send_max        send maximum possible funds to destination
+     * @param callback        an interface to receive the result or error
+     */
+    virtual void compose_transaction(const std::string & from_account_id, const std::string & to_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+
+    /**
+     * Compose custody withdraw transaction from custody account. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#custody-withdraw-transaction">Send Transactions</a> guide for usage details.
+     * <p>
+     * On success ComposedTransaction is returned via callback.
+     *
+     * @param from_account_id custody Account identifier
+     * @param destination     destination address or non-custodial account identifier
+     * @param amount          amount in source account currency
+     * @param send_max        send maximum possible funds to destination
+     * @param callback        an interface to receive the result or error
+     */
+    virtual void compose_custody_withdraw_transaction(const std::string & from_account_id, const std::string & destination, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+
+    /**
+     * Compose transaction from user fiat account to user's nominated account. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#nominated-transaction">Send Transactions</a> guide for usage details.
+     * <p>
+     * On success ComposedTransaction object is returned via callback.
+     *
+     * @param from_account_id Account identifier
+     * @param amount          amount in source account currency
+     * @param send_max        send maximum possible funds to destination
+     * @param callback        an interface to receive the result or error
+     */
+    virtual void compose_nominated_transaction(const std::string & from_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
+
+    /**
+     * Submit a transaction. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
+     * <p>
+     * On success Transaction object is returned via callback.
+     *
+     * @param composed_transaction Composed transaction retrieved as a result
+     *                             of one of the compose transaction methods
+     * @param metadata             Optional metadata (stringified JSON) that will be attached to transaction
+     * @param callback An interface to receive the result or error
+     */
+    virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::optional<std::string> & metadata, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
+
+    /**
+     * Compose exchange. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
+     * <p>
+     * On success ComposedExchange  is returned via callback.
+     *
+     * @param from_account_id     Account identifier
+     * @param to_account_id       Account identifier
+     * @param amount              amount in deposit account currency
+     * @param send_max            exchange maximum possible funds
+     * @param callback            an interface to receive the result or error
+     */
+    virtual void compose_exchange(const std::string & from_account_id, const std::string & to_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
+
+    /**
+     * Submit an exchange. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
+     * <p>
+     * On success Exchange object is returned via callback.
+     *
+     * @param composed_exchange Composed exchange retrieved as the result
+     *                          of <code>composeExchange</code> method
+     * @param callback An interface to receive the result or error
+     */
+    virtual void submit_exchange(const ComposedExchange & composed_exchange, const std::shared_ptr<SubmitExchangeCallback> & callback) = 0;
 
     /**
      * Get nominated account details for specified account if it exists.
@@ -222,12 +298,14 @@ public:
      * @param  currency_code       currency code, e.g. 'BTC', 'ETH' or 'GBP'
      * @param  network             network type, e.g. 'MAINNET', 'TESTNET' or 'RINKEBY'
      * @param  type                account type, e.g. 'STANDARD', 'COMPATIBILITY' or 'SEGWIT'
+     * @param  custody_type        custdoy type, i.e. 'CUSTODY' or 'NON-CUSTODY'
      * @return account with selected parameters if it exists, null otherwise
      * @see CurrencyCode
      * @see NetworkType
      * @see AccountType
+     * @see CustodyType
      */
-    virtual std::optional<Account> get_account(const std::string & currency_code, const std::string & network, const std::string & type) = 0;
+    virtual std::optional<Account> get_account(const std::string & currency_code, const std::string & network, const std::string & type, const std::string & custody_type) = 0;
 
     /**
      * Get all user accounts.

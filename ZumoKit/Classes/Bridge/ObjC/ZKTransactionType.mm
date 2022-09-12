@@ -4,6 +4,12 @@
 #import "ZKTransactionType.h"
 
 
+NSString * __nonnull const ZKTransactionTypeCUSTODY = @"CUSTODY";
+
+NSString * __nonnull const ZKTransactionTypeCUSTODYDEPOSIT = @"CUSTODY-DEPOSIT";
+
+NSString * __nonnull const ZKTransactionTypeCUSTODYWITHDRAW = @"CUSTODY-WITHDRAW";
+
 NSString * __nonnull const ZKTransactionTypeCRYPTO = @"CRYPTO";
 
 NSString * __nonnull const ZKTransactionTypeFIAT = @"FIAT";

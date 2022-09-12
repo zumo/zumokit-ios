@@ -11,14 +11,14 @@ auto AccountCryptoProperties::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.address),
-            ::djinni::String::toCpp(obj.path),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.path),
             ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.nonce)};
 }
 
 auto AccountCryptoProperties::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKAccountCryptoProperties alloc] initWithAddress:(::djinni::String::fromCpp(cpp.address))
-                                                         path:(::djinni::String::fromCpp(cpp.path))
+                                                         path:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.path))
                                                         nonce:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.nonce))];
 }
 

@@ -38,6 +38,7 @@
 #import "ZKComposeTransactionCallback.h"
 #import "ZKCurrencyCode.h"
 #import "ZKCurrencyType.h"
+#import "ZKCustodyType.h"
 #import "ZKExchange.h"
 #import "ZKExchangeRate.h"
 #import "ZKExchangeSetting.h"

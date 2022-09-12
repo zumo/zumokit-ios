@@ -24,9 +24,6 @@ struct ZumoKitErrorCode final {
     /** New account could not be created. Account already exists. */
     static std::string const ACCOUNT_LIMIT_EXCEEDED;
 
-    /** Could not make user fiat customer. User is already fiat customer. */
-    static std::string const ALREADY_FIAT_CUSTOMER;
-
     /** Requested account not found. */
     static std::string const ACCOUNT_NOT_FOUND;
 
@@ -84,11 +81,7 @@ struct ZumoKitErrorCode final {
     /** Change account and source accounts have to be on the same network. */
     static std::string const INCOMPATIBLE_NETWORK_TYPES;
 
-    /**
-     * Unknown error has occured
-     * Incorrect account selected.
-     * Account currency does not match the requeirements of requested operation.
-     */
+    /** Incorrect account selected. Account does not match the requirements of requested operation. */
     static std::string const INCORRECT_ACCOUNT_SELECTED;
 
     /**
@@ -201,9 +194,6 @@ struct ZumoKitErrorCode final {
 
     /** Resulting transaction is too large. */
     static std::string const TRANSACTION_TOO_LARGE;
-
-    /** Fiat account could no be created. User is not yet a fiat customer on selected network. */
-    static std::string const USER_NOT_FIAT_CUSTOMER;
 
     /** Unspent transaction output could not be signed. */
     static std::string const UTXO_SIGNING_ERROR;

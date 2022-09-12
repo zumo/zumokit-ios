@@ -13,7 +13,11 @@
                       currencyCode:(nonnull NSString *)currencyCode
                            network:(nonnull NSString *)network
                               type:(nonnull NSString *)type
+                       custodyType:(nonnull NSString *)custodyType
                            balance:(nonnull NSDecimalNumber *)balance
+                     ledgerBalance:(nonnull NSDecimalNumber *)ledgerBalance
+                  availableBalance:(nonnull NSDecimalNumber *)availableBalance
+                    overdraftLimit:(nonnull NSDecimalNumber *)overdraftLimit
                hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
@@ -23,7 +27,11 @@
                          currencyCode:(nonnull NSString *)currencyCode
                               network:(nonnull NSString *)network
                                  type:(nonnull NSString *)type
+                          custodyType:(nonnull NSString *)custodyType
                               balance:(nonnull NSDecimalNumber *)balance
+                        ledgerBalance:(nonnull NSDecimalNumber *)ledgerBalance
+                     availableBalance:(nonnull NSDecimalNumber *)availableBalance
+                       overdraftLimit:(nonnull NSDecimalNumber *)overdraftLimit
                   hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
@@ -56,8 +64,23 @@
  */
 @property (nonatomic, readonly, nonnull) NSString * type;
 
+/**
+ * Custody type.
+ * @see `ZKCustodyType`
+ */
+@property (nonatomic, readonly, nonnull) NSString * custodyType;
+
 /** Account balance. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * balance;
+
+/** Account ledger balance. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * ledgerBalance;
+
+/** Account available balance, i.e. ledger balance minus pending transactions. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * availableBalance;
+
+/** Overdraft limit. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * overdraftLimit;
 
 /** Account has associated nominated account. */
 @property (nonatomic, readonly) BOOL hasNominatedAccount;

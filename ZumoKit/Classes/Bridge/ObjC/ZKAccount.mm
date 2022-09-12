@@ -11,7 +11,11 @@
                       currencyCode:(nonnull NSString *)currencyCode
                            network:(nonnull NSString *)network
                               type:(nonnull NSString *)type
+                       custodyType:(nonnull NSString *)custodyType
                            balance:(nonnull NSDecimalNumber *)balance
+                     ledgerBalance:(nonnull NSDecimalNumber *)ledgerBalance
+                  availableBalance:(nonnull NSDecimalNumber *)availableBalance
+                    overdraftLimit:(nonnull NSDecimalNumber *)overdraftLimit
                hasNominatedAccount:(BOOL)hasNominatedAccount
                   cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
@@ -23,7 +27,11 @@
         _currencyCode = [currencyCode copy];
         _network = [network copy];
         _type = [type copy];
+        _custodyType = [custodyType copy];
         _balance = balance;
+        _ledgerBalance = ledgerBalance;
+        _availableBalance = availableBalance;
+        _overdraftLimit = overdraftLimit;
         _hasNominatedAccount = hasNominatedAccount;
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
@@ -37,7 +45,11 @@
                          currencyCode:(nonnull NSString *)currencyCode
                               network:(nonnull NSString *)network
                                  type:(nonnull NSString *)type
+                          custodyType:(nonnull NSString *)custodyType
                               balance:(nonnull NSDecimalNumber *)balance
+                        ledgerBalance:(nonnull NSDecimalNumber *)ledgerBalance
+                     availableBalance:(nonnull NSDecimalNumber *)availableBalance
+                       overdraftLimit:(nonnull NSDecimalNumber *)overdraftLimit
                   hasNominatedAccount:(BOOL)hasNominatedAccount
                      cryptoProperties:(nullable ZKAccountCryptoProperties *)cryptoProperties
                        fiatProperties:(nullable ZKAccountFiatProperties *)fiatProperties
@@ -48,7 +60,11 @@
                                    currencyCode:currencyCode
                                         network:network
                                            type:type
+                                    custodyType:custodyType
                                         balance:balance
+                                  ledgerBalance:ledgerBalance
+                               availableBalance:availableBalance
+                                 overdraftLimit:overdraftLimit
                             hasNominatedAccount:hasNominatedAccount
                                cryptoProperties:cryptoProperties
                                  fiatProperties:fiatProperties
@@ -66,7 +82,11 @@
             [self.currencyCode isEqualToString:typedOther.currencyCode] &&
             [self.network isEqualToString:typedOther.network] &&
             [self.type isEqualToString:typedOther.type] &&
+            [self.custodyType isEqualToString:typedOther.custodyType] &&
             [self.balance isEqual:typedOther.balance] &&
+            [self.ledgerBalance isEqual:typedOther.ledgerBalance] &&
+            [self.availableBalance isEqual:typedOther.availableBalance] &&
+            [self.overdraftLimit isEqual:typedOther.overdraftLimit] &&
             self.hasNominatedAccount == typedOther.hasNominatedAccount &&
             ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
             ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties])) &&
@@ -81,7 +101,11 @@
             self.currencyCode.hash ^
             self.network.hash ^
             self.type.hash ^
+            self.custodyType.hash ^
             ((NSUInteger)self.balance) ^
+            ((NSUInteger)self.ledgerBalance) ^
+            ((NSUInteger)self.availableBalance) ^
+            ((NSUInteger)self.overdraftLimit) ^
             (NSUInteger)self.hasNominatedAccount ^
             self.cryptoProperties.hash ^
             self.fiatProperties.hash ^
@@ -90,7 +114,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ currencyType:%@ currencyCode:%@ network:%@ type:%@ balance:%@ hasNominatedAccount:%@ cryptoProperties:%@ fiatProperties:%@ cards:%@>", self.class, (void *)self, self.id, self.currencyType, self.currencyCode, self.network, self.type, self.balance, @(self.hasNominatedAccount), self.cryptoProperties, self.fiatProperties, self.cards];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ currencyType:%@ currencyCode:%@ network:%@ type:%@ custodyType:%@ balance:%@ ledgerBalance:%@ availableBalance:%@ overdraftLimit:%@ hasNominatedAccount:%@ cryptoProperties:%@ fiatProperties:%@ cards:%@>", self.class, (void *)self, self.id, self.currencyType, self.currencyCode, self.network, self.type, self.custodyType, self.balance, self.ledgerBalance, self.availableBalance, self.overdraftLimit, @(self.hasNominatedAccount), self.cryptoProperties, self.fiatProperties, self.cards];
 }
 
 @end

@@ -9,17 +9,17 @@
  */
 @interface ZKAccountCryptoProperties : NSObject
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address
-                                   path:(nonnull NSString *)path
+                                   path:(nullable NSString *)path
                                   nonce:(nullable NSNumber *)nonce;
 + (nonnull instancetype)accountCryptoPropertiesWithAddress:(nonnull NSString *)address
-                                                      path:(nonnull NSString *)path
+                                                      path:(nullable NSString *)path
                                                      nonce:(nullable NSNumber *)nonce;
 
 /** Account crypto address. */
 @property (nonatomic, readonly, nonnull) NSString * address;
 
 /** Hierarchical Deterministic (HD) account derivation path. */
-@property (nonatomic, readonly, nonnull) NSString * path;
+@property (nonatomic, readonly, nullable) NSString * path;
 
 /** Ethereum account nonce if greater than 0 or null otherwise. */
 @property (nonatomic, readonly, nullable) NSNumber * nonce;

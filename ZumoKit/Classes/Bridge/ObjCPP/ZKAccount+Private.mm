@@ -19,7 +19,11 @@ auto Account::toCpp(ObjcType obj) -> CppType
             ::djinni::String::toCpp(obj.currencyCode),
             ::djinni::String::toCpp(obj.network),
             ::djinni::String::toCpp(obj.type),
+            ::djinni::String::toCpp(obj.custodyType),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.balance),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.ledgerBalance),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.availableBalance),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.overdraftLimit),
             ::djinni::Bool::toCpp(obj.hasNominatedAccount),
             ::djinni::Optional<std::optional, ::djinni_generated::AccountCryptoProperties>::toCpp(obj.cryptoProperties),
             ::djinni::Optional<std::optional, ::djinni_generated::AccountFiatProperties>::toCpp(obj.fiatProperties),
@@ -33,7 +37,11 @@ auto Account::fromCpp(const CppType& cpp) -> ObjcType
                             currencyCode:(::djinni::String::fromCpp(cpp.currency_code))
                                  network:(::djinni::String::fromCpp(cpp.network))
                                     type:(::djinni::String::fromCpp(cpp.type))
+                             custodyType:(::djinni::String::fromCpp(cpp.custody_type))
                                  balance:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.balance))
+                           ledgerBalance:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.ledger_balance))
+                        availableBalance:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.available_balance))
+                          overdraftLimit:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.overdraft_limit))
                      hasNominatedAccount:(::djinni::Bool::fromCpp(cpp.has_nominated_account))
                         cryptoProperties:(::djinni::Optional<std::optional, ::djinni_generated::AccountCryptoProperties>::fromCpp(cpp.crypto_properties))
                           fiatProperties:(::djinni::Optional<std::optional, ::djinni_generated::AccountFiatProperties>::fromCpp(cpp.fiat_properties))

@@ -97,13 +97,13 @@
             [_user addAccountDataListener:self];
             
             if ([_user hasWallet]) {
-                ZKAccount *ethAccount = [_user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
+                ZKAccount *ethAccount = [_user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD custodyType:ZKCustodyTypeNONCUSTODY];
                 NSLog(@"ETH account: %@", ethAccount.cryptoProperties.address);
                 
-                ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
+                ZKAccount *btcAccount = [_user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY custodyType:ZKCustodyTypeNONCUSTODY];
                 NSLog(@"BTC account: %@", btcAccount.cryptoProperties.address);
                 
-                ZKAccount *fiatAccount = [_user getAccount:@"GBP" network:ZKNetworkTypeTESTNET type:ZKAccountTypeSTANDARD];
+                ZKAccount *fiatAccount = [_user getAccount:@"GBP" network:ZKNetworkTypeTESTNET type:ZKAccountTypeSTANDARD custodyType:ZKCustodyTypeNONCUSTODY];
                 if (fiatAccount != nil) {
                     NSLog(@"GBP account: %@", fiatAccount.fiatProperties.accountNumber);
                 }
@@ -133,10 +133,10 @@
                         return;
                     }
                     
-                    ZKAccount *ethAccount = [user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD];
+                    ZKAccount *ethAccount = [user getAccount:@"ETH" network:ZKNetworkTypeRINKEBY type:ZKAccountTypeSTANDARD custodyType:ZKCustodyTypeNONCUSTODY];
                     NSLog(@"ETH account: %@", ethAccount.cryptoProperties.address);
                     
-                    ZKAccount *btcAccount = [user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY];
+                    ZKAccount *btcAccount = [user getAccount:@"BTC" network:ZKNetworkTypeTESTNET type:ZKAccountTypeCOMPATIBILITY custodyType:ZKCustodyTypeNONCUSTODY];
                     NSLog(@"BTC account: %@", btcAccount.cryptoProperties.address);
                     
                 }];
@@ -171,7 +171,7 @@
             return;
         }
         
-        [_wallet submitTransaction:composedTransaction
+        [_user submitTransaction:composedTransaction
                           metadata:nil
                         completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
             
@@ -207,7 +207,7 @@
             return;
         }
         
-        [_wallet submitTransaction:composedTransaction
+        [_user submitTransaction:composedTransaction
                           metadata:nil
                         completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
             
@@ -227,7 +227,7 @@
                  amount:(NSDecimalNumber *)amount
                  submit:(BOOL)submit
 {
-    [_wallet composeExchange:fromAccount.id
+    [_user composeExchange:fromAccount.id
                  toAccountId:toAccount.id
                       amount:amount
                      sendMax:NO
@@ -246,7 +246,7 @@
             return;
         }
         
-        [_wallet submitExchange:composedExchange
+        [_user submitExchange:composedExchange
                      completion:^(ZKExchange * _Nullable exchange, NSError * _Nullable error) {
             
             if (error != nil) {

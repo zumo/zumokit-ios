@@ -18,7 +18,7 @@ struct AccountCryptoProperties final {
     /** Account crypto address. */
     std::string address;
     /** Hierarchical Deterministic (HD) account derivation path. */
-    std::string path;
+    std::optional<std::string> path;
     /** Ethereum account nonce if greater than 0 or null otherwise. */
     std::optional<int32_t> nonce;
 
@@ -26,7 +26,7 @@ struct AccountCryptoProperties final {
     friend bool operator!=(const AccountCryptoProperties& lhs, const AccountCryptoProperties& rhs);
 
     AccountCryptoProperties(std::string address_,
-                            std::string path_,
+                            std::optional<std::string> path_,
                             std::optional<int32_t> nonce_)
     : address(std::move(address_))
     , path(std::move(path_))

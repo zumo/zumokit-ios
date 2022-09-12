@@ -7,7 +7,7 @@
 @implementation ZKAccountCryptoProperties
 
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address
-                                   path:(nonnull NSString *)path
+                                   path:(nullable NSString *)path
                                   nonce:(nullable NSNumber *)nonce
 {
     if (self = [super init]) {
@@ -19,7 +19,7 @@
 }
 
 + (nonnull instancetype)accountCryptoPropertiesWithAddress:(nonnull NSString *)address
-                                                      path:(nonnull NSString *)path
+                                                      path:(nullable NSString *)path
                                                      nonce:(nullable NSNumber *)nonce
 {
     return [(ZKAccountCryptoProperties*)[self alloc] initWithAddress:address
@@ -34,7 +34,7 @@
     }
     ZKAccountCryptoProperties *typedOther = (ZKAccountCryptoProperties *)other;
     return [self.address isEqualToString:typedOther.address] &&
-            [self.path isEqualToString:typedOther.path] &&
+            ((self.path == nil && typedOther.path == nil) || (self.path != nil && [self.path isEqual:typedOther.path])) &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce]));
 }
 

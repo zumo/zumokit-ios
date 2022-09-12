@@ -38,8 +38,19 @@ struct Account final {
      * @see AccountType
      */
     std::string type;
+    /**
+     * Custody type.
+     * @see CustodyType
+     */
+    std::string custody_type;
     /** Account balance. */
     ::zumo::Decimal balance;
+    /** Account ledger balance. */
+    ::zumo::Decimal ledger_balance;
+    /** Account available balance, i.e. ledger balance minus pending transactions. */
+    ::zumo::Decimal available_balance;
+    /** Overdraft limit. */
+    ::zumo::Decimal overdraft_limit;
     /** Account has associated nominated account. */
     bool has_nominated_account;
     /** Account crypto properties if account is a crypto account, otherwise null. */
@@ -57,7 +68,11 @@ struct Account final {
             std::string currency_code_,
             std::string network_,
             std::string type_,
+            std::string custody_type_,
             ::zumo::Decimal balance_,
+            ::zumo::Decimal ledger_balance_,
+            ::zumo::Decimal available_balance_,
+            ::zumo::Decimal overdraft_limit_,
             bool has_nominated_account_,
             std::optional<AccountCryptoProperties> crypto_properties_,
             std::optional<AccountFiatProperties> fiat_properties_,
@@ -67,7 +82,11 @@ struct Account final {
     , currency_code(std::move(currency_code_))
     , network(std::move(network_))
     , type(std::move(type_))
+    , custody_type(std::move(custody_type_))
     , balance(std::move(balance_))
+    , ledger_balance(std::move(ledger_balance_))
+    , available_balance(std::move(available_balance_))
+    , overdraft_limit(std::move(overdraft_limit_))
     , has_nominated_account(std::move(has_nominated_account_))
     , crypto_properties(std::move(crypto_properties_))
     , fiat_properties(std::move(fiat_properties_))

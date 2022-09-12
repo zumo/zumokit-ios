@@ -18,6 +18,10 @@
 #import "ZKCardDetailsCallback.h"
 #import "ZKPinCallback.h"
 #import "ZKAuthenticationConfigCallback.h"
+#import "ZKComposedTransaction.h"
+#import "ZKComposedExchange.h"
+#import "ZKTransaction.h"
+#import "ZKExchange.h"
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKWalletCompletionBlock)(ZKWallet *_Nullable wallet, NSError *_Nullable error);
@@ -45,6 +49,18 @@ typedef void (^ZKCardDetailsCompletionBlock)(ZKCardDetails *_Nullable card, NSEr
 
 /** Completion block used by methods in `ZKUser class. */
 typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser` class. */
+typedef void (^ZKComposeTransactionCompletionBlock)(ZKComposedTransaction *_Nullable composedTransaction, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser` class. */
+typedef void (^ZKComposeExchangeCompletionBlock)(ZKComposedExchange *_Nullable composedExchange, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser` class. */
+typedef void (^ZKSubmitTransactionCompletionBlock)(ZKTransaction *_Nullable transaction, NSError *_Nullable error);
+
+/** Completion block used by methods in `ZKUser` class. */
+typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NSError *_Nullable error);
 
 @interface ZKUser (ZKUserCallbackCompletion)
 
@@ -82,8 +98,7 @@ typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
 <code>makeFiatCustomer</code> completion handler extension.
 @see `-[ZKUser makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:]`
 */
-- (void)makeFiatCustomer:(nonnull NSString *)network
-               firstName:(nonnull NSString *)firstName
+- (void)makeFiatCustomer:(nonnull NSString *)firstName
               middleName:(nullable NSString *)middleName
                 lastName:(nonnull NSString *)lastName
              dateOfBirth:(nonnull NSString *)dateOfBirth
@@ -93,12 +108,11 @@ typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
               completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
 
 /**
-<code>createFiatAccount</code> completion handler extension.
-@see `-[ZKUser createFiatAccount:currencyCode:callback:]`
+<code>createAccount</code> completion handler extension.
+@see `-[ZKUser createAccount:callback:]`
 */
-- (void)createFiatAccount:(nonnull NSString *)network
-             currencyCode:(nonnull NSString *)currencyCode
-               completion:(_Nonnull ZKAccountCompletionBlock)completionHandler;
+- (void)createAccount:(nonnull NSString *)currencyCode
+          completion:(_Nonnull ZKAccountCompletionBlock)completionHandler;
 
 /**
 <code>getNominatedAccountFiatProperties</code> completion handler extension.
@@ -161,6 +175,60 @@ typedef void (^ZKPinCompletionBlock)(int32_t card, NSError *_Nullable error);
 - (void)setAuthentication:(nonnull NSString *)cardId
             knowledgeBase:(nonnull NSArray<ZKKbaAnswer *> *)knowledgeBase
                completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler;
+
+/**
+<code>composeTransaction</code> completion handler extension.
+@see `-[ZKUser composeTransaction:toAccountId:amount:sendMax:callback:]`
+*/
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+               toAccountId:(nonnull NSString *)toAccountId
+                    amount:(nullable NSDecimalNumber *)amount
+                   sendMax:(BOOL)sendMax
+                completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
+
+/**
+<code>composeCustodyWithdrawTransaction</code> completion handler extension.
+@see `-[ZKUser composeCustodyWithdrawTransaction:destination:amount:sendMax:callback:]`
+*/
+- (void)composeCustodyWithdrawTransaction:(nonnull NSString *)fromAccountId
+                              destination:(nonnull NSString *)destination
+                                   amount:(nullable NSDecimalNumber *)amount
+                                  sendMax:(BOOL)sendMax
+                               completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
+
+/**
+<code>composeNominatedTransaction</code> completion handler extension.
+@see `-[ZKUser composeNominatedTransaction:amount:sendMax:callback:]`
+*/
+- (void)composeNominatedTransaction:(nonnull NSString *)fromAccountId
+                             amount:(nullable NSDecimalNumber *)amount
+                            sendMax:(BOOL)sendMax
+                         completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
+
+/**
+<code>composeExchange</code> completion handler extension.
+@see `-[ZKUser composeExchange:toAccountId:amount:sendMax:callback:]`
+*/
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
+                 amount:(nullable NSDecimalNumber *)amount
+                sendMax:(BOOL)sendMax
+             completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler;
+
+/**
+<code>submitTransaction</code> completion handler extension.
+@see `-[ZKUser submitTransaction:metadata:callback:]`
+*/
+- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
+               completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler;
+
+/**
+<code>submitExchange</code> completion handler extension.
+@see `-[ZKUser submitExchange:callback:]`
+*/
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+            completion:(_Nonnull ZKSubmitExchangeCompletionBlock)completionHandler;
 
 @end
 

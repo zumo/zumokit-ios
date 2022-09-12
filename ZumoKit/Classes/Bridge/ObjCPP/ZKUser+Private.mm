@@ -6,6 +6,7 @@
 #import "DJICppWrapperCache+Private.h"
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
+#import "NSDecimalNumber+ZumoKit.h"
 #import "ZKAccount+Private.h"
 #import "ZKAccountCallback+Private.h"
 #import "ZKAccountDataListener+Private.h"
@@ -14,9 +15,15 @@
 #import "ZKAuthenticationConfigCallback+Private.h"
 #import "ZKCardCallback+Private.h"
 #import "ZKCardDetailsCallback+Private.h"
+#import "ZKComposeExchangeCallback+Private.h"
+#import "ZKComposeTransactionCallback+Private.h"
+#import "ZKComposedExchange+Private.h"
+#import "ZKComposedTransaction+Private.h"
 #import "ZKKbaAnswer+Private.h"
 #import "ZKMnemonicCallback+Private.h"
 #import "ZKPinCallback+Private.h"
+#import "ZKSubmitExchangeCallback+Private.h"
+#import "ZKSubmitTransactionCallback+Private.h"
 #import "ZKSuccessCallback+Private.h"
 #import "ZKWalletCallback+Private.h"
 #include <exception>
@@ -64,15 +71,14 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (BOOL)isFiatCustomer:(nonnull NSString *)network {
+- (BOOL)isFiatCustomer {
     try {
-        auto objcpp_result_ = _cppRefHandle.get()->is_fiat_customer(::djinni::String::toCpp(network));
+        auto objcpp_result_ = _cppRefHandle.get()->is_fiat_customer();
         return ::djinni::Bool::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)makeFiatCustomer:(nonnull NSString *)network
-               firstName:(nonnull NSString *)firstName
+- (void)makeFiatCustomer:(nonnull NSString *)firstName
               middleName:(nullable NSString *)middleName
                 lastName:(nonnull NSString *)lastName
              dateOfBirth:(nonnull NSString *)dateOfBirth
@@ -81,8 +87,7 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                  address:(nonnull ZKAddress *)address
                 callback:(nullable id<ZKSuccessCallback>)callback {
     try {
-        _cppRefHandle.get()->make_fiat_customer(::djinni::String::toCpp(network),
-                                                ::djinni::String::toCpp(firstName),
+        _cppRefHandle.get()->make_fiat_customer(::djinni::String::toCpp(firstName),
                                                 ::djinni::Optional<std::optional, ::djinni::String>::toCpp(middleName),
                                                 ::djinni::String::toCpp(lastName),
                                                 ::djinni::String::toCpp(dateOfBirth),
@@ -93,13 +98,83 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)createFiatAccount:(nonnull NSString *)network
-             currencyCode:(nonnull NSString *)currencyCode
-                 callback:(nullable id<ZKAccountCallback>)callback {
+- (void)createAccount:(nonnull NSString *)currencyCode
+             callback:(nullable id<ZKAccountCallback>)callback {
     try {
-        _cppRefHandle.get()->create_fiat_account(::djinni::String::toCpp(network),
-                                                 ::djinni::String::toCpp(currencyCode),
-                                                 ::djinni_generated::AccountCallback::toCpp(callback));
+        _cppRefHandle.get()->create_account(::djinni::String::toCpp(currencyCode),
+                                            ::djinni_generated::AccountCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+               toAccountId:(nonnull NSString *)toAccountId
+                    amount:(nullable NSDecimalNumber *)amount
+                   sendMax:(BOOL)sendMax
+                  callback:(nullable id<ZKComposeTransactionCallback>)callback {
+    try {
+        _cppRefHandle.get()->compose_transaction(::djinni::String::toCpp(fromAccountId),
+                                                 ::djinni::String::toCpp(toAccountId),
+                                                 ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
+                                                 ::djinni::Bool::toCpp(sendMax),
+                                                 ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)composeCustodyWithdrawTransaction:(nonnull NSString *)fromAccountId
+                              destination:(nonnull NSString *)destination
+                                   amount:(nullable NSDecimalNumber *)amount
+                                  sendMax:(BOOL)sendMax
+                                 callback:(nullable id<ZKComposeTransactionCallback>)callback {
+    try {
+        _cppRefHandle.get()->compose_custody_withdraw_transaction(::djinni::String::toCpp(fromAccountId),
+                                                                  ::djinni::String::toCpp(destination),
+                                                                  ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
+                                                                  ::djinni::Bool::toCpp(sendMax),
+                                                                  ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)composeNominatedTransaction:(nonnull NSString *)fromAccountId
+                             amount:(nullable NSDecimalNumber *)amount
+                            sendMax:(BOOL)sendMax
+                           callback:(nullable id<ZKComposeTransactionCallback>)callback {
+    try {
+        _cppRefHandle.get()->compose_nominated_transaction(::djinni::String::toCpp(fromAccountId),
+                                                           ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
+                                                           ::djinni::Bool::toCpp(sendMax),
+                                                           ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
+                 callback:(nullable id<ZKSubmitTransactionCallback>)callback {
+    try {
+        _cppRefHandle.get()->submit_transaction(::djinni_generated::ComposedTransaction::toCpp(composedTransaction),
+                                                ::djinni::Optional<std::optional, ::djinni::String>::toCpp(metadata),
+                                                ::djinni_generated::SubmitTransactionCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
+                 amount:(nullable NSDecimalNumber *)amount
+                sendMax:(BOOL)sendMax
+               callback:(nullable id<ZKComposeExchangeCallback>)callback {
+    try {
+        _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(fromAccountId),
+                                              ::djinni::String::toCpp(toAccountId),
+                                              ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
+                                              ::djinni::Bool::toCpp(sendMax),
+                                              ::djinni_generated::ComposeExchangeCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+              callback:(nullable id<ZKSubmitExchangeCallback>)callback {
+    try {
+        _cppRefHandle.get()->submit_exchange(::djinni_generated::ComposedExchange::toCpp(composedExchange),
+                                             ::djinni_generated::SubmitExchangeCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
@@ -224,11 +299,13 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
 
 - (nullable ZKAccount *)getAccount:(nonnull NSString *)currencyCode
                            network:(nonnull NSString *)network
-                              type:(nonnull NSString *)type {
+                              type:(nonnull NSString *)type
+                       custodyType:(nonnull NSString *)custodyType {
     try {
         auto objcpp_result_ = _cppRefHandle.get()->get_account(::djinni::String::toCpp(currencyCode),
                                                                ::djinni::String::toCpp(network),
-                                                               ::djinni::String::toCpp(type));
+                                                               ::djinni::String::toCpp(type),
+                                                               ::djinni::String::toCpp(custodyType));
         return ::djinni::Optional<std::optional, ::djinni_generated::Account>::fromCpp(objcpp_result_);
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }

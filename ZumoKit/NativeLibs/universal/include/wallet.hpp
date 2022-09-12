@@ -11,12 +11,7 @@
 
 namespace zumo {
 
-class ComposeExchangeCallback;
 class ComposeTransactionCallback;
-class SubmitExchangeCallback;
-class SubmitTransactionCallback;
-struct ComposedExchange;
-struct ComposedTransaction;
 
 /**
  * User wallet provides methods for transfer and exchange of fiat and cryptocurrency funds.
@@ -31,7 +26,7 @@ public:
     virtual ~Wallet() {}
 
     /**
-     * Compose BTC or BSV transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#crypto">Send Transactions</a> guide for usage details.
+     * Compose BTC or BSV transaction. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#crypto">Send Transactions</a> guide for usage details.
      * <p>
      * On success ComposedTransaction  is returned via callback.
      *
@@ -46,7 +41,7 @@ public:
     virtual void compose_transaction(const std::string & from_account_id, const std::string & change_account_id, const std::string & destination, const std::optional<::zumo::Decimal> & amount, const ::zumo::Decimal & fee_rate, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
 
     /**
-     * Compose Ethereum transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
+     * Compose Ethereum transaction. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
      * <p>
      * On success ComposedTransaction is returned via callback.
      *
@@ -61,67 +56,6 @@ public:
      * @param callback        an interface to receive the result or error
      */
     virtual void compose_eth_transaction(const std::string & from_account_id, const ::zumo::Decimal & gas_price, int32_t gas_limit, const std::optional<std::string> & destination, const std::optional<::zumo::Decimal> & amount, const std::optional<std::string> & data, std::optional<int32_t> nonce, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
-
-    /**
-     * Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
-     * <p>
-     * On success ComposedTransaction is returned via callback.
-     *
-     * @param from_account_id Account identifier
-     * @param to_account_id   Account identifier
-     * @param amount          amount in source account currency
-     * @param send_max        send maximum possible funds to destination
-     * @param callback        an interface to receive the result or error
-     */
-    virtual void compose_internal_fiat_transaction(const std::string & from_account_id, const std::string & to_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
-
-    /**
-     * Compose transaction to nominated account asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
-     * <p>
-     * On success ComposedTransaction object is returned via callback.
-     *
-     * @param from_account_id Account identifier
-     * @param amount          amount in source account currency
-     * @param send_max        send maximum possible funds to destination
-     * @param callback        an interface to receive the result or error
-     */
-    virtual void compose_transaction_to_nominated_account(const std::string & from_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeTransactionCallback> & callback) = 0;
-
-    /**
-     * Submit a transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
-     * <p>
-     * On success Transaction object is returned via callback.
-     *
-     * @param composed_transaction Composed transaction retrieved as a result
-     *                             of one of the compose transaction methods
-     * @param metadata             Optional metadata (stringified JSON) that will be attached to transaction
-     * @param callback An interface to receive the result or error
-     */
-    virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::optional<std::string> & metadata, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
-
-    /**
-     * Compose Bitcoin transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
-     * <p>
-     * On success ComposedExchange  is returned via callback.
-     *
-     * @param from_account_id     Account identifier
-     * @param to_account_id       Account identifier
-     * @param amount              amount in deposit account currency
-     * @param send_max            exchange maximum possible funds
-     * @param callback            an interface to receive the result or error
-     */
-    virtual void compose_exchange(const std::string & from_account_id, const std::string & to_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
-
-    /**
-     * Submit an exchange asynchronously. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
-     * <p>
-     * On success Exchange object is returned via callback.
-     *
-     * @param composed_exchange Composed exchange retrieved as the result
-     *                          of <code>composeExchange</code> method
-     * @param callback An interface to receive the result or error
-     */
-    virtual void submit_exchange(const ComposedExchange & composed_exchange, const std::shared_ptr<SubmitExchangeCallback> & callback) = 0;
 };
 
 }  // namespace zumo

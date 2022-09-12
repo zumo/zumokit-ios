@@ -3,6 +3,8 @@
 
 #import "ZKAccount.h"
 #import "ZKAddress.h"
+#import "ZKComposedExchange.h"
+#import "ZKComposedTransaction.h"
 #import "ZKKbaAnswer.h"
 #import <Foundation/Foundation.h>
 @protocol ZKAccountCallback;
@@ -11,8 +13,12 @@
 @protocol ZKAuthenticationConfigCallback;
 @protocol ZKCardCallback;
 @protocol ZKCardDetailsCallback;
+@protocol ZKComposeExchangeCallback;
+@protocol ZKComposeTransactionCallback;
 @protocol ZKMnemonicCallback;
 @protocol ZKPinCallback;
+@protocol ZKSubmitExchangeCallback;
+@protocol ZKSubmitTransactionCallback;
 @protocol ZKSuccessCallback;
 @protocol ZKWalletCallback;
 
@@ -48,16 +54,13 @@
 - (BOOL)hasWallet;
 
 /**
- * Check if user is a fiat customer on 'MAINNET' or 'TESTNET' network.
- * @param  network 'MAINNET' or 'TESTNET'
- * @return true if user is currenly active user.
- * @see    `ZKNetworkType`
+ * Check if user is a registered fiat customer.
+ * @return true if user is a registered fiat customer.
  */
-- (BOOL)isFiatCustomer:(nonnull NSString *)network;
+- (BOOL)isFiatCustomer;
 
 /**
- * Make user fiat customer on specified network by providing user's personal details.
- * @param  network        'MAINNET' or 'TESTNET'
+ * Make user fiat customer by providing user's personal details.
  * @param  firstName     first name
  * @param  middleName    middle name or null
  * @param  lastName      last name
@@ -66,10 +69,8 @@
  * @param  phone          phone number
  * @param  address        home address
  * @param  callback       an interface to receive the result or error
- * @see    `ZKNetworkType`
  */
-- (void)makeFiatCustomer:(nonnull NSString *)network
-               firstName:(nonnull NSString *)firstName
+- (void)makeFiatCustomer:(nonnull NSString *)firstName
               middleName:(nullable NSString *)middleName
                 lastName:(nonnull NSString *)lastName
              dateOfBirth:(nonnull NSString *)dateOfBirth
@@ -79,16 +80,106 @@
                 callback:(nullable id<ZKSuccessCallback>)callback;
 
 /**
- * Create fiat account on specified network and currency code. User must already be fiat customer on specified network.
- * @param  network        'MAINNET' or 'TESTNET'
- * @param  currencyCode  country code in ISO 4217 format, e.g. 'GBP'
+ * Create custody or fiat account for specified currency. When creating a fiat account, 
+ * user must already be fiat customer.
+ * @param  currencyCode  country code, e.g. 'GBP', 'BTC', 'ETH'
  * @param  callback       an interface to receive the result or error
  * @see    `ZKAccount`
- * @see    `ZKNetworkType`
  */
-- (void)createFiatAccount:(nonnull NSString *)network
-             currencyCode:(nonnull NSString *)currencyCode
-                 callback:(nullable id<ZKAccountCallback>)callback;
+- (void)createAccount:(nonnull NSString *)currencyCode
+             callback:(nullable id<ZKAccountCallback>)callback;
+
+/**
+ * Compose transaction between custody or fiat accounts in Zumo ecosystem. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-transaction">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success `ZKComposedTransaction` is returned via callback.
+ *
+ * @param fromAccountId custody or fiat `ZKAccount` identifier
+ * @param toAccountId   custody or fiat `ZKAccount` identifier 
+ * @param amount          amount in source account currency
+ * @param sendMax        send maximum possible funds to destination
+ * @param callback        an interface to receive the result or error
+ */
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+               toAccountId:(nonnull NSString *)toAccountId
+                    amount:(nullable NSDecimalNumber *)amount
+                   sendMax:(BOOL)sendMax
+                  callback:(nullable id<ZKComposeTransactionCallback>)callback;
+
+/**
+ * Compose custody withdraw transaction from custody account. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#custody-withdraw-transaction">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success `ZKComposedTransaction` is returned via callback.
+ *
+ * @param fromAccountId custody `ZKAccount` identifier
+ * @param destination     destination address or non-custodial account identifier
+ * @param amount          amount in source account currency
+ * @param sendMax        send maximum possible funds to destination
+ * @param callback        an interface to receive the result or error
+ */
+- (void)composeCustodyWithdrawTransaction:(nonnull NSString *)fromAccountId
+                              destination:(nonnull NSString *)destination
+                                   amount:(nullable NSDecimalNumber *)amount
+                                  sendMax:(BOOL)sendMax
+                                 callback:(nullable id<ZKComposeTransactionCallback>)callback;
+
+/**
+ * Compose transaction from user fiat account to user's nominated account. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#nominated-transaction">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success `ZKComposedTransaction` object is returned via callback.
+ *
+ * @param fromAccountId `ZKAccount` identifier
+ * @param amount          amount in source account currency
+ * @param sendMax        send maximum possible funds to destination
+ * @param callback        an interface to receive the result or error
+ */
+- (void)composeNominatedTransaction:(nonnull NSString *)fromAccountId
+                             amount:(nullable NSDecimalNumber *)amount
+                            sendMax:(BOOL)sendMax
+                           callback:(nullable id<ZKComposeTransactionCallback>)callback;
+
+/**
+ * Submit a transaction. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
+ * <p>
+ * On success `ZKTransaction` object is returned via callback.
+ *
+ * @param composedTransaction Composed transaction retrieved as a result
+ *                             of one of the compose transaction methods
+ * @param metadata             Optional metadata (stringified JSON) that will be attached to transaction
+ * @param callback An interface to receive the result or error
+ */
+- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
+                 callback:(nullable id<ZKSubmitTransactionCallback>)callback;
+
+/**
+ * Compose exchange. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
+ * <p>
+ * On success `ZKComposedExchange`  is returned via callback.
+ *
+ * @param fromAccountId     `ZKAccount` identifier
+ * @param toAccountId       `ZKAccount` identifier
+ * @param amount              amount in deposit account currency
+ * @param sendMax            exchange maximum possible funds
+ * @param callback            an interface to receive the result or error
+ */
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
+                 amount:(nullable NSDecimalNumber *)amount
+                sendMax:(BOOL)sendMax
+               callback:(nullable id<ZKComposeExchangeCallback>)callback;
+
+/**
+ * Submit an exchange. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
+ * <p>
+ * On success `ZKExchange` object is returned via callback.
+ *
+ * @param composedExchange Composed exchange retrieved as the result
+ *                          of <code>composeExchange</code> method
+ * @param callback An interface to receive the result or error
+ */
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+              callback:(nullable id<ZKSubmitExchangeCallback>)callback;
 
 /**
  * Get nominated account details for specified account if it exists.
@@ -243,14 +334,17 @@
  * @param  currencyCode       currency code, e.g. 'BTC', 'ETH' or 'GBP'
  * @param  network             network type, e.g. 'MAINNET', 'TESTNET' or 'RINKEBY'
  * @param  type                account type, e.g. 'STANDARD', 'COMPATIBILITY' or 'SEGWIT'
+ * @param  custodyType        custdoy type, i.e. 'CUSTODY' or 'NON-CUSTODY'
  * @return account with selected parameters if it exists, null otherwise
  * @see `ZKCurrencyCode`
  * @see `ZKNetworkType`
  * @see `ZKAccountType`
+ * @see `ZKCustodyType`
  */
 - (nullable ZKAccount *)getAccount:(nonnull NSString *)currencyCode
                            network:(nonnull NSString *)network
-                              type:(nonnull NSString *)type;
+                              type:(nonnull NSString *)type
+                       custodyType:(nonnull NSString *)custodyType;
 
 /**
  * Get all user accounts.

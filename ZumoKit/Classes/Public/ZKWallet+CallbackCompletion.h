@@ -10,21 +10,9 @@
 
 #import "ZKWallet.h"
 #import "ZKComposedTransaction.h"
-#import "ZKComposedExchange.h"
-#import "ZKTransaction.h"
-#import "ZKExchange.h"
 
 /** Completion block used by methods in `ZKWallet` class. */
 typedef void (^ZKComposeTransactionCompletionBlock)(ZKComposedTransaction *_Nullable composedTransaction, NSError *_Nullable error);
-
-/** Completion block used by methods in `ZKWallet` class. */
-typedef void (^ZKComposeExchangeCompletionBlock)(ZKComposedExchange *_Nullable composedExchange, NSError *_Nullable error);
-
-/** Completion block used by methods in `ZKWallet` class. */
-typedef void (^ZKSubmitTransactionCompletionBlock)(ZKTransaction *_Nullable transaction, NSError *_Nullable error);
-
-/** Completion block used by methods in `ZKWallet` class. */
-typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NSError *_Nullable error);
 
 @interface ZKWallet (ZKWalletCallbackCompletion)
 
@@ -53,50 +41,6 @@ typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, 
                    feeRate:(nonnull NSDecimalNumber *)feeRate
                    sendMax:(BOOL)sendMax
                 completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
-
-/**
-<code>composeInternalFiatTransaction</code> completion handler extension.
-@see `-[ZKWallet composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:]`
-*/
-- (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
-                           toAccountId:(nonnull NSString *)toAccountId
-                                amount:(nullable NSDecimalNumber *)amount
-                               sendMax:(BOOL)sendMax
-                            completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
-
-/**
-<code>composeInternalFiatTransaction</code> completion handler extension.
-@see `-[ZKWallet composeTransactionToNominatedAccount:amount:sendMax:callback:]`
-*/
-- (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
-                                      amount:(nullable NSDecimalNumber *)amount
-                                     sendMax:(BOOL)sendMax
-                                  completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
-
-/**
-<code>composeExchange</code> completion handler extension.
-@see `-[ZKWallet composeExchange:toAccountId:amount:sendMax:callback:]`
-*/
-- (void)composeExchange:(nonnull NSString *)fromAccountId
-            toAccountId:(nonnull NSString *)toAccountId
-                 amount:(nullable NSDecimalNumber *)amount
-                sendMax:(BOOL)sendMax
-             completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler;
-
-/**
-<code>submitTransaction</code> completion handler extension.
-@see `-[ZKWallet submitTransaction:metadata:callback:]`
-*/
-- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
-                 metadata:(nullable NSString *)metadata
-               completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler;
-
-/**
-<code>submitExchange</code> completion handler extension.
-@see `-[ZKWallet submitExchange:callback:]`
-*/
-- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
-            completion:(_Nonnull ZKSubmitExchangeCompletionBlock)completionHandler;
 
 @end
 

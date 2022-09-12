@@ -29,6 +29,7 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKCurrencyCode.h"
 #import "ZKNetworkType.h"
 #import "ZKAccountType.h"
+#import "ZKCustodyType.h"
 #import "ZKTransactionFeeRate.h"
 #import "ZKChangeListener.h"
 #import "ZKLogListener.h"

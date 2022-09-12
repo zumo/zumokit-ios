@@ -17,6 +17,10 @@
 #import "CardDetailsCallback.h"
 #import "PinCallback.h"
 #import "AuthenticationConfigCallback.h"
+#import "ComposeTransactionCallback.h"
+#import "ComposeExchangeCallback.h"
+#import "SubmitTransactionCallback.h"
+#import "SubmitExchangeCallback.h"
 
 @implementation ZKUser (ZKUserCallbackCompletion)
 
@@ -42,8 +46,7 @@
     [self recoverWallet:mnemonic password:password callback:[[WalletCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
-- (void)makeFiatCustomer:(nonnull NSString *)network
-               firstName:(nonnull NSString *)firstName
+- (void)makeFiatCustomer:(nonnull NSString *)firstName
               middleName:(nullable NSString *)middleName
                 lastName:(nonnull NSString *)lastName
              dateOfBirth:(nonnull NSString *)dateOfBirth
@@ -51,13 +54,12 @@
                    phone:(nonnull NSString *)phone
                  address:(nonnull ZKAddress *)address
               completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
-    [self makeFiatCustomer:network firstName:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone address:address callback:[[SuccessCallback alloc] initWithCompletionHandler: completionHandler]];
+    [self makeFiatCustomer:firstName middleName:middleName lastName:lastName dateOfBirth:dateOfBirth email:email phone:phone address:address callback:[[SuccessCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
-- (void)createFiatAccount:(nonnull NSString *)network
-             currencyCode:(nonnull NSString *)currencyCode
-               completion:(_Nonnull ZKAccountCompletionBlock)completionHandler {
-    [self createFiatAccount:network currencyCode:currencyCode callback:[[AccountCallback alloc] initWithCompletionHandler: completionHandler]];
+- (void)createAccount:(nonnull NSString *)currencyCode
+           completion:(_Nonnull ZKAccountCompletionBlock)completionHandler {
+    [self createAccount:currencyCode callback:[[AccountCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 - (void)getNominatedAccountFiatProperties:(nonnull NSString *)accountId
@@ -105,5 +107,59 @@
                completion:(_Nonnull ZKSuccessCompletionBlock)completionHandler {
     [self setAuthentication:cardId knowledgeBase:knowledgeBase callback:[[SuccessCallback alloc] initWithCompletionHandler:completionHandler]];
 };
+
+
+- (void)composeTransaction:(nonnull NSString *)fromAccountId
+               toAccountId:(nonnull NSString *)toAccountId
+                    amount:(nullable NSDecimalNumber *)amount
+                   sendMax:(BOOL)sendMax
+                completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
+    [self composeTransaction:fromAccountId toAccountId:toAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)composeCustodyWithdrawTransaction:(nonnull NSString *)fromAccountId
+                              destination:(nonnull NSString *)destination
+                                   amount:(nullable NSDecimalNumber *)amount
+                                  sendMax:(BOOL)sendMax
+                              completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
+    [self composeCustodyWithdrawTransaction:fromAccountId destination:destination amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)composeNominatedTransaction:(nonnull NSString *)fromAccountId
+                             amount:(nullable NSDecimalNumber *)amount
+                            sendMax:(BOOL)sendMax
+                         completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
+        [self composeNominatedTransaction:fromAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)composeExchange:(nonnull NSString *)fromAccountId
+            toAccountId:(nonnull NSString *)toAccountId
+                 amount:(nullable NSDecimalNumber *)amount
+                sendMax:(BOOL)sendMax
+             completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler {
+
+    [self composeExchange:fromAccountId
+              toAccountId:toAccountId
+                   amount:amount
+                  sendMax:sendMax
+                 callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
+
+};
+
+
+- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+                 metadata:(nullable NSString *)metadata
+               completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler {
+    [self submitTransaction:composedTransaction
+                   metadata:metadata
+                   callback:[[SubmitTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
+- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
+            completion:(_Nonnull ZKSubmitExchangeCompletionBlock)completionHandler {
+    [self submitExchange:composedExchange
+                callback:[[SubmitExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
+};
+
 
 @end

@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 4.0.3 Docs
+          ZumoKit 4.1.0-alpha.2 Docs
         </a>
         
       </p>
@@ -105,6 +105,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKCurrencyType.html">ZKCurrencyType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCustodyType.html">ZKCustodyType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKExchange.html">ZKExchange</a>
@@ -247,6 +250,12 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyTypeFIAT">ZKCurrencyTypeFIAT</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCustodyTypeCUSTODY">ZKCustodyTypeCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCustodyTypeNONCUSTODY">ZKCustodyTypeNONCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusCONFIRMED">ZKExchangeStatusCONFIRMED</a>
               </li>
               <li class="nav-group-task">
@@ -340,6 +349,15 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCRYPTO">ZKTransactionTypeCRYPTO</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODY">ZKTransactionTypeCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODYDEPOSIT">ZKTransactionTypeCUSTODYDEPOSIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODYWITHDRAW">ZKTransactionTypeCUSTODYWITHDRAW</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeFIAT">ZKTransactionTypeFIAT</a>
               </li>
               <li class="nav-group-task">
@@ -350,9 +368,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTNOTFOUND">ZKZumoKitErrorCodeACCOUNTNOTFOUND</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeALREADYFIATCUSTOMER">ZKZumoKitErrorCodeALREADYFIATCUSTOMER</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
@@ -526,9 +541,6 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUNKNOWNERROR">ZKZumoKitErrorCodeUNKNOWNERROR</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER">ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
               </li>
               <li class="nav-group-task">
@@ -658,10 +670,10 @@
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKCardDetailsCompletionBlock">ZKCardDetailsCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
@@ -682,10 +694,10 @@
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKPinCompletionBlock">ZKPinCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
@@ -728,7 +740,7 @@ exchange has to be composed via one of the compose methods, then <code><a href="
 User wallet instance can be obtained by creating, unlocking or recovering user wallet via <code><a href="../Classes/ZKUser.html">ZKUser</a></code> instance.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L21-L144">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L16-L64">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -750,7 +762,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Compose BTC or BSV transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#crypto">Send Transactions</a> guide for usage details.
+                        <p>Compose BTC or BSV transaction. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#crypto">Send Transactions</a> guide for usage details.
  <p>
  On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code>  is returned via callback.</p>
 
@@ -861,7 +873,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L36-L42">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L31-L37">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -879,7 +891,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Compose Ethereum transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
+                        <p>Compose Ethereum transaction. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#ethereum">Send Transactions</a> guide for usage details.
  <p>
  On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
 
@@ -1017,451 +1029,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L59-L67">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:"></a>
-                    <a name="//apple_ref/objc/Method/-composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:">-composeInternalFiatTransaction:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compose fiat transaction between users in Zumo ecosystem asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-fiat-transaction">Send Transactions</a> guide for usage details.
- <p>
- On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeInternalFiatTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
-                           <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
-                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                               <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-                              <span class="nf">callback</span><span class="p">:</span>
-                                  <span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span>
-                                      <span class="n">callback</span><span class="p">;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>fromAccountId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>toAccountId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>amount</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>amount in source account currency</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>sendMax</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>send maximum possible funds to destination</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>an interface to receive the result or error</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L80-L84">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:callback:"></a>
-                    <a name="//apple_ref/objc/Method/-composeTransactionToNominatedAccount:amount:sendMax:callback:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:callback:">-composeTransactionToNominatedAccount:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compose transaction to nominated account asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#external-fiat-transaction">Send Transactions</a> guide for usage details.
- <p>
- On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> object is returned via callback.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-    <span class="nf">composeTransactionToNominatedAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
-                                  <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                                 <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-                                <span class="nf">callback</span><span class="p">:</span>
-                                    <span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span>
-                                        <span class="n">callback</span><span class="p">;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>fromAccountId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>amount</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>amount in source account currency</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>sendMax</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>send maximum possible funds to destination</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>an interface to receive the result or error</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L96-L99">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)submitTransaction:metadata:callback:"></a>
-                    <a name="//apple_ref/objc/Method/-submitTransaction:metadata:callback:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitTransaction:metadata:callback:">-submitTransaction:<wbr>metadata:<wbr>callback:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Submit a transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
- <p>
- On success <code><a href="../Classes/ZKTransaction.html">ZKTransaction</a></code> object is returned via callback.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedTransaction</span>
-                 <span class="nf">metadata</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">metadata</span>
-                 <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKSubmitTransactionCallback.html">ZKSubmitTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>composedTransaction</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Composed transaction retrieved as a result
-                         of one of the compose transaction methods</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>metadata</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Optional metadata (stringified JSON) that will be attached to transaction</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An interface to receive the result or error</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L111-L113">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:amount:sendMax:callback:"></a>
-                    <a name="//apple_ref/objc/Method/-composeExchange:toAccountId:amount:sendMax:callback:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:amount:sendMax:callback:">-composeExchange:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Compose Bitcoin transaction asynchronously. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
- <p>
- On success <code><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></code>  is returned via callback.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
-            <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
-                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-               <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>fromAccountId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>toAccountId</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>amount</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>amount in deposit account currency</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>sendMax</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>exchange maximum possible funds</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>an interface to receive the result or error</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L126-L130">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)submitExchange:callback:"></a>
-                    <a name="//apple_ref/objc/Method/-submitExchange:callback:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitExchange:callback:">-submitExchange:<wbr>callback:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Submit an exchange asynchronously. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
- <p>
- On success <code><a href="../Classes/ZKExchange.html">ZKExchange</a></code> object is returned via callback.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedExchange</span>
-              <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKSubmitExchangeCallback.html">ZKSubmitExchangeCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>composedExchange</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Composed exchange retrieved as the result
-                      of <code>composeExchange</code> method</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>callback</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>An interface to receive the result or error</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L141-L142">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKWallet.h#L54-L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1512,7 +1080,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                          <span class="nf">data</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">data</span>
                         <span class="nf">nonce</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">nonce</span>
                       <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-                   <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                   <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
                                   <span class="n">completionHandler</span><span class="p">;</span></code></pre>
 
                         </div>
@@ -1523,7 +1091,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L35-L43">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L23-L31">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1559,7 +1127,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                     <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
                    <span class="nf">feeRate</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">feeRate</span>
                    <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-                <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
                                <span class="n">completionHandler</span><span class="p">;</span></code></pre>
 
                         </div>
@@ -1570,229 +1138,7 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L49-L55">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-composeInternalFiatTransaction:toAccountId:amount:sendMax:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:completion:">-composeInternalFiatTransaction:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p><code>composeInternalFiatTransaction</code> completion handler extension.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:">-[ZKWallet composeInternalFiatTransaction:toAccountId:amount:sendMax:callback:]</a></code>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeInternalFiatTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
-                           <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
-                                <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                               <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-                            <span class="nf">completion</span><span class="p">:</span>
-                                <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
-                                    <span class="n">completionHandler</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeInternalFiatTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L61-L65">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-composeTransactionToNominatedAccount:amount:sendMax:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:completion:">-composeTransactionToNominatedAccount:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p><code>composeInternalFiatTransaction</code> completion handler extension.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeTransactionToNominatedAccount:amount:sendMax:callback:">-[ZKWallet composeTransactionToNominatedAccount:amount:sendMax:callback:]</a></code>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-    <span class="nf">composeTransactionToNominatedAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
-                                  <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                                 <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-                              <span class="nf">completion</span><span class="p">:</span>
-                                  <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
-                                      <span class="n">completionHandler</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeTransaction</span><span class="p">(</span><span class="n">toNominatedAccount</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L71-L74">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:amount:sendMax:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-composeExchange:toAccountId:amount:sendMax:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:amount:sendMax:completion:">-composeExchange:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p><code>composeExchange</code> completion handler extension.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)composeExchange:toAccountId:amount:sendMax:callback:">-[ZKWallet composeExchange:toAccountId:amount:sendMax:callback:]</a></code>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
-            <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
-                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
-                <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
-             <span class="nf">completion</span><span class="p">:</span>
-                 <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeExchange</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L80-L84">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)submitTransaction:metadata:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-submitTransaction:metadata:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitTransaction:metadata:completion:">-submitTransaction:<wbr>metadata:<wbr>completion:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p><code>submitTransaction</code> completion handler extension.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)submitTransaction:metadata:callback:">-[ZKWallet submitTransaction:metadata:callback:]</a></code>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedTransaction</span>
-                 <span class="nf">metadata</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">metadata</span>
-               <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
-                              <span class="n">completionHandler</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">submitTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">composedTransaction</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span><span class="p">,</span> <span class="nv">metadata</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKTransaction.html">ZKTransaction</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L90-L92">Show on GitHub</a>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:objc(cs)ZKWallet(im)submitExchange:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-submitExchange:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKWallet(im)submitExchange:completion:">-submitExchange:<wbr>completion:<wbr></a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p><code>submitExchange</code> completion handler extension.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKWallet.html#/c:objc(cs)ZKWallet(im)submitExchange:callback:">-[ZKWallet submitExchange:callback:]</a></code>
-
-</div>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedExchange</span>
-            <span class="nf">completion</span><span class="p">:</span>
-                <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">submitExchange</span><span class="p">(</span><span class="n">_</span> <span class="nv">composedExchange</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKExchange.html">ZKExchange</a></span></code></pre>
-
-                        </div>
-                      </div>
-                      <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L98-L99">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKWallet+CallbackCompletion.h#L37-L43">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1805,8 +1151,8 @@ User wallet instance can be obtained by creating, unlocking or recovering user w
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-09-01)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-09-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

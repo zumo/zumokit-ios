@@ -20,8 +20,6 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR;
 extern NSString * __nonnull const ZKZumoKitErrorCodeNOCONNECTION;
 /** New account could not be created. Account already exists. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED;
-/** Could not make user fiat customer. User is already fiat customer. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeALREADYFIATCUSTOMER;
 /** Requested account not found. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND;
 /** Amount not set. Either send max has to be enabled or send max set. */
@@ -61,11 +59,7 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeGASOVERFLOW;
 extern NSString * __nonnull const ZKZumoKitErrorCodeGASTOOLOW;
 /** Change account and source accounts have to be on the same network. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINCOMPATIBLENETWORKTYPES;
-/**
- * Unknown error has occured
- * Incorrect account selected.
- * Account currency does not match the requeirements of requested operation.
- */
+/** Incorrect account selected. Account does not match the requirements of requested operation. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED;
 /**
  * Incorrect change account selected.
@@ -143,8 +137,6 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONAMOUNTTOOSMALL;
 extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONSERVICEERROR;
 /** Resulting transaction is too large. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeTRANSACTIONTOOLARGE;
-/** Fiat account could no be created. User is not yet a fiat customer on selected network. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER;
 /** Unspent transaction output could not be signed. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeUTXOSIGNINGERROR;
 /** Cannot set amount when send max enabled. Set amount to null if trying t send maximum funds. */

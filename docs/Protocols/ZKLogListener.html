@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 4.0.3 Docs
+          ZumoKit 4.1.0-alpha.2 Docs
         </a>
         
       </p>
@@ -105,6 +105,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKCurrencyType.html">ZKCurrencyType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCustodyType.html">ZKCustodyType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKExchange.html">ZKExchange</a>
@@ -247,6 +250,12 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyTypeFIAT">ZKCurrencyTypeFIAT</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCustodyTypeCUSTODY">ZKCustodyTypeCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCustodyTypeNONCUSTODY">ZKCustodyTypeNONCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusCONFIRMED">ZKExchangeStatusCONFIRMED</a>
               </li>
               <li class="nav-group-task">
@@ -340,6 +349,15 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCRYPTO">ZKTransactionTypeCRYPTO</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODY">ZKTransactionTypeCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODYDEPOSIT">ZKTransactionTypeCUSTODYDEPOSIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODYWITHDRAW">ZKTransactionTypeCUSTODYWITHDRAW</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeFIAT">ZKTransactionTypeFIAT</a>
               </li>
               <li class="nav-group-task">
@@ -350,9 +368,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTNOTFOUND">ZKZumoKitErrorCodeACCOUNTNOTFOUND</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeALREADYFIATCUSTOMER">ZKZumoKitErrorCodeALREADYFIATCUSTOMER</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
@@ -526,9 +541,6 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUNKNOWNERROR">ZKZumoKitErrorCodeUNKNOWNERROR</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER">ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
               </li>
               <li class="nav-group-task">
@@ -658,10 +670,10 @@
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKCardDetailsCompletionBlock">ZKCardDetailsCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
@@ -682,10 +694,10 @@
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKPinCompletionBlock">ZKPinCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
@@ -723,7 +735,7 @@
             <p>Log interface used to listen for debug information in <code>ZKZumoKit</code> class.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKLogListener.h#L8-L12">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKLogListener.h#L8-L12">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -761,7 +773,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKLogListener.h#L10">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKLogListener.h#L10">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -774,8 +786,8 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-09-01)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-09-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

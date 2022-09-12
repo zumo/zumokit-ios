@@ -7,12 +7,7 @@
 #import "DJIError.h"
 #import "DJIMarshal+Private.h"
 #import "NSDecimalNumber+ZumoKit.h"
-#import "ZKComposeExchangeCallback+Private.h"
 #import "ZKComposeTransactionCallback+Private.h"
-#import "ZKComposedExchange+Private.h"
-#import "ZKComposedTransaction+Private.h"
-#import "ZKSubmitExchangeCallback+Private.h"
-#import "ZKSubmitTransactionCallback+Private.h"
 #include <exception>
 #include <stdexcept>
 #include <utility>
@@ -74,64 +69,6 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
                                                      ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(nonce),
                                                      ::djinni::Bool::toCpp(sendMax),
                                                      ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
-                           toAccountId:(nonnull NSString *)toAccountId
-                                amount:(nullable NSDecimalNumber *)amount
-                               sendMax:(BOOL)sendMax
-                              callback:(nullable id<ZKComposeTransactionCallback>)callback {
-    try {
-        _cppRefHandle.get()->compose_internal_fiat_transaction(::djinni::String::toCpp(fromAccountId),
-                                                               ::djinni::String::toCpp(toAccountId),
-                                                               ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
-                                                               ::djinni::Bool::toCpp(sendMax),
-                                                               ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
-                                      amount:(nullable NSDecimalNumber *)amount
-                                     sendMax:(BOOL)sendMax
-                                    callback:(nullable id<ZKComposeTransactionCallback>)callback {
-    try {
-        _cppRefHandle.get()->compose_transaction_to_nominated_account(::djinni::String::toCpp(fromAccountId),
-                                                                      ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
-                                                                      ::djinni::Bool::toCpp(sendMax),
-                                                                      ::djinni_generated::ComposeTransactionCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
-                 metadata:(nullable NSString *)metadata
-                 callback:(nullable id<ZKSubmitTransactionCallback>)callback {
-    try {
-        _cppRefHandle.get()->submit_transaction(::djinni_generated::ComposedTransaction::toCpp(composedTransaction),
-                                                ::djinni::Optional<std::optional, ::djinni::String>::toCpp(metadata),
-                                                ::djinni_generated::SubmitTransactionCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)composeExchange:(nonnull NSString *)fromAccountId
-            toAccountId:(nonnull NSString *)toAccountId
-                 amount:(nullable NSDecimalNumber *)amount
-                sendMax:(BOOL)sendMax
-               callback:(nullable id<ZKComposeExchangeCallback>)callback {
-    try {
-        _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(fromAccountId),
-                                              ::djinni::String::toCpp(toAccountId),
-                                              ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
-                                              ::djinni::Bool::toCpp(sendMax),
-                                              ::djinni_generated::ComposeExchangeCallback::toCpp(callback));
-    } DJINNI_TRANSLATE_EXCEPTIONS()
-}
-
-- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
-              callback:(nullable id<ZKSubmitExchangeCallback>)callback {
-    try {
-        _cppRefHandle.get()->submit_exchange(::djinni_generated::ComposedExchange::toCpp(composedExchange),
-                                             ::djinni_generated::SubmitExchangeCallback::toCpp(callback));
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 

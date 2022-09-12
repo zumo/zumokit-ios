@@ -9,9 +9,6 @@
 
 #import "ZKWallet+CallbackCompletion.h"
 #import "ComposeTransactionCallback.h"
-#import "ComposeExchangeCallback.h"
-#import "SubmitTransactionCallback.h"
-#import "SubmitExchangeCallback.h"
 
 @implementation ZKWallet (ZKWalletCallbackCompletion)
 
@@ -54,50 +51,6 @@
                      sendMax:sendMax
                     callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 
-};
-
-- (void)composeInternalFiatTransaction:(nonnull NSString *)fromAccountId
-                           toAccountId:(nonnull NSString *)toAccountId
-                                amount:(nullable NSDecimalNumber *)amount
-                               sendMax:(BOOL)sendMax
-                            completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
-    [self composeInternalFiatTransaction:fromAccountId toAccountId:toAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
-};
-
-- (void)composeTransactionToNominatedAccount:(nonnull NSString *)fromAccountId
-                                      amount:(nullable NSDecimalNumber *)amount
-                                     sendMax:(BOOL)sendMax
-                                  completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler {
-        [self composeTransactionToNominatedAccount:fromAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
-};
-
-- (void)composeExchange:(nonnull NSString *)fromAccountId
-            toAccountId:(nonnull NSString *)toAccountId
-                 amount:(nullable NSDecimalNumber *)amount
-                sendMax:(BOOL)sendMax
-             completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler {
-
-    [self composeExchange:fromAccountId
-              toAccountId:toAccountId
-                   amount:amount
-                  sendMax:sendMax
-                 callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
-
-};
-
-
-- (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
-                 metadata:(nullable NSString *)metadata
-               completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler {
-    [self submitTransaction:composedTransaction
-                   metadata:metadata
-                   callback:[[SubmitTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
-};
-
-- (void)submitExchange:(nonnull ZKComposedExchange *)composedExchange
-            completion:(_Nonnull ZKSubmitExchangeCompletionBlock)completionHandler {
-    [self submitExchange:composedExchange
-                callback:[[SubmitExchangeCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
 @end
