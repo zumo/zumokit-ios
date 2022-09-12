@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ZKUserCallback Protocol Reference</title>
+    <title>ZKCustodyType Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/objc/Protocol/ZKUserCallback" class="dashAnchor"></a>
+    <a name="//apple_ref/objc/Class/ZKCustodyType" class="dashAnchor"></a>
 
-    <a title="ZKUserCallback Protocol Reference"></a>
+    <a title="ZKCustodyType Class Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">ZumoKit Reference</a>
       <img class="carat" src="../img/carat.png" alt=""/>
-      ZKUserCallback Protocol Reference
+      ZKCustodyType Class Reference
     </p>
 
     <div class="content-wrapper">
@@ -719,23 +719,25 @@
 
         <section class="section">
           <div class="section-content top-matter">
-            <h1>ZKUserCallback</h1>
+            <h1>ZKCustodyType</h1>
               <div class="declaration">
                 <div class="language">
                   <p class="aside-title">Objective-C</p>
-                  <pre class="highlight objective_c"><code><span class="k">@protocol</span> <span class="nc">ZKUserCallback</span></code></pre>
+                  <pre class="highlight objective_c"><code><span class="k">@interface</span> <span class="nc">ZKCustodyType</span> <span class="p">:</span> <span class="nc">NSObject</span></code></pre>
 
                 </div>
                 <div class="language">
                   <p class="aside-title">Swift</p>
-                  <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">ZKUserCallback</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">ZKCustodyType</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Callback interface used by methods in <code>ZKZumoKit</code> class</p>
+            <p>Account custody type, &lsquo;CUSTODY&rsquo; or &lsquo;NON-CUSTODY&rsquo;.
+<p>
+Only relevant for crypto accounts. Fiat accounts are always of type &lsquo;CUSTODY&rsquo;.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUserCallback.h#L9-L15">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKCustodyType.h#L11-L15">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -747,9 +749,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKUserCallback(im)onError:"></a>
-                    <a name="//apple_ref/objc/Method/-onError:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKUserCallback(im)onError:">-onError:<wbr></a>
+                    <a name="/c:objc(cs)ZKCustodyType(im)init"></a>
+                    <a name="//apple_ref/objc/Method/-init" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyType(im)init">-init</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -763,17 +765,17 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onError</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSError</span> <span class="o">*</span><span class="p">)</span><span class="nv">e</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">init</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onError</span><span class="p">(</span><span class="n">_</span> <span class="nv">e</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUserCallback.h#L11">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKCustodyType.h#L12">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -781,9 +783,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(pl)ZKUserCallback(im)onSuccess:"></a>
-                    <a name="//apple_ref/objc/Method/-onSuccess:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(pl)ZKUserCallback(im)onSuccess:">-onSuccess:<wbr></a>
+                    <a name="/c:objc(cs)ZKCustodyType(cm)custodyType"></a>
+                    <a name="//apple_ref/objc/Method/+custodyType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyType(cm)custodyType">+custodyType</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -797,17 +799,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">onSuccess</span><span class="p">:(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/ZKUser.html">ZKUser</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">user</span><span class="p">;</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">onSuccess</span><span class="p">(</span><span class="n">_</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKUser.html">ZKUser</a></span><span class="p">?)</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">+</span> <span class="p">(</span><span class="n">nonnull</span> <span class="n">instancetype</span><span class="p">)</span><span class="n">custodyType</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUserCallback.h#L13">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKCustodyType.h#L13">Show on GitHub</a>
                       </div>
                     </section>
                   </div>

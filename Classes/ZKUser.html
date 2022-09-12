@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 4.0.3 Docs
+          ZumoKit 4.1.0-alpha.2 Docs
         </a>
         
       </p>
@@ -105,6 +105,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKCurrencyType.html">ZKCurrencyType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ZKCustodyType.html">ZKCustodyType</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ZKExchange.html">ZKExchange</a>
@@ -247,6 +250,12 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCurrencyTypeFIAT">ZKCurrencyTypeFIAT</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCustodyTypeCUSTODY">ZKCustodyTypeCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKCustodyTypeNONCUSTODY">ZKCustodyTypeNONCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKExchangeStatusCONFIRMED">ZKExchangeStatusCONFIRMED</a>
               </li>
               <li class="nav-group-task">
@@ -340,6 +349,15 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCRYPTO">ZKTransactionTypeCRYPTO</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODY">ZKTransactionTypeCUSTODY</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODYDEPOSIT">ZKTransactionTypeCUSTODYDEPOSIT</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeCUSTODYWITHDRAW">ZKTransactionTypeCUSTODYWITHDRAW</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKTransactionTypeFIAT">ZKTransactionTypeFIAT</a>
               </li>
               <li class="nav-group-task">
@@ -350,9 +368,6 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeACCOUNTNOTFOUND">ZKZumoKitErrorCodeACCOUNTNOTFOUND</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeALREADYFIATCUSTOMER">ZKZumoKitErrorCodeALREADYFIATCUSTOMER</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeAMOUNTNOTSET">ZKZumoKitErrorCodeAMOUNTNOTSET</a>
@@ -526,9 +541,6 @@
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUNKNOWNERROR">ZKZumoKitErrorCodeUNKNOWNERROR</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER">ZKZumoKitErrorCodeUSERNOTFIATCUSTOMER</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Constants.html#/c:@ZKZumoKitErrorCodeUTXOSIGNINGERROR">ZKZumoKitErrorCodeUTXOSIGNINGERROR</a>
               </li>
               <li class="nav-group-task">
@@ -658,10 +670,10 @@
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKCardDetailsCompletionBlock">ZKCardDetailsCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZumoKit.h@T@ZKExchangeRates">ZKExchangeRates</a>
@@ -682,10 +694,10 @@
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKPinCompletionBlock">ZKPinCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKWallet+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
+                <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSuccessCompletionBlock">ZKSuccessCompletionBlock</a>
@@ -730,7 +742,7 @@ See <a target="_top" href="https://developers.zumo.money/docs/guides/manage-user
 guides for usage details.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L30-L273">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L36-L367">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -773,7 +785,7 @@ guides for usage details.</p>
                         <p>user id</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L36">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L42">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -812,7 +824,7 @@ guides for usage details.</p>
                         <p>user integrator id</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L42">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L48">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -851,7 +863,7 @@ guides for usage details.</p>
                         <p>true if user has wallet</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L48">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L54">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -859,9 +871,9 @@ guides for usage details.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKUser(im)isFiatCustomer:"></a>
-                    <a name="//apple_ref/objc/Method/-isFiatCustomer:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKUser(im)isFiatCustomer:">-isFiatCustomer:<wbr></a>
+                    <a name="/c:objc(cs)ZKUser(im)isFiatCustomer"></a>
+                    <a name="//apple_ref/objc/Method/-isFiatCustomer" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)isFiatCustomer">-isFiatCustomer</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -869,52 +881,28 @@ guides for usage details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Check if user is a fiat customer on &lsquo;MAINNET&rsquo; or &lsquo;TESTNET&rsquo; network.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKNetworkType.html">ZKNetworkType</a></code>
-
-</div>
+                        <p>Check if user is a registered fiat customer.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="nf">isFiatCustomer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">BOOL</span><span class="p">)</span><span class="n">isFiatCustomer</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isFiatCustomer</span><span class="p">(</span><span class="n">_</span> <span class="nv">network</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isFiatCustomer</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                       <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>network</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>&lsquo;MAINNET&rsquo; or &lsquo;TESTNET&rsquo;</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
                         <h4>Return Value</h4>
-                        <p>true if user is currenly active user.</p>
+                        <p>true if user is a registered fiat customer.</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L56">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L60">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -922,9 +910,9 @@ guides for usage details.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKUser(im)makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:"></a>
-                    <a name="//apple_ref/objc/Method/-makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKUser(im)makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:">-makeFiatCustomer:<wbr>firstName:<wbr>middleName:<wbr>lastName:<wbr>dateOfBirth:<wbr>email:<wbr>phone:<wbr>address:<wbr>callback:<wbr></a>
+                    <a name="/c:objc(cs)ZKUser(im)makeFiatCustomer:middleName:lastName:dateOfBirth:email:phone:address:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-makeFiatCustomer:middleName:lastName:dateOfBirth:email:phone:address:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)makeFiatCustomer:middleName:lastName:dateOfBirth:email:phone:address:callback:">-makeFiatCustomer:<wbr>middleName:<wbr>lastName:<wbr>dateOfBirth:<wbr>email:<wbr>phone:<wbr>address:<wbr>callback:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -932,20 +920,14 @@ guides for usage details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Make user fiat customer on specified network by providing user&rsquo;s personal details.</p>
-<div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKNetworkType.html">ZKNetworkType</a></code>
-
-</div>
+                        <p>Make user fiat customer by providing user&rsquo;s personal details.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">makeFiatCustomer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span>
-               <span class="nf">firstName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">firstName</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">makeFiatCustomer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">firstName</span>
               <span class="nf">middleName</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">middleName</span>
                 <span class="nf">lastName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">lastName</span>
              <span class="nf">dateOfBirth</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">dateOfBirth</span>
@@ -960,18 +942,6 @@ guides for usage details.</p>
                         <h4>Parameters</h4>
                         <table class="graybox">
                           <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>network</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>&lsquo;MAINNET&rsquo; or &lsquo;TESTNET&rsquo;</p>
-                                </div>
-                              </td>
-                            </tr>
                             <tr>
                               <td>
                                 <code>
@@ -1072,7 +1042,7 @@ guides for usage details.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L71-L79">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L73-L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1080,9 +1050,9 @@ guides for usage details.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKUser(im)createFiatAccount:currencyCode:callback:"></a>
-                    <a name="//apple_ref/objc/Method/-createFiatAccount:currencyCode:callback:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKUser(im)createFiatAccount:currencyCode:callback:">-createFiatAccount:<wbr>currencyCode:<wbr>callback:<wbr></a>
+                    <a name="/c:objc(cs)ZKUser(im)createAccount:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-createAccount:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)createAccount:callback:">-createAccount:<wbr>callback:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -1090,14 +1060,11 @@ guides for usage details.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create fiat account on specified network and currency code. User must already be fiat customer on specified network.</p>
+                        <p>Create custody or fiat account for specified currency. When creating a fiat account, 
+user must already be fiat customer.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
     <code><a href="../Classes/ZKAccount.html">ZKAccount</a></code>
-
-</div><div class="aside aside-see">
-    <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKNetworkType.html">ZKNetworkType</a></code>
 
 </div>
 
@@ -1106,9 +1073,8 @@ guides for usage details.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">createFiatAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span>
-             <span class="nf">currencyCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyCode</span>
-                 <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKAccountCallback.html">ZKAccountCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">createAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyCode</span>
+             <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKAccountCallback.html">ZKAccountCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
@@ -1119,24 +1085,12 @@ guides for usage details.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>network</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>&lsquo;MAINNET&rsquo; or &lsquo;TESTNET&rsquo;</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
                                 <em>currencyCode</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>country code in ISO 4217 format, e.g. &lsquo;GBP&rsquo;</p>
+                                  <p>country code, e.g. &lsquo;GBP&rsquo;, &lsquo;BTC&rsquo;, &lsquo;ETH&rsquo;</p>
                                 </div>
                               </td>
                             </tr>
@@ -1156,7 +1110,552 @@ guides for usage details.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L89-L91">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L89-L90">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeTransaction:toAccountId:amount:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeTransaction:toAccountId:amount:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeTransaction:toAccountId:amount:sendMax:callback:">-composeTransaction:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose transaction between custody or fiat accounts in Zumo ecosystem. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#internal-transaction">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+               <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                    <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                   <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                  <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>custody or fiat <code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>custody or fiat <code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in source account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L103-L107">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeCustodyWithdrawTransaction:destination:amount:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeCustodyWithdrawTransaction:destination:amount:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeCustodyWithdrawTransaction:destination:amount:sendMax:callback:">-composeCustodyWithdrawTransaction:<wbr>destination:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose custody withdraw transaction from custody account. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#custody-withdraw-transaction">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeCustodyWithdrawTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                              <span class="nf">destination</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">destination</span>
+                                   <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                                  <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                                 <span class="nf">callback</span><span class="p">:</span>
+                                     <span class="p">(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span>
+                                         <span class="n">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>custody <code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>destination</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>destination address or non-custodial account identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in source account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L120-L124">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeNominatedTransaction:amount:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeNominatedTransaction:amount:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeNominatedTransaction:amount:sendMax:callback:">-composeNominatedTransaction:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose transaction from user fiat account to user&rsquo;s nominated account. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#nominated-transaction">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></code> object is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeNominatedTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                             <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                            <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                           <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeTransactionCallback.html">ZKComposeTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span>
+                                        <span class="n">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in source account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>send maximum possible funds to destination</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L136-L139">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)submitTransaction:metadata:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-submitTransaction:metadata:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)submitTransaction:metadata:callback:">-submitTransaction:<wbr>metadata:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submit a transaction. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/send-transactions#submit-transaction">Send Transactions</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKTransaction.html">ZKTransaction</a></code> object is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedTransaction</span>
+                 <span class="nf">metadata</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">metadata</span>
+                 <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKSubmitTransactionCallback.html">ZKSubmitTransactionCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>composedTransaction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Composed transaction retrieved as a result
+                         of one of the compose transaction methods</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>metadata</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Optional metadata (stringified JSON) that will be attached to transaction</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L151-L153">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeExchange:toAccountId:amount:sendMax:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-composeExchange:toAccountId:amount:sendMax:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeExchange:toAccountId:amount:sendMax:callback:">-composeExchange:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Compose exchange. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></code>  is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+            <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+               <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKComposeExchangeCallback.html">ZKComposeExchangeCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>toAccountId</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code><a href="../Classes/ZKAccount.html">ZKAccount</a></code> identifier</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>amount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>amount in deposit account currency</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sendMax</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>exchange maximum possible funds</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>an interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L166-L170">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)submitExchange:callback:"></a>
+                    <a name="//apple_ref/objc/Method/-submitExchange:callback:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)submitExchange:callback:">-submitExchange:<wbr>callback:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Submit an exchange. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.
+ <p>
+ On success <code><a href="../Classes/ZKExchange.html">ZKExchange</a></code> object is returned via callback.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedExchange</span>
+              <span class="nf">callback</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">id</span><span class="o">&lt;</span><span class="n"><a href="../Protocols/ZKSubmitExchangeCallback.html">ZKSubmitExchangeCallback</a></span><span class="o">&gt;</span><span class="p">)</span><span class="nv">callback</span><span class="p">;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>composedExchange</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Composed exchange retrieved as the result
+                      of <code>composeExchange</code> method</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>callback</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An interface to receive the result or error</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L181-L182">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1229,7 +1728,7 @@ for explanation about nominated account.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L102-L103">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L193-L194">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1279,7 +1778,7 @@ for explanation about nominated account.</p>
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L110">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L201">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1392,7 +1891,7 @@ cannot be null or empty and only one answer per question type should be provided
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L125-L129">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L216-L220">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1504,7 +2003,7 @@ cannot be null or empty and only one answer per question type should be provided
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L144-L148">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L235-L239">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1571,7 +2070,7 @@ cannot be null or empty and only one answer per question type should be provided
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L156-L157">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L247-L248">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1633,7 +2132,7 @@ cannot be null or empty and only one answer per question type should be provided
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L164-L165">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L255-L256">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1695,7 +2194,7 @@ cannot be null or empty and only one answer per question type should be provided
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L172-L173">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L263-L264">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1777,7 +2276,7 @@ cannot be null or empty and only one answer per question type should be provided
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L188-L190">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L279-L281">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1859,7 +2358,7 @@ Mnemonic can be generated by <code>generateMnemonic</code> method in <code><a hr
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L201-L203">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L292-L294">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1926,7 +2425,7 @@ Mnemonic can be generated by <code>generateMnemonic</code> method in <code><a hr
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L211-L212">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L302-L303">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1988,7 +2487,7 @@ Mnemonic can be generated by <code>generateMnemonic</code> method in <code><a hr
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L219-L220">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L310-L311">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2047,7 +2546,7 @@ This is useful for validating seed phrase before trying to recover wallet.</p>
                         <p>true if mnemonic seed phrase corresponds to user&rsquo;s wallet</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L228">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L319">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2123,7 +2622,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L237-L239">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L328-L330">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2131,9 +2630,9 @@ This can be used if user forgets his password or wants to change his wallet pass
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKUser(im)getAccount:network:type:"></a>
-                    <a name="//apple_ref/objc/Method/-getAccount:network:type:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKUser(im)getAccount:network:type:">-getAccount:<wbr>network:<wbr>type:<wbr></a>
+                    <a name="/c:objc(cs)ZKUser(im)getAccount:network:type:custodyType:"></a>
+                    <a name="//apple_ref/objc/Method/-getAccount:network:type:custodyType:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)getAccount:network:type:custodyType:">-getAccount:<wbr>network:<wbr>type:<wbr>custodyType:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2154,6 +2653,10 @@ This can be used if user forgets his password or wants to change his wallet pass
     <p class="aside-title">See</p>
     <code><a href="../Classes/ZKAccountType.html">ZKAccountType</a></code>
 
+</div><div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKCustodyType.html">ZKCustodyType</a></code>
+
 </div>
 
                       </div>
@@ -2163,12 +2666,13 @@ This can be used if user forgets his password or wants to change his wallet pass
                           <p class="aside-title">Objective-C</p>
                           <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="n">nullable</span> <span class="n"><a href="../Classes/ZKAccount.html">ZKAccount</a></span> <span class="o">*</span><span class="p">)</span><span class="nf">getAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyCode</span>
                            <span class="nf">network</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span>
-                              <span class="nf">type</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span><span class="p">;</span></code></pre>
+                              <span class="nf">type</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
+                       <span class="nf">custodyType</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">custodyType</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getAccount</span><span class="p">(</span><span class="n">_</span> <span class="nv">currencyCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">network</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKAccount.html">ZKAccount</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getAccount</span><span class="p">(</span><span class="n">_</span> <span class="nv">currencyCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">network</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">custodyType</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKAccount.html">ZKAccount</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -2212,6 +2716,18 @@ This can be used if user forgets his password or wants to change his wallet pass
                                 </div>
                               </td>
                             </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>custodyType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>custdoy type, i.e. &lsquo;CUSTODY&rsquo; or &lsquo;NON-CUSTODY&rsquo;</p>
+                                </div>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </div>
@@ -2220,7 +2736,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         <p>account with selected parameters if it exists, null otherwise</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L251-L253">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L344-L347">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2259,7 +2775,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         <p>all user accounts</p>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L259">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L353">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2308,7 +2824,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L265">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L359">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2357,7 +2873,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </table>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L271">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Bridge/ObjC/ZKUser.h#L365">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2412,7 +2928,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L55-L57">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L71-L73">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2453,7 +2969,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L63-L64">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L79-L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2494,7 +3010,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L70-L71">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L86-L87">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2536,7 +3052,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L77-L79">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L93-L95">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2544,9 +3060,9 @@ This can be used if user forgets his password or wants to change his wallet pass
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKUser(im)makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKUser(im)makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:completion:">-makeFiatCustomer:<wbr>firstName:<wbr>middleName:<wbr>lastName:<wbr>dateOfBirth:<wbr>email:<wbr>phone:<wbr>address:<wbr>completion:<wbr></a>
+                    <a name="/c:objc(cs)ZKUser(im)makeFiatCustomer:middleName:lastName:dateOfBirth:email:phone:address:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-makeFiatCustomer:middleName:lastName:dateOfBirth:email:phone:address:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)makeFiatCustomer:middleName:lastName:dateOfBirth:email:phone:address:completion:">-makeFiatCustomer:<wbr>middleName:<wbr>lastName:<wbr>dateOfBirth:<wbr>email:<wbr>phone:<wbr>address:<wbr>completion:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2557,7 +3073,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         <p><code>makeFiatCustomer</code> completion handler extension.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:">-[ZKUser makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:]</a></code>
+    <code>-[ZKUser makeFiatCustomer:firstName:middleName:lastName:dateOfBirth:email:phone:address:callback:]</code>
 
 </div>
 
@@ -2566,8 +3082,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">makeFiatCustomer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span>
-               <span class="nf">firstName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">firstName</span>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">makeFiatCustomer</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">firstName</span>
               <span class="nf">middleName</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">middleName</span>
                 <span class="nf">lastName</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">lastName</span>
              <span class="nf">dateOfBirth</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">dateOfBirth</span>
@@ -2579,12 +3094,12 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">makeFiatCustomer</span><span class="p">(</span><span class="n">_</span> <span class="nv">network</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">firstName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">middleName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">dateOfBirth</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">phone</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKAddress.html">ZKAddress</a></span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">makeFiatCustomer</span><span class="p">(</span><span class="n">_</span> <span class="nv">firstName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">middleName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">lastName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">dateOfBirth</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">phone</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">address</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKAddress.html">ZKAddress</a></span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L85-L93">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L101-L108">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2592,9 +3107,9 @@ This can be used if user forgets his password or wants to change his wallet pass
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKUser(im)createFiatAccount:currencyCode:completion:"></a>
-                    <a name="//apple_ref/objc/Method/-createFiatAccount:currencyCode:completion:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKUser(im)createFiatAccount:currencyCode:completion:">-createFiatAccount:<wbr>currencyCode:<wbr>completion:<wbr></a>
+                    <a name="/c:objc(cs)ZKUser(im)createAccount:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-createAccount:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)createAccount:completion:">-createAccount:<wbr>completion:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -2602,10 +3117,10 @@ This can be used if user forgets his password or wants to change his wallet pass
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p><code>createFiatAccount</code> completion handler extension.</p>
+                        <p><code>createAccount</code> completion handler extension.</p>
 <div class="aside aside-see">
     <p class="aside-title">See</p>
-    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)createFiatAccount:currencyCode:callback:">-[ZKUser createFiatAccount:currencyCode:callback:]</a></code>
+    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)createAccount:callback:">-[ZKUser createAccount:callback:]</a></code>
 
 </div>
 
@@ -2614,19 +3129,18 @@ This can be used if user forgets his password or wants to change his wallet pass
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">createFiatAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">network</span>
-             <span class="nf">currencyCode</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyCode</span>
-               <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">createAccount</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">currencyCode</span>
+           <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKAccountCompletionBlock">ZKAccountCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createFiatAccount</span><span class="p">(</span><span class="n">_</span> <span class="nv">network</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">currencyCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKAccount.html">ZKAccount</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">createAccount</span><span class="p">(</span><span class="n">_</span> <span class="nv">currencyCode</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKAccount.html">ZKAccount</a></span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L99-L101">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L114-L115">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2670,7 +3184,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L107-L108">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L121-L122">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2711,7 +3225,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L114">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L128">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2755,7 +3269,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L120-L124">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L134-L138">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2799,7 +3313,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L130-L134">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L144-L148">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2841,7 +3355,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L140-L141">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L154-L155">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2882,7 +3396,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L147-L148">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L161-L162">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2923,7 +3437,7 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L154-L155">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L168-L169">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2965,7 +3479,274 @@ This can be used if user forgets his password or wants to change his wallet pass
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.0.3/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L161-L163">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L175-L177">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeTransaction:toAccountId:amount:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeTransaction:toAccountId:amount:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeTransaction:toAccountId:amount:sendMax:completion:">-composeTransaction:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)composeTransaction:toAccountId:amount:sendMax:callback:">-[ZKUser composeTransaction:toAccountId:amount:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+               <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                    <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                   <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                               <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L183-L187">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeCustodyWithdrawTransaction:destination:amount:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeCustodyWithdrawTransaction:destination:amount:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeCustodyWithdrawTransaction:destination:amount:sendMax:completion:">-composeCustodyWithdrawTransaction:<wbr>destination:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeCustodyWithdrawTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)composeCustodyWithdrawTransaction:destination:amount:sendMax:callback:">-[ZKUser composeCustodyWithdrawTransaction:destination:amount:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+    <span class="nf">composeCustodyWithdrawTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                          <span class="nf">destination</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">destination</span>
+                               <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                              <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                           <span class="nf">completion</span><span class="p">:</span>
+                               <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                                   <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeCustodyWithdrawTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L193-L197">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeNominatedTransaction:amount:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeNominatedTransaction:amount:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeNominatedTransaction:amount:sendMax:completion:">-composeNominatedTransaction:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeNominatedTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)composeNominatedTransaction:amount:sendMax:callback:">-[ZKUser composeNominatedTransaction:amount:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeNominatedTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                             <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                            <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+                         <span class="nf">completion</span><span class="p">:</span>
+                             <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeTransactionCompletionBlock">ZKComposeTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                                 <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeNominatedTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L203-L206">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)composeExchange:toAccountId:amount:sendMax:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-composeExchange:toAccountId:amount:sendMax:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)composeExchange:toAccountId:amount:sendMax:completion:">-composeExchange:<wbr>toAccountId:<wbr>amount:<wbr>sendMax:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>composeExchange</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)composeExchange:toAccountId:amount:sendMax:callback:">-[ZKUser composeExchange:toAccountId:amount:sendMax:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">composeExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+            <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                 <span class="nf">amount</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">amount</span>
+                <span class="nf">sendMax</span><span class="p">:(</span><span class="n">BOOL</span><span class="p">)</span><span class="nv">sendMax</span>
+             <span class="nf">completion</span><span class="p">:</span>
+                 <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKComposeExchangeCompletionBlock">ZKComposeExchangeCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">composeExchange</span><span class="p">(</span><span class="n">_</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">sendMax</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L212-L216">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)submitTransaction:metadata:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-submitTransaction:metadata:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)submitTransaction:metadata:completion:">-submitTransaction:<wbr>metadata:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>submitTransaction</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)submitTransaction:metadata:callback:">-[ZKUser submitTransaction:metadata:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitTransaction</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedTransaction</span>
+                 <span class="nf">metadata</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">metadata</span>
+               <span class="nf">completion</span><span class="p">:(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitTransactionCompletionBlock">ZKSubmitTransactionCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span>
+                              <span class="n">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">submitTransaction</span><span class="p">(</span><span class="n">_</span> <span class="nv">composedTransaction</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKComposedTransaction.html">ZKComposedTransaction</a></span><span class="p">,</span> <span class="nv">metadata</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKTransaction.html">ZKTransaction</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L222-L224">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKUser(im)submitExchange:completion:"></a>
+                    <a name="//apple_ref/objc/Method/-submitExchange:completion:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKUser(im)submitExchange:completion:">-submitExchange:<wbr>completion:<wbr></a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>submitExchange</code> completion handler extension.</p>
+<div class="aside aside-see">
+    <p class="aside-title">See</p>
+    <code><a href="../Classes/ZKUser.html#/c:objc(cs)ZKUser(im)submitExchange:callback:">-[ZKUser submitExchange:callback:]</a></code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">submitExchange</span><span class="p">:(</span><span class="n">nonnull</span> <span class="n"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span> <span class="o">*</span><span class="p">)</span><span class="nv">composedExchange</span>
+            <span class="nf">completion</span><span class="p">:</span>
+                <span class="p">(</span><span class="n"><a href="../Type%20Definitions.html#/c:ZKUser+CallbackCompletion.h@T@ZKSubmitExchangeCompletionBlock">ZKSubmitExchangeCompletionBlock</a></span> <span class="n">_Nonnull</span><span class="p">)</span><span class="nv">completionHandler</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">submitExchange</span><span class="p">(</span><span class="n">_</span> <span class="nv">composedExchange</span><span class="p">:</span> <span class="kt"><a href="../Classes/ZKComposedExchange.html">ZKComposedExchange</a></span><span class="p">)</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/ZKExchange.html">ZKExchange</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.1.0-alpha.2/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h#L230-L231">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -2978,8 +3759,8 @@ This can be used if user forgets his password or wants to change his wallet pass
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-09-01)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-09-12)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>
