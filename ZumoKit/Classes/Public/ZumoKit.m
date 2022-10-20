@@ -35,7 +35,8 @@ ZKZumoCore *zumoCore;
                         apiUrl:(NSString *)apiUrl
          transactionServiceUrl:(NSString *)transactionServiceUrl
                 cardServiceUrl:(NSString *)cardServiceUrl
-        notificationServiceUrl:(NSString *)notificationServiceUrl {
+        notificationServiceUrl:(NSString *)notificationServiceUrl
+            exchangeServiceUrl:(nonnull NSString *)exchangeServiceUrl {
 
     if( self = [super init] ) {
         // Init the providers needed for the C++ core
@@ -49,7 +50,8 @@ ZKZumoCore *zumoCore;
                              apiUrl: apiUrl
               transactionServiceUrl: transactionServiceUrl
                      cardServiceUrl: cardServiceUrl
-             notificationServiceUrl: notificationServiceUrl];
+             notificationServiceUrl: notificationServiceUrl
+                 exchangeServiceUrl: exchangeServiceUrl];
     }
 
     return self;
@@ -79,15 +81,6 @@ ZKZumoCore *zumoCore;
 
 - (nonnull ZKExchangeRates)getExchangeRates {
     return [zumoCore getExchangeRates];
-};
-
-- (nullable ZKExchangeSetting *)getExchangeSetting:(nonnull NSString *)fromCurrency
-                                        toCurrency:(nonnull NSString *)toCurrency {
-    return [zumoCore getExchangeSetting:fromCurrency toCurrency:toCurrency];
-};
-
-- (nonnull ZKExchangeSettings)getExchangeSettings {
-    return [zumoCore getExchangeSettings];
 };
 
 - (nullable ZKTransactionFeeRate *)getTransactionFeeRate:(nonnull NSString *)currency {

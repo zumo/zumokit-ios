@@ -17,6 +17,7 @@
 @protocol ZKComposeTransactionCallback;
 @protocol ZKMnemonicCallback;
 @protocol ZKPinCallback;
+@protocol ZKStringifiedJsonCallback;
 @protocol ZKSubmitExchangeCallback;
 @protocol ZKSubmitTransactionCallback;
 @protocol ZKSuccessCallback;
@@ -153,18 +154,25 @@
                  callback:(nullable id<ZKSubmitTransactionCallback>)callback;
 
 /**
+ * Fetch trading pairs that are currently supported. 
+ * <p>
+ * On success stringified JSON containing supported pairs and other details is returned via callback.
+ */
+- (void)fetchTradingPairs:(nullable id<ZKStringifiedJsonCallback>)callback;
+
+/**
  * Compose exchange. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
  * <p>
  * On success `ZKComposedExchange`  is returned via callback.
  *
- * @param fromAccountId     `ZKAccount` identifier
- * @param toAccountId       `ZKAccount` identifier
+ * @param debitAccountId    `ZKAccount` identifier
+ * @param creditAccountId   `ZKAccount` identifier
  * @param amount              amount in deposit account currency
  * @param sendMax            exchange maximum possible funds
  * @param callback            an interface to receive the result or error
  */
-- (void)composeExchange:(nonnull NSString *)fromAccountId
-            toAccountId:(nonnull NSString *)toAccountId
+- (void)composeExchange:(nonnull NSString *)debitAccountId
+        creditAccountId:(nonnull NSString *)creditAccountId
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback;

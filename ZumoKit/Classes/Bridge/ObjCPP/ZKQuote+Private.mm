@@ -12,23 +12,31 @@ auto Quote::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
-            ::djinni::I32::toCpp(obj.expireTime),
-            ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.expiresIn),
-            ::djinni::String::toCpp(obj.fromCurrency),
-            ::djinni::String::toCpp(obj.toCurrency),
-            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.depositAmount),
-            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.value)};
+            ::djinni::I32::toCpp(obj.ttl),
+            ::djinni::String::toCpp(obj.createdAt),
+            ::djinni::String::toCpp(obj.expiresAt),
+            ::djinni::String::toCpp(obj.from),
+            ::djinni::String::toCpp(obj.to),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.price),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.feeRate),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.debitAmount),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.feeAmount),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.creditAmount)};
 }
 
 auto Quote::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKQuote alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
-                            expireTime:(::djinni::I32::fromCpp(cpp.expire_time))
-                             expiresIn:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.expires_in))
-                          fromCurrency:(::djinni::String::fromCpp(cpp.from_currency))
-                            toCurrency:(::djinni::String::fromCpp(cpp.to_currency))
-                         depositAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.deposit_amount))
-                                 value:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.value))];
+                                   ttl:(::djinni::I32::fromCpp(cpp.ttl))
+                             createdAt:(::djinni::String::fromCpp(cpp.created_at))
+                             expiresAt:(::djinni::String::fromCpp(cpp.expires_at))
+                                  from:(::djinni::String::fromCpp(cpp.from))
+                                    to:(::djinni::String::fromCpp(cpp.to))
+                                 price:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.price))
+                               feeRate:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.fee_rate))
+                           debitAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.debit_amount))
+                             feeAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.fee_amount))
+                          creditAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.credit_amount))];
 }
 
 }  // namespace djinni_generated

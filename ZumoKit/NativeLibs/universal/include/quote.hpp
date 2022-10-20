@@ -5,7 +5,6 @@
 
 #include "decimal.hpp"
 #include <cstdint>
-#include <optional>
 #include <string>
 #include <utility>
 
@@ -15,42 +14,58 @@ namespace zumo {
 struct Quote final {
     /** Identifier. */
     std::string id;
-    /** Epoch timestamp representing expiration time of this quote. */
-    int32_t expire_time;
-    /** Seconds until expiration time for active quotes, null for historical quotes. */
-    std::optional<int32_t> expires_in;
+    /** Expiration in seconds at the time of quote creation, e.g. 60. */
+    int32_t ttl;
+    /** Timestamp when quote was created, e.g.  "2022-10-13T12:39:59.056Z". */
+    std::string created_at;
+    /** Timestamp representing expiration time of this quote, e.g. "2022-10-13T12:40:58.871Z". */
+    std::string expires_at;
     /**
-     * Deposit currency.
+     * Debit currency.
      * @see CurrencyCode
      */
-    std::string from_currency;
+    std::string from;
     /**
-     * Target currency.
+     * Credit currency.
      * @see CurrencyCode
      */
-    std::string to_currency;
-    /** Deposit amount to be exchanged to target currency. */
-    ::zumo::Decimal deposit_amount;
-    /** Value of 1 unit of deposit currency in target currency. */
-    ::zumo::Decimal value;
+    std::string to;
+    /** Value of 1 unit of debit currency in credit currency. */
+    ::zumo::Decimal price;
+    /** Fee rate in points of a percentage, e.g. "0.1" representing 0.1% */
+    ::zumo::Decimal fee_rate;
+    /** Amount to be debited from debit account. */
+    ::zumo::Decimal debit_amount;
+    /** Amount that will be paid in fees. */
+    ::zumo::Decimal fee_amount;
+    /** Amount to be credited to credit account. */
+    ::zumo::Decimal credit_amount;
 
     friend bool operator==(const Quote& lhs, const Quote& rhs);
     friend bool operator!=(const Quote& lhs, const Quote& rhs);
 
     Quote(std::string id_,
-          int32_t expire_time_,
-          std::optional<int32_t> expires_in_,
-          std::string from_currency_,
-          std::string to_currency_,
-          ::zumo::Decimal deposit_amount_,
-          ::zumo::Decimal value_)
+          int32_t ttl_,
+          std::string created_at_,
+          std::string expires_at_,
+          std::string from_,
+          std::string to_,
+          ::zumo::Decimal price_,
+          ::zumo::Decimal fee_rate_,
+          ::zumo::Decimal debit_amount_,
+          ::zumo::Decimal fee_amount_,
+          ::zumo::Decimal credit_amount_)
     : id(std::move(id_))
-    , expire_time(std::move(expire_time_))
-    , expires_in(std::move(expires_in_))
-    , from_currency(std::move(from_currency_))
-    , to_currency(std::move(to_currency_))
-    , deposit_amount(std::move(deposit_amount_))
-    , value(std::move(value_))
+    , ttl(std::move(ttl_))
+    , created_at(std::move(created_at_))
+    , expires_at(std::move(expires_at_))
+    , from(std::move(from_))
+    , to(std::move(to_))
+    , price(std::move(price_))
+    , fee_rate(std::move(fee_rate_))
+    , debit_amount(std::move(debit_amount_))
+    , fee_amount(std::move(fee_amount_))
+    , credit_amount(std::move(credit_amount_))
     {}
 };
 

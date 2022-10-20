@@ -62,6 +62,9 @@ typedef void (^ZKSubmitTransactionCompletionBlock)(ZKTransaction *_Nullable tran
 /** Completion block used by methods in `ZKUser` class. */
 typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, NSError *_Nullable error);
 
+/** Completion block used by methods in `ZKUser` class. */
+typedef void (^ZKStringifiedJsonCompletionBlock)(NSString *_Nullable stringifiedJson, NSError *_Nullable error);
+
 @interface ZKUser (ZKUserCallbackCompletion)
 
 /**
@@ -206,11 +209,17 @@ typedef void (^ZKSubmitExchangeCompletionBlock)(ZKExchange *_Nullable exchange, 
                          completion:(_Nonnull ZKComposeTransactionCompletionBlock)completionHandler;
 
 /**
-<code>composeExchange</code> completion handler extension.
-@see `-[ZKUser composeExchange:toAccountId:amount:sendMax:callback:]`
+<code>fetchTradingPairsWithCompletionHandler</code> completion handler extension.
+@see `-[ZKUser fetchTradingPairs]`
 */
-- (void)composeExchange:(nonnull NSString *)fromAccountId
-            toAccountId:(nonnull NSString *)toAccountId
+- (void)fetchTradingPairsWithCompletionHandler:(_Nonnull ZKStringifiedJsonCompletionBlock)completionHandler;
+
+/**
+<code>composeExchange</code> completion handler extension.
+@see `-[ZKUser composeExchange:creditAccountId:amount:sendMax:callback:]`
+*/
+- (void)composeExchange:(nonnull NSString *)debitAccountId
+        creditAccountId:(nonnull NSString *)creditAccountId
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
              completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler;

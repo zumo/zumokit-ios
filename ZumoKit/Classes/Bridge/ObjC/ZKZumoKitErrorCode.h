@@ -18,8 +18,6 @@
 extern NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR;
 /** No internet connection.  */
 extern NSString * __nonnull const ZKZumoKitErrorCodeNOCONNECTION;
-/** New account could not be created. Account already exists. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED;
 /** Requested account not found. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND;
 /** Amount not set. Either send max has to be enabled or send max set. */
@@ -43,14 +41,8 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeCURRENCYNOTSUPPORTED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeDATAOVERFLOW;
 /** Cannot set data when send max enabled. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET;
-/** Destination cannot be set when withdrawing funds to nominated account. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET;
-/** Exchange amount too low. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW;
 /** Ethereum transaction data is not supported yet. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED;
-/** Exchange amount too low. Fees exceed return value. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE;
 /** Invalid account provided. Fiat accounted expected. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeFIATACCOUNTEXPECTED;
 /** Gas too long. Cumulative gas limit and gas price should not exceed 30 bytes. */
@@ -66,8 +58,6 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED;
  * Change account should be Bitcoin account on the same network as source account
  */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED;
-/** Insufficient funds for exchange value and network fees. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE;
 /** Insufficient funds for transaction value and network fees. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION;
 /** Value exceeds maximum 63 bit precision. */
@@ -78,10 +68,6 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDADDRESS;
 /** Invalid response received from API. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDAPIRESPONSE;
-/** Mismatch between exchange rate quote and selected accounts. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDQUOTE;
-/** Exchange pair not supported. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEPAIRNOTSUPPORTED;
 /** Requested private key derivation path is invalid. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH;
 /** Invalid metadata. Metadata must be a valid JSON. */
@@ -107,8 +93,6 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDTRANSACTIONVALUE;
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET;
 /** Invalid response received from WebSocket. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE;
-/** Exchange already submitted. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeKNOWNEXCHANGE;
 /** Transaction already submitted. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION;
 /** No destination address. In case no transaction data is provided, destination address is obligatory. */
@@ -125,8 +109,6 @@ extern NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED;
 extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE;
 /** Transaction amount is too small to send after the fee has been deducted. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION;
-/** Exchange amount is insufficient to make a minimum exchange. */
-extern NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE;
 /** Something went wrong signing transaction. */
 extern NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR;
 /** Transaction amount exceeds maximum precision. */

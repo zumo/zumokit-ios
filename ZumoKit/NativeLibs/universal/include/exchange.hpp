@@ -4,10 +4,7 @@
 #pragma once
 
 #include "decimal.hpp"
-#include "exchange_rate.hpp"
-#include "exchange_setting.hpp"
 #include "quote.hpp"
-#include <cstdint>
 #include <optional>
 #include <string>
 #include <unordered_map>
@@ -24,100 +21,72 @@ struct Exchange final {
      * @see ExchangeStatus
      */
     std::string status;
+    /** Exchange pair, e.g. "ETH-GBP". */
+    std::string pair;
     /**
-     * Currency from which exchange was made.
-     * @see CurrencyCode
+     * Exchange side, "BUY" or "SELL".
+     * @see ExchangeSide
      */
-    std::string from_currency;
-    /** Source Account identifier. */
-    std::string from_account_id;
-    /** Outgoing Transaction identifier. */
-    std::optional<std::string> outgoing_transaction_id;
-    /**
-     * Currency to which exchange was made.
-     * @see CurrencyCode
-     */
-    std::string to_currency;
-    /** Target Account identifier. */
-    std::string to_account_id;
-    /** Return Transaction identifier. */
-    std::optional<std::string> return_transaction_id;
-    /** Amount in deposit currency. */
+    std::string side;
+    /** Exchange quote price. */
+    ::zumo::Decimal price;
+    /** Amount in base currency. */
     ::zumo::Decimal amount;
-    /** Outgoing transaction fee. */
-    std::optional<::zumo::Decimal> outgoing_transaction_fee;
-    /**
-     * Amount that user receives, calculated as <code>amount X quote.value X (1 - feeRate) - returnTransactionFee</code>.
-     * @see ExchangeSetting
-     */
-    ::zumo::Decimal return_amount;
-    /**
-     * Exchange fee, calculated as <code>amount X quote.value X exchangeFeeRate</code>.
-     * @see ExchangeSetting
-     */
-    ::zumo::Decimal exchange_fee;
-    /**
-     * Return transaction fee.
-     * @see ExchangeSetting
-     */
-    ::zumo::Decimal return_transaction_fee;
+    /** Debit Account identifier. */
+    std::string debit_account_id;
+    /** Debit Transaction identifier. */
+    std::string debit_transaction_id;
+    /** Credit Account identifier. */
+    std::string credit_account_id;
+    /** Credit Transaction identifier. */
+    std::optional<std::string> credit_transaction_id;
     /** Exchange rate quote used. */
     Quote quote;
-    /** Exchange setting used. */
-    ExchangeSetting exchange_setting;
     /**
      * Exchange rates at the time exchange was made.
      * This can be used to display amounts in local currency to the user.
      */
-    std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates;
+    std::unordered_map<std::string, std::unordered_map<std::string, ::zumo::Decimal>> rates;
     /** Exchange nonce or null. Used to prevent double spend. */
     std::optional<std::string> nonce;
-    /** Epoch timestamp when transaction was submitted. */
-    std::optional<int32_t> submitted_at;
-    /** Epoch timestamp when transaction was confirmed or null if not yet confirmed. */
-    std::optional<int32_t> confirmed_at;
+    /** Timestamp when exchange was created, e.g. "2020-07-29T09:46:34.288Z". */
+    std::string created_at;
+    /** Timestamp when exchange was updated, e.g. "2020-07-29T09:46:34.288Z". */
+    std::string updated_at;
 
     friend bool operator==(const Exchange& lhs, const Exchange& rhs);
     friend bool operator!=(const Exchange& lhs, const Exchange& rhs);
 
     Exchange(std::string id_,
              std::string status_,
-             std::string from_currency_,
-             std::string from_account_id_,
-             std::optional<std::string> outgoing_transaction_id_,
-             std::string to_currency_,
-             std::string to_account_id_,
-             std::optional<std::string> return_transaction_id_,
+             std::string pair_,
+             std::string side_,
+             ::zumo::Decimal price_,
              ::zumo::Decimal amount_,
-             std::optional<::zumo::Decimal> outgoing_transaction_fee_,
-             ::zumo::Decimal return_amount_,
-             ::zumo::Decimal exchange_fee_,
-             ::zumo::Decimal return_transaction_fee_,
+             std::string debit_account_id_,
+             std::string debit_transaction_id_,
+             std::string credit_account_id_,
+             std::optional<std::string> credit_transaction_id_,
              Quote quote_,
-             ExchangeSetting exchange_setting_,
-             std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> exchange_rates_,
+             std::unordered_map<std::string, std::unordered_map<std::string, ::zumo::Decimal>> rates_,
              std::optional<std::string> nonce_,
-             std::optional<int32_t> submitted_at_,
-             std::optional<int32_t> confirmed_at_)
+             std::string created_at_,
+             std::string updated_at_)
     : id(std::move(id_))
     , status(std::move(status_))
-    , from_currency(std::move(from_currency_))
-    , from_account_id(std::move(from_account_id_))
-    , outgoing_transaction_id(std::move(outgoing_transaction_id_))
-    , to_currency(std::move(to_currency_))
-    , to_account_id(std::move(to_account_id_))
-    , return_transaction_id(std::move(return_transaction_id_))
+    , pair(std::move(pair_))
+    , side(std::move(side_))
+    , price(std::move(price_))
     , amount(std::move(amount_))
-    , outgoing_transaction_fee(std::move(outgoing_transaction_fee_))
-    , return_amount(std::move(return_amount_))
-    , exchange_fee(std::move(exchange_fee_))
-    , return_transaction_fee(std::move(return_transaction_fee_))
+    , debit_account_id(std::move(debit_account_id_))
+    , debit_transaction_id(std::move(debit_transaction_id_))
+    , credit_account_id(std::move(credit_account_id_))
+    , credit_transaction_id(std::move(credit_transaction_id_))
     , quote(std::move(quote_))
-    , exchange_setting(std::move(exchange_setting_))
-    , exchange_rates(std::move(exchange_rates_))
+    , rates(std::move(rates_))
     , nonce(std::move(nonce_))
-    , submitted_at(std::move(submitted_at_))
-    , confirmed_at(std::move(confirmed_at_))
+    , created_at(std::move(created_at_))
+    , updated_at(std::move(updated_at_))
     {}
 };
 

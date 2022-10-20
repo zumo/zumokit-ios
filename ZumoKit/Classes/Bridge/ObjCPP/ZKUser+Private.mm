@@ -22,6 +22,7 @@
 #import "ZKKbaAnswer+Private.h"
 #import "ZKMnemonicCallback+Private.h"
 #import "ZKPinCallback+Private.h"
+#import "ZKStringifiedJsonCallback+Private.h"
 #import "ZKSubmitExchangeCallback+Private.h"
 #import "ZKSubmitTransactionCallback+Private.h"
 #import "ZKSuccessCallback+Private.h"
@@ -156,14 +157,20 @@ static_assert(__has_feature(objc_arc), "Djinni requires ARC to be enabled for th
     } DJINNI_TRANSLATE_EXCEPTIONS()
 }
 
-- (void)composeExchange:(nonnull NSString *)fromAccountId
-            toAccountId:(nonnull NSString *)toAccountId
+- (void)fetchTradingPairs:(nullable id<ZKStringifiedJsonCallback>)callback {
+    try {
+        _cppRefHandle.get()->fetch_trading_pairs(::djinni_generated::StringifiedJsonCallback::toCpp(callback));
+    } DJINNI_TRANSLATE_EXCEPTIONS()
+}
+
+- (void)composeExchange:(nonnull NSString *)debitAccountId
+        creditAccountId:(nonnull NSString *)creditAccountId
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
                callback:(nullable id<ZKComposeExchangeCallback>)callback {
     try {
-        _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(fromAccountId),
-                                              ::djinni::String::toCpp(toAccountId),
+        _cppRefHandle.get()->compose_exchange(::djinni::String::toCpp(debitAccountId),
+                                              ::djinni::String::toCpp(creditAccountId),
                                               ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(amount),
                                               ::djinni::Bool::toCpp(sendMax),
                                               ::djinni_generated::ComposeExchangeCallback::toCpp(callback));

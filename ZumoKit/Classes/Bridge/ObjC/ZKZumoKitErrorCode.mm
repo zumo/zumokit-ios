@@ -8,8 +8,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeUNKNOWNERROR = @"unknown_error";
 
 NSString * __nonnull const ZKZumoKitErrorCodeNOCONNECTION = @"no_connection";
 
-NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTLIMITEXCEEDED = @"account_limit_exceeded";
-
 NSString * __nonnull const ZKZumoKitErrorCodeACCOUNTNOTFOUND = @"account_not_found";
 
 NSString * __nonnull const ZKZumoKitErrorCodeAMOUNTNOTSET = @"amount_not_set";
@@ -30,13 +28,7 @@ NSString * __nonnull const ZKZumoKitErrorCodeDATAOVERFLOW = @"data_overflow";
 
 NSString * __nonnull const ZKZumoKitErrorCodeDATAPROVIDEDWHENSENDMAXSET = @"data_provided_when_send_max_set";
 
-NSString * __nonnull const ZKZumoKitErrorCodeDESTINATIONPROVIDEDWHENWITHDRAWSET = @"destination_provided_when_withdraw_set";
-
-NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEAMOUNTTOOLOW = @"exchange_amount_too_low";
-
 NSString * __nonnull const ZKZumoKitErrorCodeETHEREUMTRANSACTIONDATANOTSUPPORTED = @"ethereum_transaction_data_not_supported";
-
-NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGERETURNVALUENEGATIVE = @"exchange_return_value_negative";
 
 NSString * __nonnull const ZKZumoKitErrorCodeFIATACCOUNTEXPECTED = @"fiat_account_expected";
 
@@ -50,8 +42,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTACCOUNTSELECTED = @"incorr
 
 NSString * __nonnull const ZKZumoKitErrorCodeINCORRECTCHANGEACCOUNTSELECTED = @"incorrect_change_account_selected";
 
-NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFOREXCHANGE = @"insufficient_funds_for_exchange";
-
 NSString * __nonnull const ZKZumoKitErrorCodeINSUFFICIENTFUNDSFORTRANSACTION = @"insufficient_funds_for_transaction";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINT64OVERFLOW = @"int64_overflow";
@@ -61,10 +51,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDACCOUNTTYPE = @"invalid_acco
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDADDRESS = @"invalid_address";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDAPIRESPONSE = @"invalid_api_response";
-
-NSString * __nonnull const ZKZumoKitErrorCodeINVALIDQUOTE = @"invalid_quote";
-
-NSString * __nonnull const ZKZumoKitErrorCodeEXCHANGEPAIRNOTSUPPORTED = @"exchange_pair_not_supported";
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDHDWALLETPATH = @"invalid_hd_wallet_path";
 
@@ -88,8 +74,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeINVALIDUSERTOKENSET = @"invalid_use
 
 NSString * __nonnull const ZKZumoKitErrorCodeINVALIDWEBSOCKETRESPONSE = @"invalid_websocket_response";
 
-NSString * __nonnull const ZKZumoKitErrorCodeKNOWNEXCHANGE = @"known_exchange";
-
 NSString * __nonnull const ZKZumoKitErrorCodeKNOWNTRANSACTION = @"known_transaction";
 
 NSString * __nonnull const ZKZumoKitErrorCodeNODESTINATIONADDRESS = @"no_destination_address";
@@ -105,8 +89,6 @@ NSString * __nonnull const ZKZumoKitErrorCodeNOTAUTHORIZED = @"not_authorized";
 NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORFEE = @"send_max_insufficient_funds_for_fee";
 
 NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFORTRANSACTION = @"send_max_insufficient_funds_for_transaction";
-
-NSString * __nonnull const ZKZumoKitErrorCodeSENDMAXINSUFFICIENTFUNDSFOREXCHANGE = @"send_max_insufficient_funds_for_exchange";
 
 NSString * __nonnull const ZKZumoKitErrorCodeSIGNINGERROR = @"signing_error";
 

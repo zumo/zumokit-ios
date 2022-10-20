@@ -7,40 +7,56 @@
 @implementation ZKQuote
 
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                        expireTime:(int32_t)expireTime
-                         expiresIn:(nullable NSNumber *)expiresIn
-                      fromCurrency:(nonnull NSString *)fromCurrency
-                        toCurrency:(nonnull NSString *)toCurrency
-                     depositAmount:(nonnull NSDecimalNumber *)depositAmount
-                             value:(nonnull NSDecimalNumber *)value
+                               ttl:(int32_t)ttl
+                         createdAt:(nonnull NSString *)createdAt
+                         expiresAt:(nonnull NSString *)expiresAt
+                              from:(nonnull NSString *)from
+                                to:(nonnull NSString *)to
+                             price:(nonnull NSDecimalNumber *)price
+                           feeRate:(nonnull NSDecimalNumber *)feeRate
+                       debitAmount:(nonnull NSDecimalNumber *)debitAmount
+                         feeAmount:(nonnull NSDecimalNumber *)feeAmount
+                      creditAmount:(nonnull NSDecimalNumber *)creditAmount
 {
     if (self = [super init]) {
         _id = [id copy];
-        _expireTime = expireTime;
-        _expiresIn = expiresIn;
-        _fromCurrency = [fromCurrency copy];
-        _toCurrency = [toCurrency copy];
-        _depositAmount = depositAmount;
-        _value = value;
+        _ttl = ttl;
+        _createdAt = [createdAt copy];
+        _expiresAt = [expiresAt copy];
+        _from = [from copy];
+        _to = [to copy];
+        _price = price;
+        _feeRate = feeRate;
+        _debitAmount = debitAmount;
+        _feeAmount = feeAmount;
+        _creditAmount = creditAmount;
     }
     return self;
 }
 
 + (nonnull instancetype)quoteWithId:(nonnull NSString *)id
-                         expireTime:(int32_t)expireTime
-                          expiresIn:(nullable NSNumber *)expiresIn
-                       fromCurrency:(nonnull NSString *)fromCurrency
-                         toCurrency:(nonnull NSString *)toCurrency
-                      depositAmount:(nonnull NSDecimalNumber *)depositAmount
-                              value:(nonnull NSDecimalNumber *)value
+                                ttl:(int32_t)ttl
+                          createdAt:(nonnull NSString *)createdAt
+                          expiresAt:(nonnull NSString *)expiresAt
+                               from:(nonnull NSString *)from
+                                 to:(nonnull NSString *)to
+                              price:(nonnull NSDecimalNumber *)price
+                            feeRate:(nonnull NSDecimalNumber *)feeRate
+                        debitAmount:(nonnull NSDecimalNumber *)debitAmount
+                          feeAmount:(nonnull NSDecimalNumber *)feeAmount
+                       creditAmount:(nonnull NSDecimalNumber *)creditAmount
 {
     return [(ZKQuote*)[self alloc] initWithId:id
-                                   expireTime:expireTime
-                                    expiresIn:expiresIn
-                                 fromCurrency:fromCurrency
-                                   toCurrency:toCurrency
-                                depositAmount:depositAmount
-                                        value:value];
+                                          ttl:ttl
+                                    createdAt:createdAt
+                                    expiresAt:expiresAt
+                                         from:from
+                                           to:to
+                                        price:price
+                                      feeRate:feeRate
+                                  debitAmount:debitAmount
+                                    feeAmount:feeAmount
+                                 creditAmount:creditAmount];
 }
 
 - (BOOL)isEqual:(id)other
@@ -50,29 +66,37 @@
     }
     ZKQuote *typedOther = (ZKQuote *)other;
     return [self.id isEqualToString:typedOther.id] &&
-            self.expireTime == typedOther.expireTime &&
-            ((self.expiresIn == nil && typedOther.expiresIn == nil) || (self.expiresIn != nil && [self.expiresIn isEqual:typedOther.expiresIn])) &&
-            [self.fromCurrency isEqualToString:typedOther.fromCurrency] &&
-            [self.toCurrency isEqualToString:typedOther.toCurrency] &&
-            [self.depositAmount isEqual:typedOther.depositAmount] &&
-            [self.value isEqual:typedOther.value];
+            self.ttl == typedOther.ttl &&
+            [self.createdAt isEqualToString:typedOther.createdAt] &&
+            [self.expiresAt isEqualToString:typedOther.expiresAt] &&
+            [self.from isEqualToString:typedOther.from] &&
+            [self.to isEqualToString:typedOther.to] &&
+            [self.price isEqual:typedOther.price] &&
+            [self.feeRate isEqual:typedOther.feeRate] &&
+            [self.debitAmount isEqual:typedOther.debitAmount] &&
+            [self.feeAmount isEqual:typedOther.feeAmount] &&
+            [self.creditAmount isEqual:typedOther.creditAmount];
 }
 
 - (NSUInteger)hash
 {
     return NSStringFromClass([self class]).hash ^
             self.id.hash ^
-            (NSUInteger)self.expireTime ^
-            self.expiresIn.hash ^
-            self.fromCurrency.hash ^
-            self.toCurrency.hash ^
-            ((NSUInteger)self.depositAmount) ^
-            ((NSUInteger)self.value);
+            (NSUInteger)self.ttl ^
+            self.createdAt.hash ^
+            self.expiresAt.hash ^
+            self.from.hash ^
+            self.to.hash ^
+            ((NSUInteger)self.price) ^
+            ((NSUInteger)self.feeRate) ^
+            ((NSUInteger)self.debitAmount) ^
+            ((NSUInteger)self.feeAmount) ^
+            ((NSUInteger)self.creditAmount);
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ expireTime:%@ expiresIn:%@ fromCurrency:%@ toCurrency:%@ depositAmount:%@ value:%@>", self.class, (void *)self, self.id, @(self.expireTime), self.expiresIn, self.fromCurrency, self.toCurrency, self.depositAmount, self.value];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ ttl:%@ createdAt:%@ expiresAt:%@ from:%@ to:%@ price:%@ feeRate:%@ debitAmount:%@ feeAmount:%@ creditAmount:%@>", self.class, (void *)self, self.id, @(self.ttl), self.createdAt, self.expiresAt, self.from, self.to, self.price, self.feeRate, self.debitAmount, self.feeAmount, self.creditAmount];
 }
 
 @end

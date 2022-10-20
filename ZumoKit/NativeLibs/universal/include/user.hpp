@@ -21,6 +21,7 @@ class ComposeExchangeCallback;
 class ComposeTransactionCallback;
 class MnemonicCallback;
 class PinCallback;
+class StringifiedJsonCallback;
 class SubmitExchangeCallback;
 class SubmitTransactionCallback;
 class SuccessCallback;
@@ -142,17 +143,24 @@ public:
     virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::optional<std::string> & metadata, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
 
     /**
+     * Fetch trading pairs that are currently supported. 
+     * <p>
+     * On success stringified JSON containing supported pairs and other details is returned via callback.
+     */
+    virtual void fetch_trading_pairs(const std::shared_ptr<StringifiedJsonCallback> & callback) = 0;
+
+    /**
      * Compose exchange. Refer to <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#compose-exchange">Make Exchanges</a> guide for usage details.
      * <p>
      * On success ComposedExchange  is returned via callback.
      *
-     * @param from_account_id     Account identifier
-     * @param to_account_id       Account identifier
+     * @param debit_account_id    Account identifier
+     * @param credit_account_id   Account identifier
      * @param amount              amount in deposit account currency
      * @param send_max            exchange maximum possible funds
      * @param callback            an interface to receive the result or error
      */
-    virtual void compose_exchange(const std::string & from_account_id, const std::string & to_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
+    virtual void compose_exchange(const std::string & debit_account_id, const std::string & credit_account_id, const std::optional<::zumo::Decimal> & amount, bool send_max, const std::shared_ptr<ComposeExchangeCallback> & callback) = 0;
 
     /**
      * Submit an exchange. <a target="_top" href="https://developers.zumo.money/docs/guides/make-exchanges#submit-exchange">Make Exchanges</a> guide for usage details.

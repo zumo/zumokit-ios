@@ -2,14 +2,14 @@
   "warnings": [
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 76,
+      "line": 77,
       "symbol": "ZumoKitVersionNumber",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/Example/Pods/Target Support Files/ZumoKit/ZumoKit-umbrella.h",
-      "line": 77,
+      "line": 78,
       "symbol": "ZumoKitVersionString",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
@@ -345,15 +345,15 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h",
-      "line": 11,
-      "symbol": "ZKComposedExchange.-initWithSignedTransaction:fromAccount:toAccount:quote:exchangeSetting:exchangeAddress:amount:returnAmount:outgoingTransactionFee:exchangeFee:returnTransactionFee:nonce:",
+      "line": 10,
+      "symbol": "ZKComposedExchange.-initWithDebitAccount:creditAccount:quote:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKComposedExchange.h",
-      "line": 23,
-      "symbol": "ZKComposedExchange.+composedExchangeWithSignedTransaction:fromAccount:toAccount:quote:exchangeSetting:exchangeAddress:amount:returnAmount:outgoingTransactionFee:exchangeFee:returnTransactionFee:nonce:",
+      "line": 13,
+      "symbol": "ZKComposedExchange.+composedExchangeWithDebitAccount:creditAccount:quote:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
@@ -471,15 +471,15 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h",
-      "line": 11,
-      "symbol": "ZKExchange.-initWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:quote:exchangeSetting:exchangeRates:nonce:submittedAt:confirmedAt:",
+      "line": 9,
+      "symbol": "ZKExchange.-initWithId:status:pair:side:price:amount:debitAccountId:debitTransactionId:creditAccountId:creditTransactionId:quote:rates:nonce:createdAt:updatedAt:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchange.h",
-      "line": 30,
-      "symbol": "ZKExchange.+exchangeWithId:status:fromCurrency:fromAccountId:outgoingTransactionId:toCurrency:toAccountId:returnTransactionId:amount:outgoingTransactionFee:returnAmount:exchangeFee:returnTransactionFee:quote:exchangeSetting:exchangeRates:nonce:submittedAt:confirmedAt:",
+      "line": 24,
+      "symbol": "ZKExchange.+exchangeWithId:status:pair:side:price:amount:debitAccountId:debitTransactionId:creditAccountId:creditTransactionId:quote:rates:nonce:createdAt:updatedAt:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
@@ -498,17 +498,31 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSetting.h",
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSide.h",
       "line": 8,
-      "symbol": "ZKExchangeSetting.-initWithId:exchangeAddress:fromCurrency:toCurrency:minExchangeAmount:exchangeFeeRate:outgoingTransactionFeeRate:returnTransactionFee:",
+      "symbol": "ZKExchangeSide.-init",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSetting.h",
-      "line": 16,
-      "symbol": "ZKExchangeSetting.+exchangeSettingWithId:exchangeAddress:fromCurrency:toCurrency:minExchangeAmount:exchangeFeeRate:outgoingTransactionFeeRate:returnTransactionFee:",
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSide.h",
+      "line": 9,
+      "symbol": "ZKExchangeSide.+exchangeSide",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSide.h",
+      "line": 13,
+      "symbol": "ZKExchangeSideBUY",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKExchangeSide.h",
+      "line": 14,
+      "symbol": "ZKExchangeSideSELL",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.constant",
       "warning": "undocumented"
     },
     {
@@ -675,15 +689,29 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKQuote.h",
       "line": 8,
-      "symbol": "ZKQuote.-initWithId:expireTime:expiresIn:fromCurrency:toCurrency:depositAmount:value:",
+      "symbol": "ZKQuote.-initWithId:ttl:createdAt:expiresAt:from:to:price:feeRate:debitAmount:feeAmount:creditAmount:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKQuote.h",
-      "line": 15,
-      "symbol": "ZKQuote.+quoteWithId:expireTime:expiresIn:fromCurrency:toCurrency:depositAmount:value:",
+      "line": 19,
+      "symbol": "ZKQuote.+quoteWithId:ttl:createdAt:expiresAt:from:to:price:feeRate:debitAmount:feeAmount:creditAmount:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKStringifiedJsonCallback.h",
+      "line": 10,
+      "symbol": "ZKStringifiedJsonCallback.-onError:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKStringifiedJsonCallback.h",
+      "line": 12,
+      "symbol": "ZKStringifiedJsonCallback.-onSuccess:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
@@ -1045,7 +1073,7 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZKUser+CallbackCompletion.h",
-      "line": 65,
+      "line": 68,
       "symbol": "ZKUser(ZKUserCallbackCompletion)",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.category",
       "warning": "undocumented"
@@ -1073,42 +1101,35 @@
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 38,
+      "line": 39,
       "symbol": "ZKUserCompletionBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 40,
+      "line": 41,
       "symbol": "ZKExchangeRates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 42,
-      "symbol": "ZKExchangeSettings",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 44,
+      "line": 43,
       "symbol": "ZKTransactionFeeRates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 46,
+      "line": 45,
       "symbol": "ZKHistoricalExchangeRates",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Public/ZumoKit.h",
-      "line": 48,
+      "line": 47,
       "symbol": "ZKHistoricalExchangeRatesCompletionBlock",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
       "warning": "undocumented"

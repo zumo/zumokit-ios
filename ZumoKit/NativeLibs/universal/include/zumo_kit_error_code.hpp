@@ -21,9 +21,6 @@ struct ZumoKitErrorCode final {
     /** No internet connection.  */
     static std::string const NO_CONNECTION;
 
-    /** New account could not be created. Account already exists. */
-    static std::string const ACCOUNT_LIMIT_EXCEEDED;
-
     /** Requested account not found. */
     static std::string const ACCOUNT_NOT_FOUND;
 
@@ -57,17 +54,8 @@ struct ZumoKitErrorCode final {
     /** Cannot set data when send max enabled. */
     static std::string const DATA_PROVIDED_WHEN_SEND_MAX_SET;
 
-    /** Destination cannot be set when withdrawing funds to nominated account. */
-    static std::string const DESTINATION_PROVIDED_WHEN_WITHDRAW_SET;
-
-    /** Exchange amount too low. */
-    static std::string const EXCHANGE_AMOUNT_TOO_LOW;
-
     /** Ethereum transaction data is not supported yet. */
     static std::string const ETHEREUM_TRANSACTION_DATA_NOT_SUPPORTED;
-
-    /** Exchange amount too low. Fees exceed return value. */
-    static std::string const EXCHANGE_RETURN_VALUE_NEGATIVE;
 
     /** Invalid account provided. Fiat accounted expected. */
     static std::string const FIAT_ACCOUNT_EXPECTED;
@@ -90,9 +78,6 @@ struct ZumoKitErrorCode final {
      */
     static std::string const INCORRECT_CHANGE_ACCOUNT_SELECTED;
 
-    /** Insufficient funds for exchange value and network fees. */
-    static std::string const INSUFFICIENT_FUNDS_FOR_EXCHANGE;
-
     /** Insufficient funds for transaction value and network fees. */
     static std::string const INSUFFICIENT_FUNDS_FOR_TRANSACTION;
 
@@ -107,12 +92,6 @@ struct ZumoKitErrorCode final {
 
     /** Invalid response received from API. */
     static std::string const INVALID_API_RESPONSE;
-
-    /** Mismatch between exchange rate quote and selected accounts. */
-    static std::string const INVALID_QUOTE;
-
-    /** Exchange pair not supported. */
-    static std::string const EXCHANGE_PAIR_NOT_SUPPORTED;
 
     /** Requested private key derivation path is invalid. */
     static std::string const INVALID_HD_WALLET_PATH;
@@ -150,9 +129,6 @@ struct ZumoKitErrorCode final {
     /** Invalid response received from WebSocket. */
     static std::string const INVALID_WEBSOCKET_RESPONSE;
 
-    /** Exchange already submitted. */
-    static std::string const KNOWN_EXCHANGE;
-
     /** Transaction already submitted. */
     static std::string const KNOWN_TRANSACTION;
 
@@ -176,9 +152,6 @@ struct ZumoKitErrorCode final {
 
     /** Transaction amount is too small to send after the fee has been deducted. */
     static std::string const SEND_MAX_INSUFFICIENT_FUNDS_FOR_TRANSACTION;
-
-    /** Exchange amount is insufficient to make a minimum exchange. */
-    static std::string const SEND_MAX_INSUFFICIENT_FUNDS_FOR_EXCHANGE;
 
     /** Something went wrong signing transaction. */
     static std::string const SIGNING_ERROR;

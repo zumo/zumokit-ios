@@ -4,8 +4,6 @@
 #import "ZKExchange+Private.h"
 #import "DJIMarshal+Private.h"
 #import "NSDecimalNumber+ZumoKit.h"
-#import "ZKExchangeRate+Private.h"
-#import "ZKExchangeSetting+Private.h"
 #import "ZKQuote+Private.h"
 #include <cassert>
 
@@ -16,46 +14,38 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
     assert(obj);
     return {::djinni::String::toCpp(obj.id),
             ::djinni::String::toCpp(obj.status),
-            ::djinni::String::toCpp(obj.fromCurrency),
-            ::djinni::String::toCpp(obj.fromAccountId),
-            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.outgoingTransactionId),
-            ::djinni::String::toCpp(obj.toCurrency),
-            ::djinni::String::toCpp(obj.toAccountId),
-            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.returnTransactionId),
+            ::djinni::String::toCpp(obj.pair),
+            ::djinni::String::toCpp(obj.side),
+            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.price),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.amount),
-            ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.outgoingTransactionFee),
-            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnAmount),
-            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.exchangeFee),
-            ::zumo::djinni::objc::DecimalConverter::toCpp(obj.returnTransactionFee),
+            ::djinni::String::toCpp(obj.debitAccountId),
+            ::djinni::String::toCpp(obj.debitTransactionId),
+            ::djinni::String::toCpp(obj.creditAccountId),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.creditTransactionId),
             ::djinni_generated::Quote::toCpp(obj.quote),
-            ::djinni_generated::ExchangeSetting::toCpp(obj.exchangeSetting),
-            ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::toCpp(obj.exchangeRates),
+            ::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>>::toCpp(obj.rates),
             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.nonce),
-            ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.submittedAt),
-            ::djinni::Optional<std::optional, ::djinni::I32>::toCpp(obj.confirmedAt)};
+            ::djinni::String::toCpp(obj.createdAt),
+            ::djinni::String::toCpp(obj.updatedAt)};
 }
 
 auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKExchange alloc] initWithId:(::djinni::String::fromCpp(cpp.id))
                                    status:(::djinni::String::fromCpp(cpp.status))
-                             fromCurrency:(::djinni::String::fromCpp(cpp.from_currency))
-                            fromAccountId:(::djinni::String::fromCpp(cpp.from_account_id))
-                    outgoingTransactionId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.outgoing_transaction_id))
-                               toCurrency:(::djinni::String::fromCpp(cpp.to_currency))
-                              toAccountId:(::djinni::String::fromCpp(cpp.to_account_id))
-                      returnTransactionId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.return_transaction_id))
+                                     pair:(::djinni::String::fromCpp(cpp.pair))
+                                     side:(::djinni::String::fromCpp(cpp.side))
+                                    price:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.price))
                                    amount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.amount))
-                   outgoingTransactionFee:(::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.outgoing_transaction_fee))
-                             returnAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_amount))
-                              exchangeFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.exchange_fee))
-                     returnTransactionFee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.return_transaction_fee))
+                           debitAccountId:(::djinni::String::fromCpp(cpp.debit_account_id))
+                       debitTransactionId:(::djinni::String::fromCpp(cpp.debit_transaction_id))
+                          creditAccountId:(::djinni::String::fromCpp(cpp.credit_account_id))
+                      creditTransactionId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.credit_transaction_id))
                                     quote:(::djinni_generated::Quote::fromCpp(cpp.quote))
-                          exchangeSetting:(::djinni_generated::ExchangeSetting::fromCpp(cpp.exchange_setting))
-                            exchangeRates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::djinni_generated::ExchangeRate>>::fromCpp(cpp.exchange_rates))
+                                    rates:(::djinni::Map<::djinni::String, ::djinni::Map<::djinni::String, ::zumo::djinni::objc::DecimalConverter>>::fromCpp(cpp.rates))
                                     nonce:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.nonce))
-                              submittedAt:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.submitted_at))
-                              confirmedAt:(::djinni::Optional<std::optional, ::djinni::I32>::fromCpp(cpp.confirmed_at))];
+                                createdAt:(::djinni::String::fromCpp(cpp.created_at))
+                                updatedAt:(::djinni::String::fromCpp(cpp.updated_at))];
 }
 
 }  // namespace djinni_generated

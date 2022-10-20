@@ -10,8 +10,6 @@
 #include "exchange.hpp"
 #include "exchange_rate.hpp"
 #include "exchange_rates.hpp"
-#include "exchange_setting.hpp"
-#include "exchange_settings.hpp"
 #include "historical_exchange_rates.hpp"
 #include "quote.hpp"
 #include "transaction_card_properties.hpp"
@@ -42,13 +40,9 @@ std::ostream &operator<<(std::ostream &os, const ExchangeRate &exchange_rate);
 
 std::ostream &operator<<(std::ostream &os, const ExchangeRates &exchange_rates);
 
-std::ostream &operator<<(std::ostream &os, const ExchangeSetting &exchange_setting);
+std::ostream &operator<<(std::ostream &os, const TransactionFeeRate &transaction_fee_rate);
 
-std::ostream &operator<<(std::ostream &os, const ExchangeSettings &exchange_settings);
-
-std::ostream &operator<<(std::ostream &os, const TransactionFeeRate &exchange_settings);
-
-std::ostream &operator<<(std::ostream &os, const TransactionFeeRates &exchange_settings);
+std::ostream &operator<<(std::ostream &os, const TransactionFeeRates &transaction_fee_rates);
 
 std::ostream &operator<<(std::ostream &os, const ComposedTransaction &composed_transaction);
 

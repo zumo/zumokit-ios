@@ -21,6 +21,7 @@
 #import "ComposeExchangeCallback.h"
 #import "SubmitTransactionCallback.h"
 #import "SubmitExchangeCallback.h"
+#import "StringifiedJsonCallback.h"
 
 @implementation ZKUser (ZKUserCallbackCompletion)
 
@@ -132,14 +133,18 @@
         [self composeNominatedTransaction:fromAccountId amount:amount sendMax:sendMax callback:[[ComposeTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };
 
-- (void)composeExchange:(nonnull NSString *)fromAccountId
-            toAccountId:(nonnull NSString *)toAccountId
+- (void)fetchTradingPairsWithCompletionHandler:(_Nonnull ZKStringifiedJsonCompletionBlock)completionHandler {
+    [self fetchTradingPairs:[[StringifiedJsonCallback alloc] initWithCompletionHandler:completionHandler]];
+};
+
+- (void)composeExchange:(nonnull NSString *)debitAccountId
+        creditAccountId:(nonnull NSString *)creditAccountId
                  amount:(nullable NSDecimalNumber *)amount
                 sendMax:(BOOL)sendMax
              completion:(_Nonnull ZKComposeExchangeCompletionBlock)completionHandler {
 
-    [self composeExchange:fromAccountId
-              toAccountId:toAccountId
+    [self composeExchange:debitAccountId
+          creditAccountId:creditAccountId
                    amount:amount
                   sendMax:sendMax
                  callback:[[ComposeExchangeCallback alloc] initWithCompletionHandler: completionHandler]];

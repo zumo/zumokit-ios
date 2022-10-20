@@ -45,6 +45,7 @@
     NSString *transactionServiceUrl = [mainBundle objectForInfoDictionaryKey:@"TRANSACTION_SERVICE_URL"];
     NSString *cardServiceUrl = [mainBundle objectForInfoDictionaryKey:@"CARD_SERVICE_URL"];
     NSString *notificationServiceUrl = [mainBundle objectForInfoDictionaryKey:@"NOTIFICATION_SERVICE_URL"];
+    NSString *exchangeServiceUrl = [mainBundle objectForInfoDictionaryKey:@"EXCHANGE_SERVICE_URL"];
     
     // Client config
     NSURL *clientZumoKitAuthEndpoint = [NSURL URLWithString:[mainBundle objectForInfoDictionaryKey:@"CLIENT_ZUMOKIT_AUTH_ENDPOINT"]];
@@ -57,7 +58,8 @@
                                          apiUrl:apiUrl
                           transactionServiceUrl:transactionServiceUrl
                                  cardServiceUrl:cardServiceUrl
-                         notificationServiceUrl:notificationServiceUrl];
+                         notificationServiceUrl:notificationServiceUrl
+                             exchangeServiceUrl:exchangeServiceUrl];
     
     // Get ZumoKit user token
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:clientZumoKitAuthEndpoint];
@@ -120,7 +122,7 @@
                     [self composeBtcTransaction:btcAccount submit:NO];
                     
                     [self composeExchange:ethAccount
-                                toAccount:btcAccount
+                            creditAccount:btcAccount
                                    amount:[NSDecimalNumber decimalNumberWithString:@"0.1"]
                                    submit:NO];
                 }];
@@ -238,9 +240,10 @@
             return;
         }
         
-        NSLog(@"Exchange Rate Quote: %@", composedExchange.quote.value);
-        NSLog(@"Return Amount: %@", composedExchange.returnAmount);
-        NSLog(@"Exchange Fee: %@", composedExchange.exchangeFee);
+        NSLog(@"Exchange Rate Quote: %@", composedExchange.quote.price);
+        NSLog(@"Return Amount: %@", composedExchange.quote.creditAmount);
+        NSLog(@"Exchange Fee Rate: %@", composedExchange.quote.feeRate);
+        NSLog(@"Exchange Fee: %@", composedExchange.quote.feeAmount);
         
         if (!submit) {
             return;

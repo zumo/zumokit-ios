@@ -34,12 +34,11 @@ FOUNDATION_EXPORT const unsigned char ZumoKitVersionString[];
 #import "ZKChangeListener.h"
 #import "ZKLogListener.h"
 #import "ZKAccountDataSnapshot.h"
+#import "ZKExchangeRate.h"
 
 typedef void (^ZKUserCompletionBlock)(ZKUser *_Nullable user, NSError *_Nullable error);
 
 typedef NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeRate *> *> *ZKExchangeRates;
-
-typedef NSDictionary<NSString *, NSDictionary<NSString *, ZKExchangeSetting *> *> *ZKExchangeSettings;
 
 typedef NSDictionary<NSString *, ZKTransactionFeeRate *> *ZKTransactionFeeRates;
 
@@ -86,6 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
 * @param transactionServiceUrl  ZumoKit Transaction Service URL
 * @param cardServiceUrl             ZumoKit Card Service URL
 * @param notificationServiceUrl  ZumoKit Notification Service URL
+* @param exchangeServiceUrl    ZumoKit Exchange Service URL
 *
 * @return ZumoKit instance
 */
@@ -93,7 +93,8 @@ NS_ASSUME_NONNULL_BEGIN
                         apiUrl:(NSString *)apiUrl
          transactionServiceUrl:(NSString *)transactionServiceUrl
                 cardServiceUrl:(NSString *)cardServiceUrl
-        notificationServiceUrl:(NSString *)notificationServiceUrl;
+        notificationServiceUrl:(NSString *)notificationServiceUrl
+            exchangeServiceUrl:(NSString *)exchangeServiceUrl;
 
 /**
 * Signs in user corresponding to user token set. Sets current user to the newly signed in user.
@@ -139,22 +140,6 @@ NS_ASSUME_NONNULL_BEGIN
  * @return mapping between currency pairs and exchange rates
  */
 - (nonnull ZKExchangeRates)getExchangeRates;
-
-/**
-* Get exchange settings for selected currency pair.
-*
-* @param fromCurrency  currency code
-* @param toCurrency       currency code
-*/
-- (nullable ZKExchangeSetting *)getExchangeSetting:(nonnull NSString *)fromCurrency
-                                        toCurrency:(nonnull NSString *)toCurrency;
-
-/**
- * Get all available exchange settings.
- *
- * @return mapping between currency pairs and exchange settings
- */
-- (nonnull ZKExchangeSettings)getExchangeSettings;
 
 /**
 * Get transasction fee rate for selected crypto currency.

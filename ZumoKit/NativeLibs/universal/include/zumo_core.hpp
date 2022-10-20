@@ -19,7 +19,6 @@ class UserCallback;
 class Utils;
 class WebSocketFactory;
 struct ExchangeRate;
-struct ExchangeSetting;
 struct TransactionFeeRate;
 
 /** Entry point to ZumoKit C++ SDK */
@@ -61,7 +60,7 @@ public:
      *
      * @return ZumoKit instance
      */
-    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpProvider> & http_provider, const std::shared_ptr<WebSocketFactory> & web_socket_factory, const std::string & api_key, const std::string & api_url, const std::string & transaction_service_url, const std::string & card_service_url, const std::string & notification_service_url);
+    static std::shared_ptr<ZumoCore> init(const std::shared_ptr<HttpProvider> & http_provider, const std::shared_ptr<WebSocketFactory> & web_socket_factory, const std::string & api_key, const std::string & api_url, const std::string & transaction_service_url, const std::string & card_service_url, const std::string & notification_service_url, const std::string & exchange_service_url);
 
     /**
      * Signs in user corresponding to user token set. Sets current user to the newly signed in user.
@@ -107,23 +106,6 @@ public:
      * @return mapping between currency pairs and exchange rates
      */
     virtual std::unordered_map<std::string, std::unordered_map<std::string, ExchangeRate>> get_exchange_rates() = 0;
-
-    /**
-     * Get exchange setting for selected currency pair.
-     *
-     * @param from_currency   currency code
-     * @param to_currency     currency code
-     *
-     * @return exchange setting or null
-     */
-    virtual std::optional<ExchangeSetting> get_exchange_setting(const std::string & from_currency, const std::string & to_currency) = 0;
-
-    /**
-     * Get all available exchange settings.
-     *
-     * @return mapping between currency pairs and exchange settings
-     */
-    virtual std::unordered_map<std::string, std::unordered_map<std::string, ExchangeSetting>> get_exchange_settings() = 0;
 
     /**
      * Get transaction fee rates for selected crypto currency.

@@ -6,45 +6,65 @@
 /** Record containing Zumo exchange rate quote used in making exchanges. */
 @interface ZKQuote : NSObject
 - (nonnull instancetype)initWithId:(nonnull NSString *)id
-                        expireTime:(int32_t)expireTime
-                         expiresIn:(nullable NSNumber *)expiresIn
-                      fromCurrency:(nonnull NSString *)fromCurrency
-                        toCurrency:(nonnull NSString *)toCurrency
-                     depositAmount:(nonnull NSDecimalNumber *)depositAmount
-                             value:(nonnull NSDecimalNumber *)value;
+                               ttl:(int32_t)ttl
+                         createdAt:(nonnull NSString *)createdAt
+                         expiresAt:(nonnull NSString *)expiresAt
+                              from:(nonnull NSString *)from
+                                to:(nonnull NSString *)to
+                             price:(nonnull NSDecimalNumber *)price
+                           feeRate:(nonnull NSDecimalNumber *)feeRate
+                       debitAmount:(nonnull NSDecimalNumber *)debitAmount
+                         feeAmount:(nonnull NSDecimalNumber *)feeAmount
+                      creditAmount:(nonnull NSDecimalNumber *)creditAmount;
 + (nonnull instancetype)quoteWithId:(nonnull NSString *)id
-                         expireTime:(int32_t)expireTime
-                          expiresIn:(nullable NSNumber *)expiresIn
-                       fromCurrency:(nonnull NSString *)fromCurrency
-                         toCurrency:(nonnull NSString *)toCurrency
-                      depositAmount:(nonnull NSDecimalNumber *)depositAmount
-                              value:(nonnull NSDecimalNumber *)value;
+                                ttl:(int32_t)ttl
+                          createdAt:(nonnull NSString *)createdAt
+                          expiresAt:(nonnull NSString *)expiresAt
+                               from:(nonnull NSString *)from
+                                 to:(nonnull NSString *)to
+                              price:(nonnull NSDecimalNumber *)price
+                            feeRate:(nonnull NSDecimalNumber *)feeRate
+                        debitAmount:(nonnull NSDecimalNumber *)debitAmount
+                          feeAmount:(nonnull NSDecimalNumber *)feeAmount
+                       creditAmount:(nonnull NSDecimalNumber *)creditAmount;
 
 /** Identifier. */
 @property (nonatomic, readonly, nonnull) NSString * id;
 
-/** Epoch timestamp representing expiration time of this quote. */
-@property (nonatomic, readonly) int32_t expireTime;
+/** Expiration in seconds at the time of quote creation, e.g. 60. */
+@property (nonatomic, readonly) int32_t ttl;
 
-/** Seconds until expiration time for active quotes, null for historical quotes. */
-@property (nonatomic, readonly, nullable) NSNumber * expiresIn;
+/** Timestamp when quote was created, e.g.  "2022-10-13T12:39:59.056Z". */
+@property (nonatomic, readonly, nonnull) NSString * createdAt;
 
-/**
- * Deposit currency.
- * @see `ZKCurrencyCode`
- */
-@property (nonatomic, readonly, nonnull) NSString * fromCurrency;
+/** Timestamp representing expiration time of this quote, e.g. "2022-10-13T12:40:58.871Z". */
+@property (nonatomic, readonly, nonnull) NSString * expiresAt;
 
 /**
- * Target currency.
+ * Debit currency.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSString * toCurrency;
+@property (nonatomic, readonly, nonnull) NSString * from;
 
-/** Deposit amount to be exchanged to target currency. */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * depositAmount;
+/**
+ * Credit currency.
+ * @see `ZKCurrencyCode`
+ */
+@property (nonatomic, readonly, nonnull) NSString * to;
 
-/** Value of 1 unit of deposit currency in target currency. */
-@property (nonatomic, readonly, nonnull) NSDecimalNumber * value;
+/** Value of 1 unit of debit currency in credit currency. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * price;
+
+/** Fee rate in points of a percentage, e.g. "0.1" representing 0.1% */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * feeRate;
+
+/** Amount to be debited from debit account. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * debitAmount;
+
+/** Amount that will be paid in fees. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * feeAmount;
+
+/** Amount to be credited to credit account. */
+@property (nonatomic, readonly, nonnull) NSDecimalNumber * creditAmount;
 
 @end
