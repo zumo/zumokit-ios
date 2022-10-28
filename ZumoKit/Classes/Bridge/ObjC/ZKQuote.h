@@ -9,8 +9,8 @@
                                ttl:(int32_t)ttl
                          createdAt:(nonnull NSString *)createdAt
                          expiresAt:(nonnull NSString *)expiresAt
-                              from:(nonnull NSString *)from
-                                to:(nonnull NSString *)to
+                     debitCurrency:(nonnull NSString *)debitCurrency
+                    creditCurrency:(nonnull NSString *)creditCurrency
                              price:(nonnull NSDecimalNumber *)price
                            feeRate:(nonnull NSDecimalNumber *)feeRate
                        debitAmount:(nonnull NSDecimalNumber *)debitAmount
@@ -20,8 +20,8 @@
                                 ttl:(int32_t)ttl
                           createdAt:(nonnull NSString *)createdAt
                           expiresAt:(nonnull NSString *)expiresAt
-                               from:(nonnull NSString *)from
-                                 to:(nonnull NSString *)to
+                      debitCurrency:(nonnull NSString *)debitCurrency
+                     creditCurrency:(nonnull NSString *)creditCurrency
                               price:(nonnull NSDecimalNumber *)price
                             feeRate:(nonnull NSDecimalNumber *)feeRate
                         debitAmount:(nonnull NSDecimalNumber *)debitAmount
@@ -44,13 +44,13 @@
  * Debit currency.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSString * from;
+@property (nonatomic, readonly, nonnull) NSString * debitCurrency;
 
 /**
  * Credit currency.
  * @see `ZKCurrencyCode`
  */
-@property (nonatomic, readonly, nonnull) NSString * to;
+@property (nonatomic, readonly, nonnull) NSString * creditCurrency;
 
 /** Value of 1 unit of debit currency in credit currency. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * price;

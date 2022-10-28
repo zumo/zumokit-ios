@@ -15,8 +15,8 @@ auto Quote::toCpp(ObjcType obj) -> CppType
             ::djinni::I32::toCpp(obj.ttl),
             ::djinni::String::toCpp(obj.createdAt),
             ::djinni::String::toCpp(obj.expiresAt),
-            ::djinni::String::toCpp(obj.from),
-            ::djinni::String::toCpp(obj.to),
+            ::djinni::String::toCpp(obj.debitCurrency),
+            ::djinni::String::toCpp(obj.creditCurrency),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.price),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.feeRate),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.debitAmount),
@@ -30,8 +30,8 @@ auto Quote::fromCpp(const CppType& cpp) -> ObjcType
                                    ttl:(::djinni::I32::fromCpp(cpp.ttl))
                              createdAt:(::djinni::String::fromCpp(cpp.created_at))
                              expiresAt:(::djinni::String::fromCpp(cpp.expires_at))
-                                  from:(::djinni::String::fromCpp(cpp.from))
-                                    to:(::djinni::String::fromCpp(cpp.to))
+                         debitCurrency:(::djinni::String::fromCpp(cpp.debit_currency))
+                        creditCurrency:(::djinni::String::fromCpp(cpp.credit_currency))
                                  price:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.price))
                                feeRate:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.fee_rate))
                            debitAmount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.debit_amount))

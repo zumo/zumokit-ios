@@ -10,8 +10,8 @@
                                ttl:(int32_t)ttl
                          createdAt:(nonnull NSString *)createdAt
                          expiresAt:(nonnull NSString *)expiresAt
-                              from:(nonnull NSString *)from
-                                to:(nonnull NSString *)to
+                     debitCurrency:(nonnull NSString *)debitCurrency
+                    creditCurrency:(nonnull NSString *)creditCurrency
                              price:(nonnull NSDecimalNumber *)price
                            feeRate:(nonnull NSDecimalNumber *)feeRate
                        debitAmount:(nonnull NSDecimalNumber *)debitAmount
@@ -23,8 +23,8 @@
         _ttl = ttl;
         _createdAt = [createdAt copy];
         _expiresAt = [expiresAt copy];
-        _from = [from copy];
-        _to = [to copy];
+        _debitCurrency = [debitCurrency copy];
+        _creditCurrency = [creditCurrency copy];
         _price = price;
         _feeRate = feeRate;
         _debitAmount = debitAmount;
@@ -38,8 +38,8 @@
                                 ttl:(int32_t)ttl
                           createdAt:(nonnull NSString *)createdAt
                           expiresAt:(nonnull NSString *)expiresAt
-                               from:(nonnull NSString *)from
-                                 to:(nonnull NSString *)to
+                      debitCurrency:(nonnull NSString *)debitCurrency
+                     creditCurrency:(nonnull NSString *)creditCurrency
                               price:(nonnull NSDecimalNumber *)price
                             feeRate:(nonnull NSDecimalNumber *)feeRate
                         debitAmount:(nonnull NSDecimalNumber *)debitAmount
@@ -50,8 +50,8 @@
                                           ttl:ttl
                                     createdAt:createdAt
                                     expiresAt:expiresAt
-                                         from:from
-                                           to:to
+                                debitCurrency:debitCurrency
+                               creditCurrency:creditCurrency
                                         price:price
                                       feeRate:feeRate
                                   debitAmount:debitAmount
@@ -69,8 +69,8 @@
             self.ttl == typedOther.ttl &&
             [self.createdAt isEqualToString:typedOther.createdAt] &&
             [self.expiresAt isEqualToString:typedOther.expiresAt] &&
-            [self.from isEqualToString:typedOther.from] &&
-            [self.to isEqualToString:typedOther.to] &&
+            [self.debitCurrency isEqualToString:typedOther.debitCurrency] &&
+            [self.creditCurrency isEqualToString:typedOther.creditCurrency] &&
             [self.price isEqual:typedOther.price] &&
             [self.feeRate isEqual:typedOther.feeRate] &&
             [self.debitAmount isEqual:typedOther.debitAmount] &&
@@ -85,8 +85,8 @@
             (NSUInteger)self.ttl ^
             self.createdAt.hash ^
             self.expiresAt.hash ^
-            self.from.hash ^
-            self.to.hash ^
+            self.debitCurrency.hash ^
+            self.creditCurrency.hash ^
             ((NSUInteger)self.price) ^
             ((NSUInteger)self.feeRate) ^
             ((NSUInteger)self.debitAmount) ^
@@ -96,7 +96,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ ttl:%@ createdAt:%@ expiresAt:%@ from:%@ to:%@ price:%@ feeRate:%@ debitAmount:%@ feeAmount:%@ creditAmount:%@>", self.class, (void *)self, self.id, @(self.ttl), self.createdAt, self.expiresAt, self.from, self.to, self.price, self.feeRate, self.debitAmount, self.feeAmount, self.creditAmount];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ ttl:%@ createdAt:%@ expiresAt:%@ debitCurrency:%@ creditCurrency:%@ price:%@ feeRate:%@ debitAmount:%@ feeAmount:%@ creditAmount:%@>", self.class, (void *)self, self.id, @(self.ttl), self.createdAt, self.expiresAt, self.debitCurrency, self.creditCurrency, self.price, self.feeRate, self.debitAmount, self.feeAmount, self.creditAmount];
 }
 
 @end

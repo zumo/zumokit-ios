@@ -24,12 +24,12 @@ struct Quote final {
      * Debit currency.
      * @see CurrencyCode
      */
-    std::string from;
+    std::string debit_currency;
     /**
      * Credit currency.
      * @see CurrencyCode
      */
-    std::string to;
+    std::string credit_currency;
     /** Value of 1 unit of debit currency in credit currency. */
     ::zumo::Decimal price;
     /** Fee rate in points of a percentage, e.g. "0.1" representing 0.1% */
@@ -48,8 +48,8 @@ struct Quote final {
           int32_t ttl_,
           std::string created_at_,
           std::string expires_at_,
-          std::string from_,
-          std::string to_,
+          std::string debit_currency_,
+          std::string credit_currency_,
           ::zumo::Decimal price_,
           ::zumo::Decimal fee_rate_,
           ::zumo::Decimal debit_amount_,
@@ -59,8 +59,8 @@ struct Quote final {
     , ttl(std::move(ttl_))
     , created_at(std::move(created_at_))
     , expires_at(std::move(expires_at_))
-    , from(std::move(from_))
-    , to(std::move(to_))
+    , debit_currency(std::move(debit_currency_))
+    , credit_currency(std::move(credit_currency_))
     , price(std::move(price_))
     , fee_rate(std::move(fee_rate_))
     , debit_amount(std::move(debit_amount_))
