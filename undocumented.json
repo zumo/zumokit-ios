@@ -689,14 +689,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKQuote.h",
       "line": 8,
-      "symbol": "ZKQuote.-initWithId:ttl:createdAt:expiresAt:from:to:price:feeRate:debitAmount:feeAmount:creditAmount:",
+      "symbol": "ZKQuote.-initWithId:ttl:createdAt:expiresAt:debitCurrency:creditCurrency:price:feeRate:debitAmount:feeAmount:creditAmount:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKQuote.h",
       "line": 19,
-      "symbol": "ZKQuote.+quoteWithId:ttl:createdAt:expiresAt:from:to:price:feeRate:debitAmount:feeAmount:creditAmount:",
+      "symbol": "ZKQuote.+quoteWithId:ttl:createdAt:expiresAt:debitCurrency:creditCurrency:price:feeRate:debitAmount:feeAmount:creditAmount:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
