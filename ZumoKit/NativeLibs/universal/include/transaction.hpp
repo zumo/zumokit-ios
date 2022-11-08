@@ -62,6 +62,8 @@ struct Transaction final {
     std::vector<TransactionAmount> recipients;
     /** Internal transactions, e.g. ETH contract interaction side effects. */
     std::vector<InternalTransaction> internal_transactions;
+    /** Custody order properties if it is a transaction associated with a custody order, null otherwise. */
+    std::optional<std::string> custody_order;
     /**
      * Crypto properties if it is a crypto transaction, null otherwise.
      * @see TransactionType
@@ -77,10 +79,7 @@ struct Transaction final {
      * @see TransactionType
      */
     std::optional<TransactionCardProperties> card_properties;
-    /**
-     * Exchange properties if it is a transaction associated with an exchange, null otherwise.
-     * @see TransactionType
-     */
+    /** Exchange properties if it is a transaction associated with an exchange, null otherwise. */
     std::optional<Exchange> exchange;
     /** Transaction metadata if exists, null otherwise. */
     std::optional<std::string> metadata;
@@ -106,6 +105,7 @@ struct Transaction final {
                 std::vector<TransactionAmount> senders_,
                 std::vector<TransactionAmount> recipients_,
                 std::vector<InternalTransaction> internal_transactions_,
+                std::optional<std::string> custody_order_,
                 std::optional<TransactionCryptoProperties> crypto_properties_,
                 std::optional<TransactionFiatProperties> fiat_properties_,
                 std::optional<TransactionCardProperties> card_properties_,
@@ -126,6 +126,7 @@ struct Transaction final {
     , senders(std::move(senders_))
     , recipients(std::move(recipients_))
     , internal_transactions(std::move(internal_transactions_))
+    , custody_order(std::move(custody_order_))
     , crypto_properties(std::move(crypto_properties_))
     , fiat_properties(std::move(fiat_properties_))
     , card_properties(std::move(card_properties_))

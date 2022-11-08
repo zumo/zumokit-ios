@@ -23,6 +23,7 @@
                            senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
                         recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
               internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
+                      custodyOrder:(nullable NSString *)custodyOrder
                   cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                     cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
@@ -43,6 +44,7 @@
                                   senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
                                recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
                      internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
+                             custodyOrder:(nullable NSString *)custodyOrder
                          cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                            cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
@@ -106,6 +108,9 @@
 /** Internal transactions, e.g. ETH contract interaction side effects. */
 @property (nonatomic, readonly, nonnull) NSArray<ZKInternalTransaction *> * internalTransactions;
 
+/** Custody order properties if it is a transaction associated with a custody order, null otherwise. */
+@property (nonatomic, readonly, nullable) NSString * custodyOrder;
+
 /**
  * Crypto properties if it is a crypto transaction, null otherwise.
  * @see `ZKTransactionType`
@@ -124,10 +129,7 @@
  */
 @property (nonatomic, readonly, nullable) ZKTransactionCardProperties * cardProperties;
 
-/**
- * Exchange properties if it is a transaction associated with an exchange, null otherwise.
- * @see `ZKTransactionType`
- */
+/** Exchange properties if it is a transaction associated with an exchange, null otherwise. */
 @property (nonatomic, readonly, nullable) ZKExchange * exchange;
 
 /** Transaction metadata if exists, null otherwise. */

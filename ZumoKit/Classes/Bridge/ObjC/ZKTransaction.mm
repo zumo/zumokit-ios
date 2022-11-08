@@ -18,6 +18,7 @@
                            senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
                         recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
               internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
+                      custodyOrder:(nullable NSString *)custodyOrder
                   cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                     cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
@@ -40,6 +41,7 @@
         _senders = [senders copy];
         _recipients = [recipients copy];
         _internalTransactions = [internalTransactions copy];
+        _custodyOrder = [custodyOrder copy];
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
         _cardProperties = cardProperties;
@@ -64,6 +66,7 @@
                                   senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
                                recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
                      internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
+                             custodyOrder:(nullable NSString *)custodyOrder
                          cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                            cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
@@ -85,6 +88,7 @@
                                             senders:senders
                                          recipients:recipients
                                internalTransactions:internalTransactions
+                                       custodyOrder:custodyOrder
                                    cryptoProperties:cryptoProperties
                                      fiatProperties:fiatProperties
                                      cardProperties:cardProperties
@@ -113,6 +117,7 @@
             [self.senders isEqualToArray:typedOther.senders] &&
             [self.recipients isEqualToArray:typedOther.recipients] &&
             [self.internalTransactions isEqualToArray:typedOther.internalTransactions] &&
+            ((self.custodyOrder == nil && typedOther.custodyOrder == nil) || (self.custodyOrder != nil && [self.custodyOrder isEqual:typedOther.custodyOrder])) &&
             ((self.cryptoProperties == nil && typedOther.cryptoProperties == nil) || (self.cryptoProperties != nil && [self.cryptoProperties isEqual:typedOther.cryptoProperties])) &&
             ((self.fiatProperties == nil && typedOther.fiatProperties == nil) || (self.fiatProperties != nil && [self.fiatProperties isEqual:typedOther.fiatProperties])) &&
             ((self.cardProperties == nil && typedOther.cardProperties == nil) || (self.cardProperties != nil && [self.cardProperties isEqual:typedOther.cardProperties])) &&
@@ -138,6 +143,7 @@
             self.senders.hash ^
             self.recipients.hash ^
             self.internalTransactions.hash ^
+            self.custodyOrder.hash ^
             self.cryptoProperties.hash ^
             self.fiatProperties.hash ^
             self.cardProperties.hash ^
@@ -150,7 +156,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ senders:%@ recipients:%@ internalTransactions:%@ cryptoProperties:%@ fiatProperties:%@ cardProperties:%@ exchange:%@ metadata:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.network, self.status, self.amount, self.fee, self.nonce, self.senders, self.recipients, self.internalTransactions, self.cryptoProperties, self.fiatProperties, self.cardProperties, self.exchange, self.metadata, self.submittedAt, self.confirmedAt, @(self.timestamp)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ currencyCode:%@ direction:%@ network:%@ status:%@ amount:%@ fee:%@ nonce:%@ senders:%@ recipients:%@ internalTransactions:%@ custodyOrder:%@ cryptoProperties:%@ fiatProperties:%@ cardProperties:%@ exchange:%@ metadata:%@ submittedAt:%@ confirmedAt:%@ timestamp:%@>", self.class, (void *)self, self.id, self.type, self.currencyCode, self.direction, self.network, self.status, self.amount, self.fee, self.nonce, self.senders, self.recipients, self.internalTransactions, self.custodyOrder, self.cryptoProperties, self.fiatProperties, self.cardProperties, self.exchange, self.metadata, self.submittedAt, self.confirmedAt, @(self.timestamp)];
 }
 
 @end
