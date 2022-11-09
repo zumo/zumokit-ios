@@ -13,7 +13,7 @@
                              price:(nonnull NSDecimalNumber *)price
                             amount:(nonnull NSDecimalNumber *)amount
                     debitAccountId:(nonnull NSString *)debitAccountId
-                debitTransactionId:(nonnull NSString *)debitTransactionId
+                debitTransactionId:(nullable NSString *)debitTransactionId
                    creditAccountId:(nonnull NSString *)creditAccountId
                creditTransactionId:(nullable NSString *)creditTransactionId
                              quote:(nonnull ZKQuote *)quote
@@ -28,7 +28,7 @@
                                  price:(nonnull NSDecimalNumber *)price
                                 amount:(nonnull NSDecimalNumber *)amount
                         debitAccountId:(nonnull NSString *)debitAccountId
-                    debitTransactionId:(nonnull NSString *)debitTransactionId
+                    debitTransactionId:(nullable NSString *)debitTransactionId
                        creditAccountId:(nonnull NSString *)creditAccountId
                    creditTransactionId:(nullable NSString *)creditTransactionId
                                  quote:(nonnull ZKQuote *)quote
@@ -65,7 +65,7 @@
 @property (nonatomic, readonly, nonnull) NSString * debitAccountId;
 
 /** Debit `ZKTransaction` identifier. */
-@property (nonatomic, readonly, nonnull) NSString * debitTransactionId;
+@property (nonatomic, readonly, nullable) NSString * debitTransactionId;
 
 /** Credit `ZKAccount` identifier. */
 @property (nonatomic, readonly, nonnull) NSString * creditAccountId;

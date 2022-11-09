@@ -13,7 +13,7 @@
                              price:(nonnull NSDecimalNumber *)price
                             amount:(nonnull NSDecimalNumber *)amount
                     debitAccountId:(nonnull NSString *)debitAccountId
-                debitTransactionId:(nonnull NSString *)debitTransactionId
+                debitTransactionId:(nullable NSString *)debitTransactionId
                    creditAccountId:(nonnull NSString *)creditAccountId
                creditTransactionId:(nullable NSString *)creditTransactionId
                              quote:(nonnull ZKQuote *)quote
@@ -49,7 +49,7 @@
                                  price:(nonnull NSDecimalNumber *)price
                                 amount:(nonnull NSDecimalNumber *)amount
                         debitAccountId:(nonnull NSString *)debitAccountId
-                    debitTransactionId:(nonnull NSString *)debitTransactionId
+                    debitTransactionId:(nullable NSString *)debitTransactionId
                        creditAccountId:(nonnull NSString *)creditAccountId
                    creditTransactionId:(nullable NSString *)creditTransactionId
                                  quote:(nonnull ZKQuote *)quote
@@ -88,7 +88,7 @@
             [self.price isEqual:typedOther.price] &&
             [self.amount isEqual:typedOther.amount] &&
             [self.debitAccountId isEqualToString:typedOther.debitAccountId] &&
-            [self.debitTransactionId isEqualToString:typedOther.debitTransactionId] &&
+            ((self.debitTransactionId == nil && typedOther.debitTransactionId == nil) || (self.debitTransactionId != nil && [self.debitTransactionId isEqual:typedOther.debitTransactionId])) &&
             [self.creditAccountId isEqualToString:typedOther.creditAccountId] &&
             ((self.creditTransactionId == nil && typedOther.creditTransactionId == nil) || (self.creditTransactionId != nil && [self.creditTransactionId isEqual:typedOther.creditTransactionId])) &&
             [self.quote isEqual:typedOther.quote] &&

@@ -19,7 +19,7 @@ auto Exchange::toCpp(ObjcType obj) -> CppType
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.price),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.amount),
             ::djinni::String::toCpp(obj.debitAccountId),
-            ::djinni::String::toCpp(obj.debitTransactionId),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.debitTransactionId),
             ::djinni::String::toCpp(obj.creditAccountId),
             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.creditTransactionId),
             ::djinni_generated::Quote::toCpp(obj.quote),
@@ -38,7 +38,7 @@ auto Exchange::fromCpp(const CppType& cpp) -> ObjcType
                                     price:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.price))
                                    amount:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.amount))
                            debitAccountId:(::djinni::String::fromCpp(cpp.debit_account_id))
-                       debitTransactionId:(::djinni::String::fromCpp(cpp.debit_transaction_id))
+                       debitTransactionId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.debit_transaction_id))
                           creditAccountId:(::djinni::String::fromCpp(cpp.credit_account_id))
                       creditTransactionId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.credit_transaction_id))
                                     quote:(::djinni_generated::Quote::fromCpp(cpp.quote))

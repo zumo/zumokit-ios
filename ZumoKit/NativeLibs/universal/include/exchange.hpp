@@ -35,7 +35,7 @@ struct Exchange final {
     /** Debit Account identifier. */
     std::string debit_account_id;
     /** Debit Transaction identifier. */
-    std::string debit_transaction_id;
+    std::optional<std::string> debit_transaction_id;
     /** Credit Account identifier. */
     std::string credit_account_id;
     /** Credit Transaction identifier. */
@@ -64,7 +64,7 @@ struct Exchange final {
              ::zumo::Decimal price_,
              ::zumo::Decimal amount_,
              std::string debit_account_id_,
-             std::string debit_transaction_id_,
+             std::optional<std::string> debit_transaction_id_,
              std::string credit_account_id_,
              std::optional<std::string> credit_transaction_id_,
              Quote quote_,
