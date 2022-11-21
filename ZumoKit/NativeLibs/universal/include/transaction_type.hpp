@@ -8,7 +8,7 @@
 
 namespace zumo {
 
-/** Transaction type, 'CUSTODY', 'CUSTODY_DEPOSIT', 'CUSTODY-WITHDRAW', 'CRYPTO', 'FIAT', 'NOMINATED' or 'CARD'. */
+/** Transaction type, 'CUSTODY', 'CUSTODY-DEPOSIT', 'CUSTODY-WITHDRAW', 'CRYPTO', 'FIAT', 'NOMINATED' or 'CARD'. */
 struct TransactionType final {
 
     static std::string const CUSTODY;

@@ -10,30 +10,29 @@
  */
 @interface ZKComposedTransaction : NSObject
 - (nonnull instancetype)initWithType:(nonnull NSString *)type
-                   signedTransaction:(nullable NSString *)signedTransaction
                              account:(nonnull ZKAccount *)account
                          destination:(nullable NSString *)destination
                               amount:(nullable NSDecimalNumber *)amount
-                                data:(nullable NSString *)data
                                  fee:(nonnull NSDecimalNumber *)fee
-                               nonce:(nonnull NSString *)nonce;
+                               nonce:(nonnull NSString *)nonce
+                   signedTransaction:(nullable NSString *)signedTransaction
+                      custodyOrderId:(nullable NSString *)custodyOrderId
+                                data:(nullable NSString *)data;
 + (nonnull instancetype)composedTransactionWithType:(nonnull NSString *)type
-                                  signedTransaction:(nullable NSString *)signedTransaction
                                             account:(nonnull ZKAccount *)account
                                         destination:(nullable NSString *)destination
                                              amount:(nullable NSDecimalNumber *)amount
-                                               data:(nullable NSString *)data
                                                 fee:(nonnull NSDecimalNumber *)fee
-                                              nonce:(nonnull NSString *)nonce;
+                                              nonce:(nonnull NSString *)nonce
+                                  signedTransaction:(nullable NSString *)signedTransaction
+                                     custodyOrderId:(nullable NSString *)custodyOrderId
+                                               data:(nullable NSString *)data;
 
 /**
- * Transaction type, 'FIAT', 'CRYPTO' or 'NOMINATED'.
+ * Transaction type, 'FIAT', 'CRYPTO', 'NOMINATED' or 'CUSTODY-WITHDRAW'.
  * @see `ZKTransactionType`
  */
 @property (nonatomic, readonly, nonnull) NSString * type;
-
-/** Signed transaction for a crypto transaction, null otherwise. */
-@property (nonatomic, readonly, nullable) NSString * signedTransaction;
 
 /** Account the composed transaction belongs to. */
 @property (nonatomic, readonly, nonnull) ZKAccount * account;
@@ -44,13 +43,19 @@
 /** Transaction amount in account currency. */
 @property (nonatomic, readonly, nullable) NSDecimalNumber * amount;
 
-/** Optional transaction data if available. */
-@property (nonatomic, readonly, nullable) NSString * data;
-
 /** Maximum transaction fee. */
 @property (nonatomic, readonly, nonnull) NSDecimalNumber * fee;
 
 /** Transaction nonce to prevent double spend. */
 @property (nonatomic, readonly, nonnull) NSString * nonce;
+
+/** Signed transaction for a crypto transaction, null otherwise. */
+@property (nonatomic, readonly, nullable) NSString * signedTransaction;
+
+/** Custody order id for custody withdraw transaction, null otherwise. */
+@property (nonatomic, readonly, nullable) NSString * custodyOrderId;
+
+/** Optional transaction data if available. */
+@property (nonatomic, readonly, nullable) NSString * data;
 
 @end

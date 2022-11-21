@@ -7,44 +7,48 @@
 @implementation ZKComposedTransaction
 
 - (nonnull instancetype)initWithType:(nonnull NSString *)type
-                   signedTransaction:(nullable NSString *)signedTransaction
                              account:(nonnull ZKAccount *)account
                          destination:(nullable NSString *)destination
                               amount:(nullable NSDecimalNumber *)amount
-                                data:(nullable NSString *)data
                                  fee:(nonnull NSDecimalNumber *)fee
                                nonce:(nonnull NSString *)nonce
+                   signedTransaction:(nullable NSString *)signedTransaction
+                      custodyOrderId:(nullable NSString *)custodyOrderId
+                                data:(nullable NSString *)data
 {
     if (self = [super init]) {
         _type = [type copy];
-        _signedTransaction = [signedTransaction copy];
         _account = account;
         _destination = [destination copy];
         _amount = amount;
-        _data = [data copy];
         _fee = fee;
         _nonce = [nonce copy];
+        _signedTransaction = [signedTransaction copy];
+        _custodyOrderId = [custodyOrderId copy];
+        _data = [data copy];
     }
     return self;
 }
 
 + (nonnull instancetype)composedTransactionWithType:(nonnull NSString *)type
-                                  signedTransaction:(nullable NSString *)signedTransaction
                                             account:(nonnull ZKAccount *)account
                                         destination:(nullable NSString *)destination
                                              amount:(nullable NSDecimalNumber *)amount
-                                               data:(nullable NSString *)data
                                                 fee:(nonnull NSDecimalNumber *)fee
                                               nonce:(nonnull NSString *)nonce
+                                  signedTransaction:(nullable NSString *)signedTransaction
+                                     custodyOrderId:(nullable NSString *)custodyOrderId
+                                               data:(nullable NSString *)data
 {
     return [(ZKComposedTransaction*)[self alloc] initWithType:type
-                                            signedTransaction:signedTransaction
                                                       account:account
                                                   destination:destination
                                                        amount:amount
-                                                         data:data
                                                           fee:fee
-                                                        nonce:nonce];
+                                                        nonce:nonce
+                                            signedTransaction:signedTransaction
+                                               custodyOrderId:custodyOrderId
+                                                         data:data];
 }
 
 - (BOOL)isEqual:(id)other
@@ -54,31 +58,33 @@
     }
     ZKComposedTransaction *typedOther = (ZKComposedTransaction *)other;
     return [self.type isEqualToString:typedOther.type] &&
-            ((self.signedTransaction == nil && typedOther.signedTransaction == nil) || (self.signedTransaction != nil && [self.signedTransaction isEqual:typedOther.signedTransaction])) &&
             [self.account isEqual:typedOther.account] &&
             ((self.destination == nil && typedOther.destination == nil) || (self.destination != nil && [self.destination isEqual:typedOther.destination])) &&
             ((self.amount == nil && typedOther.amount == nil) || (self.amount != nil && [self.amount isEqual:typedOther.amount])) &&
-            ((self.data == nil && typedOther.data == nil) || (self.data != nil && [self.data isEqual:typedOther.data])) &&
             [self.fee isEqual:typedOther.fee] &&
-            [self.nonce isEqualToString:typedOther.nonce];
+            [self.nonce isEqualToString:typedOther.nonce] &&
+            ((self.signedTransaction == nil && typedOther.signedTransaction == nil) || (self.signedTransaction != nil && [self.signedTransaction isEqual:typedOther.signedTransaction])) &&
+            ((self.custodyOrderId == nil && typedOther.custodyOrderId == nil) || (self.custodyOrderId != nil && [self.custodyOrderId isEqual:typedOther.custodyOrderId])) &&
+            ((self.data == nil && typedOther.data == nil) || (self.data != nil && [self.data isEqual:typedOther.data]));
 }
 
 - (NSUInteger)hash
 {
     return NSStringFromClass([self class]).hash ^
             self.type.hash ^
-            self.signedTransaction.hash ^
             self.account.hash ^
             self.destination.hash ^
             self.amount.hash ^
-            self.data.hash ^
             ((NSUInteger)self.fee) ^
-            self.nonce.hash;
+            self.nonce.hash ^
+            self.signedTransaction.hash ^
+            self.custodyOrderId.hash ^
+            self.data.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p type:%@ signedTransaction:%@ account:%@ destination:%@ amount:%@ data:%@ fee:%@ nonce:%@>", self.class, (void *)self, self.type, self.signedTransaction, self.account, self.destination, self.amount, self.data, self.fee, self.nonce];
+    return [NSString stringWithFormat:@"<%@ %p type:%@ account:%@ destination:%@ amount:%@ fee:%@ nonce:%@ signedTransaction:%@ custodyOrderId:%@ data:%@>", self.class, (void *)self, self.type, self.account, self.destination, self.amount, self.fee, self.nonce, self.signedTransaction, self.custodyOrderId, self.data];
 }
 
 @end

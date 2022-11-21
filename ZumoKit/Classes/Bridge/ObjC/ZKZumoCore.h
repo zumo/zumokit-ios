@@ -50,6 +50,8 @@
  * @param transactionServiceUrl  ZumoKit Transaction Service URL
  * @param cardServiceUrl         ZumoKit Card Service URL
  * @param notificationServiceUrl ZumoKit Notification Service URL
+ * @param exchangeServiceUrl     ZumoKit Exchange Service URL
+ * @param custodyServiceUrl      ZumoKit Custody Service URL
  *
  * @return ZumoKit instance
  */
@@ -60,7 +62,8 @@
         transactionServiceUrl:(nonnull NSString *)transactionServiceUrl
                cardServiceUrl:(nonnull NSString *)cardServiceUrl
        notificationServiceUrl:(nonnull NSString *)notificationServiceUrl
-           exchangeServiceUrl:(nonnull NSString *)exchangeServiceUrl;
+           exchangeServiceUrl:(nonnull NSString *)exchangeServiceUrl
+            custodyServiceUrl:(nonnull NSString *)custodyServiceUrl;
 
 /**
  * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

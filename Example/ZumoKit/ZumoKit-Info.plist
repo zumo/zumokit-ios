@@ -32,6 +32,8 @@
 	<string>$(CLIENT_HEADERS)</string>
 	<key>CLIENT_ZUMOKIT_AUTH_ENDPOINT</key>
 	<string>$(CLIENT_ZUMOKIT_AUTH_ENDPOINT)</string>
+	<key>CUSTODY_SERVICE_URL</key>
+	<string>$(CUSTODY_SERVICE_URL)</string>
 	<key>EXCHANGE_SERVICE_URL</key>
 	<string>$(EXCHANGE_SERVICE_URL)</string>
 	<key>LSRequiresIPhoneOS</key>

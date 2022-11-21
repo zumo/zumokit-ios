@@ -17,44 +17,48 @@ namespace zumo {
  */
 struct ComposedTransaction final {
     /**
-     * Transaction type, 'FIAT', 'CRYPTO' or 'NOMINATED'.
+     * Transaction type, 'FIAT', 'CRYPTO', 'NOMINATED' or 'CUSTODY-WITHDRAW'.
      * @see TransactionType
      */
     std::string type;
-    /** Signed transaction for a crypto transaction, null otherwise. */
-    std::optional<std::string> signed_transaction;
     /** Account the composed transaction belongs to. */
     Account account;
     /** Transaction destination, i.e. destination address for crypto transactions or user id for fiat transactions. */
     std::optional<std::string> destination;
     /** Transaction amount in account currency. */
     std::optional<::zumo::Decimal> amount;
-    /** Optional transaction data if available. */
-    std::optional<std::string> data;
     /** Maximum transaction fee. */
     ::zumo::Decimal fee;
     /** Transaction nonce to prevent double spend. */
     std::string nonce;
+    /** Signed transaction for a crypto transaction, null otherwise. */
+    std::optional<std::string> signed_transaction;
+    /** Custody order id for custody withdraw transaction, null otherwise. */
+    std::optional<std::string> custody_order_id;
+    /** Optional transaction data if available. */
+    std::optional<std::string> data;
 
     friend bool operator==(const ComposedTransaction& lhs, const ComposedTransaction& rhs);
     friend bool operator!=(const ComposedTransaction& lhs, const ComposedTransaction& rhs);
 
     ComposedTransaction(std::string type_,
-                        std::optional<std::string> signed_transaction_,
                         Account account_,
                         std::optional<std::string> destination_,
                         std::optional<::zumo::Decimal> amount_,
-                        std::optional<std::string> data_,
                         ::zumo::Decimal fee_,
-                        std::string nonce_)
+                        std::string nonce_,
+                        std::optional<std::string> signed_transaction_,
+                        std::optional<std::string> custody_order_id_,
+                        std::optional<std::string> data_)
     : type(std::move(type_))
-    , signed_transaction(std::move(signed_transaction_))
     , account(std::move(account_))
     , destination(std::move(destination_))
     , amount(std::move(amount_))
-    , data(std::move(data_))
     , fee(std::move(fee_))
     , nonce(std::move(nonce_))
+    , signed_transaction(std::move(signed_transaction_))
+    , custody_order_id(std::move(custody_order_id_))
+    , data(std::move(data_))
     {}
 };
 

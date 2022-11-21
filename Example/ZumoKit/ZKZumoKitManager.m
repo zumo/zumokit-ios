@@ -46,6 +46,7 @@
     NSString *cardServiceUrl = [mainBundle objectForInfoDictionaryKey:@"CARD_SERVICE_URL"];
     NSString *notificationServiceUrl = [mainBundle objectForInfoDictionaryKey:@"NOTIFICATION_SERVICE_URL"];
     NSString *exchangeServiceUrl = [mainBundle objectForInfoDictionaryKey:@"EXCHANGE_SERVICE_URL"];
+    NSString *custodyServiceUrl = [mainBundle objectForInfoDictionaryKey:@"CUSTODY_SERVICE_URL"];
     
     // Client config
     NSURL *clientZumoKitAuthEndpoint = [NSURL URLWithString:[mainBundle objectForInfoDictionaryKey:@"CLIENT_ZUMOKIT_AUTH_ENDPOINT"]];
@@ -59,7 +60,8 @@
                           transactionServiceUrl:transactionServiceUrl
                                  cardServiceUrl:cardServiceUrl
                          notificationServiceUrl:notificationServiceUrl
-                             exchangeServiceUrl:exchangeServiceUrl];
+                             exchangeServiceUrl:exchangeServiceUrl
+                              custodyServiceUrl:custodyServiceUrl];
     
     // Get ZumoKit user token
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:clientZumoKitAuthEndpoint];
@@ -224,16 +226,16 @@
 }
 
 
-- (void)composeExchange:(ZKAccount *)fromAccount
-              toAccount:(ZKAccount *)toAccount
+- (void)composeExchange:(ZKAccount *)debitAccount
+          creditAccount:(ZKAccount *)creditAccount
                  amount:(NSDecimalNumber *)amount
                  submit:(BOOL)submit
 {
-    [_user composeExchange:fromAccount.id
-                 toAccountId:toAccount.id
-                      amount:amount
-                     sendMax:NO
-                  completion:^(ZKComposedExchange * _Nullable composedExchange, NSError * _Nullable error) {
+    [_user composeExchange:debitAccount.id
+           creditAccountId:creditAccount.id
+                    amount:amount
+                   sendMax:NO
+                completion:^(ZKComposedExchange * _Nullable composedExchange, NSError * _Nullable error) {
         
         if (error != nil) {
             NSLog(@"error: %@", [error description]);

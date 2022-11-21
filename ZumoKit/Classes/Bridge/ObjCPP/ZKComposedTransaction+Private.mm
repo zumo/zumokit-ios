@@ -13,25 +13,27 @@ auto ComposedTransaction::toCpp(ObjcType obj) -> CppType
 {
     assert(obj);
     return {::djinni::String::toCpp(obj.type),
-            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.signedTransaction),
             ::djinni_generated::Account::toCpp(obj.account),
             ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.destination),
             ::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::toCpp(obj.amount),
-            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.data),
             ::zumo::djinni::objc::DecimalConverter::toCpp(obj.fee),
-            ::djinni::String::toCpp(obj.nonce)};
+            ::djinni::String::toCpp(obj.nonce),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.signedTransaction),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.custodyOrderId),
+            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.data)};
 }
 
 auto ComposedTransaction::fromCpp(const CppType& cpp) -> ObjcType
 {
     return [[ZKComposedTransaction alloc] initWithType:(::djinni::String::fromCpp(cpp.type))
-                                     signedTransaction:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.signed_transaction))
                                                account:(::djinni_generated::Account::fromCpp(cpp.account))
                                            destination:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.destination))
                                                 amount:(::djinni::Optional<std::optional, ::zumo::djinni::objc::DecimalConverter>::fromCpp(cpp.amount))
-                                                  data:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.data))
                                                    fee:(::zumo::djinni::objc::DecimalConverter::fromCpp(cpp.fee))
-                                                 nonce:(::djinni::String::fromCpp(cpp.nonce))];
+                                                 nonce:(::djinni::String::fromCpp(cpp.nonce))
+                                     signedTransaction:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.signed_transaction))
+                                        custodyOrderId:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.custody_order_id))
+                                                  data:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.data))];
 }
 
 }  // namespace djinni_generated

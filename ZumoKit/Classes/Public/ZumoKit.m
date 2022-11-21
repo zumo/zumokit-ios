@@ -36,7 +36,8 @@ ZKZumoCore *zumoCore;
          transactionServiceUrl:(NSString *)transactionServiceUrl
                 cardServiceUrl:(NSString *)cardServiceUrl
         notificationServiceUrl:(NSString *)notificationServiceUrl
-            exchangeServiceUrl:(nonnull NSString *)exchangeServiceUrl {
+            exchangeServiceUrl:(NSString *)exchangeServiceUrl
+             custodyServiceUrl:(NSString *)custodyServiceUrl{
 
     if( self = [super init] ) {
         // Init the providers needed for the C++ core
@@ -51,7 +52,8 @@ ZKZumoCore *zumoCore;
               transactionServiceUrl: transactionServiceUrl
                      cardServiceUrl: cardServiceUrl
              notificationServiceUrl: notificationServiceUrl
-                 exchangeServiceUrl: exchangeServiceUrl];
+                 exchangeServiceUrl: exchangeServiceUrl
+                  custodyServiceUrl: custodyServiceUrl];
     }
 
     return self;

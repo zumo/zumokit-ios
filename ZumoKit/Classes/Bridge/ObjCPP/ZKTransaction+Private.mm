@@ -4,6 +4,7 @@
 #import "ZKTransaction+Private.h"
 #import "DJIMarshal+Private.h"
 #import "NSDecimalNumber+ZumoKit.h"
+#import "ZKCustodyOrder+Private.h"
 #import "ZKExchange+Private.h"
 #import "ZKInternalTransaction+Private.h"
 #import "ZKTransactionAmount+Private.h"
@@ -29,7 +30,7 @@ auto Transaction::toCpp(ObjcType obj) -> CppType
             ::djinni::List<::djinni_generated::TransactionAmount>::toCpp(obj.senders),
             ::djinni::List<::djinni_generated::TransactionAmount>::toCpp(obj.recipients),
             ::djinni::List<::djinni_generated::InternalTransaction>::toCpp(obj.internalTransactions),
-            ::djinni::Optional<std::optional, ::djinni::String>::toCpp(obj.custodyOrder),
+            ::djinni::Optional<std::optional, ::djinni_generated::CustodyOrder>::toCpp(obj.custodyOrder),
             ::djinni::Optional<std::optional, ::djinni_generated::TransactionCryptoProperties>::toCpp(obj.cryptoProperties),
             ::djinni::Optional<std::optional, ::djinni_generated::TransactionFiatProperties>::toCpp(obj.fiatProperties),
             ::djinni::Optional<std::optional, ::djinni_generated::TransactionCardProperties>::toCpp(obj.cardProperties),
@@ -54,7 +55,7 @@ auto Transaction::fromCpp(const CppType& cpp) -> ObjcType
                                      senders:(::djinni::List<::djinni_generated::TransactionAmount>::fromCpp(cpp.senders))
                                   recipients:(::djinni::List<::djinni_generated::TransactionAmount>::fromCpp(cpp.recipients))
                         internalTransactions:(::djinni::List<::djinni_generated::InternalTransaction>::fromCpp(cpp.internal_transactions))
-                                custodyOrder:(::djinni::Optional<std::optional, ::djinni::String>::fromCpp(cpp.custody_order))
+                                custodyOrder:(::djinni::Optional<std::optional, ::djinni_generated::CustodyOrder>::fromCpp(cpp.custody_order))
                             cryptoProperties:(::djinni::Optional<std::optional, ::djinni_generated::TransactionCryptoProperties>::fromCpp(cpp.crypto_properties))
                               fiatProperties:(::djinni::Optional<std::optional, ::djinni_generated::TransactionFiatProperties>::fromCpp(cpp.fiat_properties))
                               cardProperties:(::djinni::Optional<std::optional, ::djinni_generated::TransactionCardProperties>::fromCpp(cpp.card_properties))

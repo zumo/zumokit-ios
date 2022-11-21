@@ -18,7 +18,7 @@
                            senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
                         recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
               internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
-                      custodyOrder:(nullable NSString *)custodyOrder
+                      custodyOrder:(nullable ZKCustodyOrder *)custodyOrder
                   cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                     fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                     cardProperties:(nullable ZKTransactionCardProperties *)cardProperties
@@ -41,7 +41,7 @@
         _senders = [senders copy];
         _recipients = [recipients copy];
         _internalTransactions = [internalTransactions copy];
-        _custodyOrder = [custodyOrder copy];
+        _custodyOrder = custodyOrder;
         _cryptoProperties = cryptoProperties;
         _fiatProperties = fiatProperties;
         _cardProperties = cardProperties;
@@ -66,7 +66,7 @@
                                   senders:(nonnull NSArray<ZKTransactionAmount *> *)senders
                                recipients:(nonnull NSArray<ZKTransactionAmount *> *)recipients
                      internalTransactions:(nonnull NSArray<ZKInternalTransaction *> *)internalTransactions
-                             custodyOrder:(nullable NSString *)custodyOrder
+                             custodyOrder:(nullable ZKCustodyOrder *)custodyOrder
                          cryptoProperties:(nullable ZKTransactionCryptoProperties *)cryptoProperties
                            fiatProperties:(nullable ZKTransactionFiatProperties *)fiatProperties
                            cardProperties:(nullable ZKTransactionCardProperties *)cardProperties

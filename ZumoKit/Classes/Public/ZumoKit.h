@@ -86,6 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
 * @param cardServiceUrl             ZumoKit Card Service URL
 * @param notificationServiceUrl  ZumoKit Notification Service URL
 * @param exchangeServiceUrl    ZumoKit Exchange Service URL
+* @param custodyServiceUrl       ZumoKit Custody Service URL
 *
 * @return ZumoKit instance
 */
@@ -94,7 +95,8 @@ NS_ASSUME_NONNULL_BEGIN
          transactionServiceUrl:(NSString *)transactionServiceUrl
                 cardServiceUrl:(NSString *)cardServiceUrl
         notificationServiceUrl:(NSString *)notificationServiceUrl
-            exchangeServiceUrl:(NSString *)exchangeServiceUrl;
+            exchangeServiceUrl:(NSString *)exchangeServiceUrl
+             custodyServiceUrl:(NSString *)custodyServiceUrl;
 
 /**
 * Signs in user corresponding to user token set. Sets current user to the newly signed in user.

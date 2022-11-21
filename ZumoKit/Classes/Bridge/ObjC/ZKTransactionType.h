@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-/** Transaction type, 'CUSTODY', 'CUSTODY_DEPOSIT', 'CUSTODY-WITHDRAW', 'CRYPTO', 'FIAT', 'NOMINATED' or 'CARD'. */
+/** Transaction type, 'CUSTODY', 'CUSTODY-DEPOSIT', 'CUSTODY-WITHDRAW', 'CRYPTO', 'FIAT', 'NOMINATED' or 'CARD'. */
 @interface ZKTransactionType : NSObject
 - (nonnull instancetype)init;
 + (nonnull instancetype)transactionType;

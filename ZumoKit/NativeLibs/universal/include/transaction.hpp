@@ -3,6 +3,7 @@
 
 #pragma once
 
+#include "custody_order.hpp"
 #include "decimal.hpp"
 #include "exchange.hpp"
 #include "internal_transaction.hpp"
@@ -63,7 +64,7 @@ struct Transaction final {
     /** Internal transactions, e.g. ETH contract interaction side effects. */
     std::vector<InternalTransaction> internal_transactions;
     /** Custody order properties if it is a transaction associated with a custody order, null otherwise. */
-    std::optional<std::string> custody_order;
+    std::optional<CustodyOrder> custody_order;
     /**
      * Crypto properties if it is a crypto transaction, null otherwise.
      * @see TransactionType
@@ -105,7 +106,7 @@ struct Transaction final {
                 std::vector<TransactionAmount> senders_,
                 std::vector<TransactionAmount> recipients_,
                 std::vector<InternalTransaction> internal_transactions_,
-                std::optional<std::string> custody_order_,
+                std::optional<CustodyOrder> custody_order_,
                 std::optional<TransactionCryptoProperties> crypto_properties_,
                 std::optional<TransactionFiatProperties> fiat_properties_,
                 std::optional<TransactionCardProperties> card_properties_,
