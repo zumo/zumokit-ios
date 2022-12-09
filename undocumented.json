@@ -458,14 +458,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h",
       "line": 8,
-      "symbol": "ZKCustodyOrder.-initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:",
+      "symbol": "ZKCustodyOrder.-initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h",
-      "line": 21,
-      "symbol": "ZKCustodyOrder.+custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:",
+      "line": 25,
+      "symbol": "ZKCustodyOrder.+custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
