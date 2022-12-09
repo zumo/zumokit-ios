@@ -14,8 +14,12 @@
                               fees:(nullable NSDecimalNumber *)fees
                      fromAddresses:(nullable NSArray<NSString *> *)fromAddresses
                      fromAccountId:(nullable NSString *)fromAccountId
+                        fromUserId:(nullable NSString *)fromUserId
+              fromUserIntegratorId:(nullable NSString *)fromUserIntegratorId
                          toAddress:(nullable NSString *)toAddress
                        toAccountId:(nullable NSString *)toAccountId
+                          toUserId:(nullable NSString *)toUserId
+                toUserIntegratorId:(nullable NSString *)toUserIntegratorId
                          createdAt:(int32_t)createdAt
                          updatedAt:(int32_t)updatedAt;
 + (nonnull instancetype)custodyOrderWithId:(nonnull NSString *)id
@@ -27,8 +31,12 @@
                                       fees:(nullable NSDecimalNumber *)fees
                              fromAddresses:(nullable NSArray<NSString *> *)fromAddresses
                              fromAccountId:(nullable NSString *)fromAccountId
+                                fromUserId:(nullable NSString *)fromUserId
+                      fromUserIntegratorId:(nullable NSString *)fromUserIntegratorId
                                  toAddress:(nullable NSString *)toAddress
                                toAccountId:(nullable NSString *)toAccountId
+                                  toUserId:(nullable NSString *)toUserId
+                        toUserIntegratorId:(nullable NSString *)toUserIntegratorId
                                  createdAt:(int32_t)createdAt
                                  updatedAt:(int32_t)updatedAt;
 
@@ -65,11 +73,23 @@
 /** Debit `ZKAccount` identifier, if applicable.  */
 @property (nonatomic, readonly, nullable) NSString * fromAccountId;
 
+/** Debit `ZKAccount's` user identifier, if applicable.  */
+@property (nonatomic, readonly, nullable) NSString * fromUserId;
+
+/** Debit `ZKAccount's` user integrator identifier, if applicable.  */
+@property (nonatomic, readonly, nullable) NSString * fromUserIntegratorId;
+
 /** Destination crypto address, if applicable. */
 @property (nonatomic, readonly, nullable) NSString * toAddress;
 
 /** Credit `ZKAccount` identifier, if applicable. */
 @property (nonatomic, readonly, nullable) NSString * toAccountId;
+
+/** Credit `ZKAccount's` user identifier, if applicable.  */
+@property (nonatomic, readonly, nullable) NSString * toUserId;
+
+/** Credit `ZKAccount's` user integrator identifier, if applicable.  */
+@property (nonatomic, readonly, nullable) NSString * toUserIntegratorId;
 
 /** Epoch timestamp when custody order was created.  */
 @property (nonatomic, readonly) int32_t createdAt;

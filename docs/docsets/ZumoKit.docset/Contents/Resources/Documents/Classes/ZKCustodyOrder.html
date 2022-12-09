@@ -21,7 +21,7 @@
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="../index.html">
-          ZumoKit 4.5.1 Docs
+          ZumoKit 4.6.0 Docs
         </a>
         
       </p>
@@ -744,7 +744,7 @@
             <p>Record containing custody order.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L7-L80">Show on GitHub</a>
+                <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L7-L100">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -756,9 +756,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKCustodyOrder(im)initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:"></a>
-                    <a name="//apple_ref/objc/Method/-initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(im)initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:">-initWithId:<wbr>type:<wbr>status:<wbr>amount:<wbr>feeInAmount:<wbr>estimatedFees:<wbr>fees:<wbr>fromAddresses:<wbr>fromAccountId:<wbr>toAddress:<wbr>toAccountId:<wbr>createdAt:<wbr>updatedAt:<wbr></a>
+                    <a name="/c:objc(cs)ZKCustodyOrder(im)initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:"></a>
+                    <a name="//apple_ref/objc/Method/-initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(im)initWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:">-initWithId:<wbr>type:<wbr>status:<wbr>amount:<wbr>feeInAmount:<wbr>estimatedFees:<wbr>fees:<wbr>fromAddresses:<wbr>fromAccountId:<wbr>fromUserId:<wbr>fromUserIntegratorId:<wbr>toAddress:<wbr>toAccountId:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>createdAt:<wbr>updatedAt:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -781,20 +781,24 @@
                               <span class="nf">fees</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">fees</span>
                      <span class="nf">fromAddresses</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAddresses</span>
                      <span class="nf">fromAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                        <span class="nf">fromUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserId</span>
+              <span class="nf">fromUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserIntegratorId</span>
                          <span class="nf">toAddress</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAddress</span>
                        <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                          <span class="nf">toUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserId</span>
+                <span class="nf">toUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserIntegratorId</span>
                          <span class="nf">createdAt</span><span class="p">:(</span><span class="kt">int32_t</span><span class="p">)</span><span class="nv">createdAt</span>
                          <span class="nf">updatedAt</span><span class="p">:(</span><span class="kt">int32_t</span><span class="p">)</span><span class="nv">updatedAt</span><span class="p">;</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">feeInAmount</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">estimatedFees</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">fees</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">fromAddresses</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">createdAt</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">updatedAt</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">type</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">status</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">amount</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">feeInAmount</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">estimatedFees</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">fees</span><span class="p">:</span> <span class="kt">NSDecimalNumber</span><span class="p">?,</span> <span class="nv">fromAddresses</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]?,</span> <span class="nv">fromAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">fromUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAddress</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toAccountId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">toUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span> <span class="nv">createdAt</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">,</span> <span class="nv">updatedAt</span><span class="p">:</span> <span class="kt">Int32</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L8-L20">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L8-L24">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -802,9 +806,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:objc(cs)ZKCustodyOrder(cm)custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:"></a>
-                    <a name="//apple_ref/objc/Method/+custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:" class="dashAnchor"></a>
-                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(cm)custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:toAddress:toAccountId:createdAt:updatedAt:">+custodyOrderWithId:<wbr>type:<wbr>status:<wbr>amount:<wbr>feeInAmount:<wbr>estimatedFees:<wbr>fees:<wbr>fromAddresses:<wbr>fromAccountId:<wbr>toAddress:<wbr>toAccountId:<wbr>createdAt:<wbr>updatedAt:<wbr></a>
+                    <a name="/c:objc(cs)ZKCustodyOrder(cm)custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:"></a>
+                    <a name="//apple_ref/objc/Method/+custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(cm)custodyOrderWithId:type:status:amount:feeInAmount:estimatedFees:fees:fromAddresses:fromAccountId:fromUserId:fromUserIntegratorId:toAddress:toAccountId:toUserId:toUserIntegratorId:createdAt:updatedAt:">+custodyOrderWithId:<wbr>type:<wbr>status:<wbr>amount:<wbr>feeInAmount:<wbr>estimatedFees:<wbr>fees:<wbr>fromAddresses:<wbr>fromAccountId:<wbr>fromUserId:<wbr>fromUserIntegratorId:<wbr>toAddress:<wbr>toAccountId:<wbr>toUserId:<wbr>toUserIntegratorId:<wbr>createdAt:<wbr>updatedAt:<wbr></a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -827,15 +831,19 @@
                                       <span class="nf">fees</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSDecimalNumber</span> <span class="o">*</span><span class="p">)</span><span class="nv">fees</span>
                              <span class="nf">fromAddresses</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSArray</span><span class="o">&lt;</span><span class="n">NSString</span> <span class="o">*&gt;</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAddresses</span>
                              <span class="nf">fromAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromAccountId</span>
+                                <span class="nf">fromUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserId</span>
+                      <span class="nf">fromUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">fromUserIntegratorId</span>
                                  <span class="nf">toAddress</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAddress</span>
                                <span class="nf">toAccountId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toAccountId</span>
+                                  <span class="nf">toUserId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserId</span>
+                        <span class="nf">toUserIntegratorId</span><span class="p">:(</span><span class="n">nullable</span> <span class="n">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">toUserIntegratorId</span>
                                  <span class="nf">createdAt</span><span class="p">:(</span><span class="kt">int32_t</span><span class="p">)</span><span class="nv">createdAt</span>
                                  <span class="nf">updatedAt</span><span class="p">:(</span><span class="kt">int32_t</span><span class="p">)</span><span class="nv">updatedAt</span><span class="p">;</span></code></pre>
 
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L21-L33">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L25-L41">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -870,7 +878,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L36">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L44">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -910,7 +918,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L42">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L50">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -950,7 +958,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L48">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L56">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -985,7 +993,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L51">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L59">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1020,7 +1028,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L54">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L62">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1055,7 +1063,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L57">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L65">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1090,7 +1098,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L60">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L68">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1125,7 +1133,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L63">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L71">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1160,7 +1168,77 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L66">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L74">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKCustodyOrder(py)fromUserId"></a>
+                    <a name="//apple_ref/objc/Property/fromUserId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(py)fromUserId">fromUserId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Debit <code>ZKAccount&#39;s</code> user identifier, if applicable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromUserId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L77">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKCustodyOrder(py)fromUserIntegratorId"></a>
+                    <a name="//apple_ref/objc/Property/fromUserIntegratorId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(py)fromUserIntegratorId">fromUserIntegratorId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Debit <code>ZKAccount&#39;s</code> user integrator identifier, if applicable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">fromUserIntegratorId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">fromUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L80">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1195,7 +1273,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L69">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L83">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1230,7 +1308,77 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L72">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L86">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKCustodyOrder(py)toUserId"></a>
+                    <a name="//apple_ref/objc/Property/toUserId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(py)toUserId">toUserId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Credit <code>ZKAccount&#39;s</code> user identifier, if applicable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toUserId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toUserId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L89">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:objc(cs)ZKCustodyOrder(py)toUserIntegratorId"></a>
+                    <a name="//apple_ref/objc/Property/toUserIntegratorId" class="dashAnchor"></a>
+                    <a class="token" href="#/c:objc(cs)ZKCustodyOrder(py)toUserIntegratorId">toUserIntegratorId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Credit <code>ZKAccount&#39;s</code> user integrator identifier, if applicable.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">readonly</span><span class="p">,</span> <span class="n">nullable</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">toUserIntegratorId</span><span class="p">;</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">toUserIntegratorId</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L92">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1265,7 +1413,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L75">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L95">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1300,7 +1448,7 @@
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/zumo/zumokit-ios/tree/4.5.1/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L78">Show on GitHub</a>
+                        <a href="https://github.com/zumo/zumokit-ios/tree/4.6.0/ZumoKit/Classes/Bridge/ObjC/ZKCustodyOrder.h#L98">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1313,7 +1461,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-11-21)</p>
+      <p>&copy; 2022 <a class="link" href="https://zumo.money" target="_blank" rel="external noopener">Zumo</a>. All rights reserved. (Last updated: 2022-12-09)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>

@@ -38,10 +38,18 @@ struct CustodyOrder final {
     std::optional<std::vector<std::string>> from_addresses;
     /** Debit Account identifier, if applicable.  */
     std::optional<std::string> from_account_id;
+    /** Debit Account's user identifier, if applicable.  */
+    std::optional<std::string> from_user_id;
+    /** Debit Account's user integrator identifier, if applicable.  */
+    std::optional<std::string> from_user_integrator_id;
     /** Destination crypto address, if applicable. */
     std::optional<std::string> to_address;
     /** Credit Account identifier, if applicable. */
     std::optional<std::string> to_account_id;
+    /** Credit Account's user identifier, if applicable.  */
+    std::optional<std::string> to_user_id;
+    /** Credit Account's user integrator identifier, if applicable.  */
+    std::optional<std::string> to_user_integrator_id;
     /** Epoch timestamp when custody order was created.  */
     int32_t created_at;
     /** Epoch timestamp when custody order was updated.  */
@@ -59,8 +67,12 @@ struct CustodyOrder final {
                  std::optional<::zumo::Decimal> fees_,
                  std::optional<std::vector<std::string>> from_addresses_,
                  std::optional<std::string> from_account_id_,
+                 std::optional<std::string> from_user_id_,
+                 std::optional<std::string> from_user_integrator_id_,
                  std::optional<std::string> to_address_,
                  std::optional<std::string> to_account_id_,
+                 std::optional<std::string> to_user_id_,
+                 std::optional<std::string> to_user_integrator_id_,
                  int32_t created_at_,
                  int32_t updated_at_)
     : id(std::move(id_))
@@ -72,8 +84,12 @@ struct CustodyOrder final {
     , fees(std::move(fees_))
     , from_addresses(std::move(from_addresses_))
     , from_account_id(std::move(from_account_id_))
+    , from_user_id(std::move(from_user_id_))
+    , from_user_integrator_id(std::move(from_user_integrator_id_))
     , to_address(std::move(to_address_))
     , to_account_id(std::move(to_account_id_))
+    , to_user_id(std::move(to_user_id_))
+    , to_user_integrator_id(std::move(to_user_integrator_id_))
     , created_at(std::move(created_at_))
     , updated_at(std::move(updated_at_))
     {}

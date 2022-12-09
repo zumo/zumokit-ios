@@ -15,8 +15,12 @@
                               fees:(nullable NSDecimalNumber *)fees
                      fromAddresses:(nullable NSArray<NSString *> *)fromAddresses
                      fromAccountId:(nullable NSString *)fromAccountId
+                        fromUserId:(nullable NSString *)fromUserId
+              fromUserIntegratorId:(nullable NSString *)fromUserIntegratorId
                          toAddress:(nullable NSString *)toAddress
                        toAccountId:(nullable NSString *)toAccountId
+                          toUserId:(nullable NSString *)toUserId
+                toUserIntegratorId:(nullable NSString *)toUserIntegratorId
                          createdAt:(int32_t)createdAt
                          updatedAt:(int32_t)updatedAt
 {
@@ -30,8 +34,12 @@
         _fees = fees;
         _fromAddresses = [fromAddresses copy];
         _fromAccountId = [fromAccountId copy];
+        _fromUserId = [fromUserId copy];
+        _fromUserIntegratorId = [fromUserIntegratorId copy];
         _toAddress = [toAddress copy];
         _toAccountId = [toAccountId copy];
+        _toUserId = [toUserId copy];
+        _toUserIntegratorId = [toUserIntegratorId copy];
         _createdAt = createdAt;
         _updatedAt = updatedAt;
     }
@@ -47,8 +55,12 @@
                                       fees:(nullable NSDecimalNumber *)fees
                              fromAddresses:(nullable NSArray<NSString *> *)fromAddresses
                              fromAccountId:(nullable NSString *)fromAccountId
+                                fromUserId:(nullable NSString *)fromUserId
+                      fromUserIntegratorId:(nullable NSString *)fromUserIntegratorId
                                  toAddress:(nullable NSString *)toAddress
                                toAccountId:(nullable NSString *)toAccountId
+                                  toUserId:(nullable NSString *)toUserId
+                        toUserIntegratorId:(nullable NSString *)toUserIntegratorId
                                  createdAt:(int32_t)createdAt
                                  updatedAt:(int32_t)updatedAt
 {
@@ -61,8 +73,12 @@
                                                 fees:fees
                                        fromAddresses:fromAddresses
                                        fromAccountId:fromAccountId
+                                          fromUserId:fromUserId
+                                fromUserIntegratorId:fromUserIntegratorId
                                            toAddress:toAddress
                                          toAccountId:toAccountId
+                                            toUserId:toUserId
+                                  toUserIntegratorId:toUserIntegratorId
                                            createdAt:createdAt
                                            updatedAt:updatedAt];
 }
@@ -82,8 +98,12 @@
             ((self.fees == nil && typedOther.fees == nil) || (self.fees != nil && [self.fees isEqual:typedOther.fees])) &&
             ((self.fromAddresses == nil && typedOther.fromAddresses == nil) || (self.fromAddresses != nil && [self.fromAddresses isEqual:typedOther.fromAddresses])) &&
             ((self.fromAccountId == nil && typedOther.fromAccountId == nil) || (self.fromAccountId != nil && [self.fromAccountId isEqual:typedOther.fromAccountId])) &&
+            ((self.fromUserId == nil && typedOther.fromUserId == nil) || (self.fromUserId != nil && [self.fromUserId isEqual:typedOther.fromUserId])) &&
+            ((self.fromUserIntegratorId == nil && typedOther.fromUserIntegratorId == nil) || (self.fromUserIntegratorId != nil && [self.fromUserIntegratorId isEqual:typedOther.fromUserIntegratorId])) &&
             ((self.toAddress == nil && typedOther.toAddress == nil) || (self.toAddress != nil && [self.toAddress isEqual:typedOther.toAddress])) &&
             ((self.toAccountId == nil && typedOther.toAccountId == nil) || (self.toAccountId != nil && [self.toAccountId isEqual:typedOther.toAccountId])) &&
+            ((self.toUserId == nil && typedOther.toUserId == nil) || (self.toUserId != nil && [self.toUserId isEqual:typedOther.toUserId])) &&
+            ((self.toUserIntegratorId == nil && typedOther.toUserIntegratorId == nil) || (self.toUserIntegratorId != nil && [self.toUserIntegratorId isEqual:typedOther.toUserIntegratorId])) &&
             self.createdAt == typedOther.createdAt &&
             self.updatedAt == typedOther.updatedAt;
 }
@@ -100,15 +120,19 @@
             self.fees.hash ^
             self.fromAddresses.hash ^
             self.fromAccountId.hash ^
+            self.fromUserId.hash ^
+            self.fromUserIntegratorId.hash ^
             self.toAddress.hash ^
             self.toAccountId.hash ^
+            self.toUserId.hash ^
+            self.toUserIntegratorId.hash ^
             (NSUInteger)self.createdAt ^
             (NSUInteger)self.updatedAt;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ status:%@ amount:%@ feeInAmount:%@ estimatedFees:%@ fees:%@ fromAddresses:%@ fromAccountId:%@ toAddress:%@ toAccountId:%@ createdAt:%@ updatedAt:%@>", self.class, (void *)self, self.id, self.type, self.status, self.amount, @(self.feeInAmount), self.estimatedFees, self.fees, self.fromAddresses, self.fromAccountId, self.toAddress, self.toAccountId, @(self.createdAt), @(self.updatedAt)];
+    return [NSString stringWithFormat:@"<%@ %p id:%@ type:%@ status:%@ amount:%@ feeInAmount:%@ estimatedFees:%@ fees:%@ fromAddresses:%@ fromAccountId:%@ fromUserId:%@ fromUserIntegratorId:%@ toAddress:%@ toAccountId:%@ toUserId:%@ toUserIntegratorId:%@ createdAt:%@ updatedAt:%@>", self.class, (void *)self, self.id, self.type, self.status, self.amount, @(self.feeInAmount), self.estimatedFees, self.fees, self.fromAddresses, self.fromAccountId, self.fromUserId, self.fromUserIntegratorId, self.toAddress, self.toAccountId, self.toUserId, self.toUserIntegratorId, @(self.createdAt), @(self.updatedAt)];
 }
 
 @end
