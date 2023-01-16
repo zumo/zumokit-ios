@@ -137,10 +137,12 @@ public:
      *
      * @param composed_transaction Composed transaction retrieved as a result
      *                             of one of the compose transaction methods
+     * @param to_account_id        Debit account id override, only applicable to direct custody deposits.
+     *                             In case no account id is specified senders custody account will be debited.
      * @param metadata             Optional metadata (stringified JSON) that will be attached to transaction
      * @param callback An interface to receive the result or error
      */
-    virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::optional<std::string> & metadata, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
+    virtual void submit_transaction(const ComposedTransaction & composed_transaction, const std::optional<std::string> & to_account_id, const std::optional<std::string> & metadata, const std::shared_ptr<SubmitTransactionCallback> & callback) = 0;
 
     /**
      * Fetch trading pairs that are currently supported. 

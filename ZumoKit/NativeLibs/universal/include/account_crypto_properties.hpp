@@ -17,6 +17,11 @@ namespace zumo {
 struct AccountCryptoProperties final {
     /** Account crypto address. */
     std::string address;
+    /**
+     * Account direct deposit crypto address, only applicable to custody accounts. 
+     * Should only be used to deposit funds from Zumo non-custody accounts.
+     */
+    std::optional<std::string> direct_deposit_address;
     /** Hierarchical Deterministic (HD) account derivation path. */
     std::optional<std::string> path;
     /** Ethereum account nonce if greater than 0 or null otherwise. */
@@ -26,9 +31,11 @@ struct AccountCryptoProperties final {
     friend bool operator!=(const AccountCryptoProperties& lhs, const AccountCryptoProperties& rhs);
 
     AccountCryptoProperties(std::string address_,
+                            std::optional<std::string> direct_deposit_address_,
                             std::optional<std::string> path_,
                             std::optional<int32_t> nonce_)
     : address(std::move(address_))
+    , direct_deposit_address(std::move(direct_deposit_address_))
     , path(std::move(path_))
     , nonce(std::move(nonce_))
     {}

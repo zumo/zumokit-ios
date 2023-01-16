@@ -7,11 +7,13 @@
 @implementation ZKAccountCryptoProperties
 
 - (nonnull instancetype)initWithAddress:(nonnull NSString *)address
+                   directDepositAddress:(nullable NSString *)directDepositAddress
                                    path:(nullable NSString *)path
                                   nonce:(nullable NSNumber *)nonce
 {
     if (self = [super init]) {
         _address = [address copy];
+        _directDepositAddress = [directDepositAddress copy];
         _path = [path copy];
         _nonce = nonce;
     }
@@ -19,10 +21,12 @@
 }
 
 + (nonnull instancetype)accountCryptoPropertiesWithAddress:(nonnull NSString *)address
+                                      directDepositAddress:(nullable NSString *)directDepositAddress
                                                       path:(nullable NSString *)path
                                                      nonce:(nullable NSNumber *)nonce
 {
     return [(ZKAccountCryptoProperties*)[self alloc] initWithAddress:address
+                                                directDepositAddress:directDepositAddress
                                                                 path:path
                                                                nonce:nonce];
 }
@@ -34,6 +38,7 @@
     }
     ZKAccountCryptoProperties *typedOther = (ZKAccountCryptoProperties *)other;
     return [self.address isEqualToString:typedOther.address] &&
+            ((self.directDepositAddress == nil && typedOther.directDepositAddress == nil) || (self.directDepositAddress != nil && [self.directDepositAddress isEqual:typedOther.directDepositAddress])) &&
             ((self.path == nil && typedOther.path == nil) || (self.path != nil && [self.path isEqual:typedOther.path])) &&
             ((self.nonce == nil && typedOther.nonce == nil) || (self.nonce != nil && [self.nonce isEqual:typedOther.nonce]));
 }
@@ -42,13 +47,14 @@
 {
     return NSStringFromClass([self class]).hash ^
             self.address.hash ^
+            self.directDepositAddress.hash ^
             self.path.hash ^
             self.nonce.hash;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"<%@ %p address:%@ path:%@ nonce:%@>", self.class, (void *)self, self.address, self.path, self.nonce];
+    return [NSString stringWithFormat:@"<%@ %p address:%@ directDepositAddress:%@ path:%@ nonce:%@>", self.class, (void *)self, self.address, self.directDepositAddress, self.path, self.nonce];
 }
 
 @end

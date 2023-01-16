@@ -45,14 +45,14 @@
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
       "line": 11,
-      "symbol": "ZKAccountCryptoProperties.-initWithAddress:path:nonce:",
+      "symbol": "ZKAccountCryptoProperties.-initWithAddress:directDepositAddress:path:nonce:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/project/ios/ZumoKit/Classes/Bridge/ObjC/ZKAccountCryptoProperties.h",
-      "line": 14,
-      "symbol": "ZKAccountCryptoProperties.+accountCryptoPropertiesWithAddress:path:nonce:",
+      "line": 15,
+      "symbol": "ZKAccountCryptoProperties.+accountCryptoPropertiesWithAddress:directDepositAddress:path:nonce:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },

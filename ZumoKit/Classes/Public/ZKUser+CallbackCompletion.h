@@ -226,9 +226,10 @@ typedef void (^ZKStringifiedJsonCompletionBlock)(NSString *_Nullable stringified
 
 /**
 <code>submitTransaction</code> completion handler extension.
-@see `-[ZKUser submitTransaction:metadata:callback:]`
+@see `-[ZKUser submitTransaction:toAccountId:metadata:callback:]`
 */
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+              toAccountId:(nullable NSString *)toAccountId
                  metadata:(nullable NSString *)metadata
                completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler;
 

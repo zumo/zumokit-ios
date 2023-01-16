@@ -146,10 +146,13 @@
  *
  * @param composedTransaction Composed transaction retrieved as a result
  *                             of one of the compose transaction methods
+ * @param toAccountId        Debit account id override, only applicable to direct custody deposits.
+ *                             In case no account id is specified senders custody account will be debited.
  * @param metadata             Optional metadata (stringified JSON) that will be attached to transaction
  * @param callback An interface to receive the result or error
  */
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+              toAccountId:(nullable NSString *)toAccountId
                  metadata:(nullable NSString *)metadata
                  callback:(nullable id<ZKSubmitTransactionCallback>)callback;
 

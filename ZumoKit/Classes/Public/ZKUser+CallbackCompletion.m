@@ -153,9 +153,11 @@
 
 
 - (void)submitTransaction:(nonnull ZKComposedTransaction *)composedTransaction
+              toAccountId:(nullable NSString *)toAccountId
                  metadata:(nullable NSString *)metadata
                completion:(_Nonnull ZKSubmitTransactionCompletionBlock)completionHandler {
     [self submitTransaction:composedTransaction
+                toAccountId:toAccountId
                    metadata:metadata
                    callback:[[SubmitTransactionCallback alloc] initWithCompletionHandler: completionHandler]];
 };

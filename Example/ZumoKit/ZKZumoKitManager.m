@@ -176,7 +176,8 @@
         }
         
         [_user submitTransaction:composedTransaction
-                          metadata:nil
+                     toAccountId:nil
+                        metadata:nil
                         completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
             
             if (error != nil) {
@@ -212,7 +213,8 @@
         }
         
         [_user submitTransaction:composedTransaction
-                          metadata:nil
+                     toAccountId:nil
+                        metadata:nil
                         completion:^(ZKTransaction * _Nullable transaction, NSError * _Nullable error) {
             
             if (error != nil) {
