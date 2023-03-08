@@ -2,7 +2,7 @@ PODS:
   - Expecta (1.0.6)
   - SocketRocket (0.6.0)
   - Specta (1.0.7)
-  - ZumoKit (4.8.10):
+  - ZumoKit (4.8.11):
     - SocketRocket (~> 0.6.0)
 
 DEPENDENCIES:
@@ -24,7 +24,7 @@ SPEC CHECKSUMS:
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
-  ZumoKit: 1d0db5cbd79dfb7540e6e86cbc894203f2fced01
+  ZumoKit: 708b1708288c3662637422659bb86988377a07be
 
 PODFILE CHECKSUM: 1e25bc0900de2a671f2757a6361cf86d81d5fc0e
 
